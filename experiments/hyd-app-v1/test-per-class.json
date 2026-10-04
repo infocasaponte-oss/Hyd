@@ -1,0 +1,178 @@
+{
+  "format": "hyd-app-per-class/1",
+  "dataset_sha256": "3b629a34232164fcb51bb2c2ba0a851d6c55e71b48df261b4e5765a6e18dfe84",
+  "model_revision": "ebf5e67e46612d211c7369119ef2cb3f7c52381612632e8822b94670b82aa565",
+  "temperature": 0.5,
+  "n": 313,
+  "accuracy": 0.712,
+  "macro_f1": 0.692,
+  "ece": 0.057,
+  "per_class": {
+    "chat": {
+      "precision": 0.72,
+      "recall": 0.643,
+      "f1": 0.679,
+      "support": 28
+    },
+    "coding": {
+      "precision": 0.733,
+      "recall": 0.71,
+      "f1": 0.721,
+      "support": 31
+    },
+    "reasoning": {
+      "precision": 0.788,
+      "recall": 0.765,
+      "f1": 0.776,
+      "support": 34
+    },
+    "research": {
+      "precision": 0.641,
+      "recall": 0.758,
+      "f1": 0.694,
+      "support": 33
+    },
+    "vision": {
+      "precision": 0.872,
+      "recall": 0.932,
+      "f1": 0.901,
+      "support": 44
+    },
+    "tool_use": {
+      "precision": 0.5,
+      "recall": 0.522,
+      "f1": 0.511,
+      "support": 23
+    },
+    "abstain": {
+      "precision": 0.6,
+      "recall": 0.484,
+      "f1": 0.536,
+      "support": 31
+    },
+    "security": {
+      "precision": 0.839,
+      "recall": 0.684,
+      "f1": 0.754,
+      "support": 38
+    },
+    "privacy": {
+      "precision": 0.676,
+      "recall": 0.833,
+      "f1": 0.746,
+      "support": 30
+    },
+    "high_risk_review": {
+      "precision": 0.591,
+      "recall": 0.619,
+      "f1": 0.605,
+      "support": 21
+    }
+  },
+  "min_confidence": {
+    "0.0": {
+      "coverage": 1.0,
+      "accuracy": 0.712
+    },
+    "0.4": {
+      "coverage": 0.904,
+      "accuracy": 0.756
+    },
+    "0.55": {
+      "coverage": 0.751,
+      "accuracy": 0.8
+    },
+    "0.7": {
+      "coverage": 0.642,
+      "accuracy": 0.846
+    },
+    "0.85": {
+      "coverage": 0.489,
+      "accuracy": 0.908
+    },
+    "0.95": {
+      "coverage": 0.307,
+      "accuracy": 0.969
+    }
+  },
+  "confusion": {
+    "chat": {
+      "abstain": 2,
+      "chat": 18,
+      "coding": 2,
+      "privacy": 2,
+      "research": 3,
+      "high_risk_review": 1
+    },
+    "coding": {
+      "coding": 22,
+      "tool_use": 4,
+      "reasoning": 2,
+      "high_risk_review": 1,
+      "abstain": 1,
+      "research": 1
+    },
+    "reasoning": {
+      "abstain": 3,
+      "reasoning": 26,
+      "vision": 2,
+      "chat": 2,
+      "privacy": 1
+    },
+    "research": {
+      "research": 25,
+      "tool_use": 5,
+      "reasoning": 1,
+      "coding": 1,
+      "abstain": 1
+    },
+    "vision": {
+      "vision": 41,
+      "abstain": 2,
+      "reasoning": 1
+    },
+    "tool_use": {
+      "reasoning": 2,
+      "coding": 1,
+      "tool_use": 12,
+      "privacy": 1,
+      "vision": 1,
+      "research": 4,
+      "chat": 2
+    },
+    "abstain": {
+      "abstain": 15,
+      "privacy": 4,
+      "high_risk_review": 3,
+      "reasoning": 1,
+      "vision": 3,
+      "chat": 3,
+      "coding": 1,
+      "security": 1
+    },
+    "security": {
+      "security": 26,
+      "coding": 2,
+      "research": 3,
+      "high_risk_review": 3,
+      "privacy": 2,
+      "tool_use": 2
+    },
+    "privacy": {
+      "privacy": 25,
+      "abstain": 1,
+      "security": 2,
+      "high_risk_review": 1,
+      "tool_use": 1
+    },
+    "high_risk_review": {
+      "research": 3,
+      "high_risk_review": 13,
+      "privacy": 2,
+      "security": 2,
+      "coding": 1
+    }
+  },
+  "status": "SHADOW_ONLY",
+  "note": "Test partition frozen by hash; same evaluator pool as train, not independent promotion evidence."
+}
