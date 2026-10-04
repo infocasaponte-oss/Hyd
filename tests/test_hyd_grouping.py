@@ -56,3 +56,10 @@ def test_snapshot_preserves_inputs_and_disjoint_components(tmp_path):
         restored.extend(row["input"]["query"] for row in part)
     assert not groups[0] & groups[1] and not groups[0] & groups[2] and not groups[1] & groups[2]
     assert sorted(restored) == sorted(row["text"] for row in rows)
+
+
+def test_four_partition_mode_is_disjoint():
+    data = records()
+    assignments = grouped_partitions(data, development=True)
+    assert {split for split, _ in assignments} == {"train", "development", "calibration", "test"}
+    assert grouped_partitions(list(reversed(data)), development=True) == list(reversed(assignments))

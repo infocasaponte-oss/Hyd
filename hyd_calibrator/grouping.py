@@ -3,7 +3,7 @@ import hashlib
 import json
 
 
-def grouped_partitions(rows):
+def grouped_partitions(rows, *, development=False):
     parents = list(range(len(rows)))
 
     def root(index):
@@ -39,8 +39,12 @@ def grouped_partitions(rows):
     for index in range(len(rows)):
         group_id = ids[root(index)]
         bucket = int(group_id[:8], 16) % 100
-        split = "train" if bucket < 70 else "calibration" if bucket < 85 else "test"
+        if development:
+            split = "train" if bucket < 60 else "development" if bucket < 70 else "calibration" if bucket < 85 else "test"
+        else:
+            split = "train" if bucket < 70 else "calibration" if bucket < 85 else "test"
         result.append((split, group_id))
-    if {split for split, _ in result} != {"train", "calibration", "test"}:
-        raise ValueError("grouped corpus cannot populate all three partitions; collect more independent groups")
+    required = {"train", "calibration", "test"} | ({"development"} if development else set())
+    if {split for split, _ in result} != required:
+        raise ValueError("grouped corpus cannot populate all required partitions; collect more independent groups")
     return result

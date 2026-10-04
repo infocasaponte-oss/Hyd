@@ -8,12 +8,13 @@ from .annotations import validate_annotations
 from .contract import CRITERIA
 
 
-def admit_dataset(directory, revision):
+def admit_dataset(directory, revision, *, require_development=False):
     if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("encoder revision must be an immutable 40-character commit SHA")
     result, hashes = {}, {}
     seen = {field: {} for field in ("text", "person_id", "family_id", "group_id")}
-    for split in ("train", "calibration", "test"):
+    splits = ("train", "development", "calibration", "test") if require_development else ("train", "calibration", "test")
+    for split in splits:
         path = directory / f"{split}.jsonl"
         raw = path.read_bytes()
         rows = []
