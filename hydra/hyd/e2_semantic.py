@@ -88,7 +88,8 @@ def main():
     T = calibration["temperature"]
     mc = calibration["min_confidence"]
     # Test embeddings and predictions are produced after all selections are fixed.
-    pte = softmax(clf.decision_function(E(Xte)) / T)
+    ete = E(Xte)
+    pte = softmax(clf.decision_function(ete) / T)
     ordered = np.sort(pte, axis=1)
     test_hits = [labels[index] == truth for index, truth in zip(pte.argmax(1), yte)]
     test_selective = selective(ordered[:, -1].tolist(), (ordered[:, -1] - ordered[:, -2]).tolist(),
@@ -106,6 +107,19 @@ def main():
     (a.out / "report.json").write_text(json.dumps(rep, ensure_ascii=False, indent=2))
     np.savez(a.out / "head.npz", coef=clf.coef_, intercept=clf.intercept_, labels=np.array(labels), T=T, min_confidence=mc,
              min_margin=calibration["min_margin"], abstain_all=calibration["abstain_all"])
+    from hyd_calibrator.e2_runtime import write_manifest, E2Runtime
+    write_manifest(a.out, ENCODER, a.encoder_revision, partition_hashes)
+    runtime = E2Runtime(a.out)
+    reloaded = runtime.predict_embeddings(ete)
+    observed = np.array([[row["probabilities"][label] for label in labels] for row in reloaded])
+    if not np.allclose(observed, pte, atol=1e-10, rtol=1e-8):
+        raise ValueError("reloaded E2 head does not match evaluation")
+    if sum(row["accepted"] for row in reloaded) != test_selective["accepted"]:
+        raise ValueError("reloaded E2 abstention differs from evaluation")
+    (a.out / "runtime-parity.json").write_text(json.dumps({
+        "head_probability_parity": True, "acceptance_parity": True,
+        "n": len(reloaded), "encoder_reload_verified": False,
+        "note": "Uses existing test embeddings; full encoder reload remains pending."}, indent=2), encoding="utf-8")
     print(json.dumps({k: rep[k] for k in ("accuracy", "macro_f1", "ece", "temperature", "min_confidence_cal")}))
 
 
