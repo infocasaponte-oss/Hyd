@@ -1,3 +1,5 @@
 *.py text eol=lf
 *.json text eol=lf
 *.jsonl text eol=lf
+
+integrations/evaluator-app/*.patch -text whitespace=-blank-at-eol
