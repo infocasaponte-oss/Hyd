@@ -1,0 +1,68 @@
+{
+  "valid_rows": 2077,
+  "errors": [],
+  "n_errors": 0,
+  "duplicates": 0,
+  "conflicts": 0,
+  "missing_labels": [],
+  "per_class": {
+    "chat": 208,
+    "coding": 213,
+    "reasoning": 208,
+    "research": 200,
+    "vision": 229,
+    "tool_use": 218,
+    "abstain": 200,
+    "security": 201,
+    "privacy": 200,
+    "high_risk_review": 200
+  },
+  "source_sha256": "aacef7a6136e0627637fbb64e3a9b34381fd0082541fbce6baffdde8b820bbf0",
+  "splits": {
+    "train": {
+      "n": 1449,
+      "per_class": {
+        "chat": 143,
+        "reasoning": 147,
+        "coding": 154,
+        "abstain": 140,
+        "privacy": 134,
+        "security": 135,
+        "vision": 150,
+        "research": 135,
+        "tool_use": 159,
+        "high_risk_review": 152
+      }
+    },
+    "calibration": {
+      "n": 315,
+      "per_class": {
+        "research": 32,
+        "chat": 37,
+        "reasoning": 27,
+        "coding": 28,
+        "abstain": 29,
+        "privacy": 36,
+        "security": 28,
+        "tool_use": 36,
+        "high_risk_review": 27,
+        "vision": 35
+      }
+    },
+    "test": {
+      "n": 313,
+      "per_class": {
+        "chat": 28,
+        "reasoning": 34,
+        "coding": 31,
+        "abstain": 31,
+        "security": 38,
+        "vision": 44,
+        "research": 33,
+        "tool_use": 23,
+        "privacy": 30,
+        "high_risk_review": 21
+      }
+    }
+  }
+}
