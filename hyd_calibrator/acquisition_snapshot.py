@@ -6,6 +6,7 @@ import json
 import re
 from contextlib import ExitStack
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from .atomic import write_text_atomic
 
@@ -82,6 +83,17 @@ def prepare_acquisition(root, inventory, out):
                             review.append(f"missing_{field}")
                     if not isinstance(row.get("url"), str) or not row["url"].strip():
                         review.append("missing_origin_url")
+                    else:
+                        try:
+                            origin = urlsplit(row["url"])
+                            valid_origin = (origin.scheme in ("http", "https") and origin.hostname
+                                            and not origin.username and not origin.password)
+                        except ValueError:
+                            valid_origin = False
+                        if not valid_origin:
+                            review.append("invalid_origin_url")
+                        elif re.search(r"(?:CELEX:|uri=)(?:None|null|undefined)(?:$|[&#])", row["url"], re.I):
+                            review.append("placeholder_origin_identifier")
                     if review:
                         bucket = "review"
                     elif normalized_hash in seen:

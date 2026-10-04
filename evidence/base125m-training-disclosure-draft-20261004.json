@@ -1,0 +1,207 @@
+{
+  "format": "hyd-training-disclosure-draft/1",
+  "publication_status": "internal-draft-not-published",
+  "official_template_completed": false,
+  "legal_review_completed": false,
+  "evidence": {
+    "training_manifest_sha256": "e0188adf49ac2534fc1822daf4b188733c37702c7faf7498645c6adad6a72dbb",
+    "corpus_manifest_sha256": "5b1cb80985a4265c5f0c3088fbf3852af6140059e7c1e34dd060174417732a3b",
+    "tokens_manifest_sha256": "a7caa049e92ecfdcb5cd59d55db1e6ff25cb60d58d4a681353834ab1044b5bc3",
+    "tokenizer_sha256": "edd79f7825e7574771c7d15e71cfa0178794ee67462d398d7cbd4b133c91d8f9",
+    "weights_sha256": "5331e725ab0ea0f6357f966f03855be15d0490a8b10032fe68b0a7c7d86b1308"
+  },
+  "general_information": {
+    "provider_identity": null,
+    "model_release_identifier": null,
+    "modality": "text",
+    "parameters": 124635456,
+    "training_tokens_seen_recorded": 854523904,
+    "train_tokens_available_recorded": 854577886,
+    "validation_tokens_recorded": 9430961,
+    "document_framing": "bos+document+eos",
+    "run_approved_recorded": false
+  },
+  "data_sources": [
+    {
+      "name": "BOE legislación consolidada",
+      "kind": "boe",
+      "input_sha256": "9edaed77320cb731dec0635c4d00b120185d43c7e25e4004d571b70e55b35158",
+      "kept_units_recorded": 8497,
+      "characters_recorded": 610092229,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    },
+    {
+      "name": "Stack v2 edu (Python, permissive)",
+      "kind": "stack_python",
+      "input_sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "kept_units_recorded": 15285,
+      "characters_recorded": 62732738,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    },
+    {
+      "name": "Stack v2 edu (Markdown, permissive)",
+      "kind": "stack_markdown",
+      "input_sha256": "9f5bd7b0412ab2baa23756ed88adca6b42549412c171bf9a0d04e58c5accef85",
+      "kept_units_recorded": 60239,
+      "characters_recorded": 164548297,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    },
+    {
+      "name": "PleIAs Spanish-PD-Books",
+      "kind": "pleias_parquet",
+      "input_sha256": "bda1b2ebbbe648542d4f6b2282ce861f49e10275082e91651ec0795ed3450d88",
+      "kept_units_recorded": 127243,
+      "characters_recorded": 1938690543,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    },
+    {
+      "name": "PleIAs Spanish-PD-Newspapers",
+      "kind": "pleias_parquet",
+      "input_sha256": "1f5829045b25c9507630ab564fc88292eeda6330f4a713ace6dd3faa5573799c",
+      "kept_units_recorded": 40414,
+      "characters_recorded": 569650144,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    },
+    {
+      "name": "Acquisition batches (technical-clear)",
+      "kind": "acquisition",
+      "input_sha256": "cb54050f73d734f44e1aeb2131018b3f6f512f3a664c651bd59b57b25d37976a",
+      "kept_units_recorded": 1155,
+      "characters_recorded": 4991305,
+      "large_public_dataset_classification": "pending",
+      "source_url_and_version": "pending",
+      "rights_review": "pending"
+    }
+  ],
+  "processing": {
+    "corpus_totals_recorded": {
+      "documents": 252833,
+      "characters": 3350705256
+    },
+    "filters_recorded": {
+      "rules": {
+        "pleias_parquet": {
+          "min_words": 50,
+          "max_words": 2000000,
+          "min_stopword_ratio": 0.1,
+          "max_oov": 0.15,
+          "style_checks": true,
+          "mean_word": [
+            3.0,
+            10.0
+          ],
+          "max_symbol_ratio": 0.1,
+          "min_alpha_words": 0.8,
+          "max_ellipsis_lines": 0.3,
+          "max_bullet_lines": 0.9,
+          "line_repetition": true,
+          "ngram_repetition": true
+        },
+        "boe": {
+          "min_words": 50,
+          "max_words": 2000000,
+          "min_stopword_ratio": 0.08,
+          "max_oov": null,
+          "style_checks": false,
+          "mean_word": [
+            3.0,
+            10.0
+          ],
+          "max_symbol_ratio": 0.1,
+          "min_alpha_words": 0.8,
+          "max_ellipsis_lines": 0.3,
+          "max_bullet_lines": 0.9,
+          "line_repetition": false,
+          "ngram_repetition": false
+        },
+        "acquisition": {
+          "min_words": 50,
+          "max_words": 2000000,
+          "min_stopword_ratio": 0.06,
+          "max_oov": null,
+          "style_checks": true,
+          "mean_word": [
+            3.0,
+            10.0
+          ],
+          "max_symbol_ratio": 0.1,
+          "min_alpha_words": 0.65,
+          "max_ellipsis_lines": 0.3,
+          "max_bullet_lines": 0.95,
+          "line_repetition": true,
+          "ngram_repetition": true
+        },
+        "stack_markdown": {
+          "min_words": 50,
+          "max_words": 2000000,
+          "min_stopword_ratio": 0.04,
+          "max_oov": null,
+          "style_checks": true,
+          "mean_word": [
+            3.0,
+            10.0
+          ],
+          "max_symbol_ratio": 0.5,
+          "min_alpha_words": 0.55,
+          "max_ellipsis_lines": 0.3,
+          "max_bullet_lines": 0.95,
+          "line_repetition": false,
+          "ngram_repetition": true
+        }
+      },
+      "code": {
+        "parse": "python3 ast",
+        "max_line": 1000,
+        "max_mean_line": 100,
+        "min_alnum": 0.25,
+        "autogenerated": true,
+        "data_blobs": true
+      },
+      "near_duplicates": {
+        "method": "minhash-lsh",
+        "shingle_words": 5,
+        "permutations": 112,
+        "bands": 14,
+        "jaccard": 0.8
+      },
+      "decontamination": {
+        "ngram_words": 13,
+        "document_ids": 403,
+        "ngrams": 5281,
+        "sets": {
+          "D:/HYDRA/data/hydra-grounded-holdout-v1/holdout.jsonl": "85ba6e6abedfe55a4e241e0b4d3cd03a7dcd31a5e2fed3f60ca66ef7e324fafc",
+          "D:/HYDRA/data/hydra-grounded-holdout-v2/holdout.jsonl": "06ad407ee2236e5d581796812c41c57d5a8433cec7ceee900b9be32b3be383e2",
+          "D:/HYDRA/data/private/grounded-holdout-v2-wordings.json": "d32f4eccd686c59dc06b042863a0debdf34ff2f8616d98cf1280054a2fe2056e",
+          "D:/HYDRA/data/external-evaluation-v1/cases.json": "2f348620b88b870206cbefa13d6baa689aa57d2d9c4068577b268cf334bfe23d",
+          "D:/HYDRA/data/external-evaluation-v2/cases.json": "08827accde0064843cd43642d5adb751abe601f557b9e36bd3835e0ce35ab13e"
+        }
+      },
+      "lexicon": {
+        "path": "D:/HYDRA/data/sources/lexicon/hydra-es-lexicon-v2.txt",
+        "sha256": "56653a2b08585a66fe0a8f2d6a191f89255521bb3695ea48fedb48c5db8bb548",
+        "words": 408312
+      },
+      "quality_module_sha256": "b18877ce013417a6c3b329481cd4658d051b913b1d54a69c196c8918871cca68"
+    },
+    "copyright_and_optout_review": "pending",
+    "privacy_review": "pending",
+    "complaints_contact": null
+  },
+  "limitations": [
+    "Recorded run values are not a legal clearance or a completed official template.",
+    "Kept units can be chunks; do not treat them as counts of unique original works.",
+    "Tokens_seen records training exposure, not unique deduplicated content tokens.",
+    "Current source corpus shards and token binaries were not rehashed in this draft.",
+    "New acquisition snapshots are excluded; do not misrepresent them as used training content."
+  ]
+}

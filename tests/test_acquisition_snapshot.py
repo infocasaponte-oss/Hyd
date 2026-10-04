@@ -81,3 +81,28 @@ def test_quarantined_source_does_not_hide_later_complete_candidate(tmp_path):
     with gzip.open(tmp_path / "snapshot/candidates.jsonl.gz", "rt", encoding="utf-8") as handle:
         candidate = json.loads(next(handle))
     assert candidate["provenance"]["source_line"] == 2
+
+
+@pytest.mark.parametrize("url,reason", [
+    ("https://eur-lex.europa.eu/?uri=CELEX:None", "placeholder_origin_identifier"),
+    ("https://eur-lex.europa.eu/?uri=null&x=1", "placeholder_origin_identifier"),
+    ("https://[", "invalid_origin_url"),
+    ("file:///local.txt", "invalid_origin_url"),
+    ("https://user:secret@example.org/", "invalid_origin_url"),
+])
+def test_unusable_origin_is_quarantined_without_changing_original(tmp_path, url, reason):
+    root, path, inventory, rows = setup_source(tmp_path)
+    for row in rows:
+        row["url"] = url
+    with gzip.open(path, "wt", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row) + "\n")
+    audit = json.loads(inventory.read_text(encoding="utf-8"))
+    audit["files"][0]["sha256"] = file_hash(path)
+    inventory.write_text(json.dumps(audit), encoding="utf-8")
+    out = tmp_path / "snapshot"
+    report = prepare_acquisition(root, inventory, out)
+    assert report["counts"] == {"candidates": 0, "duplicates": 0, "review": 4}
+    assert report["review_reasons"][reason] == 4
+    with gzip.open(out / "review.jsonl.gz", "rt", encoding="utf-8") as handle:
+        assert all(json.loads(line)["original"]["url"] == url for line in handle)

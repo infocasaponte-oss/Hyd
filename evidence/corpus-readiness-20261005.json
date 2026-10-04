@@ -1,0 +1,102 @@
+{
+  "format": "hyd-corpus-readiness/1",
+  "training_allowed": false,
+  "ready_for_dataset_build": false,
+  "blockers": [
+    {
+      "scope": "dataset",
+      "reasons": [
+        "unmeasured_records_must_be_resolved"
+      ]
+    },
+    {
+      "source": "joelniklaus/eurlex_resources",
+      "revision": "4d7946ef7f0c5ff5e261e384db8015dfe8e417cb",
+      "license_declaration": "eu-reuse-2011-833",
+      "reasons": [
+        "attribution_complete_pending",
+        "human_rights_review_missing",
+        "lawful_access_pending",
+        "personal_data_review_pending",
+        "rights_basis_pending",
+        "tdm_reservations_pending"
+      ]
+    },
+    {
+      "source": "joelniklaus/eurlex_resources",
+      "revision": "4d7946ef7f0c5ff5e261e384db8015dfe8e417cb",
+      "license_declaration": "eu-reuse-2011-833",
+      "reasons": [
+        "attribution_complete_pending",
+        "human_rights_review_missing",
+        "lawful_access_pending",
+        "personal_data_review_pending",
+        "rights_basis_pending",
+        "tdm_reservations_pending"
+      ]
+    },
+    {
+      "scope": "dataset",
+      "reasons": [
+        "documented_human_dataset_review_missing"
+      ]
+    },
+    {
+      "scope": "dataset",
+      "reasons": [
+        "diversity_reviewed_pending"
+      ]
+    },
+    {
+      "scope": "dataset",
+      "reasons": [
+        "language_verified_pending"
+      ]
+    },
+    {
+      "scope": "dataset",
+      "reasons": [
+        "benchmark_decontamination_verified_pending"
+      ]
+    }
+  ],
+  "snapshot_manifest_sha256": "d1fc49157a4d092b06e0e0f12d6f3877ec7ab270ebc3075c7444cbac3067ce35",
+  "census_sha256": "513f850cd84a981882a6f7955f30f9cdd683e5e759eb145069b49f13d78bd9a8",
+  "rights_review_sha256": "453fc4f457c73babd928924d44bf0dea98efa22a7d74e1c2a395a1e48d96d3c2",
+  "candidate_content_tokens": 721385900,
+  "token_count_complete": false,
+  "candidate_balance_by_tokens": {
+    "source": [
+      {
+        "declaration": "joelniklaus/eurlex_resources",
+        "tokens": 721385900,
+        "share": 1.0
+      }
+    ],
+    "language_declaration": [
+      {
+        "declaration": "es",
+        "tokens": 721385900,
+        "share": 1.0
+      }
+    ],
+    "category_declaration": [
+      {
+        "declaration": "lexislacion",
+        "tokens": 372530890,
+        "share": 0.5164099963694883
+      },
+      {
+        "declaration": "lingua_moderna",
+        "tokens": 348855010,
+        "share": 0.48359000363051174
+      }
+    ]
+  },
+  "limitations": [
+    "Human reviews are declarations bound to files, not a legal certificate.",
+    "This diagnostic does not authorize training or replace existing admission checks.",
+    "Volume balance is not a semantic quality or diversity evaluation.",
+    "When token_count_complete is false, token totals/balances cover measured records only."
+  ]
+}

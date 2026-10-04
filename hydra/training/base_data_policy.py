@@ -1,11 +1,12 @@
 # Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Data and teacher licence policy for HYDRA Base (weights trained from scratch, proprietary licence).
 
-A base whose weights are licensed only by HYDRA cannot learn from material whose licence binds
-the weights: share-alike (CC BY-SA), copyleft (GPL family), non-commercial (NC), no-derivatives
-(ND) or unknown terms. Permissive sources are admitted together with the obligations they keep
-(attribution notices), which ``attribution_notice`` collects for the release. Fail closed: an
-unlisted licence is rejected. This is an engineering control, not legal advice.
+HYDRA uses a conservative project allowlist: share-alike, copyleft, non-commercial,
+no-derivatives and unknown declarations are excluded. This does not determine whether a
+particular licence legally applies to model weights. A permitted label is only a compatibility
+check: lawful access, attribution, third-party rights, privacy and applicable TDM reservations
+still need evidence and review. ``attribution_notice`` collects declared release notices.
+An unlisted licence is rejected. This is an engineering control, not a legal clearance.
 """
 from __future__ import annotations
 
@@ -28,13 +29,13 @@ PERMITTED: dict[str, str] = {
     "Apache-2.0": "Conservar los avisos de licencia y NOTICE de Apache-2.0.",
     # Ley 37/2007 y RD 1495/2011: reutilización con cita de la fuente, sin desnaturalizar el dato.
     "es-public-sector-reuse": "Citar la fuente (p. ej. «Fuente: Agencia Estatal BOE») y la fecha de actualización.",
-    # Decisión 2011/833/UE: reutilización de documentos de la Comisión y EUR-Lex con atribución.
+    # Decision 2011/833/EU concerns Commission documents; verify scope/third-party rights per source.
     "eu-reuse-2011-833": "Citar «© Unión Europea, https://eur-lex.europa.eu» e indicar si se ha modificado.",
 }
 
-# Patterns whose terms would bind the weights or forbid this use.
+# Declarations excluded by the conservative project policy; not conclusions about all model weights.
 FORBIDDEN = [
-    (re.compile(r"(^|-)SA(-|$)|share.?alike", re.I), "share-alike: obligaría a licenciar los pesos igual"),
+    (re.compile(r"(^|-)SA(-|$)|share.?alike", re.I), "share-alike: fuera de la política conservadora del proyecto"),
     (re.compile(r"^(A|L)?GPL|copyleft|^MPL|^EPL|^CDDL", re.I), "copyleft: impone condiciones a obras derivadas"),
     (re.compile(r"(^|-)NC(-|$)|non.?commercial", re.I), "no comercial"),
     (re.compile(r"(^|-)ND(-|$)|no.?deriv", re.I), "prohíbe obras derivadas"),

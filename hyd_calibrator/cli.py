@@ -10,6 +10,19 @@ from .train import train
 def main():
     parser = argparse.ArgumentParser(description="Standalone Hyd calibration and diagnostics")
     commands = parser.add_subparsers(dest="command", required=True)
+    ready = commands.add_parser("corpus-readiness")
+    ready.add_argument("--census", required=True, type=Path)
+    ready.add_argument("--rights", required=True, type=Path)
+    ready.add_argument("--evidence-root", required=True, type=Path)
+    ready.add_argument("--out", required=True, type=Path)
+    overlay = commands.add_parser("provenance-overlay")
+    overlay.add_argument("--snapshot", required=True, type=Path)
+    overlay.add_argument("--out", required=True, type=Path)
+    census = commands.add_parser("corpus-census")
+    census.add_argument("--snapshot", required=True, type=Path)
+    census.add_argument("--tokenizer", required=True, type=Path)
+    census.add_argument("--out", required=True, type=Path)
+    census.add_argument("--threads", type=int, choices=(1, 2, 3, 4), default=2)
     trash_plan = commands.add_parser("plan-corpus-trash")
     trash_plan.add_argument("--root", required=True, type=Path)
     trash_plan.add_argument("--out", required=True, type=Path)
@@ -71,7 +84,16 @@ def main():
     try:
         if args.command in ("build", "calibrate", "train") and args.out.exists():
             raise ValueError("output directory already exists; choose a new run directory")
-        if args.command == "plan-corpus-trash":
+        if args.command == "corpus-readiness":
+            from .corpus_readiness import readiness
+            result = readiness(args.census, args.rights, args.evidence_root, args.out)
+        elif args.command == "provenance-overlay":
+            from .provenance_overlay import build_overlay
+            result = build_overlay(args.snapshot, args.out)
+        elif args.command == "corpus-census":
+            from .corpus_census import census
+            result = census(args.snapshot, args.tokenizer, args.out, threads=args.threads)
+        elif args.command == "plan-corpus-trash":
             from .corpus_trash import plan_duplicates
             result = plan_duplicates(args.root, args.out)
         elif args.command == "stage-corpus-trash":

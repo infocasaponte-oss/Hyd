@@ -1,0 +1,8 @@
+{
+  "format": "hyd-bounded-tokenizer-parity/1",
+  "real_records_checked": 200,
+  "maximum_characters_checked": 14887,
+  "exact_token_sequence_match": true,
+  "supports_owned_tokenizer": true,
+  "not_accuracy_evidence": true
+}
