@@ -20,6 +20,7 @@ from pathlib import Path
 from .contract import CRITERIA
 from .atomic import write_text_atomic
 from .admission import require_consent_and_rights
+from .annotations import validate_annotations
 
 
 def normalized(text: str) -> str:
@@ -64,6 +65,12 @@ def validate(path: Path) -> tuple[list[dict], dict]:
             errors.append(f"line {n}: verified source rights required")
         else:
             require_consent_and_rights({"consent": m["consent"], "rights": r["rights"]})
+            if "annotations" in r:
+                try:
+                    validate_annotations(r["annotations"], r["text"])
+                except ValueError as error:
+                    errors.append(f"line {n}: {error}")
+                    continue
             rows.append(r)
     labels, seen, dups = {}, set(), 0
     for r in rows:
@@ -113,6 +120,8 @@ def build(corpus: Path, out: Path) -> dict:
                 "prompt_sha256": h,
             }
         )
+        if "annotations" in r:
+            parts[s][-1]["annotations"] = validate_annotations(r["annotations"], r["text"])
     for s, v in parts.items():
         write_text_atomic(out / f"{s}.jsonl", "".join(json.dumps(x, ensure_ascii=False) + "\n" for x in v))
     report["splits"] = {
