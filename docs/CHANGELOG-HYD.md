@@ -22,3 +22,8 @@ Formato: data UTC · HYD-XXX · que · por que · evidencia. Estado: SHADOW_ONLY
 - Que: repositorio GitHub pasado a privado; subido o código completo de Hyd (1.220 ficheiros) e data/hyd-app-records/ (2.077 preguntas reais válidas + 521 sospeitosas de molde, separadas).
 - Por que: o consentimento cobre adestrar Hyd, non publicar; só se suben con repo privado.
 - Evidencia: export directo da BD (2.936 rexistros → 2.598 distintos → 2.077 válidos; 10 clases con ≥200; 0 conflitos). Autor pseudonimizado por user_id. Excluídos: .github/workflows (o permiso de GitHub non inclúe workflows) e models/hydra-base-v0-30m/final/model.safetensors (120 MB, supera o límite de 100 MB de GitHub).
+
+## 2026-10-04 UTC · HYD-019 · E2 semántico adestrado con datos reais (SHADOW_ONLY)
+- Que: hydra/hyd/e2_semantic.py — codificador multilingüe conxelado (paraphrase-multilingual-MiniLM-L12-v2, 118M) + cabeza loxística; C e temperatura escollidos só na partición de calibración. Hyd actual readestrado nas mesmas particións (hyd-app-v2).
+- Por que: o modelo lineal de hash estaba no seu teito (plan MoE, experto E2).
+- Evidencia (313 preguntas reais de proba, particións conxeladas por SHA-256): Hyd actual acerto 0,716 / macro-F1 0,695 / ECE 0,087; E2 acerto 0,853 / macro-F1 0,847 / ECE 0,030. Con confianza ≥0,85: Hyd decide 47,9 % e acerta 91,3 %; E2 decide 61,7 % e acerta 94,8 %. Mesmo grupo de avaliadores → non é evidencia independente. Autoridade desactivada; E2 só observa.

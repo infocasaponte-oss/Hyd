@@ -1,0 +1,169 @@
+{
+  "format": "hyd-e2-report/1",
+  "model": "e2-semantic-v1",
+  "encoder": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "trained_at": "2026-10-04T14:37:17Z",
+  "head": {
+    "type": "logistic",
+    "C": 32
+  },
+  "temperature": 1.05,
+  "min_confidence_cal": 0.85,
+  "dataset_sha256": "ded9ac97219b7b30d50de2b2fbb3b19cacb4a25a7ec261f9abf305abe4717e4c",
+  "n_train": 1449,
+  "n_calibration": 315,
+  "n": 313,
+  "accuracy": 0.853,
+  "macro_f1": 0.847,
+  "ece": 0.03,
+  "per_class": {
+    "abstain": {
+      "precision": 0.72,
+      "recall": 0.581,
+      "f1": 0.643,
+      "support": 31
+    },
+    "chat": {
+      "precision": 0.84,
+      "recall": 0.75,
+      "f1": 0.792,
+      "support": 28
+    },
+    "coding": {
+      "precision": 0.963,
+      "recall": 0.839,
+      "f1": 0.897,
+      "support": 31
+    },
+    "high_risk_review": {
+      "precision": 0.826,
+      "recall": 0.905,
+      "f1": 0.864,
+      "support": 21
+    },
+    "privacy": {
+      "precision": 0.735,
+      "recall": 0.833,
+      "f1": 0.781,
+      "support": 30
+    },
+    "reasoning": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 34
+    },
+    "research": {
+      "precision": 0.769,
+      "recall": 0.909,
+      "f1": 0.833,
+      "support": 33
+    },
+    "security": {
+      "precision": 0.85,
+      "recall": 0.895,
+      "f1": 0.872,
+      "support": 38
+    },
+    "tool_use": {
+      "precision": 0.808,
+      "recall": 0.913,
+      "f1": 0.857,
+      "support": 23
+    },
+    "vision": {
+      "precision": 0.975,
+      "recall": 0.886,
+      "f1": 0.929,
+      "support": 44
+    }
+  },
+  "min_confidence": {
+    "0.0": {
+      "coverage": 1.0,
+      "accuracy": 0.853
+    },
+    "0.4": {
+      "coverage": 0.987,
+      "accuracy": 0.858
+    },
+    "0.55": {
+      "coverage": 0.911,
+      "accuracy": 0.888
+    },
+    "0.7": {
+      "coverage": 0.76,
+      "accuracy": 0.916
+    },
+    "0.85": {
+      "coverage": 0.617,
+      "accuracy": 0.948
+    }
+  },
+  "confusion": {
+    "abstain": {
+      "abstain": 18,
+      "tool_use": 1,
+      "security": 3,
+      "high_risk_review": 1,
+      "research": 2,
+      "chat": 2,
+      "privacy": 4
+    },
+    "chat": {
+      "chat": 21,
+      "abstain": 3,
+      "research": 2,
+      "vision": 1,
+      "high_risk_review": 1
+    },
+    "coding": {
+      "coding": 26,
+      "tool_use": 2,
+      "research": 1,
+      "abstain": 1,
+      "security": 1
+    },
+    "high_risk_review": {
+      "high_risk_review": 19,
+      "tool_use": 1,
+      "privacy": 1
+    },
+    "privacy": {
+      "privacy": 25,
+      "research": 1,
+      "security": 2,
+      "high_risk_review": 1,
+      "chat": 1
+    },
+    "reasoning": {
+      "reasoning": 34
+    },
+    "research": {
+      "research": 30,
+      "abstain": 1,
+      "high_risk_review": 1,
+      "chat": 1
+    },
+    "security": {
+      "security": 34,
+      "abstain": 1,
+      "privacy": 2,
+      "coding": 1
+    },
+    "tool_use": {
+      "tool_use": 21,
+      "abstain": 1,
+      "research": 1
+    },
+    "vision": {
+      "vision": 39,
+      "research": 2,
+      "tool_use": 1,
+      "privacy": 2
+    }
+  },
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "note": "Real corpus only; frozen hash splits; observes, never decides."
+}
