@@ -9,9 +9,36 @@ from hyd_calibrator.corpus import validate, build, report, split_of
 from hyd_calibrator.contract import CRITERIA
 from hyd_calibrator.evaluation import load_rows, load_calibration, selective
 from hyd_calibrator.model import CandidateRanker
+from hyd_calibrator.train import train
 
 
 class CalibratorTests(unittest.TestCase):
+    def test_training_admission_reproducibility_and_no_overwrite(self):
+        rows = [
+            {
+                "input": {"query": f"training question {i}"},
+                "output": {"task_type": label},
+                "split": "train",
+                "training_allowed": True,
+                "consent": True,
+                "rights": {"verified": True, "license": "user-grant"},
+            }
+            for i, label in enumerate(CRITERIA)
+        ]
+        dataset = self.write("train.jsonl", rows)
+        first = train(dataset, self.root / "first", epochs=1)
+        second = train(dataset, self.root / "second", epochs=1)
+        self.assertEqual(first["model_sha256"], second["model_sha256"])
+        self.assertFalse(first["authority"])
+        CandidateRanker.load(self.root / "first" / "model.json")
+        with self.assertRaisesRegex(ValueError, "already exists"):
+            train(dataset, self.root / "first", epochs=1)
+        for field, value in (("consent", False), ("split", "test"), ("training_allowed", False)):
+            invalid = [dict(row) for row in rows]
+            invalid[0][field] = value
+            with self.assertRaisesRegex(ValueError, "training partition"):
+                train(self.write("bad.jsonl", invalid), self.root / "bad", epochs=1)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

@@ -4,6 +4,7 @@ from pathlib import Path
 from .atomic import write_text_atomic
 from .calibrate import calibrate
 from .corpus import build, report
+from .train import train
 
 
 def main():
@@ -23,11 +24,23 @@ def main():
     c.add_argument("--train-dataset", type=Path)
     c.add_argument("--target", type=float, default=0.95)
     c.add_argument("--min-coverage", type=float, default=0.1)
+    t = commands.add_parser("train")
+    t.add_argument("--dataset", required=True, type=Path)
+    t.add_argument("--out", required=True, type=Path)
+    t.add_argument("--epochs", type=int, default=80)
+    t.add_argument("--state-dims", type=int, choices=(512, 1024), default=512)
+    t.add_argument("--option-dims", type=int, choices=(128, 256), default=128)
     args = parser.parse_args()
     try:
+        if args.command in ("build", "calibrate", "train") and args.out.exists():
+            raise ValueError("output directory already exists; choose a new run directory")
         if args.command == "build":
             result = build(args.corpus, args.out)
+        elif args.command == "train":
+            result = train(args.dataset, args.out, args.epochs, args.state_dims, args.option_dims)
         elif args.command == "report":
+            if args.out and args.out.exists():
+                raise ValueError("output file already exists")
             result = report(args.dataset, args.model_dir)
             if args.out:
                 write_text_atomic(args.out, json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))
