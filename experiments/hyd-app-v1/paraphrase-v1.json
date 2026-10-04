@@ -1,0 +1,99 @@
+{
+  "format": "hyd-routing-diagnostic/1",
+  "model": "hyd-latest",
+  "model_revision": "ebf5e67e46612d211c7369119ef2cb3f7c52381612632e8822b94670b82aa565",
+  "dataset_sha256": "fcade71188f552d29cc3a497496c569002d47d78c2c6fab6f32f38a9c8cf19cc",
+  "independent_test": false,
+  "authority_enabled": false,
+  "complete": true,
+  "metrics_all": {
+    "requested": 100,
+    "valid": 100,
+    "accepted": 100,
+    "coverage": 1.0,
+    "accuracy": 0.44,
+    "accuracy_wilson_lower_95": 0.34671865400968327,
+    "ece_10_bins": 0.23109431940423694,
+    "brier_multiclass_sum": 0.7694717164238036,
+    "nll": 1.9163076674345758,
+    "bins": [
+      {
+        "bin": 2,
+        "n": 4,
+        "confidence": 0.2525943076107664,
+        "accuracy": 0.25
+      },
+      {
+        "bin": 3,
+        "n": 10,
+        "confidence": 0.35032422105654426,
+        "accuracy": 0.4
+      },
+      {
+        "bin": 4,
+        "n": 15,
+        "confidence": 0.4553543357209613,
+        "accuracy": 0.26666666666666666
+      },
+      {
+        "bin": 5,
+        "n": 16,
+        "confidence": 0.5621745700780812,
+        "accuracy": 0.25
+      },
+      {
+        "bin": 6,
+        "n": 10,
+        "confidence": 0.6478470400332543,
+        "accuracy": 0.4
+      },
+      {
+        "bin": 7,
+        "n": 11,
+        "confidence": 0.7454112052343781,
+        "accuracy": 0.09090909090909091
+      },
+      {
+        "bin": 8,
+        "n": 15,
+        "confidence": 0.8583296408217663,
+        "accuracy": 0.6
+      },
+      {
+        "bin": 9,
+        "n": 19,
+        "confidence": 0.9591710785918502,
+        "accuracy": 0.8947368421052632
+      }
+    ]
+  },
+  "metrics_accepted": {
+    "requested": 11,
+    "valid": 11,
+    "accepted": 11,
+    "coverage": 1.0,
+    "accuracy": 1.0,
+    "accuracy_wilson_lower_95": 0.7411599827511859,
+    "ece_10_bins": 0.022781230599399738,
+    "brier_multiclass_sum": 0.0010010155858828872,
+    "nll": 0.02317397984506968,
+    "bins": [
+      {
+        "bin": 9,
+        "n": 11,
+        "confidence": 0.9772187694006003,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "selective_coverage": 0.11,
+  "latency_ms": {
+    "p50": 2.501051499990581,
+    "p95": 5.4231975000107004
+  },
+  "limitations": [
+    "Previously available HYDRA corpus; not untouched promotion evidence.",
+    "CPU latency excludes startup, HTTP and concurrent traffic.",
+    "No live matched Kev comparison; no general decision quality claim."
+  ]
+}
