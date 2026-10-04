@@ -1,0 +1,17 @@
+{
+  "format": "hyd-book-discovery/1",
+  "source_id": "textos-info",
+  "metadata_url": "https://www.textos.info/novedades.atom",
+  "checked_at": "2026-10-04T22:42:42.291739+00:00",
+  "rows": 20,
+  "catalog_sha256": "6d44e0895b22584fd38cbbd73c6abb8d4499df533fbb55f5ce3b800d57837591",
+  "metadata_sha256": "0c36f6af424a93b0691a179641d8cef7cc61df22029b248a296fbe261978370f",
+  "robots_sha256": "550f4258fe852876f67cb67c43f6d0a97558997ecfb7730f2b7049073056a91d",
+  "book_content_downloaded": false,
+  "training_allowed": false,
+  "limitations": [
+    "Only one metadata page; no crawling or pagination.",
+    "Robots compliance does not establish copyright or TDM permission.",
+    "Declared dates/rights/access are not verified; each edition remains pending."
+  ]
+}

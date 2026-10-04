@@ -6,6 +6,7 @@ from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from .atomic import write_text_atomic
+from .work_rights import BOOK_HOSTS, validate_work, verify_work_files
 
 HOSTS = {"boe": {"www.boe.es", "boe.es"}, "congreso": {"www.congreso.es", "congreso.es"},
          "rtve": {"www.rtve.es", "rtve.es"}, "gutenberg": {"www.gutenberg.org", "gutenberg.org"},
@@ -23,17 +24,24 @@ class NoRedirect(HTTPRedirectHandler):
 
 
 def validate_plan(plan):
-    if not isinstance(plan, dict) or set(plan) != {"format", "source_id", "asset_url", "max_bytes", "rights", "training_allowed", "state"}:
+    fields = {"format", "source_id", "asset_url", "max_bytes", "rights", "training_allowed", "state"}
+    version = plan.get("format") if isinstance(plan, dict) else None
+    if version == "hyd-corpus-download-plan/2":
+        fields.add("work_review")
+    if not isinstance(plan, dict) or set(plan) != fields:
         raise ValueError("invalid download plan structure")
-    if plan["format"] != "hyd-corpus-download-plan/1" or plan["state"] != "prepared" or plan["training_allowed"] is not False:
+    if version not in ("hyd-corpus-download-plan/1", "hyd-corpus-download-plan/2") or plan["state"] != "prepared" or plan["training_allowed"] is not False:
         raise ValueError("prepared unapproved-training plan required")
     source = plan["source_id"]
-    if not isinstance(source, str) or source not in HOSTS:
+    hosts = {**HOSTS, **BOOK_HOSTS}
+    if not isinstance(source, str) or source not in hosts:
         raise ValueError("source not enabled in local downloader policy")
+    if source in BOOK_HOSTS and version != "hyd-corpus-download-plan/2":
+        raise ValueError("books require per-work review in download plan/2")
     if not isinstance(plan["asset_url"], str):
         raise ValueError("invalid asset URL")
     url = urlsplit(plan["asset_url"])
-    if (url.scheme != "https" or url.hostname not in HOSTS[source] or url.username or url.password
+    if (url.scheme != "https" or url.hostname not in hosts[source] or url.username or url.password
             or url.port not in (None, 443) or url.fragment):
         raise ValueError("HTTPS asset on the source's exact official host required")
     if type(plan["max_bytes"]) is not int or not 1024 <= plan["max_bytes"] <= 1024 ** 3:
@@ -46,6 +54,10 @@ def validate_plan(plan):
     if (not isinstance(rights["evidence_url"], str) or urlsplit(rights["evidence_url"]).scheme != "https"
             or not urlsplit(rights["evidence_url"]).hostname):
         raise ValueError("HTTPS evidence URL required")
+    if version == "hyd-corpus-download-plan/2":
+        if source not in BOOK_HOSTS:
+            raise ValueError("book plan requires a supported book source")
+        validate_work(plan["work_review"], source, plan["asset_url"], rights["license"])
     return plan
 
 
@@ -55,6 +67,8 @@ def download_asset(plan_path, out, *, opener=None, cancel_check=None):
         raise ValueError("download output already exists")
     raw = plan_path.read_bytes()
     plan = validate_plan(json.loads(raw))
+    if plan["format"] == "hyd-corpus-download-plan/2":
+        verify_work_files(plan["work_review"], plan_path.parent)
     if cancel_check and cancel_check():
         raise DownloadCancelled("download cancelled before network access")
     opener = opener or build_opener(NoRedirect())
@@ -89,6 +103,9 @@ def download_asset(plan_path, out, *, opener=None, cancel_check=None):
                   "sha256": digest.hexdigest(), "plan_sha256": hashlib.sha256(raw).hexdigest(),
                   "source_id": plan["source_id"], "asset_url": plan["asset_url"], "rights": plan["rights"],
                   "rights_basis": "user-reviewed-declaration", "training_allowed": False}
+        if plan["format"] == "hyd-corpus-download-plan/2":
+            report["work_review"] = plan["work_review"]
+            report["rights_basis"] = "human-per-work-declaration-with-verified-evidence-files"
         write_text_atomic(out / "manifest.json", json.dumps(report, indent=2))
         return report
     except Exception:

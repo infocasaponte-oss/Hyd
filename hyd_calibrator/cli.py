@@ -10,6 +10,14 @@ from .train import train
 def main():
     parser = argparse.ArgumentParser(description="Standalone Hyd calibration and diagnostics")
     commands = parser.add_subparsers(dest="command", required=True)
+    imports = commands.add_parser("import-book-assets")
+    imports.add_argument("--input", required=True, type=Path)
+    imports.add_argument("--out", required=True, type=Path)
+    imports.add_argument("--source", default="unknown")
+    books = commands.add_parser("discover-books")
+    books.add_argument("--catalog", required=True, type=Path)
+    books.add_argument("--source", required=True, choices=("textos-info", "openlibrary"))
+    books.add_argument("--out", required=True, type=Path)
     ready = commands.add_parser("corpus-readiness")
     ready.add_argument("--census", required=True, type=Path)
     ready.add_argument("--rights", required=True, type=Path)
@@ -84,7 +92,13 @@ def main():
     try:
         if args.command in ("build", "calibrate", "train") and args.out.exists():
             raise ValueError("output directory already exists; choose a new run directory")
-        if args.command == "corpus-readiness":
+        if args.command == "import-book-assets":
+            from .manual_assets import import_assets
+            result = import_assets(args.input, args.out, args.source)
+        elif args.command == "discover-books":
+            from .book_sources import discover
+            result = discover(args.catalog, args.source, args.out)
+        elif args.command == "corpus-readiness":
             from .corpus_readiness import readiness
             result = readiness(args.census, args.rights, args.evidence_root, args.out)
         elif args.command == "provenance-overlay":

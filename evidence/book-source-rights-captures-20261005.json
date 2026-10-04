@@ -1,0 +1,48 @@
+{
+  "format": "hyd-book-source-evidence/1",
+  "rights_approved": false,
+  "entries": [
+    {
+      "source": "elejandria",
+      "url": "https://www.elejandria.com/aviso-legal",
+      "checked_at": "2026-10-04T22:55:35.408044+00:00",
+      "rights_approved": false,
+      "http_status": 200,
+      "file": "elejandria-terms.html",
+      "bytes": 26760,
+      "sha256": "1f0762a8684ee8b7b1230a83bfdef2868b745507c11eb4791c5dab8fe941d93b",
+      "status": "captured"
+    },
+    {
+      "source": "textos-info",
+      "url": "https://www.textos.info/preguntas-frecuentes",
+      "checked_at": "2026-10-04T22:55:36.466414+00:00",
+      "rights_approved": false,
+      "http_status": 200,
+      "file": "textos-info-terms.html",
+      "bytes": 26840,
+      "sha256": "7eff5a57fee226ffd0973890d7b4d6060a5219f1bf22b9b5ff025ae73bf6bfa3",
+      "status": "captured"
+    },
+    {
+      "source": "cervantes",
+      "url": "https://www.cervantesvirtual.com/marco-legal/",
+      "checked_at": "2026-10-04T22:55:37.604576+00:00",
+      "rights_approved": false,
+      "http_status": 522,
+      "status": "unavailable",
+      "error_type": "HTTPError"
+    },
+    {
+      "source": "openlibrary",
+      "url": "https://openlibrary.org/developers/licensing",
+      "checked_at": "2026-10-04T22:55:58.048181+00:00",
+      "rights_approved": false,
+      "http_status": 200,
+      "file": "openlibrary-terms.html",
+      "bytes": 42377,
+      "sha256": "c076454ac68a8dc0575e1d2fa90729a6989ff97ed3d517147ba8a4f2471cf78d",
+      "status": "captured"
+    }
+  ]
+}
