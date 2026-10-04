@@ -1,0 +1,12 @@
+{
+  "format": "hyd-candidate-integration-check/1",
+  "n": 313,
+  "max_probability_difference": 0.0,
+  "accepted": 131,
+  "accepted_correct": 129,
+  "activated": false,
+  "authority_enabled": false,
+  "model_sha256": "dfc323be64aa6aeae6bd7a47f23139b8651cfcbd19c34b7687051b0ccd3edc9d",
+  "independent_test": false,
+  "release_target_met_on_test": false
+}
