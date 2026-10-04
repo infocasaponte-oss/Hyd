@@ -53,11 +53,19 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--encoder-revision", required=True)
     a = ap.parse_args()
+    if a.out.exists():
+        raise ValueError("output directory already exists; choose a new run")
+    from hyd_calibrator.e2_admission import admit_dataset
+    admitted, partition_hashes = admit_dataset(a.dataset, a.encoder_revision)
     from sentence_transformers import SentenceTransformer
     from sklearn.linear_model import LogisticRegression
-    enc = SentenceTransformer(ENCODER, device="cpu")
-    Xtr, ytr = load(a.dataset / "train.jsonl"); Xca, yca = load(a.dataset / "calibration.jsonl"); Xte, yte = load(a.dataset / "test.jsonl")
+    enc = SentenceTransformer(ENCODER, revision=a.encoder_revision, device="cpu")
+    def partition(split):
+        rows = admitted[split]
+        return [r["input"]["query"] for r in rows], [r["output"]["task_type"] for r in rows]
+    Xtr, ytr = partition("train"); Xca, yca = partition("calibration"); Xte, yte = partition("test")
     E = lambda X: enc.encode(X, batch_size=64, normalize_embeddings=True, show_progress_bar=False)
     etr, eca, ete = E(Xtr), E(Xca), E(Xte)
     labels = sorted(set(ytr))
@@ -74,14 +82,15 @@ def main():
     # smallest threshold with >=95 % accuracy on calibration
     mc = next((float(t) for t in np.arange(0.4, 0.99, 0.01) if (conf >= t).any() and hit[conf >= t].mean() >= 0.95), 0.95)
     pte = softmax(clf.decision_function(ete) / T)
-    rep = {"format": "hyd-e2-report/1", "model": "e2-semantic-v1", "encoder": ENCODER,
+    rep = {"format": "hyd-e2-report/2", "encoder_revision": a.encoder_revision,
+           "partition_sha256": partition_hashes, "independence_verified": False, "model": "e2-semantic-v1", "encoder": ENCODER,
            "trained_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
            "head": {"type": "logistic", "C": C}, "temperature": round(float(T), 3), "min_confidence_cal": round(mc, 3),
            "dataset_sha256": hashlib.sha256((a.dataset / "test.jsonl").read_bytes()).hexdigest(),
            "n_train": len(ytr), "n_calibration": len(yca), **metrics(yte, pte, labels, mc),
            "status": "SHADOW_ONLY", "authority": False,
-           "note": "Real corpus only; frozen hash splits; observes, never decides."}
-    a.out.mkdir(parents=True, exist_ok=True)
+           "note": "Source declarations validated; grouped partitions; identity not independently verified; observes, never decides."}
+    a.out.mkdir(parents=True, exist_ok=False)
     (a.out / "report.json").write_text(json.dumps(rep, ensure_ascii=False, indent=2))
     np.savez(a.out / "head.npz", coef=clf.coef_, intercept=clf.intercept_, labels=np.array(labels), T=T)
     print(json.dumps({k: rep[k] for k in ("accuracy", "macro_f1", "ece", "temperature", "min_confidence_cal")}))
