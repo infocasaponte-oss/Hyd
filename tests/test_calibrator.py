@@ -62,6 +62,7 @@ class CalibratorTests(unittest.TestCase):
         self.assertEqual(result["accepted"], 1)
         self.assertEqual(result["accuracy"], 0)
         self.assertIsNone(selective([0.8], [0.05], [True], 1, 1)["accuracy"])
+        self.assertEqual(selective([1.0], [1.0], [True], 1, 1, abstain_all=True)["accepted"], 0)
 
     def test_temperature_reduces_nll_for_overconfident_errors(self):
         logits = np.array([[5.0, 0.0], [5.0, 0.0], [5.0, 0.0], [5.0, 0.0]])

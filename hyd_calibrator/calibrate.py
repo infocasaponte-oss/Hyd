@@ -108,6 +108,7 @@ def calibrate(model_path, dataset, out, target=0.95, min_coverage=0.1, train_dat
         "target_wilson_lower_95": target,
         "minimum_coverage": min_coverage,
         "target_met": chosen is not None,
+        "abstain_all": chosen is None,
         "selected": chosen,
         "nll_before": before,
         "nll_after": after,

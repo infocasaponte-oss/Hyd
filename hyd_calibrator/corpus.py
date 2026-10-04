@@ -162,7 +162,9 @@ def report(dataset: Path, model_dir: Path) -> dict:
         "dataset_sha256": hashlib.sha256(dataset.read_bytes()).hexdigest(),
         "calibration_sha256": hashlib.sha256((model_dir / "calibration.json").read_bytes()).hexdigest(),
         "runtime_implementation_verified": False,
-        "selective": selective(confs, margins, hits, cal["min_confidence"], cal["min_margin"]),
+        "selective": selective(
+            confs, margins, hits, cal["min_confidence"], cal["min_margin"], abstain_all=cal.get("abstain_all", False)
+        ),
         "model_revision": model.revision,
         "temperature": model.temperature,
         "n": n,

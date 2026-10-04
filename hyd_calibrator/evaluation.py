@@ -68,8 +68,10 @@ def wilson(correct, total):
     )
 
 
-def selective(confidences, margins, hits, confidence, margin):
-    chosen = [hit for c, m, hit in zip(confidences, margins, hits) if c >= confidence and m >= margin]
+def selective(confidences, margins, hits, confidence, margin, abstain_all=False):
+    chosen = [
+        hit for c, m, hit in zip(confidences, margins, hits) if not abstain_all and c >= confidence and m >= margin
+    ]
     return {
         "n": len(hits),
         "accepted": len(chosen),

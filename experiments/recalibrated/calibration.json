@@ -2,7 +2,7 @@
   "format": "hyd-standalone-calibration/1",
   "model_sha256": "457f266fca8a49bf3bbad7955c56b7bfa5e66c526862b091d78991fea2a725a4",
   "source_model_sha256": "ebf5e67e46612d211c7369119ef2cb3f7c52381612632e8822b94670b82aa565",
-  "calibrator_implementation_sha256": "c11522a251dede7988fd2a4e5919b710f730601d9890d0e326844e455c25b8c5",
+  "calibrator_implementation_sha256": "9a5a80252439d5d26e3d400c8236ec7a818d5f1ae67f58eb64032f759c210574",
   "dataset_sha256": "04325f5fe50c87781fbdb7dacacc4debd48cb1569bae133ad6cbfb7c9ff1bac3",
   "train_overlap_checked": true,
   "criteria": {
@@ -23,6 +23,7 @@
   "target_wilson_lower_95": 0.95,
   "minimum_coverage": 0.1,
   "target_met": false,
+  "abstain_all": true,
   "selected": null,
   "nll_before": 0.9299975703462018,
   "nll_after": 0.9231458586132476,
