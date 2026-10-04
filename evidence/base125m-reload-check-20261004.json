@@ -1,0 +1,28 @@
+{
+  "format": "hydra-base-encoder-reload-check/1",
+  "source_commit": "41c7722",
+  "source_sha256": "456e6980bdda6e94e72a8282d06ceb2dbfdf80515eb85de86b06834dd5c7e072",
+  "head_sha256": "b5330571c193724cf09b97b6442da6da1c178a706e33574c63ffb1135f503471",
+  "encoder": {
+    "kind": "hydra-base-mean",
+    "model_dir": "D:/HYDRA/models/hydra-base-v2-125m/final",
+    "tokenizer_dir": "D:/HYDRA/models/hydra-base-tokenizer-v2",
+    "dims": 576,
+    "weights_sha256": "5331e725ab0ea0f6357f966f03855be15d0490a8b10032fe68b0a7c7d86b1308",
+    "tokenizer_sha256": "edd79f7825e7574771c7d15e71cfa0178794ee67462d398d7cbd4b133c91d8f9",
+    "config_sha256": "c957a65535361e90a8601c118def83065a63dcf6e9b516682b45288feb88c7a8",
+    "device": "cpu",
+    "pooling": "mean",
+    "base": "HYDRA Base stage 1 (own weights)",
+    "build_manifest_sha256": "e0188adf49ac2534fc1822daf4b188733c37702c7faf7498645c6adad6a72dbb",
+    "license": "HYDRA Base proprietary"
+  },
+  "device": "cpu",
+  "n_probes": 3,
+  "embedding_max_abs_delta": 0.0,
+  "probability_max_abs_delta": 0.0,
+  "reload_parity": true,
+  "accuracy_measured": false,
+  "status": "SHADOW_ONLY",
+  "note": "Real checkpoint loaded twice; fixed technical probes, not corpus accuracy or MiniLM E2 verification."
+}
