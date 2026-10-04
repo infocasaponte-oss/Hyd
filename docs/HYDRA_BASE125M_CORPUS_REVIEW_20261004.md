@@ -37,10 +37,11 @@ dependencia sentence-transformers non está instalada no ambiente comprobado.
 Non se inventou unha revisión para facer pasar a comprobación.
 
 O informe da rama rexistra 65.6% dev e 50.2% humano; nesta revisión non se
-reexecutaron esas avaliacións. O manifest do test humano indica 300 casos pero
-287 únicos, review_status=pending, independent_test=false e approved=false.
-Cómpre publicar resultados deduplicados e confirmar referencia/procedencia antes
-de presentalos como certificación independente. O 89/112 referido na mensaxe
+reexecutaron esas avaliacións. Corrección desta revisión: o manifest de external-evaluation-v2 indica 300 casos
+e 287 únicos, pero ese ficheiro é o test xeral de respostas de HYDRA, non o test
+de clasificación que se poida asociar sen máis co 50.2% de Hyd. Non se verificou
+aquí o ficheiro exacto empregado nesa cifra de Hyd. Cómpre identificar e ligar
+cada avaliación ao seu propio dataset antes de afirmar independencia ou deduplicación. O 89/112 referido na mensaxe
 equivale a 79.46%, moi por baixo dunha autorización fiable ao 90/95%.
 A calibración gardada tamén mostra que 96/101 acertos (95.05%) teñen límite
 Wilson inferior 88.93%; unha accuracy puntual non garante o obxectivo.

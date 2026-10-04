@@ -20,6 +20,16 @@ def main():
     e3.add_argument("--predictions", required=True, type=Path)
     e3.add_argument("--selections", required=True, type=Path)
     e3.add_argument("--out", required=True, type=Path)
+    dedup = commands.add_parser("deduplicate-evaluation")
+    dedup.add_argument("--source", required=True, type=Path)
+    dedup.add_argument("--out", required=True, type=Path)
+    dedup.add_argument("--text-field", required=True)
+    dedup.add_argument("--reference-field", required=True)
+    dedup.add_argument("--evaluation-kind", required=True, choices=("general-response", "hyd-routing"))
+    dedup.add_argument("--review-only", action="store_true", help="Preserve originals and report conflicts without selecting references")
+    acquisition = commands.add_parser("acquisition-report")
+    acquisition.add_argument("--root", required=True, type=Path)
+    acquisition.add_argument("--out", required=True, type=Path)
     r = commands.add_parser("report")
     r.add_argument("--dataset", required=True, type=Path)
     r.add_argument("--model-dir", required=True, type=Path)
@@ -41,7 +51,15 @@ def main():
     try:
         if args.command in ("build", "calibrate", "train") and args.out.exists():
             raise ValueError("output directory already exists; choose a new run directory")
-        if args.command == "e3-report":
+        if args.command == "deduplicate-evaluation":
+            from .data_review import deduplicate_evaluation
+            result = deduplicate_evaluation(args.source, args.out, text_field=args.text_field,
+                                           reference_field=args.reference_field, evaluation_kind=args.evaluation_kind,
+                                           review_only=args.review_only)
+        elif args.command == "acquisition-report":
+            from .data_review import acquisition_report
+            result = acquisition_report(args.root, args.out)
+        elif args.command == "e3-report":
             import hashlib
             from .e3_evaluation import evaluate_e3
             if args.out.exists():
