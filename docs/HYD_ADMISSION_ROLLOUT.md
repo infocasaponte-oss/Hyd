@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Primeiro paso do plan de melloras: admisión e snapshots
 
 Esta entrega depende da PR do calibrador independente. O entry point

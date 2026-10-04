@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Bounded raw-asset downloader for reviewed plans exported by the Corpus tab."""
 import hashlib
 import json

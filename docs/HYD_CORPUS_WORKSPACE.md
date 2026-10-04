@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Corpus tab and bounded downloader
 
 The offline evaluator app now has an authenticated /corpus route, with links from

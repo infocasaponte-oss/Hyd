@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Separate E2 selection and calibration
 
 Build a new dataset with `python -m hyd_calibrator build --corpus SOURCE.jsonl

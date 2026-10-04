@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Calibrador independiente de Hyd
 
 Herramienta inicial para preparar corpus, evaluar y calibrar el ranker lineal de Hyd. Funciona sin instalar HYDRA. Requiere Python 3.12 o posterior y NumPy.

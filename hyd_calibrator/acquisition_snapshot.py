@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Freeze reviewed acquisition inventory into an unapproved, deduplicated snapshot."""
 import gzip
 import hashlib

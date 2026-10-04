@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E3 observation metrics against explicitly selected human annotation events."""
 from .annotations import validate_annotations
 

@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Reloadable E2 shadow artifact
 
 New E2 runs emit runtime.json alongside head.npz and report.json. The manifest

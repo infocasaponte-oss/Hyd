@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Human annotation events bound to verbatim text, separate from routing labels."""
 
 import hashlib

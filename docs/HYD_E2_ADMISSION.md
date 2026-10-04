@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # E2: strict input admission and pinned encoder
 
 The E2 training CLI now requires `--encoder-revision` with a 40-character

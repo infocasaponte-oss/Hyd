@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Identify unsupported spans without allocating whole-document BPE token arrays."""
 import argparse
 import gzip

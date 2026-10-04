@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Anotacións humanas auxiliares · hyd-human-annotation/1
 
 As dez rutas e a súa definición actual non cambian nesta entrega. Cada fila

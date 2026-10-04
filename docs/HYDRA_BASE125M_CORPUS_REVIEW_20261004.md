@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Revisión do remate de HYDRA Base 125M e das novas fontes
 
 ## Evidencia verificada localmente

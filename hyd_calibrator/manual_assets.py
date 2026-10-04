@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Import an explicitly selected local folder of books, preserving bytes and pending reviews."""
 import hashlib
 import json

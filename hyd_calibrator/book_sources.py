@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Bounded metadata discovery and per-edition review; no book contents acquired."""
 import hashlib
 import json

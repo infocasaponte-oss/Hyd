@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Annotation integration delivery
 
 Implemented locally on the evaluator app baseline `b479a78`; app commit `fee2543`.

@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Require a scoped human declaration and hashed evidence for a book asset."""
 from .corpus_readiness import valid_evidence
 

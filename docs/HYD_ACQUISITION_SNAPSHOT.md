@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Acquisition candidate snapshot
 
 Command (one line): `python -m hyd_calibrator prepare-acquisition --root SOURCES

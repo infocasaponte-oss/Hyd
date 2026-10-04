@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Revisión UE do corpus — 4 de outubro de 2026
 
 Esta entrega prepara evidencia e controis técnicos; non certifica a licitude de

@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E2 · Semantic specialist (SHADOW_ONLY, never decides).
 
 Frozen multilingual sentence encoder (~118M params, runs on CPU or a

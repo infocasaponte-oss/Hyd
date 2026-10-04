@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Corpus local, papeleira e saída portable
 
 O código do calibrador e os datos de adquisición poden funcionar fóra de Lovable.

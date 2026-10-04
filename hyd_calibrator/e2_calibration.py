@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Separate temperature fitting and diagnostic threshold selection by group."""
 import hashlib
 

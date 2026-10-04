@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Melloras da aplicación de avaliadores
 
 Parche revisable do código recibido en hydra-calibrator (1).zip, SHA-256 `ddbeeda717f0f050dcda3305b2a6471553cbcefe2769185aa0f364e7b86bd9cd`. A base local exclúe .env; o parche non inclúe credenciais nin os datos do propietario.

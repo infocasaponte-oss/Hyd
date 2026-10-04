@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Reloadable shadow E2 head with integrity and encoder provenance checks."""
 import hashlib
 import json

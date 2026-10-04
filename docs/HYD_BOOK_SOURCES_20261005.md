@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Fontes de libros e carga múltiple — 5 de outubro de 2026
 
 As catro fontes propostas están no catálogo exportable

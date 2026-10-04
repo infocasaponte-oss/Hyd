@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # E3 observation against selected human revisions
 
 Command (one line): `python -m hyd_calibrator e3-report --corpus QUESTIONS.jsonl

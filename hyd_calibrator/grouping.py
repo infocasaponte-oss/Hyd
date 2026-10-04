@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Declared person/family connected components; never infer identity from accounts."""
 import hashlib
 import json

@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Explicit source declarations; validation never manufactures ownership."""
 
 

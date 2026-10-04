@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Regression tests for consent bypasses and snapshot overwrites."""
 
 import json

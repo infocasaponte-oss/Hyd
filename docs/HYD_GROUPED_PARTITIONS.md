@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # A03: particións por persoa e familia
 
 Uso: `python -m hyd_calibrator build --corpus SOURCE.jsonl --out NEW_SNAPSHOT --grouped`.

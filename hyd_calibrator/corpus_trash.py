@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Recoverable cleanup of byte-identical finalized downloads, independent of cloud services."""
 import hashlib
 import json

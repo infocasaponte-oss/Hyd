@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Corpus acquisition and evaluation review tools
 
 Implemented two non-destructive commands in the standalone calibrator.

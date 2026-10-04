@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Non-destructive evaluation deduplication and acquisition source accounting."""
 import gzip
 import hashlib

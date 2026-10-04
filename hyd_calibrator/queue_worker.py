@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Consume the app's authenticated filesystem queue without running shell commands."""
 import json
 import hashlib

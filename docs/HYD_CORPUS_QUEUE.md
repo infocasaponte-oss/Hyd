@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Persistent local Corpus queue
 
 The offline app now includes authenticated list/create/cancel server functions

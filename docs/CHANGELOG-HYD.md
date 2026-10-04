@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # CHANGELOG Hyd
 
 ## 2026-10-04 · HYD-018 · Calibrador independente e validación
