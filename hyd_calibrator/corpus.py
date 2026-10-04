@@ -92,7 +92,7 @@ def validate(path: Path) -> tuple[list[dict], dict]:
     return rows, report
 
 
-def build(corpus: Path, out: Path) -> dict:
+def build(corpus: Path, out: Path, *, grouped: bool = False) -> dict:
     if out.exists():
         raise ValueError("output directory already exists; choose a new snapshot")
     rows, report = validate(corpus)
@@ -100,10 +100,14 @@ def build(corpus: Path, out: Path) -> dict:
         raise SystemExit(json.dumps(report, ensure_ascii=False, indent=2))
     if out.resolve() == corpus.parent.resolve():
         raise ValueError("choose a separate output directory")
+    assignments = None
+    if grouped:
+        from .grouping import grouped_partitions
+        assignments = grouped_partitions(rows)
     out.mkdir(parents=True, exist_ok=False)
     parts = {"train": [], "calibration": [], "test": []}
-    for r in rows:
-        s = split_of(r["text"])
+    for index, r in enumerate(rows):
+        s = assignments[index][0] if assignments else split_of(r["text"])
         h = hashlib.sha256(r["text"].encode()).hexdigest()
         parts[s].append(
             {
@@ -122,12 +126,18 @@ def build(corpus: Path, out: Path) -> dict:
         )
         if "annotations" in r:
             parts[s][-1]["annotations"] = validate_annotations(r["annotations"], r["text"])
+        if assignments:
+            parts[s][-1]["group_id"] = assignments[index][1]
     for s, v in parts.items():
         write_text_atomic(out / f"{s}.jsonl", "".join(json.dumps(x, ensure_ascii=False) + "\n" for x in v))
     report["splits"] = {
         s: {"n": len(v), "per_class": dict(Counter(x["output"]["task_type"] for x in v))} for s, v in parts.items()
     }
     report["partition_sha256"] = {s: hashlib.sha256((out / f"{s}.jsonl").read_bytes()).hexdigest() for s in parts}
+    report["partition_policy"] = "declared-person-family-components/1" if grouped else "normalized-text-hash/1"
+    report["independence_verified"] = False
+    if assignments:
+        report["n_groups"] = len({group for _, group in assignments})
     write_text_atomic(out / "manifest.json", json.dumps(report, ensure_ascii=False, indent=2))
     return report
 

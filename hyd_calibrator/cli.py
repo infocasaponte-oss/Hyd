@@ -13,6 +13,7 @@ def main():
     b = commands.add_parser("build")
     b.add_argument("--corpus", required=True, type=Path)
     b.add_argument("--out", required=True, type=Path)
+    b.add_argument("--grouped", action="store_true", help="Require declared person_id and family_id; isolate connected groups")
     r = commands.add_parser("report")
     r.add_argument("--dataset", required=True, type=Path)
     r.add_argument("--model-dir", required=True, type=Path)
@@ -35,7 +36,7 @@ def main():
         if args.command in ("build", "calibrate", "train") and args.out.exists():
             raise ValueError("output directory already exists; choose a new run directory")
         if args.command == "build":
-            result = build(args.corpus, args.out)
+            result = build(args.corpus, args.out, grouped=args.grouped)
         elif args.command == "train":
             result = train(args.dataset, args.out, args.epochs, args.state_dims, args.option_dims)
         elif args.command == "report":
