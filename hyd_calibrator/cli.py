@@ -10,6 +10,16 @@ from .train import train
 def main():
     parser = argparse.ArgumentParser(description="Standalone Hyd calibration and diagnostics")
     commands = parser.add_subparsers(dest="command", required=True)
+    trash_plan = commands.add_parser("plan-corpus-trash")
+    trash_plan.add_argument("--root", required=True, type=Path)
+    trash_plan.add_argument("--out", required=True, type=Path)
+    trash_stage = commands.add_parser("stage-corpus-trash")
+    trash_stage.add_argument("--root", required=True, type=Path)
+    trash_stage.add_argument("--plan", required=True, type=Path)
+    for command in ("restore-corpus-trash", "empty-corpus-trash"):
+        action = commands.add_parser(command)
+        action.add_argument("--root", required=True, type=Path)
+        action.add_argument("--batch", required=True)
     b = commands.add_parser("build")
     b.add_argument("--corpus", required=True, type=Path)
     b.add_argument("--out", required=True, type=Path)
@@ -61,7 +71,16 @@ def main():
     try:
         if args.command in ("build", "calibrate", "train") and args.out.exists():
             raise ValueError("output directory already exists; choose a new run directory")
-        if args.command == "deduplicate-evaluation":
+        if args.command == "plan-corpus-trash":
+            from .corpus_trash import plan_duplicates
+            result = plan_duplicates(args.root, args.out)
+        elif args.command == "stage-corpus-trash":
+            from .corpus_trash import stage
+            result = stage(args.root, args.plan)
+        elif args.command in ("restore-corpus-trash", "empty-corpus-trash"):
+            from .corpus_trash import finish
+            result = finish(args.root, args.batch, purge=args.command == "empty-corpus-trash")
+        elif args.command == "deduplicate-evaluation":
             from .data_review import deduplicate_evaluation
             result = deduplicate_evaluation(args.source, args.out, text_field=args.text_field,
                                            reference_field=args.reference_field, evaluation_kind=args.evaluation_kind,
