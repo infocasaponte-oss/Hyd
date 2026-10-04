@@ -1,0 +1,473 @@
+{
+  "format": "hyd-corpus-plan-evidence/1",
+  "date": "2026-10-05",
+  "captured_at_utc": "2026-10-04T23:39:05.159912+00:00",
+  "input_sha256": {
+    ".codex-artifacts\\review-hyd-2026-10-04\\evidence\\corpus-census-20261005.json": "513f850cd84a981882a6f7955f30f9cdd683e5e759eb145069b49f13d78bd9a8",
+    "data\\hydra-base-corpus-v2\\manifest.json": "5b1cb80985a4265c5f0c3088fbf3852af6140059e7c1e34dd060174417732a3b",
+    "data\\hydra-base-tokens-v2\\tokens-manifest.json": "a7caa049e92ecfdcb5cd59d55db1e6ff25cb60d58d4a681353834ab1044b5bc3",
+    ".codex-artifacts\\hyd-pilot-20261005\\test-report.json": "221b6ab10d308580b24c68e6703acb83127f9909f21a52af34c47d3b50bb937b",
+    ".codex-artifacts\\hyd-pilot-20261005\\calibrated\\calibration.json": "ac1cc8ad131a76fdc73ca269c135d998111731edece7899655fc8f60d7b831e6",
+    "data\\sources\\categories\\_manifests\\bsc_legal_paragraphs_es.json": "450396101857404cd441cf4403ec6280c7e66d1bbe1fd700f4ff9c1a2d7a3198",
+    "data\\sources\\categories\\_manifests\\common_corpus_mixed.json": "e2603d93f0492b5a527fd12c22ee992009fc793509a865cde5383e7ef13e2d1c",
+    "data\\sources\\categories\\_manifests\\dgt_es.json": "92695c492167f086931f658933fb54c43a0b9f15e747c2cd08727052818037f8",
+    "data\\sources\\categories\\_manifests\\eurlex_es.json": "c35d2088fc5b8deb6588b2d82c0bcc599fba4f619c690dcb05a6c3673e89800f",
+    "data\\sources\\categories\\_manifests\\youtube_commons_es.json": "e89f192118c72b0d2ce179261886d0e6ecea601404ae05a063a68bf6dd6de2bc",
+    ".codex-artifacts\\corpus-preflight-app-20261004\\calibration.jsonl": "04325f5fe50c87781fbdb7dacacc4debd48cb1569bae133ad6cbfb7c9ff1bac3",
+    ".codex-artifacts\\corpus-preflight-app-20261004\\test.jsonl": "3b629a34232164fcb51bb2c2ba0a851d6c55e71b48df261b4e5765a6e18dfe84",
+    ".codex-artifacts\\corpus-preflight-app-20261004\\train.jsonl": "fb3f0b51ee5976e713a16e49ae2c5c5c497da3ebb286e78f039fc2a0d0c70473",
+    "config/base_categories.json": "6f4b1bc9d54ee00c2094232abd5743d1d0f7adf83b7da7f2a707d8154effbb69"
+  },
+  "snapshot": {
+    "rows": 171200,
+    "measured_content_tokens": 857674669,
+    "token_count_complete": false,
+    "training_allowed": false,
+    "buckets": [
+      {
+        "bucket": "candidates",
+        "rows": 115971,
+        "characters": 3320173563,
+        "content_tokens": 721385900,
+        "tokens_with_eos_only": 721501870,
+        "pretraining_tokens_with_bos_eos": 721617840,
+        "unmeasured_rows": 1,
+        "rows_percent": 67.74007009345794,
+        "measured_tokens_percent": 84.10950283061234
+      },
+      {
+        "bucket": "duplicates",
+        "rows": 4073,
+        "characters": 107670080,
+        "content_tokens": 25711818,
+        "tokens_with_eos_only": 25715891,
+        "pretraining_tokens_with_bos_eos": 25719964,
+        "unmeasured_rows": 0,
+        "rows_percent": 2.379088785046729,
+        "measured_tokens_percent": 2.9978520911639515
+      },
+      {
+        "bucket": "review",
+        "rows": 51156,
+        "characters": 382610259,
+        "content_tokens": 110576951,
+        "tokens_with_eos_only": 110628107,
+        "pretraining_tokens_with_bos_eos": 110679263,
+        "unmeasured_rows": 0,
+        "rows_percent": 29.880841121495326,
+        "measured_tokens_percent": 12.89264507822371
+      }
+    ],
+    "sources": [
+      {
+        "source": "joelniklaus/eurlex_resources",
+        "rows": 120046,
+        "characters": 3428094879,
+        "content_tokens": 747178200,
+        "measured_tokens_percent": 87.11673866632523
+      },
+      {
+        "source": "PleIAs/common_corpus",
+        "rows": 6106,
+        "characters": 154770074,
+        "content_tokens": 60416094,
+        "measured_tokens_percent": 7.0441737623476435
+      },
+      {
+        "source": "BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus",
+        "rows": 13008,
+        "characters": 5346942,
+        "content_tokens": 1275768,
+        "measured_tokens_percent": 0.14874731015286638
+      },
+      {
+        "source": "Helsinki-NLP/opus_dgt",
+        "rows": 5957,
+        "characters": 29431510,
+        "content_tokens": 6346450,
+        "measured_tokens_percent": 0.7399600605436558
+      },
+      {
+        "source": "PleIAs/YouTube-Commons",
+        "rows": 26083,
+        "characters": 192810497,
+        "content_tokens": 42458157,
+        "measured_tokens_percent": 4.950380200630596
+      }
+    ]
+  },
+  "historic_base": {
+    "source_percent_basis": "characters and rows; source token counts unavailable",
+    "sources": [
+      {
+        "name": "BOE legislación consolidada",
+        "kind": "boe",
+        "rows": 8497,
+        "characters": 610092229,
+        "rows_percent": 3.3607163621837337,
+        "characters_percent": 18.207875130393145
+      },
+      {
+        "name": "Stack v2 edu (Python, permissive)",
+        "kind": "stack_python",
+        "rows": 15285,
+        "characters": 62732738,
+        "rows_percent": 6.045492479225418,
+        "characters_percent": 1.872224896166755
+      },
+      {
+        "name": "Stack v2 edu (Markdown, permissive)",
+        "kind": "stack_markdown",
+        "rows": 60239,
+        "characters": 164548297,
+        "rows_percent": 23.82560820778933,
+        "characters_percent": 4.910855608840816
+      },
+      {
+        "name": "PleIAs Spanish-PD-Books",
+        "kind": "pleias_parquet",
+        "rows": 127243,
+        "characters": 1938690543,
+        "rows_percent": 50.326895618847225,
+        "characters_percent": 57.85917873643017
+      },
+      {
+        "name": "PleIAs Spanish-PD-Newspapers",
+        "kind": "pleias_parquet",
+        "rows": 40414,
+        "characters": 569650144,
+        "rows_percent": 15.984464053347466,
+        "characters_percent": 17.00090280933979
+      },
+      {
+        "name": "Acquisition batches (technical-clear)",
+        "kind": "acquisition",
+        "rows": 1155,
+        "characters": 4991305,
+        "rows_percent": 0.4568232786068274,
+        "characters_percent": 0.14896281882932647
+      }
+    ],
+    "train_tokens": 854577886,
+    "validation_tokens": 9430961
+  },
+  "current_download_manifest_inventory": {
+    "transactional": false,
+    "tokens_measured": false,
+    "categories": [
+      {
+        "category": "lingua_moderna",
+        "characters": 2040108864,
+        "docs": 92046,
+        "characters_percent": 51.731272562455544
+      },
+      {
+        "category": "lexislacion",
+        "characters": 1790957764,
+        "docs": 95514,
+        "characters_percent": 45.41351977446726
+      },
+      {
+        "category": "ciencia",
+        "characters": 112599868,
+        "docs": 1805,
+        "characters_percent": 2.8552076630771976
+      }
+    ],
+    "characters": 3943666496,
+    "docs": 189365
+  },
+  "hyd_supervised": {
+    "rows": 2077,
+    "labels": {
+      "research": 200,
+      "chat": 208,
+      "reasoning": 208,
+      "coding": 213,
+      "abstain": 200,
+      "privacy": 200,
+      "security": 201,
+      "tool_use": 218,
+      "high_risk_review": 200,
+      "vision": 229
+    },
+    "splits": [
+      {
+        "name": "calibration",
+        "rows": 315,
+        "labels": {
+          "research": 32,
+          "chat": 37,
+          "reasoning": 27,
+          "coding": 28,
+          "abstain": 29,
+          "privacy": 36,
+          "security": 28,
+          "tool_use": 36,
+          "high_risk_review": 27,
+          "vision": 35
+        },
+        "consent_true": 315,
+        "rights_verified": 315,
+        "missing_person_family_metadata": 315
+      },
+      {
+        "name": "test",
+        "rows": 313,
+        "labels": {
+          "chat": 28,
+          "reasoning": 34,
+          "coding": 31,
+          "abstain": 31,
+          "security": 38,
+          "vision": 44,
+          "research": 33,
+          "tool_use": 23,
+          "privacy": 30,
+          "high_risk_review": 21
+        },
+        "consent_true": 313,
+        "rights_verified": 313,
+        "missing_person_family_metadata": 313
+      },
+      {
+        "name": "train",
+        "rows": 1449,
+        "labels": {
+          "chat": 143,
+          "reasoning": 147,
+          "coding": 154,
+          "abstain": 140,
+          "privacy": 134,
+          "security": 135,
+          "vision": 150,
+          "research": 135,
+          "tool_use": 159,
+          "high_risk_review": 152
+        },
+        "consent_true": 1449,
+        "rights_verified": 1449,
+        "missing_person_family_metadata": 1449
+      }
+    ],
+    "independent_test": false
+  },
+  "pilot": {
+    "report": {
+      "format": "hyd-app-per-class/2",
+      "dataset_sha256": "3b629a34232164fcb51bb2c2ba0a851d6c55e71b48df261b4e5765a6e18dfe84",
+      "calibration_sha256": "ac1cc8ad131a76fdc73ca269c135d998111731edece7899655fc8f60d7b831e6",
+      "runtime_implementation_verified": false,
+      "selective": {
+        "n": 313,
+        "accepted": 0,
+        "correct": 0,
+        "coverage": 0.0,
+        "accuracy": null,
+        "accuracy_wilson_lower_95": 0.0
+      },
+      "model_revision": "ee8b3536e920758f7630bc7789b9cffbe59832c3a3ac1878eea8d4b99fd319b7",
+      "temperature": 0.5644697645706725,
+      "n": 313,
+      "accuracy": 0.7124600638977636,
+      "macro_f1": 0.6923115098456664,
+      "ece": 0.05960366739233005,
+      "per_class": {
+        "chat": {
+          "precision": 0.72,
+          "recall": 0.6428571428571429,
+          "f1": 0.6792452830188679,
+          "support": 28
+        },
+        "coding": {
+          "precision": 0.7333333333333333,
+          "recall": 0.7096774193548387,
+          "f1": 0.7213114754098361,
+          "support": 31
+        },
+        "reasoning": {
+          "precision": 0.7878787878787878,
+          "recall": 0.7647058823529411,
+          "f1": 0.7761194029850745,
+          "support": 34
+        },
+        "research": {
+          "precision": 0.6410256410256411,
+          "recall": 0.7575757575757576,
+          "f1": 0.6944444444444444,
+          "support": 33
+        },
+        "vision": {
+          "precision": 0.8723404255319149,
+          "recall": 0.9318181818181818,
+          "f1": 0.9010989010989012,
+          "support": 44
+        },
+        "tool_use": {
+          "precision": 0.5,
+          "recall": 0.5217391304347826,
+          "f1": 0.5106382978723404,
+          "support": 23
+        },
+        "abstain": {
+          "precision": 0.6,
+          "recall": 0.4838709677419355,
+          "f1": 0.5357142857142857,
+          "support": 31
+        },
+        "security": {
+          "precision": 0.8387096774193549,
+          "recall": 0.6842105263157895,
+          "f1": 0.7536231884057972,
+          "support": 38
+        },
+        "privacy": {
+          "precision": 0.6756756756756757,
+          "recall": 0.8333333333333334,
+          "f1": 0.746268656716418,
+          "support": 30
+        },
+        "high_risk_review": {
+          "precision": 0.5909090909090909,
+          "recall": 0.6190476190476191,
+          "f1": 0.6046511627906977,
+          "support": 21
+        }
+      },
+      "min_confidence": {
+        "0.0": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        },
+        "0.4": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        },
+        "0.55": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        },
+        "0.7": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        },
+        "0.85": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        },
+        "1.0": {
+          "n": 313,
+          "accepted": 0,
+          "correct": 0,
+          "coverage": 0.0,
+          "accuracy": null,
+          "accuracy_wilson_lower_95": 0.0
+        }
+      },
+      "confusion": {
+        "chat": {
+          "abstain": 2,
+          "chat": 18,
+          "coding": 2,
+          "privacy": 2,
+          "research": 3,
+          "high_risk_review": 1
+        },
+        "coding": {
+          "coding": 22,
+          "tool_use": 4,
+          "reasoning": 2,
+          "high_risk_review": 1,
+          "abstain": 1,
+          "research": 1
+        },
+        "reasoning": {
+          "abstain": 3,
+          "reasoning": 26,
+          "vision": 2,
+          "chat": 2,
+          "privacy": 1
+        },
+        "research": {
+          "research": 25,
+          "tool_use": 5,
+          "reasoning": 1,
+          "coding": 1,
+          "abstain": 1
+        },
+        "vision": {
+          "vision": 41,
+          "abstain": 2,
+          "reasoning": 1
+        },
+        "tool_use": {
+          "reasoning": 2,
+          "coding": 1,
+          "tool_use": 12,
+          "privacy": 1,
+          "vision": 1,
+          "research": 4,
+          "chat": 2
+        },
+        "abstain": {
+          "abstain": 15,
+          "privacy": 4,
+          "high_risk_review": 3,
+          "reasoning": 1,
+          "vision": 3,
+          "chat": 3,
+          "coding": 1,
+          "security": 1
+        },
+        "security": {
+          "security": 26,
+          "coding": 2,
+          "research": 3,
+          "high_risk_review": 3,
+          "privacy": 2,
+          "tool_use": 2
+        },
+        "privacy": {
+          "privacy": 25,
+          "abstain": 1,
+          "security": 2,
+          "high_risk_review": 1,
+          "tool_use": 1
+        },
+        "high_risk_review": {
+          "research": 3,
+          "high_risk_review": 13,
+          "privacy": 2,
+          "security": 2,
+          "coding": 1
+        }
+      },
+      "status": "SHADOW_ONLY",
+      "note": "Test partition frozen by hash; same evaluator pool as train, not independent promotion evidence."
+    },
+    "target_met": false,
+    "training": "supervised hash classifier, 512/128 dims, 80 epochs, seed 42",
+    "authority": false
+  },
+  "category_target_tokens": 7000000000
+}
