@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hyd-calibrator"
+version = "0.1.0"
+description = "Standalone corpus diagnostics and temperature calibration for Hyd"
+requires-python = ">=3.12"
+dependencies = ["numpy>=1.26"]
+
+[project.scripts]
+hyd-calibrator = "hyd_calibrator.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["hyd_calibrator*"]

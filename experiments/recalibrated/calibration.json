@@ -1,0 +1,365 @@
+{
+  "format": "hyd-standalone-calibration/1",
+  "model_sha256": "457f266fca8a49bf3bbad7955c56b7bfa5e66c526862b091d78991fea2a725a4",
+  "source_model_sha256": "ebf5e67e46612d211c7369119ef2cb3f7c52381612632e8822b94670b82aa565",
+  "calibrator_implementation_sha256": "c11522a251dede7988fd2a4e5919b710f730601d9890d0e326844e455c25b8c5",
+  "dataset_sha256": "04325f5fe50c87781fbdb7dacacc4debd48cb1569bae133ad6cbfb7c9ff1bac3",
+  "train_overlap_checked": true,
+  "criteria": {
+    "chat": "Write a conversational or creative response; no code or external search needed.",
+    "coding": "Write, debug or explain software code; do not execute an environment action.",
+    "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+    "research": "Find or compare external evidence and cite sources.",
+    "vision": "Interpret an attached image, screenshot or photographed document.",
+    "tool_use": "Perform an actual operation using environment tools.",
+    "abstain": "Required question, input or context is missing; ask for clarification.",
+    "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+    "privacy": "Assess or handle personal information and sharing restrictions.",
+    "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+  },
+  "temperature": 0.564469764563356,
+  "min_confidence": 1.0,
+  "min_margin": 1.0,
+  "target_wilson_lower_95": 0.95,
+  "minimum_coverage": 0.1,
+  "target_met": false,
+  "selected": null,
+  "nll_before": 0.9299975703462018,
+  "nll_after": 0.9231458586132476,
+  "curve": [
+    {
+      "min_confidence": 0.0,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 315,
+      "correct": 223,
+      "coverage": 1.0,
+      "accuracy": 0.707936507936508,
+      "accuracy_wilson_lower_95": 0.6554563908932992
+    },
+    {
+      "min_confidence": 0.0,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 271,
+      "correct": 201,
+      "coverage": 0.8603174603174604,
+      "accuracy": 0.7416974169741697,
+      "accuracy_wilson_lower_95": 0.6864610473833688
+    },
+    {
+      "min_confidence": 0.0,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 241,
+      "correct": 188,
+      "coverage": 0.765079365079365,
+      "accuracy": 0.7800829875518672,
+      "accuracy_wilson_lower_95": 0.723621070821233
+    },
+    {
+      "min_confidence": 0.4,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 269,
+      "correct": 199,
+      "coverage": 0.8539682539682539,
+      "accuracy": 0.7397769516728625,
+      "accuracy_wilson_lower_95": 0.6842291688803003
+    },
+    {
+      "min_confidence": 0.4,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 260,
+      "correct": 196,
+      "coverage": 0.8253968253968254,
+      "accuracy": 0.7538461538461538,
+      "accuracy_wilson_lower_95": 0.698039705914885
+    },
+    {
+      "min_confidence": 0.4,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 239,
+      "correct": 186,
+      "coverage": 0.7587301587301587,
+      "accuracy": 0.7782426778242678,
+      "accuracy_wilson_lower_95": 0.7214054149580228
+    },
+    {
+      "min_confidence": 0.55,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 204,
+      "correct": 169,
+      "coverage": 0.6476190476190476,
+      "accuracy": 0.8284313725490197,
+      "accuracy_wilson_lower_95": 0.770747546396013
+    },
+    {
+      "min_confidence": 0.55,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 204,
+      "correct": 169,
+      "coverage": 0.6476190476190476,
+      "accuracy": 0.8284313725490197,
+      "accuracy_wilson_lower_95": 0.770747546396013
+    },
+    {
+      "min_confidence": 0.55,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 203,
+      "correct": 169,
+      "coverage": 0.6444444444444445,
+      "accuracy": 0.8325123152709359,
+      "accuracy_wilson_lower_95": 0.7750743237965744
+    },
+    {
+      "min_confidence": 0.7,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 156,
+      "correct": 138,
+      "coverage": 0.49523809523809526,
+      "accuracy": 0.8846153846153846,
+      "accuracy_wilson_lower_95": 0.8249870895515745
+    },
+    {
+      "min_confidence": 0.7,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 156,
+      "correct": 138,
+      "coverage": 0.49523809523809526,
+      "accuracy": 0.8846153846153846,
+      "accuracy_wilson_lower_95": 0.8249870895515745
+    },
+    {
+      "min_confidence": 0.7,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 156,
+      "correct": 138,
+      "coverage": 0.49523809523809526,
+      "accuracy": 0.8846153846153846,
+      "accuracy_wilson_lower_95": 0.8249870895515745
+    },
+    {
+      "min_confidence": 0.8,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 124,
+      "correct": 116,
+      "coverage": 0.39365079365079364,
+      "accuracy": 0.9354838709677419,
+      "accuracy_wilson_lower_95": 0.8778459480394979
+    },
+    {
+      "min_confidence": 0.8,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 124,
+      "correct": 116,
+      "coverage": 0.39365079365079364,
+      "accuracy": 0.9354838709677419,
+      "accuracy_wilson_lower_95": 0.8778459480394979
+    },
+    {
+      "min_confidence": 0.8,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 124,
+      "correct": 116,
+      "coverage": 0.39365079365079364,
+      "accuracy": 0.9354838709677419,
+      "accuracy_wilson_lower_95": 0.8778459480394979
+    },
+    {
+      "min_confidence": 0.85,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 102,
+      "correct": 99,
+      "coverage": 0.3238095238095238,
+      "accuracy": 0.9705882352941176,
+      "accuracy_wilson_lower_95": 0.9170680330254163
+    },
+    {
+      "min_confidence": 0.85,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 102,
+      "correct": 99,
+      "coverage": 0.3238095238095238,
+      "accuracy": 0.9705882352941176,
+      "accuracy_wilson_lower_95": 0.9170680330254163
+    },
+    {
+      "min_confidence": 0.85,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 102,
+      "correct": 99,
+      "coverage": 0.3238095238095238,
+      "accuracy": 0.9705882352941176,
+      "accuracy_wilson_lower_95": 0.9170680330254163
+    },
+    {
+      "min_confidence": 0.9,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 81,
+      "correct": 80,
+      "coverage": 0.2571428571428571,
+      "accuracy": 0.9876543209876543,
+      "accuracy_wilson_lower_95": 0.9333295783588226
+    },
+    {
+      "min_confidence": 0.9,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 81,
+      "correct": 80,
+      "coverage": 0.2571428571428571,
+      "accuracy": 0.9876543209876543,
+      "accuracy_wilson_lower_95": 0.9333295783588226
+    },
+    {
+      "min_confidence": 0.9,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 81,
+      "correct": 80,
+      "coverage": 0.2571428571428571,
+      "accuracy": 0.9876543209876543,
+      "accuracy_wilson_lower_95": 0.9333295783588226
+    },
+    {
+      "min_confidence": 0.95,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 62,
+      "correct": 62,
+      "coverage": 0.19682539682539682,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9416539087749994
+    },
+    {
+      "min_confidence": 0.95,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 62,
+      "correct": 62,
+      "coverage": 0.19682539682539682,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9416539087749994
+    },
+    {
+      "min_confidence": 0.95,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 62,
+      "correct": 62,
+      "coverage": 0.19682539682539682,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9416539087749994
+    },
+    {
+      "min_confidence": 0.97,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 49,
+      "correct": 49,
+      "coverage": 0.15555555555555556,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9272997032640948
+    },
+    {
+      "min_confidence": 0.97,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 49,
+      "correct": 49,
+      "coverage": 0.15555555555555556,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9272997032640948
+    },
+    {
+      "min_confidence": 0.97,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 49,
+      "correct": 49,
+      "coverage": 0.15555555555555556,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.9272997032640948
+    },
+    {
+      "min_confidence": 0.99,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 24,
+      "correct": 24,
+      "coverage": 0.0761904761904762,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.8620194241710247
+    },
+    {
+      "min_confidence": 0.99,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 24,
+      "correct": 24,
+      "coverage": 0.0761904761904762,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.8620194241710247
+    },
+    {
+      "min_confidence": 0.99,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 24,
+      "correct": 24,
+      "coverage": 0.0761904761904762,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.8620194241710247
+    },
+    {
+      "min_confidence": 1.0,
+      "min_margin": 0.0,
+      "n": 315,
+      "accepted": 0,
+      "correct": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "accuracy_wilson_lower_95": 0.0
+    },
+    {
+      "min_confidence": 1.0,
+      "min_margin": 0.1,
+      "n": 315,
+      "accepted": 0,
+      "correct": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "accuracy_wilson_lower_95": 0.0
+    },
+    {
+      "min_confidence": 1.0,
+      "min_margin": 0.2,
+      "n": 315,
+      "accepted": 0,
+      "correct": 0,
+      "coverage": 0.0,
+      "accuracy": null,
+      "accuracy_wilson_lower_95": 0.0
+    }
+  ],
+  "status": "SHADOW_ONLY",
+  "independent_test": false,
+  "runtime_compatible": false,
+  "limitation": "Calibration-selected intervals are diagnostic, not independent evidence. Standalone format requires explicit Hyd integration."
+}

@@ -1,5 +1,11 @@
 # CHANGELOG Hyd
 
+## 2026-10-04 · HYD-018 · Calibrador independente e validación
+- Paquete `hyd_calibrator` con build/report/calibrate, sen dependencia de HYDRA.
+- Admisión explícita de metadatos, preservación de dereitos, hashes coherentes e métricas de aceptación con marxe e Wilson.
+- Temperatura por NLL e limiares só sobre calibration; abstención cando o obxectivo non se cumpre.
+- Probas e CI Windows/Linux; reprodución e límites en README.md e docs/REVISION-2026-10-04.md.
+
 Formato: data UTC · HYD-XXX · que · por que · evidencia. Estado: SHADOW_ONLY, autoridade desactivada.
 
 ## 2026-10-03 · HYD-015 · Limpeza do corpus da app de avaliadores
