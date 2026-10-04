@@ -37,6 +37,9 @@ def main():
     download = commands.add_parser("download-asset")
     download.add_argument("--plan", required=True, type=Path)
     download.add_argument("--out", required=True, type=Path)
+    worker = commands.add_parser("run-download-queue")
+    worker.add_argument("--root", required=True, type=Path)
+    worker.add_argument("--max-jobs", type=int, default=10)
     r = commands.add_parser("report")
     r.add_argument("--dataset", required=True, type=Path)
     r.add_argument("--model-dir", required=True, type=Path)
@@ -63,6 +66,9 @@ def main():
             result = deduplicate_evaluation(args.source, args.out, text_field=args.text_field,
                                            reference_field=args.reference_field, evaluation_kind=args.evaluation_kind,
                                            review_only=args.review_only)
+        elif args.command == "run-download-queue":
+            from .queue_worker import run_queue
+            result = {"jobs": run_queue(args.root, max_jobs=args.max_jobs)}
         elif args.command == "download-asset":
             from .downloader import download_asset
             result = download_asset(args.plan, args.out)

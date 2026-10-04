@@ -7,7 +7,8 @@ imported report. It starts empty and does not invent progress, token counts or
 completed jobs. Imported reports are declarations; file integrity against the raw
 corpus is checked by the local Python tools, not by this browser view.
 Data stays in page memory until exported, not in a shared database. Closing the
-page loses the imported view. A persistent multi-user job service is still pending.
+page loses the imported view. A persistent local job queue has since been added;
+see HYD_CORPUS_QUEUE.md. The remote Lovable queue/agent bridge remains pending.
 The tab also imports individual hyd-corpus-download-result/1 manifests, displays
 actual recorded bytes and hashes, and exports the collection of imported results.
 It never presents those imports as live job monitoring or training approval.
@@ -80,9 +81,9 @@ the corpus itself is not uploaded to GitHub.
 The incremental app patch is integrations/evaluator-app/corpus-workspace.patch,
 based on local app commit fee2543 (the annotation integration prerequisite).
 It needs adaptation to the current exported Lovable source. No live app/database
-change or remote downloader agent was deployed. The next integration is an
-authenticated persistent job queue and a worker that reports real states and
-supports cancellation/resume; publishing a plan is not a substitute for that.
+change or remote downloader agent was deployed. The subsequent local queue
+delivery adds authenticated submission and worker cancellation. Remote durable
+storage, agent authentication, recovery and resume remain separate pending work.
 
 Validation: 62 focused Python tests passed; 22 app tests passed; app TypeScript,
 changed-file lint and client/server production build passed. Downloader tests use

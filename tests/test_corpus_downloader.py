@@ -51,3 +51,18 @@ def test_byte_budget_fails_without_completed_asset(tmp_path):
     assert not (tmp_path / "download/manifest.json").exists()
     assert not (tmp_path / "download/asset.raw").exists()
     assert json.loads((tmp_path / "download/failed.json").read_text())["state"] == "failed"
+
+
+def test_cancellation_during_transfer_keeps_partial_unapproved(tmp_path):
+    from hyd_calibrator.downloader import DownloadCancelled
+    source = tmp_path / "plan.json"
+    source.write_text(json.dumps(plan()), encoding="utf-8")
+    checks = []
+    def cancelled():
+        checks.append(True)
+        return len(checks) >= 3
+    with pytest.raises(DownloadCancelled):
+        download_asset(source, tmp_path / "download", opener=FakeOpener(b"fixture"), cancel_check=cancelled)
+    assert (tmp_path / "download/asset.part").exists()
+    assert not (tmp_path / "download/asset.raw").exists()
+    assert not (tmp_path / "download/manifest.json").exists()

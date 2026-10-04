@@ -13,6 +13,10 @@ HOSTS = {"boe": {"www.boe.es", "boe.es"}, "congreso": {"www.congreso.es", "congr
 LICENSES = {"CC0-1.0", "CC-BY-4.0", "public-domain", "eu-reuse-2011-833"}
 
 
+class DownloadCancelled(ValueError):
+    pass
+
+
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         raise ValueError("redirect not permitted; review and export the final asset URL")
@@ -45,12 +49,14 @@ def validate_plan(plan):
     return plan
 
 
-def download_asset(plan_path, out, *, opener=None):
+def download_asset(plan_path, out, *, opener=None, cancel_check=None):
     plan_path, out = Path(plan_path), Path(out)
     if out.exists():
         raise ValueError("download output already exists")
     raw = plan_path.read_bytes()
     plan = validate_plan(json.loads(raw))
+    if cancel_check and cancel_check():
+        raise DownloadCancelled("download cancelled before network access")
     opener = opener or build_opener(NoRedirect())
     request = Request(plan["asset_url"], headers={"User-Agent": "HYDRA-Corpus-Review/1", "Accept-Encoding": "identity"})
     out.mkdir(parents=True, exist_ok=False)
@@ -64,6 +70,8 @@ def download_asset(plan_path, out, *, opener=None):
                 raise ValueError("asset exceeds declared byte budget")
             with (out / "asset.part").open("xb") as handle:
                 while True:
+                    if cancel_check and cancel_check():
+                        raise DownloadCancelled("download cancellation requested")
                     chunk = response.read(min(1024 * 1024, plan["max_bytes"] - count + 1))
                     if not chunk:
                         break
