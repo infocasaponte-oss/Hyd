@@ -1,0 +1,3560 @@
+{
+  "scope": "tracked local files; hashes and Python syntax, not full semantic certification",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 167,
+      "sha256": "89ad2126cad2069e4f8c422a4b66c0d4215be54017681dc5b8b02c69838b1e14"
+    },
+    {
+      "path": ".env.example",
+      "bytes": 5718,
+      "sha256": "a6f485894fe31112a4e5536607f78508df483c6734624b65a2c2e5f853bbb47e"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 834,
+      "sha256": "daca5a01339560f01b29b9c1737eae7ef172594ee6b1b3dec7b1e373a5f5506d"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 3396,
+      "sha256": "26e4972aa3a4e5949333a0b1afbb7911b7859e5fb9ef1108c71fcf04761cdea5"
+    },
+    {
+      "path": ".github/workflows/codeql.yml",
+      "bytes": 624,
+      "sha256": "661f2392a8a0c34dd983328afea40cc92ac8213064d46c1012350599b6f80a0a"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 264,
+      "sha256": "25d59595dced63ac5ccbe173ca9f5a8af5e5255c9342e0c2ad9cf8789fbbbbd0"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 1566,
+      "sha256": "74d45939b3ee16dd7828605a349c8904d2e7491d6c8226e04706c29a40b86313"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 5737,
+      "sha256": "fc8dbdebdcf2d5cf49bc94c3a9342f23f5e7650d9b719ada4a211f637258dde5"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 879,
+      "sha256": "00da9dc120f4f992a25cde35dcd9a773f749cf3c467d6a3c09e2a231fa49481c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11959,
+      "sha256": "7c19a05d55f4e6710844190c2f2fa45153a8cab749d7901e6f2c15385c847517"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1722,
+      "sha256": "8b50a41b69a60348935c7cc13c28b2cf1fd55225334b9ed09f8e604bfd632217"
+    },
+    {
+      "path": "config/hardware/laptop-16gb.yaml",
+      "bytes": 148,
+      "sha256": "b6d3ad6018b441230b1791dd0a1b5ce741b7d8f9d620a24e9c9d0078193268ec"
+    },
+    {
+      "path": "config/hardware/mac-studio.yaml",
+      "bytes": 142,
+      "sha256": "da11b51a9c76639850efe08d7ccebf35d9620cb34bb0463c0444e165fbbd2577"
+    },
+    {
+      "path": "config/hardware/rtx5090.yaml",
+      "bytes": 184,
+      "sha256": "c16daf7b611fedf80c4bee94f01edc020d05292136df679cd1658c391053dbf8"
+    },
+    {
+      "path": "config/hardware/ryzen-64gb.yaml",
+      "bytes": 147,
+      "sha256": "76f473a221a7134df099248aa2881247d0206cfeb0f3fe8d0e4de11fd6a64002"
+    },
+    {
+      "path": "config/licenses.yaml",
+      "bytes": 1021,
+      "sha256": "c4479432dd20bd681b82df626af2a7ac9603790c0d5b7525ec2c34643c00d3a9"
+    },
+    {
+      "path": "config/models.hydra-local.yaml",
+      "bytes": 2248,
+      "sha256": "2cfb95908d3de8ee889fdec332ca43db365ee027e9606248c663c85ad3efe7e6"
+    },
+    {
+      "path": "config/models.hydra-q5.yaml",
+      "bytes": 484,
+      "sha256": "4c581454696e9e08b422d9c79e14f63f657fd1185d25e1919626c9a332c1ef35"
+    },
+    {
+      "path": "config/models.hydra.yaml",
+      "bytes": 569,
+      "sha256": "657495b485d88b9589067f0a13555df7080e7ad7dc6010e351c07e85c29a659a"
+    },
+    {
+      "path": "config/models.ollama.yaml",
+      "bytes": 1683,
+      "sha256": "c59f80cb3f0c104df049361d33fee2abb6b47251d767c9f1fb6bea3c872785bf"
+    },
+    {
+      "path": "config/models.yaml",
+      "bytes": 3241,
+      "sha256": "94b69cade9051c0b9b8c19c5f2c46168754ec759470c23ac0fde895db98c291a"
+    },
+    {
+      "path": "config/policy.yaml",
+      "bytes": 960,
+      "sha256": "dce8a232b73003ff870f1f78f489e2eb733938f2e6cdbdce032a2bf6e9d70b08"
+    },
+    {
+      "path": "config/policy_rules.yaml",
+      "bytes": 929,
+      "sha256": "f0c2d56fb5ea25ce4c82f8e08a0f664d17eb4da2490e604501d4c2c2e575aed1"
+    },
+    {
+      "path": "config/recipes/coder-lora.yaml",
+      "bytes": 374,
+      "sha256": "c31fce921d4d306a93609c89beee401d8f1df3ee65d8739a5d303b7bf5dd5951"
+    },
+    {
+      "path": "config/recipes/hydra-decision-v4.yaml",
+      "bytes": 1069,
+      "sha256": "f76d8fdca082f1dd132dc3f3e83473ad3a7552ac17dd36b88ba2f7cc07eb5fe6"
+    },
+    {
+      "path": "config/recipes/hydra-pilot.json",
+      "bytes": 724,
+      "sha256": "19c00149eef167aa83e55ee84e3e6c1f3170258c77f1ed276e328d700db88382"
+    },
+    {
+      "path": "config/recipes/router-classifier.yaml",
+      "bytes": 257,
+      "sha256": "1066701156fd9d16d063d7faba4bacf034d6707aa897d3764a9b5388e9ef4815"
+    },
+    {
+      "path": "config/recipes/router-dataset.yaml",
+      "bytes": 285,
+      "sha256": "6becf5c7821edcfe08e44ece9028b8480f7c1db5df7a8789c75bd73ef4249a3e"
+    },
+    {
+      "path": "data/decision-corpus-v3/calibration.jsonl",
+      "bytes": 86020,
+      "sha256": "02bce960b23827e3d925a01e968c8784ed20118c88032927ab692856cb82d0ac"
+    },
+    {
+      "path": "data/decision-corpus-v3/manifest.json",
+      "bytes": 1082,
+      "sha256": "56876e66ae18df47dd9ca501a059e6c9ccbbcd0e0a8ae8ad5fc1d450f10c1ec3"
+    },
+    {
+      "path": "data/decision-corpus-v3/test.jsonl",
+      "bytes": 423100,
+      "sha256": "00cab56a9edba65270c5a3930c7324a995194243b1f82c3c16e2a1c6ce00ce5c"
+    },
+    {
+      "path": "data/decision-corpus-v3/train.jsonl",
+      "bytes": 674980,
+      "sha256": "bd5ee283d820c9b58f4613602761e48171bbc4544895f0401cad0e137d6389e7"
+    },
+    {
+      "path": "data/human-dev-v1.jsonl",
+      "bytes": 27747,
+      "sha256": "f1aec141128358ec4d003d4ce7b50a8279004e2cc7f0a8306048feacf3bbea86"
+    },
+    {
+      "path": "data/human-dev-v2.jsonl",
+      "bytes": 329010,
+      "sha256": "4e5a255037d17454860a115034e66f5d45d7d9b089eb16096a13a59b1bc0beaf"
+    },
+    {
+      "path": "data/human-dev-v2.review.json",
+      "bytes": 124,
+      "sha256": "4e9b6ca7e2e6699366908eded8a81bb89897c62639ad734e7ab175619d3d3a5b"
+    },
+    {
+      "path": "docker-compose.yml",
+      "bytes": 7521,
+      "sha256": "818840141c6e617509a92afca4c868f397698be6671b0a11097ac46439187749"
+    },
+    {
+      "path": "docs/AUDITORIA_Y_PLAN_HYDRA_GGUF.md",
+      "bytes": 14546,
+      "sha256": "a8b04177582dab0b46dc7a045cf45113a47408e7c0228ad61d5761d530dadc99"
+    },
+    {
+      "path": "docs/DECISION_CORPUS_V3.md",
+      "bytes": 1076,
+      "sha256": "3eed4fe19e147b0d117501a3df7b947e264bdaac87681fbbad8c9dbe91b7a130"
+    },
+    {
+      "path": "docs/DECISION_V2_GATE.md",
+      "bytes": 1871,
+      "sha256": "11222d76aa34fad04aec2add9f041a743902033903b34fbd3054f5ee5ffd9190"
+    },
+    {
+      "path": "docs/ENGINE_QUERY.md",
+      "bytes": 3885,
+      "sha256": "0ad34247dd4432af27159b28aa850146cf250b747dee3fca9ad847e39c987e1a"
+    },
+    {
+      "path": "docs/HUMAN_DEV_V1.md",
+      "bytes": 516,
+      "sha256": "bcf3ed4d49290fca24154afc85ecdb630970df320f3b0fa35bf0b1b4700ce1be"
+    },
+    {
+      "path": "docs/HYDRA_DECISION_LOCAL.md",
+      "bytes": 6521,
+      "sha256": "66948662e1db65ff0ea7ec69616f8dceaa7d7370f956ada8c2b01899afc00eaf"
+    },
+    {
+      "path": "docs/HYDRA_GGUF_LOCAL.md",
+      "bytes": 9086,
+      "sha256": "f18e2740691a7fa500fcd5f566d28ad031224b7cc74a1bd1cf78f9161c9839df"
+    },
+    {
+      "path": "docs/HYDRA_PILOT_MODEL_CARD.md",
+      "bytes": 4250,
+      "sha256": "e775d2a9437812146b3672d197be58ab096a1d04e16003a967999c24bfa327ce"
+    },
+    {
+      "path": "docs/IMPLEMENTACION_P0.md",
+      "bytes": 4083,
+      "sha256": "a0f4beee482805114aafe6f4b40190cfe294894cbbd967a3d930423b52e16496"
+    },
+    {
+      "path": "docs/INTEGRATION_PLAN.md",
+      "bytes": 19808,
+      "sha256": "53b5390feadadd78737e4ba3831cc4c57107de246a7ce34b474c711b024cba29"
+    },
+    {
+      "path": "docs/KEV_CALIBRACION_ESTABILIDAD.md",
+      "bytes": 2083,
+      "sha256": "bfa275101ea33960ff3030b402f4bcf786600a73f50add154be4436282d128c0"
+    },
+    {
+      "path": "docs/KEV_GPU_VALIDADO.md",
+      "bytes": 2132,
+      "sha256": "e47409384b6c510af82371f32eab07ea70888f41f48ce9c69b606429e58d0aee"
+    },
+    {
+      "path": "docs/KEV_V2_CANDIDATO.md",
+      "bytes": 1414,
+      "sha256": "43f1628b0a821f43314ce8664d86159e259e2e12f45575c8410a30b7b0f6f448"
+    },
+    {
+      "path": "docs/MAIN_INTEGRATION_PLAN.md",
+      "bytes": 12906,
+      "sha256": "f63ad08ae94ca125fc404832b4571b005fa441390b80a828c53e55847b33acd5"
+    },
+    {
+      "path": "docs/MEJORAS_KEV_IMPLEMENTADAS.md",
+      "bytes": 1256,
+      "sha256": "fe5dd8327ac74f9d6e462effb9cf24c6eeb7ff0ef63778ac279f81eb7b803be9"
+    },
+    {
+      "path": "docs/PLAN_IMPLEMENTACION_MOTOR_PROPIO.md",
+      "bytes": 17047,
+      "sha256": "7522e563ebfc207b5532b5e8a4fedd127583ccd8abfd0e4f593c0ad981a37865"
+    },
+    {
+      "path": "docs/PLAN_MAESTRO_HYDRA_MULTIMODELO.md",
+      "bytes": 22021,
+      "sha256": "772c756ce4ff86b6770d821315ca14f63bd53495fd7b782d5c2807f87e26c054"
+    },
+    {
+      "path": "docs/PLAN_MEJORA_KEV.md",
+      "bytes": 8474,
+      "sha256": "49f0d7329a6174622c578fd48f27a08a8bdc8d0d726bc2bd882634e2886f0dd9"
+    },
+    {
+      "path": "docs/RESULTADO_CORPUS_V3_KEV.md",
+      "bytes": 2009,
+      "sha256": "d83799dad718197d5fc02265b39e0a8d9260ff8f1ad5edea6528b424f18645f6"
+    },
+    {
+      "path": "docs/RESULTADO_KEV_V2_HUMANO.md",
+      "bytes": 1545,
+      "sha256": "b4bda33aa9201c7b68e46fa0b1d5da39c36ffdf1cc90e8591066632595134ce0"
+    },
+    {
+      "path": "docs/RESULTADO_KEV_V2_HUMAN_DEV.md",
+      "bytes": 1266,
+      "sha256": "98d810fc006bc8c34ee5ef6dbee2166521037b21355dd45f335ed50c1d2cf7fe"
+    },
+    {
+      "path": "docs/REVISION_INTEGRACION_CLAUDE.md",
+      "bytes": 4431,
+      "sha256": "61fa099f1be8b3a7868eddd1b9267b52dd22255c1e77140eceb61cf6cf04cbbc"
+    },
+    {
+      "path": "docs/RUNTIME_LOCAL_CONFIGURADO.md",
+      "bytes": 1685,
+      "sha256": "5cfc1dd77382a0555ab0ee8a111f2ce80fd2c0b513afdaad7b259493678246bf"
+    },
+    {
+      "path": "docs/VALIDACION_Q5_Y_KEV.md",
+      "bytes": 5113,
+      "sha256": "68789e71e7e8ecec5e72f5f42d64419a256b69334fb5401c3c08cd86cd6d3947"
+    },
+    {
+      "path": "docs/adr/0001-local-first-planes.md",
+      "bytes": 841,
+      "sha256": "aaad04a659e07c5e5f1388c4e8b2b7c7ac46a91f680df4eb40bf68d6317d3346"
+    },
+    {
+      "path": "docs/adr/0002-no-self-modification.md",
+      "bytes": 690,
+      "sha256": "817d3f3f96b285dd778607a62ff83b133c77cc27bbd93d7083f47b5baaff9d25"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 4262,
+      "sha256": "ab568e02ff0fc64faa6061b9946a981a0dbe75de2ee60effe21fd28bb61aefc7"
+    },
+    {
+      "path": "docs/evidence/base-1.5b-holdout.json",
+      "bytes": 27955,
+      "sha256": "b604344cf2a0a33a7817fb86a036e22a27f7a565d2b0d32fb6ecf67c99e16d7c"
+    },
+    {
+      "path": "docs/evidence/baseline-holdout.json",
+      "bytes": 15557,
+      "sha256": "90ee646cfb6771493ee45505c6dc114d610bd8697cb8389bbc27c1a55d43c1a0"
+    },
+    {
+      "path": "docs/evidence/corpus-pilot.json",
+      "bytes": 974,
+      "sha256": "865b6ca8517e82f8d3468678753998f80feadd923db84323671762e519cd7127"
+    },
+    {
+      "path": "docs/evidence/human-paraphrase-v1.json",
+      "bytes": 34882,
+      "sha256": "db97ca968c19a3aa094509eeea33e7b052d2d23bdc2b17364f677a403bbd50db"
+    },
+    {
+      "path": "docs/evidence/hydra-engine-execution.json",
+      "bytes": 127,
+      "sha256": "11a2c05ef44c315ad10943317d8b84d99d344f591eab9370f4d833afb51da512"
+    },
+    {
+      "path": "docs/evidence/hydra-engine-smoke.json",
+      "bytes": 4116,
+      "sha256": "08760fd0d76d235aee537c65153d10a3d47f35f59d075e46e97584d840921a62"
+    },
+    {
+      "path": "docs/evidence/hydra-pilot-build.json",
+      "bytes": 3805,
+      "sha256": "147fbfb8a9a3d4e0deef84ee6c2af9668eb6c33b20a8af04ddc3e0a811a60dd3"
+    },
+    {
+      "path": "docs/evidence/hydra-pilot-holdout.json",
+      "bytes": 21560,
+      "sha256": "14cd7baad756c63d2dc7417cf1eff76786b4cd2975df92d2b081c8ab596f00e2"
+    },
+    {
+      "path": "docs/evidence/hydra-q4-regression-v2.json",
+      "bytes": 9120,
+      "sha256": "33a00041429eca5763006f3bc7469def00aee71cd6aa67a9e5368f2dc4f642da"
+    },
+    {
+      "path": "docs/evidence/hydra-q5-pilot.json",
+      "bytes": 23374,
+      "sha256": "ba8bc0f946bc9423a9a1723a6883f27a4153cc14711619cfa7ebbc30f1ad0e20"
+    },
+    {
+      "path": "docs/evidence/hydra-q5-regression-v2.json",
+      "bytes": 9606,
+      "sha256": "fb83ffc406b549e5557286694a4a9e048e5570e32a21285870bd78f25715349f"
+    },
+    {
+      "path": "docs/evidence/hydra-streaming.json",
+      "bytes": 1874,
+      "sha256": "452c50e1e8ad31dfb320a1d2b5bceb90572dee77375a713bb20d05550a96090e"
+    },
+    {
+      "path": "docs/evidence/kev-calibration-burst.json",
+      "bytes": 102187,
+      "sha256": "01e9ebcfe4c0956c622c3ca48de64b54bfc5fe6a75d3a2c96b001a4738b010fe"
+    },
+    {
+      "path": "docs/evidence/kev-calibration-stability.json",
+      "bytes": 104817,
+      "sha256": "8ef86535e3bf1c60f488cfff820d5dd1664456c777236c857df7673901dbf6cc"
+    },
+    {
+      "path": "docs/evidence/kev-corpus-v3.json",
+      "bytes": 537440,
+      "sha256": "9c2ab4ebab45ea55d0faae62bacb32537d67fcd3963dd77e9f836099014ddf70"
+    },
+    {
+      "path": "docs/evidence/kev-gpu-identity.json",
+      "bytes": 522,
+      "sha256": "502f041a1b236d22f5b5416a498fd2082a2c1cf64b96ea472aab87f6b5b32a4d"
+    },
+    {
+      "path": "docs/evidence/kev-live-gpu.json",
+      "bytes": 2905,
+      "sha256": "a5adcbf1c322f062e1c98905d2efa1dbd03f083b237e3ebab30a0593998c5e0f"
+    },
+    {
+      "path": "docs/evidence/kev-live.json",
+      "bytes": 230,
+      "sha256": "a10addf2b591644dbc84c8692904b1281a411a674869b957fa1c160fd088c299"
+    },
+    {
+      "path": "docs/evidence/p0-isolation.json",
+      "bytes": 185,
+      "sha256": "bbe2a32c25dc020b84a151e963ddce6ccacdebbdadce9d3c4fa5696bcaec0d75"
+    },
+    {
+      "path": "docs/evidence/p0-timeout.json",
+      "bytes": 72,
+      "sha256": "c31cb5e4e1f024521585fae268e3df34e3d0fe6f58c52e9c7151c127a32cd752"
+    },
+    {
+      "path": "docs/evidence/pilot-comparison.json",
+      "bytes": 1539,
+      "sha256": "b46e30d35e9682c820cb2b94fdf281401aaf27c49756218254f34c7eabdfabb7"
+    },
+    {
+      "path": "docs/evidence/q4-q5-regression-v2.json",
+      "bytes": 1580,
+      "sha256": "fbf573606bbb9b51f48fff8e1378980a5ee3e96abf38f9255aaed387235cd345"
+    },
+    {
+      "path": "docs/evidence/q5-engine-before.json",
+      "bytes": 11011,
+      "sha256": "0b49a62be800b04fa1b88e17d7699cc1a65b8e5e5934e6570ecf455c66adad58"
+    },
+    {
+      "path": "docs/evidence/q5-engine-live.json",
+      "bytes": 10304,
+      "sha256": "bf69f2fe7760552a0f582e2da56f6a953893ce55491a9756107088969c035bd0"
+    },
+    {
+      "path": "docs/evidence/unified-runtime-live.json",
+      "bytes": 10062,
+      "sha256": "05ef90fa8d6bff6e62c8f906faf2f00ba367ab26d4216ad02671052272aaf350"
+    },
+    {
+      "path": "docs/ip-process.md",
+      "bytes": 1265,
+      "sha256": "56d0f6eb875c318446a03ffa374120640ace812d34d8bebd4cdbed5c8c1c0815"
+    },
+    {
+      "path": "docs/runtime/ARCHITECTURE.md",
+      "bytes": 1379,
+      "sha256": "81509ddfe19bf8f691a03c569504e4f910a45239efeb1108e07bf8334b83dc88"
+    },
+    {
+      "path": "docs/runtime/DEPLOYMENT.md",
+      "bytes": 1401,
+      "sha256": "7fa2dce37e85ceaa2430dca716e81da15685469831101386a64b693fa71b11a9"
+    },
+    {
+      "path": "docs/runtime/EVALUATION.md",
+      "bytes": 1185,
+      "sha256": "67e62a7c1a048072fd163c3ec63476a33b49206d9464fa19a9fef2ac23915ca2"
+    },
+    {
+      "path": "docs/runtime/FACTORY_RUNTIME.md",
+      "bytes": 1491,
+      "sha256": "2a153f037a9e744e67c30a1c0c4e784311f6f83bfad5805c29ef9f998ba2c6d6"
+    },
+    {
+      "path": "docs/runtime/MODEL_FACTORY.md",
+      "bytes": 1766,
+      "sha256": "102a6e3e92074539bc454b205cc328ab22fd70fb40c38ed15c712971a1279733"
+    },
+    {
+      "path": "docs/runtime/README.md",
+      "bytes": 2134,
+      "sha256": "de3cfa7fb22c2f3054f48e9fb86c918708f8f1f781f0ae8ef21f79703ea12930"
+    },
+    {
+      "path": "docs/runtime/ROADMAP.md",
+      "bytes": 2822,
+      "sha256": "de803b2360dc9a84d08f03efd6ed6df5976fbe3441f6d4942f3dfcf86abadbc0"
+    },
+    {
+      "path": "docs/runtime/RUNTIME.md",
+      "bytes": 1224,
+      "sha256": "c6a3cd6c24af6360da6bf46d41cfa4f0c64a66afbf7fb876ff1fdee0ba723da4"
+    },
+    {
+      "path": "docs/runtime/SANDBOX.md",
+      "bytes": 1328,
+      "sha256": "31b04028dbfea61e40f3d35b22e754e5480eae512b6e446016e01a315d39ef1a"
+    },
+    {
+      "path": "docs/runtime/SECURITY.md",
+      "bytes": 1072,
+      "sha256": "719650b0ade6c63b47c5ce7798f151af7e307a931b241b6444f52f403f1692e3"
+    },
+    {
+      "path": "docs/runtime/TOOL_RUNTIME.md",
+      "bytes": 1665,
+      "sha256": "c0ac24a6a48c4cd5e84f6acac2d31af97d3b99ffd6f3e1799dc92cc908ed9eb7"
+    },
+    {
+      "path": "docs/security.md",
+      "bytes": 1526,
+      "sha256": "fcfe5dba7f06ff3eb133c8c1f4eb744ba28dde6127cb09bdf989f8949057762a"
+    },
+    {
+      "path": "hydra/__init__.py",
+      "bytes": 354,
+      "sha256": "edb20420f93aa3ad314d1b91c6df745849af737f2deab022f9a4bc76beb8ca68",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/analysis/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/analysis/counterfactual.py",
+      "bytes": 5886,
+      "sha256": "d39948883084d003a7f2b5a49283d6fcda48a20d37903bb1c2c13350ddfe9746",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/main.py",
+      "bytes": 14415,
+      "sha256": "6e2115a255d660e24ac04d082863b5abc4a546b9b72718c30454cbbd1e1fa9ef",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/os_routes.py",
+      "bytes": 8527,
+      "sha256": "3e52884b9d8a5211ab6c992da0708190c519401713088cd7dcd3f8fefd409f6f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/platform_routes.py",
+      "bytes": 43345,
+      "sha256": "589f9edad35f18b9b537257a9327391003b4b9419a6285995c8c8c0771739451",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/runtime_routes.py",
+      "bytes": 5164,
+      "sha256": "7353404da06ee7b58d2f81024926b5c3f7246a5a0f8bc5762747ec805a953a73",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/api/studio.html",
+      "bytes": 20180,
+      "sha256": "4e43c775bdac376c4a0cbdc936025e6c6eb75dedf2e3bea1c1e63b85252c6499"
+    },
+    {
+      "path": "hydra/artifacts/__init__.py",
+      "bytes": 203,
+      "sha256": "5b0c118c8b96070d4850b8769adacccf4bc4ef9e0e12c7b576b74e99286d843e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/artifacts/engine.py",
+      "bytes": 4191,
+      "sha256": "3b86d601a7a6a9f8aae0a52873dc206fd215ea966c4ac63d0aa6f91866f3964d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/artifacts/store.py",
+      "bytes": 5909,
+      "sha256": "49663975a2717ae20f54ac171b19e0395dc716c9064786d3d606eee2d79ee3d8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/blackboard/__init__.py",
+      "bytes": 293,
+      "sha256": "e4dc6e871d648c3556b39d9b906ecacce7f4faf13a0a96c407b259b63200a5ad",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/blackboard/projector.py",
+      "bytes": 3713,
+      "sha256": "af53b6d3d4a4262448550192176cb8308f17ca8118d440014fa538003299b51c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/blackboard/state.py",
+      "bytes": 2925,
+      "sha256": "8e2953eea016ea3d896676aacc72ead9bd3033e7ef55621cc4c5f2794d101a70",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/bus/__init__.py",
+      "bytes": 227,
+      "sha256": "7fb5d326edd05ae645f76e6945982a4eeb0696eed53aeb458b876f5bf738a80f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/bus/base.py",
+      "bytes": 910,
+      "sha256": "614c174fde838e9a97a6efaf632a2e0743024049f757e8c60bfbe99ec88cec27",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/bus/memory.py",
+      "bytes": 1385,
+      "sha256": "6f9f4fbfb539e1e86a016cb9269dad7c1e6536e324c1155ccf75238cfd20a48a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/bus/nats.py",
+      "bytes": 3151,
+      "sha256": "1ac8965f15d69ec7139e485767f230386cdaa85e8f92df9cddaa654b7788db6d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/bus/redis_streams.py",
+      "bytes": 3011,
+      "sha256": "c24c4cb8094467ff58c382c197dbee920c400ce9a19252dcd850180f059fd3f2",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cache/__init__.py",
+      "bytes": 147,
+      "sha256": "a941f3ddbd74ba9d8f520f52c69349737332aebe5f425ae2aa5b1badefc7e1b0",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cache/semantic.py",
+      "bytes": 5063,
+      "sha256": "1bfd9bb3fd9857b768fe2dd034634c38e7cdb088c24a67cc0c3a039d51b6044b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cli.py",
+      "bytes": 14287,
+      "sha256": "1722a7055fb89c73901d3d8a9fafbad29b08c26ea09d3ab52a377de308d52bff",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cli_platform.py",
+      "bytes": 31588,
+      "sha256": "38cc3b1064b82b3abb505ff1650aae1ff69aa1003cf2ede07e8108ed504c111a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cluster/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cluster/capacity.py",
+      "bytes": 6681,
+      "sha256": "89b33a008ec423cf30aefd02b9e2f3fedcc0dc30f763bfec6db7799bc17b2ded",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cluster/fabric.py",
+      "bytes": 11035,
+      "sha256": "5906b4cafa178e459eb79a1af07938c6e0477a37897ddb040855d6ed2b48fcd9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cluster/nodes.py",
+      "bytes": 8220,
+      "sha256": "fe728007b68e887aa0a88da5b8a8f9cb3da138b7328b860892570e5caf778876",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/cluster/scheduler.py",
+      "bytes": 16097,
+      "sha256": "13102497d9ea5e3cd27af096f7851fdccbb2f7d9e9289775cb7e2b808aceeb25",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/bootstrap.py",
+      "bytes": 20275,
+      "sha256": "8a4f63bedb7444a7d9d5387cc33747e5bb2dcae73754f71b4a66a8761623daf3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/budget.py",
+      "bytes": 4208,
+      "sha256": "30c7d78d53404d409628878ad6318bbc0090fcbbf3c7e6f71fec5db17e22145c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/capture.py",
+      "bytes": 11085,
+      "sha256": "f694b109c43045590625a26e68d99614db32d7135aeb2cfe71f6bed6ed2f31c7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/capture_outbox.py",
+      "bytes": 3192,
+      "sha256": "bcd00013609794cf4bcbc49a8dac4eaf56527e89aef593ab4e64ac5fd9e632f8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/config.py",
+      "bytes": 5911,
+      "sha256": "50d4b8537d2ba42d644fe3566735ac37d5c7ceba22e76339c55294469695e478",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/context.py",
+      "bytes": 3234,
+      "sha256": "c062edad4732c4bd8bd5411a1fee65dff693a55cacb262ee2307db9348a25dfd",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/contracts.py",
+      "bytes": 5146,
+      "sha256": "1aa7732578bdd7b06ef92a1d075b8d521ff57211263352ff698b6000ecff63c4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/errors.py",
+      "bytes": 2781,
+      "sha256": "c2d91f7c43cd1ce0f40ff11c40e5b0fbc8635b9d2d7ea32bde69f98be0f245a9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/events.py",
+      "bytes": 2234,
+      "sha256": "19d1cc777b83d46e4b7f1723d04ee98ec17c3394523243651dfc5f4812410c94",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/hashing.py",
+      "bytes": 2299,
+      "sha256": "0655232fe7b4385373d42bf04ea785c16e3b8eb42b3aeba364fd6564c85e5f77",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/kernel.py",
+      "bytes": 52604,
+      "sha256": "2967307fd1556560fd578db44638ce4ee48dab02f8aea70f80dd695b1b35f5d5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/paths.py",
+      "bytes": 1335,
+      "sha256": "fbf9130923f807e5799a044c2729623f040caa1f081ca9c775d19098d432dbb7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/state.py",
+      "bytes": 2172,
+      "sha256": "3e00110d52ebc5dd1f2a1917a3d91d45139aa62d369111528524d77553c02e43",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/task.py",
+      "bytes": 6951,
+      "sha256": "a8b8505baaa43ff96156e1276efa6f0c887f2da0bcf63c394a50baf959e73f96",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/core/termination.py",
+      "bytes": 871,
+      "sha256": "ff33f022e7d1d81d6059aa6a7243b755e634b7f4a880e6c81aa1d54b2589afcc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/analytics.py",
+      "bytes": 5241,
+      "sha256": "4527d5579e99776173a7f4d7410a5b04461ef3c85334ed7ea8218dd8d89de60a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/capture.py",
+      "bytes": 11099,
+      "sha256": "0482d6cee8292bf94cd3e58df94d49e5d01850411c5f9503418e3a2a65bb48c7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/dedup.py",
+      "bytes": 6254,
+      "sha256": "4f7969d5669aa354d3406cd3b87b7134dd751dd4e967ad2e2506a2010190d13d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/factory.py",
+      "bytes": 20004,
+      "sha256": "429251a1371cbe629831519f78225e3dc47e834fafa96ba20fcacd4d2d1f8c6d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/gates.py",
+      "bytes": 7794,
+      "sha256": "d837163e6e2793617c38432e8c10f3afd897f569c3c90363a1066b086a5a5896",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/records.py",
+      "bytes": 5186,
+      "sha256": "1819f573af6a281a2e92553a41c596e6d2cb38a575e0e8462adf5fc5ed134a74",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/store.py",
+      "bytes": 14699,
+      "sha256": "1c1a8e23c19285781cb44182c7d0aa716aac014a7ea1b84bde2c7e3368cdd3aa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/corpus/synthetic.py",
+      "bytes": 8194,
+      "sha256": "ce80e7738f8a1d437aa4e2a83d5ecb80a4b78bd042d5e9530adc1099fc47acd9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/discovery.py",
+      "bytes": 16659,
+      "sha256": "d90681cb99cc63591a6ce1ebc4a659aca37f42feffd4760ab8b8e8387084d2be",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/autobuild.py",
+      "bytes": 11634,
+      "sha256": "fb6cadcbef5c0a0fbcbbb71695f661e4e622f2afbc2812650dab3dad43d7057d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/profiles.py",
+      "bytes": 6871,
+      "sha256": "c6d760801827b41a9217e325e51096d21a2e8cd54b065812c737244ebd1bdc2d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/scout.py",
+      "bytes": 7843,
+      "sha256": "8b140446d34e9c59bcb32b43f1ce904b5ed2cbb99a1a310c8b4cc0907cd7688e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/sync.py",
+      "bytes": 5738,
+      "sha256": "d6482637d516726bfb6fd871adef1677486c1fde64cda3b8a6c5541c1761b54c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/edge/translation.py",
+      "bytes": 10037,
+      "sha256": "e6aefaea2adcabf6cd5891df6e3f436fd840d94477f6bb46223dc9dc71ecbb16",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/engine.py",
+      "bytes": 2803,
+      "sha256": "985bf55dac4ba0b0bb57e56a462b350eca99399a3b46c731581fac7ef4c2ccee",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/evals/__init__.py",
+      "bytes": 251,
+      "sha256": "6cc036ad10494b2c7849422b341f3cea6164538f5a099c98d72c26da1a69c90a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/evals/e2e.py",
+      "bytes": 14868,
+      "sha256": "95ac774b3b9a187e68d70935097cd44493b2aecd9bb91d2860705858fab0d8cb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/evals/engine.py",
+      "bytes": 12001,
+      "sha256": "5a71c5ab67537198dce8202ff4256d8f2e6d7f53fc9474f6f4c907e43a2fb6d3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/evals/suites.py",
+      "bytes": 6270,
+      "sha256": "9b504467411f96bbcbbe3e9123bb7fd6ec2d9815939e01abf330582a26931d02",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/federated.py",
+      "bytes": 8440,
+      "sha256": "83c76ac8737aaf26cd9ee09cd8ce9fffc266e10259a8f896103ff9512504ecb3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/boundary.py",
+      "bytes": 4803,
+      "sha256": "6b228e17341ea601a0d1834ddf1de96a25d5521efa5236ecbb0f5d6716b85547",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/config_registry.py",
+      "bytes": 5772,
+      "sha256": "877988938e0d83ba5d1338464514513597a8c68bb818129371eb143fc8a0ac5b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/invariants.py",
+      "bytes": 11571,
+      "sha256": "47baee9fe2d8b8e47848d0c986f9099f46069fa4c385f8cde973a65d32f6f7cc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/policy_dsl.py",
+      "bytes": 3461,
+      "sha256": "d096b12ac9fcfaaba05d49450c4f7aa1094216987753cf9975f414f57c156de3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/rate_limit.py",
+      "bytes": 1402,
+      "sha256": "c72b32f2527272455c8ddc4704ecbc1b8e998addcd6471c19d837bc0054b01eb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/recovery.py",
+      "bytes": 5706,
+      "sha256": "d2eefb163894a4093de2225e5b4576101f14eb15b8dd7ece91cc50c9021d4954",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/redteam.py",
+      "bytes": 10484,
+      "sha256": "a637df36ec1116192daeea630ae1cfc0f38309c50821d7dd8f47a02978520f57",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/secrets.py",
+      "bytes": 5273,
+      "sha256": "5ecada7ac13b117eb85f26903c4c147f904b7fe50513278977c2696d7f40db7b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/governance/security.py",
+      "bytes": 10821,
+      "sha256": "d1e16bd5d79ece24301bf58837117950bcd3e9b583da77fa40c73696ab74aaf5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/lab/__init__.py",
+      "bytes": 194,
+      "sha256": "1fe91798a67a3181d3854eca9a65dd084eb111600bd56747b0d5fda6a7113bf4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/lab/lab.py",
+      "bytes": 12399,
+      "sha256": "4c4a5d66eb3b99a02175fe02b44a7e8747b2b1488d71b21dfa6536fd5bb15038",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/language.py",
+      "bytes": 5942,
+      "sha256": "fa530dab9aa12aa1dc22f1026f23f44a7ffc0e69d403c4932214303b34253fbe",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/bom.py",
+      "bytes": 9839,
+      "sha256": "4ed480b76cdec7d8065b8717a61eceda75769a73dff3f9482bc9a036e6878558",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/chain.py",
+      "bytes": 11915,
+      "sha256": "aecc4758f31029f2b3f8aba37b32bea219a646d43fcbeb18f5c2b10ea87cfd46",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/ip.py",
+      "bytes": 27792,
+      "sha256": "7e1d5d77d3ed80005634e53d7535916a92cd07e34d6f8bec9590d76e8216bf0f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/licenses.py",
+      "bytes": 10916,
+      "sha256": "7e9ec4981cd2f1250b14284a021fdc461bd7368cd7745cb7cfd6d0e975ab433d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/release.py",
+      "bytes": 13895,
+      "sha256": "afb025ebf870fc9317cb979e43f0d05369595874c3020b2aba39d5ff2aa40c19",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/runtime_anchor.py",
+      "bytes": 2202,
+      "sha256": "9c2b6585b8fc6f30b4d8dbf8250ba09044b4cb861c2c5a7258e805126e70dcdc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/ledger/signing.py",
+      "bytes": 3205,
+      "sha256": "c7ceb13caabede52bc2014a805b9c272c1bdd8e0be159ddfae3a71a271655603",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/market.py",
+      "bytes": 10038,
+      "sha256": "e7421acb449f176b671b17d3035a629240fb98934e2a2e4347e9164f33e10ab1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/__init__.py",
+      "bytes": 366,
+      "sha256": "7711f95999fb9f00795b089374c3f313cc6c486d8252e37f1f652a61b1628dfb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/compiler.py",
+      "bytes": 10623,
+      "sha256": "3a963d386af7fc97da534e13e0019ddea8214a98c121da14446fd5363cc4e908",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/compression.py",
+      "bytes": 3892,
+      "sha256": "112b6495044a9e44b7cd7a5ad43d40f5f018ae9a76a36f3421cc3f37d8d208d3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/context.py",
+      "bytes": 3134,
+      "sha256": "8e56d610436381fc1f6a8fc13f1e2286c6aae490f9132158441f5e37b38b339e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/embeddings.py",
+      "bytes": 2730,
+      "sha256": "d3bf703d0b2d0eb5013c6be1892f8d575a531913eba392a19a245048192589ea",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/failures.py",
+      "bytes": 4983,
+      "sha256": "645ea69df2e40c6b67b389914b74f98cc0fa22f5c06ba15f8d6930e3ac00d284",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/graph.py",
+      "bytes": 2291,
+      "sha256": "7d3f1d8f212bce168d80298776855cdcfb2df9badaee4aae221eb33d29f412eb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/models.py",
+      "bytes": 3424,
+      "sha256": "1ad527b7a16bd525432809c99fd88c708333c563a5d5cd206826787370391875",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/retriever.py",
+      "bytes": 3932,
+      "sha256": "b03d96e46ab58ca55d07b492f4f27c445179aa73ad021b82f4b3adc00a984970",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/memory/store.py",
+      "bytes": 4640,
+      "sha256": "c247f0aafcc8539e10a2092e7096a6db43a3c358ef126ecd8c55eacba5ec1a3c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/meta/__init__.py",
+      "bytes": 224,
+      "sha256": "6d8226248b8045bb286c47ed73260355bfb898314c0dc83625e9cfc764201b89",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/meta/controller.py",
+      "bytes": 4472,
+      "sha256": "8348ffd0812f4d95202f13f925e22b64f21e3370d91f3d5f4dcb9b87c0194b8e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/__init__.py",
+      "bytes": 334,
+      "sha256": "62c36eec55a47810b691e3d088c9441e3e708289c618a6658133df6d0f122918",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/adapters.py",
+      "bytes": 1812,
+      "sha256": "cca83f7d2b505e6e1923a0cfce520502a46b32d0a42e08bb2f2447f1bb2f299d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/benchmark.py",
+      "bytes": 6447,
+      "sha256": "f6b47ce017e7e88b3d2d85ba6c1afd5bf13fee0ca19adf0eb939bb469ffec1fd",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/build_hydra.py",
+      "bytes": 6042,
+      "sha256": "ed2cf36a256ac66f4a844b08563257e54fd523c45d53dd2a5b6b89307c5ea44a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/calibration.py",
+      "bytes": 2960,
+      "sha256": "d52325ae610f704347ba6e769fde58d0c32d7add54b9d06b98b248b9508017b9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/converter.py",
+      "bytes": 6293,
+      "sha256": "b7d5bc3a8fc2700fdfbebb553c8f0e2c14d3844b01c170f8a99c87c728939c43",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/deploy_bridge.py",
+      "bytes": 5847,
+      "sha256": "af3eba01bca34a38c418be34de1153fe807d3f4b77e7adec9d89a2ee27bbf6fb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/distillation.py",
+      "bytes": 7164,
+      "sha256": "242f75a5daa3c41575ac18a3251adbfabe02e4a0a6ea7eb8eae7c614b00671b2",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/export_ollama.py",
+      "bytes": 2379,
+      "sha256": "a4cf766a851ef2a15717dbf4097486d1bca105c8a3019e2f12d4317951b0ae07",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/fingerprint.py",
+      "bytes": 2378,
+      "sha256": "b89df9f9df030b9f0bce1cfbd31a7add3e97ce3577f835e92dacddc5a2a189fa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/gguf.py",
+      "bytes": 9528,
+      "sha256": "08930dbde59bb89f475f4ae216e1e88fc218d18a21b1599b37dade7873b206b7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/hardware.py",
+      "bytes": 5828,
+      "sha256": "d2e3c765c3bf8f9159ca48f76f93ca2439cbe2788a3dfc2c7bb166612cb4569b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/importer.py",
+      "bytes": 6173,
+      "sha256": "d9080404e95d9203efb27b17b243f5c152729df30b13e9593038f9049ce3e4d7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/inspector.py",
+      "bytes": 9167,
+      "sha256": "545a28f69007895d889a75268e068dd6bfa1d910e8e848b16eef50a4264040ba",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/jit.py",
+      "bytes": 3050,
+      "sha256": "0b194922ad65ace20b718c1cff57f6912730116f405c47770763efd38c8f3edb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/manifest.py",
+      "bytes": 5708,
+      "sha256": "c8904e24785fbb80ddaabcb52ec880c53d24f5c61f526a1f4d2f5197d412492e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/optimizer.py",
+      "bytes": 2774,
+      "sha256": "89c881dc7d4ea134ee0d44f8311aca8618d0e04ae2cd61f4b7c9d5ced1fc7ccd",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/publisher.py",
+      "bytes": 2256,
+      "sha256": "b54e0590a10335496789bd61394976a6879f02be8e4f9a9a9e580bc3e499a8b3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/quantizer.py",
+      "bytes": 6029,
+      "sha256": "87a51f78d359b50d4af81f42620fb3c88912aa5f90da677505f0e4950e38cedc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/registry_sync.py",
+      "bytes": 2141,
+      "sha256": "bf5f45810679e24d0558acb757514fed8852bd63d6a7e88af5d92804cddf2db9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/runner.py",
+      "bytes": 4025,
+      "sha256": "fefc061ee3e8177de5dfa710f388a28454c6aa34ed7af7436cbeef12d3b98a78",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/safetensors.py",
+      "bytes": 2233,
+      "sha256": "6eea04a1353cb24aaa1f201a8229175a6e209c7561991b148a54b409502c085d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/service.py",
+      "bytes": 31854,
+      "sha256": "9189c6136ce1905c84e0cd27059d4eb76a49e084ceb856115ef46b978e3842f0",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/store.py",
+      "bytes": 5865,
+      "sha256": "bf7650537cb9d6dcda20f30aefc0936d010637f9045d1b4b70919f76b6e1c734",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/train_lora.py",
+      "bytes": 6199,
+      "sha256": "4f0e48eaf14438ac46f03e397f9b8644e6fa805c02c36ad73060e55b881d3aa9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/model_factory/validator.py",
+      "bytes": 7666,
+      "sha256": "4531da940dbf4ede9a715a1803adacdc6a50ace5cf1db5b12dd7fcef0de4c95a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/observability/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/observability/tracing.py",
+      "bytes": 14266,
+      "sha256": "10c78b25f912bfd3d389f107957dbe6940f1b980a5b48767626e6bdea3bfae30",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/persistence/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/persistence/postgres.py",
+      "bytes": 5538,
+      "sha256": "a09301d7202ab802403d776620db9e68c7c8a83e9467ae3c3b0387daf3c042a5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/epistemic.py",
+      "bytes": 2647,
+      "sha256": "40f2138bf0ded4ec65bfdb9c00470342ae17a4e7c7e2b8a8e0dbd873f4e1e7c4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/goals.py",
+      "bytes": 7460,
+      "sha256": "93a92a65042703a71765e23c5bf22b99f18e4b38273dcad5e305e15a1dfea5ec",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/htn.py",
+      "bytes": 5231,
+      "sha256": "c16c5dd5e316e8937bcaca6bea84b193c0f56a0ee3ffd6f74d6cf4707d1e0fbf",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/procedures.py",
+      "bytes": 9523,
+      "sha256": "6c8df355e9acfab0dd38cca9821b3435e2e808c554fe07bc9342c4bafa086b0b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/runner.py",
+      "bytes": 26456,
+      "sha256": "4205302f437e535ced3e58673c305a8b0fffabdd6bcb8227632fbaf6b686ee52",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/planning/simulator.py",
+      "bytes": 11553,
+      "sha256": "c8aa5cd3d3a2bd61b44b5003b04329592afb72c7c2aa9a9c4292f46e244bfdbf",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/policy/__init__.py",
+      "bytes": 232,
+      "sha256": "2b44aa71ac6e1697914afbdeca10fe0d3440c057cde98f6a805e8b11bfa488d4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/policy/kernel.py",
+      "bytes": 8295,
+      "sha256": "ec0ac1e4227c165345b907b51b568276b33f87423c60d7734c7af1ff452eb787",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/protocols/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/protocols/mcp.py",
+      "bytes": 12509,
+      "sha256": "4e0a85c82268d2658dc24490d19a66094bfccac631a08b742485d5481f4d4851",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/provenance/__init__.py",
+      "bytes": 194,
+      "sha256": "107415795e37045b5d4ff96e2000a0f71379872094eed77e3e16abb89b7fb61a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/provenance/engine.py",
+      "bytes": 3806,
+      "sha256": "6190dcfdd4355010c160c913583fc0aa8ee2a65ef2f36ad73e5ec98bf1d1c0ad",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/__init__.py",
+      "bytes": 147,
+      "sha256": "bf8aaca412b5ced0912ca21f7d8ecb7aa0286ce3c6333d0342ecb0f8be9c4538",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/adapter.py",
+      "bytes": 8209,
+      "sha256": "17f24c90bed053c321fc1db2b0aca6ddd487f1a988dd5f0aa91b5714a49e6a40",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/base.py",
+      "bytes": 1576,
+      "sha256": "44643aebd41aabc049c7f2970b0a4c8e3e037e206b329912eb824da74aeab9dc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/decision.py",
+      "bytes": 5744,
+      "sha256": "4f309e06838df341e7e4d596f5634fc1f0ea5901e806004ae8dfb2aed9c0e217",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/mock.py",
+      "bytes": 9658,
+      "sha256": "167f3139cc07aa48b6694cc0253b4d029e5257a609056fed012900395cfec1ab",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/ollama.py",
+      "bytes": 4091,
+      "sha256": "0d749432e5ad8f8cac01a699e3643c1a8727ee3d402e199b48e9631f23043d7e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/providers/openai_compatible.py",
+      "bytes": 3947,
+      "sha256": "497050a2c3f6901f135343e34fa3d1032ec4fcfbe4b2961d9a44f3c36759daac",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/registry/__init__.py",
+      "bytes": 243,
+      "sha256": "9e1d69c33fdfd5927c7b53df5c0822cd8661102514c52eec047b6ac298ad50f9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/registry/circuit_breaker.py",
+      "bytes": 2604,
+      "sha256": "f7c17065b90d4fc2bb30dba62d938f1e05cde6620503f76fb8edf1660f2e9522",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/registry/models.py",
+      "bytes": 3764,
+      "sha256": "54379b721851a0c46bc4303a4b54473385256ba9d53fd05e6a04c7a91ec6644f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/registry/registry.py",
+      "bytes": 4933,
+      "sha256": "169ad097ef3c0a9159c94dbe23ee542d8a90969800477d2798578d70ee0ad9db",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/registry/runtime_monitor.py",
+      "bytes": 7377,
+      "sha256": "8c60b333c8d33e670b43cab3a48380746c2ef4ec2e839266353bb4cc18878fcf",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/replay.py",
+      "bytes": 10666,
+      "sha256": "e93cf19d3ed39e207b5705c1149400183795633e7ce9d4d32b67475b9f6cdc48",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/research/__init__.py",
+      "bytes": 181,
+      "sha256": "cf544b58b0d2b583369d95403b71d894d9f8bff659952c02e7accf176ec213ad",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/research/graph.py",
+      "bytes": 6586,
+      "sha256": "c6b00b7bc0e7687bb3ee88e8cf463615d33ee82096030a26fc71dcdeb71dd19a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/router/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/router/learned.py",
+      "bytes": 4961,
+      "sha256": "8af0dc67868f5fd61b5e9cc6b81163ef2b72b957e55727d67e5793dd356fcaa2",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/router/observer.py",
+      "bytes": 4054,
+      "sha256": "84fe68eed39e220c161088f5960c24d5d4bf09afad40b0551a5c2f5a4ce6850b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/router/router.py",
+      "bytes": 9097,
+      "sha256": "27a7c009b5597b0b17cf9125e8c4b10c825244e833e3737aa2717e9654ba4ebf",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/router/scoring.py",
+      "bytes": 3966,
+      "sha256": "eaf19eca15ad60a6b13de1589582769b4785b6c8eef8f2d9d685ff78269ce56c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/__init__.py",
+      "bytes": 241,
+      "sha256": "934adcc6d22f89501bc1ad045b4b6662f6b203c57549c9bb15b00aa862ad147a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/api.py",
+      "bytes": 28687,
+      "sha256": "beb04f7e8972d42e3875a373f4ff3a4331dfdcc1988421ab84107122bf644db4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/artifacts.py",
+      "bytes": 2972,
+      "sha256": "a87ea05bc85f4e61fb6228e3100912b42c52224e853494f39d778bb2f2b94e45",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/autoquant.py",
+      "bytes": 1138,
+      "sha256": "283a537420b2ebdb3a4fd599ee70c745afdb8d9513486f80d091ad1cb5d4840a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/beliefs.py",
+      "bytes": 1134,
+      "sha256": "cc823d1ef2550a87ff8399076c9cc9f8eeca96a94ece05880b8afad3ad863fdb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/benchmark_protocol.py",
+      "bytes": 1314,
+      "sha256": "8c43f616051c4bd8ba7f1f6eff8473e00738619652514006910acaab9ac4284a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/benchmark_suite.py",
+      "bytes": 1588,
+      "sha256": "6e8498940a63041a0e91cbdaeca1e229bc6b5e97fec2b100357081eb5c0e3383",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/benchmarking.py",
+      "bytes": 1281,
+      "sha256": "08fa17c25afec8dc6ea33393a001689a32cfd62e267b902bb5164d72776d5340",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/bootstrap.py",
+      "bytes": 491,
+      "sha256": "f04428d1c720b4a6166b13cdf01def8d94d56cde95466806e40a2028bd47db4e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/budgets.py",
+      "bytes": 960,
+      "sha256": "af57f4b5bd4d59645a99228b873eea108ca7c958ab238e33a5bd8149339ac130",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/build_supervisor.py",
+      "bytes": 1609,
+      "sha256": "51207a44223f4f910f0748d949b63758bd8301efbc96dfdb8f0c4dfa39347688",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/capture_uow.py",
+      "bytes": 3379,
+      "sha256": "e2ea1219e102b730261181f731af45eb491cbbeb23ec5240bc53d9b8e8405ae9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/circuit_breaker.py",
+      "bytes": 340,
+      "sha256": "a6ad4f75a6b6eb4d3962ae78b9af65a66e74d5691a5efe444423e3470baeafde",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/code_agent.py",
+      "bytes": 12347,
+      "sha256": "00e5ac8940abf0d1d9977998d0997a58ca93206da670dfc4c85639d55a2c6b85",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/code_context.py",
+      "bytes": 3314,
+      "sha256": "d28d81d95300c81b40bc69f4d1915cb4052a96dcc59dc4b9038c21db3c60f5a7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/code_replay.py",
+      "bytes": 1722,
+      "sha256": "fe6536f48f64c331c0a8b6ca428ff3a3f5bad9da8d0b2d448e2ace6455e83cfb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/code_verification.py",
+      "bytes": 3264,
+      "sha256": "4bc401cebe20d511a39a8ab029173f1f59c595a5e97e54bc8539e0f38c5f24f5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/coding_loop.py",
+      "bytes": 5086,
+      "sha256": "64cb2b297cba4f783b3279b43f0605e1e4756ec6426ff81edc6605eed73bee65",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/coding_request.py",
+      "bytes": 772,
+      "sha256": "1ebb191c6aebb8f1e627c6791d19bb96e2bea51ba37751988ce880889794aea1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/config.py",
+      "bytes": 2138,
+      "sha256": "be32181cf59ff48c72338435ed4c1b4485ab60e31e6c6adea9daeedece57d6f3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/contracts.py",
+      "bytes": 1786,
+      "sha256": "e55d713a16c3e6b19646aef7c4b9573df4379b8d3d3162174f9e0352c59e623f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/corpus.py",
+      "bytes": 4300,
+      "sha256": "1ae915eed7e5742912dc31865200dc633cc71b2767ae06fad821168b9aa4a391",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/corpus_quality.py",
+      "bytes": 694,
+      "sha256": "f2ac94644f6c7dc125d368d3796af46d6ca465507bd289aff3caf3be541ebc85",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/dataset_factory.py",
+      "bytes": 1811,
+      "sha256": "c4140cabdeb6f8defd832925ee09ae98a92dbb0a246ef27a12eb5489301c1df5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment.py",
+      "bytes": 1622,
+      "sha256": "04207633fe0b56104aa181819518a72cf84ea106d8fba81a74b8ce152e0013b1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_controller.py",
+      "bytes": 2185,
+      "sha256": "56f415a0120b8d7b3796a2caff677f1f4a763b07692ffbada21264f40e1e960d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_evidence.py",
+      "bytes": 1271,
+      "sha256": "2614782ce99015e89cbab2d724e5550ef4f13b47da4f168d73b6d3490331a381",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_evidence_store.py",
+      "bytes": 3168,
+      "sha256": "565be059607affee67ba662a34a4c8406205c47274a64bac015bce27ca4a7780",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_registry.py",
+      "bytes": 3807,
+      "sha256": "4b7410732cf350301a8e78ae077f93f84ac1ef31dfd63713571bce080c643e59",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_resolver.py",
+      "bytes": 613,
+      "sha256": "352bb0063b55db151dc7c45abc908b9cbd3fb883820a0d4bc7dba0e839a46de1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_store.py",
+      "bytes": 2313,
+      "sha256": "f5585927d22e7e1f8c6e3f904367c15e6fa1a3f5047608ce7b3bf83a97110895",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/deployment_validation.py",
+      "bytes": 2122,
+      "sha256": "79fe8aa3fb3f2d4cc21f21cb492ebe017fbd3ccdca107773f54f803fdb0efefa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/events.py",
+      "bytes": 7139,
+      "sha256": "f7ed415292372cdb40623b05e3478ad253894f3844caab29c14c04c98bff8180",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/executor.py",
+      "bytes": 1682,
+      "sha256": "b9ecbde5ef07b4865b153fb6d43d47ff69e9a7c68dd35f9254a5a3c6fa628896",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/gguf.py",
+      "bytes": 5749,
+      "sha256": "56282c452efb0dc4ef24e4fecd491f5df14dcc2c55f843adeca0d05086542592",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/gpu_telemetry.py",
+      "bytes": 3046,
+      "sha256": "98142d8ea8a9f2b7f97f2d6ff4e483411316e8e7b76fec09e568549b6d4a18ff",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/hardware.py",
+      "bytes": 363,
+      "sha256": "ad6c872083ea25ef6eeaa7a0d5a549292374977003cec7a2c21d317b7866d9e0",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/hash_chain.py",
+      "bytes": 688,
+      "sha256": "eb4e693122fd5bf240de7adc2cb4d07a88460bec5fa276bc22cee4978fef8c13",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/health_gate.py",
+      "bytes": 737,
+      "sha256": "057cba8886d3512d3f055720f473ac8cd18a0d7dd0a0c53426164cddc2cbc2ff",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/kernel.py",
+      "bytes": 9731,
+      "sha256": "31b54925e16841bb85fc81e63af125c2d7f57a65be25edf1009424a90ce3a9fa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/language.py",
+      "bytes": 227,
+      "sha256": "6d485ded3b58ad8b87091786697543fc183ee5280def331ff400e3600f5fee20",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/learning_capture.py",
+      "bytes": 2469,
+      "sha256": "70b1db2d0711cd1ffc170259b47f245e1440a80123bffaa54b191ee73829b65c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/llama_factory.py",
+      "bytes": 1792,
+      "sha256": "0ba92de8d94dc2f0b8ea4bef0738517a59b498f6ac49ed639e225a96b2ef2043",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/metrics_store.py",
+      "bytes": 3154,
+      "sha256": "6f35defe85b08341eacd9e597c0733d01a3b6f4db007f993b24408f5f70212a7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/model_factory.py",
+      "bytes": 1895,
+      "sha256": "72da4361d695b55f7a5c236336e600c4f238d2c78921f422646102b0b1782854",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/model_registry.py",
+      "bytes": 1308,
+      "sha256": "4ec9a168e2933e43e65cfc098437d74c996134c2e0adf2d4c6e9f4b1521fbf9a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/model_scout.py",
+      "bytes": 3691,
+      "sha256": "f5bda2ccd06061bce25034e27152ecd774cabe3178618613668c8d5ad3160f94",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/observability.py",
+      "bytes": 2070,
+      "sha256": "b422c96c9af315fb235235216e89e3890068434286ed9a0bf60e5f9d78b5cb3b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/operating_metrics.py",
+      "bytes": 2290,
+      "sha256": "b8c328691b94df84db04f1b7366983d44db95b6861c9d68b9a62350d0ead4d31",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/optimization_report.py",
+      "bytes": 1333,
+      "sha256": "d22b1e0ae564720ff9ee85cb775d7735661659b4fd3ddb483d05e71e1d0ea261",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/outbox.py",
+      "bytes": 7070,
+      "sha256": "eec73eba03accdfb516363eceb6854260191b369f0dcfa2013a4439539b9e62d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/outbox_dispatcher.py",
+      "bytes": 2695,
+      "sha256": "5e6d85f7b24f2db8e3f8d5987bd304878d74f5b92a07e0f5def2196c777e14c9",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/outbox_metrics.py",
+      "bytes": 873,
+      "sha256": "b4165362f0c65c17126d864362f3d88dff69996fad214d6e3f9d1bfdf4ec8747",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/outbox_worker.py",
+      "bytes": 2655,
+      "sha256": "23693ae4825b599963d6e59b021113c65467db963fba2beb6d218a4b0deb2bca",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/pareto.py",
+      "bytes": 1161,
+      "sha256": "a51b57c27b34051126ccc2342e60eec64476f4c37c624951e84e1d47b0f45b86",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/patching.py",
+      "bytes": 5951,
+      "sha256": "545ab292c69d56ba1ae970f96e4907387ef8866fe3e7e1abac5b8cd9bec853a3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/physical_inference.py",
+      "bytes": 2752,
+      "sha256": "b210c945df84a13d5257658a171237ac22c6e9b380c5d3995a77d4fbb35e1561",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/physical_registry.py",
+      "bytes": 971,
+      "sha256": "1a8fcf9f48e68f54f63807f21c94511cdd546aa294d5293f447a97af15d9f6da",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/planner.py",
+      "bytes": 1917,
+      "sha256": "3c037f7be021193727dccecc9b7c72e9b8fe6ecfaf2aa9d92f232838a77cb8c8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/policy.py",
+      "bytes": 988,
+      "sha256": "cc92389b27b5de9ba57f642c06e378dfd4e73d724160d38ec025f118a0c58897",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/privacy.py",
+      "bytes": 3217,
+      "sha256": "e43640791162628de043b5896ebc4163f62333021beed04f56200b1b1c8ad3e5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/process_supervisor.py",
+      "bytes": 1760,
+      "sha256": "037bd396f40b0f26a6b0f84f014e3f01058934fc36e4e04189d2b37db9981751",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/promotion.py",
+      "bytes": 1041,
+      "sha256": "4a3a8a2fb75350788bfa4a45193e55bb55a0c15b03be94b6f1e97481b270ade3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/promotion_gate.py",
+      "bytes": 1046,
+      "sha256": "6f997e88dc59d18ad1fbb9df0e4773ca91fd2387c0fe961b6a48ae76a19024c8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/provenance.py",
+      "bytes": 5026,
+      "sha256": "6a83ac45239c9ebc8d245e7e4d1f966025625b4ced8f8283ccadbb6ae6bff58e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/provider.py",
+      "bytes": 1231,
+      "sha256": "9de613f15dd21ff06562a301da7ac61521f0d203d3463d5ae231611b9693ffd3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/quality_eval.py",
+      "bytes": 1119,
+      "sha256": "9fdfbddb4a13ab105ba3d1288a1e35dfb91d2bc3eb22f459c927fb9ea43830f2",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/quant_profiles.py",
+      "bytes": 802,
+      "sha256": "87aef031aa29350cbc1e1be128cbbe2f479c01889bfc1f44eaa32b8d42698d73",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/rate_limit.py",
+      "bytes": 295,
+      "sha256": "cd21888bbfe4f6e5bae66c6256a23a7062fa50d6bbd6bde45036a150863bdedb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/readiness.py",
+      "bytes": 2272,
+      "sha256": "64a388a4f0410e6fbc2d9d0b7c5b589fba058bc6aeab94a85ddf182fde1e97ab",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/replay.py",
+      "bytes": 1882,
+      "sha256": "71a13bf6a92ca9a043eec4622f9254ede4b74c1d85d879257a09f0584a9927f1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/replay_executor.py",
+      "bytes": 3549,
+      "sha256": "b7f81a4257faad27c34fa2966e28a4d6d288ce0785abe3cf322988889337b59f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/replay_integrity.py",
+      "bytes": 1602,
+      "sha256": "296b6a33fd67dc083e592c40ddab716ebc1d5da0e32c96e5e105da47342e97b4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/replay_runtime.py",
+      "bytes": 958,
+      "sha256": "9079747c7cfab123db459255ade440162964f21a28190ca471f27a5c9f553af1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/router.py",
+      "bytes": 1772,
+      "sha256": "440a0a4dd7e7f430cb712eaa681c874048d376514879ed640c3ce97b9a2911f8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_bridge.py",
+      "bytes": 2581,
+      "sha256": "89e97dde79d12a3611b59362ce6ebdb3954d353894e7d7873ffffd98589df634",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_events.py",
+      "bytes": 2404,
+      "sha256": "3cbeeb21d1353b4ed3e38a6b0dc5f5fd227cc307573672a4a28e86dda0a453fe",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_evidence.py",
+      "bytes": 1947,
+      "sha256": "becd17a3cc3cc7e0b16de37e25d9a7298c42591556b51d587734990c7a6cfc44",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_executor.py",
+      "bytes": 3830,
+      "sha256": "763a27462c6ff2c9e40ddbd8df156a078f38ef166fdabcfbc283e15763c87461",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_health.py",
+      "bytes": 1533,
+      "sha256": "998426be841788e2c0ae60e1ff26df11bc75c55319dfbbaa3ee981727ce2d9b4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/runtime_health_store.py",
+      "bytes": 3573,
+      "sha256": "74643c5379ce3e109d5947d1d8927fface2ead59ac9909ce999e6ffd216efc65",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/sandbox.py",
+      "bytes": 9327,
+      "sha256": "1a7b3482b33263c2dd820daf63303a6433cbd4da23417b6fa5288f1cb56cc150",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/security.py",
+      "bytes": 2238,
+      "sha256": "4210a953f9dd6742546c763f9af9fbba62d06bb80c2012e4dbd8f14c3c6d8f27",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/security_audit.py",
+      "bytes": 931,
+      "sha256": "6bbaa0ce0d183de56c14cd0d50c6ff247ced9c5d2c4c55ec5f0ad01c4d2ae9f8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/startup_recovery.py",
+      "bytes": 1015,
+      "sha256": "0cee0cd211e7e53dd00fb11933c828471284e7cb86dedc5056c40535cfe636b5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/state.py",
+      "bytes": 1133,
+      "sha256": "227e2a741f50e2b21ac45938c5610e3ade6c28fc22d825a4e8a452c8ad635f9c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/static_analysis.py",
+      "bytes": 753,
+      "sha256": "6ae930d56bd5e442c8b0e1f0ae027bcb60ded022be90cbeb4e70fb85f95b9e32",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/tool_audit.py",
+      "bytes": 1752,
+      "sha256": "45339ae7349ac6e6f56aa098b2d63879dd60fa808e9cb759963ca4d27cbcdcee",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/tool_runtime.py",
+      "bytes": 3275,
+      "sha256": "45bac874b714912cfb6c5a182d4db7e4e495df2565b5d0e76f10fa9b673fef6f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/tools.py",
+      "bytes": 1605,
+      "sha256": "8d19c4a9dc3635519da91aeb5c9ffd5246df494b3c096d61b02dc0d56f50900d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/traffic_router.py",
+      "bytes": 2876,
+      "sha256": "bf86d306bb7e95beb39d40b62c33df60b003b860a0f9a42b5dbad0c5a927bf94",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/translation.py",
+      "bytes": 3457,
+      "sha256": "f7f4108ea5fadddf34a7579f7e87435e53c303e0e72b2698700eeebad4aee437",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/variant_runner.py",
+      "bytes": 1436,
+      "sha256": "71996c76e08f3f8fcbb015e756512636093e6939cf8689dab909897a18dd2033",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/verifier.py",
+      "bytes": 975,
+      "sha256": "05f8bf739bd8458c152134d8b7f8b06b4d6bc0ee2d0af308450504ddd78bb10c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/workspace_hash.py",
+      "bytes": 1311,
+      "sha256": "b0ec4cfd1046fdfb2bbc742a6850fb081a9f927d3424a165388b3cd550af2d76",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/runtime/workspaces.py",
+      "bytes": 2759,
+      "sha256": "95c483658870e4fa093c5cda02379b458ddac182860325cbb4bfa80bdf757d45",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/scheduler/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/scheduler/graph.py",
+      "bytes": 2031,
+      "sha256": "8b5dea61cf6b005d602bad171323875bbd748b04222eb7cec579ee1c6cf9230e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/scheduler/invoker.py",
+      "bytes": 7773,
+      "sha256": "eefad8790ce4e6d790b2c97d1833eee1c8d4db59b5f6c0d846c631b00cae923a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/scheduler/parallel.py",
+      "bytes": 3052,
+      "sha256": "19fb2fb1da4d4366241f21827e5bd4730f3408154aac509bd7ae6b7acc6d3893",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/scheduler/planner.py",
+      "bytes": 7395,
+      "sha256": "7e5a2fb5f428b26e135f2c448b7938995043b8ae11c514117bf9f0cd22216d3c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/sdk/__init__.py",
+      "bytes": 3309,
+      "sha256": "d43796bf36c9caa8c9d44245fa152732eab7801286b78c9d95998027ceb7d228",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/simulation/__init__.py",
+      "bytes": 180,
+      "sha256": "a7e03178af9b037e1550498f0448f19e1f2d48398a1a60eb09eb968647ad5d26",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/simulation/engine.py",
+      "bytes": 7887,
+      "sha256": "e2e02f2d47202a5cc75d1052ae2818ebda80a065efd174e3f96e6bc6737e195e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/telemetry/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/telemetry/metrics.py",
+      "bytes": 4151,
+      "sha256": "6006d9e1bc5934e69d8665ca6ad0b86c47efae8c99fdb4c7c14ac46d01956443",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/__init__.py",
+      "bytes": 564,
+      "sha256": "05d57465177a2d427e06b6db8d514a9b9f2f8b4d57b11e462726209c82aaadc6",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/builtin.py",
+      "bytes": 8315,
+      "sha256": "5ab0829aa624c8bddd60e3a529648fa1805f0cd77b80e9977917cdd33ddd3164",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/capabilities.py",
+      "bytes": 1705,
+      "sha256": "591efc970043b3abd43af8add3581f84112b0db6b6f47cfce382626346313a8c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/definitions.py",
+      "bytes": 1996,
+      "sha256": "ef49b163cd6164d421a5b375b89bb778f6cf14b05e69c99087ef82f15aa359cb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/executor.py",
+      "bytes": 6469,
+      "sha256": "5bd504f76067d4bf818c6b76f8d3871006988d657fa315ca24bb8692ce86b766",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/policy.py",
+      "bytes": 3406,
+      "sha256": "da92d3768902ec6e199cbbbf6e5dd2d688ab906bb92f9c6a8869e58b1ef56fe3",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/registry.py",
+      "bytes": 1384,
+      "sha256": "242902d46ba683c53470772e9383e6b6b4177f7f94276c9ef8269af5f53f6e17",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/sandbox.py",
+      "bytes": 5391,
+      "sha256": "1ac152d92c5ae686ab565395c3327e1ed4b4bc6da6f97460ccd9946d5a75b855",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/schema.py",
+      "bytes": 2590,
+      "sha256": "6bca2abc2f2540d495f58f734fdc719edf4141386da8c3879b3a58bf712a341e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/tools/workspace.py",
+      "bytes": 15639,
+      "sha256": "175ee2192ef1258a847f11d82c53bf0188641151fde306344346757c17d7494d",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/autoquant.py",
+      "bytes": 10809,
+      "sha256": "75ac8acb287f388b6fbd006fbb7f2a411242a50176154918f1f4ab660c5bc714",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/calibrator.py",
+      "bytes": 2952,
+      "sha256": "783eded5d752fb0ee26fbf0e6691548839ef23365875350b58f751b1dbf0f611",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/compare_evaluations.py",
+      "bytes": 2976,
+      "sha256": "fda11b7d5d4ea847120bbe9d0bf56c4f08b38466b549acade561d937c0baf654",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/create_calibrator.py",
+      "bytes": 1032,
+      "sha256": "69eb89cccf0ff1adfdf6a8955d9e91bc5a5a937bdfc7922b20ee8a69f81ea615",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/decision_benchmark.py",
+      "bytes": 4617,
+      "sha256": "bc7827a4c88f9d927ee547b5076ac46b1f000bc83deebfe6d18bbcdbbef2992f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/decision_corpus_v3.py",
+      "bytes": 5346,
+      "sha256": "982b454edf5594548482b0251319e08878277b153ca3578752b5e2925342f839",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/decision_metrics.py",
+      "bytes": 2267,
+      "sha256": "57058a99af8452cb45079cba7ee24f8bc90c99824b8d0bb5af6cc973e7a7f0e8",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/evaluate_corpus.py",
+      "bytes": 6944,
+      "sha256": "8f9d4b864d90c014403b72c3363a0d43497046437661908d48aa3505d4ce68e1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/evaluate_decision.py",
+      "bytes": 7887,
+      "sha256": "b6c30ef02b7a8cc5bda7d4e3f67ebe156a0bb8380b1589cebed1112e0dfdaede",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/evaluate_decision_corpus.py",
+      "bytes": 5070,
+      "sha256": "0e2577e436f05ceda9eb15fd3f79c47a26573d00a30ca213ca4e7352a5f9868a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/evaluate_human_paraphrases.py",
+      "bytes": 3118,
+      "sha256": "09cd3354570272310b3295fbd0c9a12e3d7bf934d5360ee59e00ba9328f98204",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/finalize_decision_corpus.py",
+      "bytes": 1856,
+      "sha256": "f61c4b323a00612f33cb245e8691660c0ae3b274edc907ef07712544cf89f72a",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/human_dev_v1.py",
+      "bytes": 7369,
+      "sha256": "4f49bc9ca56277c85dad3041f113afeed4f35ad75ac906a479dd7e6f8c14ea1c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/human_dev_v2.py",
+      "bytes": 5183,
+      "sha256": "d0bc214e85ef6f6271ee956dba713e628dae99db4d8b90d7966ad6bb326b08aa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/human_paraphrase_eval.py",
+      "bytes": 8943,
+      "sha256": "5ef34e9b1d05cd4668e26c3167a6bfe0d29be2b4bbbfad45a35d09f1531b3652",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/hybrid_classifier.py",
+      "bytes": 3145,
+      "sha256": "aa4a8f08183558f152c1f35e2673a1d622729a048129063ee3d280c78163ab57",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/lab.py",
+      "bytes": 28016,
+      "sha256": "41d1d7af89e745a762faf5402933c5494e2ae4137ba49d442cf890b0a77d6290",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/measure_inference.py",
+      "bytes": 4166,
+      "sha256": "ca79b77da6930c2b13ee2671dfed82d18c700db5c787bed70a5a4261f98c9fd7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/regression_corpus.py",
+      "bytes": 5931,
+      "sha256": "00f4f1c8c2da1bba7ff687a416e7df89f1e2126487422031b87418a468209b3b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/signing.py",
+      "bytes": 8291,
+      "sha256": "e8f0f796bdbca5bc16420e152927d7fcbcb656a2f8abd335094197297f8daabc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/specialists.py",
+      "bytes": 6393,
+      "sha256": "cf355f77114db3f9f0ec8a21b53569cdd33fb21cff3f90e912fb3a9d2d323809",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/train_decision_v2.py",
+      "bytes": 2554,
+      "sha256": "17abe5f6d188429d6bd42029532cf3cf71e78d32c0da1c8384d8258ad81329b0",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/train_decision_v4.py",
+      "bytes": 2234,
+      "sha256": "7aba54136ae2a3841b13bb9e18958cd5b2421ae967e680d639706cfc0b95e8fa",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/validate_kev.py",
+      "bytes": 2554,
+      "sha256": "c64ca35ed4ae86fafcdd9179a32eb8527394347efecebfa83c66d6284a2095bb",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/validate_local_engine.py",
+      "bytes": 2851,
+      "sha256": "d4451d65105fd43532b2face382cec779e5e2c1e24c178a2fbc1bd96e9e1e95e",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/validate_unified_runtime.py",
+      "bytes": 1715,
+      "sha256": "bf6d08074681845c19b2b0f6c84af969943a56f812bbf9b2210f28a7e9f0744f",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/training/verified_corpus.py",
+      "bytes": 4691,
+      "sha256": "1d6b19f7b7e608b54711cee3448464e6f929a621a017231f32554dc90536dbca",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/confidence.py",
+      "bytes": 1521,
+      "sha256": "1b447563d7833befd03da2deea8e42d6a22e832ed4651ae6db90fa68de66c1b1",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/consensus.py",
+      "bytes": 1493,
+      "sha256": "f80e15be056afdad6058814b3acfbb81bbae2b21b3885b6e6c88ac5142e66549",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/math_check.py",
+      "bytes": 2177,
+      "sha256": "fb8bebea651ae108947a60d6a2f1c8c97907c1282ba8b85755542c92683757fc",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/uncertainty.py",
+      "bytes": 3438,
+      "sha256": "4f946479dfe66a0388e48bfc5a4e8f8f480637e88048a50abfc6085977b631b6",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/verification/verifier.py",
+      "bytes": 8342,
+      "sha256": "3627c369542c8ea1ffcb6edbe8c84640c9ab64ff9ed25d09a8b87e5b4f99bde4",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/base.py",
+      "bytes": 3171,
+      "sha256": "422d3728a84b71df87fe1583347c047ed041219b2c5917ceee4c1705f84ce9ff",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/coder.py",
+      "bytes": 4476,
+      "sha256": "0aa52a03c23642aa45afeba416e824609d1a2d0ecfe5bcf22fcc76da30a280cf",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/critic.py",
+      "bytes": 2555,
+      "sha256": "861fc039af1891aef96f75e2932732a610169a6a2cd46ae3622b3491ad28912b",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/judge.py",
+      "bytes": 4209,
+      "sha256": "544b5acdb4778beb0733e5e4bc1ece1f64b4f44ce182b99ee8c9340979b68cd7",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/perception.py",
+      "bytes": 2277,
+      "sha256": "490dfaad0e8842a6400816b206ffcdf032a74113d4fa69ee390894ec1beed6df",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/reasoner.py",
+      "bytes": 1989,
+      "sha256": "5df6bc6de6a528fcadb29afa799a6ad9fac0f3eb1b7b44baa805a780fa141984",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/workers/synthesizer.py",
+      "bytes": 2489,
+      "sha256": "c62a133d380ea6edefc422f715ac5eb92c06cff820e17590407554b8ff72c095",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/world/__init__.py",
+      "bytes": 138,
+      "sha256": "cfdabd2db4d2e11f9dd74c6d8b04d6fa1cb14e36bba6f804403db084ab63d912",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/world/knowledge.py",
+      "bytes": 23084,
+      "sha256": "531044d863bf4e84c1cdfd31093e0686a855f6a7c30737dfd40b5497842ab5f5",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/world/model.py",
+      "bytes": 27955,
+      "sha256": "3e640cca2e33b3e74c67285cdf935c3b68fda4d5d2bd4a4f2fb9997f18d25b00",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/world/runtime_beliefs.py",
+      "bytes": 1534,
+      "sha256": "0e258817a78632e7bfa475ebc1692b832d22cec6df2d1b00279dd8afd3f0efe2",
+      "syntax": "ok"
+    },
+    {
+      "path": "hydra/world/state.py",
+      "bytes": 6092,
+      "sha256": "c8d69738fdb0f6afb0d2958e069f94717d9f1c86d8b1d83bfe53c0a8406e9062",
+      "syntax": "ok"
+    },
+    {
+      "path": "infra/kubernetes/00-namespace.yaml",
+      "bytes": 793,
+      "sha256": "4f9bcb434086f7375cd2b79d78a0fc4acb0459282d4a644c18911a86a4f8f5b2"
+    },
+    {
+      "path": "infra/kubernetes/10-control-plane.yaml",
+      "bytes": 1487,
+      "sha256": "4e326579a533f7bdcf7c98a3b80e6d48b8153b533bdce8b5d05da3d249782250"
+    },
+    {
+      "path": "infra/kubernetes/20-data-plane.yaml",
+      "bytes": 2241,
+      "sha256": "ca1493787abf5d4bfee511cef45e6a911d693cfbc102e342e52a2e724c467c5e"
+    },
+    {
+      "path": "infra/kubernetes/30-dra-gpu-claim.yaml",
+      "bytes": 538,
+      "sha256": "41ec41d9341204e2dd909d8ab96dbf93d02f19ee379ea60c7e7ef51192fbb2d4"
+    },
+    {
+      "path": "infra/kubernetes/40-infra.yaml",
+      "bytes": 1865,
+      "sha256": "ba85dd38f29fc1a43c2a72f8bf23b8c5eff4cf1f6fe2e77bf69e982b0fad6510"
+    },
+    {
+      "path": "infra/observability/grafana/hydra-cognition.json",
+      "bytes": 2516,
+      "sha256": "922a67df1821249a96efeeb5dbbc9bf43f28e6efabdf5137cbc2fbbb1f885d49"
+    },
+    {
+      "path": "infra/observability/grafana/hydra-corpus-training.json",
+      "bytes": 1407,
+      "sha256": "ca5f0fee3883ec1778dee669e3a2dfa477b5084de5303bb32ccb4c453bca3d7e"
+    },
+    {
+      "path": "infra/observability/grafana/hydra-ip-compliance.json",
+      "bytes": 1448,
+      "sha256": "876466987658049556e49e32016562737be48a801910d01fdc53e39f5159d117"
+    },
+    {
+      "path": "infra/observability/grafana/hydra-models.json",
+      "bytes": 2520,
+      "sha256": "8f18ab07b056287cedcc209b7262f726d0e6bd92b24aac7c95b0bed08d29a714"
+    },
+    {
+      "path": "infra/observability/grafana/hydra-operations.json",
+      "bytes": 2493,
+      "sha256": "4f1a7ab17a0e2518576548171ab06c1024cbfce448e76cd184408abfa6c0ea99"
+    },
+    {
+      "path": "infra/observability/prometheus.yml",
+      "bytes": 217,
+      "sha256": "1148475dadd11decfa2d8b9ff2bcbff12153acc4e98e6cbebcc96013f483b559"
+    },
+    {
+      "path": "infra/sandbox/Dockerfile",
+      "bytes": 363,
+      "sha256": "e2d9af0af53be27973101127920d005d8e44bfdf5331c3b4ffdd1b00ab994d49"
+    },
+    {
+      "path": "infra/sandbox/README.md",
+      "bytes": 655,
+      "sha256": "db57c6641f060eecc762edc6a5e5a76ee3c1f74783623d71193e44b499f6851f"
+    },
+    {
+      "path": "infra/terraform/main.tf",
+      "bytes": 857,
+      "sha256": "8cc1e379c0753228df84d63be51c9ab90e1fb06951bcd0de2c15cd4fa8c0c1b4"
+    },
+    {
+      "path": "models/hydra-decision-v2-human.json",
+      "bytes": 296555,
+      "sha256": "4275ff2a7d25a10a1d410ddd9823e6a1016250ee5213e8fe30c4302724e6d5da"
+    },
+    {
+      "path": "models/hydra-decision-v2/classifier.json",
+      "bytes": 296555,
+      "sha256": "4275ff2a7d25a10a1d410ddd9823e6a1016250ee5213e8fe30c4302724e6d5da"
+    },
+    {
+      "path": "models/hydra-decision-v2/manifest.json",
+      "bytes": 585,
+      "sha256": "eb8db37b65b7af529d1c448743b983973f451de99997885ab5da955f1680ed25"
+    },
+    {
+      "path": "models/hydra-decision-v4/classifier.json",
+      "bytes": 1795058,
+      "sha256": "51782a3abecaba34c96f6067d3f8af6fdaf81ecd2a2b180d574a6eccf2469df7"
+    },
+    {
+      "path": "models/hydra-decision-v4/classifier.report.json",
+      "bytes": 435,
+      "sha256": "2f4772591e08e041261f41be387e473e67064b943231e8c082ff04e629537c73"
+    },
+    {
+      "path": "models/hydra-decision-v4/promotion.json",
+      "bytes": 460,
+      "sha256": "251eb8cfa63d52dbc6e8021f15143d576cd71a57099ea76d374743140f223d55"
+    },
+    {
+      "path": "models/kev-calibrator-v3.json",
+      "bytes": 188,
+      "sha256": "857dd51a59a95748912d0555062d82789e06ca62731b39dda693105690cd3718"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1960,
+      "sha256": "a942caf62923a9ec9d4c0cdb80a21f7603172033a039b98255d1e69d8c561579"
+    },
+    {
+      "path": "runtime/HYDRA-Q5.Modelfile",
+      "bytes": 465,
+      "sha256": "4953f06a40645a64a2a77c47b8c55c2fe0904b27c59407056cf9f263ff053037"
+    },
+    {
+      "path": "scripts/autobuild.sh",
+      "bytes": 494,
+      "sha256": "950f5c9d59dd1eae1b8053a218ecd1524bbd1db66e6be93f00dce8824cbd3fd7"
+    },
+    {
+      "path": "scripts/bootstrap_3060ti.sh",
+      "bytes": 1215,
+      "sha256": "7b2e4ef6d73f1f31a09cdd5feea05f69f99cea1083cfecec151d7dd7429bfabc"
+    },
+    {
+      "path": "scripts/bootstrap_windows.ps1",
+      "bytes": 1166,
+      "sha256": "920a8eba1bfcaa39ee60b22357ce36f9299ce15e9ee4cab01a9b925c366be7b6"
+    },
+    {
+      "path": "scripts/build_gguf.sh",
+      "bytes": 445,
+      "sha256": "60d941d1fb3157c60530ca06b63da0ef407f443b57a25401f9a71f4e05de6ede"
+    },
+    {
+      "path": "scripts/build_hydra_local.ps1",
+      "bytes": 2066,
+      "sha256": "2c95d718114b26ac5ee66f2d8e80a9029210f538edadeebac7df0d9ab4784d1f"
+    },
+    {
+      "path": "scripts/prepare_hydra.ps1",
+      "bytes": 3970,
+      "sha256": "c44a2cc6dca6f0cd71c68303f60deef856e22c86350df0fa2c945edca94ecd76"
+    },
+    {
+      "path": "scripts/prepare_kev_cuda.ps1",
+      "bytes": 3278,
+      "sha256": "372a27cf7f220a966ba78a2dac2e9120bb119825f47b6c4b0d49a6740d60b7d6"
+    },
+    {
+      "path": "scripts/requirements-training.txt",
+      "bytes": 354,
+      "sha256": "ace398e5f6f7a6cbe7d1610c79d2194f92598f64665356a44005daca7d65c5c9"
+    },
+    {
+      "path": "scripts/run_api.sh",
+      "bytes": 562,
+      "sha256": "64ac2ba97c1f76cbf7acaba55a2ecdc49e4d976cf6915b7e7e1c6f4bbdbccb9f"
+    },
+    {
+      "path": "scripts/start_hydra.ps1",
+      "bytes": 1788,
+      "sha256": "0b16dd282a6b91a9961bdda8b5e4b5969b6d9f7fe072427477d8dbcd7406fccc"
+    },
+    {
+      "path": "scripts/start_kev_local.ps1",
+      "bytes": 1639,
+      "sha256": "fe0e1a8d69add95d00a0639c8a39e65a2aadabd9c7c7580ddc0f373707595002"
+    },
+    {
+      "path": "scripts/start_llama_server.sh",
+      "bytes": 606,
+      "sha256": "170b9dc7154f70d0857a7514079a011a4aa0220d1c3e6675fe852e8b02f0894d"
+    },
+    {
+      "path": "sdk/typescript/package.json",
+      "bytes": 376,
+      "sha256": "de0629b12fa4f58e1bb8f2c0217516b5e9ac4856bcfdd175c25e4b978c644012"
+    },
+    {
+      "path": "sdk/typescript/src/index.ts",
+      "bytes": 3507,
+      "sha256": "1426171d45aeca32a62c07fcd51dd5fcb7ebd3e5d2603f5e04a9cc6296f60eb7"
+    },
+    {
+      "path": "sdk/typescript/tsconfig.json",
+      "bytes": 200,
+      "sha256": "61c03dda070de80d441cde31a8e0a2299c60608655ced31596670253a1f7e9b6"
+    },
+    {
+      "path": "sql/schema.sql",
+      "bytes": 7613,
+      "sha256": "32ce94ce5ce7eba538550c74959f5c5bc218a7af1a8ae800eb13399ef1da11f9"
+    },
+    {
+      "path": "tests/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 2167,
+      "sha256": "56cb51f61f27a8bcf3ebd2847fc425cd2a71b2d816472312876f3a6fc85cc453",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/__init__.py",
+      "bytes": 71,
+      "sha256": "4903bd01cd54d35509139c6cfb03c5b7f2c001c33f933d1c4ce404bb087e372c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_admin_api.py",
+      "bytes": 1853,
+      "sha256": "0a5ebd30dc2db649db895a7546ad18ede7989b5bd146da504d4bf4f37742048e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_admin_deployment_api.py",
+      "bytes": 6642,
+      "sha256": "04204424642148204ffb1e9cd1f6d9fe606e37800117ed46f6d8051b32887ad5",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_admin_metrics_api.py",
+      "bytes": 1943,
+      "sha256": "f0a66a91878c95474d7c85c3d277a59c6928f95e96e8db44b54f6ac2dea597c7",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_admin_replay_api.py",
+      "bytes": 3115,
+      "sha256": "f1c57d1d4b3ec4a9b13829588ecbfa53c7a047dacb643c22126878ac7334112a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_api.py",
+      "bytes": 515,
+      "sha256": "c4747ecd9f8646e0d7bc812c2e1c1cf932a03c9a97a8dd042c507e0058679605",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_api_readiness.py",
+      "bytes": 817,
+      "sha256": "3c7b5a573951f5c9c20705a97589c8df2c0697621d984528ea54f639b374328b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_api_security.py",
+      "bytes": 3585,
+      "sha256": "ed3c4a294c070658301a3a9192b53c802c1016093c6f066ff7dedbede7f903d8",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_artifacts.py",
+      "bytes": 536,
+      "sha256": "d4cbe764b0531364d98c5a42a4a6d8684c16b34091801247ac95a39fe54d61ab",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_autoquant.py",
+      "bytes": 1248,
+      "sha256": "457071d4a48e974c089ccadf57a9f34abfdfd88fec96713a3354c971967bfc78",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_benchmark_protocol.py",
+      "bytes": 432,
+      "sha256": "da2965a6537addd561043efb74b453564efb7640a8ef7414686669f96aa9b2ec",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_budgets.py",
+      "bytes": 455,
+      "sha256": "0e21fe229dc4f9065ca95df790eef2f7212c0cab40f4e8d26e85d62989e8c991",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_build_supervisor.py",
+      "bytes": 981,
+      "sha256": "483b13560be6a04bde3f0d0b02c609898c129e8b3ebb23e0cd3bf6fddbe440e0",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_capture_uow.py",
+      "bytes": 1068,
+      "sha256": "b3ce1048f6c0e5f3f731b6e60cc7a1204c81f2855985a2f5a471d9c203e479da",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_agent.py",
+      "bytes": 826,
+      "sha256": "6d1766f99b9b4d303e6980695856e2f1f71cba01167c1ffa0d4bab41d5e7a733",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_agent_repair_flow.py",
+      "bytes": 3325,
+      "sha256": "7582a60e287f1a0d011ff350b6bfddb77b8ecbb8e431b9c5e82384e3f8ed0c9d",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_agent_sandbox.py",
+      "bytes": 3077,
+      "sha256": "03dcbbf0124bb0f308f48fadb39bbb4de24980486df6291e7900514b08d411fa",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_context.py",
+      "bytes": 1231,
+      "sha256": "10c8f64591e5a9f97cf52142140c6f84bf4b6e0dce2bfd830965135f33d6a2b0",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_replay.py",
+      "bytes": 1199,
+      "sha256": "0d63fb9cd2cd3385eb1b24d485fa8c57c0f626e01b6f9d71b314bf0553cd7571",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_code_verification.py",
+      "bytes": 3404,
+      "sha256": "0c1db8467c808c6b9c01da097b9f79eaa51e7a1dfde38ee1e87c95163ef5d6ed",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_coding_loop.py",
+      "bytes": 2771,
+      "sha256": "52ddd33053d40af2d9ec50bf1db5b2516120e7edda5210ef2df32566044445e2",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_corpus_dedup.py",
+      "bytes": 663,
+      "sha256": "8ef6db6ff1e0f229b5e6597974c7c26bb4054f59ceb2261f1ebf6508ecced56e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_dataset_factory.py",
+      "bytes": 1286,
+      "sha256": "3c87b530ca1536bcc7000a53e44236fb48f494f05aed34f4f0dba73dea1e8ca3",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_deployment.py",
+      "bytes": 3793,
+      "sha256": "19a5618e8ad87e6da1c48f82743735271a0e933a30da0431dc2b511b852c02dd",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_deployment_controller.py",
+      "bytes": 2239,
+      "sha256": "7cce2455d9a59a94d19dcc42fba38b3591f5c84a2ce4b6f93833fe42001d0214",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_deployment_evidence_store.py",
+      "bytes": 721,
+      "sha256": "15868b4ec7589e979edd1b93776a36e25e574c5cf1653f50f399236f194055ed",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_deployment_store.py",
+      "bytes": 3617,
+      "sha256": "8154d7b89b52560d148b2ae2f8ee7772a65b067c1ee663c7615f5f3a19057712",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_deployment_validation.py",
+      "bytes": 3067,
+      "sha256": "335e9d225394cd8a350c2e140006a840113b15fc1b2eda7d35490202ab93df78",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_events.py",
+      "bytes": 627,
+      "sha256": "feae7a84a6d5b4f9460b04b7d6a5edf5ae8743119318044fd01485c17ae02761",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_gguf.py",
+      "bytes": 1800,
+      "sha256": "114517bbeee9e7092e23220f1b3bd12175bd29db2f77ab3ef273a5c95e03454b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_gpu_telemetry.py",
+      "bytes": 1057,
+      "sha256": "18a19806823e703be74a0c31b7149f2b6f41675a2c32edebf464baf05e602ccb",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_hardware.py",
+      "bytes": 379,
+      "sha256": "298973957e814654444d2400c9ec6c38682f873358d8638ea1a8837781c28eec",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_hash_chain.py",
+      "bytes": 259,
+      "sha256": "0b480d45141499b619bcde69637ce451f0d9f29796a697dc01ae18e18710d847",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_health_gate.py",
+      "bytes": 1458,
+      "sha256": "962cccacf3e51905582e3d7e7744202289f92c0d8ef708700959e0ed5c211d45",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_integrity_ledgers.py",
+      "bytes": 2169,
+      "sha256": "1e53994d2bb8c56d35a3ae77338242795428b7be0f2e206a0738583b5f6d029b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_isolated_tool_tests.py",
+      "bytes": 2117,
+      "sha256": "891063ccf6a46c7483b229e0a52155efc8ee086d5d82ee61b4c620a6ab19c196",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_kernel.py",
+      "bytes": 815,
+      "sha256": "d81bf18fcef5a877b52a17f14631bcfd3bac7e39f72c2844c5f05e7021e296a7",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_kernel_execution.py",
+      "bytes": 964,
+      "sha256": "a353daaf02a5abc8223d469dfc74a45ad9a9b744849c97567bec2315a252541a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_kernel_physical_runtime.py",
+      "bytes": 2468,
+      "sha256": "d30c599f07d3f907736e47efbb6b8c310689ae43def0f5b4a2973e62994f4c0f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_kernel_runtime_fallback.py",
+      "bytes": 1773,
+      "sha256": "f8e611750b685047049b5e8c462633072d812cb6eb8d77cc6becea259e268528",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_kernel_transactional_capture.py",
+      "bytes": 2254,
+      "sha256": "843bee23bd3e85fd7d92bae3ccd5f212647244b290bb8e519fca5541f26a36b2",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_language.py",
+      "bytes": 349,
+      "sha256": "a182cfee8eb6feb890c274ca6a614e31baf8048db19e42cb238efe22bbd61528",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_learning_capture.py",
+      "bytes": 4154,
+      "sha256": "44f3c63f03c6fd24dc71f3f7a9c7fb9c0a50d33378036a3048872a588da8343d",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_llama_factory.py",
+      "bytes": 815,
+      "sha256": "60645049c9c9dfaf57b68e4fc9dab0f262aac14eeba5054aff15fc696efbe895",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_metrics_store.py",
+      "bytes": 1632,
+      "sha256": "da98946e19d7e550dc63f5192adf12dd38b3fd37a839fc9e791ad354815d3e5b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_model_factory.py",
+      "bytes": 1685,
+      "sha256": "459d792dde88fe6e6d8b241b748beba3b353daf78379c7faac461338794082dc",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_model_registry.py",
+      "bytes": 482,
+      "sha256": "2f69ec039d66abcb69a768b27bbb19ebbdd33e524a25dd3debcfbf6bb7e43277",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_model_scout.py",
+      "bytes": 2426,
+      "sha256": "9f873f6430dc614a2e8fa643b0a2fbfa0b31dd9fdd6888daa357aad8ed372f9b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_native_api.py",
+      "bytes": 558,
+      "sha256": "bac408560af82a449c5c6888bb80ff794c668e65e69f4ae4e4341840f61704f2",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_observability.py",
+      "bytes": 1159,
+      "sha256": "081441f83fe4bfa41df887495e78d28799d4c5fdf6f02cf8055a14c6dda9e948",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_operating_metrics.py",
+      "bytes": 936,
+      "sha256": "ad153b397a363bf8968769142c9d7eb12e9eb9b7ea6527340f5da7346d4a0460",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox.py",
+      "bytes": 1885,
+      "sha256": "bf423ad8b1f395572879f651025fa22b8954bcdfe6402bd04f98fdeadac0e7df",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox_admin.py",
+      "bytes": 947,
+      "sha256": "923e8266aa2694727903f56b7222f88216db209014d51dd5efb99efa91d6dbcd",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox_dispatcher.py",
+      "bytes": 1427,
+      "sha256": "abdcbd3824d57f96d2f305b67d93bf579dd4da52b424fdad70439c56e904075c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox_idempotency.py",
+      "bytes": 2495,
+      "sha256": "89db087ba0e2356478be68de39879151ad9ed7d89c6417188c912bf05012b4b9",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox_metrics.py",
+      "bytes": 1141,
+      "sha256": "f679d23f7f4f7dc66b17af1c010d92069c2ca0a7ef6ffc127f4777b81105a372",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_outbox_worker.py",
+      "bytes": 2250,
+      "sha256": "f3b6a9bb789428aca55f8e638557eeb383fe4670c58fa82627962307880b6598",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_pareto.py",
+      "bytes": 1008,
+      "sha256": "a11795a57596b3e91a55a88e7af16e86fc169c49a37337addd2837b043602bcb",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_patching.py",
+      "bytes": 3201,
+      "sha256": "811fe52133d6188e96c8aaa260369067888949bc3af65cdff89e51762ac55e3b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_physical_inference.py",
+      "bytes": 2196,
+      "sha256": "d5a32e1c7be1036712a3ed473f779c66e433658193e2d7b270f46546db4d1890",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_physical_inference_failure.py",
+      "bytes": 1467,
+      "sha256": "8af4bd067c8d2b3f1ddef580af44f5fea3ee7d65ba04c838c1b5a0417f6e631b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_planner.py",
+      "bytes": 745,
+      "sha256": "53aea7603d8d31ce3c54fd653c66df11ec3d50f4856b9d84b41b4d7a38263046",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_privacy.py",
+      "bytes": 1481,
+      "sha256": "05083a63438685485a219390f20f51b25d2c7ddbe4df294635aeb009d550585b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_process_supervisor.py",
+      "bytes": 975,
+      "sha256": "bcd1f44eceaa87cfdd27c95dff44c4fdf85c65d5c7761da2ea7fd7adbf138617",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_promotion_gate.py",
+      "bytes": 1777,
+      "sha256": "d349fe1bb19538794ed4cb2e528e2bb4f075c96bab0f0642da3721c699eb3daf",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_provenance.py",
+      "bytes": 624,
+      "sha256": "69bed0fc6c28e7a4985def8a3ccf2154fb6b7e733f4bf8db9e383d5716641a88",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_quality_registry.py",
+      "bytes": 1444,
+      "sha256": "1638a5b8eea925af8629dc2657b7c06b39da3d35df001bae6c08c68afd2f9561",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_rate_limit.py",
+      "bytes": 544,
+      "sha256": "48ab0cb5a93cb443cd56ac979b01b679df057db419b8b6e858a7ae725d676f7e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_readiness.py",
+      "bytes": 1953,
+      "sha256": "3432c89a0acfbf39cbcb9000ba72c17b05b1b1b7fa488d9c6b39b60d5be6eb01",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_replay.py",
+      "bytes": 562,
+      "sha256": "638b226109002a2de2185b3a96cefc9b35217ea823694000dfcb38aafec3d2b4",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_replay_executor.py",
+      "bytes": 2524,
+      "sha256": "1c37f99ab6d0cfe8798355ff39d623922c8bccff3ac314ed74b95cc154fcaead",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_replay_integrity.py",
+      "bytes": 967,
+      "sha256": "b162f01f69526d1800c12e85f7021d5d4982ada5eb69743b4424a705066a024a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_replay_runtime.py",
+      "bytes": 1181,
+      "sha256": "14191e85d0a9acf77e965c1d4f3d2c8eabc6750a7875ca783ab4bf79da367aac",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_router.py",
+      "bytes": 679,
+      "sha256": "19d4bc5cd8d11b704cd4f006680301d293050ea1cb444c06cc01ffd6f55ba65c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_runtime_bridge.py",
+      "bytes": 2167,
+      "sha256": "749be31837c3e4bde86dfa3795ddc06dd3508d936e23f85ac512d25443384ef1",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_runtime_evidence.py",
+      "bytes": 665,
+      "sha256": "71097f87b0e4c7fb9333ae2e7a04b2221dde05e5d7d681036ec1f54c4771d532",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_runtime_executor.py",
+      "bytes": 2237,
+      "sha256": "d5dfd8e7549e247e9ab9eb5fc33f799b84d1c212b5996ad60f98127ecb5964de",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_runtime_health_store.py",
+      "bytes": 1175,
+      "sha256": "6db268715883bf7cd308bcf136739f736bb2a47807ac3c8ad7f55b6d3038beea",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_sandbox.py",
+      "bytes": 661,
+      "sha256": "e0c8501c142530408cbf8db3b252eb7fa3a8bea4ef81cea0074b61ae9434ba8d",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_security.py",
+      "bytes": 1424,
+      "sha256": "e60e7f90f3d2bf0c3c007da88cd510d0bdafe40dff138744466ae56e5d8cd90f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_security_audit.py",
+      "bytes": 667,
+      "sha256": "9229b10391ffde47a6da75dd3425a451d188a730d305bc2b757e13a4c35c27cd",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_startup_recovery.py",
+      "bytes": 1427,
+      "sha256": "9325cd90f3860fb9f8f3455b52dc9ab3f903daa555d971e548c93cfe36cd80dc",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_state.py",
+      "bytes": 469,
+      "sha256": "b432f2d6cfa101d31b6995507e2348081a8a60100a27e35c1385b44f6bec6efa",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_static_analysis.py",
+      "bytes": 485,
+      "sha256": "92f5f502b8db70db054611333920100840f5b6d538fc2bdf6363f19dfe6b5db7",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_tool_audit.py",
+      "bytes": 956,
+      "sha256": "ded7f60af2a4285f04dc8b6aabe0faf2f90c67e9bdaaeabc9b1cd45e8d07e159",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_tools.py",
+      "bytes": 1405,
+      "sha256": "59fa314657bb5074cf798d258615931daf8abfc1c08d5d950aefda1aa4b6c4f6",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_traffic_router.py",
+      "bytes": 1773,
+      "sha256": "1bb46d55c9bb3abca81de8fd8df51be12dd9301883db82728cc4a794b6d346c1",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_translation.py",
+      "bytes": 782,
+      "sha256": "615c4b0d2b9d080e9cc4a7a9f8d6b27f6b106206739d06cfe6ff793dae8b4b8c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_variant_runner.py",
+      "bytes": 1442,
+      "sha256": "03dc58d9121f1c501b6b9ce3fbf052175beff8736e3b0c8123a988efecd66832",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_verifier.py",
+      "bytes": 479,
+      "sha256": "837ba063465b959b94f6f23e88ab72355f69a811b23eee1c195a99510cd13d48",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_workspace_hash.py",
+      "bytes": 829,
+      "sha256": "081159e81b76f067b01253f0bef2d3ed82c3518f8c3d8b40268d07a8dee7692e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_workspace_security.py",
+      "bytes": 2455,
+      "sha256": "0c366c39e3e7f64513c9513d78486ed2143b853d2a7b5c360b0f098d1666d39f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/runtime/test_workspaces.py",
+      "bytes": 597,
+      "sha256": "2e65368342bdda25b64d6ded0595a43aa19757b944757f9a8654688b4b493814",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 6469,
+      "sha256": "fb59e578e8655e4a914eaea8d682772f12df51b129e09fa114837391fc2110ee",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_autobuild_telemetry.py",
+      "bytes": 2456,
+      "sha256": "f468aac989b56da882603b328abaf6e7528c055a71efd727738882ca229de5cc",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_bootstrap_calibrator.py",
+      "bytes": 749,
+      "sha256": "7b9fc94fc3ffd28bd70117c526030461398d622e2735f834bc7ddee6c2be2812",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_bootstrap_online.py",
+      "bytes": 1187,
+      "sha256": "d95193d1f57c5c2bb10c567b59b8680cc68838ef34253574c80b7bac24618cf5",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_capture_outbox.py",
+      "bytes": 2708,
+      "sha256": "6981199fc7c9ead3f2d4c9980f2969f81b2f013127767eac719fa313ca98e856",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_cli_profile.py",
+      "bytes": 1000,
+      "sha256": "36fc3c4586c6bfb3f75b189ede20dd335b9e2f920109a7d409f19ea4cce0d61d",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_compare_evaluations.py",
+      "bytes": 1187,
+      "sha256": "c6735b9ced3a1a09d83e80aa32d1c13c74972b60dd9e5f3e9b6dbf030ab982eb",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_create_calibrator.py",
+      "bytes": 777,
+      "sha256": "9ea08fdd236a58bc8d260e138522c81301aa78d37a8e920db5e4ac7df19141d1",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_calibration.py",
+      "bytes": 1915,
+      "sha256": "8919a4ffd0448fa8ad148f60fd41a4f71d198150cca3fde30f120e339284370b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_canonicalization.py",
+      "bytes": 2021,
+      "sha256": "5cfea369a3ed94bd8aab450db5ad78150a4e7e07699150c7171324ff0e2d7f8f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_corpus_v3.py",
+      "bytes": 1122,
+      "sha256": "6bb569cb6a1228a922fb46cb2cd2e2dc0a00953a3125d9243f6d15e494dfac5e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_data_admission.py",
+      "bytes": 1131,
+      "sha256": "d5cd9c8108148f05e05ba2dbf9dba7fafe61c1b96138801a15144b0537135827",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_metrics_extra.py",
+      "bytes": 337,
+      "sha256": "43d02e83787373727b3111f00856bcb81e5e22db33c236b86f0bce78f70c916a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_observer.py",
+      "bytes": 4574,
+      "sha256": "240ad3b087adbbdc8f34c75abb9de502bf7cae77fabe24a9c0970dded894340c",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_decision_provider.py",
+      "bytes": 2356,
+      "sha256": "66fb64ae05aa81320ed6a33d5bdeeabfbfc0804125c94579bfc39ee09f7708de",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_deploy_bridge.py",
+      "bytes": 6045,
+      "sha256": "69fb6bbdf57663f44e177de9a4739e1b267400bda055b9376da58e5b1c9f50c5",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_engine_facade.py",
+      "bytes": 2520,
+      "sha256": "7fdf3173c6e108cbfbe0c6e9d17913b8776cdb854574e84ae8c54d7f65bc416e",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_evaluate_decision_corpus.py",
+      "bytes": 567,
+      "sha256": "5444a1510a041f3c0e3fbd4b5f964744496c484b6a4867fa890d728496bcf48a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_evaluate_human_paraphrases.py",
+      "bytes": 436,
+      "sha256": "ad10e1fa2ea501d40252fd928b73c79d28aeb44f7fe192c8c7bf84f0ff3df232",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_evaluation_identity.py",
+      "bytes": 3401,
+      "sha256": "506842b40dce73795733494fcad1bc96142d07a300e915e16d839fb3481cc616",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_factory.py",
+      "bytes": 15679,
+      "sha256": "709f1894568df976204ad2e5fa8c216c6d2e61aa62434ae0c98da27b1cb82297",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_finalize_decision_corpus.py",
+      "bytes": 766,
+      "sha256": "8740105f92c7f3f69db2ab9108599c893dffa51ed8494eff9ea700af33a61fee",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_gguf_limits.py",
+      "bytes": 2460,
+      "sha256": "39dc6e203d65e5943dd34cac2b7394cfce76464f7b8d9689b5bd4add696e0e0f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_human_dev_v1.py",
+      "bytes": 413,
+      "sha256": "0541ce563af5be5d7b1597676e45963ca1b44b89e1da16b58d468279fe598b3f",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_human_paraphrase_eval.py",
+      "bytes": 495,
+      "sha256": "0e27ba376bcc95fe225f064ea64021d989edfe3539c70ec8eb872f846e0511f9",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_integration_infra.py",
+      "bytes": 3722,
+      "sha256": "20cc9c2d89878d42964b98933e23c10582816f78b5623d527382312d80242302",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_kernel.py",
+      "bytes": 4180,
+      "sha256": "f2265f3a9fa09379c95cade487eeb1eeae19fdf2f07f5cb10fc9fddd221afe58",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_kev_live_validation.py",
+      "bytes": 1486,
+      "sha256": "5faf74626b8f7bb7a771e2907281024791f44132ddcffe0ec2a74f29dbef0222",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_ledger_ip.py",
+      "bytes": 6987,
+      "sha256": "c9a902cb1f0ebe7583a247d7df02ae4d173b9ecb218ed3fe93c3bbfa0bec0ede",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_license_headers.py",
+      "bytes": 1125,
+      "sha256": "7ce083615b99f7294a8383fea858c177aef656d7a1b77717cdcee169a3bbee9d",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_measure_inference.py",
+      "bytes": 1555,
+      "sha256": "012e4b332764ab7cd44acec757d648771a1fb45122ed9f7cc38a3b244ab797dd",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_memory_verification.py",
+      "bytes": 6357,
+      "sha256": "e294a42faaf6f7b38937a351232ba6e25f5b7997404c28940ecfc481308be5f7",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_os.py",
+      "bytes": 21919,
+      "sha256": "bb9c23dae219b5a4a6f0f3a256c6f486fd4a63efbb3d6f01670d21614c2596cf",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_path_confinement.py",
+      "bytes": 2363,
+      "sha256": "4713b5f227b9705bffc89d50f30c1465c8d38cb1276e30094c7e5c6e94dec710",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_planning_cluster.py",
+      "bytes": 9289,
+      "sha256": "7cebe6f68425f07184e9e2175c1107cda11eaa818001e22c044e28314de8745b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_planning_test_evidence.py",
+      "bytes": 1940,
+      "sha256": "436567500c34a5ef4fb0872be9072265c33a86d610b7af32d42ff8fc33dc1ba4",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_platform.py",
+      "bytes": 13393,
+      "sha256": "66efcd0356a7386d0841c31cc5143f38ff5393fb5fd64c240b71a90901c40f75",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_policy_gate.py",
+      "bytes": 1143,
+      "sha256": "933658e41976ca399002fca9062c9552f1d6b858b9328ddcb7d814b72f2d02a9",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_public_errors.py",
+      "bytes": 1654,
+      "sha256": "a1ab491982e1ee0282622554e93a9acd31f85d1780fefa368651025bc6dfdf25",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_quality_evidence.py",
+      "bytes": 1874,
+      "sha256": "7d69253ac529d430ec7da5b6b5f61467ea88a2e5cf21f22e542d7f3bf38fc8f6",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_regression_corpus.py",
+      "bytes": 1334,
+      "sha256": "0c642eb25a90bc5511d078aff58bbec29749f48af147a303860b0356b97db468",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_router_registry.py",
+      "bytes": 4874,
+      "sha256": "5972a2bcdf556b1c9e33f451b4134dae559ef801050f8bef78d8204313d3bb4b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_runtime_anchor.py",
+      "bytes": 2424,
+      "sha256": "85e6ecc472cc1179e573ae75e20beb3cc7ee93516e01d756aacb216129befff2",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_runtime_beliefs.py",
+      "bytes": 1885,
+      "sha256": "a34e80e0418ba6e9f43f7a7e566a97d66cbc5efe238ccb35b8742bdb072ef25b",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_scheduler.py",
+      "bytes": 3922,
+      "sha256": "a226e0f744d7aa41d5fcf9b4491da33243b840b0cf25671b188007f11b28a8b5",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_tools.py",
+      "bytes": 5197,
+      "sha256": "680d4064d8985b56b13a0d30046eb54c0a4a6008d49b264fc0fbee2baea7dc74",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_train_decision_v2.py",
+      "bytes": 541,
+      "sha256": "97031ff6b85ece4e1efed722131c8ff08a1b350ab48ad7f15fa574bd5026b4cc",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_train_decision_v2_human_dev.py",
+      "bytes": 402,
+      "sha256": "b0660672fa06110ffa3185eb3141f6c5d70b8b79e7208ade4cf68f984c24b46a",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_training_evidence.py",
+      "bytes": 4021,
+      "sha256": "c3ec7af4c3a14ef9654e985d20a665322c04e753acf7d8484b9a8195a4740537",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_translation_budgets.py",
+      "bytes": 1594,
+      "sha256": "9e3a733590be506e37ee6d23c9ad890f49818c23e9620875116120b4cd9edd26",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_unified_api.py",
+      "bytes": 5839,
+      "sha256": "a3ee7ec2ed40fa2abe3ebd6957b3e0c9e7a34c48632a758a356e4922fd873868",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_validate_unified_runtime.py",
+      "bytes": 212,
+      "sha256": "4670b2afddf800cc03d40f9b2e1a94d3bd05018934fb0d337bcf95b9e81c2565",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_workspace_hardening.py",
+      "bytes": 2076,
+      "sha256": "06e83a5b0d6310d790e1318e8c9a6a477f1e5b2a27e334d75e67bf3190a8bc18",
+      "syntax": "ok"
+    },
+    {
+      "path": "tests/test_world_corpus.py",
+      "bytes": 7893,
+      "sha256": "1dcfdae645197a18c72d616fb0088d3196ff188e175d80c24bb3c2743793cfdc",
+      "syntax": "ok"
+    }
+  ]
+}

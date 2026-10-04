@@ -1,0 +1,138 @@
+{
+  "approved": false,
+  "model": "hydra-program-v4-grounded",
+  "artifact_sha256": "decb49812f2d02cf95d013c78f2a572c51a2c6581ffde0e65b71f1bd66f3a6a5",
+  "trained_on": "grounded-v3 (eight training wordings per family)",
+  "protocol": {
+    "runtime": "llama-server b11146 CUDA",
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": {
+      "grounded": 256,
+      "regression": 160
+    }
+  },
+  "grounded_v1_test": {
+    "fact_match": 145,
+    "exact_match": 111,
+    "total": 154,
+    "boe_citation_rate": 1.0,
+    "families": {
+      "boe_absent": {
+        "fact": 10,
+        "total": 11
+      },
+      "boe_heading": {
+        "fact": 11,
+        "total": 11
+      },
+      "boe_quote": {
+        "fact": 14,
+        "total": 15
+      },
+      "boe_rank_date": {
+        "fact": 9,
+        "total": 9
+      },
+      "boe_repealed": {
+        "fact": 9,
+        "total": 9
+      },
+      "boe_sections": {
+        "fact": 23,
+        "total": 23
+      },
+      "code_absent": {
+        "fact": 20,
+        "total": 20
+      },
+      "code_functions": {
+        "fact": 20,
+        "total": 21
+      },
+      "code_imports": {
+        "fact": 8,
+        "total": 12
+      },
+      "code_methods": {
+        "fact": 4,
+        "total": 6
+      },
+      "code_params": {
+        "fact": 17,
+        "total": 17
+      }
+    }
+  },
+  "grounded_v2_test": {
+    "fact_match": 162,
+    "exact_match": 148,
+    "total": 171,
+    "boe_citation_rate": 1.0,
+    "families": {
+      "boe_absent": {
+        "fact": 10,
+        "total": 10
+      },
+      "boe_heading": {
+        "fact": 9,
+        "total": 9
+      },
+      "boe_quote": {
+        "fact": 14,
+        "total": 14
+      },
+      "boe_rank_date": {
+        "fact": 12,
+        "total": 12
+      },
+      "boe_repealed": {
+        "fact": 12,
+        "total": 12
+      },
+      "boe_sections": {
+        "fact": 15,
+        "total": 15
+      },
+      "code_absent": {
+        "fact": 14,
+        "total": 14
+      },
+      "code_functions": {
+        "fact": 39,
+        "total": 40
+      },
+      "code_imports": {
+        "fact": 14,
+        "total": 19
+      },
+      "code_methods": {
+        "fact": 4,
+        "total": 6
+      },
+      "code_params": {
+        "fact": 19,
+        "total": 20
+      }
+    }
+  },
+  "regression": {
+    "exact_match": 24,
+    "total": 48
+  },
+  "findings": [
+    "Fact-level: v1 test 145/154 (v3 candidate 146), v2 test 162/171 (v3 candidate 159).",
+    "The scorer missed answers of the form 'Su estado es «No»' (correct, grounded); fixed in scripts/score_grounded_eval.py and all candidates rescored.",
+    "The repeal family cannot measure polarity: ~6 % 'Sí' in grounded-v1..v3 training, 0-1 'Sí' cases in their tests; a model that always answers 'No' scores perfectly. grounded-v4 balances it (80 Sí / 120 No).",
+    "v4 candidate regressed on code_imports (10->8/12) and code_methods (6->4/6) on the v1 test; regression set unchanged (24/48, same failures as the base)."
+  ],
+  "scorer_sha256": "d4b7be51927b319634bdeba495c899a758c80a0265137bb070c0519cbec6747b",
+  "evaluator_sha256": "7f96d349ca897ff48aa2f7baae51a0c77cfe5628d65bf761798fdef74c2a3f27",
+  "test_roles": {
+    "grounded_v1_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v2_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v4_test": "development/regression: its wording (index 3) was inspected before v4 was designed",
+    "regression": "frozen parent regression set"
+  },
+  "independent_test": false
+}

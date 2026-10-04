@@ -1,0 +1,282 @@
+{
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "dataset_sha256": "14691de5c1c6d6fbd6c57f6e7567bdcf34e044e31adcb137a21a63cf349f1429",
+  "schema_policy_sha256": "109b12144d6d9c43110d9b63a14dc7ed2fb76b332e2ea1d86e85b3b0f50afe14",
+  "cases": [
+    {
+      "id": "v4-json-3-0",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-1",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-2",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-3",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-4",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-5",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-6",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-7",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-8",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v4-json-3-9",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-0",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-1",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-2",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-3",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-4",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-5",
+      "passed": false,
+      "error": "ConnectError"
+    },
+    {
+      "id": "v5-json-3-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83306}",
+      "meta": {
+        "task_id": "c96c86d6-7f52-4fc2-a820-f7be4cdf2b4d",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6147,
+        "latency_ms": 3600.21,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83307}",
+      "meta": {
+        "task_id": "ba28eb96-c6d7-464d-9dd9-2f69978205a8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6148,
+        "latency_ms": 245.42,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83308}",
+      "meta": {
+        "task_id": "5d720f5b-b5ca-480f-80d5-f54b7084d25b",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6151,
+        "latency_ms": 255.93,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83309}",
+      "meta": {
+        "task_id": "f8e9a029-79e9-42ea-986a-9bc79a047934",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6156,
+        "latency_ms": 249.16,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-10",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83310}",
+      "meta": {
+        "task_id": "5a6d407f-9ddb-4efb-b73b-d23bfcceee00",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6164,
+        "latency_ms": 302.35,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-11",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83311}",
+      "meta": {
+        "task_id": "e5d2b104-ac1e-4642-87fa-a7ab11809319",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6173,
+        "latency_ms": 259.61,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-12",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83312}",
+      "meta": {
+        "task_id": "e3f32721-8251-40b2-b092-71f3e09cfddc",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6183,
+        "latency_ms": 249.78,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-13",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83313}",
+      "meta": {
+        "task_id": "651e34ad-c4d9-4f28-87af-97055139a967",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6195,
+        "latency_ms": 319.02,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    }
+  ],
+  "complete": false,
+  "approved": false,
+  "scope": "real configured engine on known synthetic JSON development, not independent human test"
+}

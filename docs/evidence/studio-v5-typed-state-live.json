@@ -1,0 +1,71 @@
+{
+  "answer": "{\"activo\":false,\"id\":73124}",
+  "meta": {
+    "task_id": "32843732-bb73-417f-afd4-8970e939e93f",
+    "status": "completed",
+    "task_type": "chat",
+    "mode": "balanced",
+    "models_used": [
+      "hydra-instruction-v5-candidate"
+    ],
+    "tools_used": [],
+    "verified": false,
+    "confidence": 0.6147,
+    "latency_ms": 774.27,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  },
+  "uncertainties": [],
+  "claims": [
+    {
+      "id": "c1",
+      "text": "{\"activo\":false,\"id\":73124}",
+      "confidence": 0.6147,
+      "status": "supported",
+      "correction": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "art-f17d01321c",
+      "type": "answer",
+      "title": "Answer",
+      "mime": "text/markdown",
+      "content": "{\"activo\":false,\"id\":73124}",
+      "metadata": {},
+      "provenance": [
+        "c1"
+      ]
+    },
+    {
+      "id": "art-79de172218",
+      "type": "execution_plan",
+      "title": "Plan: cascade",
+      "mime": "application/json",
+      "content": {
+        "strategy": "cascade",
+        "steps": [
+          {
+            "worker": "reasoner",
+            "models": [
+              "hydra-instruction-v5-candidate"
+            ],
+            "parallel": false,
+            "speculative": false,
+            "use_tools": false
+          }
+        ],
+        "notes": [
+          "start cheap; escalate if verification or confidence is low"
+        ]
+      },
+      "metadata": {},
+      "provenance": []
+    }
+  ],
+  "pending_confirmations": [],
+  "learning": {}
+}

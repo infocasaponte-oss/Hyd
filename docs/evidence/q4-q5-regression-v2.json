@@ -1,0 +1,48 @@
+{
+  "status": "COMPARED_PILOT",
+  "approved": false,
+  "dataset_sha256": "ee65f4f89d5039daff96727aff83360040d75954f70da83083e00546dd225ed8",
+  "cases": 12,
+  "base_identity": {
+    "name": "hydra-local:latest",
+    "digest": "6e20d35c1cfe93b2ae3035f13275dbd41f2dd2c98694c030c3d2d8d8c40403bf",
+    "artifact_sha256": "32fac5fc07053408990439db76fae172c0384019773041f1ce4e1194c084dc92",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q4_K_M"
+    }
+  },
+  "candidate_identity": {
+    "name": "hydra-q5-candidate:latest",
+    "digest": "eb87140af7ecdc423710f747fda7a28c213ad92c2417731ebf8624d6fe63276a",
+    "artifact_sha256": "634eb99a1bde8bde375206dabd0bfd45ce5be2106abe55a16dd8a49b97f8a650",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "base_score": 0.5,
+  "candidate_score": 0.5833333333333334,
+  "score_delta": 0.08333333333333337,
+  "regressions": [],
+  "improvements": [
+    "prefix"
+  ],
+  "limitations": "Pilot holdout only. Does not establish general quality, latency or release readiness.",
+  "report_hashes": {
+    "base": "33a00041429eca5763006f3bc7469def00aee71cd6aa67a9e5368f2dc4f642da",
+    "candidate": "fb83ffc406b549e5557286694a4a9e048e5570e32a21285870bd78f25715349f"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "inputs": {
+    "base_sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+    "dataset": {
+      "version": 1,
+      "kind": "synthetic_verified_pilot",
+      "generator": "03c1a54f23e0a63c6979b2594794713c6335e54463a1f40b5d05f7121e70a0a1",
+      "limitations": "Small template curriculum; not evidence of general coding quality.",
+      "split_policy": "disjoint problem families",
+      "files": {
+        "train.jsonl": {
+          "sha256": "677dc121420c2001dea830778bc78c747662ee89faf9f77ccf77916168975478",
+          "examples": 192
+        },
+        "validation.jsonl": {
+          "sha256": "10e40db180fe1c4f6d9d865f54b476f896b5ef7fb347fbbd4d494bcde5f69d6f",
+          "examples": 32
+        },
+        "test.jsonl": {
+          "sha256": "399bb4879f17eb0afed5839df7dc0993fee9eae12017553e04424a734f7bec51",
+          "examples": 64
+        }
+      },
+      "families": {
+        "train": [
+          "affine",
+          "threshold",
+          "divisible",
+          "clamp",
+          "sum_list",
+          "filter"
+        ],
+        "validation": [
+          "scale_list"
+        ],
+        "test": [
+          "count",
+          "distance"
+        ]
+      }
+    },
+    "recipe": {
+      "base_model": "models/base",
+      "base_repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "base_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "base_sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+      "base_size_bytes": 3087467144,
+      "corpus": "data/hydra-corpus-v1",
+      "output": "models/hydra-pilot",
+      "llamacpp": "runtime/llama.cpp",
+      "llamacpp_revision": "b11146",
+      "quantizer": "runtime/llama-bin/llama-quantize.exe",
+      "method": "lora",
+      "epochs": 1,
+      "batch_size": 1,
+      "gradient_accumulation": 8,
+      "learning_rate": 0.0001,
+      "max_seq_length": 256,
+      "r": 8,
+      "alpha": 16,
+      "dropout": 0.05,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "seed": 42
+    },
+    "quantizer_sha256": "dee025c8bd2b3e4679b766aa8fdac9fa393edd8259840f58af8832bf20708cf7",
+    "converter_sha256": "e9a1da876330bbce9687541ab31736542a01b4ac43c6686126514a50f122fb7f",
+    "trainer_sha256": "ac0095de7e4e49fc380072c8cff12d1d717b4c2eded0635adb424f666f7d6c52"
+  },
+  "stages": {
+    "train": {
+      "D:\\HYDRA\\models\\hydra-pilot\\adapter\\adapter_model.safetensors": "120970cf0d9d0fa4b14abc031062a3bca03b2184fa842f5f63d0f9f1656b1c0f",
+      "D:\\HYDRA\\models\\hydra-pilot\\adapter\\adapter_config.json": "b1778e3b85988b57b00af9386fb577e2f20a04f2fd296a957eddc5cea35e7672",
+      "D:\\HYDRA\\models\\hydra-pilot\\adapter\\metrics.json": "688002cc2b73a1566021c46943dab3b38467508c252a5d59bf67cd11dc315782"
+    },
+    "merge": {
+      "D:\\HYDRA\\models\\hydra-pilot\\merged\\model.safetensors": "f40c9ed093c27c44c84c568f59405b0bf98b8124d9e46295f29afe30c90fea14",
+      "D:\\HYDRA\\models\\hydra-pilot\\merged\\config.json": "699089e1985f2c5f80ba75219304335cb24bf9e72c8f42c4d611cc19e335c0ef",
+      "D:\\HYDRA\\models\\hydra-pilot\\merged\\tokenizer_config.json": "0d6d03775072afe09e122ae163a15eb29d3023b905e91fb498c82f61edfbda35"
+    },
+    "convert": {
+      "D:\\HYDRA\\models\\hydra-pilot\\HYDRA-f16.gguf": "a7b87e7f9996f2949e3d46c0453ab53813dc4b20018445526a5ef309f13052a8"
+    },
+    "quantize": {
+      "D:\\HYDRA\\models\\hydra-pilot\\HYDRA.gguf": "32fac5fc07053408990439db76fae172c0384019773041f1ce4e1194c084dc92"
+    }
+  },
+  "status": "CANDIDATE_REQUIRES_EVALUATION",
+  "approved": false,
+  "artifact": "D:\\HYDRA\\models\\hydra-pilot\\HYDRA.gguf",
+  "sha256": "32fac5fc07053408990439db76fae172c0384019773041f1ce4e1194c084dc92",
+  "architecture": "qwen2"
+}

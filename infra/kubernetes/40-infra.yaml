@@ -1,0 +1,85 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Development-grade stateful services. Production: managed/HA PostgreSQL, NATS JetStream cluster, S3.
+# Images use the same digests as docker-compose.yml.
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: {name: postgres, namespace: hydra}
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector: {matchLabels: {app: postgres}}
+  template:
+    metadata: {labels: {app: postgres}}
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:17@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+          env:
+            - {name: POSTGRES_USER, value: hydra}
+            - {name: POSTGRES_DB, value: hydra}
+            - name: POSTGRES_PASSWORD
+              valueFrom: {secretKeyRef: {name: hydra-postgres, key: POSTGRES_PASSWORD}}
+            - {name: PGDATA, value: /var/lib/postgresql/data/pgdata}
+          ports: [{containerPort: 5432}]
+          readinessProbe: {exec: {command: ["pg_isready", "-U", "hydra"]}, periodSeconds: 10}
+          volumeMounts: [{name: pg, mountPath: /var/lib/postgresql/data}]
+  volumeClaimTemplates:
+    - metadata: {name: pg}
+      spec: {accessModes: [ReadWriteOnce], resources: {requests: {storage: 50Gi}}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: postgres, namespace: hydra}
+spec: {selector: {app: postgres}, ports: [{port: 5432}]}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: nats, namespace: hydra}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: nats}}
+  template:
+    metadata: {labels: {app: nats}}
+    spec:
+      containers:
+        - name: nats
+          image: nats:latest@sha256:cd3fcd4ecdda44e3a66728a5334af0a959bc3979b32810e033d1c547241cd0f4
+          args: ["-js"]
+          ports: [{containerPort: 4222}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: nats, namespace: hydra}
+spec: {selector: {app: nats}, ports: [{port: 4222}]}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: redis, namespace: hydra}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: redis}}
+  template:
+    metadata: {labels: {app: redis}}
+    spec:
+      containers:
+        - name: redis
+          image: redis:8@sha256:6f81e8915c60b065a524e6967e0ad1c639ba6efa84d669f823683ea04d9150ee
+          ports: [{containerPort: 6379}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: redis, namespace: hydra}
+spec: {selector: {app: redis}, ports: [{port: 6379}]}
+---
+# Only the gateway and the workers may reach the data services and the GPU runtimes.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: hydra-internal-services, namespace: hydra}
+spec:
+  podSelector:
+    matchExpressions: [{key: app, operator: In, values: [postgres, redis, nats, vllm-reasoner]}]
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector:
+            matchExpressions: [{key: app, operator: In, values: [hydra-api, hydra-fabric-worker, hydra-factory]}]

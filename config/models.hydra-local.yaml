@@ -1,0 +1,65 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Experimental precision candidate; priors are not benchmark scores.
+models:
+  - id: hydra-q5-candidate
+    provider: ollama
+    runtime_model: hydra-q5-v2:latest
+    local: true
+    tier: 2
+    context_window: 4096
+    capabilities: {chat: 0.6, reasoning: 0.5, coding: 0.6, tools: 0.3, vision: 0.0, research: 0.3}
+    estimated_latency_ms: 5000
+    quirks: {native_json_schema: true, native_tools: false}
+
+  # Local role specialists. Capability values are routing priors; the runtime
+  # verifies availability through Ollama before enabling each entry.
+  - id: hydra-fast
+    provider: ollama
+    runtime_model: qwen3:8b
+    local: true
+    tier: 2
+    context_window: 40960
+    capabilities: {chat: 0.82, reasoning: 0.78, coding: 0.76, vision: 0.0, tools: 0.82, research: 0.65}
+    estimated_latency_ms: 1200
+    quirks: {native_json_schema: true, native_tools: true}
+
+  - id: hydra-coding
+    provider: ollama
+    runtime_model: qwen2.5-coder:7b
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.78, reasoning: 0.72, coding: 0.92, vision: 0.0, tools: 0.78, research: 0.55}
+    estimated_latency_ms: 1400
+    quirks: {native_json_schema: false, native_tools: true}
+
+  - id: hydra-deep
+    provider: ollama
+    runtime_model: qwen3:8b
+    local: true
+    tier: 3
+    context_window: 40960
+    capabilities: {chat: 0.84, reasoning: 0.86, coding: 0.80, vision: 0.0, tools: 0.82, research: 0.72}
+    estimated_latency_ms: 2500
+    quirks: {native_json_schema: true, native_tools: true}
+
+  - id: hydra-vision
+    provider: ollama
+    runtime_model: qwen3-vl:8b
+    local: true
+    tier: 3
+    context_window: 32768
+    capabilities: {chat: 0.78, reasoning: 0.74, coding: 0.62, vision: 0.90, tools: 0.75, research: 0.62}
+    estimated_latency_ms: 4500
+    runtime_options: {think: false, num_ctx: 4096, num_gpu: 99, keep_alive: 0}
+    quirks: {native_json_schema: true, native_tools: true, native_images: true}
+
+  - id: hydra-judge
+    provider: ollama
+    runtime_model: qwen3:8b
+    local: true
+    tier: 3
+    context_window: 40960
+    capabilities: {chat: 0.84, reasoning: 0.84, coding: 0.72, vision: 0.0, tools: 0.70, research: 0.70}
+    estimated_latency_ms: 2200
+    quirks: {native_json_schema: true, native_tools: false}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "proposed_not_executed",
+  "date": "2026-10-01",
+  "plan": "docs/PLAN_ADESTRAMENTO_HYDRA_2026-10-01.md",
+  "hardware": {"gpu": "RTX 3060 Ti", "vram_gib": 8},
+  "model": {"initial_size_b": 1.5, "training_format": "HF plus PEFT adapter", "distribution_format": "GGUF", "default_runtime": "llamacpp_cuda", "optional_runtime": "vllm_linux_wsl"},
+  "corpus": {
+    "status": "specification_only_not_complete",
+    "pilot_examples": 2000,
+    "split_targets": {"train": 18000, "development": 2000, "calibration": 2000, "independent_test": 2000},
+    "train_family_targets": {"conversation": 2000, "instructions": 2500, "json": 2000, "web_grounding": 3000, "reasoning_math": 2000, "coding": 2500, "tools": 1500, "safety_abstention": 1000, "language_translation": 1000, "identity_provenance": 500},
+    "language_ratios": {"gl": 0.4, "es": 0.45, "en": 0.15},
+    "split_unit": "semantic_scenario_or_document_group_before_paraphrasing",
+    "provenance_required": true,
+    "human_test_required": true,
+    "known_tests": "regression_only"
+  },
+  "router_corpus_targets": {"train": 4200, "development": 600, "calibration": 600, "independent_test": 600},
+  "sft_pilot": {
+    "batch_size": 1, "eval_batch_size": 1, "gradient_accumulation": 8,
+    "max_seq_length": 768, "epochs": 2, "rank": 16, "alpha": 32, "dropout": 0.05,
+    "learning_rates": [0.00002, 0.0001],
+    "module_sets": [["q_proj", "k_proj", "v_proj", "o_proj"], ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]],
+    "pilot_steps_range": [300, 500], "require_cuda": true,
+    "proposed_not_yet_wired_knobs": {"warmup_ratio": 0.03, "max_grad_norm": 1.0, "scheduler": "linear"}
+  },
+  "optional_preference_stage": {"method": "DPO", "pair_target_range": [1000, 3000], "requires_successful_sft": true, "requires_development_gain": true},
+  "calibration": {
+    "router": ["temperature_scaling", "platt_or_isotonic_comparison"],
+    "generation": "correction_predictor_with_labeled_answer_outcomes_not_token_probability",
+    "metrics": ["ECE", "Brier", "NLL", "risk_coverage", "classwise_reliability"],
+    "decoding_temperature_is_not_calibration": true,
+    "bind_to": ["model_hash", "runtime", "tokenizer", "template", "quantization", "policy_version"]
+  },
+  "benchmark_suites": ["IFEval", "HYDRA_JSON", "GSM8K_and_exact_math", "HumanEval+", "MBPP+", "ARC", "HellaSwag", "MMLU_subset", "Belebele_supported_languages", "Galician_human", "web_snapshot_grounding", "multiturn", "router_heldout", "safety", "runtime_parity"],
+  "proposed_gates": {
+    "objective_accuracy": 0.90, "minimum_family_accuracy": 0.85,
+    "semantic_human_acceptance": 0.90, "json_validity": 0.99, "json_content_accuracy": 0.95,
+    "citation_support_precision": 0.95, "retrieval_relevance": 0.90,
+    "router_macro_f1": 0.90, "router_coverage": 0.80, "router_selective_precision": 0.95, "router_ece_max": 0.05,
+    "max_quantization_drop_percentage_points": 2,
+    "soak_hours": [2, 24], "minimum_soak_requests": 1000, "runtime_error_rate_max": 0.01,
+    "critical_routes": "human_review_retained", "automatic_production_promotion": false
+  },
+  "stages": ["inventory", "source_rights_and_provenance", "deduplicate_and_group_split", "review_and_freeze", "cuda_token_preflight", "sft_ablation", "development_selection", "optional_dpo", "merge_and_quantize", "final_runtime_calibration", "blind_test", "soak", "canary_and_rollback", "release_gate"]
+}

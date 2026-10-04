@@ -1,0 +1,12 @@
+{
+  "approved": false,
+  "studio_status": 200,
+  "kev_status": 200,
+  "json_engine_correct": 78,
+  "json_engine_total": 78,
+  "candidate_version": 7,
+  "human_authorship_attested": true,
+  "human_reviewed": 0,
+  "human_unique_cases": 287,
+  "scope": "functional validation, human assessment remains pending"
+}

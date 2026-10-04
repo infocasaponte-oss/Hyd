@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+name: mac-studio
+cpu_arch: arm64
+system_ram_gb: 64
+apple_silicon: true

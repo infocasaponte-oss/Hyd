@@ -1,0 +1,39 @@
+{
+  "id": "chatcmpl-5767e713-62a6-41c9-8682-8e02df49118d",
+  "object": "chat.completion",
+  "created": 1790816011,
+  "model": "hydra",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "HYDRA"
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "hydra": {
+    "task_id": "5767e713-62a6-41c9-8682-8e02df49118d",
+    "status": "completed",
+    "task_type": "chat",
+    "mode": "balanced",
+    "models_used": [
+      "hydra-instruction-v8-direct-candidate"
+    ],
+    "tools_used": [],
+    "verified": false,
+    "confidence": 0.6148,
+    "latency_ms": 560.77,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  }
+}

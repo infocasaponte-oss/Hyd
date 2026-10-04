@@ -1,0 +1,1483 @@
+{
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "dataset_sha256": "14691de5c1c6d6fbd6c57f6e7567bdcf34e044e31adcb137a21a63cf349f1429",
+  "schema_policy_sha256": "5c824c75520917293c840fa1ced30cea9d984f85252c32435cbad261d1bc2f43",
+  "cases": [
+    {
+      "id": "v4-json-3-0",
+      "passed": true,
+      "output": "{\"id\":32300,\"activo\":false}",
+      "meta": {
+        "task_id": "061b9f00-94e8-4510-be53-a5679ef8e9f8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6147,
+        "latency_ms": 686.38,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-1",
+      "passed": true,
+      "output": "{\"id\":32301,\"activo\":true}",
+      "meta": {
+        "task_id": "856df7ee-ddc5-4555-a655-99aea6404c60",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6148,
+        "latency_ms": 580.33,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-2",
+      "passed": true,
+      "output": "{\"id\":32302,\"activo\":false}",
+      "meta": {
+        "task_id": "71ecd77c-4f0b-40cc-b4d0-45ab2b86a6dd",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6151,
+        "latency_ms": 397.11,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-3",
+      "passed": true,
+      "output": "{\"id\":32303,\"activo\":true}",
+      "meta": {
+        "task_id": "7bab8e64-4553-49bc-b2da-646ad87dae63",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6156,
+        "latency_ms": 190.36,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-4",
+      "passed": true,
+      "output": "{\"id\":32304,\"activo\":false}",
+      "meta": {
+        "task_id": "c6ba336a-c6a1-40a7-b6ff-37dd9a9d4950",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6164,
+        "latency_ms": 200.78,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-5",
+      "passed": true,
+      "output": "{\"id\":32305,\"activo\":true}",
+      "meta": {
+        "task_id": "653d05b7-aa6e-46d8-8d8e-1b6214cdb99b",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6173,
+        "latency_ms": 196.53,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-6",
+      "passed": true,
+      "output": "{\"id\":32306,\"activo\":false}",
+      "meta": {
+        "task_id": "d9916adb-e5bd-46aa-87ec-e61799376a5e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6183,
+        "latency_ms": 186.59,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-7",
+      "passed": true,
+      "output": "{\"id\":32307,\"activo\":true}",
+      "meta": {
+        "task_id": "3184e94f-9cdd-4c19-81a0-eb416ba3979c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6195,
+        "latency_ms": 184.63,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-8",
+      "passed": true,
+      "output": "{\"id\":32308,\"activo\":false}",
+      "meta": {
+        "task_id": "f69e4f31-6a08-498c-9b85-6e7643ecb208",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6208,
+        "latency_ms": 184.14,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-9",
+      "passed": true,
+      "output": "{\"id\":32309,\"activo\":true}",
+      "meta": {
+        "task_id": "145294e9-30ce-4c0b-83cb-87121b0ce00c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6223,
+        "latency_ms": 188.47,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-0",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83300}",
+      "meta": {
+        "task_id": "3149e451-9e8f-490e-902a-03d7d61b20ea",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6239,
+        "latency_ms": 212.23,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-1",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83301}",
+      "meta": {
+        "task_id": "6602a7ed-b044-46bd-99a4-2fb54c75bc84",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6255,
+        "latency_ms": 216.07,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-2",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83302}",
+      "meta": {
+        "task_id": "ddfcbc2b-c318-4db9-b263-5fe5a23e93cd",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6273,
+        "latency_ms": 207.89,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-3",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83303}",
+      "meta": {
+        "task_id": "73ec20b2-d403-4b42-9f27-c849d2aead34",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6292,
+        "latency_ms": 213.5,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-4",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83304}",
+      "meta": {
+        "task_id": "e6f08cea-0008-41f4-bb73-f74b6b4765a8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6311,
+        "latency_ms": 235.83,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-5",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83305}",
+      "meta": {
+        "task_id": "2e6296f0-a815-4791-a7c0-180337a720ee",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6331,
+        "latency_ms": 235.79,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-6",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83306}",
+      "meta": {
+        "task_id": "a5d29972-5070-4ebb-994b-402016c74983",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6352,
+        "latency_ms": 222.37,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-7",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83307}",
+      "meta": {
+        "task_id": "f9258c32-4e0e-4bc8-b24c-c6d0143570a8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6374,
+        "latency_ms": 209.44,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-8",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83308}",
+      "meta": {
+        "task_id": "649359a9-5632-47d2-9ec1-f899ccadd114",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6395,
+        "latency_ms": 211.03,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-9",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83309}",
+      "meta": {
+        "task_id": "4ade444f-8fa8-4773-a055-61f24570b544",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6418,
+        "latency_ms": 205.74,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-10",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83310}",
+      "meta": {
+        "task_id": "89575e6f-7b36-442f-a60e-6182b570a2ee",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6441,
+        "latency_ms": 224.18,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-11",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83311}",
+      "meta": {
+        "task_id": "feaa1c88-27f3-4b7c-b76b-02b8b5b66c6e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6464,
+        "latency_ms": 212.66,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-12",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83312}",
+      "meta": {
+        "task_id": "3e31fcee-cec4-438b-9636-935ad5d9c25f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6488,
+        "latency_ms": 225.91,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-13",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83313}",
+      "meta": {
+        "task_id": "c21696a5-abf8-41a1-bc05-465b54129137",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6512,
+        "latency_ms": 200.69,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-14",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83314}",
+      "meta": {
+        "task_id": "bd9e0d93-4fdf-4c77-becf-9e03c5e220f3",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6536,
+        "latency_ms": 206.18,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-15",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83315}",
+      "meta": {
+        "task_id": "a11f23b2-14e2-4a74-a855-aba1a51b7e99",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6561,
+        "latency_ms": 231.32,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-16",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83316}",
+      "meta": {
+        "task_id": "a45201ab-69ce-423a-9719-9d44e20e2fae",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6586,
+        "latency_ms": 244.99,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-17",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83317}",
+      "meta": {
+        "task_id": "1253c294-7d99-4ce7-83a1-7c65f1e30603",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6611,
+        "latency_ms": 215.53,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-18",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":83318}",
+      "meta": {
+        "task_id": "8cea0b6b-09ef-42db-8c24-5868fcac4a35",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6636,
+        "latency_ms": 214.12,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-19",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":83319}",
+      "meta": {
+        "task_id": "eaf38157-d980-4ea2-acda-d7b01a68e249",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6661,
+        "latency_ms": 220.17,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-0",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961400}",
+      "meta": {
+        "task_id": "57ccab5c-2e70-4a98-b57c-02d2923690ba",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6687,
+        "latency_ms": 230.8,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-1",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961401}",
+      "meta": {
+        "task_id": "2547ab03-1c9f-44f4-b511-7b7f4e3118c4",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6699,
+        "latency_ms": 246.5,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-2",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961402}",
+      "meta": {
+        "task_id": "3117d23e-e657-4cf4-aea7-4f517cd04214",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6749,
+        "latency_ms": 214.76,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-3",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961403}",
+      "meta": {
+        "task_id": "205ae736-6a9c-474f-8f84-918127bb5d51",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6789,
+        "latency_ms": 215.67,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-4",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961404}",
+      "meta": {
+        "task_id": "1e905300-e9c1-4832-9299-c1e41b3a9379",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6824,
+        "latency_ms": 225.85,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-5",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961405}",
+      "meta": {
+        "task_id": "546a6285-f474-47fa-af84-2094c7e3437e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6854,
+        "latency_ms": 210.46,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-6",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961406}",
+      "meta": {
+        "task_id": "8653fa8d-2629-4bb1-a2bd-e60251a998e5",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6881,
+        "latency_ms": 224.23,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-7",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961407}",
+      "meta": {
+        "task_id": "e697f26f-6023-4a49-aa76-b7150293be0c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6906,
+        "latency_ms": 220.71,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-8",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961408}",
+      "meta": {
+        "task_id": "99ad8aae-56a0-41ae-9cf5-68bfebb6ac2f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6929,
+        "latency_ms": 217.68,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-9",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961409}",
+      "meta": {
+        "task_id": "d2ce885d-6ba4-4bdb-b527-9b509fd07a62",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6952,
+        "latency_ms": 232.05,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-10",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961410}",
+      "meta": {
+        "task_id": "835a1646-c515-4156-87e1-c1ca1b34b46d",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6974,
+        "latency_ms": 272.81,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-11",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961411}",
+      "meta": {
+        "task_id": "b6f5fade-f889-4c0b-9f31-39d00445787a",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6994,
+        "latency_ms": 223.58,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-12",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961412}",
+      "meta": {
+        "task_id": "3d0ab4cb-5ae0-462c-86ce-33dfdd7d2763",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7014,
+        "latency_ms": 244.85,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-13",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961413}",
+      "meta": {
+        "task_id": "37e8f7a8-c8df-4d58-85c5-dc330482ce9d",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7034,
+        "latency_ms": 215.93,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-14",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961414}",
+      "meta": {
+        "task_id": "5215ff80-5d2a-4bc0-9072-fa6730560761",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7054,
+        "latency_ms": 212.19,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-15",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961415}",
+      "meta": {
+        "task_id": "698e8b84-e26e-4722-8af3-cec45003e9cb",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7074,
+        "latency_ms": 214.5,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-0",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961500}",
+      "meta": {
+        "task_id": "2aaa10dd-ef36-4ea7-bf69-29a60795ff66",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7102,
+        "latency_ms": 224.81,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-1",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961501}",
+      "meta": {
+        "task_id": "7e390c29-2802-4ea4-82b3-1eccfbc78573",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7114,
+        "latency_ms": 260.13,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-2",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961502}",
+      "meta": {
+        "task_id": "6eacb924-702a-4294-abb1-d078d399b297",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7154,
+        "latency_ms": 217.57,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-3",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961503}",
+      "meta": {
+        "task_id": "619bc56c-254f-4370-962a-84bbd716a25a",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7179,
+        "latency_ms": 226.48,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-4",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961504}",
+      "meta": {
+        "task_id": "958e5302-2897-4243-a393-4021cebd2f01",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7205,
+        "latency_ms": 220.76,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-5",
+      "passed": false,
+      "output": "{\"activo\":true,\"id\":961505}",
+      "meta": {
+        "task_id": "b8d034c0-94f5-41c1-b083-77ed850eaa40",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.721,
+        "latency_ms": 216.73,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-6",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961506}",
+      "meta": {
+        "task_id": "be3de4cc-bf6a-45a4-bddc-90497cfd70f7",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7214,
+        "latency_ms": 210.27,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-7",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961507}",
+      "meta": {
+        "task_id": "e1fbf3fe-b9e1-44c2-beec-c40743bb8235",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7218,
+        "latency_ms": 214.44,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-8",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961508}",
+      "meta": {
+        "task_id": "af97cef7-cac1-4915-b932-f137f6cc07e5",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7221,
+        "latency_ms": 213.59,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-9",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961509}",
+      "meta": {
+        "task_id": "011b0b56-5a29-4583-a018-d1a78b74be01",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7188,
+        "latency_ms": 262.67,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-10",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961510}",
+      "meta": {
+        "task_id": "dc2fc4b5-cc64-4d90-be0a-4e4086240604",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7228,
+        "latency_ms": 224.99,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-11",
+      "passed": true,
+      "output": "{\"activo\":false,\"id\":961511}",
+      "meta": {
+        "task_id": "142ecb7f-637d-4a00-856b-8f5142907e89",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7232,
+        "latency_ms": 216.36,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-12",
+      "passed": true,
+      "output": "{\"activo\":true,\"id\":961512}",
+      "meta": {
+        "task_id": "731536dd-2a51-4e60-9c85-cdabe2267553",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7235,
+        "latency_ms": 208.86,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-13",
+      "passed": false,
+      "output": "{\"activo\":true,\"id\":961513}",
+      "meta": {
+        "task_id": "1f92a8e3-09e7-4fb2-93c0-45745c5141c9",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7238,
+        "latency_ms": 228.99,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-14",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-15-15",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-0",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-1",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-2",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-3",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-4",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-5",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-6",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-7",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-8",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-9",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-10",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-11",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-12",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-13",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-14",
+      "passed": false,
+      "error": "HTTPStatusError"
+    },
+    {
+      "id": "v7-json-16-15",
+      "passed": false,
+      "error": "HTTPStatusError"
+    }
+  ],
+  "complete": true,
+  "approved": false,
+  "scope": "real configured engine on known synthetic JSON development, not independent human test",
+  "total": 78,
+  "correct": 58,
+  "accuracy": 0.7435897435897436
+}

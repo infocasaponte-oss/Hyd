@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "engine": "duckduckgo",
+  "results": [
+    {
+      "title": "asyncio — Asynchronous I/O — Python 3.14.7 documentation",
+      "url": "https://docs.python.org/3/library/asyncio.html"
+    },
+    {
+      "title": "A Conceptual Overview of asyncio — Python 3.14.7 documentation",
+      "url": "https://docs.python.org/3/howto/a-conceptual-overview-of-asyncio.html"
+    },
+    {
+      "title": "asyncio — Asynchronous I/O — Python 3.14.0 documentation",
+      "url": "https://docs.pythonlang.net/3/library/asyncio.html"
+    }
+  ],
+  "search_urls": {
+    "brave": "https://search.brave.com/search?q=Python+asyncio+official+documentation",
+    "google": "https://www.google.com/search?q=Python+asyncio+official+documentation",
+    "bing": "https://www.bing.com/search?q=Python+asyncio+official+documentation",
+    "duckduckgo": "https://html.duckduckgo.com/html/?q=Python+asyncio+official+documentation"
+  },
+  "attempts": [
+    {
+      "engine": "google",
+      "status": "no_parseable_results"
+    },
+    {
+      "engine": "brave",
+      "status": "blocked",
+      "http_status": 429
+    }
+  ],
+  "paid_api_used": false,
+  "untrusted_content": true,
+  "_source": "SOURCE_EXTERNAL"
+}

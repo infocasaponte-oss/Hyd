@@ -1,0 +1,63 @@
+{
+  "version": "grounded-holdout-v1",
+  "sealed": true,
+  "independent_test": true,
+  "approved": false,
+  "generator_sha256": "7e80026e132c97f2e04050e3e964523d3020609ff40c2159e899871b53223da7",
+  "families": {
+    "boe_heading": 20,
+    "boe_sections": 20,
+    "boe_quote": 20,
+    "boe_rank_date": 20,
+    "boe_repealed": 20,
+    "boe_absent": 20,
+    "code_functions": 15,
+    "code_imports": 15,
+    "code_params": 15,
+    "code_methods": 15,
+    "code_absent": 15
+  },
+  "repeal_balance": {
+    "si": 8,
+    "no": 12
+  },
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-holdout-v1-input.jsonl",
+      "sha256": "5871d412e95633c8bcea07b22eda0ae99c163f455840f06e2e5ac3e13ef44fa5"
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9"
+    }
+  },
+  "excluded_corpora": [
+    "data\\hydra-grounded-v1",
+    "data\\hydra-grounded-v2",
+    "data\\hydra-grounded-v3",
+    "data\\hydra-grounded-v4"
+  ],
+  "excluded_boe_snapshots": [
+    "data\\sources\\snapshots\\boe-base-v0-input.jsonl"
+  ],
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "rejections": {
+    "excluded_used": 5884,
+    "privacy_rejected": 10,
+    "verification_failed": 0,
+    "too_long": 1
+  },
+  "files": {
+    "holdout.jsonl": {
+      "examples": 195,
+      "sha256": "224e390e27f8071a3153b436ef5c1e1d0464fa5aa820173dbfe075e0fc7cb6e9"
+    }
+  },
+  "policy": "report aggregate and per-family scores only; never train or tune on these cases",
+  "limitations": "code files may appear in HYDRA Base v0 pretraining data; BOE norms do not",
+  "valid_for": "candidates trained before its wordings were published in PR #101 (2026-10-02): hydra-program-v3/v4/v5-grounded; later candidates use grounded-holdout-v2 (private wordings)"
+}

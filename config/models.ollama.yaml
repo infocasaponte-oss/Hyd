@@ -1,0 +1,47 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+#
+# Local-only catalogue for a workstation running Ollama (tested on RTX 3060 Ti 8 GB + 32 GB RAM).
+# Use it with:  HYDRA_MODELS_CONFIG=config/models.ollama.yaml hydra ask "..."
+# Priors are refined by `hydra eval <model> --apply` and by online learning.
+
+models:
+
+  - id: llama3.2-1b
+    provider: ollama
+    runtime_model: llama3.2:1b
+    local: true
+    tier: 1
+    context_window: 32768
+    capabilities: {chat: 0.62, reasoning: 0.45, coding: 0.40, vision: 0.0, tools: 0.55, research: 0.40, routing: 0.80}
+    estimated_latency_ms: 400
+    quirks: {native_json_schema: true, native_tools: true}
+
+  - id: qwen2.5-coder-7b
+    provider: ollama
+    runtime_model: qwen2.5-coder:7b
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.72, reasoning: 0.68, coding: 0.86, vision: 0.0, tools: 0.80, research: 0.60}
+    estimated_latency_ms: 1200
+    quirks: {native_json_schema: true, native_tools: true}
+
+  - id: qwen3-8b
+    provider: ollama
+    runtime_model: qwen3:8b
+    local: true
+    tier: 2
+    context_window: 40960
+    capabilities: {chat: 0.82, reasoning: 0.82, coding: 0.78, vision: 0.0, tools: 0.82, research: 0.74}
+    estimated_latency_ms: 2500
+    quirks: {native_json_schema: true, native_tools: true, reasoning_param: enable_thinking}
+
+  - id: qwen2.5-coder-14b
+    provider: ollama
+    runtime_model: qwen2.5-coder:14b
+    local: true
+    tier: 3
+    context_window: 32768
+    capabilities: {chat: 0.78, reasoning: 0.76, coding: 0.91, vision: 0.0, tools: 0.85, research: 0.66}
+    estimated_latency_ms: 4000
+    quirks: {native_json_schema: true, native_tools: true}

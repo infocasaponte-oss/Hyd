@@ -1,16 +1,72 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+
 [build-system]
 requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hyd-calibrator"
-version = "0.1.0"
-description = "Standalone corpus diagnostics and temperature calibration for Hyd"
+name = "hydra-engine"
+version = "1.1.0"
+description = "HYDRA OS 1.1 - heterogeneous cognitive operating system: kernel, world model, planner, corpus, training lab, model factory and IP ledger"
+readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["numpy>=1.26"]
+license = { file = "LICENSE" }
+authors = [{ name = "Luis Manuel Cousido Hermida" }]
+classifiers = [
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3.12",
+    "Private :: Do Not Upload",
+]
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "httpx>=0.27",
+    "PyYAML>=6.0",
+    "cryptography>=42",
+    "numpy>=1.26",
+    "sympy>=1.12",
+]
+
+[project.optional-dependencies]
+redis = ["redis>=5.0"]
+postgres = ["asyncpg>=0.29", "psycopg[binary]>=3.2"]
+nats = ["nats-py>=2.7"]
+factory = ["huggingface_hub>=0.24"]
+training = ["torch>=2.3", "transformers>=5.0", "peft>=0.12", "datasets>=2.20", "trl>=0.12", "safetensors>=0.4", "sentencepiece>=0.2,<0.3", "protobuf>=4", "psutil>=5.9", "xxhash>=3.4"]
+mlx = ["mlx-lm>=0.20"]
+parquet = ["pyarrow>=16"]
+federated = ["flwr>=1.20"]
+keys = ["keyring>=25"]
+s3 = ["boto3>=1.34"]
+all = ["redis>=5.0", "asyncpg>=0.29", "psycopg[binary]>=3.2", "nats-py>=2.7", "huggingface_hub>=0.24", "pyarrow>=16", "keyring>=25", "boto3>=1.34"]
+dev = ["pytest>=9.0.3,<10", "pytest-asyncio>=1.4,<2", "ruff>=0.6", "psutil>=5.9", "xxhash>=3.4"]
 
 [project.scripts]
+hydra = "hydra.cli:main"
 hyd-calibrator = "hyd_calibrator.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["hyd_calibrator*"]
+include = ["hydra*", "hyd_calibrator*"]
+
+[tool.setuptools.package-data]
+hydra = ["py.typed", "api/studio.html", "api/evaluation_review.html"]
+
+[tool.setuptools.data-files]
+"share/hydra/config" = ["config/models.yaml", "config/models.ollama.yaml", "config/models.hydra.yaml", "config/models.hydra-local.yaml", "config/models.hydra-q5.yaml", "config/policy.yaml", "config/policy_rules.yaml", "config/licenses.yaml"]
+# Installed runs (hydra worker / hydra factory worker) resolve ROOT to share/hydra: the PostgreSQL
+# schema must be there too, or create_pool() cannot find it.
+"share/hydra/sql" = ["sql/schema.sql"]
+"share/hydra/config/hyd" = ["config/hyd/model.json", "config/hyd/calibration.json"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

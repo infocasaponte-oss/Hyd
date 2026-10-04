@@ -1,0 +1,97 @@
+{
+  "version": "grounded-v5",
+  "kind": "source_grounded_verified",
+  "approved": false,
+  "human_reviewed": false,
+  "independent_test": false,
+  "generator_sha256": "7918e89ac202526409de30f60c7cde71b8e27d7330881cea77c62a8f8770f914",
+  "helpers_sha256": {
+    "grounded_corpus_v1.py": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+    "grounded_corpus_v2.py": "56862fe7bb3a37a45dfc4eaddac16f4b411309b02480aa448dd2e4fcd80db646",
+    "grounded_corpus_v3.py": "b25478dcf86167ed46860ebf889df8a87752b568ece727293e411a99f495a3ce",
+    "grounded_corpus_v4.py": "9614a79307243ce2524e685fbcd7cd8136c236c0fb44fe5145cfb46516c5cef5"
+  },
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-grounded-v2-input.jsonl",
+      "sha256": "11b536bca62f9e9dca0984af342f1ec6a0a13deb8bdebf276c7c550599be2d21",
+      "records": 3081
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "permissive_records": 19620
+    }
+  },
+  "split_policy": "same document hash buckets as grounded-v1 (80/7/6/7); training uses wordings 0,1,5-10, validation 2, calibration 4, test 3",
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "quotas": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 480,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "families": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 480,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "hard_negatives": {
+    "code_functions": 160,
+    "code_imports": 368
+  },
+  "rejections": {
+    "privacy_rejected": 127,
+    "verification_failed": 0,
+    "utf8_rejected": 0,
+    "too_long": 4
+  },
+  "files": {
+    "train.jsonl": {
+      "examples": 1976,
+      "sha256": "508da40790ac0d6bc3ef5a044fdf6e971d25eb9a0b0068526f0091ec8c649a7f"
+    },
+    "validation.jsonl": {
+      "examples": 179,
+      "sha256": "b0cc38e7c6e6376f4dff68dc772c051098fcca2e7fdb6c196f5b3572f9e1e42d"
+    },
+    "calibration.jsonl": {
+      "examples": 141,
+      "sha256": "30870470050bcf3e80a9302e0578b913049347048d1cefff3225faf2b8ea4858"
+    },
+    "test.jsonl": {
+      "examples": 184,
+      "sha256": "50243318f2ed61d26e6323175ec24ccd157a0f50fff0d5cd0bc7b0a34265bc37"
+    }
+  },
+  "excluded_sealed_holdout_documents": 195,
+  "changes_from_v4": [
+    "documents of every sealed holdout are excluded",
+    "code_imports rule states the relative case (from . import Y -> .Y) that the label already used",
+    "code_imports quota 480 (was 320), half from snippets with the traps the v5 candidate failed: same-name from-imports, several names in one from-import, five or more modules, module-less relative imports, aliases"
+  ],
+  "repeal_balance": {
+    "si": 80,
+    "no": 120
+  },
+  "limitations": "Extractive questions over a single excerpt; verifies faithfulness to the excerpt, not legal or programming advice. Code snippets keep repository, path and licence for attribution. Not human reviewed."
+}

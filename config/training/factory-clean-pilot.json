@@ -1,0 +1,27 @@
+{
+  "recipe": "config\\recipes\\hydra-program-v1-clean-pilot.json",
+  "recipe_sha256": "21512d3714f55f02c3ba79dba1195b776a5085d09e362b01cebe32b1f352e821",
+  "server": "runtime\\llama-cuda-b11146\\llama-server.exe",
+  "server_sha256": "7b886298b688509ced3e92b420edd57dd3d665da72c1fc207d7a537be5870352",
+  "port": 18092,
+  "suites": [
+    {
+      "path": "data/external-evaluation-v2/cases.json",
+      "sha256": "8426e4d949f866f328233a66188ffe04ac9f5db61468d90f785f0e4b6f4bc0bd",
+      "role": "known_regression",
+      "human_correction": "pending"
+    },
+    {
+      "path": "data/hydra-program-v1-clean-pilot/test.jsonl",
+      "sha256": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3",
+      "role": "known_regression",
+      "human_correction": "pending"
+    },
+    {
+      "path": "data/hydra-web-grounding-v1-utf8/test.jsonl",
+      "sha256": "0dc795106e358ce51f3b585dbf2346ec502a53efe32247468d2f90ff8e8532cc",
+      "role": "known_regression",
+      "human_correction": "pending"
+    }
+  ]
+}

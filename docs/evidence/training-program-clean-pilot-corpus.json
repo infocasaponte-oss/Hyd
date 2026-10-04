@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "train.jsonl": 1049,
+    "validation.jsonl": 244,
+    "calibration.jsonl": 239,
+    "test.jsonl": 48
+  },
+  "exact_overlap": 0,
+  "semantic_independence_certified": false
+}

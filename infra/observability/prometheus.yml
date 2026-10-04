@@ -1,0 +1,6 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+global: {scrape_interval: 15s}
+scrape_configs:
+  - job_name: hydra
+    metrics_path: /metrics
+    static_configs: [{targets: ["hydra-api:8080"]}]

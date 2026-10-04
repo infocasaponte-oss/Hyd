@@ -1,0 +1,388 @@
+{
+  "model": "hydra-instruction-v2",
+  "dataset_sha256": "24fe35f77c58c3c6deb83153fa95677acba89be2eff0aaa754cb371d80701d70",
+  "cases": [
+    {
+      "id": "contract-test-literal-2000",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2000",
+      "latency_ms": 5023.05
+    },
+    {
+      "id": "contract-test-json-2000",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2000,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 215.31
+    },
+    {
+      "id": "contract-test-literal-2001",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2001",
+      "latency_ms": 87.65
+    },
+    {
+      "id": "contract-test-json-2001",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2001,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 201.95
+    },
+    {
+      "id": "contract-test-literal-2002",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2002",
+      "latency_ms": 91.73
+    },
+    {
+      "id": "contract-test-json-2002",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2002,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 191.52
+    },
+    {
+      "id": "contract-test-literal-2003",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2003",
+      "latency_ms": 94.57
+    },
+    {
+      "id": "contract-test-json-2003",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2003,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 198.86
+    },
+    {
+      "id": "contract-test-literal-2004",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2004",
+      "latency_ms": 96.06
+    },
+    {
+      "id": "contract-test-json-2004",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2004,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 220.58
+    },
+    {
+      "id": "contract-test-literal-2005",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2005",
+      "latency_ms": 186.18
+    },
+    {
+      "id": "contract-test-json-2005",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2005,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 202.83
+    },
+    {
+      "id": "contract-test-literal-2006",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2006",
+      "latency_ms": 100.57
+    },
+    {
+      "id": "contract-test-json-2006",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2006,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 202.47
+    },
+    {
+      "id": "contract-test-literal-2007",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2007",
+      "latency_ms": 83.56
+    },
+    {
+      "id": "contract-test-json-2007",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2007,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 213.98
+    },
+    {
+      "id": "contract-test-literal-2008",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2008",
+      "latency_ms": 194.74
+    },
+    {
+      "id": "contract-test-json-2008",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2008,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 202.1
+    },
+    {
+      "id": "contract-test-literal-2009",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2009",
+      "latency_ms": 89.63
+    },
+    {
+      "id": "contract-test-json-2009",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2009,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 193.21
+    },
+    {
+      "id": "contract-test-literal-2010",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2010",
+      "latency_ms": 96.75
+    },
+    {
+      "id": "contract-test-json-2010",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2010,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 201.76
+    },
+    {
+      "id": "contract-test-literal-2011",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2011",
+      "latency_ms": 206.63
+    },
+    {
+      "id": "contract-test-json-2011",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2011,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 196.38
+    },
+    {
+      "id": "contract-test-literal-2012",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2012",
+      "latency_ms": 87.87
+    },
+    {
+      "id": "contract-test-json-2012",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2012,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 200.02
+    },
+    {
+      "id": "contract-test-literal-2013",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2013",
+      "latency_ms": 88.27
+    },
+    {
+      "id": "contract-test-json-2013",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2013,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 199.88
+    },
+    {
+      "id": "contract-test-literal-2014",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2014",
+      "latency_ms": 91.71
+    },
+    {
+      "id": "contract-test-json-2014",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2014,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 186.45
+    },
+    {
+      "id": "contract-test-literal-2015",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2015",
+      "latency_ms": 190.61
+    },
+    {
+      "id": "contract-test-json-2015",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2015,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 213.43
+    },
+    {
+      "id": "contract-test-literal-2016",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2016",
+      "latency_ms": 104.05
+    },
+    {
+      "id": "contract-test-json-2016",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2016,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 187.2
+    },
+    {
+      "id": "contract-test-literal-2017",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2017",
+      "latency_ms": 85.98
+    },
+    {
+      "id": "contract-test-json-2017",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2017,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 187.99
+    },
+    {
+      "id": "contract-test-literal-2018",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2018",
+      "latency_ms": 96.05
+    },
+    {
+      "id": "contract-test-json-2018",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2018,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 290.17
+    },
+    {
+      "id": "contract-test-literal-2019",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2019",
+      "latency_ms": 100.08
+    },
+    {
+      "id": "contract-test-json-2019",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2019,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 205.38
+    },
+    {
+      "id": "contract-test-literal-2020",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2020",
+      "latency_ms": 88.2
+    },
+    {
+      "id": "contract-test-json-2020",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2020,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 202.06
+    },
+    {
+      "id": "contract-test-literal-2021",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2021",
+      "latency_ms": 87.64
+    },
+    {
+      "id": "contract-test-json-2021",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2021,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 181.41
+    },
+    {
+      "id": "contract-test-literal-2022",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2022",
+      "latency_ms": 81.3
+    },
+    {
+      "id": "contract-test-json-2022",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2022,\n  \"activo\": false\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 181.14
+    },
+    {
+      "id": "contract-test-literal-2023",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2023",
+      "latency_ms": 77.17
+    },
+    {
+      "id": "contract-test-json-2023",
+      "kind": "json",
+      "passed": false,
+      "output": "```json\n{\n  \"id\": 2023,\n  \"activo\": true\n}\n```",
+      "error": "JSONDecodeError",
+      "latency_ms": 176.38
+    }
+  ],
+  "approved": false,
+  "scope": "synthetic exact-output and JSON test; requires separate coding and human evaluation",
+  "identity": {
+    "name": "hydra-instruction-v2:latest",
+    "digest": "11dc7dee0a821d39863e2f9bd556684b3ce5a843378053c034af4547c27b66d9",
+    "artifact_sha256": "31b16e75335b52d4a4bc1d3f2c1b3a96a3efeb1653de9b04fb234a0e16aafc0b",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "correct": 24,
+  "total": 48,
+  "status": "EVALUATED",
+  "accuracy": 0.5,
+  "instruction_gate_passed": false
+}

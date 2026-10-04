@@ -1,0 +1,129 @@
+{
+  "answer": "```python\ndef solve(xs):\n    return sum(xs)\n```\nThis function takes a list of numbers `xs` as input and returns the sum of all the numbers in the list using Python's built-in `sum()` function.",
+  "meta": {
+    "task_id": "cd7e4239-efbe-4637-a992-c77d0d4e5d71",
+    "status": "completed",
+    "task_type": "coding",
+    "mode": "fast",
+    "models_used": [
+      "hydra-local"
+    ],
+    "tools_used": [],
+    "verified": false,
+    "confidence": 0.6147,
+    "latency_ms": 962.53,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  },
+  "uncertainties": [],
+  "claims": [
+    {
+      "id": "code1",
+      "text": "```python\ndef solve(xs):\n    return sum(xs)\n```",
+      "confidence": 0.6147,
+      "status": "supported",
+      "correction": null
+    },
+    {
+      "id": "c2",
+      "text": "This function takes a list of numbers `xs` as input and returns the sum of all the numbers in the list using Python's built-in `sum()` function.",
+      "confidence": 0.6147,
+      "status": "supported",
+      "correction": null
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "art-e19b559605",
+      "type": "answer",
+      "title": "Answer",
+      "mime": "text/markdown",
+      "content": "```python\ndef solve(xs):\n    return sum(xs)\n```\nThis function takes a list of numbers `xs` as input and returns the sum of all the numbers in the list using Python's built-in `sum()` function.",
+      "metadata": {
+        "uri": "cas://sha256/b1ac1110296a394433f37df3eb4de92bf188e90168a88bb86dad067c19fc5b50",
+        "sha256": "b1ac1110296a394433f37df3eb4de92bf188e90168a88bb86dad067c19fc5b50"
+      },
+      "provenance": [
+        "code1",
+        "c2"
+      ]
+    },
+    {
+      "id": "art-45b1adb6a7",
+      "type": "code",
+      "title": "Code 1 (python)",
+      "mime": "text/plain",
+      "content": "def solve(xs):\n    return sum(xs)\n",
+      "metadata": {
+        "language": "python",
+        "uri": "cas://sha256/fe34b83daf27909be975ea38ae6a8a22bdb74e86c13c1a1d5106953d750b3653",
+        "sha256": "fe34b83daf27909be975ea38ae6a8a22bdb74e86c13c1a1d5106953d750b3653"
+      },
+      "provenance": []
+    },
+    {
+      "id": "art-0e0b175da4",
+      "type": "execution_plan",
+      "title": "Plan: single",
+      "mime": "application/json",
+      "content": {
+        "strategy": "single",
+        "steps": [
+          {
+            "worker": "reasoner",
+            "models": [
+              "hydra-local"
+            ],
+            "parallel": false,
+            "speculative": false,
+            "use_tools": false
+          }
+        ],
+        "notes": []
+      },
+      "metadata": {
+        "uri": "cas://sha256/9dddf8612053cd48f190b6838f3ea225c8ba734cc73918eab609fb9e0d756a2f",
+        "sha256": "9dddf8612053cd48f190b6838f3ea225c8ba734cc73918eab609fb9e0d756a2f"
+      },
+      "provenance": []
+    }
+  ],
+  "pending_confirmations": [],
+  "learning": {
+    "task_id": "cd7e4239-efbe-4637-a992-c77d0d4e5d71",
+    "artifacts": [
+      "cas://sha256/b1ac1110296a394433f37df3eb4de92bf188e90168a88bb86dad067c19fc5b50",
+      "cas://sha256/fe34b83daf27909be975ea38ae6a8a22bdb74e86c13c1a1d5106953d750b3653",
+      "cas://sha256/9dddf8612053cd48f190b6838f3ea225c8ba734cc73918eab609fb9e0d756a2f"
+    ],
+    "world_version": 3,
+    "world_delta": {
+      "entities": 2,
+      "relations": 1,
+      "beliefs": 0,
+      "evidence": 0
+    },
+    "corpus": {
+      "candidates": 4,
+      "status": {
+        "QUARANTINED": 4
+      },
+      "record_ids": [
+        "e81d227a-d4cc-432b-9efd-3ff0589c7386",
+        "241070cf-c2b6-474f-bb17-bb01337b27af",
+        "1f54fbd4-16dc-45a5-ac61-2da60bfece04",
+        "597fbd43-5baf-4a39-84ec-5632261b1eb1"
+      ]
+    },
+    "cost": 0.0,
+    "flight_recorder": "cd7e4239-efbe-4637-a992-c77d0d4e5d71.json",
+    "ledger_event": {
+      "sequence": 5,
+      "hash": "f18f614c1faca82a7ac61e4ffa6e6d5597a2e986fadb6e750ea0d526fd66b7c2"
+    },
+    "potential_ip": null
+  }
+}

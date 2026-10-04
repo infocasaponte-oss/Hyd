@@ -1,0 +1,8 @@
+{
+  "approved": false,
+  "eligible_for_promotion": false,
+  "reason": "Inherited UTF-8 text decoded using Windows cp1252; original inherited examples changed",
+  "replacement": "hydra-instruction-v7",
+  "training_base": "hydra-instruction-v5, not rejected v6",
+  "artifact_sha256": "87713773c6dca5479991cf768a1a5bcdb8c1a0999a96f94f08f69e9cf2fbbd7a"
+}

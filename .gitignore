@@ -1,9 +1,23 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 __pycache__/
-*.pyc
-.venv/
+*.py[cod]
 *.egg-info/
-build/
+.pytest_cache/
+.venv/
+.env
+workspace/
 dist/
-data/**/*.jsonl
+build/
+data/
+/runtime/
+/models/
+*.gguf
+*.safetensors
+
+.ruff_cache/
+*.log
+.DS_Store
+/repositories/
+node_modules/
 
 experiments/candidate-1024*/model.json

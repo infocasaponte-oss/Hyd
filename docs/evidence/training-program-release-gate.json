@@ -1,0 +1,25 @@
+{
+  "eligible": false,
+  "approved": false,
+  "failures": [
+    "objective_accuracy",
+    "minimum_family_accuracy",
+    "semantic_human_acceptance",
+    "json_validity",
+    "json_content_accuracy",
+    "citation_support_precision",
+    "retrieval_relevance",
+    "router_macro_f1",
+    "router_coverage",
+    "router_selective_precision",
+    "router_ece",
+    "quantization_drop_percentage_points",
+    "runtime_error_rate",
+    "independent_test",
+    "human_review_complete",
+    "artifact_bound",
+    "soak_passed",
+    "rollback_tested",
+    "corpus_review_complete"
+  ]
+}

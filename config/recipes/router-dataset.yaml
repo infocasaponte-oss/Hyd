@@ -1,0 +1,11 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+name: hydra-router
+version: "1"
+format: raw
+filters:
+  record_type: [routing_decision]
+  min_verification: 0.9
+synthetic:
+  max_fraction: 0.35
+  max_generation: 1
+splits: {train: 0.9, validation: 0.05, test: 0.05}

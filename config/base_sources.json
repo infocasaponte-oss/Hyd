@@ -1,0 +1,408 @@
+{
+  "version": 1,
+  "reviewed": "2026-10-02",
+  "purpose": "Candidate pretraining sources for HYDRA Base (proprietary weights). Every source is checked against hydra/training/base_data_policy.py by tests/test_base_sources.py. 'license' is the policy id that applies to the documents kept after 'filter'.",
+  "admitted": [
+    {
+      "name": "Common Corpus (PleIAs), filtered",
+      "url": "https://huggingface.co/datasets/PleIAs/common_corpus",
+      "license": "public-domain",
+      "also": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "MIT",
+        "Apache-2.0"
+      ],
+      "filter": "keep rows whose per-document 'license' is public domain, CC0, CC-BY, MIT or Apache; drop CC-BY-SA (Wikipedia, Stack Exchange in OpenWeb) and anything else",
+      "languages": [
+        "es",
+        "gl",
+        "en"
+      ],
+      "domains": [
+        "general",
+        "books",
+        "press",
+        "government",
+        "science",
+        "code"
+      ],
+      "size": "2.27T tokens in total, ~46.5B Spanish before filtering",
+      "notes": "Per-document licence metadata; collections OpenCulture, OpenGovernment, OpenScience (OpenAlex), OpenSource. Central source for general Spanish text without Wikipedia."
+    },
+    {
+      "name": "BOE legislación consolidada",
+      "url": "https://www.boe.es/datosabiertos/",
+      "license": "es-public-sector-reuse",
+      "filter": "scripts/download_boe_corpus.py (version in force, citation kept)",
+      "languages": [
+        "es"
+      ],
+      "domains": [
+        "legal",
+        "drones",
+        "automation",
+        "education"
+      ],
+      "size": "~9,917 norms",
+      "notes": "Already downloading to data/sources/boe. Includes drone (UAS), industrial safety and education regulation."
+    },
+    {
+      "name": "EUR-Lex (Spanish versions)",
+      "url": "https://eur-lex.europa.eu/content/help/data-reuse/reuse-contents-eurlex-details.html",
+      "license": "eu-reuse-2011-833",
+      "filter": "legal acts in force, Spanish language, bulk data dump (EU Login required)",
+      "languages": [
+        "es"
+      ],
+      "domains": [
+        "legal",
+        "machinery",
+        "drones",
+        "chemicals"
+      ],
+      "size": "all EU acts in force per language",
+      "notes": "Covers the Machinery Regulation, drone rules (EU 2019/947), REACH chemicals regulation."
+    },
+    {
+      "name": "datos.gob.es and regional open data portals",
+      "url": "https://datos.gob.es/en/blog/creative-commons-licenses-and-general-conditions-reuse-public-sector-information-spain",
+      "license": "CC-BY-4.0",
+      "filter": "text datasets only; keep each portal's citation",
+      "languages": [
+        "es",
+        "gl"
+      ],
+      "domains": [
+        "government",
+        "education",
+        "science"
+      ],
+      "size": "varies",
+      "notes": "General reuse conditions are substantially equivalent to CC BY 4.0."
+    },
+    {
+      "name": "OpenStax en español (Química 2ed, Física universitaria, etc.)",
+      "url": "https://openstax.org/books/qu%C3%ADmica-2ed/pages/1-introduccion",
+      "license": "CC-BY-4.0",
+      "filter": "Spanish textbooks only; attribution to OpenStax / Rice University; no use of the OpenStax trademark",
+      "languages": [
+        "es"
+      ],
+      "domains": [
+        "chemistry",
+        "physics",
+        "mathematics",
+        "education"
+      ],
+      "size": "several full university textbooks",
+      "notes": "Reviewed, tested teaching material with exercises and solutions."
+    },
+    {
+      "name": "SciELO (CC BY articles)",
+      "url": "https://blog.scielo.org/es/2015/06/19/scielo-adopta-cc-by-como-atribucion-principal-de-acceso-abierto/",
+      "license": "CC-BY-4.0",
+      "filter": "per-article licence: keep CC BY only, drop CC BY-NC and older licences",
+      "languages": [
+        "es"
+      ],
+      "domains": [
+        "science",
+        "chemistry",
+        "health",
+        "engineering"
+      ],
+      "size": "large; per-collection",
+      "notes": "Peer-reviewed Spanish-language science."
+    },
+    {
+      "name": "US patents (allenai/us-patents; HUPD)",
+      "url": "https://huggingface.co/datasets/allenai/us-patents",
+      "license": "public-domain",
+      "filter": "select by CPC: B25J (robots), B33Y (additive manufacturing / 3D printing), B64U and B64C (drones/UAV), G05B (control and automation), C07-C08 (chemistry); exclude drawings",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "robotics",
+        "3d-printing",
+        "drones",
+        "automation",
+        "chemistry"
+      ],
+      "size": "~8M patents 1976-2025 before filtering",
+      "notes": "Expert-written technical descriptions; spanish versions can be produced by an Apache-2.0/MIT teacher as hydra-generated data."
+    },
+    {
+      "name": "Common Pile stackv2_edu (permissive code)",
+      "url": "https://huggingface.co/datasets/common-pile/stackv2_edu_filtered",
+      "license": "MIT",
+      "also": [
+        "Apache-2.0",
+        "BSD-3-Clause",
+        "BSD-2-Clause",
+        "Unlicense",
+        "CC0-1.0",
+        "ISC"
+      ],
+      "filter": "scripts/fetch_stackv2_python_sample.py keeps license_type=permissive; extend to C/C++ (embedded, ROS, firmware) with the same filter",
+      "languages": [
+        "code"
+      ],
+      "domains": [
+        "code",
+        "robotics",
+        "automation",
+        "drones"
+      ],
+      "size": "shards 75-84 Python; other languages in other shards",
+      "notes": "PX4 (BSD-3) and ROS packages (BSD/Apache) fit; keep per-file attribution."
+    },
+    {
+      "name": "Common Pile v0.1 (filtered)",
+      "url": "https://blog.eleuther.ai/common-pile/",
+      "license": "public-domain",
+      "also": [
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "MIT",
+        "Apache-2.0",
+        "BSD-3-Clause"
+      ],
+      "filter": "per-document licence metadata: drop CC BY-SA (wikis, Stack Exchange) and other licences outside the policy",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "science",
+        "education",
+        "government",
+        "code"
+      ],
+      "size": "8TB before filtering",
+      "notes": "Each document carries explicit licence metadata."
+    },
+    {
+      "name": "PX4 User Guide",
+      "url": "https://docs.px4.io/main/en/contribute/licenses",
+      "license": "CC-BY-4.0",
+      "filter": "documentation only (firmware code is BSD-3 and comes through the code source)",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "drones",
+        "robotics",
+        "automation"
+      ],
+      "size": "full user and developer guide",
+      "notes": "Reviewed documentation of a widely used autopilot."
+    },
+    {
+      "name": "Cosmopedia (HuggingFaceTB)",
+      "url": "https://huggingface.co/datasets/HuggingFaceTB/cosmopedia-100k",
+      "license": "Apache-2.0",
+      "filter": "synthetic textbooks; teacher Mixtral-8x7B is Apache-2.0; drop seeds from non-admitted sources if traceable",
+      "languages": [
+        "en"
+      ],
+      "domains": [
+        "education",
+        "science",
+        "chemistry",
+        "mathematics",
+        "general"
+      ],
+      "size": "~25B tokens",
+      "notes": "Synthetic, so it is a supplement, not a substitute for reviewed sources."
+    }
+  ],
+  "rejected": [
+    {
+      "name": "Wikipedia / Wikibooks / Wikisource editions",
+      "license": "CC-BY-SA-4.0",
+      "reason": "share-alike would bind the weights"
+    },
+    {
+      "name": "CorpusNÓS (Galician)",
+      "license": "CC-BY-SA-4.0",
+      "reason": "most subcorpora CC BY-SA; TED2020 is CC BY-NC-ND"
+    },
+    {
+      "name": "FineWeb / FineWeb-2 / FineWeb-Edu",
+      "license": "web-crawl-compilation",
+      "reason": "licence covers the compilation, not the web texts"
+    },
+    {
+      "name": "CulturaX / OSCAR / mC4",
+      "license": "web-crawl-compilation",
+      "reason": "licence covers the compilation, not the web texts"
+    },
+    {
+      "name": "Khan Academy",
+      "license": "CC-BY-NC-SA-4.0",
+      "reason": "non-commercial and share-alike"
+    },
+    {
+      "name": "ArduPilot wiki",
+      "license": "CC-BY-SA-3.0",
+      "reason": "share-alike"
+    },
+    {
+      "name": "RepRap wiki",
+      "license": "CC-BY-SA-3.0",
+      "reason": "share-alike"
+    },
+    {
+      "name": "Marlin firmware",
+      "license": "GPL-3.0",
+      "reason": "copyleft"
+    },
+    {
+      "name": "Klipper",
+      "license": "GPL-3.0",
+      "reason": "copyleft"
+    },
+    {
+      "name": "OctoPrint",
+      "license": "AGPL-3.0",
+      "reason": "copyleft"
+    },
+    {
+      "name": "PrusaSlicer",
+      "license": "AGPL-3.0",
+      "reason": "copyleft"
+    },
+    {
+      "name": "Cura",
+      "license": "LGPL-3.0",
+      "reason": "copyleft"
+    },
+    {
+      "name": "esCorpius",
+      "license": "CC-BY-NC-ND-4.0",
+      "reason": "non-commercial, no derivatives"
+    }
+  ],
+  "pending_review": [
+    {
+      "name": "PubChem",
+      "reason": "NCBI data is largely public domain but depositor records can carry their own terms; admit only records with an explicit permissive licence"
+    },
+    {
+      "name": "ROS 2 documentation",
+      "reason": "licence of docs.ros.org not confirmed in this review"
+    },
+    {
+      "name": "Spanish university open textbooks",
+      "reason": "licences vary by publisher (CC BY vs CC BY-NC-SA); admit per title"
+    }
+  ],
+  "local_inventory": {
+    "reviewed": "2026-10-02",
+    "scope": "D:/ and C:/ (datasets, caches, loose corpora); session transcripts under C:/Users/*/.claude and .codex excluded as private conversations, not training data",
+    "admitted": [
+      {
+        "path": "D:/HYDRA/data/sources/boe/boe_legislacion_consolidada.jsonl",
+        "license": "es-public-sector-reuse",
+        "notes": "live BOE download (format 2)"
+      },
+      {
+        "path": "D:/HYDRA/data/sources/snapshots/",
+        "license": "es-public-sector-reuse",
+        "notes": "frozen BOE inputs pinned by grounded corpus manifests"
+      },
+      {
+        "path": "D:/HYDRA/data/sources/code/stackv2_edu_python_sample.jsonl",
+        "license": "MIT",
+        "also": [
+          "Apache-2.0",
+          "BSD-3-Clause",
+          "BSD-2-Clause",
+          "Unlicense",
+          "CC0-1.0"
+        ],
+        "notes": "20,000 permissive Python files, per-file licence kept"
+      },
+      {
+        "path": "D:/HYDRA/data/sources/code/stackv2_edu_markdown_sample.jsonl",
+        "license": "MIT",
+        "also": [
+          "Apache-2.0",
+          "BSD-3-Clause",
+          "BSD-2-Clause",
+          "Unlicense",
+          "CC0-1.0"
+        ],
+        "notes": "91,739 permissive Markdown docs from Stack v2 edu; moved from D:/corpus_llm_grande"
+      }
+    ],
+    "rejected": [
+      {
+        "path": "D:/CeltIA V1/corpus/dumps_wikimedia/",
+        "license": "CC-BY-SA-4.0",
+        "reason": "Wikipedia en/es/gl/pt dumps; enwiki is an incomplete .part download"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpus_es.txt",
+        "license": "CC-BY-SA-4.0",
+        "reason": "built from wikimedia/wikipedia (construir_corpus_es.py)"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpus_56gb.txt",
+        "license": "CC-BY-SA-4.0",
+        "reason": "CorpusNOS (incl. data_transfer_agreement material) + Galician Wikipedia"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpus_mega.txt",
+        "license": "CC-BY-SA-4.0",
+        "reason": "Galician Wikipedia text"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpus_codigo.txt",
+        "license": "unknown-mixed",
+        "reason": "local Python stdlib, global npm and cargo sources without per-file licence metadata"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpusnos/public_data/web_crawls/",
+        "license": "web-crawl-compilation",
+        "reason": "mC4/CC-100 and OSCAR web text"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpusnos/public_data/translation_corpora/",
+        "license": "web-crawl-compilation",
+        "reason": "CCMatrix web-mined, OpenSubtitles copyrighted subtitles, Linux strings"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpusnos/public_data/press_and_blogs/",
+        "license": "CC-BY-SA-4.0",
+        "reason": "CorpusNOS release licence"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/corpusnos/public_data/encyclopedic/",
+        "license": "CC-BY-SA-4.0",
+        "reason": "Galician Wikipedia"
+      },
+      {
+        "path": "D:/CeltIA V1/corpus/instruction_datasets_gl/",
+        "license": "unknown-mixed",
+        "reason": "derived from CorpusNOS/EGU material without per-row licence"
+      }
+    ],
+    "removed": [
+      {
+        "path": "D:/CeltIA V1/corpus/corpusnos/data_transfer_agreement/",
+        "reason": "user decision: obtained under a data transfer agreement, not an open licence (sent to Recycle Bin, 3.1 GB)"
+      },
+      {
+        "path": "D:/corpus_llm_grande/derecho/*.legacy-20261002T095015.*",
+        "reason": "superseded format-1 BOE output; its used prefix lives in data/sources/snapshots (sent to Recycle Bin)"
+      }
+    ],
+    "not_data": [
+      "D:/AI/HuggingFace (models only; dataset entries are README stubs)",
+      "D:/AI/Ollama (models)",
+      "C:/Users/mejil/.cache/codex-runtimes"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "7cf20033-2d2a-4393-a8c4-a616f0f9ac0b",
+    "task_id": "a427f315-6cd1-4f95-a063-430de596a068",
+    "type": "route.selected",
+    "source": "router",
+    "payload": {
+      "task_type": "vision",
+      "complexity": 0.409,
+      "risk": 0.1,
+      "requires_tools": false,
+      "requires_vision": true,
+      "requires_reasoning": false,
+      "requires_verification": false,
+      "requires_memory": false,
+      "desired_parallelism": 1,
+      "signals": {
+        "kw.coding": 0.0,
+        "kw.reasoning": 0.0,
+        "kw.research": 0.0,
+        "kw.vision": 5.0,
+        "kw.tool_use": 0.0
+      },
+      "observation": {
+        "version": 1,
+        "status": "observed",
+        "model": "hydra-local-shadow:51782a3abeca",
+        "reason": "calibrated_shadow_only",
+        "elapsed_ms": 1.1386000005586538,
+        "selected": "vision",
+        "probabilities": {
+          "abstain": 4.326930482819703e-05,
+          "chat": 0.00011342248612561411,
+          "coding": 4.1906577918767815e-05,
+          "high_risk_review": 1.5698613996624764e-06,
+          "privacy": 1.5698613996624764e-06,
+          "reasoning": 6.80382291339828e-05,
+          "research": 6.279445598649906e-06,
+          "security": 4.807700536466334e-06,
+          "tool_use": 2.5117782394599632e-05,
+          "vision": 0.9996940187506643
+        },
+        "confidence": 0.9996940187506643
+      },
+      "arm": "heuristic"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:41:39.108386Z"
+  },
+  {
+    "id": "3c46ed7e-013f-4f9e-9321-ceb81370a8ca",
+    "task_id": "a427f315-6cd1-4f95-a063-430de596a068",
+    "type": "model.completed",
+    "source": "vision",
+    "payload": {
+      "model": "hydra-vision",
+      "role": "vision",
+      "latency_ms": 86187.9,
+      "input_tokens": 1190,
+      "output_tokens": 575,
+      "tool_calls": 0,
+      "ctx_bucket": 4000,
+      "structured": true,
+      "tools": false,
+      "images": true
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:43:05.298050Z"
+  },
+  {
+    "id": "efb41089-92c2-4c7b-9ad2-2c4ff71e477f",
+    "task_id": "a427f315-6cd1-4f95-a063-430de596a068",
+    "type": "model.completed",
+    "source": "reasoner",
+    "payload": {
+      "model": "hydra-vision",
+      "role": "reasoner",
+      "latency_ms": 46672.83,
+      "input_tokens": 1439,
+      "output_tokens": 1301,
+      "tool_calls": 0,
+      "ctx_bucket": 4000,
+      "structured": false,
+      "tools": false,
+      "images": true
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:43:51.971899Z"
+  },
+  {
+    "id": "d5f9cca8-eaae-4ac6-abae-e49ee2007981",
+    "task_id": "a427f315-6cd1-4f95-a063-430de596a068",
+    "type": "task.completed",
+    "source": "kernel",
+    "payload": {
+      "confidence": 0.7007,
+      "verified": false,
+      "budget": {
+        "tokens": 4505,
+        "model_calls": 2,
+        "tool_calls": 0,
+        "cost": 0.0,
+        "steps": 1,
+        "escalations": 0,
+        "elapsed_s": 132.89
+      }
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:43:52.001079Z"
+  }
+]

@@ -1,0 +1,64 @@
+{
+  "version": "grounded-v1",
+  "kind": "source_grounded_verified",
+  "approved": false,
+  "human_reviewed": false,
+  "independent_test": false,
+  "generator_sha256": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-grounded-v1-input.jsonl",
+      "sha256": "d9ae9255ca25438d67773fd26c1e9d48fc2b07fcbe4664cab8df0d5ba9bd01ef",
+      "records": 712
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "permissive_records": 19620
+    }
+  },
+  "split_policy": "disjoint source documents (sha256 bucket 80/7/6/7) and disjoint wording families",
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "families": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 160,
+    "code_imports": 160,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "rejections": {
+    "privacy_rejected": 284,
+    "verification_failed": 0,
+    "utf8_rejected": 0,
+    "too_long": 1
+  },
+  "files": {
+    "train.jsonl": {
+      "examples": 1585,
+      "sha256": "c08067b99f280daf4a7ef3b9b544b2431140bd7d1067f40c82f444ce3aad47f4"
+    },
+    "validation.jsonl": {
+      "examples": 162,
+      "sha256": "ee4ed29620158d6de7c75a6396d9d9972b63f5761432a475a590031fe3414d0b"
+    },
+    "calibration.jsonl": {
+      "examples": 99,
+      "sha256": "def94a0dbf54d88756789d0d0bc00807fa32cf7fefc28a5c09fea7b68821ea4b"
+    },
+    "test.jsonl": {
+      "examples": 154,
+      "sha256": "4fecd531114582971935a6a8a847949c21070b0342e767ed35b09d4b11689640"
+    }
+  },
+  "limitations": "Extractive questions over a single excerpt; verifies faithfulness to the excerpt, not legal or programming advice. Code snippets keep repository, path and licence for attribution. Not human reviewed."
+}

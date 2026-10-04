@@ -1,0 +1,1368 @@
+{
+  "status": "EVALUATED",
+  "approved": false,
+  "dataset": {
+    "format": "hydra-human-paraphrase/1",
+    "examples": 100,
+    "labels": [
+      "abstain",
+      "chat",
+      "coding",
+      "high_risk_review",
+      "privacy",
+      "reasoning",
+      "research",
+      "security",
+      "tool_use",
+      "vision"
+    ],
+    "training_allowed": false,
+    "sha256": "fcade71188f552d29cc3a497496c569002d47d78c2c6fab6f32f38a9c8cf19cc"
+  },
+  "head_v2": {
+    "requested": 100,
+    "valid": 100,
+    "accepted": 100,
+    "coverage": 1.0,
+    "accuracy": 0.59,
+    "accuracy_wilson_lower_95": 0.4920125056109662,
+    "ece_10_bins": 0.18093199999999998,
+    "brier_multiclass_sum": 0.6153210026,
+    "nll": 1.487489739335809,
+    "bins": [
+      {
+        "bin": 1,
+        "n": 6,
+        "confidence": 0.18189999999999998,
+        "accuracy": 0.3333333333333333
+      },
+      {
+        "bin": 2,
+        "n": 32,
+        "confidence": 0.247103125,
+        "accuracy": 0.4375
+      },
+      {
+        "bin": 3,
+        "n": 24,
+        "confidence": 0.34562916666666665,
+        "accuracy": 0.5833333333333334
+      },
+      {
+        "bin": 4,
+        "n": 11,
+        "confidence": 0.43033636363636363,
+        "accuracy": 0.45454545454545453
+      },
+      {
+        "bin": 5,
+        "n": 5,
+        "confidence": 0.56676,
+        "accuracy": 0.6
+      },
+      {
+        "bin": 6,
+        "n": 11,
+        "confidence": 0.6536090909090909,
+        "accuracy": 1.0
+      },
+      {
+        "bin": 7,
+        "n": 6,
+        "confidence": 0.7514500000000001,
+        "accuracy": 0.8333333333333334
+      },
+      {
+        "bin": 8,
+        "n": 3,
+        "confidence": 0.8218333333333333,
+        "accuracy": 1.0
+      },
+      {
+        "bin": 9,
+        "n": 2,
+        "confidence": 0.9408000000000001,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "kev": [
+    {
+      "id": "human-v1-chat-00",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.605,
+        "coding": 0.0326,
+        "reasoning": 0.0708,
+        "research": 0.0933,
+        "vision": 0.1121,
+        "tool_use": 0.0861
+      },
+      "passed": true,
+      "latency_ms": 297.1730999997817
+    },
+    {
+      "id": "human-v1-chat-01",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.4132,
+        "coding": 0.031,
+        "reasoning": 0.1832,
+        "research": 0.1908,
+        "vision": 0.0938,
+        "tool_use": 0.0881
+      },
+      "passed": true,
+      "latency_ms": 41.19160000118427
+    },
+    {
+      "id": "human-v1-chat-02",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.631,
+        "coding": 0.0505,
+        "reasoning": 0.0796,
+        "research": 0.0918,
+        "vision": 0.0587,
+        "tool_use": 0.0884
+      },
+      "passed": true,
+      "latency_ms": 40.84159999911208
+    },
+    {
+      "id": "human-v1-chat-03",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.5414,
+        "coding": 0.0339,
+        "reasoning": 0.1032,
+        "research": 0.1275,
+        "vision": 0.1344,
+        "tool_use": 0.0595
+      },
+      "passed": true,
+      "latency_ms": 40.40959999838378
+    },
+    {
+      "id": "human-v1-chat-04",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.7895,
+        "coding": 0.02,
+        "reasoning": 0.0535,
+        "research": 0.0498,
+        "vision": 0.0409,
+        "tool_use": 0.0463
+      },
+      "passed": true,
+      "latency_ms": 43.024300000979565
+    },
+    {
+      "id": "human-v1-chat-05",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.1914,
+        "coding": 0.0182,
+        "reasoning": 0.0633,
+        "research": 0.3783,
+        "vision": 0.3141,
+        "tool_use": 0.0347
+      },
+      "passed": false,
+      "latency_ms": 36.94810000160942
+    },
+    {
+      "id": "human-v1-chat-06",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.4046,
+        "coding": 0.0482,
+        "reasoning": 0.1136,
+        "research": 0.2627,
+        "vision": 0.099,
+        "tool_use": 0.0719
+      },
+      "passed": true,
+      "latency_ms": 37.92779999639606
+    },
+    {
+      "id": "human-v1-chat-07",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.4333,
+        "coding": 0.1049,
+        "reasoning": 0.1204,
+        "research": 0.1322,
+        "vision": 0.0865,
+        "tool_use": 0.1228
+      },
+      "passed": true,
+      "latency_ms": 38.05149999971036
+    },
+    {
+      "id": "human-v1-chat-08",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.3622,
+        "coding": 0.0927,
+        "reasoning": 0.1548,
+        "research": 0.1251,
+        "vision": 0.106,
+        "tool_use": 0.1592
+      },
+      "passed": true,
+      "latency_ms": 38.88390000065556
+    },
+    {
+      "id": "human-v1-chat-09",
+      "expected": "chat",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.4144,
+        "coding": 0.0222,
+        "reasoning": 0.1428,
+        "research": 0.1285,
+        "vision": 0.14,
+        "tool_use": 0.1521
+      },
+      "passed": true,
+      "latency_ms": 35.70830000535352
+    },
+    {
+      "id": "human-v1-coding-00",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0325,
+        "coding": 0.8596,
+        "reasoning": 0.0378,
+        "research": 0.0137,
+        "vision": 0.008,
+        "tool_use": 0.0484
+      },
+      "passed": true,
+      "latency_ms": 39.79830000025686
+    },
+    {
+      "id": "human-v1-coding-01",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0321,
+        "coding": 0.7164,
+        "reasoning": 0.1304,
+        "research": 0.0478,
+        "vision": 0.0244,
+        "tool_use": 0.0488
+      },
+      "passed": true,
+      "latency_ms": 37.69280000415165
+    },
+    {
+      "id": "human-v1-coding-02",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0237,
+        "coding": 0.8265,
+        "reasoning": 0.0627,
+        "research": 0.044,
+        "vision": 0.0093,
+        "tool_use": 0.0338
+      },
+      "passed": true,
+      "latency_ms": 37.35440000309609
+    },
+    {
+      "id": "human-v1-coding-03",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.1439,
+        "coding": 0.4487,
+        "reasoning": 0.1548,
+        "research": 0.1032,
+        "vision": 0.044,
+        "tool_use": 0.1054
+      },
+      "passed": true,
+      "latency_ms": 36.658600001828745
+    },
+    {
+      "id": "human-v1-coding-04",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0152,
+        "coding": 0.8615,
+        "reasoning": 0.025,
+        "research": 0.0197,
+        "vision": 0.0111,
+        "tool_use": 0.0676
+      },
+      "passed": true,
+      "latency_ms": 39.620699993974995
+    },
+    {
+      "id": "human-v1-coding-05",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0614,
+        "coding": 0.6932,
+        "reasoning": 0.0905,
+        "research": 0.0484,
+        "vision": 0.0281,
+        "tool_use": 0.0784
+      },
+      "passed": true,
+      "latency_ms": 36.97180000017397
+    },
+    {
+      "id": "human-v1-coding-06",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.03,
+        "coding": 0.8799,
+        "reasoning": 0.0314,
+        "research": 0.0221,
+        "vision": 0.0174,
+        "tool_use": 0.0192
+      },
+      "passed": true,
+      "latency_ms": 36.84329999668989
+    },
+    {
+      "id": "human-v1-coding-07",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.1171,
+        "coding": 0.4789,
+        "reasoning": 0.2071,
+        "research": 0.0849,
+        "vision": 0.0359,
+        "tool_use": 0.0762
+      },
+      "passed": true,
+      "latency_ms": 36.46160000062082
+    },
+    {
+      "id": "human-v1-coding-08",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0622,
+        "coding": 0.7191,
+        "reasoning": 0.0692,
+        "research": 0.0375,
+        "vision": 0.0225,
+        "tool_use": 0.0894
+      },
+      "passed": true,
+      "latency_ms": 37.83309999562334
+    },
+    {
+      "id": "human-v1-coding-09",
+      "expected": "coding",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0673,
+        "coding": 0.1855,
+        "reasoning": 0.3012,
+        "research": 0.2961,
+        "vision": 0.0529,
+        "tool_use": 0.097
+      },
+      "passed": false,
+      "latency_ms": 36.93280000152299
+    },
+    {
+      "id": "human-v1-reasoning-00",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1002,
+        "coding": 0.0122,
+        "reasoning": 0.7567,
+        "research": 0.0495,
+        "vision": 0.0396,
+        "tool_use": 0.0417
+      },
+      "passed": true,
+      "latency_ms": 35.97250000166241
+    },
+    {
+      "id": "human-v1-reasoning-01",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0823,
+        "coding": 0.0113,
+        "reasoning": 0.8081,
+        "research": 0.0669,
+        "vision": 0.0162,
+        "tool_use": 0.0152
+      },
+      "passed": true,
+      "latency_ms": 35.05389999918407
+    },
+    {
+      "id": "human-v1-reasoning-02",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1236,
+        "coding": 0.0181,
+        "reasoning": 0.5657,
+        "research": 0.1431,
+        "vision": 0.0652,
+        "tool_use": 0.0843
+      },
+      "passed": true,
+      "latency_ms": 36.08099999837577
+    },
+    {
+      "id": "human-v1-reasoning-03",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1599,
+        "coding": 0.0827,
+        "reasoning": 0.35,
+        "research": 0.085,
+        "vision": 0.0912,
+        "tool_use": 0.2312
+      },
+      "passed": true,
+      "latency_ms": 38.795399996160995
+    },
+    {
+      "id": "human-v1-reasoning-04",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0859,
+        "coding": 0.0091,
+        "reasoning": 0.7043,
+        "research": 0.1389,
+        "vision": 0.0335,
+        "tool_use": 0.0284
+      },
+      "passed": true,
+      "latency_ms": 54.46229999506613
+    },
+    {
+      "id": "human-v1-reasoning-05",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1361,
+        "coding": 0.0271,
+        "reasoning": 0.669,
+        "research": 0.0685,
+        "vision": 0.0389,
+        "tool_use": 0.0604
+      },
+      "passed": true,
+      "latency_ms": 35.94600000360515
+    },
+    {
+      "id": "human-v1-reasoning-06",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1338,
+        "coding": 0.0227,
+        "reasoning": 0.742,
+        "research": 0.0484,
+        "vision": 0.0325,
+        "tool_use": 0.0205
+      },
+      "passed": true,
+      "latency_ms": 36.363600003824104
+    },
+    {
+      "id": "human-v1-reasoning-07",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1055,
+        "coding": 0.0319,
+        "reasoning": 0.6752,
+        "research": 0.0749,
+        "vision": 0.0423,
+        "tool_use": 0.0701
+      },
+      "passed": true,
+      "latency_ms": 36.57180000300286
+    },
+    {
+      "id": "human-v1-reasoning-08",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1477,
+        "coding": 0.0825,
+        "reasoning": 0.5616,
+        "research": 0.0688,
+        "vision": 0.0565,
+        "tool_use": 0.0829
+      },
+      "passed": true,
+      "latency_ms": 38.12439999455819
+    },
+    {
+      "id": "human-v1-reasoning-09",
+      "expected": "reasoning",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1244,
+        "coding": 0.0118,
+        "reasoning": 0.6771,
+        "research": 0.1326,
+        "vision": 0.0339,
+        "tool_use": 0.0201
+      },
+      "passed": true,
+      "latency_ms": 36.93120000389172
+    },
+    {
+      "id": "human-v1-research-00",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0266,
+        "coding": 0.0026,
+        "reasoning": 0.0265,
+        "research": 0.8795,
+        "vision": 0.0067,
+        "tool_use": 0.0581
+      },
+      "passed": true,
+      "latency_ms": 35.79460000037216
+    },
+    {
+      "id": "human-v1-research-01",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.1997,
+        "coding": 0.0349,
+        "reasoning": 0.2358,
+        "research": 0.3349,
+        "vision": 0.0354,
+        "tool_use": 0.1593
+      },
+      "passed": true,
+      "latency_ms": 37.68549999949755
+    },
+    {
+      "id": "human-v1-research-02",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.028,
+        "coding": 0.0046,
+        "reasoning": 0.05,
+        "research": 0.8584,
+        "vision": 0.009,
+        "tool_use": 0.0499
+      },
+      "passed": true,
+      "latency_ms": 38.001300003088545
+    },
+    {
+      "id": "human-v1-research-03",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.06,
+        "coding": 0.0276,
+        "reasoning": 0.1606,
+        "research": 0.6588,
+        "vision": 0.0286,
+        "tool_use": 0.0645
+      },
+      "passed": true,
+      "latency_ms": 40.079800004605204
+    },
+    {
+      "id": "human-v1-research-04",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0737,
+        "coding": 0.0092,
+        "reasoning": 0.0419,
+        "research": 0.8264,
+        "vision": 0.0177,
+        "tool_use": 0.0312
+      },
+      "passed": true,
+      "latency_ms": 36.63539999979548
+    },
+    {
+      "id": "human-v1-research-05",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.1752,
+        "coding": 0.0249,
+        "reasoning": 0.2612,
+        "research": 0.3169,
+        "vision": 0.0323,
+        "tool_use": 0.1894
+      },
+      "passed": true,
+      "latency_ms": 37.14570000011008
+    },
+    {
+      "id": "human-v1-research-06",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0246,
+        "coding": 0.0083,
+        "reasoning": 0.0534,
+        "research": 0.8278,
+        "vision": 0.0151,
+        "tool_use": 0.0707
+      },
+      "passed": true,
+      "latency_ms": 37.142599998333026
+    },
+    {
+      "id": "human-v1-research-07",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0302,
+        "coding": 0.0134,
+        "reasoning": 0.0591,
+        "research": 0.8035,
+        "vision": 0.0294,
+        "tool_use": 0.0645
+      },
+      "passed": true,
+      "latency_ms": 37.14380000019446
+    },
+    {
+      "id": "human-v1-research-08",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.068,
+        "coding": 0.0522,
+        "reasoning": 0.0529,
+        "research": 0.7476,
+        "vision": 0.0269,
+        "tool_use": 0.0523
+      },
+      "passed": true,
+      "latency_ms": 36.748499995155726
+    },
+    {
+      "id": "human-v1-research-09",
+      "expected": "research",
+      "status": "evaluated",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0342,
+        "coding": 0.0051,
+        "reasoning": 0.0561,
+        "research": 0.8293,
+        "vision": 0.0084,
+        "tool_use": 0.0669
+      },
+      "passed": true,
+      "latency_ms": 36.39649999968242
+    },
+    {
+      "id": "human-v1-vision-00",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0774,
+        "coding": 0.0108,
+        "reasoning": 0.0914,
+        "research": 0.044,
+        "vision": 0.7539,
+        "tool_use": 0.0224
+      },
+      "passed": true,
+      "latency_ms": 36.189300000842195
+    },
+    {
+      "id": "human-v1-vision-01",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.1639,
+        "coding": 0.0318,
+        "reasoning": 0.1314,
+        "research": 0.0806,
+        "vision": 0.5198,
+        "tool_use": 0.0726
+      },
+      "passed": true,
+      "latency_ms": 38.2545000029495
+    },
+    {
+      "id": "human-v1-vision-02",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.2618,
+        "coding": 0.0143,
+        "reasoning": 0.2429,
+        "research": 0.1617,
+        "vision": 0.2677,
+        "tool_use": 0.0516
+      },
+      "passed": true,
+      "latency_ms": 36.09579999465495
+    },
+    {
+      "id": "human-v1-vision-03",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.1575,
+        "coding": 0.0289,
+        "reasoning": 0.2453,
+        "research": 0.1439,
+        "vision": 0.2915,
+        "tool_use": 0.1329
+      },
+      "passed": true,
+      "latency_ms": 37.36310000385856
+    },
+    {
+      "id": "human-v1-vision-04",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.2044,
+        "coding": 0.0453,
+        "reasoning": 0.2732,
+        "research": 0.2003,
+        "vision": 0.1832,
+        "tool_use": 0.0936
+      },
+      "passed": false,
+      "latency_ms": 39.29229999630479
+    },
+    {
+      "id": "human-v1-vision-05",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.1097,
+        "coding": 0.02,
+        "reasoning": 0.1882,
+        "research": 0.1101,
+        "vision": 0.4998,
+        "tool_use": 0.0723
+      },
+      "passed": true,
+      "latency_ms": 44.02480000135256
+    },
+    {
+      "id": "human-v1-vision-06",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.15,
+        "coding": 0.047,
+        "reasoning": 0.2113,
+        "research": 0.1188,
+        "vision": 0.33,
+        "tool_use": 0.1429
+      },
+      "passed": true,
+      "latency_ms": 36.60859999945387
+    },
+    {
+      "id": "human-v1-vision-07",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1222,
+        "coding": 0.0139,
+        "reasoning": 0.4313,
+        "research": 0.0764,
+        "vision": 0.293,
+        "tool_use": 0.0632
+      },
+      "passed": false,
+      "latency_ms": 37.483899999642745
+    },
+    {
+      "id": "human-v1-vision-08",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1096,
+        "coding": 0.0155,
+        "reasoning": 0.3701,
+        "research": 0.0785,
+        "vision": 0.3155,
+        "tool_use": 0.1108
+      },
+      "passed": false,
+      "latency_ms": 35.944800001743715
+    },
+    {
+      "id": "human-v1-vision-09",
+      "expected": "vision",
+      "status": "evaluated",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0615,
+        "coding": 0.0084,
+        "reasoning": 0.1031,
+        "research": 0.0654,
+        "vision": 0.7381,
+        "tool_use": 0.0236
+      },
+      "passed": true,
+      "latency_ms": 35.77959999529412
+    },
+    {
+      "id": "human-v1-tool_use-00",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.3095,
+        "coding": 0.0786,
+        "reasoning": 0.0837,
+        "research": 0.1812,
+        "vision": 0.1014,
+        "tool_use": 0.2454
+      },
+      "passed": false,
+      "latency_ms": 78.31199999782257
+    },
+    {
+      "id": "human-v1-tool_use-01",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.098,
+        "coding": 0.1917,
+        "reasoning": 0.1147,
+        "research": 0.0602,
+        "vision": 0.0469,
+        "tool_use": 0.4886
+      },
+      "passed": true,
+      "latency_ms": 40.57199999806471
+    },
+    {
+      "id": "human-v1-tool_use-02",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.1881,
+        "coding": 0.2471,
+        "reasoning": 0.2892,
+        "research": 0.1014,
+        "vision": 0.0449,
+        "tool_use": 0.1292
+      },
+      "passed": false,
+      "latency_ms": 36.38979999959702
+    },
+    {
+      "id": "human-v1-tool_use-03",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.1727,
+        "coding": 0.2411,
+        "reasoning": 0.0702,
+        "research": 0.0352,
+        "vision": 0.1144,
+        "tool_use": 0.3665
+      },
+      "passed": true,
+      "latency_ms": 36.49230000155512
+    },
+    {
+      "id": "human-v1-tool_use-04",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.3242,
+        "coding": 0.2919,
+        "reasoning": 0.065,
+        "research": 0.0627,
+        "vision": 0.0664,
+        "tool_use": 0.1898
+      },
+      "passed": false,
+      "latency_ms": 40.20180000225082
+    },
+    {
+      "id": "human-v1-tool_use-05",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.1373,
+        "coding": 0.2553,
+        "reasoning": 0.1436,
+        "research": 0.2047,
+        "vision": 0.0733,
+        "tool_use": 0.1857
+      },
+      "passed": false,
+      "latency_ms": 36.925399996107444
+    },
+    {
+      "id": "human-v1-tool_use-06",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.1486,
+        "coding": 0.0313,
+        "reasoning": 0.1486,
+        "research": 0.1975,
+        "vision": 0.0724,
+        "tool_use": 0.4016
+      },
+      "passed": true,
+      "latency_ms": 36.11960000125691
+    },
+    {
+      "id": "human-v1-tool_use-07",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.1151,
+        "coding": 0.0975,
+        "reasoning": 0.1585,
+        "research": 0.1206,
+        "vision": 0.0644,
+        "tool_use": 0.4438
+      },
+      "passed": true,
+      "latency_ms": 35.85849999944912
+    },
+    {
+      "id": "human-v1-tool_use-08",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.1069,
+        "coding": 0.263,
+        "reasoning": 0.1681,
+        "research": 0.0939,
+        "vision": 0.0403,
+        "tool_use": 0.3278
+      },
+      "passed": true,
+      "latency_ms": 36.922300001606345
+    },
+    {
+      "id": "human-v1-tool_use-09",
+      "expected": "tool_use",
+      "status": "evaluated",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.1445,
+        "coding": 0.2226,
+        "reasoning": 0.1843,
+        "research": 0.1528,
+        "vision": 0.042,
+        "tool_use": 0.2538
+      },
+      "passed": true,
+      "latency_ms": 37.498199999390636
+    },
+    {
+      "id": "human-v1-security-00",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.001500004145782441
+    },
+    {
+      "id": "human-v1-security-01",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0008999995770864189
+    },
+    {
+      "id": "human-v1-security-02",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-security-03",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000700005330145359
+    },
+    {
+      "id": "human-v1-security-04",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-security-05",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-security-06",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-security-07",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-security-08",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-security-09",
+      "expected": "security",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0005999972927384079
+    },
+    {
+      "id": "human-v1-privacy-00",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-privacy-01",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-privacy-02",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-privacy-03",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0005999972927384079
+    },
+    {
+      "id": "human-v1-privacy-04",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-privacy-05",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-privacy-06",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.00039999576983973384
+    },
+    {
+      "id": "human-v1-privacy-07",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0005999972927384079
+    },
+    {
+      "id": "human-v1-privacy-08",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-privacy-09",
+      "expected": "privacy",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-abstain-00",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0005999972927384079
+    },
+    {
+      "id": "human-v1-abstain-01",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-abstain-02",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-abstain-03",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-abstain-04",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-abstain-05",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-abstain-06",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.00039999576983973384
+    },
+    {
+      "id": "human-v1-abstain-07",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-abstain-08",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-abstain-09",
+      "expected": "abstain",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-high_risk_review-00",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-high_risk_review-01",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000600004568696022
+    },
+    {
+      "id": "human-v1-high_risk_review-02",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000500003807246685
+    },
+    {
+      "id": "human-v1-high_risk_review-03",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-high_risk_review-04",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    },
+    {
+      "id": "human-v1-high_risk_review-05",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.00039999576983973384
+    },
+    {
+      "id": "human-v1-high_risk_review-06",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0008999995770864189
+    },
+    {
+      "id": "human-v1-high_risk_review-07",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000300002284348011
+    },
+    {
+      "id": "human-v1-high_risk_review-08",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.000400003045797348
+    },
+    {
+      "id": "human-v1-high_risk_review-09",
+      "expected": "high_risk_review",
+      "status": "unsupported_label",
+      "passed": false,
+      "latency_ms": 0.0004999965312890708
+    }
+  ],
+  "limitations": "Human-authored by HYDRA; no external annotator agreement yet.",
+  "server": {
+    "name": "kev-latest",
+    "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+    "release_date": "2026-09-24",
+    "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "lora": 16,
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "temperature": 2.3510958125672174,
+    "cuda_graphs": {
+      "captured": 9,
+      "kept": 9,
+      "pending": 0,
+      "failed": 0
+    },
+    "prefix_cache": {
+      "size": 4,
+      "min_state_tokens": 0,
+      "max_tokens": 65536,
+      "hits": 0,
+      "misses": 1618,
+      "cached_states": 4,
+      "oom_retries": 0
+    },
+    "batches": {
+      "count": 1614,
+      "requests": 1618,
+      "queued": 0
+    }
+  },
+  "kev_compatible": {
+    "count": 60,
+    "accuracy": 0.85
+  }
+}

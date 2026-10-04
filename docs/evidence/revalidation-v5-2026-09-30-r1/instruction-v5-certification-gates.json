@@ -1,0 +1,40 @@
+{
+  "artifact_sha256": "d767e0a1c75cbff78a6b95058f9440217ed24d294f57dd8e0eb1a3970d846e23",
+  "gates": {
+    "fresh_process_complete": true,
+    "fresh_software_checks_passed": true,
+    "development_above_90": false,
+    "calibration_above_90": true,
+    "frozen_instructions_above_90": false,
+    "coding_regression_retained": true,
+    "soak_15m_passed": true,
+    "external_inference_complete": true,
+    "human_review_complete": false,
+    "human_authorship_attested": false,
+    "human_accuracy_above_90": false,
+    "reviews_bound_to_candidate": false,
+    "external_test_unchanged": true,
+    "development_bound_to_candidate": true,
+    "calibration_bound_to_candidate": true,
+    "frozen_instruction_bound_to_candidate": true,
+    "coding_bound_to_candidate": true
+  },
+  "eligible_for_manual_promotion": false,
+  "approved": false,
+  "evidence_directory": "docs\\evidence\\revalidation-v5-2026-09-30-r1",
+  "human_reviewed": 0,
+  "human_unique_cases": 287,
+  "human_wilson95": [
+    0,
+    0.01320808538187952
+  ],
+  "pending": [
+    "development_above_90",
+    "frozen_instructions_above_90",
+    "human_review_complete",
+    "human_authorship_attested",
+    "human_accuracy_above_90",
+    "reviews_bound_to_candidate"
+  ],
+  "scope": "evidence gates for bounded evaluated tasks; no claim of universal certification"
+}

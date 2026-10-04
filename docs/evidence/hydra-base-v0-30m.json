@@ -1,0 +1,153 @@
+{
+  "kind": "hydra-base",
+  "stage": 0,
+  "approved": false,
+  "parameters": 30158400,
+  "shape": {
+    "hidden_size": 320,
+    "num_hidden_layers": 18,
+    "num_attention_heads": 5,
+    "num_key_value_heads": 1,
+    "intermediate_size": 896,
+    "max_position_embeddings": 1024
+  },
+  "plan": {
+    "seq_len": 1024,
+    "micro_batch": 4,
+    "accumulation": 16,
+    "learning_rate": 0.002,
+    "min_lr_ratio": 0.1,
+    "warmup_fraction": 0.02,
+    "decay_fraction": 0.2,
+    "weight_decay": 0.1,
+    "epochs": 1.0,
+    "eval_every": 250,
+    "eval_batches": 50,
+    "seed": 42
+  },
+  "steps": 3100,
+  "tokens_seen": 203161600,
+  "train_tokens": 203185864,
+  "gpu": "NVIDIA GeForce RTX 3060 Ti",
+  "peak_allocated_bytes": 3756633088,
+  "runtime_s": 6877.8,
+  "history": [
+    {
+      "step": 250,
+      "train_loss": 4.5863,
+      "val_loss": 4.8561,
+      "val_perplexity": 128.53
+    },
+    {
+      "step": 500,
+      "train_loss": 3.561,
+      "val_loss": 3.9953,
+      "val_perplexity": 54.34
+    },
+    {
+      "step": 750,
+      "train_loss": 3.2514,
+      "val_loss": 3.4142,
+      "val_perplexity": 30.39
+    },
+    {
+      "step": 1000,
+      "train_loss": 2.861,
+      "val_loss": 3.1771,
+      "val_perplexity": 23.98
+    },
+    {
+      "step": 1250,
+      "train_loss": 2.8967,
+      "val_loss": 3.0329,
+      "val_perplexity": 20.76
+    },
+    {
+      "step": 1500,
+      "train_loss": 2.8372,
+      "val_loss": 2.9395,
+      "val_perplexity": 18.91
+    },
+    {
+      "step": 1750,
+      "train_loss": 2.6234,
+      "val_loss": 2.856,
+      "val_perplexity": 17.39
+    },
+    {
+      "step": 2000,
+      "train_loss": 2.5338,
+      "val_loss": 2.8053,
+      "val_perplexity": 16.53
+    },
+    {
+      "step": 2250,
+      "train_loss": 2.6049,
+      "val_loss": 2.759,
+      "val_perplexity": 15.78
+    },
+    {
+      "step": 2500,
+      "train_loss": 2.2386,
+      "val_loss": 2.7225,
+      "val_perplexity": 15.22
+    },
+    {
+      "step": 2750,
+      "train_loss": 2.3014,
+      "val_loss": 2.6293,
+      "val_perplexity": 13.86
+    },
+    {
+      "step": 3000,
+      "train_loss": 2.1725,
+      "val_loss": 2.546,
+      "val_perplexity": 12.76
+    },
+    {
+      "step": 3100,
+      "train_loss": 2.1264,
+      "val_loss": 2.5173,
+      "val_perplexity": 12.39
+    }
+  ],
+  "weights_sha256": "e64772e1beb6a1d5ffc8475d5f8fa09904f8d005ba0ff15034c62d820d6a934f",
+  "tokenizer_sha256": "06657d6aa9b9c3fb9f6cbc09769dd0b80801c2e9a464f83f21433e8fa3576f10",
+  "data_manifest": {
+    "corpus_manifest_sha256": "5f284cff2d42316b70ce9467f2c6d6ee8a94f6af25010de60d6e6afe2aa53172",
+    "tokenizer_sha256": "06657d6aa9b9c3fb9f6cbc09769dd0b80801c2e9a464f83f21433e8fa3576f10",
+    "train": {
+      "tokens": 203185864,
+      "sha256": "5fd7f85f09839f389bad89284749541fd6374ecf8c3cdc6bda01396264f3aebc"
+    },
+    "validation": {
+      "tokens": 2097392,
+      "sha256": "e559d7d9e7cbcb4b007a18c75603a2ef9fa261a90919674ee119253612063704"
+    }
+  },
+  "license": "HYDRA Base proprietary (docs/legal/LICENCIA_PESOS_HYDRA_BASE.md); weights never published",
+  "document_framing": "document+eos (no BOS); exported tokenizer has add_bos_token=false to match",
+  "gguf": {
+    "file": "HYDRA-BASE-v0-f16.gguf",
+    "type": "f16",
+    "bytes": 61116032,
+    "sha256": "5d622fb1d6cf0d649cc9a3f837cf7c653e38e0974715d29bd0825eb8bf65eeaf",
+    "add_bos_token": false,
+    "converter": "runtime/llama.cpp/convert_hf_to_gguf.py (b11146), SentencePiece vocab, no pre-tokenizer registration"
+  },
+  "samples_seed42_temp0.7": {
+    "Artículo 1. Objeto. Esta ley tiene por objeto": "Artículo 1. Objeto. Esta ley tiene por objeto regular el derecho de acceso a los servicios de telecomunicaciones y su acceso, en especial, a la prestación de los servicios de telecomunicaciones a través de servicios de telecomunicación.\r\nArtículo 11. Definiciones.\r\nA los efectos de esta ley, se entenderá por:\r\na) Autoridad de",
+    "def calcular_media(valores):": "def calcular_media(valores):\r\n        #        if valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[valores[val"
+  },
+  "evidence_links": {
+    "corpus_manifest_sha256_lf": "5f284cff2d42316b70ce9467f2c6d6ee8a94f6af25010de60d6e6afe2aa53172",
+    "tokenizer_manifest_sha256_lf": "fac32c2a800e2eff8765ea2cbc4f38ffbfd52c4dcd92bc69d6d64ee626840d6b"
+  },
+  "findings": [
+    "End-to-end pipeline validated: licence-checked corpus -> own SentencePiece tokenizer -> Llama pretraining -> GGUF -> llama.cpp generation.",
+    "Held-out perplexity 12.39 after 203M tokens (one epoch); stage-0 quality is pipeline validation only.",
+    "v0 was pretrained without a BOS token per document; its exported tokenizer/GGUF disable automatic BOS so inference matches training. base_pretrain now frames documents as BOS+document+EOS for later runs.",
+    "Evidence links use LF-canonical hashes (the repository normalises JSON to LF).",
+    "Weights stay local (models/ is gitignored) under docs/legal/LICENCIA_PESOS_HYDRA_BASE.md."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@hydra-os/sdk",
+  "version": "1.1.0",
+  "private": true,
+  "description": "HYDRA OS TypeScript SDK. Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": { "build": "tsc -p ." },
+  "devDependencies": { "typescript": "^7.0.2" }
+}

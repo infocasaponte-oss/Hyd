@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "focused_tests": 44,
+  "scope": "Focused tests; not full repository suite",
+  "trainer_post_build_eval_batch_fix": true
+}

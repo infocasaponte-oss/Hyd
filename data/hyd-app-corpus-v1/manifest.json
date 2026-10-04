@@ -17,51 +17,51 @@
     "privacy": 200,
     "high_risk_review": 200
   },
-  "source_sha256": "aacef7a6136e0627637fbb64e3a9b34381fd0082541fbce6baffdde8b820bbf0",
+  "source_sha256": "886a387c3092a50354f7b7103320356f2215ede1a791796838f4e2568294bbea",
   "splits": {
     "train": {
       "n": 1449,
       "per_class": {
-        "chat": 143,
-        "reasoning": 147,
         "coding": 154,
-        "abstain": 140,
-        "privacy": 134,
         "security": 135,
-        "vision": 150,
         "research": 135,
+        "privacy": 134,
         "tool_use": 159,
-        "high_risk_review": 152
+        "reasoning": 147,
+        "chat": 143,
+        "high_risk_review": 152,
+        "abstain": 140,
+        "vision": 150
       }
     },
     "calibration": {
       "n": 315,
       "per_class": {
-        "research": 32,
-        "chat": 37,
-        "reasoning": 27,
-        "coding": 28,
-        "abstain": 29,
-        "privacy": 36,
-        "security": 28,
         "tool_use": 36,
+        "coding": 28,
+        "reasoning": 27,
+        "abstain": 29,
         "high_risk_review": 27,
-        "vision": 35
+        "research": 32,
+        "privacy": 36,
+        "vision": 35,
+        "chat": 37,
+        "security": 28
       }
     },
     "test": {
       "n": 313,
       "per_class": {
-        "chat": 28,
-        "reasoning": 34,
+        "research": 33,
         "coding": 31,
+        "tool_use": 23,
         "abstain": 31,
+        "reasoning": 34,
+        "privacy": 30,
         "security": 38,
         "vision": 44,
-        "research": 33,
-        "tool_use": 23,
-        "privacy": 30,
-        "high_risk_review": 21
+        "high_risk_review": 21,
+        "chat": 28
       }
     }
   }

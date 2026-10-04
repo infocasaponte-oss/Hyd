@@ -1,0 +1,16 @@
+{
+  "upstream": "https://github.com/jaredpalmer/kev",
+  "license": "Apache-2.0",
+  "base_revision": "0c142becde423a0c68ec857f7831dac0315588a1",
+  "patch_sha256": "d36db82cab8f7204a223641dab2ca12ec4bb56f2559cd14b5272e24d4b464478",
+  "files": {
+    "kev/api.py": "1595553afb7e39ed069ec3ef76ed9060fde0b6bca8730a542a85c367b87f02de",
+    "kev/checkpoint.py": "bc8a5a48bd7034a961b25212c3d3f5c279588f79aac5d245467626dc61e22a13",
+    "kev/contrastive.py": "bb106fcc2e6d0eb2c10329c2fdc1187cb55aa23538c6678e63eddcd1f288deb3",
+    "kev/model.py": "b5d4bcb6712ee26b7d05083b05f3bb8deb22d338d7d32366e17effbe08e475bc",
+    "kev/serve.py": "69eecd78e4466886be14fd76e3d4eff1339f11edd773c12abb1a1fc6833f5bd6",
+    "kev/suite.py": "8eda633060cedf0e691e0de4b1bff998dd8c49c7574a3f0167d425bf2844e1d3",
+    "kev/train.py": "47077a5d6f9f60a5a638af7d59b8859d980bfa8e6254ce189a1f1c3b5099238d"
+  },
+  "scope": "HYDRA local reliability fork, no upstream publication or model promotion"
+}

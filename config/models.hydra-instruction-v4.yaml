@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Experimental candidate; this configuration does not promote the model.
+models:
+  - id: hydra-instruction-v4-candidate
+    provider: ollama
+    runtime_model: hydra-instruction-v4:latest
+    local: true
+    tier: 2
+    context_window: 2048
+    capabilities: {chat: 0.6, reasoning: 0.5, coding: 0.6, tools: 0.3, vision: 0.0, research: 0.3}
+    estimated_latency_ms: 3000
+    runtime_options: {num_gpu: 99, num_ctx: 2048, temperature: 0, seed: 42}
+    quirks: {native_json_schema: true, native_tools: false}

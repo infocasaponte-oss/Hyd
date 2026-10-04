@@ -1,0 +1,49 @@
+{
+  "artifact_sha256": "0ef14148ababf98c52623f164d776ed76f17a583175ea91301e024a157231761",
+  "approved": false,
+  "eligible_for_manual_promotion": false,
+  "development": {
+    "correct": 17,
+    "total": 31,
+    "baseline": 16,
+    "scope": "New automatic development subset only"
+  },
+  "calibration": {
+    "correct": 6,
+    "total": 26,
+    "scope": "Held-out subset evaluation; no predictive confidence calibration"
+  },
+  "frozen_raw": {
+    "correct": 24,
+    "total": 48
+  },
+  "frozen_typed": {
+    "correct": 48,
+    "total": 48
+  },
+  "engine_json": {
+    "correct": 78,
+    "total": 78,
+    "uncached": true
+  },
+  "external_inference": {
+    "total": 300,
+    "complete": true,
+    "automatic_matches": 141
+  },
+  "human_reviews_unique": 0,
+  "known_external_unique_cases": 287,
+  "services": {
+    "18087": 200,
+    "18088": 200,
+    "8009": 200
+  },
+  "pending": [
+    "general_development_accuracy",
+    "held_out_calibration_quality",
+    "raw_frozen_json_generation",
+    "new_human_review_bound_to_v8",
+    "prolonged_stability"
+  ],
+  "scope": "Experimental acceptance report; no production promotion and no universal certification"
+}

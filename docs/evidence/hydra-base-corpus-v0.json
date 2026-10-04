@@ -1,0 +1,86 @@
+{
+  "version": "hydra-base-corpus-v0",
+  "sources": [
+    {
+      "name": "BOE legislación consolidada",
+      "path": "data\\sources\\snapshots\\boe-base-v0-input.jsonl",
+      "kind": "boe",
+      "input_sha256": "1e08e4ae8dd32ac5d3c89dc638d42d9cad755d857b4c29f8935105bda097cc23",
+      "read": 5171,
+      "kept": 5076,
+      "characters": 506807083,
+      "rejected": {
+        "personal_data": 93,
+        "credential": 1,
+        "repetitive": 1
+      }
+    },
+    {
+      "name": "Stack v2 edu (Python, permissive)",
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "kind": "stack_python",
+      "input_sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "read": 20000,
+      "kept": 16780,
+      "characters": 70438614,
+      "rejected": {
+        "personal_data": 1453,
+        "credential": 762,
+        "license": 380,
+        "too_short": 390,
+        "repetitive": 234,
+        "non_printable": 1
+      }
+    },
+    {
+      "name": "Stack v2 edu (Markdown, permissive)",
+      "path": "data\\sources\\code\\stackv2_edu_markdown_sample.jsonl",
+      "kind": "stack_markdown",
+      "input_sha256": "9f5bd7b0412ab2baa23756ed88adca6b42549412c171bf9a0d04e58c5accef85",
+      "read": 91739,
+      "kept": 78725,
+      "characters": 214190429,
+      "rejected": {
+        "personal_data": 8574,
+        "repetitive": 239,
+        "too_short": 1133,
+        "credential": 1614,
+        "license": 1410,
+        "non_printable": 44
+      }
+    }
+  ],
+  "totals": {
+    "documents": 100581,
+    "characters": 791436126
+  },
+  "files": {
+    "train-00000.jsonl.gz": {
+      "documents": 20000,
+      "sha256": "1bab6e362f4ee7743bcedbf87cf99ff98b65318e5b29e85c9655471866d2d2d6"
+    },
+    "train-00001.jsonl.gz": {
+      "documents": 20000,
+      "sha256": "cbd1383ff0234c96783350a57fcec7043537f9d7dedd48122661463bceb74182"
+    },
+    "train-00002.jsonl.gz": {
+      "documents": 20000,
+      "sha256": "d20f6f1dcebf4fa95a43d54a0afefd53589b975c65e23636b8d1a698d7b1d1f7"
+    },
+    "train-00003.jsonl.gz": {
+      "documents": 20000,
+      "sha256": "a6f4c01794a14eecd38cbd1740036137e13334d3cb1b464d56c3c57958f4e797"
+    },
+    "train-00004.jsonl.gz": {
+      "documents": 19578,
+      "sha256": "c8fe7bffb714d10d4cc3504ee9f3ca86ac6647529ffeb6a96a230c8a20f9a006"
+    },
+    "validation-00000.jsonl.gz": {
+      "documents": 1003,
+      "sha256": "334b5c447db5afee3eaad196edc9baf82f37d54552e22168a683dc0aa71aba62"
+    }
+  },
+  "holdout_percent": 1,
+  "notice_sha256": "9acea8f13c956934f432faf1f5d86c14abcb8292c8f159f9782f59851d050911",
+  "generator_sha256": "26bdb014891ad8686383e958169751f90d10da04cb1df80e15780ca8ca70dc09"
+}

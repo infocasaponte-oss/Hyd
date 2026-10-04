@@ -1,0 +1,63 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# CONTROL PLANE: gateway/kernel.
+#
+# Several replicas: ledger, corpus, World Model, IP, artifact manifests, fabric queue, capture and
+# runtime outboxes, runtime chains, deployments and the small registries are on PostgreSQL
+# (HYDRA_REQUIRE_SHARED_STATE refuses to start otherwise). /data is a ReadWriteMany volume for what is
+# still a file: artifact blobs (unless S3), flight records, release bundles, factory builds and per-task
+# workspaces; every one of them is written once under a unique name, never rewritten by two pods.
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: hydra-api, namespace: hydra}
+spec:
+  replicas: 2
+  strategy: {type: RollingUpdate, rollingUpdate: {maxUnavailable: 0, maxSurge: 1}}
+  selector: {matchLabels: {app: hydra-api}}
+  template:
+    metadata:
+      labels: {app: hydra-api}
+      annotations: {prometheus.io/scrape: "true", prometheus.io/port: "8080", prometheus.io/path: /metrics}
+    spec:
+      securityContext: {fsGroup: 10001}
+      affinity:  # prefer spreading replicas over nodes
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector: {matchLabels: {app: hydra-api}}
+                topologyKey: kubernetes.io/hostname
+      containers:
+        - name: api
+          image: hydra-engine:1.1.0
+          # The image has no ENTRYPOINT (CMD runs uvicorn): name the program explicitly.
+          command: ["hydra"]
+          args: ["serve", "--host", "0.0.0.0", "--port", "8080"]
+          envFrom: [{configMapRef: {name: hydra-config}}, {secretRef: {name: hydra-secrets}}]
+          ports: [{containerPort: 8080}]
+          # /ready also requires the runtime-line llama-server (HYDRA_LLM_URL); use it here only when
+          # that server is deployed next to the gateway. /health reflects the platform gateway.
+          readinessProbe: {httpGet: {path: /health, port: 8080}, periodSeconds: 10}
+          livenessProbe: {httpGet: {path: /health, port: 8080}, periodSeconds: 30, failureThreshold: 5}
+          resources: {requests: {cpu: "1", memory: 2Gi}, limits: {cpu: "4", memory: 8Gi}}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false,
+                            capabilities: {drop: [ALL]}}
+          volumeMounts: [{name: data, mountPath: /data}, {name: keys, mountPath: /keys, readOnly: true}]
+      volumes: [{name: data, persistentVolumeClaim: {claimName: hydra-data}},
+                {name: keys, secret: {secretName: hydra-keys, defaultMode: 0400}}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: hydra-api, namespace: hydra}
+spec: {selector: {app: hydra-api}, ports: [{port: 80, targetPort: 8080}]}
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata: {name: hydra-api, namespace: hydra}
+spec: {minAvailable: 1, selector: {matchLabels: {app: hydra-api}}}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: {name: hydra-data, namespace: hydra}
+# ReadWriteMany: needs an RWX storage class (NFS, CephFS, EFS, Azure Files, Filestore...). Set
+# storageClassName for your cluster. No SQLite lives here once the planes are on PostgreSQL.
+spec: {accessModes: [ReadWriteMany], resources: {requests: {storage: 200Gi}}}

@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-03",
+  "cause": "PleIAs newspaper reader ignored manifest.files[name].local and attempted the over-long remote filename",
+  "fix": "Resolve the declared local alias, reject directory escape, verify the original declared SHA256, read the verified parquet",
+  "tests": {
+    "passed": 22,
+    "failed": 0,
+    "scope": "base corpus and Hyd training tests, including alias regression and path escape rejection",
+    "ruff": "passed"
+  },
+  "preflight_sources": 6,
+  "preflight": "All six source readers initialized and input checksums verified before restart; full document review remains pending",
+  "preserved_partial_corpus": "data/hydra-base-corpus-v1",
+  "new_corpus": "data/hydra-base-corpus-v1-r1",
+  "builder_launcher_pid": 57340,
+  "builder_worker_pid": 52584,
+  "preparation_worker_pid": 57420,
+  "preparation_plan": "runtime/hyd-stage1/recovery-plan.json",
+  "preparation_stage_at_verification": "WAITING_FOR_SEALED_CORPUS",
+  "pretraining_authorized": false,
+  "gguf_generated": false,
+  "moe": "Deferred; memory-adaptive freezing/offloading idea retained in docs/HYD-MOE-FEASIBILITY.md"
+}

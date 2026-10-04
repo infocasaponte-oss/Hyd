@@ -1,0 +1,64 @@
+{
+  "title": "HYDRA - ip-compliance",
+  "uid": "hydra-ip-compliance",
+  "schemaVersion": 39,
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Ledger events",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      },
+      "targets": [
+        {
+          "expr": "hydra_ledger_events",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "timeseries",
+      "title": "Cost (EUR/day) by model",
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "currencyEUR"
+        }
+      },
+      "targets": [
+        {
+          "expr": "sum(increase(hydra_cost_eur_total[1d])) by (model)",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "description": "Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved."
+}

@@ -1,0 +1,87 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# DATA PLANE: fabric worker (leases/idempotency), Model Factory worker, GPU inference (vLLM).
+# Workers share PostgreSQL and the RWX /data volume with hydra-api: they scale independently, on any node.
+# The fabric queue leases work per worker (FOR UPDATE SKIP LOCKED); the factory registry is shared.
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: hydra-fabric-worker, namespace: hydra}
+spec:
+  replicas: 2
+  selector: {matchLabels: {app: hydra-fabric-worker}}
+  template:
+    metadata: {labels: {app: hydra-fabric-worker}}
+    spec:
+      securityContext: {fsGroup: 10001}
+      containers:
+        - name: worker
+          image: hydra-engine:1.1.0
+          command: ["hydra"]
+          args: ["worker", "--capability", "inference", "reasoning", "coding"]
+          envFrom: [{configMapRef: {name: hydra-config}}, {secretRef: {name: hydra-secrets}}]
+          env: [{name: HYDRA_RUNTIME_MONITOR, value: "false"}]
+          resources: {requests: {cpu: 500m, memory: 1Gi}, limits: {cpu: "2", memory: 4Gi}}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false,
+                            capabilities: {drop: [ALL]}}
+          volumeMounts: [{name: data, mountPath: /data}, {name: keys, mountPath: /keys, readOnly: true}]
+      volumes: [{name: data, persistentVolumeClaim: {claimName: hydra-data}},
+                {name: keys, secret: {secretName: hydra-keys, defaultMode: 0400}}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: hydra-factory, namespace: hydra}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: hydra-factory}}
+  template:
+    metadata: {labels: {app: hydra-factory}}
+    spec:
+      securityContext: {fsGroup: 10001}
+      containers:
+        - name: factory
+          image: hydra-engine:1.1.0
+          command: ["hydra"]
+          args: ["factory", "worker"]
+          envFrom: [{configMapRef: {name: hydra-config}}, {secretRef: {name: hydra-secrets}}]
+          env: [{name: HYDRA_RUNTIME_MONITOR, value: "false"}]
+          resources: {requests: {cpu: "1", memory: 2Gi}, limits: {cpu: "8", memory: 32Gi}}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false,
+                            capabilities: {drop: [ALL]}}
+          volumeMounts: [{name: data, mountPath: /data}, {name: keys, mountPath: /keys, readOnly: true}]
+      volumes: [{name: data, persistentVolumeClaim: {claimName: hydra-data}},
+                {name: keys, secret: {secretName: hydra-keys, defaultMode: 0400}}]
+---
+# GPU inference through the NVIDIA device plugin. Parallelism flags come from
+# hydra.cluster.scheduler.create_parallel_plan (e.g. --tensor-parallel-size 2).
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: vllm-reasoner, namespace: hydra}
+spec:
+  replicas: 1
+  selector: {matchLabels: {app: vllm-reasoner}}
+  template:
+    metadata: {labels: {app: vllm-reasoner, hydra/role: gpu}}
+    spec:
+      nodeSelector: {nvidia.com/gpu.present: "true"}
+      containers:
+        - name: vllm
+          # Same digest as docker-compose.yml (Dependabot keeps both in step).
+          image: vllm/vllm-openai:latest@sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90
+          args: ["--model", "Qwen/Qwen3-32B-FP8", "--tensor-parallel-size", "2", "--enable-prefix-caching"]
+          env:
+            - name: HUGGING_FACE_HUB_TOKEN
+              valueFrom: {secretKeyRef: {name: hydra-secrets, key: HF_TOKEN, optional: true}}
+          ports: [{containerPort: 8000}]
+          readinessProbe: {httpGet: {path: /health, port: 8000}, periodSeconds: 15}
+          resources: {limits: {nvidia.com/gpu: 2}}
+          volumeMounts: [{name: hf-cache, mountPath: /root/.cache/huggingface}]
+      volumes: [{name: hf-cache, persistentVolumeClaim: {claimName: huggingface-cache}}]
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata: {name: huggingface-cache, namespace: hydra}
+spec: {accessModes: [ReadWriteOnce], resources: {requests: {storage: 200Gi}}}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: vllm-reasoner, namespace: hydra}
+spec: {selector: {app: vllm-reasoner}, ports: [{port: 8000}]}

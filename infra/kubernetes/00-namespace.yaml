@@ -1,0 +1,38 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+apiVersion: v1
+kind: Namespace
+metadata: {name: hydra}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: hydra-config, namespace: hydra}
+data:
+  HYDRA_MODELS_CONFIG: /app/config/models.yaml
+  HYDRA_DATA_DIR: /data
+  # Private keys: the hydra-keys Secret mounted read-only, never inside /data. Every replica signs and
+  # decrypts with the same keys. Create it once with `hydra keys export --out <dir>` (see below).
+  HYDRA_KEYS_DIR: /keys
+  HYDRA_KEY_BACKEND: file
+  # Several replicas: every plane must be on PostgreSQL (HYDRA_POSTGRES_URL in hydra-secrets). A pod whose
+  # configuration would leave any plane in local files refuses to start instead of diverging.
+  HYDRA_REQUIRE_SHARED_STATE: "true"
+  # Artifact blobs: empty keeps them in /data/artifacts/objects (the shared RWX volume); set
+  # s3://bucket/prefix (+ HYDRA_S3_ENDPOINT_URL and AWS_* credentials in hydra-secrets) for a bucket.
+  HYDRA_ARTIFACT_OBJECTS: ""
+  HYDRA_WORKSPACE_DIR: /workspace
+  HYDRA_NATS_URL: nats://nats.hydra.svc:4222
+  HYDRA_REDIS_URL: redis://redis.hydra.svc:6379/0
+  HYDRA_VLLM_BASE_URL: http://vllm-reasoner.hydra.svc:8000/v1
+  # Empty = in-process spans only. Point it at your OTLP collector (e.g. http://otel-collector.observability.svc:4318).
+  HYDRA_OTEL_ENDPOINT: ""
+  # Pods have no Docker daemon. Code execution needs an external sandbox controller
+  # (DOCKER_HOST=tcp://<socket-proxy>:2375 in the hydra-secrets Secret); without it sandboxed tools fail closed.
+  HYDRA_SANDBOX_BACKEND: docker
+  # Runtime-line state is on PostgreSQL (HYDRA_RUNTIME_BACKEND=auto); this directory keeps per-task
+  # workspaces and the file-mode fallbacks.
+  HYDRA_RUNTIME_DIR: /data/runtime
+# Secrets are NOT versioned. Create them out of band, e.g.:
+#   kubectl -n hydra create secret generic hydra-secrets #     --from-literal=HYDRA_API_KEY=... --from-literal=HYDRA_ADMIN_TOKEN=... #     --from-literal=HYDRA_POSTGRES_URL=postgresql://hydra:...@postgres.hydra.svc:5432/hydra
+#   kubectl -n hydra create secret generic hydra-postgres --from-literal=POSTGRES_PASSWORD=...
+#   hydra keys export --out ./hydra-keys    # on the node that holds the current keys (or a new install)
+#   kubectl -n hydra create secret generic hydra-keys --from-file=./hydra-keys && rm -r ./hydra-keys

@@ -1,0 +1,44 @@
+{
+  "http_status": 200,
+  "body": {
+    "id": "chatcmpl-39f124c4-f5b3-4234-aa99-cb728f56e5f9",
+    "object": "chat.completion",
+    "created": 1790780244,
+    "model": "hydra",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "Asyncio es una biblioteca para escribir código concurrente utilizando el sintaxis async/await.\n\nFuentes consultadas: [Fuente 1](<https://docs.python.org/3/library/asyncio.html>)"
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "hydra": {
+      "task_id": "39f124c4-f5b3-4234-aa99-cb728f56e5f9",
+      "status": "completed",
+      "task_type": "coding",
+      "mode": "balanced",
+      "models_used": [
+        "hydra-instruction-v3-candidate"
+      ],
+      "tools_used": [
+        "web.read"
+      ],
+      "verified": false,
+      "confidence": 0.6147,
+      "latency_ms": 1427.1,
+      "escalations": 0,
+      "steps": 1,
+      "cached": false,
+      "sensitivity": "public",
+      "decision": "answer"
+    }
+  }
+}

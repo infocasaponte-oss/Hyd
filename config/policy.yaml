@@ -1,0 +1,25 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+#
+# HYDRA Policy Kernel - hard rules enforced in code, independent of any model.
+# Patterns listed here are ADDED to the built-in ones (API keys, private keys,
+# passwords, connection strings, cards, IBAN, DNI/NIE, emails, phones...).
+
+# Data at or above this level never leaves local infrastructure (cloud models excluded).
+local_only_at: confidential          # public | internal | confidential | secret
+
+# Maximum sensitivity each class of model may see.
+cloud_clearance: internal
+local_clearance: secret
+model_clearance: {}                  # e.g. {cloud-frontier: public}
+
+# Tools that are never allowed, and tools that need explicit approval
+# (the client sends them in "approved_actions").
+forbidden_tools: []
+confirm_tools: [git.apply_patch]
+confirm_risk_level: 4
+confirm_writes: false
+
+# Extra patterns
+secret_patterns: {}
+confidential_patterns: {}
+forbidden_request_patterns: {}

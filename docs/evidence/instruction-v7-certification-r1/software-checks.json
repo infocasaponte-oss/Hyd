@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "full_suite": {
+    "passed": 573,
+    "skipped": 5,
+    "log": "runtime/hydra-v7-full-tests.log"
+  },
+  "focused_after_changes": {
+    "passed": 44
+  },
+  "scope": "full repository suite and focused checks following JSON and replay integrity fixes"
+}

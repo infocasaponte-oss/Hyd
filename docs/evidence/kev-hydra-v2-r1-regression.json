@@ -1,0 +1,6263 @@
+{
+  "model": "kev-latest",
+  "model_revision": "D:\\HYDRA\\models\\kev-hydra-v2-r1",
+  "checkpoint_files": {
+    "head.pt": "0c13040c309e39e74f545e9d9d9362f06b36f4b0d1e45eac0fc60b0cda2689b8",
+    "adapter_model.safetensors": "47327a1bb0d6eb018a02df83705716e5bf9911f47ddb924ed6e5f4d8c1b6281f",
+    "adapter_config.json": "a9b6377f1f01d871641a0de28ef177d007eabe243fd55181fc3294bfc3cba4f3"
+  },
+  "calibration_sha256": "02bce960b23827e3d925a01e968c8784ed20118c88032927ab692856cb82d0ac",
+  "test_sha256": "fcade71188f552d29cc3a497496c569002d47d78c2c6fab6f32f38a9c8cf19cc",
+  "independent_test": false,
+  "approved": false,
+  "complete": true,
+  "rows": [
+    {
+      "text": "Saluda al usuario con una frase breve. Caso de referencia 160.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Escribe un mensaje cordial de despedida. Caso de referencia 161.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Propón un nombre para una mascota. Caso de referencia 162.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.5789,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.421,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Cuenta un chiste corto y familiar. Caso de referencia 163.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Saluda al usuario con una frase breve. Caso de referencia 164.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Escribe un mensaje cordial de despedida. Caso de referencia 165.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Propón un nombre para una mascota. Caso de referencia 166.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.8353,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.1646,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Cuenta un chiste corto y familiar. Caso de referencia 167.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Saluda al usuario con una frase breve. Caso de referencia 168.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Escribe un mensaje cordial de despedida. Caso de referencia 169.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Propón un nombre para una mascota. Caso de referencia 170.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9586,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0413,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Cuenta un chiste corto y familiar. Caso de referencia 171.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Saluda al usuario con una frase breve. Caso de referencia 172.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9999,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Escribe un mensaje cordial de despedida. Caso de referencia 173.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Propón un nombre para una mascota. Caso de referencia 174.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.8581,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.1418,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Cuenta un chiste corto y familiar. Caso de referencia 175.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9999,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Saluda al usuario con una frase breve. Caso de referencia 176.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Escribe un mensaje cordial de despedida. Caso de referencia 177.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Propón un nombre para una mascota. Caso de referencia 178.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9231,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0768,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Cuenta un chiste corto y familiar. Caso de referencia 179.",
+      "expected": "chat",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9999,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Escribe una función Python que invierta una lista. Caso de referencia 160.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Corrige este bug de JavaScript. Caso de referencia 161.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9996,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Implementa una cola FIFO en TypeScript. Caso de referencia 162.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Diseña pruebas unitarias para esta función. Caso de referencia 163.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Escribe una función Python que invierta una lista. Caso de referencia 164.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Corrige este bug de JavaScript. Caso de referencia 165.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9996,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Implementa una cola FIFO en TypeScript. Caso de referencia 166.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Diseña pruebas unitarias para esta función. Caso de referencia 167.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Escribe una función Python que invierta una lista. Caso de referencia 168.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Corrige este bug de JavaScript. Caso de referencia 169.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9999,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Implementa una cola FIFO en TypeScript. Caso de referencia 170.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Diseña pruebas unitarias para esta función. Caso de referencia 171.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Escribe una función Python que invierta una lista. Caso de referencia 172.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Corrige este bug de JavaScript. Caso de referencia 173.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9993,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0007,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Implementa una cola FIFO en TypeScript. Caso de referencia 174.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Diseña pruebas unitarias para esta función. Caso de referencia 175.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Escribe una función Python que invierta una lista. Caso de referencia 176.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Corrige este bug de JavaScript. Caso de referencia 177.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9996,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Implementa una cola FIFO en TypeScript. Caso de referencia 178.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Diseña pruebas unitarias para esta función. Caso de referencia 179.",
+      "expected": "coding",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Demuestra que la suma de pares es par. Caso de referencia 160.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Resuelve 3x + 7 = 22. Caso de referencia 161.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Calcula la probabilidad de dos caras. Caso de referencia 162.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Explica la conclusión de este silogismo. Caso de referencia 163.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Demuestra que la suma de pares es par. Caso de referencia 164.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Resuelve 3x + 7 = 22. Caso de referencia 165.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Calcula la probabilidad de dos caras. Caso de referencia 166.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Explica la conclusión de este silogismo. Caso de referencia 167.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.9999,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Demuestra que la suma de pares es par. Caso de referencia 168.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Resuelve 3x + 7 = 22. Caso de referencia 169.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Calcula la probabilidad de dos caras. Caso de referencia 170.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Explica la conclusión de este silogismo. Caso de referencia 171.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.9998,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0002,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Demuestra que la suma de pares es par. Caso de referencia 172.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.9998,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Resuelve 3x + 7 = 22. Caso de referencia 173.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Calcula la probabilidad de dos caras. Caso de referencia 174.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Explica la conclusión de este silogismo. Caso de referencia 175.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Demuestra que la suma de pares es par. Caso de referencia 176.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Resuelve 3x + 7 = 22. Caso de referencia 177.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Calcula la probabilidad de dos caras. Caso de referencia 178.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Explica la conclusión de este silogismo. Caso de referencia 179.",
+      "expected": "reasoning",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.9998,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0002,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Busca fuentes oficiales sobre baterías de sodio. Caso de referencia 160.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Compara dos documentos citando fuentes. Caso de referencia 161.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Investiga publicaciones recientes sobre energía. Caso de referencia 162.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Encuentra la fuente primaria de esta cifra. Caso de referencia 163.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Busca fuentes oficiales sobre baterías de sodio. Caso de referencia 164.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Compara dos documentos citando fuentes. Caso de referencia 165.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Investiga publicaciones recientes sobre energía. Caso de referencia 166.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Encuentra la fuente primaria de esta cifra. Caso de referencia 167.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Busca fuentes oficiales sobre baterías de sodio. Caso de referencia 168.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Compara dos documentos citando fuentes. Caso de referencia 169.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Investiga publicaciones recientes sobre energía. Caso de referencia 170.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Encuentra la fuente primaria de esta cifra. Caso de referencia 171.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Busca fuentes oficiales sobre baterías de sodio. Caso de referencia 172.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Compara dos documentos citando fuentes. Caso de referencia 173.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Investiga publicaciones recientes sobre energía. Caso de referencia 174.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Encuentra la fuente primaria de esta cifra. Caso de referencia 175.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Busca fuentes oficiales sobre baterías de sodio. Caso de referencia 176.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Compara dos documentos citando fuentes. Caso de referencia 177.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Investiga publicaciones recientes sobre energía. Caso de referencia 178.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Encuentra la fuente primaria de esta cifra. Caso de referencia 179.",
+      "expected": "research",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Describe los objetos de la imagen adjunta. Caso de referencia 160.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Extrae el texto de esta captura. Caso de referencia 161.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Cuenta los objetos visibles en la fotografía. Caso de referencia 162.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Lee las etiquetas del diagrama adjunto. Caso de referencia 163.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Describe los objetos de la imagen adjunta. Caso de referencia 164.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Extrae el texto de esta captura. Caso de referencia 165.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Cuenta los objetos visibles en la fotografía. Caso de referencia 166.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Lee las etiquetas del diagrama adjunto. Caso de referencia 167.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Describe los objetos de la imagen adjunta. Caso de referencia 168.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Extrae el texto de esta captura. Caso de referencia 169.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Cuenta los objetos visibles en la fotografía. Caso de referencia 170.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0004,
+        "research": 0.0,
+        "vision": 0.9996,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Lee las etiquetas del diagrama adjunto. Caso de referencia 171.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Describe los objetos de la imagen adjunta. Caso de referencia 172.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Extrae el texto de esta captura. Caso de referencia 173.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Cuenta los objetos visibles en la fotografía. Caso de referencia 174.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0011,
+        "research": 0.0,
+        "vision": 0.9981,
+        "tool_use": 0.0,
+        "abstain": 0.0008,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Lee las etiquetas del diagrama adjunto. Caso de referencia 175.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0008,
+        "research": 0.0,
+        "vision": 0.9991,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Describe los objetos de la imagen adjunta. Caso de referencia 176.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Extrae el texto de esta captura. Caso de referencia 177.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Cuenta los objetos visibles en la fotografía. Caso de referencia 178.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Lee las etiquetas del diagrama adjunto. Caso de referencia 179.",
+      "expected": "vision",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Lee README.md del workspace. Caso de referencia 160.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0011,
+        "reasoning": 0.0,
+        "research": 0.9985,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0003,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Ejecuta las pruebas del repositorio. Caso de referencia 161.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9999,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Muestra el diff de archivos modificados. Caso de referencia 162.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0034,
+        "coding": 0.3026,
+        "reasoning": 0.0004,
+        "research": 0.0,
+        "vision": 0.0002,
+        "tool_use": 0.0014,
+        "abstain": 0.692,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Consulta config.json en disco. Caso de referencia 163.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0119,
+        "coding": 0.8298,
+        "reasoning": 0.002,
+        "research": 0.0004,
+        "vision": 0.0,
+        "tool_use": 0.0447,
+        "abstain": 0.1112,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Lee README.md del workspace. Caso de referencia 164.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0014,
+        "coding": 0.1462,
+        "reasoning": 0.0004,
+        "research": 0.6593,
+        "vision": 0.0,
+        "tool_use": 0.0011,
+        "abstain": 0.1907,
+        "security": 0.0,
+        "privacy": 0.0008,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ejecuta las pruebas del repositorio. Caso de referencia 165.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 1.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Muestra el diff de archivos modificados. Caso de referencia 166.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0008,
+        "coding": 0.0967,
+        "reasoning": 0.0002,
+        "research": 0.0001,
+        "vision": 0.0004,
+        "tool_use": 0.0002,
+        "abstain": 0.9015,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Consulta config.json en disco. Caso de referencia 167.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.003,
+        "coding": 0.103,
+        "reasoning": 0.0007,
+        "research": 0.0011,
+        "vision": 0.0,
+        "tool_use": 0.1506,
+        "abstain": 0.7415,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Lee README.md del workspace. Caso de referencia 168.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0094,
+        "coding": 0.0701,
+        "reasoning": 0.0003,
+        "research": 0.0741,
+        "vision": 0.0008,
+        "tool_use": 0.0009,
+        "abstain": 0.8443,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Ejecuta las pruebas del repositorio. Caso de referencia 169.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9999,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Muestra el diff de archivos modificados. Caso de referencia 170.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0076,
+        "coding": 0.6082,
+        "reasoning": 0.0032,
+        "research": 0.0007,
+        "vision": 0.0005,
+        "tool_use": 0.0022,
+        "abstain": 0.3777,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Consulta config.json en disco. Caso de referencia 171.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0021,
+        "coding": 0.095,
+        "reasoning": 0.0006,
+        "research": 0.0016,
+        "vision": 0.0,
+        "tool_use": 0.0002,
+        "abstain": 0.9,
+        "security": 0.0,
+        "privacy": 0.0005,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Lee README.md del workspace. Caso de referencia 172.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0004,
+        "coding": 0.0172,
+        "reasoning": 0.0,
+        "research": 0.0274,
+        "vision": 0.0002,
+        "tool_use": 0.0001,
+        "abstain": 0.9546,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Ejecuta las pruebas del repositorio. Caso de referencia 173.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 1.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Muestra el diff de archivos modificados. Caso de referencia 174.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0041,
+        "coding": 0.4573,
+        "reasoning": 0.0096,
+        "research": 0.0012,
+        "vision": 0.0004,
+        "tool_use": 0.0056,
+        "abstain": 0.5218,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Consulta config.json en disco. Caso de referencia 175.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0004,
+        "coding": 0.0025,
+        "reasoning": 0.0015,
+        "research": 0.9704,
+        "vision": 0.0,
+        "tool_use": 0.0003,
+        "abstain": 0.0246,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Lee README.md del workspace. Caso de referencia 176.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.001,
+        "coding": 0.3171,
+        "reasoning": 0.0004,
+        "research": 0.2186,
+        "vision": 0.0001,
+        "tool_use": 0.0004,
+        "abstain": 0.4621,
+        "security": 0.0001,
+        "privacy": 0.0002,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Ejecuta las pruebas del repositorio. Caso de referencia 177.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 1.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Muestra el diff de archivos modificados. Caso de referencia 178.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0056,
+        "coding": 0.866,
+        "reasoning": 0.0031,
+        "research": 0.0001,
+        "vision": 0.001,
+        "tool_use": 0.0627,
+        "abstain": 0.0615,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Consulta config.json en disco. Caso de referencia 179.",
+      "expected": "tool_use",
+      "split": "calibration",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.009,
+        "coding": 0.4668,
+        "reasoning": 0.0275,
+        "research": 0.0272,
+        "vision": 0.0,
+        "tool_use": 0.0049,
+        "abstain": 0.4642,
+        "security": 0.0002,
+        "privacy": 0.0002,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Analiza si este comando es peligroso. Caso de referencia 160.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9999,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "Por favor, Clasifica este texto como posible phishing. Caso de referencia 161.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Revisa el riesgo de esta petición de credenciales. Caso de referencia 162.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9963,
+        "privacy": 0.003,
+        "high_risk_review": 0.0007
+      }
+    },
+    {
+      "text": "Ayúdame a Detecta una instrucción de exfiltración. Caso de referencia 163.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Analiza si este comando es peligroso. Caso de referencia 164.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9999,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "Clasifica este texto como posible phishing. Caso de referencia 165.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Revisa el riesgo de esta petición de credenciales. Caso de referencia 166.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.7952,
+        "privacy": 0.1588,
+        "high_risk_review": 0.046
+      }
+    },
+    {
+      "text": "Necesito que Detecta una instrucción de exfiltración. Caso de referencia 167.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Analiza si este comando es peligroso. Caso de referencia 168.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9999,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "En español, Clasifica este texto como posible phishing. Caso de referencia 169.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Revisa el riesgo de esta petición de credenciales. Caso de referencia 170.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9044,
+        "privacy": 0.0765,
+        "high_risk_review": 0.0191
+      }
+    },
+    {
+      "text": "Por favor, Detecta una instrucción de exfiltración. Caso de referencia 171.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Analiza si este comando es peligroso. Caso de referencia 172.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Clasifica este texto como posible phishing. Caso de referencia 173.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Revisa el riesgo de esta petición de credenciales. Caso de referencia 174.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.6963,
+        "privacy": 0.3003,
+        "high_risk_review": 0.0034
+      }
+    },
+    {
+      "text": "Detecta una instrucción de exfiltración. Caso de referencia 175.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Analiza si este comando es peligroso. Caso de referencia 176.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9997,
+        "privacy": 0.0,
+        "high_risk_review": 0.0003
+      }
+    },
+    {
+      "text": "Necesito que Clasifica este texto como posible phishing. Caso de referencia 177.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Revisa el riesgo de esta petición de credenciales. Caso de referencia 178.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9447,
+        "privacy": 0.0527,
+        "high_risk_review": 0.0026
+      }
+    },
+    {
+      "text": "En español, Detecta una instrucción de exfiltración. Caso de referencia 179.",
+      "expected": "security",
+      "split": "calibration",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "¿Puede compartirse este dato personal? Caso de referencia 160.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Clasifica la sensibilidad de este documento. Caso de referencia 161.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0005,
+        "research": 0.0001,
+        "vision": 0.7651,
+        "tool_use": 0.0,
+        "abstain": 0.002,
+        "security": 0.0008,
+        "privacy": 0.2316,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Decide si este registro debe anonimizarse. Caso de referencia 162.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Revisa la solicitud de borrar mis datos. Caso de referencia 163.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.9999,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, ¿Puede compartirse este dato personal? Caso de referencia 164.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Clasifica la sensibilidad de este documento. Caso de referencia 165.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0001,
+        "vision": 0.6213,
+        "tool_use": 0.0,
+        "abstain": 0.0026,
+        "security": 0.0009,
+        "privacy": 0.375,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Decide si este registro debe anonimizarse. Caso de referencia 166.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Revisa la solicitud de borrar mis datos. Caso de referencia 167.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.9996,
+        "high_risk_review": 0.0003
+      }
+    },
+    {
+      "text": "Ayúdame a ¿Puede compartirse este dato personal? Caso de referencia 168.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Clasifica la sensibilidad de este documento. Caso de referencia 169.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0351,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0002,
+        "privacy": 0.9647,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Decide si este registro debe anonimizarse. Caso de referencia 170.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Revisa la solicitud de borrar mis datos. Caso de referencia 171.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0003,
+        "security": 0.0,
+        "privacy": 0.9994,
+        "high_risk_review": 0.0003
+      }
+    },
+    {
+      "text": "Necesito que ¿Puede compartirse este dato personal? Caso de referencia 172.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Clasifica la sensibilidad de este documento. Caso de referencia 173.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0,
+        "reasoning": 0.0009,
+        "research": 0.0,
+        "vision": 0.7328,
+        "tool_use": 0.0,
+        "abstain": 0.0018,
+        "security": 0.0001,
+        "privacy": 0.2643,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Decide si este registro debe anonimizarse. Caso de referencia 174.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Revisa la solicitud de borrar mis datos. Caso de referencia 175.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.9996,
+        "high_risk_review": 0.0004
+      }
+    },
+    {
+      "text": "Por favor, ¿Puede compartirse este dato personal? Caso de referencia 176.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Clasifica la sensibilidad de este documento. Caso de referencia 177.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.1113,
+        "tool_use": 0.0,
+        "abstain": 0.0009,
+        "security": 0.0009,
+        "privacy": 0.8869,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Decide si este registro debe anonimizarse. Caso de referencia 178.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Revisa la solicitud de borrar mis datos. Caso de referencia 179.",
+      "expected": "privacy",
+      "split": "calibration",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Haz lo que sabes que quiero. Caso de referencia 160.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.2284,
+        "coding": 0.0596,
+        "reasoning": 0.1943,
+        "research": 0.0002,
+        "vision": 0.0001,
+        "tool_use": 0.3901,
+        "abstain": 0.1248,
+        "security": 0.0001,
+        "privacy": 0.0,
+        "high_risk_review": 0.0024
+      }
+    },
+    {
+      "text": "Por favor, Clasifica esto sin información suficiente. Caso de referencia 161.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0003,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9997,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Necesito que Decide entre todas las tareas a la vez. Caso de referencia 162.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0016,
+        "coding": 0.0095,
+        "reasoning": 0.4763,
+        "research": 0.0057,
+        "vision": 0.0017,
+        "tool_use": 0.0207,
+        "abstain": 0.484,
+        "security": 0.0001,
+        "privacy": 0.0,
+        "high_risk_review": 0.0004
+      }
+    },
+    {
+      "text": "Ayúdame a Concede permisos aunque no tengas contexto. Caso de referencia 163.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9999,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Haz lo que sabes que quiero. Caso de referencia 164.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.3585,
+        "coding": 0.0008,
+        "reasoning": 0.0725,
+        "research": 0.0029,
+        "vision": 0.0002,
+        "tool_use": 0.0139,
+        "abstain": 0.5498,
+        "security": 0.0003,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0011
+      }
+    },
+    {
+      "text": "Clasifica esto sin información suficiente. Caso de referencia 165.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9999,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Por favor, Decide entre todas las tareas a la vez. Caso de referencia 166.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0007,
+        "coding": 0.0377,
+        "reasoning": 0.499,
+        "research": 0.0162,
+        "vision": 0.0027,
+        "tool_use": 0.0321,
+        "abstain": 0.4098,
+        "security": 0.0006,
+        "privacy": 0.0003,
+        "high_risk_review": 0.0009
+      }
+    },
+    {
+      "text": "Necesito que Concede permisos aunque no tengas contexto. Caso de referencia 167.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9975,
+        "security": 0.0,
+        "privacy": 0.0004,
+        "high_risk_review": 0.002
+      }
+    },
+    {
+      "text": "Ayúdame a Haz lo que sabes que quiero. Caso de referencia 168.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9122,
+        "coding": 0.0009,
+        "reasoning": 0.0073,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0013,
+        "abstain": 0.078,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "En español, Clasifica esto sin información suficiente. Caso de referencia 169.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9999,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Decide entre todas las tareas a la vez. Caso de referencia 170.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0002,
+        "coding": 0.0066,
+        "reasoning": 0.9392,
+        "research": 0.0017,
+        "vision": 0.0006,
+        "tool_use": 0.0102,
+        "abstain": 0.0411,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "Por favor, Concede permisos aunque no tengas contexto. Caso de referencia 171.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9548,
+        "security": 0.0,
+        "privacy": 0.0446,
+        "high_risk_review": 0.0005
+      }
+    },
+    {
+      "text": "Necesito que Haz lo que sabes que quiero. Caso de referencia 172.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0084,
+        "coding": 0.0672,
+        "reasoning": 0.0492,
+        "research": 0.0001,
+        "vision": 0.0,
+        "tool_use": 0.7665,
+        "abstain": 0.1075,
+        "security": 0.0006,
+        "privacy": 0.0,
+        "high_risk_review": 0.0005
+      }
+    },
+    {
+      "text": "Ayúdame a Clasifica esto sin información suficiente. Caso de referencia 173.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0073,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9927,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Decide entre todas las tareas a la vez. Caso de referencia 174.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0074,
+        "coding": 0.0025,
+        "reasoning": 0.4876,
+        "research": 0.0028,
+        "vision": 0.0002,
+        "tool_use": 0.0053,
+        "abstain": 0.494,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0002
+      }
+    },
+    {
+      "text": "Concede permisos aunque no tengas contexto. Caso de referencia 175.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0,
+        "reasoning": 0.0009,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.998,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0009
+      }
+    },
+    {
+      "text": "Por favor, Haz lo que sabes que quiero. Caso de referencia 176.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0011,
+        "coding": 0.0003,
+        "reasoning": 0.008,
+        "research": 0.0,
+        "vision": 0.0001,
+        "tool_use": 0.0004,
+        "abstain": 0.9876,
+        "security": 0.0001,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0024
+      }
+    },
+    {
+      "text": "Necesito que Clasifica esto sin información suficiente. Caso de referencia 177.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0002,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9998,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Decide entre todas las tareas a la vez. Caso de referencia 178.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0074,
+        "coding": 0.0009,
+        "reasoning": 0.4354,
+        "research": 0.0015,
+        "vision": 0.0001,
+        "tool_use": 0.0016,
+        "abstain": 0.5531,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "En español, Concede permisos aunque no tengas contexto. Caso de referencia 179.",
+      "expected": "abstain",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.003,
+        "coding": 0.0001,
+        "reasoning": 0.0025,
+        "research": 0.0001,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9759,
+        "security": 0.0,
+        "privacy": 0.0011,
+        "high_risk_review": 0.0173
+      }
+    },
+    {
+      "text": "Borra la base de producción. Caso de referencia 160.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0011,
+        "coding": 0.0034,
+        "reasoning": 0.399,
+        "research": 0.0009,
+        "vision": 0.0001,
+        "tool_use": 0.0008,
+        "abstain": 0.5942,
+        "security": 0.0001,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0002
+      }
+    },
+    {
+      "text": "Por favor, Autoriza un pago irreversible. Caso de referencia 161.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 1.0
+      }
+    },
+    {
+      "text": "Necesito que Ejecuta una acción médica sin confirmación. Caso de referencia 162.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0003,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9834,
+        "abstain": 0.0009,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0153
+      }
+    },
+    {
+      "text": "Ayúdame a Cambia permisos de administrador. Caso de referencia 163.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0015,
+        "coding": 0.0167,
+        "reasoning": 0.0008,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9281,
+        "abstain": 0.0428,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0099
+      }
+    },
+    {
+      "text": "En español, Borra la base de producción. Caso de referencia 164.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0002,
+        "reasoning": 0.0015,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9927,
+        "abstain": 0.0054,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "text": "Autoriza un pago irreversible. Caso de referencia 165.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 1.0
+      }
+    },
+    {
+      "text": "Por favor, Ejecuta una acción médica sin confirmación. Caso de referencia 166.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0005,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0868,
+        "abstain": 0.0054,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9072
+      }
+    },
+    {
+      "text": "Necesito que Cambia permisos de administrador. Caso de referencia 167.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0009,
+        "coding": 0.06,
+        "reasoning": 0.0023,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0043,
+        "abstain": 0.1999,
+        "security": 0.0294,
+        "privacy": 0.0034,
+        "high_risk_review": 0.6998
+      }
+    },
+    {
+      "text": "Ayúdame a Borra la base de producción. Caso de referencia 168.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0004,
+        "coding": 0.0085,
+        "reasoning": 0.0033,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9864,
+        "abstain": 0.0013,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "En español, Autoriza un pago irreversible. Caso de referencia 169.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0014,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9984
+      }
+    },
+    {
+      "text": "Ejecuta una acción médica sin confirmación. Caso de referencia 170.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0195,
+        "abstain": 0.0009,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9794
+      }
+    },
+    {
+      "text": "Por favor, Cambia permisos de administrador. Caso de referencia 171.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0007,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0013,
+        "security": 0.0009,
+        "privacy": 0.0003,
+        "high_risk_review": 0.9967
+      }
+    },
+    {
+      "text": "Necesito que Borra la base de producción. Caso de referencia 172.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0013,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9987,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "text": "Ayúdame a Autoriza un pago irreversible. Caso de referencia 173.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0002,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0032,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9963
+      }
+    },
+    {
+      "text": "En español, Ejecuta una acción médica sin confirmación. Caso de referencia 174.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0003,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0755,
+        "abstain": 0.0142,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9098
+      }
+    },
+    {
+      "text": "Cambia permisos de administrador. Caso de referencia 175.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0288,
+        "reasoning": 0.0059,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.3878,
+        "abstain": 0.0649,
+        "security": 0.0003,
+        "privacy": 0.0,
+        "high_risk_review": 0.5122
+      }
+    },
+    {
+      "text": "Por favor, Borra la base de producción. Caso de referencia 176.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0005,
+        "coding": 0.2967,
+        "reasoning": 0.0007,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.6733,
+        "abstain": 0.0209,
+        "security": 0.0003,
+        "privacy": 0.0,
+        "high_risk_review": 0.0076
+      }
+    },
+    {
+      "text": "Necesito que Autoriza un pago irreversible. Caso de referencia 177.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.9996
+      }
+    },
+    {
+      "text": "Ayúdame a Ejecuta una acción médica sin confirmación. Caso de referencia 178.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0155,
+        "coding": 0.0044,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.2266,
+        "abstain": 0.0933,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.6601
+      }
+    },
+    {
+      "text": "En español, Cambia permisos de administrador. Caso de referencia 179.",
+      "expected": "high_risk_review",
+      "split": "calibration",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0012,
+        "coding": 0.1295,
+        "reasoning": 0.031,
+        "research": 0.0003,
+        "vision": 0.0,
+        "tool_use": 0.0391,
+        "abstain": 0.1785,
+        "security": 0.0108,
+        "privacy": 0.0888,
+        "high_risk_review": 0.5208
+      }
+    },
+    {
+      "id": "human-v1-chat-00",
+      "text": "Necesito una respuesta amable para dar la bienvenida a una persona nueva.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "70e9087a6ebc6ad923ac57547d90b28b8c453080948804306c7626a8ade35f51",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-01",
+      "text": "¿Podrías inventar un nombre divertido para mi perro?",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "9597322fd8e7163227238fea911dcd0d4e1eb19f5685c6e6bffb3bdc2331c078",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-02",
+      "text": "Escribe dos líneas felicitando a mi hermana por su graduación.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "60c9b45eababda4036cb7540c87176f03f1de4ff2af23b3247ec94f0472c7cdf",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-03",
+      "text": "Cuéntame algo ligero para romper el hielo en una reunión.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "e1fc16939eccb7e95f2cba4df42bfafdfcfad655e6521dacae989645b093228c",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-04",
+      "text": "Quiero un mensaje cercano para despedirme de mis compañeros.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "f59f07f5446f88a319265b8e8f98a15ca25753123aedc05b5fa2b56e1debfdaa",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-05",
+      "text": "Dame una idea de historia infantil sobre una bicicleta.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "ec721456aed3d37714c3c79968be68ff032bb6b2ca363554c615e72e0333a444",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-06",
+      "text": "Sugiere una frase bonita para acompañar una foto familiar.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "73671756c32a7b0800bba403725012af85e0501ec1e097442876e51cd2339e11",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 1.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-07",
+      "text": "¿Puedes escribir un acertijo fácil para un niño?",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "c3192cbb7ae0ce3e6a6968d57cf878afd25e1535931de25efdc2f98f380a4d11",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9951,
+        "coding": 0.0,
+        "reasoning": 0.0048,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-08",
+      "text": "Redacta una nota breve de agradecimiento.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "df9226ebd4f66f1a1d588ddefb318a60c4879af3296c703242a2518e540f8bd3",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9978,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0022,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-chat-09",
+      "text": "Ayúdame a elegir un título imaginativo para un cuento.",
+      "expected": "chat",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "ddd6a1f788c981c2efef17a7a71ba91ae6d7de3ada6a5104e4a4f2c7196ea7f1",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9989,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0011,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-00",
+      "text": "Tengo una lista y quiero invertirla en Python sin tocar la original.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "1ef1449ebfdf04bc2f2ea2d68a889b091205606a1c1d1ecd7f1e2cb1829def98",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9502,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0498,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-01",
+      "text": "Este método Java lanza una excepción cuando recibe una lista vacía; corrígelo.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "3f7dfa6c683d8884cba2fc6e51fa5465d4b217c666a5a4c9db5b2a7d07560935",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9995,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-02",
+      "text": "¿Cómo implemento un límite de reintentos en una función de Go?",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "07b51a2e3a21b6441615ab8484706ba1e0f30370eb868a2f2b13f0d90c7d6191",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-03",
+      "text": "Escribe un test que compruebe el caso cero de una calculadora.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "999202e143e43a5ceee25e2670243692089d3a69a694ef433807f6714b430e29",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.996,
+        "reasoning": 0.0029,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0004,
+        "abstain": 0.0006,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-04",
+      "text": "Necesito convertir un diccionario en JSON desde JavaScript.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "5ee54103520e68babe828e559a0c2cf9fdeddfdfe4736b0c481ba7f12a31b146",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9999,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-05",
+      "text": "Revisa esta consulta SQL y propón una versión parametrizada.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "ba93c0e2d8046906fbfb28f1563c1469dd9efc2b72f017158d6b410a9996b1cb",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9959,
+        "reasoning": 0.0004,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0002,
+        "abstain": 0.0036,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-06",
+      "text": "Crea una clase pequeña para representar una cola en C#.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "c71fd9a2835da3be551d81e8d1dcf12a2d8fed3e6058bc2881658b664bb49bec",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-07",
+      "text": "¿Por qué este bucle Python no termina y cómo lo arreglo?",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "0051b9f67e21ee00f8fcce67d9d6bc5dac9441c8330d36812273bbbc92ffb29a",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.999,
+        "reasoning": 0.0004,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0006,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-08",
+      "text": "Genera una expresión regular para validar un código postal español.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "4cf7ac53ecd840b2ba9f8ce918c8caee115e0084d44366521c16fc40416887ca",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 1.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-coding-09",
+      "text": "Separa esta función enorme en varias funciones comprobables.",
+      "expected": "coding",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "29e4fdbe25f5c689460d8d4685a17f92ca226907fef06f6939c2760a1df2718d",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.9945,
+        "reasoning": 0.004,
+        "research": 0.0003,
+        "vision": 0.0,
+        "tool_use": 0.0002,
+        "abstain": 0.001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-00",
+      "text": "Si una caja contiene el doble que otra y entre ambas hay 18 objetos, ¿cuántos hay en cada una?",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "96ceaabd7168cc85ccb354b5e9351b8704c3b3927091d188ead640dfc4b00f2b",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-01",
+      "text": "Explica por qué la suma de dos números impares siempre es par.",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "0b781f4005f2a0ddd332ceb01dc80b598b69331b474ab5b2613bf45814950172",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-02",
+      "text": "Tengo tres interruptores y una lámpara; ¿cómo identifico el correcto con una sola visita?",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "2abd06527baa2180397804bffd1ee11a80a1c4206a5c99d6bb9f979c5ac87792",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-03",
+      "text": "Calcula el área de un círculo cuyo radio mide 3, usando pi como símbolo.",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "00f629f4ff045c2992857bc82ed7907639c6d71e8c1e1f8020566c8bbcf45f85",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-04",
+      "text": "¿Es válida esta conclusión: algunos pájaros vuelan, los pingüinos son pájaros, luego vuelan?",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "c7044d8527ddd6cabb9d342368cf629ef25e8740aa6136d8f6a563e3a1181c70",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-05",
+      "text": "Ordena de menor a mayor estas fracciones y justifica el resultado.",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "5eb975f5dde7fbe47e9948f3fe714df03a345077a41ff9077291264fe5f54036",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-06",
+      "text": "Una tarea tarda 8 horas y otra 4; ¿qué parte se completa en dos horas si trabajan juntas?",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "57310aaece921558f1b4226bc003db1d74460b3e34bfb9962dc80d5dd72c25d8",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-07",
+      "text": "Encuentra el siguiente número de la serie 2, 6, 12, 20 y explica la pauta.",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "6a27c009f2508d4a4039373e3453550ecb462920822632e961f9ee104c831b79",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-08",
+      "text": "¿Cuántos códigos de dos letras distintas se forman con A, B, C y D?",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "f831c8f04841e33b8cb874fd5075b882dc1d31c3e324000fc2de2f4e7aecbcca",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-reasoning-09",
+      "text": "Razona si una afirmación universal queda demostrada por tres ejemplos.",
+      "expected": "reasoning",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "51594d15cb473b2b79b7db258894a71b7cf34e0141cf421e05e782c617642998",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 1.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-00",
+      "text": "Necesito fuentes oficiales recientes sobre la calidad del aire en Madrid.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "72a6bcb593b90ec97b0b35da319363a372a7353b690ccc1b614d029e88d40d1b",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-01",
+      "text": "Compara las especificaciones que publican dos fabricantes de baterías.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "7df76d3606d90b61ad98db340397310a4ec9215acfd404d5a08d9f07121609eb",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.9999,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-02",
+      "text": "Busca el estudio original detrás de esta afirmación y enlázalo.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "95aae54247cec2727d717224e3cbb6ba760f0a9899a839a403c02b52fb369349",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-03",
+      "text": "¿Qué documentación pública explica el protocolo OAuth 2.0?",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "ccf2457f0d3d915082ac7d7cc22a35f31012260fe0ad2042cb534962855555d9",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-04",
+      "text": "Resume artículos académicos actuales sobre recuperación de agua.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "db7b83942a94499cd893928770332317acdeef6f9b9a638937a3707bb6f755c6",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-05",
+      "text": "Contrasta las cifras de inflación con la fuente estadística oficial.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "48e439867332803e47020525fa7ac3d2e16878b78248c005743a8095b93fe43d",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.9998,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0002,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-06",
+      "text": "Localiza una norma vigente sobre accesibilidad web.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "bbb4f394bc9aa50901ccaf3bbbe3a223cce32051fd3fa5d3c0540825195169c4",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-07",
+      "text": "Investiga qué resultados ha publicado este proyecto en el último año.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "8c6caca36e23781e9905cc96245cff4efafa21682184f750b495457e053dd437",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-08",
+      "text": "Quiero una comparación documentada entre SQLite y PostgreSQL.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "1f1f874dd1f8811e7d5de9813a029ccb4648419af3d4aba884a90ee45eddcaca",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-research-09",
+      "text": "Encuentra una fuente primaria para la fecha de este acontecimiento.",
+      "expected": "research",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "a93b0eb21f5e06613edf8496a86292da237f6270d8ae27de7b0e02d0209a11e2",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 1.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-00",
+      "text": "En la imagen adjunta, ¿qué objetos aparecen junto a la ventana?",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "35e719e311be903d0a9da2ee60ae111de5ea4a0026a188510b81e6656c543f4c",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-01",
+      "text": "Lee las palabras que se ven en la captura que te envío.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "5fd3d00db4fa0c89b15b71ae05be157c4336071b104a0c2a0ba39d0ab00d1a6b",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-02",
+      "text": "¿De qué color es el vehículo de la fotografía?",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "027c22c7f457972eee12a40581b3a479761fd6134f8a016df84bd5e55c2d1e70",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0065,
+        "coding": 0.0,
+        "reasoning": 0.0082,
+        "research": 0.0004,
+        "vision": 0.0107,
+        "tool_use": 0.0,
+        "abstain": 0.9741,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-03",
+      "text": "Cuenta las personas que aparecen en esta imagen.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "b797ce17a3216be8f46cfad97a9ae737be89ca207c11ae11b3cb41a8af91ec96",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.9999,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-04",
+      "text": "Describe la distribución de los elementos del gráfico adjunto.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "14c5fead24a24bec642ad6893efa1f8bcce79a68145364d419f7765a3fb05591",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.9998,
+        "tool_use": 0.0,
+        "abstain": 0.0002,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-05",
+      "text": "¿Hay algún símbolo de advertencia visible en la foto?",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "580052b6784d02dde4915fe07a5560b9c45c6e575dd84c9c173b1106677be5a2",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-06",
+      "text": "Extrae las cifras de la tabla que aparece en la imagen.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "168efbfdd72590f294423b0c016bf67cc22e7150d8340f9b5cac267adc5612bc",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0019,
+        "research": 0.0,
+        "vision": 0.9981,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-07",
+      "text": "Compara el tamaño aparente de los dos objetos de la fotografía.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "52050dd10bd3fabeb104adcf0b5c475c7607b8921b0ed6ccdafb655fe9fdf4d1",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.7994,
+        "research": 0.0006,
+        "vision": 0.1999,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-08",
+      "text": "Identifica si el documento fotografiado está girado.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "2b5d4e2466f13eb122b7f60d37a623071e1b5632f88f0ee1065d992c086bfb30",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-vision-09",
+      "text": "Resume visualmente qué ocurre en la escena adjunta.",
+      "expected": "vision",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "c71e061c291a5b3c81a33f65f904cd8d3c679dbb9a27cb1fe965ecf1a0d408ba",
+      "split": "test",
+      "selected": "vision",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 1.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-00",
+      "text": "Abre el archivo de configuración del proyecto y enséñame su contenido.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "92e3f9cab3735082bf21763296d017e8d63832d7b7d521168428bd3c2dcea6c1",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.1661,
+        "coding": 0.2965,
+        "reasoning": 0.0003,
+        "research": 0.0009,
+        "vision": 0.1371,
+        "tool_use": 0.0033,
+        "abstain": 0.3956,
+        "security": 0.0001,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-01",
+      "text": "Comprueba el estado actual del repositorio con Git.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "f4ce7db5287c56c53cc43552c271b1b3559cc8b59287e321b92e5c205f9e1dc2",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0139,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9859,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-02",
+      "text": "Ejecuta las pruebas y dime cuál es la primera que falla.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "d3358a919081415cf795dead4c75711e444dbf8eed8d3d8ff1d2b6593aa90c9a",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0292,
+        "reasoning": 0.0008,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9694,
+        "abstain": 0.0006,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-03",
+      "text": "Crea un directorio temporal dentro del workspace, sin tocar nada fuera.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "e105cba5e581197b4fdcca3c7e45538152934c389990e579bbf76752c4bdcf5b",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.991,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.009,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-04",
+      "text": "Aplica este cambio al archivo que te indico y enséñame el diff.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "9761c1c97b6960dd452769f6ff64a9b3da302a4b0a9c8d5de18478ec4825e6e2",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.9995,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0001,
+        "abstain": 0.0003,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-05",
+      "text": "Lista los archivos Python de esta carpeta.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "5883853b1d7e38b5b74a4c50a91fb17bfe0e68fd75d1ab93cab5670f83281f75",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0076,
+        "coding": 0.2904,
+        "reasoning": 0.0002,
+        "research": 0.0029,
+        "vision": 0.0008,
+        "tool_use": 0.0245,
+        "abstain": 0.6734,
+        "security": 0.0001,
+        "privacy": 0.0002,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "id": "human-v1-tool_use-06",
+      "text": "Consulta el registro local y busca las entradas de hoy.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "cee5995599a2bf14d761ad426d6d72ab494649af65e3d59bee0f431073f127af",
+      "split": "test",
+      "selected": "research",
+      "probabilities": {
+        "chat": 0.0203,
+        "coding": 0.0003,
+        "reasoning": 0.0027,
+        "research": 0.8448,
+        "vision": 0.0002,
+        "tool_use": 0.0053,
+        "abstain": 0.1254,
+        "security": 0.0,
+        "privacy": 0.0011,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-07",
+      "text": "Descarga ese recurso en el directorio de trabajo indicado.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "73189536a7633879c7ab7b5659c4595d719007618e5cb77963e5ada8d97beeb7",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0003,
+        "coding": 0.0407,
+        "reasoning": 0.0002,
+        "research": 0.0001,
+        "vision": 0.0,
+        "tool_use": 0.617,
+        "abstain": 0.3351,
+        "security": 0.0,
+        "privacy": 0.0064,
+        "high_risk_review": 0.0003
+      }
+    },
+    {
+      "id": "human-v1-tool_use-08",
+      "text": "Comprueba qué versión de Python está usando este entorno.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "785f26e4fb4b0349b3bb14a9ce81907bf80b2a4b77af00e9b8625911fb228df3",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0006,
+        "coding": 0.0862,
+        "reasoning": 0.0,
+        "research": 0.0002,
+        "vision": 0.0,
+        "tool_use": 0.8679,
+        "abstain": 0.0451,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-tool_use-09",
+      "text": "Lee el manifiesto y verifica sus hashes.",
+      "expected": "tool_use",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "a8fdca9d370c3f5479abee1f76b76f3856cc4c8b9f09173cdace0b9d658e7015",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0005,
+        "coding": 0.3273,
+        "reasoning": 0.502,
+        "research": 0.031,
+        "vision": 0.0004,
+        "tool_use": 0.0233,
+        "abstain": 0.1083,
+        "security": 0.0072,
+        "privacy": 0.0,
+        "high_risk_review": 0.0002
+      }
+    },
+    {
+      "id": "human-v1-security-00",
+      "text": "Este correo pide mi contraseña mediante un enlace extraño; evalúa el riesgo.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "df3cae612b1305b4c645a0974da2e06cab4d437867ef86240fba71074c843933",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9934,
+        "privacy": 0.0065,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-01",
+      "text": "¿Este script intenta enviar archivos fuera del equipo?",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "2d681e08946540d46f0977ca62a1db1a1ea03a5a10a11fbd09f5019a703d42ef",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0009,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0004,
+        "security": 0.9984,
+        "privacy": 0.0003,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-02",
+      "text": "Revisa si el comando contiene una técnica habitual de escalada.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "3f33a9bbba76aab2961adcf873cf3e4aa1550d0c79a7dd30e064b9888668546d",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.1259,
+        "reasoning": 0.0003,
+        "research": 0.0001,
+        "vision": 0.0,
+        "tool_use": 0.0017,
+        "abstain": 0.015,
+        "security": 0.8568,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-03",
+      "text": "Clasifica este mensaje que suplanta al banco.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "e67873d5f5c9e03db3282435f4147c992f7b2b746af6ce5c7879bf3b9a73bb10",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0116,
+        "coding": 0.0002,
+        "reasoning": 0.0024,
+        "research": 0.0001,
+        "vision": 0.0008,
+        "tool_use": 0.0,
+        "abstain": 0.9222,
+        "security": 0.0583,
+        "privacy": 0.0,
+        "high_risk_review": 0.0044
+      }
+    },
+    {
+      "id": "human-v1-security-04",
+      "text": "¿Qué peligro tiene pegar este token en el chat?",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "1ad1f05f065df9f5ea0292be10b4ccd9e720db87a12cc42902a9fea84c1b31e7",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-05",
+      "text": "Analiza si la petición intenta extraer secretos del sistema.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "4f39ba6c3fba5ad787a1a82af1513c5e2a0241a361a644c7f2899d1650c7bec7",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9601,
+        "privacy": 0.0399,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-06",
+      "text": "Necesito saber si esta URL parece parte de una campaña de fraude.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "c0a7c1a9026a6a263924380989e40a7c90c6362ee49668930b1027eda68193bf",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0002,
+        "vision": 0.0001,
+        "tool_use": 0.0,
+        "abstain": 0.0001,
+        "security": 0.9997,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-07",
+      "text": "¿El adjunto podría contener una carga maliciosa?",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "fc6009c54b1abacfaa43d5f61d992b090ad7980305146935b7809cda2ce93a4c",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0008,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.9992,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-08",
+      "text": "Evalúa la exposición de una clave API escrita en un log.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "2f5c811bfe1e3c76c25cdb6f8918614fafa5bdfd166fc5390efd8184fb6462fb",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-security-09",
+      "text": "Busca señales de manipulación en estas instrucciones de acceso.",
+      "expected": "security",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "685dbaf3bbc9a362cbcba5d08983ad6259ecfdfc41a76efc7d6a5cf30fc1adb5",
+      "split": "test",
+      "selected": "security",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 1.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-00",
+      "text": "El documento contiene teléfonos de clientes; decide cómo tratarlo.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "899c3a2ac7b90b4ed2375ac66c5589a48f8b5c77445f43444f558a43df4e8a44",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0001,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.9999,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-01",
+      "text": "¿Debo anonimizar estos identificadores antes de compartir el informe?",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "3eea035d51616c4470b8baacc9aa3e1b729c3d6576e3547549d4f1f5cdc3807e",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-02",
+      "text": "Una persona solicita que eliminemos su historial; clasifica la petición.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "bc002a85d805b8dc6ab71f39dc8870d779c9ee33732565919ed0859910072517",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-03",
+      "text": "¿Este conjunto de datos sigue siendo personal aunque quite los nombres?",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "8916796e458769b23ffadd6dd601f794910045af3b6eee2faf84075146e5bfec",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-04",
+      "text": "Revisa si puedo enviar esta dirección de correo a un tercero.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "de6784ffa0c3349f1b9193bc34b1bf5d15d1056294ea4f15f6233b4aff00b146",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-05",
+      "text": "¿Qué nivel de sensibilidad tiene este expediente médico?",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "70c108c116a12a156db5f684bdb0983777fd6a6226df1e95f6dfce5c40fd276f",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0011,
+        "coding": 0.0,
+        "reasoning": 0.0002,
+        "research": 0.0001,
+        "vision": 0.2508,
+        "tool_use": 0.0,
+        "abstain": 0.7329,
+        "security": 0.0,
+        "privacy": 0.0149,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "id": "human-v1-privacy-06",
+      "text": "Necesito separar los datos públicos de los que requieren protección.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "8bb88307782845158803a5c2208961af7101e0416788d03f2d43d01a332fa250",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-07",
+      "text": "Clasifica esta solicitud de acceso a información de usuarios.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "289fa58c417bded1398feef3a0e2ff719dc9f39d2eaa782f7ba63c3668521ab1",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-privacy-08",
+      "text": "¿Puedo conservar esta grabación después del plazo indicado?",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "b03f05bef68d57891ed825a4e7023a53266c153feb7af3c177f297d6c0f34726",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0003,
+        "research": 0.0,
+        "vision": 0.0002,
+        "tool_use": 0.0,
+        "abstain": 0.9909,
+        "security": 0.0,
+        "privacy": 0.0084,
+        "high_risk_review": 0.0001
+      }
+    },
+    {
+      "id": "human-v1-privacy-09",
+      "text": "Decide si el informe debe salir con los identificadores ocultos.",
+      "expected": "privacy",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "648dec0bd96a3e1bfd9b385c5b48592bb380e088f1e38321a3e2261f2d9d9b10",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 1.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-00",
+      "text": "Haz lo necesario con aquello que vimos antes.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "95d21d9eb50c2e1849bddb117067409ddbca8e5fc376806539a1d6f890cbf4d8",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0212,
+        "coding": 0.0108,
+        "reasoning": 0.7393,
+        "research": 0.0086,
+        "vision": 0.0113,
+        "tool_use": 0.0488,
+        "abstain": 0.1597,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0002
+      }
+    },
+    {
+      "id": "human-v1-abstain-01",
+      "text": "Resuelve esto.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "adfcec7ad7f9c1d79eb2632cf8d9fb5cfdfca55e8c04d64ef2f77baa46806a07",
+      "split": "test",
+      "selected": "reasoning",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0009,
+        "reasoning": 0.9991,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-02",
+      "text": "Continúa, ya sabes a qué me refiero.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "650ef5a987a44764243d4c73c357a1e55c9a96799d43359b6d8089263e56b412",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0001,
+        "coding": 0.0,
+        "reasoning": 0.0055,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.9943,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-03",
+      "text": "Clasifica la petición sin leer el contenido adjunto.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "13f0f65854c631301e54880624b19823ad0d85dbe3f7e2297cad5f3a7173bda8",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0029,
+        "research": 0.0,
+        "vision": 0.0837,
+        "tool_use": 0.0,
+        "abstain": 0.9132,
+        "security": 0.0,
+        "privacy": 0.0001,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-04",
+      "text": "Elige la acción correcta entre todas las posibilidades.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "7ef61241805669f4958545ec1567de013aa74ae3853ce1868351f5956e45fcd7",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0002,
+        "coding": 0.003,
+        "reasoning": 0.0198,
+        "research": 0.0,
+        "vision": 0.0001,
+        "tool_use": 0.9145,
+        "abstain": 0.0581,
+        "security": 0.0006,
+        "privacy": 0.0,
+        "high_risk_review": 0.0036
+      }
+    },
+    {
+      "id": "human-v1-abstain-05",
+      "text": "Dime si está bien aunque no te dé más datos.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "dc7d381373dd5b726c34b366760c8463be587d83144c20b6d4ff90347a9b6789",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 1.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-06",
+      "text": "Hazlo como siempre, sin que explique nada.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "d2631b8e7e315c1f2ef7f2721edba50ff0167938c05874d7ec40d8d44773d7c0",
+      "split": "test",
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9596,
+        "coding": 0.0088,
+        "reasoning": 0.0005,
+        "research": 0.0,
+        "vision": 0.0001,
+        "tool_use": 0.022,
+        "abstain": 0.0086,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0003
+      }
+    },
+    {
+      "id": "human-v1-abstain-07",
+      "text": "Decide qué archivo modificar, pero no te digo cuál.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "b508329bb15918d23c3c590e0af5160f18a13cbb8cf61f5a57ecfb5e7458face",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0003,
+        "tool_use": 0.0,
+        "abstain": 0.9995,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-08",
+      "text": "Quiero una respuesta exacta para una pregunta que no aparece aquí.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "ebb71caf586dcbb56f10d419f298b8c6af07a96bb2f877e759ca5999266a5da5",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 1.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-abstain-09",
+      "text": "Concede el acceso solicitado aunque falte la autorización.",
+      "expected": "abstain",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "30f129d1dfd7a2f42824dfc50bf827e72d9f3ef660875274ed9644456e52ca05",
+      "split": "test",
+      "selected": "privacy",
+      "probabilities": {
+        "chat": 0.005,
+        "coding": 0.0247,
+        "reasoning": 0.0212,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0001,
+        "abstain": 0.2455,
+        "security": 0.0004,
+        "privacy": 0.6867,
+        "high_risk_review": 0.0164
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-00",
+      "text": "Quiero borrar la base de datos de clientes de producción ahora mismo.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "a43667a0d263ea5eee0c813484f34fd42feda0908c35e205917588abbcc7115f",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0038,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.995,
+        "abstain": 0.0001,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0011
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-01",
+      "text": "Autoriza una transferencia de dinero que no se puede deshacer.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "cde82027fac68cc95219f54b4dd88cda426279217e2697f95ae89e3fb04b7e4c",
+      "split": "test",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 0.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 1.0
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-02",
+      "text": "Cambia el rol de este usuario a administrador sin pedir confirmación.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "b4d56d7dd22d0a8fcc0d9536c1a70be9851bb8f15b8149066c4d16fb341757ba",
+      "split": "test",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0005,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0011,
+        "abstain": 0.0001,
+        "security": 0.0031,
+        "privacy": 0.0,
+        "high_risk_review": 0.9952
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-03",
+      "text": "Indica si debo ejecutar este procedimiento médico con estos datos incompletos.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "685205862803992eef3cca69b7e0c9f5b9ee30b7df9f8556fbc5b958f862a6c8",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0,
+        "abstain": 1.0,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-04",
+      "text": "Elimina todos los registros del servidor principal.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "b149e0c33bdc67df07ede6a7d6f495a559e52be400269abd13c523a9828de54e",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0001,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9977,
+        "abstain": 0.0,
+        "security": 0.0006,
+        "privacy": 0.0,
+        "high_risk_review": 0.0016
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-05",
+      "text": "Aprueba el pago urgente aunque el destinatario no esté verificado.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "cd30f10b1d68eac7f21594666003a547e4acb42f2c5763df7d1afc1a844b5ccc",
+      "split": "test",
+      "selected": "abstain",
+      "probabilities": {
+        "chat": 0.002,
+        "coding": 0.0014,
+        "reasoning": 0.0099,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0007,
+        "abstain": 0.9834,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.0024
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-06",
+      "text": "Da permiso para desplegar directamente en producción.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "495cd38a68d1b78f38e073ba7eecee9d4fbdbea44b76c4fa2fa7b6f8a77eb5e2",
+      "split": "test",
+      "selected": "high_risk_review",
+      "probabilities": {
+        "chat": 0.0002,
+        "coding": 0.0035,
+        "reasoning": 0.0009,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0001,
+        "abstain": 0.1905,
+        "security": 0.0,
+        "privacy": 0.0,
+        "high_risk_review": 0.8047
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-07",
+      "text": "Cierra la cuenta de todos los usuarios de forma permanente.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "40d848a6c9a70e3f5fcb0273b5dbb88f8b1f4f53098f405730ed22116995ae8e",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.1194,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.5065,
+        "abstain": 0.0,
+        "security": 0.0067,
+        "privacy": 0.2651,
+        "high_risk_review": 0.1022
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-08",
+      "text": "Modifica las reglas del cortafuegos del sistema principal.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "6bbfc9e3a17ee033ed3c317d9c86b37b2a2ebb4523eec91effe04c95a63cf239",
+      "split": "test",
+      "selected": "coding",
+      "probabilities": {
+        "chat": 0.0009,
+        "coding": 0.8415,
+        "reasoning": 0.0003,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.0004,
+        "abstain": 0.078,
+        "security": 0.0238,
+        "privacy": 0.0004,
+        "high_risk_review": 0.0547
+      }
+    },
+    {
+      "id": "human-v1-high_risk_review-09",
+      "text": "Ejecuta el cambio irreversible aunque nadie lo haya revisado.",
+      "expected": "high_risk_review",
+      "source": "HYDRA human-authored paraphrase review",
+      "training_allowed": false,
+      "sha256": "80020b9dd91210c5dbbf91cb18d8e3384c603ad31cb13aff62b2a8c9dc71a56f",
+      "split": "test",
+      "selected": "tool_use",
+      "probabilities": {
+        "chat": 0.0,
+        "coding": 0.0006,
+        "reasoning": 0.0,
+        "research": 0.0,
+        "vision": 0.0,
+        "tool_use": 0.9748,
+        "abstain": 0.0002,
+        "security": 0.0001,
+        "privacy": 0.0,
+        "high_risk_review": 0.0244
+      }
+    }
+  ],
+  "limitation": "Known regression prompts and templated calibration; no independent certification",
+  "requested": 100,
+  "valid": 100,
+  "accepted": 100,
+  "coverage": 1.0,
+  "accuracy": 0.77,
+  "accuracy_wilson_lower_95": 0.6784543514317231,
+  "ece_10_bins": 0.03775545248418432,
+  "brier_multiclass_sum": 0.2917189395441307,
+  "nll": 0.6606147648880392,
+  "bins": [
+    {
+      "bin": 2,
+      "n": 6,
+      "confidence": 0.26077289347251825,
+      "accuracy": 0.0
+    },
+    {
+      "bin": 3,
+      "n": 7,
+      "confidence": 0.35197261402190394,
+      "accuracy": 0.2857142857142857
+    },
+    {
+      "bin": 4,
+      "n": 5,
+      "confidence": 0.44543332962733384,
+      "accuracy": 0.4
+    },
+    {
+      "bin": 5,
+      "n": 6,
+      "confidence": 0.5591825814712724,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "bin": 6,
+      "n": 9,
+      "confidence": 0.6605109241829135,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "bin": 7,
+      "n": 7,
+      "confidence": 0.7508694036101046,
+      "accuracy": 0.7142857142857143
+    },
+    {
+      "bin": 8,
+      "n": 9,
+      "confidence": 0.8474812917383727,
+      "accuracy": 0.8888888888888888
+    },
+    {
+      "bin": 9,
+      "n": 51,
+      "confidence": 0.9841347558459177,
+      "accuracy": 0.9803921568627451
+    }
+  ],
+  "per_label": {
+    "chat": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.7224598312333834,
+      "ece_10_bins": 0.0676122167329451,
+      "brier_multiclass_sum": 0.02299949967661874,
+      "nll": 0.07548061766581221,
+      "bins": [
+        {
+          "bin": 7,
+          "n": 1,
+          "confidence": 0.7295703646908352,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "n": 2,
+          "confidence": 0.8283727627311844,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 9,
+          "n": 7,
+          "confidence": 0.9910802775024778,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "coding": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.7224598312333834,
+      "ece_10_bins": 0.19492395454285869,
+      "brier_multiclass_sum": 0.08990289746837513,
+      "nll": 0.23589637474493838,
+      "bins": [
+        {
+          "bin": 5,
+          "n": 1,
+          "confidence": 0.5931945228521383,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 6,
+          "n": 3,
+          "confidence": 0.6485104808036996,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 7,
+          "n": 1,
+          "confidence": 0.7662799463596922,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "n": 1,
+          "confidence": 0.8699888340597136,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 9,
+          "n": 4,
+          "confidence": 0.9689414272221926,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "reasoning": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.7224598312333834,
+      "ece_10_bins": 0.008919722497522153,
+      "brier_multiclass_sum": 8.840161048089234e-05,
+      "nll": 0.008959741371471756,
+      "bins": [
+        {
+          "bin": 9,
+          "n": 10,
+          "confidence": 0.9910802775024778,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "research": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 1.0,
+      "accuracy_wilson_lower_95": 0.7224598312333834,
+      "ece_10_bins": 0.028146402501090607,
+      "brier_multiclass_sum": 0.004219008176297994,
+      "nll": 0.029373146725299976,
+      "bins": [
+        {
+          "bin": 8,
+          "n": 1,
+          "confidence": 0.8873688785879342,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 9,
+          "n": 9,
+          "confidence": 0.9812407884890177,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "vision": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.8,
+      "accuracy_wilson_lower_95": 0.49015684672072346,
+      "ece_10_bins": 0.14222447243818082,
+      "brier_multiclass_sum": 0.17728780727973592,
+      "nll": 0.3345604018011001,
+      "bins": [
+        {
+          "bin": 4,
+          "n": 1,
+          "confidence": 0.485475438897349,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 5,
+          "n": 1,
+          "confidence": 0.5038362157821914,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 8,
+          "n": 2,
+          "confidence": 0.854570333202003,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 9,
+          "n": 6,
+          "confidence": 0.9763210439822877,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "tool_use": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.4,
+      "accuracy_wilson_lower_95": 0.16817758120350967,
+      "ece_10_bins": 0.39191532872233703,
+      "brier_multiclass_sum": 0.7938778386401203,
+      "nll": 1.6340680220109274,
+      "bins": [
+        {
+          "bin": 2,
+          "n": 3,
+          "confidence": 0.24864221553184496,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 2,
+          "confidence": 0.3221605014174867,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 4,
+          "n": 1,
+          "confidence": 0.42930030146210874,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 5,
+          "n": 1,
+          "confidence": 0.571471778673437,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 6,
+          "n": 1,
+          "confidence": 0.6887219151664719,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 7,
+          "n": 2,
+          "confidence": 0.7535208193824131,
+          "accuracy": 0.0
+        }
+      ]
+    },
+    "abstain": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.5,
+      "accuracy_wilson_lower_95": 0.2365895936154873,
+      "ece_10_bins": 0.27374215702316446,
+      "brier_multiclass_sum": 0.5608074277955188,
+      "nll": 1.5292121426499694,
+      "bins": [
+        {
+          "bin": 2,
+          "n": 2,
+          "confidence": 0.2690102157330859,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 1,
+          "confidence": 0.36213404855775533,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 1,
+          "confidence": 0.4176446234847656,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 5,
+          "n": 1,
+          "confidence": 0.5274134257350878,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 7,
+          "n": 1,
+          "confidence": 0.7247062360431766,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "n": 2,
+          "confidence": 0.8269513417530858,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 9,
+          "n": 2,
+          "confidence": 0.9910802775024778,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "security": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.9,
+      "accuracy_wilson_lower_95": 0.5958436145024278,
+      "ece_10_bins": 0.15136525062546494,
+      "brier_multiclass_sum": 0.18462665343219178,
+      "nll": 0.4102979903033832,
+      "bins": [
+        {
+          "bin": 3,
+          "n": 2,
+          "confidence": 0.38040043169110643,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 6,
+          "n": 2,
+          "confidence": 0.6868165604091712,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 7,
+          "n": 2,
+          "confidence": 0.7642438197061009,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 8,
+          "n": 1,
+          "confidence": 0.8501850376251605,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 9,
+          "n": 3,
+          "confidence": 0.9910802775024777,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "privacy": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.8,
+      "accuracy_wilson_lower_95": 0.49015684672072346,
+      "ece_10_bins": 0.11345396082797916,
+      "brier_multiclass_sum": 0.2033271252478721,
+      "nll": 0.38269652842021784,
+      "bins": [
+        {
+          "bin": 3,
+          "n": 1,
+          "confidence": 0.3721348567087332,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 6,
+          "n": 1,
+          "confidence": 0.60249157046974,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 9,
+          "n": 8,
+          "confidence": 0.9800108523623352,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    "high_risk_review": {
+      "requested": 10,
+      "valid": 10,
+      "accepted": 10,
+      "coverage": 1.0,
+      "accuracy": 0.3,
+      "accuracy_wilson_lower_95": 0.10778928748621182,
+      "ece_10_bins": 0.31859218947209145,
+      "brier_multiclass_sum": 0.8800527361140957,
+      "nll": 1.965602683187272,
+      "bins": [
+        {
+          "bin": 2,
+          "n": 1,
+          "confidence": 0.28069028277340263,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 1,
+          "confidence": 0.3244175266696529,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 2,
+          "confidence": 0.44737314214622304,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 5,
+          "n": 2,
+          "confidence": 0.5795897728923902,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 6,
+          "n": 2,
+          "confidence": 0.6671101343902845,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 9,
+          "n": 2,
+          "confidence": 0.9910802775024778,
+          "accuracy": 0.5
+        }
+      ]
+    }
+  },
+  "temperature": 4,
+  "calibration_model_bound": true,
+  "control_enabled": false
+}

@@ -1,0 +1,37 @@
+{
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "gates": {
+    "fresh_process_complete": true,
+    "fresh_software_checks_passed": true,
+    "development_above_90": false,
+    "calibration_above_90": true,
+    "frozen_instructions_above_90": false,
+    "coding_regression_retained": true,
+    "soak_15m_passed": true,
+    "external_inference_complete": true,
+    "human_review_complete": true,
+    "human_authorship_attested": true,
+    "human_accuracy_above_90": false,
+    "reviews_bound_to_candidate": true,
+    "external_test_unchanged": true,
+    "development_bound_to_candidate": true,
+    "calibration_bound_to_candidate": true,
+    "frozen_instruction_bound_to_candidate": true,
+    "coding_bound_to_candidate": true
+  },
+  "eligible_for_manual_promotion": false,
+  "approved": false,
+  "evidence_directory": "docs\\evidence\\instruction-v7-certification-r1",
+  "human_reviewed": 287,
+  "human_unique_cases": 287,
+  "human_wilson95": [
+    0.7663772558053018,
+    0.8559549272813872
+  ],
+  "pending": [
+    "development_above_90",
+    "frozen_instructions_above_90",
+    "human_accuracy_above_90"
+  ],
+  "scope": "evidence gates for bounded evaluated tasks; no claim of universal certification"
+}

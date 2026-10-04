@@ -1,0 +1,39 @@
+{
+  "v5_development": {
+    "accuracy": 0.85,
+    "correct": 119,
+    "total": 140,
+    "wilson95": [
+      0.7815562129072435,
+      0.8997494468341674
+    ],
+    "complete": true
+  },
+  "v5_calibration": {
+    "accuracy": 0.9071428571428571,
+    "correct": 127,
+    "total": 140,
+    "wilson95": [
+      0.8476094094916335,
+      0.9449298273504159
+    ],
+    "complete": true
+  },
+  "v5_frozen_instruction": {
+    "accuracy": 0.5,
+    "correct": 24,
+    "total": 48,
+    "protocol": "raw-generation"
+  },
+  "v5_typed_state": {
+    "accuracy": 1.0,
+    "correct": 48,
+    "total": 48,
+    "protocol": "typed-state-json"
+  },
+  "v5_coding": {
+    "score": 1.0
+  },
+  "approved": false,
+  "independent_test": false
+}

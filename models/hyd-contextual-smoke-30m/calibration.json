@@ -1,0 +1,23 @@
+{
+  "format": "hyd-calibration/1",
+  "model_sha256": "eb9a238c1493dada507f8cf462b2c49a4b54c40b3be1a0a2ac123c78ab4498a3",
+  "implementation_sha256": "0009b52f7db3b8dca0efa15610c13f189b521c7701cff61f5af8271ef63bb7ad",
+  "temperature": 0.5,
+  "dataset_sha256": "6fb1abeea93deb227db7ca1d1f3cac37f2df1ea25a45f67070ddeb37b6a59f4d",
+  "criteria": {
+    "chat": "Write a conversational or creative response; no code or external search needed.",
+    "coding": "Write, debug or explain software code; do not execute an environment action.",
+    "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+    "research": "Find or compare external evidence and cite sources.",
+    "vision": "Interpret an attached image, screenshot or photographed document.",
+    "tool_use": "Perform an actual operation using environment tools.",
+    "abstain": "Required question, input or context is missing; ask for clarification.",
+    "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+    "privacy": "Assess or handle personal information and sharing restrictions.",
+    "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+  },
+  "min_confidence": 0.95,
+  "min_margin": 0.1,
+  "status": "SHADOW_ONLY",
+  "independent_test": false
+}

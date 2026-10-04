@@ -1,0 +1,88 @@
+{
+  "version": "grounded-v3",
+  "kind": "source_grounded_verified",
+  "approved": false,
+  "human_reviewed": false,
+  "independent_test": false,
+  "generator_sha256": "b25478dcf86167ed46860ebf889df8a87752b568ece727293e411a99f495a3ce",
+  "helpers_sha256": {
+    "grounded_corpus_v1.py": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+    "grounded_corpus_v2.py": "56862fe7bb3a37a45dfc4eaddac16f4b411309b02480aa448dd2e4fcd80db646"
+  },
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-grounded-v2-input.jsonl",
+      "sha256": "11b536bca62f9e9dca0984af342f1ec6a0a13deb8bdebf276c7c550599be2d21",
+      "records": 3081
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "permissive_records": 19620
+    }
+  },
+  "split_policy": "same document hash buckets as grounded-v1 (80/7/6/7); training uses wordings 0,1,5-10, validation 2, calibration 4, test 3",
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "quotas": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "families": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "hard_negatives": {
+    "code_functions": 160,
+    "code_imports": 160
+  },
+  "rejections": {
+    "privacy_rejected": 112,
+    "verification_failed": 0,
+    "utf8_rejected": 0,
+    "too_long": 4
+  },
+  "files": {
+    "train.jsonl": {
+      "examples": 1850,
+      "sha256": "9676de147699237a2b5e16d7faf38bb1ecb2b5698950399616b95ec32aa2d4bc"
+    },
+    "validation.jsonl": {
+      "examples": 169,
+      "sha256": "b3fffbc919902be54860d49849a3c3aff34c24cdf84a4d0def8a1ca41a3741d4"
+    },
+    "calibration.jsonl": {
+      "examples": 130,
+      "sha256": "7fc3f2ff6794a9921f4fc3132e57663ffa40b8d8387b3bbeaf0ac2dccd2e6c7b"
+    },
+    "test.jsonl": {
+      "examples": 171,
+      "sha256": "0f3cd730a657d9a19049b558c3d91aa33682394f0ce62e627b6d1a515d479f28"
+    }
+  },
+  "changes_from_v2": [
+    "eight training wordings per family (was two) so answers survive unseen phrasings; validation, calibration and test wordings unchanged"
+  ],
+  "limitations": "Extractive questions over a single excerpt; verifies faithfulness to the excerpt, not legal or programming advice. Code snippets keep repository, path and licence for attribution. Not human reviewed."
+}

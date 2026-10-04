@@ -1,0 +1,1519 @@
+{
+  "model": "hydra-instruction-v7:latest",
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "dataset_sha256": "aea8475d15489795410f31553c978db0037455d98869c7b77e916eaa34ac7d5f",
+  "split": "calibration",
+  "protocol": "typed-state-json",
+  "sampling": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 2048,
+    "num_predict": 96,
+    "num_gpu": 99
+  },
+  "cases": [
+    {
+      "id": "v4-literal-4-0",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31400"
+    },
+    {
+      "id": "v4-literal-4-1",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31401"
+    },
+    {
+      "id": "v4-literal-4-2",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31402"
+    },
+    {
+      "id": "v4-literal-4-3",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31403"
+    },
+    {
+      "id": "v4-literal-4-4",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31404"
+    },
+    {
+      "id": "v4-literal-4-5",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31405"
+    },
+    {
+      "id": "v4-literal-4-6",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31406"
+    },
+    {
+      "id": "v4-literal-4-7",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31407"
+    },
+    {
+      "id": "v4-literal-4-8",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31408"
+    },
+    {
+      "id": "v4-literal-4-9",
+      "family": "literal",
+      "passed": true,
+      "output": "literal_hydra_31409"
+    },
+    {
+      "id": "v4-json-4-0",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32400,\"activo\":false}"
+    },
+    {
+      "id": "v4-json-4-1",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32401,\"activo\":true}"
+    },
+    {
+      "id": "v4-json-4-2",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32402,\"activo\":false}"
+    },
+    {
+      "id": "v4-json-4-3",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32403,\"activo\":true}"
+    },
+    {
+      "id": "v4-json-4-4",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32404,\"activo\":false}"
+    },
+    {
+      "id": "v4-json-4-5",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32405,\"activo\":true}"
+    },
+    {
+      "id": "v4-json-4-6",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32406,\"activo\":false}"
+    },
+    {
+      "id": "v4-json-4-7",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32407,\"activo\":true}"
+    },
+    {
+      "id": "v4-json-4-8",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32408,\"activo\":false}"
+    },
+    {
+      "id": "v4-json-4-9",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":32409,\"activo\":true}"
+    },
+    {
+      "id": "v4-extract-4-0",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33400"
+    },
+    {
+      "id": "v4-extract-4-1",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33401"
+    },
+    {
+      "id": "v4-extract-4-2",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33402"
+    },
+    {
+      "id": "v4-extract-4-3",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33403"
+    },
+    {
+      "id": "v4-extract-4-4",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33404"
+    },
+    {
+      "id": "v4-extract-4-5",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33405"
+    },
+    {
+      "id": "v4-extract-4-6",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33406"
+    },
+    {
+      "id": "v4-extract-4-7",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33407"
+    },
+    {
+      "id": "v4-extract-4-8",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33408"
+    },
+    {
+      "id": "v4-extract-4-9",
+      "family": "extract",
+      "passed": true,
+      "output": "extract_hydra_33409"
+    },
+    {
+      "id": "v4-sum-4-0",
+      "family": "sum",
+      "passed": true,
+      "output": "26"
+    },
+    {
+      "id": "v4-sum-4-1",
+      "family": "sum",
+      "passed": true,
+      "output": "33"
+    },
+    {
+      "id": "v4-sum-4-2",
+      "family": "sum",
+      "passed": true,
+      "output": "40"
+    },
+    {
+      "id": "v4-sum-4-3",
+      "family": "sum",
+      "passed": true,
+      "output": "47"
+    },
+    {
+      "id": "v4-sum-4-4",
+      "family": "sum",
+      "passed": true,
+      "output": "54"
+    },
+    {
+      "id": "v4-sum-4-5",
+      "family": "sum",
+      "passed": true,
+      "output": "61"
+    },
+    {
+      "id": "v4-sum-4-6",
+      "family": "sum",
+      "passed": true,
+      "output": "68"
+    },
+    {
+      "id": "v4-sum-4-7",
+      "family": "sum",
+      "passed": true,
+      "output": "75"
+    },
+    {
+      "id": "v4-sum-4-8",
+      "family": "sum",
+      "passed": true,
+      "output": "82"
+    },
+    {
+      "id": "v4-sum-4-9",
+      "family": "sum",
+      "passed": true,
+      "output": "89"
+    },
+    {
+      "id": "v4-sort-4-0",
+      "family": "sort",
+      "passed": true,
+      "output": "[-6, 21, 92]"
+    },
+    {
+      "id": "v4-sort-4-1",
+      "family": "sort",
+      "passed": true,
+      "output": "[-12, 22, 93]"
+    },
+    {
+      "id": "v4-sort-4-2",
+      "family": "sort",
+      "passed": true,
+      "output": "[-18, 23, 94]"
+    },
+    {
+      "id": "v4-sort-4-3",
+      "family": "sort",
+      "passed": true,
+      "output": "[-24, 24, 95]"
+    },
+    {
+      "id": "v4-sort-4-4",
+      "family": "sort",
+      "passed": true,
+      "output": "[-30, 25, 96]"
+    },
+    {
+      "id": "v4-sort-4-5",
+      "family": "sort",
+      "passed": true,
+      "output": "[-36, 0, 26]"
+    },
+    {
+      "id": "v4-sort-4-6",
+      "family": "sort",
+      "passed": true,
+      "output": "[-42, 1, 27]"
+    },
+    {
+      "id": "v4-sort-4-7",
+      "family": "sort",
+      "passed": true,
+      "output": "[-48, 2, 28]"
+    },
+    {
+      "id": "v4-sort-4-8",
+      "family": "sort",
+      "passed": true,
+      "output": "[-54, 3, 29]"
+    },
+    {
+      "id": "v4-sort-4-9",
+      "family": "sort",
+      "passed": false,
+      "output": "[-60, 30, 4]"
+    },
+    {
+      "id": "v4-lower-4-0",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36400"
+    },
+    {
+      "id": "v4-lower-4-1",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36401"
+    },
+    {
+      "id": "v4-lower-4-2",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36402"
+    },
+    {
+      "id": "v4-lower-4-3",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36403"
+    },
+    {
+      "id": "v4-lower-4-4",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36404"
+    },
+    {
+      "id": "v4-lower-4-5",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36405"
+    },
+    {
+      "id": "v4-lower-4-6",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36406"
+    },
+    {
+      "id": "v4-lower-4-7",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36407"
+    },
+    {
+      "id": "v4-lower-4-8",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36408"
+    },
+    {
+      "id": "v4-lower-4-9",
+      "family": "lower",
+      "passed": true,
+      "output": "lower_hydra_36409"
+    },
+    {
+      "id": "v4-count-4-0",
+      "family": "count",
+      "passed": true,
+      "output": "1"
+    },
+    {
+      "id": "v4-count-4-1",
+      "family": "count",
+      "passed": true,
+      "output": "2"
+    },
+    {
+      "id": "v4-count-4-2",
+      "family": "count",
+      "passed": true,
+      "output": "3"
+    },
+    {
+      "id": "v4-count-4-3",
+      "family": "count",
+      "passed": true,
+      "output": "4"
+    },
+    {
+      "id": "v4-count-4-4",
+      "family": "count",
+      "passed": true,
+      "output": "5"
+    },
+    {
+      "id": "v4-count-4-5",
+      "family": "count",
+      "passed": true,
+      "output": "6"
+    },
+    {
+      "id": "v4-count-4-6",
+      "family": "count",
+      "passed": true,
+      "output": "7"
+    },
+    {
+      "id": "v4-count-4-7",
+      "family": "count",
+      "passed": true,
+      "output": "8"
+    },
+    {
+      "id": "v4-count-4-8",
+      "family": "count",
+      "passed": true,
+      "output": "9"
+    },
+    {
+      "id": "v4-count-4-9",
+      "family": "count",
+      "passed": true,
+      "output": "10"
+    },
+    {
+      "id": "v4-abstain-4-0",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-1",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-2",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-3",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-4",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-5",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-6",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-7",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-8",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-abstain-4-9",
+      "family": "abstain",
+      "passed": true,
+      "output": "FALTAN_DATOS"
+    },
+    {
+      "id": "v4-privacy-4-0",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-1",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-2",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-3",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-4",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-5",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-6",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-7",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-8",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-privacy-4-9",
+      "family": "privacy",
+      "passed": true,
+      "output": "DATO_PRIVADO"
+    },
+    {
+      "id": "v4-grounding-4-0",
+      "family": "grounding",
+      "passed": true,
+      "output": "8:00"
+    },
+    {
+      "id": "v4-grounding-4-1",
+      "family": "grounding",
+      "passed": true,
+      "output": "9:00"
+    },
+    {
+      "id": "v4-grounding-4-2",
+      "family": "grounding",
+      "passed": true,
+      "output": "10:00"
+    },
+    {
+      "id": "v4-grounding-4-3",
+      "family": "grounding",
+      "passed": true,
+      "output": "11:00"
+    },
+    {
+      "id": "v4-grounding-4-4",
+      "family": "grounding",
+      "passed": true,
+      "output": "12:00"
+    },
+    {
+      "id": "v4-grounding-4-5",
+      "family": "grounding",
+      "passed": true,
+      "output": "13:00"
+    },
+    {
+      "id": "v4-grounding-4-6",
+      "family": "grounding",
+      "passed": true,
+      "output": "14:00"
+    },
+    {
+      "id": "v4-grounding-4-7",
+      "family": "grounding",
+      "passed": true,
+      "output": "15:00"
+    },
+    {
+      "id": "v4-grounding-4-8",
+      "family": "grounding",
+      "passed": true,
+      "output": "16:00"
+    },
+    {
+      "id": "v4-grounding-4-9",
+      "family": "grounding",
+      "passed": true,
+      "output": "17:00"
+    },
+    {
+      "id": "v5-json-4-0",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83400,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-1",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83401,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-2",
+      "family": "json",
+      "passed": false,
+      "output": "{\"id\":83402,\"estado\":{\"encendido\":true}}"
+    },
+    {
+      "id": "v5-json-4-3",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83403,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-4",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83404,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-5",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83405,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-6",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83406,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-7",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83407,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-8",
+      "family": "json",
+      "passed": false,
+      "output": "{\"id\":83408,\"estado\":{\"encendido\":true}}"
+    },
+    {
+      "id": "v5-json-4-9",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83409,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-10",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83410,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-11",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83411,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-12",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83412,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-13",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83413,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-14",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83414,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-15",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83415,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-16",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83416,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-17",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83417,\"activo\":false}"
+    },
+    {
+      "id": "v5-json-4-18",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83418,\"activo\":true}"
+    },
+    {
+      "id": "v5-json-4-19",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":83419,\"activo\":false}"
+    },
+    {
+      "id": "v5-sort-4-0",
+      "family": "sort",
+      "passed": true,
+      "output": "[-5.0,-2,0,9,9,101]"
+    },
+    {
+      "id": "v5-sort-4-1",
+      "family": "sort",
+      "passed": true,
+      "output": "[-4.5,-3,0,10,10,102]"
+    },
+    {
+      "id": "v5-sort-4-2",
+      "family": "sort",
+      "passed": true,
+      "output": "[-4,-4.0,0,11,11,103]"
+    },
+    {
+      "id": "v5-sort-4-3",
+      "family": "sort",
+      "passed": true,
+      "output": "[-5,-3.5,0,12,12,104]"
+    },
+    {
+      "id": "v5-sort-4-4",
+      "family": "sort",
+      "passed": true,
+      "output": "[-6,-3.0,0,13,13,105]"
+    },
+    {
+      "id": "v5-sort-4-5",
+      "family": "sort",
+      "passed": true,
+      "output": "[-7,-2.5,0,14,14,106]"
+    },
+    {
+      "id": "v5-sort-4-6",
+      "family": "sort",
+      "passed": true,
+      "output": "[-8,-2.0,0,15,15,107]"
+    },
+    {
+      "id": "v5-sort-4-7",
+      "family": "sort",
+      "passed": true,
+      "output": "[-9,-1.5,0,16,16,108]"
+    },
+    {
+      "id": "v5-sort-4-8",
+      "family": "sort",
+      "passed": true,
+      "output": "[-10,-1.0,0,17,17,109]"
+    },
+    {
+      "id": "v5-sort-4-9",
+      "family": "sort",
+      "passed": true,
+      "output": "[-11,-0.5,0,18,18,110]"
+    },
+    {
+      "id": "v5-sort-4-10",
+      "family": "sort",
+      "passed": true,
+      "output": "[-12,0.0,0,19,19,111]"
+    },
+    {
+      "id": "v5-sort-4-11",
+      "family": "sort",
+      "passed": true,
+      "output": "[-13,0,0.5,20,20,112]"
+    },
+    {
+      "id": "v5-sort-4-12",
+      "family": "sort",
+      "passed": true,
+      "output": "[-14,0,1.0,21,21,113]"
+    },
+    {
+      "id": "v5-sort-4-13",
+      "family": "sort",
+      "passed": true,
+      "output": "[-15,0,1.5,22,22,114]"
+    },
+    {
+      "id": "v5-sort-4-14",
+      "family": "sort",
+      "passed": true,
+      "output": "[-16,0,2.0,23,23,115]"
+    },
+    {
+      "id": "v5-sort-4-15",
+      "family": "sort",
+      "passed": true,
+      "output": "[-17,0,2.5,24,24,116]"
+    },
+    {
+      "id": "v5-sort-4-16",
+      "family": "sort",
+      "passed": true,
+      "output": "[-18,0,3.0,25,25,117]"
+    },
+    {
+      "id": "v5-sort-4-17",
+      "family": "sort",
+      "passed": true,
+      "output": "[-19,0,3.5,26,26,118]"
+    },
+    {
+      "id": "v5-sort-4-18",
+      "family": "sort",
+      "passed": true,
+      "output": "[-20,0,4.0,27,27,119]"
+    },
+    {
+      "id": "v5-sort-4-19",
+      "family": "sort",
+      "passed": true,
+      "output": "[-21,0,4.5,28,28,120]"
+    },
+    {
+      "id": "v7-json-17-0",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961700}"
+    },
+    {
+      "id": "v7-json-17-1",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961701}"
+    },
+    {
+      "id": "v7-json-17-2",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961702}"
+    },
+    {
+      "id": "v7-json-17-3",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961703}"
+    },
+    {
+      "id": "v7-json-17-4",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961704}"
+    },
+    {
+      "id": "v7-json-17-5",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961705}"
+    },
+    {
+      "id": "v7-json-17-6",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961706}"
+    },
+    {
+      "id": "v7-json-17-7",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961707}"
+    },
+    {
+      "id": "v7-json-17-8",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961708}"
+    },
+    {
+      "id": "v7-json-17-9",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961709}"
+    },
+    {
+      "id": "v7-json-17-10",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961710}"
+    },
+    {
+      "id": "v7-json-17-11",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961711}"
+    },
+    {
+      "id": "v7-json-17-12",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961712}"
+    },
+    {
+      "id": "v7-json-17-13",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961713}"
+    },
+    {
+      "id": "v7-json-17-14",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":961714}"
+    },
+    {
+      "id": "v7-json-17-15",
+      "family": "json",
+      "passed": true,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":961715}"
+    },
+    {
+      "id": "v7-json-18-0",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961800,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-1",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961801,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-2",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961802,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-3",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961803,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-4",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961804,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-5",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961805,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-6",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961806,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-7",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961807,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-8",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961808,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-9",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961809,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-10",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961810,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-11",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961811,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-12",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961812,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-13",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961813,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-18-14",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961814,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-18-15",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961815,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-0",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961900,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-1",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961901,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-2",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961902,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-3",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961903,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-4",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961904,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-5",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961905,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-6",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961906,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-7",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961907,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-8",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961908,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-9",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961909,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-10",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961910,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-11",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961911,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-12",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961912,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-13",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961913,\"activo\":false}"
+    },
+    {
+      "id": "v7-json-19-14",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961914,\"activo\":true}"
+    },
+    {
+      "id": "v7-json-19-15",
+      "family": "json",
+      "passed": true,
+      "output": "{\"id\":961915,\"activo\":false}"
+    }
+  ],
+  "approved": false,
+  "independent_test": false,
+  "scope": "synthetic exact-task empirical success, not probability that arbitrary responses are true",
+  "schema_policy_sha256": "efa617a77b3c9a70ebaf2872a8577bb509096222bbaf01f9040d36571463e988",
+  "identity": {
+    "name": "hydra-instruction-v7:latest",
+    "digest": "bb1711bc5fe8e085fe44d9649b78307e0c0fe8329c374869f9db2131c02282aa",
+    "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "correct": 185,
+  "total": 188,
+  "accuracy": 0.9840425531914894,
+  "wilson95": [
+    0.9541416002042313,
+    0.9945584415844808
+  ],
+  "complete": true,
+  "families": {
+    "abstain": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "count": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "extract": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "grounding": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "json": {
+      "correct": 76,
+      "total": 78,
+      "accuracy": 0.9743589743589743,
+      "wilson95": [
+        0.9112472996432415,
+        0.9929399065272408
+      ]
+    },
+    "literal": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "lower": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "privacy": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    },
+    "sort": {
+      "correct": 29,
+      "total": 30,
+      "accuracy": 0.9666666666666667,
+      "wilson95": [
+        0.8332960900859082,
+        0.9940914096183874
+      ]
+    },
+    "sum": {
+      "correct": 10,
+      "total": 10,
+      "accuracy": 1.0,
+      "wilson95": [
+        0.7224672001371107,
+        0.9999999999999999
+      ]
+    }
+  }
+}

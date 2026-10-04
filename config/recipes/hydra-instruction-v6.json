@@ -1,0 +1,31 @@
+{
+  "base_model": "models/hydra-instruction-v5/merged",
+  "base_repository": "local:HYDRA-instruction-v5-merged",
+  "base_revision": "c4cc1e9533774d8782cb3ec3ef70698859170f7d2534fe3177b8a2b61d0292e9",
+  "base_sha256": "c4cc1e9533774d8782cb3ec3ef70698859170f7d2534fe3177b8a2b61d0292e9",
+  "base_size_bytes": 3087467144,
+  "corpus": "data/hydra-instruction-v6",
+  "output": "models/hydra-instruction-v6",
+  "llamacpp": "runtime/llama.cpp",
+  "llamacpp_revision": "b11146",
+  "quantizer": "runtime/llama-bin/llama-quantize.exe",
+  "method": "lora",
+  "epochs": 2,
+  "batch_size": 1,
+  "gradient_accumulation": 8,
+  "learning_rate": 5e-05,
+  "max_seq_length": 512,
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "seed": 42,
+  "require_gpu": true,
+  "quantization": "Q5_K_M",
+  "parent_build_manifest_sha256": "622fa18c851f09d0c0370f186d228a88811e822a2e9ce01e29803c9b340534d6"
+}

@@ -1,0 +1,23 @@
+{
+  "format": "hydra-decision-v4-training",
+  "examples": 2700,
+  "labels": [
+    "abstain",
+    "chat",
+    "coding",
+    "high_risk_review",
+    "privacy",
+    "reasoning",
+    "research",
+    "security",
+    "tool_use",
+    "vision"
+  ],
+  "train_accuracy": 0.9993,
+  "sources": [
+    "data\\decision-corpus-v3\\train.jsonl",
+    "data\\human-dev-v1.jsonl",
+    "data\\human-dev-v2.jsonl"
+  ],
+  "epochs": 18
+}

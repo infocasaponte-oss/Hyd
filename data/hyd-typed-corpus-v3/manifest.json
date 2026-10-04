@@ -1,0 +1,44 @@
+{
+  "format": "hyd-typed-corpus/3",
+  "seed": 42,
+  "domains": [
+    "lookup",
+    "comparison",
+    "dates",
+    "ordinal",
+    "boolean",
+    "missing",
+    "instruction",
+    "text_evidence"
+  ],
+  "languages": [
+    "gl",
+    "es",
+    "en"
+  ],
+  "files": {
+    "train.jsonl": {
+      "sha256": "9388bc6261578f3c28ce1828893c4e0dbb9ab3649f990b7a960eff9ca58e7822",
+      "records": 2400
+    },
+    "calibration.jsonl": {
+      "sha256": "5cd053367712861213bb6f9a90057cbf5072313eefab7f3884980abc3846b4fe",
+      "records": 600
+    },
+    "development.jsonl": {
+      "sha256": "6085f68ef5ea305e9f37e02e3c362d910139d084480b4ce150e8756aa5c3221c",
+      "records": 600
+    },
+    "test.jsonl": {
+      "sha256": "696542999b49a25d3739e5e0c7d9423426cb08efff46797b81736211acca23bb",
+      "records": 600
+    }
+  },
+  "generator_sha256": "b4e14d0f8ebd971af2c66944b5994f1953cc0aa18de5e2a26f7e05119794919e",
+  "independent_test": false,
+  "limitations": [
+    "Multilingual programmatic questions, partly English criterion descriptions; not a human language certification.",
+    "Splits have distinct declared families and state IDs, but share generator semantics.",
+    "Development/test cannot certify open-domain decisions or enable routing authority."
+  ]
+}

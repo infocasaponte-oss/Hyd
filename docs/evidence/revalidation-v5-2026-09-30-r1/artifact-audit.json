@@ -1,0 +1,37 @@
+{
+  "model": "models\\hydra-instruction-v5",
+  "artifact_sha256": "d767e0a1c75cbff78a6b95058f9440217ed24d294f57dd8e0eb1a3970d846e23",
+  "size_bytes": 1125049920,
+  "architecture": "qwen2",
+  "parameters": 1543714304,
+  "quantization": "Q5_K_M",
+  "text_only": true,
+  "trained_on_gpu": true,
+  "files": {
+    "train.jsonl": {
+      "examples": 612,
+      "sha256": "7168feeb22d7e1d651458c868e0b6f4d3d2d6fa2c42111924db444453090e9a0"
+    },
+    "validation.jsonl": {
+      "examples": 140,
+      "sha256": "f5600e64e214e7fdbd1a07a2d5e6eead84e56267aebc5683261ed574d58309e1"
+    },
+    "calibration.jsonl": {
+      "examples": 140,
+      "sha256": "39f085a0e4180ada648fa8ee6eb85375189648cacc6eba58a663abe332696ca3"
+    },
+    "test.jsonl": {
+      "examples": 48,
+      "sha256": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3"
+    }
+  },
+  "unique_prompts": 940,
+  "verified_stages": [
+    "train",
+    "merge",
+    "convert",
+    "quantize"
+  ],
+  "approved": false,
+  "limitations": "Hash integrity and synthetic regressions do not certify broad accuracy or autonomous authority."
+}

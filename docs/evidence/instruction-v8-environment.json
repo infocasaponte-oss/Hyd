@@ -1,0 +1,12 @@
+{
+  "packages": {
+    "torch": "2.5.1+cu121",
+    "transformers": "4.46.3",
+    "peft": "0.13.2",
+    "datasets": "3.1.0",
+    "accelerate": "1.1.1",
+    "safetensors": "0.8.0"
+  },
+  "recipe_sha256": "f6763aab431ec7036df02881369d844ecbfc3845e8f5bf1641769c952b679650",
+  "production_promoted": false
+}

@@ -1,0 +1,18 @@
+{
+  "counts": {
+    "train.jsonl": 2634,
+    "validation.jsonl": 406,
+    "calibration.jsonl": 338,
+    "test.jsonl": 202
+  },
+  "exact_overlap": 0,
+  "semantic_independence_certified": false,
+  "length_check": {
+    "max_tokens": 761,
+    "limit": 768
+  },
+  "recipe": "config\\recipes\\hydra-program-v2-grounded.json",
+  "max_steps": 330,
+  "epochs": 1.0,
+  "corpus_manifest_sha256": "802b7a7d1418c8fbc225f931f8cb64c916b8811514179c5ca02e92ee7a1be331"
+}

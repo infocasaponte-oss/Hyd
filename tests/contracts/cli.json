@@ -1,0 +1,2929 @@
+{
+ "arguments": [],
+ "commands": {
+  "ask": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "approve",
+     "flags": [
+      "--approve"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "image",
+     "flags": [
+      "--image"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "json",
+     "flags": [
+      "--json"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "local_only",
+     "flags": [
+      "--local-only"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "fast",
+      "balanced",
+      "deep",
+      "max",
+      "private"
+     ],
+     "default": "balanced",
+     "dest": "mode",
+     "flags": [
+      "--mode"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "prompt",
+     "flags": [
+      "prompt"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "backup": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "include_private_keys",
+     "flags": [
+      "--include-private-keys"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "out",
+     "flags": [
+      "out"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "bom": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "artifact",
+     "flags": [
+      "--artifact"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "bom",
+     "dest": "out",
+     "flags": [
+      "--out"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "generate"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "build": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "apply",
+     "flags": [
+      "--apply"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "auto",
+     "flags": [
+      "--auto"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "llama_server",
+     "flags": [
+      "--llama-server"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "model",
+     "flags": [
+      "--model"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "runtime/runtime-manifest.json",
+     "dest": "output",
+     "flags": [
+      "--output"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "ollama",
+      "llama.cpp"
+     ],
+     "default": "ollama",
+     "dest": "runtime",
+     "flags": [
+      "--runtime"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "cluster": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "balanced",
+     "dest": "mode",
+     "flags": [
+      "--mode"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "chat",
+     "dest": "task_type",
+     "flags": [
+      "--task-type"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "nodes",
+      "place"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "config": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "version",
+     "flags": [
+      "--version"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "show",
+      "commit",
+      "history",
+      "rollback"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": "production",
+     "dest": "env",
+     "flags": [
+      "env"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "values",
+     "flags": [
+      "values"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    }
+   ]
+  },
+  "corpus": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "reasoning.arithmetic",
+     "dest": "capability",
+     "flags": [
+      "--capability"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": 20,
+     "dest": "count",
+     "flags": [
+      "--count"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "language",
+     "flags": [
+      "--language"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "reason",
+     "flags": [
+      "--reason"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "stats",
+      "search",
+      "export",
+      "snapshot",
+      "tombstone",
+      "synthetic",
+      "prune"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "dataset": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "sft",
+     "dest": "format",
+     "flags": [
+      "--format"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "name",
+     "flags": [
+      "--name"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "record_types",
+     "flags": [
+      "--record-types"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "build",
+      "list",
+      "verify"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "discover": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "apply",
+     "flags": [
+      "--apply"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "model",
+     "flags": [
+      "model"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "doctor": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "no_recovery",
+     "flags": [
+      "--no-recovery"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "e2e": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "category",
+     "flags": [
+      "--category"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "limit",
+     "flags": [
+      "--limit"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "edge": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "['models']",
+     "dest": "dirs",
+     "flags": [
+      "--dirs"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "gpu",
+     "flags": [
+      "--gpu"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "vram_mb",
+     "flags": [
+      "--vram-mb"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "profile",
+      "scout",
+      "residency",
+      "pin-cpu"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "eval": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "apply",
+     "flags": [
+      "--apply"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "suites",
+     "flags": [
+      "--suites"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "verbose",
+     "flags": [
+      "-v",
+      "--verbose"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "model",
+     "flags": [
+      "model"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "factory": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "once",
+     "flags": [
+      "--once"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "param",
+     "flags": [
+      "--param"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "worker",
+      "submit",
+      "status"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "kind",
+     "flags": [
+      "kind"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "failures": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "flags": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "list",
+      "set"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "name",
+     "flags": [
+      "name"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "value",
+     "flags": [
+      "value"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "glossary": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "set",
+      "show",
+      "list"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "name",
+     "flags": [
+      "name"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "terms",
+     "flags": [
+      "terms"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    }
+   ]
+  },
+  "goal": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "approve",
+     "flags": [
+      "--approve"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": 900,
+     "dest": "max_seconds",
+     "flags": [
+      "--max-seconds"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "balanced",
+     "dest": "mode",
+     "flags": [
+      "--mode"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "workspace",
+     "flags": [
+      "--workspace"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "goal",
+     "flags": [
+      "goal"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "hardware": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "ip": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "cli",
+     "dest": "actor",
+     "flags": [
+      "--actor"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "baseline",
+     "flags": [
+      "--baseline"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "contributor",
+     "flags": [
+      "--contributor"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "feature",
+     "flags": [
+      "--feature"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "higher_is_better",
+     "flags": [
+      "--higher-is-better"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "mechanism",
+     "flags": [
+      "--mechanism"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "metric",
+     "flags": [
+      "--metric"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "problem",
+     "flags": [
+      "--problem"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "reference",
+     "flags": [
+      "--reference"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "solution",
+     "flags": [
+      "--solution"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "unit",
+     "flags": [
+      "--unit"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "value",
+     "flags": [
+      "--value"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "propose",
+      "list",
+      "status",
+      "effect",
+      "bundle",
+      "timeline",
+      "prior-art"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    }
+   ]
+  },
+  "keys": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "out",
+     "flags": [
+      "--out"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "export"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "lab": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "config",
+     "dest": "kind",
+     "flags": [
+      "--kind"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "set",
+     "flags": [
+      "--set"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": [
+      "list",
+      "create",
+      "benchmark",
+      "shadow",
+      "promote",
+      "rollback"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "ledger": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": 50,
+     "dest": "limit",
+     "flags": [
+      "--limit"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "object",
+     "flags": [
+      "--object"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "sequence",
+     "flags": [
+      "--sequence"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "verify",
+      "anchor",
+      "events",
+      "proof"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "license": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "component",
+     "flags": [
+      "--component"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "enterprise-commercial",
+     "dest": "target",
+     "flags": [
+      "--target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "evaluate",
+      "packages"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "mcp": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "tools",
+     "flags": [
+      "--tools"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    }
+   ]
+  },
+  "mcp-client": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "command",
+     "flags": [
+      "command"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "...",
+     "required": false
+    }
+   ]
+  },
+  "model": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "endpoint",
+     "flags": [
+      "--endpoint"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "format",
+     "flags": [
+      "--format"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "hardware",
+     "flags": [
+      "--hardware"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "local",
+     "flags": [
+      "--local"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "max_memory",
+     "flags": [
+      "--max-memory"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "name",
+     "flags": [
+      "--name"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "quality",
+     "flags": [
+      "--quality"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": 0.95,
+     "dest": "quality_min",
+     "flags": [
+      "--quality-min"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "quant",
+     "flags": [
+      "--quant"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "reference",
+     "flags": [
+      "--reference"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "set",
+     "flags": [
+      "--set"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "suites",
+     "flags": [
+      "--suites"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "build_target",
+     "flags": [
+      "--target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "import",
+      "inspect",
+      "list",
+      "lineage",
+      "build",
+      "evaluate",
+      "benchmark",
+      "validate",
+      "canary",
+      "optimize",
+      "resolve",
+      "distill",
+      "jit"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "models": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "profile": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "gpu",
+     "flags": [
+      "--gpu"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "vram_mb",
+     "flags": [
+      "--vram-mb"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "redteam": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "release": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "build",
+      "verify",
+      "promote",
+      "gate"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    }
+   ]
+  },
+  "replay": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "config",
+     "flags": [
+      "--config"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "audit",
+      "simulation"
+     ],
+     "default": "audit",
+     "dest": "mode",
+     "flags": [
+      "--mode"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "replace_model",
+     "flags": [
+      "--replace-model"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "traces",
+     "flags": [
+      "--traces"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "task",
+     "flags": [
+      "task"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "restore": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "data_dir",
+     "flags": [
+      "--data-dir"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "overwrite",
+     "flags": [
+      "--overwrite"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "archive",
+     "flags": [
+      "archive"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "run": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "json",
+     "flags": [
+      "--json"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "fast",
+      "balanced",
+      "deep",
+      "max",
+      "private"
+     ],
+     "default": "balanced",
+     "dest": "mode",
+     "flags": [
+      "--mode"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "prompt",
+     "flags": [
+      "prompt"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "serve": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "127.0.0.1",
+     "dest": "host",
+     "flags": [
+      "--host"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": 8080,
+     "dest": "port",
+     "flags": [
+      "--port"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "sync": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": 0,
+     "dest": "corpus_offset",
+     "flags": [
+      "--corpus-offset"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "",
+     "dest": "origin",
+     "flags": [
+      "--origin"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": "[]",
+     "dest": "trust_key",
+     "flags": [
+      "--trust-key"
+     ],
+     "kind": "_AppendAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": 0,
+     "dest": "world_version",
+     "flags": [
+      "--world-version"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "export",
+      "import"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "file",
+     "flags": [
+      "file"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "task": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "run"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "file",
+     "flags": [
+      "file"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    }
+   ]
+  },
+  "train": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": null,
+     "dest": "dataset",
+     "flags": [
+      "--dataset"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "run",
+      "specialists",
+      "dashboard",
+      "runs"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "translate": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "general",
+     "dest": "domain",
+     "flags": [
+      "--domain"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "file",
+     "flags": [
+      "--file"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "glossary",
+     "flags": [
+      "--glossary"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "model",
+     "flags": [
+      "--model"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "source",
+     "flags": [
+      "--source"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "to",
+     "flags": [
+      "--to"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "text",
+     "flags": [
+      "text"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  },
+  "worker": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": "['inference']",
+     "dest": "capability",
+     "flags": [
+      "--capability"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "*",
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": null,
+     "default": false,
+     "dest": "once",
+     "flags": [
+      "--once"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    }
+   ]
+  },
+  "world": {
+   "arguments": [
+    {
+     "choices": null,
+     "default": false,
+     "dest": "offline",
+     "flags": [
+      "--offline"
+     ],
+     "kind": "_StoreTrueAction",
+     "nargs": 0,
+     "required": false
+    },
+    {
+     "choices": [
+      "docker",
+      "subprocess"
+     ],
+     "default": null,
+     "dest": "sandbox",
+     "flags": [
+      "--sandbox"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": false
+    },
+    {
+     "choices": [
+      "stats",
+      "query",
+      "conflicts",
+      "codegraph",
+      "at",
+      "export"
+     ],
+     "default": null,
+     "dest": "action",
+     "flags": [
+      "action"
+     ],
+     "kind": "_StoreAction",
+     "nargs": null,
+     "required": true
+    },
+    {
+     "choices": null,
+     "default": null,
+     "dest": "target",
+     "flags": [
+      "target"
+     ],
+     "kind": "_StoreAction",
+     "nargs": "?",
+     "required": false
+    }
+   ]
+  }
+ }
+}

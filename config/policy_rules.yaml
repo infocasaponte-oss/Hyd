@@ -1,0 +1,24 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# HYDRA Policy DSL: first matching deny wins, then review, then allow. No match -> default.
+default: allow
+rules:
+  - id: block-cloud-for-trade-secret
+    when: {classification: TRADE_SECRET, target_runtime: CLOUD}
+    effect: deny
+    reason: trade secrets never leave local infrastructure
+  - id: block-cloud-for-confidential
+    when: {classification: CONFIDENTIAL, target_runtime: CLOUD}
+    effect: deny
+  - id: allow-python-sandbox
+    when: {tool: python.execute, sandboxed: true}
+    effect: allow
+  - id: no-network-tools-in-private
+    when: {network: true, private: true}
+    effect: deny
+    reason: private mode forbids network tools
+  - id: no-side-effects-in-shadow
+    when: {writes: true, shadow: true}
+    effect: deny
+  - id: require-review-for-public-release
+    when: {artifact_has_ip_candidate: true, target: PUBLIC}
+    effect: review

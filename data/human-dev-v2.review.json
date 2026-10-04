@@ -1,0 +1,6 @@
+{
+  "format": "hydra-human-development-review/1",
+  "rows": 1000,
+  "reviewed_by_user": true,
+  "test_excluded": true
+}

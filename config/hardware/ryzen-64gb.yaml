@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+name: ryzen-64gb
+cpu_arch: x86_64
+system_ram_gb: 64
+target_latency_ms: 1500

@@ -1,0 +1,62 @@
+{
+  "format": "hyd-self-learning-round/1",
+  "status": "PREPARED_NOT_TRAINED",
+  "source_manifest_sha256": "f52aec8f298ba2bddc173b11d3cc3bba2976edc28d04fbe53e6bd4e900324684",
+  "source_generator_sha256": "b4e14d0f8ebd971af2c66944b5994f1953cc0aa18de5e2a26f7e05119794919e",
+  "mining_implementation_sha256": "fcacadc7c3f00ac7244ae0efeb4e3d7f485a56bf36683a51a5a345a5243c8592",
+  "model_sha256": "0616432c984c4240e0459a3a4e063d268267a3bcf9a94061e22a458d376629ce",
+  "seed": 42,
+  "files": {
+    "train.jsonl": {
+      "sha256": "2af9b72aafe8bc9abf9b25090384f2b222c6321c7b1243d84400dcd7d1af9bb6",
+      "records": 2620
+    },
+    "calibration.jsonl": {
+      "sha256": "5cd053367712861213bb6f9a90057cbf5072313eefab7f3884980abc3846b4fe",
+      "records": 600
+    },
+    "development.jsonl": {
+      "sha256": "6085f68ef5ea305e9f37e02e3c362d910139d084480b4ce150e8756aa5c3221c",
+      "records": 600
+    },
+    "test.jsonl": {
+      "sha256": "696542999b49a25d3739e5e0c7d9423426cb08efff46797b81736211acca23bb",
+      "records": 600
+    }
+  },
+  "training_examples": 2320,
+  "observed_errors": 1247,
+  "extra_error_copies": 300,
+  "domain_counts": {
+    "lookup:scored": 285,
+    "lookup:errors": 207,
+    "comparison:scored": 289,
+    "comparison:errors": 133,
+    "dates:scored": 292,
+    "dates:errors": 141,
+    "ordinal:scored": 293,
+    "ordinal:errors": 241,
+    "boolean:scored": 293,
+    "boolean:errors": 79,
+    "missing:scored": 292,
+    "missing:errors": 165,
+    "instruction:scored": 288,
+    "instruction:errors": 136,
+    "text_evidence:scored": 288,
+    "text_evidence:errors": 145
+  },
+  "independent_test": false,
+  "training_started": false,
+  "privacy_quarantined_training_records": 80,
+  "privacy_findings": {
+    "phone": 80,
+    "credit_card": 2
+  },
+  "authority_enabled": false,
+  "production_config_changed": false,
+  "limitations": [
+    "Errors mined only from training; evaluation partitions unchanged.",
+    "Replay reweights verified errors, does not create new facts or certify improvement.",
+    "No general runtime feedback admission, online weight updates or automatic promotion."
+  ]
+}

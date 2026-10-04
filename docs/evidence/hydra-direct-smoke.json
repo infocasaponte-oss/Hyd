@@ -1,0 +1,24 @@
+{
+  "backend": "llamacpp",
+  "production_approved": false,
+  "responses": [
+    {
+      "case": "identity",
+      "prompt": "Que é HYDRA e cal é a procedencia do modelo base?",
+      "output": "HYDRA é um sistema de inteligência artificial desenvolvido pela OpenAI, não uma parte integrada da empresa. O modelo base é Qwen, que foi treinado por Alibaba Cloud.",
+      "latency_ms": 674.8975000000428
+    },
+    {
+      "case": "instruction",
+      "prompt": "Responde exactamente: HYDRA",
+      "output": "HYDRA",
+      "latency_ms": 69.55840000000535
+    },
+    {
+      "case": "json",
+      "prompt": "Devuelve solo JSON con \"ok\" igual a true.",
+      "output": "{\"ok\":true}",
+      "latency_ms": 68.20590000006632
+    }
+  ]
+}

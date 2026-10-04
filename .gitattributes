@@ -1,5 +1,12 @@
-*.py text eol=lf
-*.json text eol=lf
-*.jsonl text eol=lf
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Normalise line endings in the repository; shell scripts must stay LF even on Windows checkouts.
+* text=auto eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.gguf binary
+*.safetensors binary
+*.png binary
+*.jpg binary
+*.patch -text
 
 integrations/evaluator-app/*.patch -text whitespace=-blank-at-eol

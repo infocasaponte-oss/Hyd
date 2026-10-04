@@ -1,0 +1,40 @@
+{
+  "id": "chatcmpl-6253d82f-3c34-4476-a84a-07773667094a",
+  "object": "chat.completion",
+  "created": 1790783380,
+  "model": "hydra",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"id\": 41,\n  \"activo\": false\n}\nThis JSON object meets the specified requirements: it contains an `id` of 41 and a `activo` value set to `false`."
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "hydra": {
+    "task_id": "6253d82f-3c34-4476-a84a-07773667094a",
+    "status": "completed",
+    "task_type": "chat",
+    "mode": "balanced",
+    "models_used": [
+      "hydra-instruction-v4-candidate"
+    ],
+    "tools_used": [],
+    "verified": false,
+    "confidence": 0.6147,
+    "latency_ms": 15117.12,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  }
+}
+

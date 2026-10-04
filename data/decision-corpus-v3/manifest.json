@@ -1,0 +1,41 @@
+{
+  "format": "hydra-decision-corpus/3",
+  "version": 3,
+  "training_allowed_splits": [
+    "train"
+  ],
+  "labels": [
+    "abstain",
+    "chat",
+    "coding",
+    "high_risk_review",
+    "privacy",
+    "reasoning",
+    "research",
+    "security",
+    "tool_use",
+    "vision"
+  ],
+  "counts": {
+    "train": 1600,
+    "calibration": 200,
+    "test": 1000
+  },
+  "source": "HYDRA-authored templates; synthetic paraphrase suffixes",
+  "limitations": "Synthetic decision corpus; requires human review before production training.",
+  "files": {
+    "train.jsonl": {
+      "sha256": "fd4fd44f3be47e45e681eea1e045046b48523f1691cc39c43348e9803ae3aa87",
+      "examples": 1600
+    },
+    "calibration.jsonl": {
+      "sha256": "169e28e88596d484b53e1321eda48fea98907990c46c95154e0a4f330c5a14d7",
+      "examples": 200
+    },
+    "test.jsonl": {
+      "sha256": "9d4f8ded8515f5ea76262668d65209f46ea1f28177b9b10690dd469e4182aaed",
+      "examples": 1000
+    }
+  },
+  "corpus_sha256": "b81b75fe3d49e5970500af3aca7f790ce61052611fec26cae98e30afc28c1da6"
+}

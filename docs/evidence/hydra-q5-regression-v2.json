@@ -1,0 +1,170 @@
+{
+  "model": "hydra-q5-candidate",
+  "dataset_sha256": "ee65f4f89d5039daff96727aff83360040d75954f70da83083e00546dd225ed8",
+  "subset": false,
+  "artifact_sha256": "634eb99a1bde8bde375206dabd0bfd45ce5be2106abe55a16dd8a49b97f8a650",
+  "status": "EVALUATED",
+  "approved": false,
+  "cases": [
+    {
+      "id": "deduplicate",
+      "family": "deduplicate",
+      "passed": false,
+      "checks_completed": false,
+      "output": "```python\ndef solve(xs):\n    seen = set()\n    result = []\n    for x in xs:\n        if x not in seen:\n            seen.add(x)\n            result.append(x)\n    return result\n```\n\nEste código define una función `solve` que toma una lista `xs` como entrada y devuelve una nueva lista con los elementos de `xs` sin duplicados, manteniendo la primera aparición de cada elemento. El algoritmo utiliza un conjunto `seen` para rastrear los elementos ya procesados y una lista `result` para almacenar los elementos únicos.",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 12, in <module>\n  File \"<stdin>\", line 5, in solve\nTypeError: unhashable type: 'list'\n",
+      "tokens": 124,
+      "generation_duration_ms": 880.157,
+      "generation_tokens_per_second": 140.88395593058965,
+      "latency_ms": 14365.8
+    },
+    {
+      "id": "runs",
+      "family": "runs",
+      "passed": false,
+      "checks_completed": false,
+      "output": "```python\ndef solve(xs):\n    return [[x, len(list(g))] for x, g in groupby(xs)]\n```\n\nExplicación:\n- `groupby(xs)` divide el iterable `xs` en grupos consecutivos que son iguales.\n- `[x, len(list(g))]` crea una lista con el valor del grupo y la cantidad de elementos en ese grupo.\n- La lista resultante es un listado de estos pares.",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 4, in <module>\n  File \"<stdin>\", line 2, in solve\nNameError: name 'groupby' is not defined\n",
+      "tokens": 94,
+      "generation_duration_ms": 662.459,
+      "generation_tokens_per_second": 141.89557391476302,
+      "latency_ms": 1372.6
+    },
+    {
+      "id": "second_distinct",
+      "family": "second_distinct",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    unique_xs = set(xs)\n    if len(unique_xs) < 2:\n        return None\n    sorted_unique_xs = sorted(unique_xs, reverse=True)\n    return sorted_unique_xs[1]\n```",
+      "stderr": "",
+      "tokens": 55,
+      "generation_duration_ms": 390.469,
+      "generation_tokens_per_second": 140.85625235293966,
+      "latency_ms": 1240.5
+    },
+    {
+      "id": "balanced",
+      "family": "balanced",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    stack = []\n    for char in xs:\n        if char == '(' or char == '[' or char == '{':\n            stack.append(char)\n        elif char == ')' and (not stack or stack.pop() != '('):\n            return False\n        elif char == ']' and (not stack or stack.pop() != '['):\n            return False\n        elif char == '}' and (not stack or stack.pop() != '{'):\n            return False\n    return not stack\n```",
+      "stderr": "",
+      "tokens": 105,
+      "generation_duration_ms": 714.419,
+      "generation_tokens_per_second": 146.9725749175204,
+      "latency_ms": 1405.9
+    },
+    {
+      "id": "merge_intervals",
+      "family": "merge_intervals",
+      "passed": false,
+      "checks_completed": false,
+      "output": "```python\ndef solve(xs):\n    return sorted([min(x[0], y[0]), max(x[1], y[1])] for x, y in zip(xs, xs[1:]))\n```\n\nEste código utiliza la función `zip` para combinar cada elemento de `xs` con el siguiente. Luego, para cada par `(x, y)`, calcula el intervalo cerrado que se solapa o comparte extremo entre ellos usando `min(x[0], y[0])` y `max(x[1], y[1])`. Finalmente, utiliza la función `sorted` para ordenar los intervalos en orden ascendente.",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\nAssertionError\n",
+      "tokens": 140,
+      "generation_duration_ms": 957.562,
+      "generation_tokens_per_second": 146.204632180475,
+      "latency_ms": 1610.6
+    },
+    {
+      "id": "rotate",
+      "family": "rotate",
+      "passed": false,
+      "checks_completed": false,
+      "output": "def solve(xs, k):\n    return xs[-k:] + xs[:-k] if k > 0 else xs[k:] + xs[:k] if k < 0 else xs.copy()",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 3, in <module>\nTypeError: solve() missing 1 required positional argument: 'k'\n",
+      "tokens": 41,
+      "generation_duration_ms": 288.395,
+      "generation_tokens_per_second": 142.16612631980445,
+      "latency_ms": 964.9
+    },
+    {
+      "id": "transpose",
+      "family": "transpose",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    return [list(x) for x in zip(*xs)]\n```\n\nExplicación:\n1. `zip(*xs)` transpone la matriz `xs`. El operador `*` desempaqueta los elementos de cada lista en una tupla, y `zip` une estas tuplas en una sola lista.\n2. `[list(x) for x in zip(*xs)]` convierte cada tupla en una lista.\n\nEste código funciona para transponer cualquier matriz rectangular y devuelve una nueva matriz con las mismas filas pero columnas intercambiadas.",
+      "stderr": "",
+      "tokens": 126,
+      "generation_duration_ms": 865.221,
+      "generation_tokens_per_second": 145.62753331229825,
+      "latency_ms": 1624.4
+    },
+    {
+      "id": "missing_positive",
+      "family": "missing_positive",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    return next((i for i in range(1, 10**6) if i not in xs), None)\n```\n\nEste código utiliza un generador para encontrar el menor entero positivo que no esté en la lista `xs`. El método `next` se usa para obtener el primer valor del generador. Si no hay ningún número que cumpla con esta condición, devuelve `None`.",
+      "stderr": "",
+      "tokens": 93,
+      "generation_duration_ms": 660.506,
+      "generation_tokens_per_second": 140.80114336584376,
+      "latency_ms": 1554.4
+    },
+    {
+      "id": "binary_insert",
+      "family": "binary_insert",
+      "passed": false,
+      "checks_completed": false,
+      "output": "```python\ndef solve(xs):\n    return bisect_left(xs[0], xs[1])\n```",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 4, in <module>\n  File \"<stdin>\", line 2, in solve\nNameError: name 'bisect_left' is not defined\n",
+      "tokens": 22,
+      "generation_duration_ms": 167.008,
+      "generation_tokens_per_second": 131.73021651657405,
+      "latency_ms": 932.0
+    },
+    {
+      "id": "flatten_once",
+      "family": "flatten_once",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    return [item for sublist in xs for item in sublist]\n```\n\nEste código utiliza una comprensión de listas para iterar sobre cada sublista en `xs` y luego sobre cada elemento en cada sublista, creando una nueva lista que contiene todos los elementos sin sub-listas.",
+      "stderr": "",
+      "tokens": 69,
+      "generation_duration_ms": 475.043,
+      "generation_tokens_per_second": 145.25000894655852,
+      "latency_ms": 1120.9
+    },
+    {
+      "id": "prefix",
+      "family": "prefix",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    if not xs:\n        return \"\"\n    \n    prefix = xs[0]\n    for i in range(1, len(xs)):\n        while xs[i].startswith(prefix) == False:\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix\n```\n\nEste código define una función `solve` que toma una lista de cadenas `xs` como entrada. Si la lista está vacía, devuelve una cadena vacía. De lo contrario, itera sobre las cadenas en `xs`, y mientras cada cadena no comience con el prefijo actual, reduce el prefijo hasta que se encuentre un prefijo común o se alcance a una cadena vacía.",
+      "stderr": "",
+      "tokens": 152,
+      "generation_duration_ms": 1081.259,
+      "generation_tokens_per_second": 140.57686456251463,
+      "latency_ms": 1802.4
+    },
+    {
+      "id": "histogram",
+      "family": "histogram",
+      "passed": true,
+      "checks_completed": true,
+      "output": "```python\ndef solve(xs):\n    return {c: xs.count(c) for c in set(xs)}\n```\n\nEste código define una función `solve` que toma una cadena `xs` como entrada y retorna un diccionario donde las claves son los caracteres de la cadena (considerando mayúsculas y espacios) y los valores son el número de veces que cada carácter aparece en la cadena.",
+      "stderr": "",
+      "tokens": 87,
+      "generation_duration_ms": 620.187,
+      "generation_tokens_per_second": 140.28027030556913,
+      "latency_ms": 1390.7
+    }
+  ],
+  "model_identity": {
+    "name": "hydra-q5-candidate:latest",
+    "digest": "eb87140af7ecdc423710f747fda7a28c213ad92c2417731ebf8624d6fe63276a",
+    "artifact_sha256": "634eb99a1bde8bde375206dabd0bfd45ce5be2106abe55a16dd8a49b97f8a650",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "score": 0.5833333333333334
+}

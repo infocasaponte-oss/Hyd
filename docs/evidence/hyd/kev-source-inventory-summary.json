@@ -1,0 +1,10 @@
+{
+  "full_inventory_local_path": "D:/HYDRA/docs/evidence/hyd/kev-source-inventory.json",
+  "files": 3049,
+  "symbols": 1991,
+  "read_errors": 0,
+  "source_root": "D:/kev-main/kev-main",
+  "mode": "Static inventory and focused manual review; no dynamic certification",
+  "python_files": 133,
+  "full_inventory_sha256": "adc32d4c95196bb546552fb64b3f3efc314f161daaab7b05be84ad101dc896d8"
+}

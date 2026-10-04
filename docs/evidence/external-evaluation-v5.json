@@ -1,0 +1,1528 @@
+{
+  "model": "hydra-instruction-v5:latest",
+  "artifact_sha256": "d767e0a1c75cbff78a6b95058f9440217ed24d294f57dd8e0eb1a3970d846e23",
+  "dataset_sha256": "8426e4d949f866f328233a66188ffe04ac9f5db61468d90f785f0e4b6f4bc0bd",
+  "complete": true,
+  "approved": false,
+  "independent_test": false,
+  "cases": [
+    {
+      "id": 1,
+      "automatic_match": false,
+      "output": "1,3,7,9"
+    },
+    {
+      "id": 2,
+      "automatic_match": false,
+      "output": "un experto en el tema."
+    },
+    {
+      "id": 3,
+      "automatic_match": true,
+      "output": "{\"task\":\"eval\",\"level\":3}"
+    },
+    {
+      "id": 4,
+      "automatic_match": true,
+      "output": "20"
+    },
+    {
+      "id": 5,
+      "automatic_match": false,
+      "output": "['mlp', 'moe', 'transformer']"
+    },
+    {
+      "id": 6,
+      "automatic_match": false,
+      "output": "Una instrucción que puede tener múltiples interpretaciones o se entiende de manera diferente dependiendo del contexto."
+    },
+    {
+      "id": 7,
+      "automatic_match": false,
+      "output": "{\"model\":\"Hydra-A\",\"params\":1200000000}"
+    },
+    {
+      "id": 8,
+      "automatic_match": false,
+      "output": "un benchmark debe ser independiente y reproducible."
+    },
+    {
+      "id": 9,
+      "automatic_match": false,
+      "output": "['python', 'go', 'rust']"
+    },
+    {
+      "id": 10,
+      "automatic_match": true,
+      "output": "72"
+    },
+    {
+      "id": 11,
+      "automatic_match": true,
+      "output": "{\"ok\":false,\"msg\":\"faltan datos\"}"
+    },
+    {
+      "id": 12,
+      "automatic_match": false,
+      "output": "Un caso de borde o excepción que ocurre rara vez pero puede ser crucial para el funcionamiento correcto de un programa."
+    },
+    {
+      "id": 13,
+      "automatic_match": false,
+      "output": "['bench', 'test', 'eval']"
+    },
+    {
+      "id": 14,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 15,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_v2\",\"size\":500}"
+    },
+    {
+      "id": 16,
+      "automatic_match": true,
+      "output": "56"
+    },
+    {
+      "id": 17,
+      "automatic_match": false,
+      "output": "['pre', 'mid', 'post']"
+    },
+    {
+      "id": 18,
+      "automatic_match": false,
+      "output": "A hallucination is a mental phenomenon where an individual perceives something that does not exist in reality."
+    },
+    {
+      "id": 19,
+      "automatic_match": true,
+      "output": "{\"role\":\"annotator\",\"exp\":2}"
+    },
+    {
+      "id": 20,
+      "automatic_match": true,
+      "output": "[0.1,0.2,0.4,0.9]"
+    },
+    {
+      "id": 21,
+      "automatic_match": false,
+      "output": "dificiles"
+    },
+    {
+      "id": 22,
+      "automatic_match": true,
+      "output": "5"
+    },
+    {
+      "id": 23,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"mode\":\"train\"}"
+    },
+    {
+      "id": 24,
+      "automatic_match": false,
+      "output": "Robustez es la capacidad de manejar situaciones adversas y mantenerse a salvo."
+    },
+    {
+      "id": 25,
+      "automatic_match": false,
+      "output": "['aa', 'ccc', 'bbbb']"
+    },
+    {
+      "id": 26,
+      "automatic_match": false,
+      "output": "entorno de entrenamiento"
+    },
+    {
+      "id": 27,
+      "automatic_match": true,
+      "output": "{\"id\":7,\"status\":\"ok\"}"
+    },
+    {
+      "id": 28,
+      "automatic_match": true,
+      "output": "0.3"
+    },
+    {
+      "id": 29,
+      "automatic_match": false,
+      "output": "Una instrucción que falta detalles o especificaciones."
+    },
+    {
+      "id": 30,
+      "automatic_match": true,
+      "output": "[5, 3, 2, 1]"
+    },
+    {
+      "id": 31,
+      "automatic_match": true,
+      "output": "{\"name\":\"case01\",\"steps\":[\"prep\",\"eval\"]}"
+    },
+    {
+      "id": 32,
+      "automatic_match": false,
+      "output": "eficaz"
+    },
+    {
+      "id": 33,
+      "automatic_match": true,
+      "output": "121"
+    },
+    {
+      "id": 34,
+      "automatic_match": false,
+      "output": "Ambigüedad controlada es el proceso de identificar y resolver conflictos o confusiones que puedan surgir debido a la naturaleza de un sistema o situación, manteniendo claridad y precisión."
+    },
+    {
+      "id": 35,
+      "automatic_match": true,
+      "output": "{\"label\":\"error\",\"severity\":\"low\"}"
+    },
+    {
+      "id": 36,
+      "automatic_match": false,
+      "output": "['celtia', 'grok', 'hydra']"
+    },
+    {
+      "id": 37,
+      "automatic_match": false,
+      "output": "completa"
+    },
+    {
+      "id": 38,
+      "automatic_match": true,
+      "output": "75"
+    },
+    {
+      "id": 39,
+      "automatic_match": false,
+      "output": "Consistencia inter-evaluador implica que los evaluadores sigan un mismo criterio y procedimiento para evaluar el trabajo de los estudiantes o trabajos de otros profesionales."
+    },
+    {
+      "id": 40,
+      "automatic_match": true,
+      "output": "{\"prompt_len\":64,\"max_tokens\":128}"
+    },
+    {
+      "id": 41,
+      "automatic_match": false,
+      "output": "['cccc', 'b', 'aaa']"
+    },
+    {
+      "id": 42,
+      "automatic_match": false,
+      "output": "establecido"
+    },
+    {
+      "id": 43,
+      "automatic_match": true,
+      "output": "12"
+    },
+    {
+      "id": 44,
+      "automatic_match": false,
+      "output": "Sesgo de anotación es un tipo de desequilibrio entre el valor y el peso de los elementos o características que se mencionan en una descripción o análisis."
+    },
+    {
+      "id": 45,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"math\",\"difficulty\":2}"
+    },
+    {
+      "id": 46,
+      "automatic_match": true,
+      "output": "[3,7,7,9]"
+    },
+    {
+      "id": 47,
+      "automatic_match": false,
+      "output": "detallada"
+    },
+    {
+      "id": 48,
+      "automatic_match": true,
+      "output": "2"
+    },
+    {
+      "id": 49,
+      "automatic_match": false,
+      "output": "La evaluación híbrida combina elementos de evaluación tradicional con técnicas de inteligencia artificial para obtener un resultado más preciso y completo."
+    },
+    {
+      "id": 50,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"details\":\"done\"}"
+    },
+    {
+      "id": 51,
+      "automatic_match": false,
+      "output": "['input', 'process', 'output']"
+    },
+    {
+      "id": 52,
+      "automatic_match": false,
+      "output": "la confusión"
+    },
+    {
+      "id": 53,
+      "automatic_match": true,
+      "output": "88"
+    },
+    {
+      "id": 54,
+      "automatic_match": false,
+      "output": "Una instrucción que contradice o contravaer a otra."
+    },
+    {
+      "id": 55,
+      "automatic_match": true,
+      "output": "{\"model\":\"Hydra-B\",\"gpu\":\"A100\"}"
+    },
+    {
+      "id": 56,
+      "automatic_match": false,
+      "output": "['x', 'y', 'z']"
+    },
+    {
+      "id": 57,
+      "automatic_match": false,
+      "output": "completada"
+    },
+    {
+      "id": 58,
+      "automatic_match": true,
+      "output": "48"
+    },
+    {
+      "id": 59,
+      "automatic_match": false,
+      "output": "Una evaluación ciega es una forma de hacer deciciones basadas en información confusa o equivocada, lo que puede llevar a errores y decisiones mal informadas."
+    },
+    {
+      "id": 60,
+      "automatic_match": true,
+      "output": "{\"id\":3,\"errors\":[]}"
+    },
+    {
+      "id": 61,
+      "automatic_match": false,
+      "output": "['ai', 'hydra', 'eval']"
+    },
+    {
+      "id": 62,
+      "automatic_match": false,
+      "output": "completo"
+    },
+    {
+      "id": 63,
+      "automatic_match": true,
+      "output": "0.6"
+    },
+    {
+      "id": 64,
+      "automatic_match": false,
+      "output": "Una instrucción mínima es un comando o orden que requiere el menor número de elementos para ser efectiva."
+    },
+    {
+      "id": 65,
+      "automatic_match": true,
+      "output": "{\"task\":\"score\",\"value\":10}"
+    },
+    {
+      "id": 66,
+      "automatic_match": true,
+      "output": "[3.3,2.2,1.1]"
+    },
+    {
+      "id": 67,
+      "automatic_match": false,
+      "output": "completa"
+    },
+    {
+      "id": 68,
+      "automatic_match": true,
+      "output": "9"
+    },
+    {
+      "id": 69,
+      "automatic_match": false,
+      "output": "La evaluación incremental se refiere a un proceso de evaluación continuo que permite identificar y mejorar gradualmente los desafíos y áreas de mejora en un proyecto o proceso."
+    },
+    {
+      "id": 70,
+      "automatic_match": true,
+      "output": "{\"mode\":\"infer\",\"batch\":4}"
+    },
+    {
+      "id": 71,
+      "automatic_match": false,
+      "output": "['alto', 'medio', 'bajo']"
+    },
+    {
+      "id": 72,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 73,
+      "automatic_match": true,
+      "output": "201"
+    },
+    {
+      "id": 74,
+      "automatic_match": false,
+      "output": "Una instrucción que se repite o es innecesaria."
+    },
+    {
+      "id": 75,
+      "automatic_match": true,
+      "output": "{\"label\":\"warning\",\"code\":101}"
+    },
+    {
+      "id": 76,
+      "automatic_match": true,
+      "output": "[2,2,8,10]"
+    },
+    {
+      "id": 77,
+      "automatic_match": false,
+      "output": "ciclos de conflicto"
+    },
+    {
+      "id": 78,
+      "automatic_match": true,
+      "output": "36"
+    },
+    {
+      "id": 79,
+      "automatic_match": false,
+      "output": "La evaluación se realiza simultáneamente en varias áreas o fases para obtener un resultado más completo y precisa."
+    },
+    {
+      "id": 80,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_mix\",\"count\":250}"
+    },
+    {
+      "id": 81,
+      "automatic_match": false,
+      "output": "['ml', 'ai', 'hydra']"
+    },
+    {
+      "id": 82,
+      "automatic_match": false,
+      "output": "comprensible"
+    },
+    {
+      "id": 83,
+      "automatic_match": true,
+      "output": "377"
+    },
+    {
+      "id": 84,
+      "automatic_match": false,
+      "output": "Una instrucción que requiere varios pasos para completarse."
+    },
+    {
+      "id": 85,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"threads\":2}"
+    },
+    {
+      "id": 86,
+      "automatic_match": false,
+      "output": "['annot', 'eval', 'score']"
+    },
+    {
+      "id": 87,
+      "automatic_match": false,
+      "output": "verificable"
+    },
+    {
+      "id": 88,
+      "automatic_match": true,
+      "output": "21"
+    },
+    {
+      "id": 89,
+      "automatic_match": false,
+      "output": "La evaluación adversarial es un proceso de comparar dos o más opciones para determinar cuál es la mejor."
+    },
+    {
+      "id": 90,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"msg\":\"valid\"}"
+    },
+    {
+      "id": 91,
+      "automatic_match": false,
+      "output": "['x', 'xx', 'xxxx']"
+    },
+    {
+      "id": 92,
+      "automatic_match": false,
+      "output": "la repetición de preguntas."
+    },
+    {
+      "id": 93,
+      "automatic_match": true,
+      "output": "30"
+    },
+    {
+      "id": 94,
+      "automatic_match": false,
+      "output": "Una instrucción que se basa en el contexto o las circunstancias actuales."
+    },
+    {
+      "id": 95,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"text\",\"lang\":\"es\"}"
+    },
+    {
+      "id": 96,
+      "automatic_match": true,
+      "output": "[100, 75, 50]"
+    },
+    {
+      "id": 97,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 98,
+      "automatic_match": true,
+      "output": "1.0"
+    },
+    {
+      "id": 99,
+      "automatic_match": false,
+      "output": "La evaluación se realiza de manera secuencial, paso a paso."
+    },
+    {
+      "id": 100,
+      "automatic_match": true,
+      "output": "{\"task\":\"validate\",\"ok\":true}"
+    },
+    {
+      "id": 101,
+      "automatic_match": true,
+      "output": "[4,4,9,12]"
+    },
+    {
+      "id": 102,
+      "automatic_match": false,
+      "output": "objetivo"
+    },
+    {
+      "id": 103,
+      "automatic_match": true,
+      "output": "{\"task\":\"check\",\"priority\":1}"
+    },
+    {
+      "id": 104,
+      "automatic_match": true,
+      "output": "50"
+    },
+    {
+      "id": 105,
+      "automatic_match": false,
+      "output": "['xl', 'hydra', 'moe']"
+    },
+    {
+      "id": 106,
+      "automatic_match": false,
+      "output": "Una instrucción que es poco precisa o específica."
+    },
+    {
+      "id": 107,
+      "automatic_match": false,
+      "output": "{\"model\":\"Hydra-C\",\"params\":24000000}"
+    },
+    {
+      "id": 108,
+      "automatic_match": false,
+      "output": "un dataset debe ser completo y amplio"
+    },
+    {
+      "id": 109,
+      "automatic_match": false,
+      "output": "['gamma', 'beta', 'alpha']"
+    },
+    {
+      "id": 110,
+      "automatic_match": true,
+      "output": "52"
+    },
+    {
+      "id": 111,
+      "automatic_match": true,
+      "output": "{\"ok\":false,\"reason\":\"invalid\"}"
+    },
+    {
+      "id": 112,
+      "automatic_match": false,
+      "output": "El punto de inflexión o punto de equilibrio en un proceso o situación."
+    },
+    {
+      "id": 113,
+      "automatic_match": false,
+      "output": "['b', 'ccc', 'aaa']"
+    },
+    {
+      "id": 114,
+      "automatic_match": false,
+      "output": "constante"
+    },
+    {
+      "id": 115,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_v3\",\"size\":750}"
+    },
+    {
+      "id": 116,
+      "automatic_match": true,
+      "output": "112"
+    },
+    {
+      "id": 117,
+      "automatic_match": false,
+      "output": "['start', 'middle', 'end']"
+    },
+    {
+      "id": 118,
+      "automatic_match": false,
+      "output": "La respuesta inventada es un término que se utiliza para describir una respuesta o información que no ha sido proporcionada por el usuario o el sistema."
+    },
+    {
+      "id": 119,
+      "automatic_match": true,
+      "output": "{\"role\":\"reviewer\",\"exp\":5}"
+    },
+    {
+      "id": 120,
+      "automatic_match": true,
+      "output": "[0.3,0.7,0.9]"
+    },
+    {
+      "id": 121,
+      "automatic_match": false,
+      "output": "de prueba"
+    },
+    {
+      "id": 122,
+      "automatic_match": false,
+      "output": "15"
+    },
+    {
+      "id": 123,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"mode\":\"eval\"}"
+    },
+    {
+      "id": 124,
+      "automatic_match": false,
+      "output": "Robustez extrema es la capacidad de resistir o superar las adversidades y desafíos con eficiencia y confianza."
+    },
+    {
+      "id": 125,
+      "automatic_match": false,
+      "output": "['ai', 'mlp', 'hydra']"
+    },
+    {
+      "id": 126,
+      "automatic_match": false,
+      "output": "verificable"
+    },
+    {
+      "id": 127,
+      "automatic_match": true,
+      "output": "{\"id\":9,\"status\":\"pending\"}"
+    },
+    {
+      "id": 128,
+      "automatic_match": true,
+      "output": "0.5"
+    },
+    {
+      "id": 129,
+      "automatic_match": false,
+      "output": "Una instrucción parcial es un fragmento de texto o comando que contiene solo parte de lo que se desea hacer."
+    },
+    {
+      "id": 130,
+      "automatic_match": true,
+      "output": "[9,5,2,1]"
+    },
+    {
+      "id": 131,
+      "automatic_match": true,
+      "output": "{\"name\":\"case02\",\"steps\":[\"load\",\"run\"]}"
+    },
+    {
+      "id": 132,
+      "automatic_match": false,
+      "output": "eficaz"
+    },
+    {
+      "id": 133,
+      "automatic_match": false,
+      "output": "14*14"
+    },
+    {
+      "id": 134,
+      "automatic_match": false,
+      "output": "La ambigüedad leve se refiere a situaciones donde el significado es claro y fácil de entender, pero no tan clara como en un caso de alta ambigüedad."
+    },
+    {
+      "id": 135,
+      "automatic_match": true,
+      "output": "{\"label\":\"critical\",\"severity\":\"high\"}"
+    },
+    {
+      "id": 136,
+      "automatic_match": false,
+      "output": "['alpha', 'delta', 'epsilon']"
+    },
+    {
+      "id": 137,
+      "automatic_match": false,
+      "output": "completa"
+    },
+    {
+      "id": 138,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 139,
+      "automatic_match": false,
+      "output": "Consistencia absoluta es un estado de equilibrio y uniformidad en todo lo que se hace o dice."
+    },
+    {
+      "id": 140,
+      "automatic_match": true,
+      "output": "{\"prompt_len\":32,\"max_tokens\":64}"
+    },
+    {
+      "id": 141,
+      "automatic_match": false,
+      "output": "['bbbb', 'aaa', 'c']"
+    },
+    {
+      "id": 142,
+      "automatic_match": false,
+      "output": "claro"
+    },
+    {
+      "id": 143,
+      "automatic_match": true,
+      "output": "15"
+    },
+    {
+      "id": 144,
+      "automatic_match": false,
+      "output": "Un desafío oculto que puede afectar a las decisiones de alguien."
+    },
+    {
+      "id": 145,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"logic\",\"difficulty\":3}"
+    },
+    {
+      "id": 146,
+      "automatic_match": true,
+      "output": "[1,3,8,8]"
+    },
+    {
+      "id": 147,
+      "automatic_match": false,
+      "output": "la confusión"
+    },
+    {
+      "id": 148,
+      "automatic_match": true,
+      "output": "81"
+    },
+    {
+      "id": 149,
+      "automatic_match": false,
+      "output": "La evaluación masiva es un proceso de análisis o evaluación generalizado sobre una gran cantidad de datos o información."
+    },
+    {
+      "id": 150,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_mix2\",\"count\":300}"
+    },
+    {
+      "id": 151,
+      "automatic_match": false,
+      "output": "['ml', 'x', 'hydra']"
+    },
+    {
+      "id": 152,
+      "automatic_match": false,
+      "output": "directa"
+    },
+    {
+      "id": 153,
+      "automatic_match": true,
+      "output": "667"
+    },
+    {
+      "id": 154,
+      "automatic_match": false,
+      "output": "Una instrucción secuencial es un orden de acciones que se ejecutan uno a continuación del otro, siguiendo un patrón predefinido."
+    },
+    {
+      "id": 155,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"threads\":8}"
+    },
+    {
+      "id": 156,
+      "automatic_match": false,
+      "output": "['eval', 'prep', 'run']"
+    },
+    {
+      "id": 157,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 158,
+      "automatic_match": true,
+      "output": "36"
+    },
+    {
+      "id": 159,
+      "automatic_match": false,
+      "output": "La evaluación agresiva es un método de evaluación que se caracteriza por ser severo y desafiante, con el objetivo de hacer al estudiante o al grupo responder a las preguntas o ejercicios de manera inmediata."
+    },
+    {
+      "id": 160,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"msg\":\"ready\"}"
+    },
+    {
+      "id": 161,
+      "automatic_match": false,
+      "output": "['xx', 'x', 'xxxx']"
+    },
+    {
+      "id": 162,
+      "automatic_match": false,
+      "output": "repetible"
+    },
+    {
+      "id": 163,
+      "automatic_match": true,
+      "output": "80"
+    },
+    {
+      "id": 164,
+      "automatic_match": false,
+      "output": "Una instrucción es dependiente del contexto porque su significado puede variar según el entorno o las circunstancias específicas en las que se aplique."
+    },
+    {
+      "id": 165,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"code\",\"lang\":\"rust\"}"
+    },
+    {
+      "id": 166,
+      "automatic_match": true,
+      "output": "[44, 22, 11]"
+    },
+    {
+      "id": 167,
+      "automatic_match": false,
+      "output": "objetiva"
+    },
+    {
+      "id": 168,
+      "automatic_match": true,
+      "output": "1.0"
+    },
+    {
+      "id": 169,
+      "automatic_match": false,
+      "output": "La evaluación se realiza de manera repetida para obtener resultados precisos y ajustar los planes según las necesidades."
+    },
+    {
+      "id": 170,
+      "automatic_match": true,
+      "output": "{\"task\":\"validate\",\"ok\":false}"
+    },
+    {
+      "id": 171,
+      "automatic_match": false,
+      "output": "['low', 'mid', 'high']"
+    },
+    {
+      "id": 172,
+      "automatic_match": false,
+      "output": "completo"
+    },
+    {
+      "id": 173,
+      "automatic_match": true,
+      "output": "1000"
+    },
+    {
+      "id": 174,
+      "automatic_match": false,
+      "output": "Una simple sugerencia."
+    },
+    {
+      "id": 175,
+      "automatic_match": true,
+      "output": "{\"label\":\"notice\",\"code\":202}"
+    },
+    {
+      "id": 176,
+      "automatic_match": true,
+      "output": "[7,7,14,21]"
+    },
+    {
+      "id": 177,
+      "automatic_match": false,
+      "output": "ciclos de conflicto"
+    },
+    {
+      "id": 178,
+      "automatic_match": true,
+      "output": "36"
+    },
+    {
+      "id": 179,
+      "automatic_match": false,
+      "output": "La evaluación paralela masiva se refiere a la realización de tareas o procesos simultáneamente en múltiples entornos o computadoras para aumentar el rendimiento y eficiencia."
+    },
+    {
+      "id": 180,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_eval\",\"count\":900}"
+    },
+    {
+      "id": 181,
+      "automatic_match": false,
+      "output": "['hydra','a','ml']"
+    },
+    {
+      "id": 182,
+      "automatic_match": false,
+      "output": "veraz"
+    },
+    {
+      "id": 183,
+      "automatic_match": true,
+      "output": "998"
+    },
+    {
+      "id": 184,
+      "automatic_match": false,
+      "output": "Una instrucción multicontexto es un comando o directiva que puede aplicarse a diferentes situaciones o entornos."
+    },
+    {
+      "id": 185,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"threads\":16}"
+    },
+    {
+      "id": 186,
+      "automatic_match": false,
+      "output": "['annot', 'eval', 'score']"
+    },
+    {
+      "id": 187,
+      "automatic_match": false,
+      "output": "\"La anotación debe ser precisa y clara\"."
+    },
+    {
+      "id": 188,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 189,
+      "automatic_match": false,
+      "output": "La evaluación adversarial profunda es un método de entrenamiento que busca mejorar el rendimiento de modelos de aprendizaje automático en situaciones donde los datos son manipulados por entornos adversarios."
+    },
+    {
+      "id": 190,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"msg\":\"synced\"}"
+    },
+    {
+      "id": 191,
+      "automatic_match": false,
+      "output": "['x', 'xxx', 'xxxxx']"
+    },
+    {
+      "id": 192,
+      "automatic_match": false,
+      "output": "completo"
+    },
+    {
+      "id": 193,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 194,
+      "automatic_match": false,
+      "output": "Una instrucción es dependiente del orden en que se realiza."
+    },
+    {
+      "id": 195,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"text\",\"lang\":\"en\"}"
+    },
+    {
+      "id": 196,
+      "automatic_match": false,
+      "output": "[300, 250, 150]"
+    },
+    {
+      "id": 197,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 198,
+      "automatic_match": true,
+      "output": "1.0"
+    },
+    {
+      "id": 199,
+      "automatic_match": false,
+      "output": "La evaluación se realiza de manera sistemática y detallada."
+    },
+    {
+      "id": 200,
+      "automatic_match": true,
+      "output": "{\"task\":\"audit\",\"ok\":true}"
+    },
+    {
+      "id": 201,
+      "automatic_match": true,
+      "output": "[1,3,3,9]"
+    },
+    {
+      "id": 202,
+      "automatic_match": false,
+      "output": "la confusión"
+    },
+    {
+      "id": 203,
+      "automatic_match": true,
+      "output": "{\"task\":\"merge\",\"count\":2}"
+    },
+    {
+      "id": 204,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 205,
+      "automatic_match": false,
+      "output": "['moe', 'xl', 'hydra']"
+    },
+    {
+      "id": 206,
+      "automatic_match": false,
+      "output": "Una instrucción ambigua fuerte puede ser confusa y difícil de entender, especialmente para personas que no tienen experiencia con el tema o contexto específico."
+    },
+    {
+      "id": 207,
+      "automatic_match": true,
+      "output": "{\"model\":\"Hydra-D\",\"params\":48e9}"
+    },
+    {
+      "id": 208,
+      "automatic_match": false,
+      "output": "dividido"
+    },
+    {
+      "id": 209,
+      "automatic_match": false,
+      "output": "['tres', 'dos', 'uno']"
+    },
+    {
+      "id": 210,
+      "automatic_match": true,
+      "output": "56"
+    },
+    {
+      "id": 211,
+      "automatic_match": true,
+      "output": "{\"ok\":false,\"reason\":\"missing\"}"
+    },
+    {
+      "id": 212,
+      "automatic_match": false,
+      "output": "Un evento o situación que es extremadamente grave, peligroso, o inesperado."
+    },
+    {
+      "id": 213,
+      "automatic_match": false,
+      "output": "['bb', 'aaaa', 'c']"
+    },
+    {
+      "id": 214,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 215,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_v4\",\"size\":1200}"
+    },
+    {
+      "id": 216,
+      "automatic_match": true,
+      "output": "189"
+    },
+    {
+      "id": 217,
+      "automatic_match": false,
+      "output": "['alpha', 'beta', 'gamma']"
+    },
+    {
+      "id": 218,
+      "automatic_match": false,
+      "output": "La respuesta es basada en un supuesto conocimiento incorrecto."
+    },
+    {
+      "id": 219,
+      "automatic_match": true,
+      "output": "{\"role\":\"judge\",\"exp\":4}"
+    },
+    {
+      "id": 220,
+      "automatic_match": true,
+      "output": "[0.1,0.5,0.8]"
+    },
+    {
+      "id": 221,
+      "automatic_match": false,
+      "output": "de prueba"
+    },
+    {
+      "id": 222,
+      "automatic_match": false,
+      "output": "5.10"
+    },
+    {
+      "id": 223,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"mode\":\"stress\"}"
+    },
+    {
+      "id": 224,
+      "automatic_match": false,
+      "output": "Robustez contextual se refiere a la capacidad de un sistema o proceso para manejar situaciones y entornos variados de manera efectiva y eficiente."
+    },
+    {
+      "id": 225,
+      "automatic_match": false,
+      "output": "['x', 'xx', 'xxxx']"
+    },
+    {
+      "id": 226,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 227,
+      "automatic_match": true,
+      "output": "{\"id\":11,\"status\":\"queued\"}"
+    },
+    {
+      "id": 228,
+      "automatic_match": true,
+      "output": "1.0"
+    },
+    {
+      "id": 229,
+      "automatic_match": false,
+      "output": "Una instrucción corta o incompleta."
+    },
+    {
+      "id": 230,
+      "automatic_match": true,
+      "output": "[9, 9, 4, 2]"
+    },
+    {
+      "id": 231,
+      "automatic_match": true,
+      "output": "{\"name\":\"case03\",\"steps\":[\"init\",\"eval\"]}"
+    },
+    {
+      "id": 232,
+      "automatic_match": false,
+      "output": "eficaz"
+    },
+    {
+      "id": 233,
+      "automatic_match": true,
+      "output": "36"
+    },
+    {
+      "id": 234,
+      "automatic_match": false,
+      "output": "Ambigüedad contextual se refiere a la incertidumbre o confusión que puede surgir cuando un término o concepto es utilizado de manera diferente en diferentes contextos, lo cual puede llevar a interpretaciones contradictorias."
+    },
+    {
+      "id": 235,
+      "automatic_match": true,
+      "output": "{\"label\":\"alert\",\"severity\":\"medium\"}"
+    },
+    {
+      "id": 236,
+      "automatic_match": false,
+      "output": "['a', 'b', 'c']"
+    },
+    {
+      "id": 237,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 238,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 239,
+      "automatic_match": false,
+      "output": "Consistencia parcial se refiere a un estado de desorden o inconsistencia en algo, pero que no es total ni completo."
+    },
+    {
+      "id": 240,
+      "automatic_match": true,
+      "output": "{\"prompt_len\":48,\"max_tokens\":96}"
+    },
+    {
+      "id": 241,
+      "automatic_match": false,
+      "output": "['ccc', 'aa', 'bb']"
+    },
+    {
+      "id": 242,
+      "automatic_match": false,
+      "output": "verificado"
+    },
+    {
+      "id": 243,
+      "automatic_match": true,
+      "output": "15"
+    },
+    {
+      "id": 244,
+      "automatic_match": false,
+      "output": "Sesgo leve es un tipo de desequilibrio entre dos elementos o características, que puede ser positivo o negativo, pero no muy significativo o notorio."
+    },
+    {
+      "id": 245,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"math\",\"difficulty\":1}"
+    },
+    {
+      "id": 246,
+      "automatic_match": true,
+      "output": "[1,3,11,11]"
+    },
+    {
+      "id": 247,
+      "automatic_match": false,
+      "output": "la confusión"
+    },
+    {
+      "id": 248,
+      "automatic_match": true,
+      "output": "64"
+    },
+    {
+      "id": 249,
+      "automatic_match": false,
+      "output": "La evaluación de gran cantidad de datos simultáneamente en múltiples procesadores."
+    },
+    {
+      "id": 250,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_mix3\",\"count\":450}"
+    },
+    {
+      "id": 251,
+      "automatic_match": false,
+      "output": "['go', 'ml', 'hydra']"
+    },
+    {
+      "id": 252,
+      "automatic_match": false,
+      "output": "clara"
+    },
+    {
+      "id": 253,
+      "automatic_match": true,
+      "output": "478"
+    },
+    {
+      "id": 254,
+      "automatic_match": false,
+      "output": "Una instrucción que requiere varios pasos y puede variar según las condiciones o los resultados de los anteriores pasos."
+    },
+    {
+      "id": 255,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"threads\":32}"
+    },
+    {
+      "id": 256,
+      "automatic_match": false,
+      "output": "['annot', 'eval', 'run']"
+    },
+    {
+      "id": 257,
+      "automatic_match": false,
+      "output": "verificable"
+    },
+    {
+      "id": 258,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 259,
+      "automatic_match": false,
+      "output": "La evaluación adversarial ligera es un tipo de prueba que busca detectar errores o vulnerabilidades en el sistema, pero con menor impacto en la operatividad real del usuario."
+    },
+    {
+      "id": 260,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"msg\":\"done\"}"
+    },
+    {
+      "id": 261,
+      "automatic_match": false,
+      "output": "['xxx', 'xxxxx', 'x']"
+    },
+    {
+      "id": 262,
+      "automatic_match": false,
+      "output": "correcto"
+    },
+    {
+      "id": 263,
+      "automatic_match": true,
+      "output": "90"
+    },
+    {
+      "id": 264,
+      "automatic_match": false,
+      "output": "Una instrucción es dependiente del orden estricto si se ejecuta de manera secuencial o en un orden específico."
+    },
+    {
+      "id": 265,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"code\",\"lang\":\"python\"}"
+    },
+    {
+      "id": 266,
+      "automatic_match": true,
+      "output": "[500, 250, 125]"
+    },
+    {
+      "id": 267,
+      "automatic_match": false,
+      "output": "precisa"
+    },
+    {
+      "id": 268,
+      "automatic_match": true,
+      "output": "1.00"
+    },
+    {
+      "id": 269,
+      "automatic_match": false,
+      "output": "La evaluación iterativa profunda se refiere a un proceso de análisis y evaluación continuo que busca identificar y mejorar las características o desafíos de un sistema, producto o servicio."
+    },
+    {
+      "id": 270,
+      "automatic_match": true,
+      "output": "{\"task\":\"validate\",\"ok\":true}"
+    },
+    {
+      "id": 271,
+      "automatic_match": false,
+      "output": "['min', 'mid', 'max']"
+    },
+    {
+      "id": 272,
+      "automatic_match": false,
+      "output": "claro"
+    },
+    {
+      "id": 273,
+      "automatic_match": true,
+      "output": "500"
+    },
+    {
+      "id": 274,
+      "automatic_match": false,
+      "output": "Una instrucción que es repetitiva y excesivamente clara."
+    },
+    {
+      "id": 275,
+      "automatic_match": true,
+      "output": "{\"label\":\"info\",\"code\":303}"
+    },
+    {
+      "id": 276,
+      "automatic_match": true,
+      "output": "[7,7,14,21]"
+    },
+    {
+      "id": 277,
+      "automatic_match": false,
+      "output": "ciclos de conflicto"
+    },
+    {
+      "id": 278,
+      "automatic_match": true,
+      "output": "88"
+    },
+    {
+      "id": 279,
+      "automatic_match": false,
+      "output": "La evaluación de tareas se realiza simultáneamente en múltiples computadoras para mejorar el rendimiento y la eficiencia."
+    },
+    {
+      "id": 280,
+      "automatic_match": true,
+      "output": "{\"dataset\":\"hydra_eval2\",\"count\":1100}"
+    },
+    {
+      "id": 281,
+      "automatic_match": false,
+      "output": "['ml', 'ai', 'hydra']"
+    },
+    {
+      "id": 282,
+      "automatic_match": false,
+      "output": "directa"
+    },
+    {
+      "id": 283,
+      "automatic_match": true,
+      "output": "444"
+    },
+    {
+      "id": 284,
+      "automatic_match": false,
+      "output": "Una instrucción que puede aplicarse a diferentes contextos y requiere adaptación según el contexto específico."
+    },
+    {
+      "id": 285,
+      "automatic_match": true,
+      "output": "{\"engine\":\"hydra\",\"threads\":64}"
+    },
+    {
+      "id": 286,
+      "automatic_match": false,
+      "output": "['annot', 'eval', 'score']"
+    },
+    {
+      "id": 287,
+      "automatic_match": false,
+      "output": "correcta"
+    },
+    {
+      "id": 288,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 289,
+      "automatic_match": false,
+      "output": "La evaluación adversarial extrema es un tipo de prueba de seguridad que busca identificar vulnerabilidades en sistemas y aplicaciones, especialmente en la industria financiera y bancaria."
+    },
+    {
+      "id": 290,
+      "automatic_match": true,
+      "output": "{\"ok\":true,\"msg\":\"synced\"}"
+    },
+    {
+      "id": 291,
+      "automatic_match": false,
+      "output": "['x', 'xx', 'xxxxxx']"
+    },
+    {
+      "id": 292,
+      "automatic_match": false,
+      "output": "completo"
+    },
+    {
+      "id": 293,
+      "automatic_match": true,
+      "output": "100"
+    },
+    {
+      "id": 294,
+      "automatic_match": false,
+      "output": "Una instrucción es dependiente del flujo de trabajo o contexto actual."
+    },
+    {
+      "id": 295,
+      "automatic_match": true,
+      "output": "{\"scenario\":\"text\",\"lang\":\"fr\"}"
+    },
+    {
+      "id": 296,
+      "automatic_match": true,
+      "output": "[600, 300, 150]"
+    },
+    {
+      "id": 297,
+      "automatic_match": false,
+      "output": "constante"
+    },
+    {
+      "id": 298,
+      "automatic_match": false,
+      "output": "0.90"
+    },
+    {
+      "id": 299,
+      "automatic_match": false,
+      "output": "La evaluación se realiza de manera excesiva y rigurosa."
+    },
+    {
+      "id": 300,
+      "automatic_match": true,
+      "output": "{\"task\":\"audit\",\"ok\":false}"
+    }
+  ],
+  "scope": "user supplied references; semantic and ambiguous cases require human review",
+  "identity": {
+    "name": "hydra-instruction-v5:latest",
+    "digest": "c6b7a825404c815fef2bb9965457f9ccad5164366faf1e5bc04dec78027a3f34",
+    "artifact_sha256": "d767e0a1c75cbff78a6b95058f9440217ed24d294f57dd8e0eb1a3970d846e23",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "total": 300,
+  "automatic_matches": 136
+}

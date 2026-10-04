@@ -1,0 +1,91 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+#
+# HYDRA model registry. HYDRA only reasons about capabilities, never brands.
+#   id             logical name used inside HYDRA
+#   runtime_model  name of the model on the physical runtime
+#   endpoint       dedicated runtime URL (one vLLM server per model); ${VAR:-default} is expanded
+#   tier           1 tiny .. 5 frontier (smart escalation: 3B -> 8B -> 32B -> large -> ensemble)
+# Capability numbers are priors: HYDRA replaces them with learned statistics.
+#
+# provider: ollama | vllm | llamacpp | cloud | mock
+
+models:
+
+  - id: reflex-3b
+    provider: ollama
+    runtime_model: qwen2.5:3b
+    local: true
+    tier: 1
+    context_window: 32768
+    capabilities: {chat: 0.72, reasoning: 0.55, coding: 0.58, vision: 0.0, tools: 0.70, research: 0.50, routing: 0.92}
+    estimated_latency_ms: 300
+
+  - id: fast-local
+    provider: ollama
+    runtime_model: llama3.1:8b
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.80, reasoning: 0.66, coding: 0.68, vision: 0.0, tools: 0.80, research: 0.60, routing: 0.85}
+    estimated_latency_ms: 600
+
+  # Internal coding backend selected by HYDRA; HYDRA remains the public primary.
+  - id: qwen2.5-coder-7b
+    provider: ollama
+    runtime_model: qwen2.5-coder:7b
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.72, reasoning: 0.68, coding: 0.86, vision: 0.0, tools: 0.80, research: 0.60}
+    estimated_latency_ms: 1200
+    quirks: {native_json_schema: true, native_tools: true}
+
+  - id: coder-local
+    provider: vllm
+    runtime_model: Qwen/Qwen2.5-Coder-32B-Instruct
+    endpoint: ${HYDRA_VLLM_CODER_URL:-http://localhost:8001/v1}
+    local: true
+    tier: 3
+    context_window: 131072
+    capabilities: {chat: 0.82, reasoning: 0.84, coding: 0.94, vision: 0.0, tools: 0.90, research: 0.70}
+    estimated_latency_ms: 1400
+
+  - id: deep-reasoner
+    provider: vllm
+    runtime_model: Qwen/Qwen3-32B
+    endpoint: ${HYDRA_VLLM_REASONER_URL:-http://localhost:8000/v1}
+    local: true
+    tier: 4
+    context_window: 131072
+    capabilities: {chat: 0.88, reasoning: 0.95, coding: 0.90, vision: 0.0, tools: 0.90, research: 0.86}
+    estimated_latency_ms: 1900
+
+  - id: vision-local
+    provider: vllm
+    runtime_model: Qwen/Qwen2.5-VL-7B-Instruct
+    endpoint: ${HYDRA_VLLM_VISION_URL:-http://localhost:8002/v1}
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.75, reasoning: 0.62, coding: 0.50, vision: 0.90, tools: 0.55, research: 0.55}
+    estimated_latency_ms: 1200
+
+  - id: cpu-gguf
+    provider: llamacpp
+    runtime_model: mistral-7b-instruct
+    local: true
+    tier: 2
+    context_window: 32768
+    capabilities: {chat: 0.76, reasoning: 0.60, coding: 0.62, vision: 0.0, tools: 0.65, research: 0.58}
+    estimated_latency_ms: 900
+
+  - id: cloud-frontier
+    provider: cloud
+    runtime_model: gpt-4o
+    local: false
+    tier: 5
+    context_window: 128000
+    capabilities: {chat: 0.94, reasoning: 0.95, coding: 0.94, vision: 0.90, tools: 0.95, research: 0.93}
+    estimated_latency_ms: 2500
+    input_cost: 2.5
+    output_cost: 10.0

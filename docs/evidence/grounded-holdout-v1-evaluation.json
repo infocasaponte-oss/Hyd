@@ -1,0 +1,111 @@
+{
+  "approved": false,
+  "holdout": "grounded-holdout-v1",
+  "holdout_sha256": "224e390e27f8071a3153b436ef5c1e1d0464fa5aa820173dbfe075e0fc7cb6e9",
+  "policy": "aggregate and per-family scores only",
+  "scorer_sha256": "d4b7be51927b319634bdeba495c899a758c80a0265137bb070c0519cbec6747b",
+  "protocol": {
+    "runtime": "llama-server b11146 CUDA",
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": {
+      "holdout": 256,
+      "external": 160
+    }
+  },
+  "grounded_holdout": {
+    "hydra-instruction-v7": {
+      "fact_match": 81,
+      "exact_match": 0,
+      "total": 195,
+      "boe_citation_rate": 0.0,
+      "families": {
+        "boe_absent": "1/20",
+        "boe_heading": "4/20",
+        "boe_quote": "1/20",
+        "boe_rank_date": "7/20",
+        "boe_repealed": "20/20",
+        "boe_sections": "7/20",
+        "code_absent": "4/15",
+        "code_functions": "14/15",
+        "code_imports": "8/15",
+        "code_methods": "9/15",
+        "code_params": "6/15"
+      }
+    },
+    "hydra-program-v3-grounded": {
+      "fact_match": 177,
+      "exact_match": 138,
+      "total": 195,
+      "boe_citation_rate": 0.99,
+      "families": {
+        "boe_absent": "18/20",
+        "boe_heading": "15/20",
+        "boe_quote": "20/20",
+        "boe_rank_date": "18/20",
+        "boe_repealed": "20/20",
+        "boe_sections": "19/20",
+        "code_absent": "15/15",
+        "code_functions": "14/15",
+        "code_imports": "13/15",
+        "code_methods": "13/15",
+        "code_params": "12/15"
+      }
+    },
+    "hydra-program-v4-grounded": {
+      "fact_match": 187,
+      "exact_match": 186,
+      "total": 195,
+      "boe_citation_rate": 1.0,
+      "families": {
+        "boe_absent": "20/20",
+        "boe_heading": "20/20",
+        "boe_quote": "20/20",
+        "boe_rank_date": "20/20",
+        "boe_repealed": "20/20",
+        "boe_sections": "20/20",
+        "code_absent": "15/15",
+        "code_functions": "13/15",
+        "code_imports": "12/15",
+        "code_methods": "13/15",
+        "code_params": "14/15"
+      }
+    },
+    "hydra-program-v5-grounded": {
+      "fact_match": 191,
+      "exact_match": 188,
+      "total": 195,
+      "boe_citation_rate": 1.0,
+      "families": {
+        "boe_absent": "20/20",
+        "boe_heading": "20/20",
+        "boe_quote": "20/20",
+        "boe_rank_date": "20/20",
+        "boe_repealed": "20/20",
+        "boe_sections": "20/20",
+        "code_absent": "15/15",
+        "code_functions": "14/15",
+        "code_imports": "14/15",
+        "code_methods": "13/15",
+        "code_params": "15/15"
+      }
+    }
+  },
+  "external_holdout": {
+    "hydra-instruction-v8": {
+      "automatic_matches": 141,
+      "total": 300,
+      "artifact_sha256": "0ef14148ababf98c52623f164d776ed76f17a583175ea91301e024a157231761"
+    },
+    "hydra-program-v5-grounded": {
+      "automatic_matches": 124,
+      "total": 300,
+      "artifact_sha256": "3442f057df020309dd80431c797fda7390135d14be575be5a328275077e6c987"
+    }
+  },
+  "findings": [
+    "Sealed grounded holdout: v5 191/195, v4 187, v3 177, base v7 81; v5 cites the BOE source in 100 % of BOE answers.",
+    "External holdout (user-supplied references, same CUDA runtime): v8 141/300, v5 124/300. All 18 cases v5 loses are format, not content: for 'Solo la resta: 100-44' it answers '100 - 44 = 56' instead of '56'.",
+    "Decision: v5 is not promoted over v8. v5 was trained from v7; v6 is trained from v8 (keeping its answer-only formatting) with the improved grounded corpus."
+  ]
+}

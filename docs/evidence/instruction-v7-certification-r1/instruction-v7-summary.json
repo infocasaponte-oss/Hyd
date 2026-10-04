@@ -1,0 +1,75 @@
+{
+  "v5_same_development": {
+    "accuracy": 0.7393617021276596,
+    "correct": 139,
+    "total": 188,
+    "wilson95": [
+      0.6722650563808192,
+      0.7968723269212912
+    ],
+    "complete": true,
+    "protocol": "raw-generation"
+  },
+  "v7_development": {
+    "accuracy": 0.8404255319148937,
+    "correct": 158,
+    "total": 188,
+    "wilson95": [
+      0.7813410975199229,
+      0.8858765142875231
+    ],
+    "complete": true,
+    "protocol": "raw-generation"
+  },
+  "v7_calibration": {
+    "accuracy": 0.9893617021276596,
+    "correct": 186,
+    "total": 188,
+    "wilson95": [
+      0.9620475865392321,
+      0.9970777304339714
+    ],
+    "complete": true,
+    "protocol": "raw-generation"
+  },
+  "v7_configured_development": {
+    "accuracy": 0.8404255319148937,
+    "correct": 158,
+    "total": 188,
+    "wilson95": [
+      0.7813410975199229,
+      0.8858765142875231
+    ],
+    "complete": true,
+    "protocol": "typed-state-json"
+  },
+  "v7_configured_calibration": {
+    "accuracy": 0.9787234042553191,
+    "correct": 184,
+    "total": 188,
+    "wilson95": [
+      0.9465791835027934,
+      0.9916955831014275
+    ],
+    "complete": true,
+    "protocol": "typed-state-json"
+  },
+  "v7_frozen_instruction": {
+    "accuracy": 0.5,
+    "correct": 24,
+    "total": 48,
+    "protocol": "raw-generation"
+  },
+  "v7_typed_state": {
+    "accuracy": 1.0,
+    "correct": 48,
+    "total": 48,
+    "protocol": "typed-state-json"
+  },
+  "v7_coding": {
+    "score": 1.0
+  },
+  "approved": false,
+  "independent_test": false,
+  "serving_model_changed": false
+}
