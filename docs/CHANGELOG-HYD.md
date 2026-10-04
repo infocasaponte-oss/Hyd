@@ -1,0 +1,19 @@
+# CHANGELOG Hyd
+
+Formato: data UTC · HYD-XXX · que · por que · evidencia. Estado: SHADOW_ONLY, autoridade desactivada.
+
+## 2026-10-03 · HYD-015 · Limpeza do corpus da app de avaliadores
+- Que: conflitos de etiqueta resoltos (10 coding/reasoning → coding; 50 tool_use/vision → tool_use; 24 chat/coding borradas). Detección de preguntas de molde (mesmas 4 primeiras + 2 últimas palabras, 6 primeiras ou 5 últimas, compartidas con ≥3 outras): exportadas á parte con real=false.
+- Por que: adestrar con conflitos ou moldes ensina a dubidar ou a aprender o molde.
+- Evidencia: 0 conflitos na base de datos.
+
+## 2026-10-03 · HYD-016 · Exportación JSONL completa
+- Que: a exportación lía só 1.000 rexistros (límite da API); agora pagina e quita copias exactas (mesma pregunta normalizada + etiqueta).
+- Por que: o ficheiro hyd-real-corpus-2026-10-03.jsonl tiña 643 filas en vez de 2.077.
+- Evidencia: recálculo sobre 2.936 rexistros → 2.598 distintas → 2.077 válidas, 10 clases (200–229 cada unha).
+
+## 2026-10-04 · HYD-017 · Proceso reproducible co corpus da app
+- Que: hydra/hyd/app_corpus.py (build: valida, conxela partición por SHA-256 70/15/15 e escribe formato Hyd; report: P/R/F1 por clase, ECE, matriz de confusión, cobertura por min_confidence). data/hyd-app-corpus-v1/ (1.449 train / 315 calibration / 313 test). Modelo experiments/hyd-app-v1 adestrado con hydra.hyd.train (80 épocas).
+- Por que: medir Hyd con preguntas reais con consentimento, non con corpus sintéticos.
+- Evidencia (test conxelado, n=313): Hyd 512×128 accuracy 0,712, macro-F1 0,692, ECE 0,057, T 0,5; con min_confidence 0,95 cobre 30,7 % con 96,9 % de acerto. Peores clases: tool_use F1 0,51, abstain 0,54, high_risk_review 0,61. Liña base de n-gramas máis ricos (kit hyd-train-kit): accuracy 0,898, macro-F1 0,886 → o teito actual é a capacidade das características de Hyd (512 dims), non os datos. human-paraphrase-v1: 0,52 (config/hyd) → 0,44 (hyd-app-v1); son dominios distintos.
+- Limitacións: test do mesmo grupo de avaliadores; non é evidencia independente de promoción. Non se substitúe config/hyd.
