@@ -31,6 +31,17 @@ class CalibratorTests(unittest.TestCase):
         self.assertEqual(first["model_sha256"], second["model_sha256"])
         self.assertFalse(first["authority"])
         CandidateRanker.load(self.root / "first" / "model.json")
+        calibration_rows = [
+            dict(row, input={"query": f"calibration question {i}"}, split="calibration", training_allowed=False)
+            for i, row in enumerate(rows)
+        ]
+        calibrated = calibrate(
+            self.root / "first" / "model.json",
+            self.write("calibration.jsonl", calibration_rows),
+            self.root / "calibrated",
+            train_dataset=dataset,
+        )
+        self.assertTrue(calibrated["train_overlap_checked"])
         with self.assertRaisesRegex(ValueError, "already exists"):
             train(dataset, self.root / "first", epochs=1)
         for field, value in (("consent", False), ("split", "test"), ("training_allowed", False)):

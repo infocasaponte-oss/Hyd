@@ -37,7 +37,7 @@ def train(dataset: Path, out: Path, epochs=80, state_dims=512, option_dims=128):
     model.fit([row["input"]["query"] for row in rows], targets, CRITERIA, epochs)
     model.training = {
         "criteria": CRITERIA,
-        "dataset_sha256": hashlib.sha256(dataset.read_bytes()).hexdigest(),
+        "source_sha256": hashlib.sha256(dataset.read_bytes()).hexdigest(),
         "examples": len(rows),
         "epochs": epochs,
         "seed": 42,
