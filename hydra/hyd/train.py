@@ -13,6 +13,7 @@ from hydra.hyd.model import CandidateRanker
 from hydra.router.decision_contract import CRITERIA
 from hydra.training.calibrator import fit_temperature
 from hydra.training.decision_metrics import metrics
+from hyd_calibrator.admission import require_consent_and_rights
 
 
 def rows(path: Path, *, training: bool) -> list[dict]:
@@ -21,7 +22,7 @@ def rows(path: Path, *, training: bool) -> list[dict]:
         if not line.strip():
             continue
         row = json.loads(line)
-        rights = row.get("rights", {})
+        rights = require_consent_and_rights(row)
         if rights.get("verified") is not True or rights.get("license") != "proprietary-hydra-authored":
             raise ValueError("Hyd v1 requires verified HYDRA-authored records")
         if training and (row.get("training_allowed") is not True or row.get("split") != "train"):
@@ -39,6 +40,8 @@ def rows(path: Path, *, training: bool) -> list[dict]:
 
 
 def train(train_path: Path, calibration_path: Path, out: Path, epochs: int = 80) -> dict:
+    if out.exists():
+        raise ValueError("output directory already exists; choose a new training run")
     training, calibration = rows(train_path, training=True), rows(calibration_path, training=False)
     def normalized(text):
         return " ".join(text.casefold().split())
@@ -62,7 +65,7 @@ def train(train_path: Path, calibration_path: Path, out: Path, epochs: int = 80)
     model.training = {"criteria": CRITERIA, "source_sha256": hashlib.sha256(train_path.read_bytes()).hexdigest(),
                       "examples": len(training), "epochs": epochs, "rights": "proprietary-hydra-authored",
                       "domain": "routing_only", "general_decision_quality": "unvalidated"}
-    out.mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=False)
     model.save(out / "model.json")
     report = {"format": "hyd-calibration/1", "model_sha256": model.revision,
               "implementation_sha256": implementation_digest(), "temperature": model.temperature,
@@ -84,7 +87,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--train", type=Path, default=Path("data/decision-corpus-v3/train.jsonl"))
     parser.add_argument("--calibration", type=Path, default=Path("data/decision-corpus-v3/calibration.jsonl"))
-    parser.add_argument("--out", type=Path, default=Path("config/hyd"))
+    parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--epochs", type=int, default=80)
     args = parser.parse_args()
     if not 1 <= args.epochs <= 500:

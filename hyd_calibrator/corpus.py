@@ -19,6 +19,7 @@ from pathlib import Path
 
 from .contract import CRITERIA
 from .atomic import write_text_atomic
+from .admission import require_consent_and_rights
 
 
 def normalized(text: str) -> str:
@@ -62,6 +63,7 @@ def validate(path: Path) -> tuple[list[dict], dict]:
         ):
             errors.append(f"line {n}: verified source rights required")
         else:
+            require_consent_and_rights({"consent": m["consent"], "rights": r["rights"]})
             rows.append(r)
     labels, seen, dups = {}, set(), 0
     for r in rows:
@@ -84,12 +86,14 @@ def validate(path: Path) -> tuple[list[dict], dict]:
 
 
 def build(corpus: Path, out: Path) -> dict:
+    if out.exists():
+        raise ValueError("output directory already exists; choose a new snapshot")
     rows, report = validate(corpus)
     if report["n_errors"] or report["duplicates"] or report["conflicts"] or report["missing_labels"]:
         raise SystemExit(json.dumps(report, ensure_ascii=False, indent=2))
     if out.resolve() == corpus.parent.resolve():
         raise ValueError("choose a separate output directory")
-    out.mkdir(parents=True, exist_ok=True)
+    out.mkdir(parents=True, exist_ok=False)
     parts = {"train": [], "calibration": [], "test": []}
     for r in rows:
         s = split_of(r["text"])
@@ -105,6 +109,7 @@ def build(corpus: Path, out: Path) -> dict:
                 "consent": True,
                 "rights": dict(r["rights"]),
                 "meta": dict(r["meta"]),
+                "provenance_status": "source-declared",
                 "prompt_sha256": h,
             }
         )

@@ -175,7 +175,7 @@ def test_typed_training_and_family_leakage(tmp_path):
     question = {"type": "noul", "criteria": {"false": "cold", "true": "hot"}}
     def record(text, split, family, target):
         return {"state": text, "question": question, "target": target,
-                "split": split, "family": family, "training_allowed": split == "train",
+                "split": split, "family": family, "training_allowed": split == "train", "consent": True,
                 "rights": {"verified": True, "license": "proprietary-hydra-authored"}}
     train_file, cal_file = tmp_path / "train.jsonl", tmp_path / "cal.jsonl"
     training = [record("boiling hot", "train", "training", {"false": 0, "true": 1}),
