@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Real local candidate. Import models/hydra-pilot/HYDRA.gguf as hydra-local first.
+# Capabilities below are routing priors, not measured benchmark scores.
+models:
+  - id: hydra-local
+    provider: ollama
+    runtime_model: hydra-local:latest
+    local: true
+    tier: 2
+    context_window: 2048
+    capabilities: {chat: 0.6, reasoning: 0.5, coding: 0.6, tools: 0.3, vision: 0.0, research: 0.3}
+    estimated_latency_ms: 5000
+    quirks: {native_json_schema: true, native_tools: false}

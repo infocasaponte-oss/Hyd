@@ -1,0 +1,332 @@
+{
+  "approved": false,
+  "scope": "grounded-v1 test, grounded-v2 test (document-disjoint, held-out wording) and the parent regression set",
+  "protocol": {
+    "runtime": "llama-server b11146, CUDA (runtime/llama-cuda-b11146), -ngl 99",
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": {
+      "grounded": 256,
+      "regression": 160
+    },
+    "artifact_hash_checked": true,
+    "note": "a first run was discarded: two evaluation chains shared port 18091 (CPU and GPU servers)"
+  },
+  "datasets": {
+    "grounded_v1_test": "4fecd531114582971935a6a8a847949c21070b0342e767ed35b09d4b11689640",
+    "grounded_v2_test": "bc8949e3c703bb0391fafc1ca71329d5923eb90946d188053392f9241297a195",
+    "regression": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3"
+  },
+  "models": {
+    "hydra-instruction-v7": {
+      "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+      "grounded_v2_test": {
+        "fact_match": 105,
+        "exact_match": 0,
+        "total": 171,
+        "boe_citation_rate": 0.0,
+        "families": {
+          "boe_absent": {
+            "fact": 0,
+            "exact": 0,
+            "total": 10
+          },
+          "boe_heading": {
+            "fact": 0,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_quote": {
+            "fact": 0,
+            "exact": 0,
+            "total": 14
+          },
+          "boe_rank_date": {
+            "fact": 12,
+            "exact": 0,
+            "total": 12
+          },
+          "boe_repealed": {
+            "fact": 12,
+            "exact": 0,
+            "total": 12
+          },
+          "boe_sections": {
+            "fact": 10,
+            "exact": 0,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 6,
+            "exact": 0,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 34,
+            "exact": 0,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 10,
+            "exact": 0,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 5,
+            "exact": 0,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 16,
+            "exact": 0,
+            "total": 20
+          }
+        }
+      }
+    },
+    "hydra-program-v2-grounded": {
+      "artifact_sha256": "418d2fee78930ce9697396502abfd519334f62811764761367deb51d6f412e01",
+      "grounded_v2_test": {
+        "fact_match": 149,
+        "exact_match": 105,
+        "total": 171,
+        "boe_citation_rate": 0.9032,
+        "families": {
+          "boe_absent": {
+            "fact": 10,
+            "exact": 10,
+            "total": 10
+          },
+          "boe_heading": {
+            "fact": 9,
+            "exact": 7,
+            "total": 9
+          },
+          "boe_quote": {
+            "fact": 13,
+            "exact": 6,
+            "total": 14
+          },
+          "boe_rank_date": {
+            "fact": 12,
+            "exact": 12,
+            "total": 12
+          },
+          "boe_repealed": {
+            "fact": 12,
+            "exact": 0,
+            "total": 12
+          },
+          "boe_sections": {
+            "fact": 15,
+            "exact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "exact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 30,
+            "exact": 15,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 10,
+            "exact": 7,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 5,
+            "exact": 0,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 19,
+            "exact": 19,
+            "total": 20
+          }
+        }
+      }
+    },
+    "hydra-program-v3-grounded": {
+      "artifact_sha256": "2b73a2c6f115070b780a4466b438dbf8249f925b5d78c85424054107d533d087",
+      "grounded_v2_test": {
+        "fact_match": 159,
+        "exact_match": 144,
+        "total": 171,
+        "boe_citation_rate": 0.9839,
+        "families": {
+          "boe_absent": {
+            "fact": 10,
+            "exact": 10,
+            "total": 10
+          },
+          "boe_heading": {
+            "fact": 9,
+            "exact": 9,
+            "total": 9
+          },
+          "boe_quote": {
+            "fact": 14,
+            "exact": 14,
+            "total": 14
+          },
+          "boe_rank_date": {
+            "fact": 12,
+            "exact": 12,
+            "total": 12
+          },
+          "boe_repealed": {
+            "fact": 8,
+            "exact": 0,
+            "total": 12
+          },
+          "boe_sections": {
+            "fact": 15,
+            "exact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "exact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 38,
+            "exact": 37,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 14,
+            "exact": 12,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 6,
+            "exact": 2,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 19,
+            "exact": 19,
+            "total": 20
+          }
+        }
+      },
+      "grounded_v1_test": {
+        "fact_match": 146,
+        "exact_match": 109,
+        "total": 154,
+        "boe_citation_rate": 0.9403,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "exact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 11,
+            "exact": 11,
+            "total": 11
+          },
+          "boe_quote": {
+            "fact": 13,
+            "exact": 10,
+            "total": 15
+          },
+          "boe_rank_date": {
+            "fact": 9,
+            "exact": 9,
+            "total": 9
+          },
+          "boe_repealed": {
+            "fact": 6,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 23,
+            "exact": 23,
+            "total": 23
+          },
+          "code_absent": {
+            "fact": 20,
+            "exact": 20,
+            "total": 20
+          },
+          "code_functions": {
+            "fact": 20,
+            "exact": 0,
+            "total": 21
+          },
+          "code_imports": {
+            "fact": 10,
+            "exact": 5,
+            "total": 12
+          },
+          "code_methods": {
+            "fact": 6,
+            "exact": 3,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 17,
+            "exact": 17,
+            "total": 17
+          }
+        }
+      },
+      "regression": {
+        "exact_match": 24,
+        "total": 48,
+        "failed_ids": [
+          "test-json-2000",
+          "test-json-2001",
+          "test-json-2002",
+          "test-json-2003",
+          "test-json-2004",
+          "test-json-2005",
+          "test-json-2006",
+          "test-json-2007",
+          "test-json-2008",
+          "test-json-2009",
+          "test-json-2010",
+          "test-json-2011",
+          "test-json-2012",
+          "test-json-2013",
+          "test-json-2014",
+          "test-json-2015",
+          "test-json-2016",
+          "test-json-2017",
+          "test-json-2018",
+          "test-json-2019",
+          "test-json-2020",
+          "test-json-2021",
+          "test-json-2022",
+          "test-json-2023"
+        ]
+      }
+    }
+  },
+  "findings": [
+    "v3 candidate (trained on grounded-v2): v1 test 146/154 fact-level (v2 candidate 141, base 88); v2 test 159/171 (v2 candidate 149, base 105).",
+    "Targeted families improved: v1 test code_imports 5->10/12, code_functions 17->20/21.",
+    "boe_repealed regressed (v1 test 9->6/9, v2 test 12->8/12): garbled answers to the held-out imperative wording; grounded-v3 adds eight training wordings per family.",
+    "Regression: identical failure set to the base (True)."
+  ],
+  "scorer_sha256": "99551c740363bfe1192ee479701ecdc1ebc21f2ec60fc0b3099113987755ace5",
+  "evaluator_sha256": "7f96d349ca897ff48aa2f7baae51a0c77cfe5628d65bf761798fdef74c2a3f27",
+  "errata": [
+    "hydra/training/grounded_corpus_v3.py's docstring quotes code_imports 9/12, code_functions 19/21 and boe_repealed 4/9 for hydra-program-v3-grounded on the v1 test; those come from the discarded run (two evaluation chains on port 18091). The accepted clean run is this file: 10/12, 20/21, 6/9. The generator is left unchanged because its sha256 is pinned by the grounded-v3 corpus and the v4 training corpus manifests.",
+    "Scored with the scorer before the repeal-status fix (aaf35e9); grounded-v3-candidate-v4-evaluation.json rescored all candidates with the fixed scorer."
+  ],
+  "test_roles": {
+    "grounded_v1_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v2_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v4_test": "development/regression: its wording (index 3) was inspected before v4 was designed",
+    "regression": "frozen parent regression set"
+  },
+  "independent_test": false
+}

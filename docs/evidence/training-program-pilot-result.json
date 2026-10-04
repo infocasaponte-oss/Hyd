@@ -1,0 +1,77 @@
+{
+  "artifact_sha256": "e823921ccbe70ba9b929ae461604e0810704eb45abc6e27a9c01947896708b22",
+  "status": "QUARANTINED_CORPUS_ENCODING",
+  "approved": false,
+  "training": {
+    "train_runtime": 761.2468,
+    "train_samples_per_second": 1.051,
+    "train_steps_per_second": 0.131,
+    "total_flos": 598089984516096.0,
+    "train_loss": 0.31998942732810975,
+    "epoch": 0.7626310772163966,
+    "device": "cuda",
+    "trainable_parameters": 18464768,
+    "total_parameters": 1562179072,
+    "target_modules": [
+      "down_proj",
+      "gate_proj",
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "up_proj",
+      "v_proj"
+    ],
+    "trainable_dtypes": [
+      "torch.float32"
+    ],
+    "best_model_checkpoint": "D:\\HYDRA\\models\\hydra-program-v1-pilot-r2\\adapter\\checkpoint-100",
+    "best_metric": 0.10424891114234924,
+    "final_global_step": 100,
+    "parameter_devices": [
+      "cuda:0"
+    ],
+    "gpu_name": "NVIDIA GeForce RTX 3060 Ti",
+    "peak_allocated_bytes": 3733279744,
+    "eval_loss": 0.10424891114234924,
+    "eval_runtime": 52.1111,
+    "eval_samples_per_second": 4.682,
+    "eval_steps_per_second": 4.682
+  },
+  "regression": {
+    "total": 48,
+    "exact_matches": 24,
+    "json_content_matches": 0
+  },
+  "web_fixture_diagnostic": {
+    "total": 16,
+    "exact_matches": 16,
+    "scope": "Four synthetic templates with changed entities; not an independent human quality score"
+  },
+  "corpus_requires_retraining": true,
+  "clean_recipe": "config/recipes/hydra-program-v1-clean-pilot.json",
+  "release_gate": {
+    "eligible": false,
+    "approved": false,
+    "failures": [
+      "objective_accuracy",
+      "minimum_family_accuracy",
+      "semantic_human_acceptance",
+      "json_validity",
+      "json_content_accuracy",
+      "citation_support_precision",
+      "retrieval_relevance",
+      "router_macro_f1",
+      "router_coverage",
+      "router_selective_precision",
+      "router_ece",
+      "quantization_drop_percentage_points",
+      "runtime_error_rate",
+      "independent_test",
+      "human_review_complete",
+      "artifact_bound",
+      "soak_passed",
+      "rollback_tested",
+      "corpus_review_complete"
+    ]
+  }
+}

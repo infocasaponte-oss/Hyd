@@ -1,0 +1,7 @@
+{
+  "status": "NOT_VALIDATED",
+  "approved": false,
+  "cases": [],
+  "limitations": "Three classification smoke cases, not calibration or tool-routing validation.",
+  "error": "ConnectError: All connection attempts failed"
+}

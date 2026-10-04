@@ -1,0 +1,43 @@
+{
+  "format": "hyd-calibration/1",
+  "model_sha256": "0616432c984c4240e0459a3a4e063d268267a3bcf9a94061e22a458d376629ce",
+  "implementation_sha256": "e98f5dffb1c9feffdae1af7818fc652c66fe2c91e7d3e64686e0aec8750b746b",
+  "temperature": 0.5,
+  "dataset_sha256": "02bce960b23827e3d925a01e968c8784ed20118c88032927ab692856cb82d0ac",
+  "criteria": {
+    "chat": "Write a conversational or creative response; no code or external search needed.",
+    "coding": "Write, debug or explain software code; do not execute an environment action.",
+    "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+    "research": "Find or compare external evidence and cite sources.",
+    "vision": "Interpret an attached image, screenshot or photographed document.",
+    "tool_use": "Perform an actual operation using environment tools.",
+    "abstain": "Required question, input or context is missing; ask for clarification.",
+    "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+    "privacy": "Assess or handle personal information and sharing restrictions.",
+    "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+  },
+  "min_confidence": 0.95,
+  "min_margin": 0.1,
+  "status": "SHADOW_ONLY",
+  "independent_test": false,
+  "limitation": "Template families overlap semantically; exact text separation is insufficient for promotion.",
+  "metrics": {
+    "requested": 200,
+    "valid": 200,
+    "accepted": 200,
+    "coverage": 1.0,
+    "accuracy": 1.0,
+    "accuracy_wilson_lower_95": 0.9811539940816792,
+    "ece_10_bins": 0.00033170802070325855,
+    "brier_multiclass_sum": 2.7148470480937737e-07,
+    "nll": 0.0003318049961854866,
+    "bins": [
+      {
+        "bin": 9,
+        "n": 200,
+        "confidence": 0.9996682919792967,
+        "accuracy": 1.0
+      }
+    ]
+  }
+}

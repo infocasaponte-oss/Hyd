@@ -1,0 +1,14 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# License profiles (classes: permissive, weak-copyleft, copyleft, network-copyleft, non-commercial,
+# research-only, open-weights-restricted, proprietary-internal, commercial-approved, custom-license, unknown)
+profiles:
+  enterprise-commercial:
+    allow: [permissive, proprietary-internal, commercial-approved, weak-copyleft]
+    deny: [research-only, non-commercial, unknown, network-copyleft]
+    require_review: [custom-license, copyleft, open-weights-restricted]
+components:
+  - {artifact_id: hydra-core, artifact_type: source_code, license_id: proprietary,
+     copyright_holders: ["Luis Manuel Cousido Hermida"], commercial_use: true, redistribution: false}
+  - {artifact_id: llama3.2:1b, artifact_type: weights, license_id: llama3.2, origin: ollama}
+  - {artifact_id: qwen2.5-coder:7b, artifact_type: weights, license_id: apache-2.0, origin: ollama}
+  - {artifact_id: qwen3:8b, artifact_type: weights, license_id: apache-2.0, origin: ollama}

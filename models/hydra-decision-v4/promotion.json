@@ -1,0 +1,15 @@
+{
+  "format": "hydra-decision-promotion/1",
+  "candidate": "hydra-decision-v4",
+  "test": "data/human-paraphrase-v1.jsonl",
+  "test_sha256": "fcade71188f552d29cc3a497496c569002d47d78c2c6fab6f32f38a9c8cf19cc",
+  "metrics": {
+    "rows": 100,
+    "correct": 96,
+    "accuracy": 0.96,
+    "promotion_eligible": true
+  },
+  "calibration": "models/kev-calibrator-v3.json",
+  "policy_layer": "hydra.training.hybrid_classifier",
+  "status": "PROMOTED"
+}

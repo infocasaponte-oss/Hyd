@@ -1,0 +1,15 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Alternative to device plugins: Dynamic Resource Allocation (resource.k8s.io/v1).
+apiVersion: resource.k8s.io/v1
+kind: ResourceClaimTemplate
+metadata: {name: hydra-gpu-80gb, namespace: hydra}
+spec:
+  spec:
+    devices:
+      requests:
+        - name: gpu
+          exactly:
+            deviceClassName: gpu.nvidia.com
+            selectors:
+              - cel:
+                  expression: device.capacity["gpu.nvidia.com"].memory.compareTo(quantity("70Gi")) >= 0

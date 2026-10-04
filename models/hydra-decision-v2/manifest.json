@@ -1,0 +1,25 @@
+{
+  "format": "hydra-decision-v2/1",
+  "backend": "hydra-text-classifier",
+  "labels": [
+    "abstain",
+    "chat",
+    "coding",
+    "high_risk_review",
+    "privacy",
+    "reasoning",
+    "research",
+    "security",
+    "tool_use",
+    "vision"
+  ],
+  "train_examples": 1700,
+  "seed": 42,
+  "calibration_temperature": 0.5,
+  "training_corpus": [
+    "data\\decision-corpus-v3\\train.jsonl",
+    "data\\human-dev-v1.jsonl"
+  ],
+  "test_corpus": "data\\decision-corpus-v3\\test.jsonl",
+  "limitations": "Synthetic corpus; candidate head, not Kev checkpoint."
+}

@@ -1,0 +1,637 @@
+{
+  "approved": false,
+  "scope": "Known regression inputs, stability only",
+  "cases": [
+    {
+      "id": "human-v1-chat-00",
+      "expected": "chat",
+      "repeats": [
+        {
+          "choice": "chat",
+          "probabilities": {
+            "chat": 1.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 238.14069999934873
+        },
+        {
+          "choice": "chat",
+          "probabilities": {
+            "chat": 1.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 43.413500003225636
+        },
+        {
+          "choice": "chat",
+          "probabilities": {
+            "chat": 1.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 44.55999999845517
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-coding-00",
+      "expected": "coding",
+      "repeats": [
+        {
+          "choice": "coding",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.9502,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0498,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 57.091499998932704
+        },
+        {
+          "choice": "coding",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.9502,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0498,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.765299999999115
+        },
+        {
+          "choice": "coding",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.9502,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0498,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 41.43839999960619
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-reasoning-00",
+      "expected": "reasoning",
+      "repeats": [
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 1.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 54.91289999918081
+        },
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 1.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 43.43669999798294
+        },
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 1.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.57819999777712
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-research-00",
+      "expected": "research",
+      "repeats": [
+        {
+          "choice": "research",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 1.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 51.88149999958114
+        },
+        {
+          "choice": "research",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 1.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.061600000422914
+        },
+        {
+          "choice": "research",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 1.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.617399997951
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-vision-00",
+      "expected": "vision",
+      "repeats": [
+        {
+          "choice": "vision",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 1.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 51.923300001362804
+        },
+        {
+          "choice": "vision",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 1.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.726899998640874
+        },
+        {
+          "choice": "vision",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 1.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 40.166899998439476
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-tool_use-00",
+      "expected": "tool_use",
+      "repeats": [
+        {
+          "choice": "abstain",
+          "probabilities": {
+            "chat": 0.1661,
+            "coding": 0.2965,
+            "reasoning": 0.0003,
+            "research": 0.0009,
+            "vision": 0.1371,
+            "tool_use": 0.0033,
+            "abstain": 0.3956,
+            "security": 0.0001,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 51.20189999797731
+        },
+        {
+          "choice": "abstain",
+          "probabilities": {
+            "chat": 0.1661,
+            "coding": 0.2965,
+            "reasoning": 0.0003,
+            "research": 0.0009,
+            "vision": 0.1371,
+            "tool_use": 0.0033,
+            "abstain": 0.3956,
+            "security": 0.0001,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.40789999978733
+        },
+        {
+          "choice": "abstain",
+          "probabilities": {
+            "chat": 0.1661,
+            "coding": 0.2965,
+            "reasoning": 0.0003,
+            "research": 0.0009,
+            "vision": 0.1371,
+            "tool_use": 0.0033,
+            "abstain": 0.3956,
+            "security": 0.0001,
+            "privacy": 0.0,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 40.4497999988962
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-security-00",
+      "expected": "security",
+      "repeats": [
+        {
+          "choice": "security",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.9934,
+            "privacy": 0.0065,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 52.82630000147037
+        },
+        {
+          "choice": "security",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.9934,
+            "privacy": 0.0065,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.671000002272194
+        },
+        {
+          "choice": "security",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.9934,
+            "privacy": 0.0065,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.470299998356495
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-privacy-00",
+      "expected": "privacy",
+      "repeats": [
+        {
+          "choice": "privacy",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0001,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.9999,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 52.41150000074413
+        },
+        {
+          "choice": "privacy",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0001,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.9999,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 40.24779999963357
+        },
+        {
+          "choice": "privacy",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0,
+            "reasoning": 0.0001,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.0,
+            "abstain": 0.0,
+            "security": 0.0,
+            "privacy": 0.9999,
+            "high_risk_review": 0.0
+          },
+          "latency_ms": 39.910600000439445
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-abstain-00",
+      "expected": "abstain",
+      "repeats": [
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0212,
+            "coding": 0.0108,
+            "reasoning": 0.7393,
+            "research": 0.0086,
+            "vision": 0.0113,
+            "tool_use": 0.0488,
+            "abstain": 0.1597,
+            "security": 0.0,
+            "privacy": 0.0001,
+            "high_risk_review": 0.0002
+          },
+          "latency_ms": 52.45719999948051
+        },
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0212,
+            "coding": 0.0108,
+            "reasoning": 0.7393,
+            "research": 0.0086,
+            "vision": 0.0113,
+            "tool_use": 0.0488,
+            "abstain": 0.1597,
+            "security": 0.0,
+            "privacy": 0.0001,
+            "high_risk_review": 0.0002
+          },
+          "latency_ms": 40.67450000002282
+        },
+        {
+          "choice": "reasoning",
+          "probabilities": {
+            "chat": 0.0212,
+            "coding": 0.0108,
+            "reasoning": 0.7393,
+            "research": 0.0086,
+            "vision": 0.0113,
+            "tool_use": 0.0488,
+            "abstain": 0.1597,
+            "security": 0.0,
+            "privacy": 0.0001,
+            "high_risk_review": 0.0002
+          },
+          "latency_ms": 41.45819999757805
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    },
+    {
+      "id": "human-v1-high_risk_review-00",
+      "expected": "high_risk_review",
+      "repeats": [
+        {
+          "choice": "tool_use",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0038,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.995,
+            "abstain": 0.0001,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0011
+          },
+          "latency_ms": 53.58420000266051
+        },
+        {
+          "choice": "tool_use",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0038,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.995,
+            "abstain": 0.0001,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0011
+          },
+          "latency_ms": 42.27760000139824
+        },
+        {
+          "choice": "tool_use",
+          "probabilities": {
+            "chat": 0.0,
+            "coding": 0.0038,
+            "reasoning": 0.0,
+            "research": 0.0,
+            "vision": 0.0,
+            "tool_use": 0.995,
+            "abstain": 0.0001,
+            "security": 0.0,
+            "privacy": 0.0,
+            "high_risk_review": 0.0011
+          },
+          "latency_ms": 40.336199999728706
+        }
+      ],
+      "stable_choice": true,
+      "max_probability_drift": 0.0
+    }
+  ],
+  "identity": {
+    "name": "kev-latest",
+    "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving D:\\HYDRA\\models\\kev-hydra-v2-r1 at temperature 1.00",
+    "release_date": "2026-09-30",
+    "run": "D:\\HYDRA\\models\\kev-hydra-v2-r1",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "lora": 16,
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "temperature": 1.0,
+    "cuda_graphs": {
+      "captured": 4,
+      "kept": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "prefix_cache": {
+      "size": 4,
+      "min_state_tokens": 0,
+      "max_tokens": 65536,
+      "hits": 0,
+      "misses": 301,
+      "cached_states": 4,
+      "oom_retries": 0
+    },
+    "batches": {
+      "count": 301,
+      "requests": 301,
+      "queued": 0
+    }
+  },
+  "final_identity": {
+    "name": "kev-latest",
+    "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving D:\\HYDRA\\models\\kev-hydra-v2-r1 at temperature 1.00",
+    "release_date": "2026-09-30",
+    "run": "D:\\HYDRA\\models\\kev-hydra-v2-r1",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "lora": 16,
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "temperature": 1.0,
+    "cuda_graphs": {
+      "captured": 4,
+      "kept": 4,
+      "pending": 0,
+      "failed": 0
+    },
+    "prefix_cache": {
+      "size": 4,
+      "min_state_tokens": 0,
+      "max_tokens": 65536,
+      "hits": 20,
+      "misses": 311,
+      "cached_states": 4,
+      "oom_retries": 0
+    },
+    "batches": {
+      "count": 331,
+      "requests": 331,
+      "queued": 0
+    }
+  },
+  "complete": true,
+  "calls": 30,
+  "stable_cases": 10,
+  "cases_count": 10,
+  "median_latency_ms": 41.44829999859212,
+  "max_latency_ms": 238.14069999934873,
+  "max_probability_drift": 0.0
+}

@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+name: laptop-16gb
+cpu_arch: x86_64
+system_ram_gb: 16
+target_latency_ms: 3000

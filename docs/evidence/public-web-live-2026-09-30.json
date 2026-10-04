@@ -1,0 +1,52 @@
+{
+  "search": {
+    "status": "ok",
+    "engine": "duckduckgo",
+    "results": [
+      {
+        "title": "asyncio \u2014 Asynchronous I/O \u2014 Python 3.14.7 documentation",
+        "url": "https://docs.python.org/3/library/asyncio.html"
+      },
+      {
+        "title": "A Conceptual Overview of asyncio \u2014 Python 3.14.7 documentation",
+        "url": "https://docs.python.org/3/howto/a-conceptual-overview-of-asyncio.html"
+      },
+      {
+        "title": "asyncio \u2014 Asynchronous I/O \u2014 Python 3.14.0 documentation",
+        "url": "https://docs.pythonlang.net/3/library/asyncio.html"
+      },
+      {
+        "title": "Our Documentation | Python.org",
+        "url": "https://www.python.org/doc/"
+      },
+      {
+        "title": "Python's asyncio: A Hands-On Walkthrough - Real Python",
+        "url": "https://realpython.com/async-io-python/"
+      }
+    ],
+    "search_urls": {
+      "brave": "https://search.brave.com/search?q=Python+asyncio+official+documentation",
+      "google": "https://www.google.com/search?q=Python+asyncio+official+documentation",
+      "bing": "https://www.bing.com/search?q=Python+asyncio+official+documentation",
+      "duckduckgo": "https://html.duckduckgo.com/html/?q=Python+asyncio+official+documentation"
+    },
+    "attempts": [
+      {
+        "engine": "brave",
+        "status": "blocked",
+        "http_status": 429
+      }
+    ],
+    "paid_api_used": false,
+    "untrusted_content": true
+  },
+  "read": {
+    "url": "https://docs.python.org/3/library/asyncio.html",
+    "status": 200,
+    "content_type": "text/html",
+    "text": "asyncio \u2014 Asynchronous I/O \u2014 Python 3.14.7 documentation\nTheme\nAuto\nLight\nDark\nPrevious topic\nNetworking and Interprocess Communication\nNext topic\nRunners\nThis page\nReport a bug\nImprove this page\nShow source\nNavigation\nindex\nmodules\n|\nnext\n|\nprevious\n|\nPython\n\u00bb\n3.14.7 Documentation\n\u00bb\nThe Python standard library\n\u00bb\nNetworking and Interprocess Communication\n\u00bb\nasyncio\n\u2014 Asynchronous I/O\n|\nTheme\nAuto\nLight\nDark\n|\nasyncio\n\u2014 Asynchronous I/O\n\u00b6\nHello World!\nimport\nasyncio\nasync\ndef\nmain\n():\nprint\n(\n'Hello ...'\n)\nawait\nasyncio\n.\nsleep\n(\n1\n)\nprint\n(\n'... World!'\n)\nasyncio\n.\nrun\n(\nmain\n())\nasyncio is a library to write\nconcurrent\ncode using\nthe\nasync/await\nsyntax.\nasyncio is used as a foundation for multiple Python asynchronous\nframeworks that provide high-performance network and web-servers,\ndatabase connection libraries, distributed task queues, etc.\nasyncio is often a perfect fit for IO-bound and high-level\nstructured\nnetwork code.\nSee also\nA Conceptual Overview of asyncio\nExplanation of the fundamentals of asyncio.\nasyncio provides a set of\nhigh-level\nAPIs to:\nrun Python coroutines\nconcurrently and\nhave full control over their execution;\nperform\nnetwork IO and IPC\n;\ncontrol\nsubprocesses\n;\ndistribute tasks via\nqueues\n;\nsynchronize\nconcurrent code;\nFor\nintrospection\n, asyncio provides APIs and tools for:\ninspecting the\nasync call graph\nof tasks and futures;\ninspecting tasks in another running Python process with\ncommand-line tools\n;\nAdditionally, there are\nlow-level\nAPIs for\nlibrary a",
+    "truncated": false,
+    "text_truncated": false,
+    "untrusted_content": true
+  }
+}

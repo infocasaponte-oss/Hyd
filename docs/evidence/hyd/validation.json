@@ -1,0 +1,46 @@
+{
+  "format": "hyd-implementation-validation/1",
+  "date": "2026-10-02",
+  "software_checks": {
+    "pytest": {
+      "passed": 99,
+      "failed": 0,
+      "files": ["tests/test_hyd.py", "tests/test_decision_provider.py", "tests/test_decision_observer.py", "tests/test_policy_gate.py", "tests/test_kev_candidate_authority.py", "tests/test_api.py", "tests/test_unified_api.py", "tests/test_router_registry.py", "tests/test_kernel.py", "tests/test_bootstrap_online.py", "tests/test_bootstrap_calibrator.py", "tests/test_native_config_compatibility.py"]
+    },
+    "ruff": "passed: changed Python implementation and new tests",
+    "git_diff_check": "passed"
+  },
+  "source_audit": {
+    "root": "D:/kev-main/kev-main",
+    "files": 3049,
+    "python_files": 133,
+    "symbols": 1991,
+    "read_errors": 0,
+    "mode": "static inventory and focused manual review; not exhaustive dynamic verification"
+  },
+  "model": {
+    "alias": "hyd-latest",
+    "sha256": "0616432c984c4240e0459a3a4e063d268267a3bcf9a94061e22a458d376629ce",
+    "backend": "independent HYDRA-authored CPU bilinear candidate ranker",
+    "training_source": "HYDRA-authored decision-corpus-v3 train partition",
+    "kev_code_imported": false,
+    "kev_weights_used": false,
+    "synthetic_calibration_accuracy": 1.0,
+    "human_paraphrase_accuracy": 0.52,
+    "human_paraphrase_selective_coverage": 0.18,
+    "accepted_correct": 17,
+    "accepted_total": 18,
+    "accepted_accuracy_wilson_lower_95": 0.7424220019799247,
+    "independent_test": false,
+    "authority_enabled": false,
+    "production_replacement_certified": false,
+    "general_decision_parity_with_kev": "not established"
+  },
+  "deployment": {
+    "gateway_default_next_start": "Hyd observer",
+    "running_services_restarted": false,
+    "historical_kev_artifacts_deleted": false,
+    "live_kev_comparison": "unavailable: connection timeout on 127.0.0.1:8009/v1/models",
+    "remaining": ["general contextual backend", "broader admitted corpus", "full SDK compatibility", "independent calibration and testing", "matched Kev comparison", "production cutover"]
+  }
+}

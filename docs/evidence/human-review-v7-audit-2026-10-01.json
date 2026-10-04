@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-01",
+  "source": "C:\\Users\\mejil\\Downloads\\hydra-mi-revision.json",
+  "source_sha256": "b367d0213bc8fdd7784788929770326177f0e242a588713f3e91c5006a0086ef",
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "dataset_sha256": "8426e4d949f866f328233a66188ffe04ac9f5db61468d90f785f0e4b6f4bc0bd",
+  "structural_errors": [],
+  "structurally_valid": true,
+  "complete_unique_review": true,
+  "missing_unique_ids": [],
+  "counts": {
+    "correct": 234,
+    "ambiguous": 19,
+    "incorrect": 34
+  },
+  "unique_cases": 287,
+  "accuracy_as_submitted": 0.8153310104529616,
+  "wilson95_as_submitted": [
+    0.7663772558053018,
+    0.8559549272813872
+  ],
+  "accuracy_if_all_ambiguous_were_correct": 0.8815331010452961,
+  "saved_complete": false,
+  "duplicate_cases_excluded": 13,
+  "original_decisions_changed": false,
+  "approved": false,
+  "objective_contradictions": [
+    {
+      "id": 7,
+      "reason": "JSON parameter count differs from the requested value",
+      "expected": {
+        "model": "Hydra-A",
+        "params": 12000000000
+      },
+      "actual": {
+        "model": "Hydra-A",
+        "params": 1200000000
+      },
+      "classification": "objective contradiction; human vote retained"
+    },
+    {
+      "id": 107,
+      "reason": "JSON parameter count differs from the requested value",
+      "expected": {
+        "model": "Hydra-C",
+        "params": 24000000000
+      },
+      "actual": {
+        "model": "Hydra-C",
+        "params": 24000000
+      },
+      "classification": "objective contradiction; human vote retained"
+    },
+    {
+      "id": 207,
+      "reason": "JSON parameter count differs from the requested value",
+      "expected": {
+        "model": "Hydra-D",
+        "params": 48000000000
+      },
+      "actual": {
+        "model": "Hydra-D",
+        "params": 48000000
+      },
+      "classification": "objective contradiction; human vote retained"
+    },
+    {
+      "id": 113,
+      "reason": "sorting changed an input element",
+      "expected": [
+        "b",
+        "cc",
+        "aaa"
+      ],
+      "actual": [
+        "b",
+        "ccc",
+        "aaa"
+      ],
+      "classification": "objective contradiction; human vote retained"
+    }
+  ],
+  "semantic_rechecks": [
+    18,
+    44,
+    59,
+    89,
+    118,
+    179,
+    249,
+    254
+  ],
+  "rubric_rechecks": [
+    5,
+    13,
+    26,
+    71,
+    132,
+    137,
+    202,
+    226,
+    237,
+    242
+  ],
+  "scope": "structural and counter audit plus targeted semantic objections; no automatic adjudication or promotion"
+}

@@ -1,0 +1,7 @@
+{
+  "scope": "four admitted development requests, seed 42, CUDA/bf16, four optimizer steps",
+  "tensors": 376,
+  "max_abs_difference": 0.0,
+  "bit_identical": true,
+  "approved": false
+}

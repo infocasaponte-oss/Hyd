@@ -1,0 +1,274 @@
+diff --git a/kev/api.py b/kev/api.py
+index 0096b13..b83bd77 100644
+--- a/kev/api.py
++++ b/kev/api.py
+@@ -5,6 +5,7 @@ Choice -> options 'name' or 'name: desc';      answer = argmax, probabilities by
+ Score  -> options = ordered level descriptions; answer = expected level, legend, probabilities by index
+ """
+ import json
++import math
+ import re
+ from datetime import datetime
+ from typing import Any, Literal, Union
+@@ -147,16 +148,23 @@ def round_prob(x: float) -> float:
+ 
+ 
+ def to_answers(probs: list[list[float]], meta: list[dict]) -> dict[str, Any]:
++    if len(probs) != len(meta):
++        raise ValueError("probabilities and question metadata must have the same length")
+     out = {}
+     for p, m in zip(probs, meta):
++        expected = 2 if m["type"] == "noul" else len(m["keys"]) if m["type"] == "choice" else len(m["legend"])
++        if len(p) != expected or any(not math.isfinite(float(v)) or not 0 <= v <= 1 for v in p) or sum(p) <= 0:
++            raise ValueError("invalid probability distribution")
+         if m["type"] == "noul":
+             out[m["id"]] = {"type": "noul", "noul": round_prob(p[1])}
+         elif m["type"] == "choice":
+-            dist = {k: round_prob(v) for k, v in zip(m["keys"], p)}
++            # Preserve the model's small probabilities for downstream log-space
++            # calibration. Four-decimal rounding irreversibly turned them to zero.
++            dist = {k: float(v) for k, v in zip(m["keys"], p)}
+             out[m["id"]] = {"type": "choice", "choice": m["keys"][max(range(len(p)), key=lambda i: p[i])], "confidence": round_prob(choice_confidence(p)), "probabilities": dist}
+         else:
+             score = sum(i * pi for i, pi in enumerate(p))
+-            out[m["id"]] = {"type": "score", "score": round_prob(score), "legend": m["legend"], "probabilities": {str(i): round_prob(v) for i, v in enumerate(p)}, "confidence": round_prob(score_confidence(p))}
++            out[m["id"]] = {"type": "score", "score": round_prob(score), "legend": m["legend"], "probabilities": {str(i): float(v) for i, v in enumerate(p)}, "confidence": round_prob(score_confidence(p))}
+     return out
+ 
+ 
+diff --git a/kev/checkpoint.py b/kev/checkpoint.py
+index cdaf67f..e48b68c 100644
+--- a/kev/checkpoint.py
++++ b/kev/checkpoint.py
+@@ -294,16 +294,20 @@ class Checkpoint:
+ 
+     COMPAT_FIELDS = ("base", "base_revision", "lora", "head_dim", "option_isolation", "special_embeddings", "weights")
+ 
++    def validate_warm_start(self, ours):
++        """Reject architecture mismatches before allocating/downloading the base."""
++        for name in self.COMPAT_FIELDS:
++            theirs, mine = getattr(self.meta, name), getattr(ours, name)
++            if theirs != mine and not (name == "base_revision" and None in (theirs, mine)):
++                raise ValueError(f"--init_from {self.path}: {name} is {theirs!r} there and {mine!r} here")
++
+     def warm_start(self, model, ours):
+         """Delta training: load this checkpoint's weights (adapter, or full backbone) and pointer head into `model` (a fresh
+         DecisionModel built the way `ours` says: with LoRA, or for full-weight training without). `ours` is the Meta the new
+         run will save; every architecture field is compared BEFORE loading, because peft and load_state_dict(strict=False)
+         load matching keys silently and a half-loaded model still trains and still reports a loss. Returns provenance."""
+         from .suite import digest   # lazy: the Space vendors this module without kev/suite.py
+-        for name in self.COMPAT_FIELDS:
+-            theirs, mine = getattr(self.meta, name), getattr(ours, name)
+-            if theirs != mine and not (name == "base_revision" and None in (theirs, mine)):
+-                raise ValueError(f"--init_from {self.path}: {name} is {theirs!r} there and {mine!r} here")
++        self.validate_warm_start(ours)
+         tensors = self._load_backbone_into(model.lm) if self.full else self._load_adapter_into(model.lm)
+         model.head.load_state_dict(self.meta.head)
+         return {"init_from": self.requested, "resolved": self.path, "weights_sha256": self.weights_sha256(),
+diff --git a/kev/contrastive.py b/kev/contrastive.py
+index 5b0ca1b..1b67a9a 100644
+--- a/kev/contrastive.py
++++ b/kev/contrastive.py
+@@ -25,7 +25,7 @@ PROGRAMS = ["the volunteer driver program", "the apprenticeship", "the rental ag
+ 
+ 
+ def _day(d):
+-    return d.strftime("%B %-d, %Y")
++    return f"{d.strftime('%B')} {d.day}, {d.year}"
+ 
+ 
+ def _need(facts, *keys):
+diff --git a/kev/model.py b/kev/model.py
+index 44e2895..2118d2e 100644
+--- a/kev/model.py
++++ b/kev/model.py
+@@ -192,12 +192,12 @@ class PointerHead(nn.Module):
+ 
+     def forward(self, h_decide, h_opts):  # [d], [K,d] -> logits [K]
+         z = (self.k(h_opts) @ self.q(h_decide)) * self.scale
+-        return z if self.training or self.temperature == 1.0 else z / self.temperature
++        return z if self.training or self.temperature == 1.0 else z.float() / self.temperature
+ 
+     def many(self, h_decide, h_opts, owner):  # [Q,d], [sum K,d], question of each option [sum K] -> logits [sum K]
+         """forward() for many questions at once (serving batches): one pass instead of one per question."""
+         z = (self.k(h_opts) * self.q(h_decide)[owner]).sum(-1) * self.scale
+-        return z if self.training or self.temperature == 1.0 else z / self.temperature
++        return z if self.training or self.temperature == 1.0 else z.float() / self.temperature
+ 
+ 
+ # What a loaded model exposes to kev.serve, kev.predictors and the Space: the scoring interface both DecisionModel (torch)
+@@ -376,7 +376,7 @@ class DecisionModel(nn.Module):
+         path: its state once, then the question rows from its cache. forward() keeps the row form, which re-runs the state
+         per question; the two agree to fp32 rounding (#77)."""
+         if self.rows_form([enc]): return self.probs_and_prefix(enc)[0]
+-        return [F.softmax(z, -1).cpu() for z in self.forward(enc)]
++        return [F.softmax(z.float(), -1).cpu() for z in self.forward(enc)]
+ 
+     # --- state-prefix reuse (serving): the state is encoded once, question branches attend to its cached keys/values.
+     # Exact by construction: branch tokens never attend to each other across questions (block-causal mask) and the state
+@@ -387,7 +387,7 @@ class DecisionModel(nn.Module):
+         layout, minus the recomputed state)."""
+         S, _, rows = rows_of(enc)
+         hs = self._rows_hidden([(r["ids"], r["pos"]) for r in rows], cache=cache, prefix_len=len(S))
+-        ps = [F.softmax(self.head(h[r["decide"]], h[torch.tensor(r["opts"], device=self.device)]), -1) for h, r in zip(hs, rows)]
++        ps = [F.softmax(self.head(h[r["decide"]], h[torch.tensor(r["opts"], device=self.device)]).float(), -1) for h, r in zip(hs, rows)]
+         return list(torch.cat(ps).cpu().split([len(p) for p in ps]))   # one device sync for the request, not one per question
+ 
+     @torch.no_grad()
+@@ -418,7 +418,7 @@ class DecisionModel(nn.Module):
+         out = self.lm(input_ids=ids, position_ids=pos, attention_mask=mask, past_key_values=DynamicCache(config=self.lm.config), use_cache=True)
+         h = out.last_hidden_state[0].float()
+         out.past_key_values.crop(-(len(enc["ids"]) - Ls))     # keep the state only (negative = drop that many trailing tokens; positive form deprecated in transformers 5)
+-        return [F.softmax(z, -1).cpu() for z in self._readout(h, enc)], (Ls, out.past_key_values, h[:Ls].clone())
++        return [F.softmax(z.float(), -1).cpu() for z in self._readout(h, enc)], (Ls, out.past_key_values, h[:Ls].clone())
+ 
+     @torch.no_grad()
+     def probs_with_prefix(self, enc, prefix):
+@@ -436,7 +436,7 @@ class DecisionModel(nn.Module):
+             h = torch.cat([h_state, out.last_hidden_state[0].float()], 0)
+         finally:
+             cache.crop(-(len(enc["ids"]) - Ls))
+-        return [F.softmax(z, -1).cpu() for z in self._readout(h, enc)]
++        return [F.softmax(z.float(), -1).cpu() for z in self._readout(h, enc)]
+ 
+     @torch.no_grad()
+     def probs_batch(self, encs, prefixes, keep):
+@@ -479,7 +479,7 @@ class DecisionModel(nn.Module):
+         opt, own, sl = torch.tensor([[starts[q] + 1 + j for q, j in zip(owner, slot)], owner, slot]).to(self.device, non_blocking=True)
+         z = self.head.many(X[dec], X[opt], own)
+         Z = torch.full((len(ks), max(ks)), float("-inf"), device=self.device).index_put_((own, sl), z)
+-        return torch.softmax(Z, -1)[own, sl].cpu().split(ks)
++        return torch.softmax(Z.float(), -1)[own, sl].cpu().split(ks)
+ 
+     def trainable_parameters(self):
+         return [p for p in self.parameters() if p.requires_grad]
+diff --git a/kev/serve.py b/kev/serve.py
+index 36af4e8..f0fd76c 100644
+--- a/kev/serve.py
++++ b/kev/serve.py
+@@ -171,15 +171,33 @@ class Server:
+ 
+     def answer(self, req):
+         """The /v1/systemone response body for one request."""
++        if len(req.questions) > 1:
++            # On the bf16 reference hybrid path, packing sibling questions can
++            # change a branch's posterior enough to change a decision. Use the
++            # same single-question execution path as an independent request.
++            parts = [self.answer(req.model_copy(update={"questions": {qid: q}})) for qid, q in req.questions.items()]
++            return self._combine(req, parts)
+         rec, meta = to_record(prepare(req))
+         return self._body(req, meta, *self.probs(rec))
+ 
+     async def answer_async(self, req):
+         """answer() for the event loop: a request waiting on the model thread holds no worker thread, so a container takes
+         as many concurrent requests as its batches can absorb (FastAPI runs sync endpoints on a 40-thread pool)."""
++        if len(req.questions) > 1:
++            parts = []
++            for qid, q in req.questions.items():
++                parts.append(await self.answer_async(req.model_copy(update={"questions": {qid: q}})))
++            return self._combine(req, parts)
+         rec, meta = to_record(prepare(req))
+         return self._body(req, meta, *await asyncio.wrap_future(self.submit(rec)))
+ 
++    def _combine(self, req, parts):
++        answers = {qid: value for part in parts for qid, value in part["answers"].items()}
++        return {"model": req.model, "answers": answers,
++                "usage": {"input_tokens": sum(p["usage"]["input_tokens"] for p in parts),
++                          "output_tokens": output_tokens(self.tok, answers)},
++                "latency_ms": round(sum(p["latency_ms"] for p in parts), 1)}
++
+     def _body(self, req, meta, ps, m):
+         answers = to_answers(ps, meta)
+         return {"model": req.model, "answers": answers, "usage": {"input_tokens": m["tokens"], "output_tokens": output_tokens(self.tok, answers)}, "latency_ms": m["latency_ms"]}
+@@ -260,6 +278,8 @@ def models():
+             "release_date": s.release_date,
+             "run": ck.requested, "base": meta.base, "lora": meta.lora, "device": s.device, "backend": s.model.backend, "dtype": s.model.dtype,
+             "temperature": s.model.head.temperature,
++            "probability_format": "float32-unrounded-v1",
++            "question_execution": "separate-sequential-v1",
+             "cuda_graphs": graphs.stats() if (graphs := getattr(s.model, "graphs", None)) else None,
+             "prefix_cache": {"size": s.prefix_cache.size, "min_state_tokens": s.prefix_cache.min_tokens, "max_tokens": s.prefix_cache.max_tokens, "hits": s.prefix_cache.hits,
+                              "misses": s.prefix_cache.misses, "cached_states": len(s.prefix_cache.entries), "oom_retries": s.prefix_cache.oom_retries},
+diff --git a/kev/suite.py b/kev/suite.py
+index a9f4bb4..799cdcf 100644
+--- a/kev/suite.py
++++ b/kev/suite.py
+@@ -207,7 +207,7 @@ def fetch_partition(directory, filename):
+     mirror = read_manifest(directory).get("mirror")
+     repo, revision = (mirror["dataset"], mirror["revision"]) if mirror else (SUITES_DATASET, SUITES_REVISION)   # a named mirror pins its own revision
+     try:
+-        cached = hf_hub_download(repo, str(relative), repo_type="dataset", revision=revision)
++        cached = hf_hub_download(repo, relative.as_posix(), repo_type="dataset", revision=revision)
+     except (RepositoryNotFoundError, GatedRepoError) as e:   # a private mirror answers "not found" to anyone without access
+         raise PermissionError(f"{relative} is only in {repo}, which is missing or private to this account; `hf auth login` "
+                               "(or HF_TOKEN) with access to it, or ask for it") from e
+diff --git a/kev/train.py b/kev/train.py
+index f72dcc4..f29681d 100644
+--- a/kev/train.py
++++ b/kev/train.py
+@@ -83,13 +83,35 @@ def accumulation_records(n, batch, accum, microbatch):
+ 
+ # --- data -------------------------------------------------------------------------------------------------------------
+ 
++def screen_custom_training(records):
++    """Keep unique admitted requests and reject held-out or contradictory labels."""
++    unique = {}
++    for record in records:
++        meta = record.get("_meta", {})
++        if record.get("training_allowed") is False or meta.get("training_allowed") is False or meta.get("split") in ("test", "calibration", "validation"):
++            raise ValueError("custom training contains a held-out record")
++        if meta.get("source") in EVAL_ONLY:
++            raise ValueError("custom training contains an eval-only source")
++        question_text = {qid: {k: v for k, v in q.items() if k not in ("label", "target", "src")}
++                         for qid, q in record["questions"].items()}
++        key = json.dumps({"state": record["state"], "questions": question_text}, sort_keys=True, ensure_ascii=False)
++        labels = json.dumps({qid: {k: q[k] for k in ("label", "target") if k in q}
++                             for qid, q in record["questions"].items()}, sort_keys=True)
++        if key in unique and unique[key][1] != labels:
++            raise ValueError("conflicting labels for the same training request")
++        unique.setdefault(key, (record, labels))
++    return [record for record, _ in unique.values()]
++
+ def training_requests(a, tok, manifest, holdout):
+     """The labelled requests one run trains on: the suite's training partition, records built from the public sources,
+     or the user's own file (optionally with a replay sample from the suite); filtered to the training context, checked
+     against the eval-only policy, then the ablation knobs (--train_sources, --public_frac, --synthetic_repeat)."""
+     # the suite's rules (declared trainable sources, no held-out structures) apply to every record taken from it
+     if a.data:
+-        reqs = load_records(a.data)
++        raw = load_records(a.data)
++        reqs = screen_custom_training(raw)
++        if len(raw) != len(reqs):
++            print(f"deduplicated custom training: {len(raw)} -> {len(reqs)} requests", flush=True)
+         if a.replay:
+             pool = load_split(a.suite, "train"); replay = random.Random(f"replay:{a.seed}").sample(pool, min(a.replay, len(pool)))
+             validate_training(replay, manifest)
+@@ -534,6 +556,13 @@ def main():
+     manifest = read_manifest(a.suite) if a.suite else None
+     revision = pinned_revision(a, manifest)
+     holdout = manifest["holdout_sources"] if manifest else [s for s in a.holdout.split(",") if s]
++    meta = Meta(base=a.base, base_revision=revision, lora=0 if a.full_ft else a.lora, head_dim=a.head_dim, option_isolation=bool(a.option_isolation),
++                special_embeddings=bool(a.special_embeddings), weights_dtype=a.weights_dtype, holdout=holdout, weights="full" if a.full_ft else "lora")
++    init_checkpoint = Checkpoint(a.init_from) if a.init_from else None
++    if init_checkpoint:
++        init_checkpoint.validate_warm_start(meta)
++    if a.data:
++        screen_custom_training(load_records(a.data))
+     anchors = read_json(a.anchor).get("targets", {}) if a.anchor else {}
+     if a.anchor: print(f"anchor targets: {len(anchors)} records from {a.anchor}", flush=True)
+     anchor_sources = set(a.anchor_sources.split(",")) if a.anchor_sources else None
+@@ -546,13 +575,11 @@ def main():
+         model.lm.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
+     model.lm.config.use_cache = False
+     # what this run will save as head.pt; also the architecture a warm start must match
+-    meta = Meta(base=a.base, base_revision=revision, lora=0 if a.full_ft else a.lora, head_dim=a.head_dim, option_isolation=bool(a.option_isolation),
+-                special_embeddings=bool(a.special_embeddings), weights_dtype=a.weights_dtype, holdout=holdout, weights="full" if a.full_ft else "lora")
+     init_source = None
+     if a.init_from:
+         # delta mode (PR #9, Radexito): start from an already trained adapter (or full backbone) + pointer head instead of the
+         # base model, so a fine-tune on new data keeps what the released checkpoint knows
+-        init_source = Checkpoint(a.init_from).warm_start(model, meta)
++        init_source = init_checkpoint.warm_start(model, meta)
+         print(f"delta: warm start from {init_source['resolved']}: {init_source['tensors']} {meta.weights} tensors and the pointer head loaded", flush=True)
+     if a.pass_tokens_max and not model.hybrid:
+         # pass_tokens is exact for the row form and the shared prefix, which a hybrid backbone always runs; an attention-only

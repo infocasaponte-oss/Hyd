@@ -1,0 +1,14 @@
+{
+  "template_token_parity": [
+    true,
+    true,
+    true
+  ],
+  "scope": "Returned Ollama template rendered with HF; runtime renderer not independently certified",
+  "encoded_rows": 1468,
+  "adapter_path": "models\\hydra-instruction-v8\\adapter\\adapter_model.safetensors",
+  "lora_B_matrices": 112,
+  "nonzero_lora_B_matrices": 112,
+  "interpretation": "Nonzero updates establish numerical change, not quality improvement",
+  "base_dtype": "bfloat16"
+}

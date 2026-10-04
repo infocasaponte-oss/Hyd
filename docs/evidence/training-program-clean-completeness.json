@@ -1,0 +1,173 @@
+{
+  "integrity": {
+    "counts": {
+      "train.jsonl": 1049,
+      "validation.jsonl": 244,
+      "calibration.jsonl": 239,
+      "test.jsonl": 48
+    },
+    "exact_overlap": 0,
+    "semantic_independence_certified": false
+  },
+  "family_counts": {
+    "literal": 30,
+    "json": 314,
+    "extract": 30,
+    "sum": 30,
+    "sort": 90,
+    "lower": 30,
+    "count": 30,
+    "abstain": 30,
+    "privacy": 30,
+    "grounding": 30,
+    "affine": 32,
+    "threshold": 32,
+    "divisible": 32,
+    "clamp": 32,
+    "sum_list": 32,
+    "filter": 32,
+    "supplied-instrucciones": 32,
+    "supplied-ordenacion": 35,
+    "supplied-razonamiento": 32,
+    "supplied-tecnico": 34,
+    "undeclared": 80
+  },
+  "language_counts": {
+    "undeclared": 1049
+  },
+  "missing_metadata_count": 1580,
+  "missing_metadata_sample": [
+    {
+      "id": "v4-literal-0-0",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-1",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-2",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-3",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-4",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-5",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-6",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-7",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-8",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    },
+    {
+      "id": "v4-literal-0-9",
+      "fields": [
+        "scenario_group",
+        "language",
+        "origin",
+        "source_ref",
+        "license",
+        "review_status"
+      ]
+    }
+  ],
+  "pending_row_reviews": 1580,
+  "group_overlap": [],
+  "family_deficits": {
+    "conversation": 2000,
+    "instructions": 2500,
+    "json": 1686,
+    "web_grounding": 3000,
+    "reasoning_math": 2000,
+    "coding": 2500,
+    "tools": 1500,
+    "safety_abstention": 1000,
+    "language_translation": 1000,
+    "identity_provenance": 500
+  },
+  "split_deficits": {
+    "train": 16951,
+    "development": 1756,
+    "calibration": 1761,
+    "independent_test": 1952
+  },
+  "complete_corpus_ready": false,
+  "approved": false
+}

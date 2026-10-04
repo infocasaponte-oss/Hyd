@@ -1,0 +1,245 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HYDRA Studio</title>
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--ink:#16181d;--muted:#667085;--line:#e3e6eb;--accent:#0b6bcb;--ok:#15803d;--warn:#b45309;--bad:#b91c1c;--code:#f1f3f6}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--panel:#171a21;--ink:#e6e8ec;--muted:#98a2b3;--line:#262b35;--accent:#5aa9ff;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171;--code:#1e222b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{display:flex;gap:12px;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:2;flex-wrap:wrap}
+header h1{font-size:16px;margin:0;letter-spacing:.04em}header small{color:var(--muted)}
+nav{display:flex;gap:4px;flex-wrap:wrap}nav button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:6px 10px;border-radius:6px;cursor:pointer}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{padding:16px;max-width:1280px;margin:0 auto}.view{display:none}.view.on{display:block}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;min-width:0}
+.card h3{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+textarea,input,select{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px;font:inherit}
+button.act{background:var(--accent);color:#fff;border:0;border-radius:6px;padding:7px 12px;cursor:pointer;margin-top:6px}
+pre{background:var(--code);padding:8px;border-radius:6px;overflow:auto;max-height:420px;white-space:pre-wrap;word-break:break-word;margin:0}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:left;vertical-align:top}
+.pill{display:inline-block;padding:1px 7px;border-radius:10px;font-size:12px;border:1px solid var(--line)}
+.PASS,.ok{color:var(--ok)}.PARTIAL,.warn{color:var(--warn)}.FAIL,.bad{color:var(--bad)}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1;min-width:140px}
+.kpi{font-size:22px;font-weight:600}.muted{color:var(--muted)}canvas{width:100%;height:480px;background:var(--code);border-radius:6px}
+.chatlog{display:flex;flex-direction:column;gap:8px;height:min(60vh,560px);overflow-y:auto;padding:4px 2px 8px}
+.msg{max-width:min(78%,720px);padding:8px 11px;border-radius:10px;white-space:pre-wrap;word-break:break-word;border:1px solid var(--line)}
+.msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-color:var(--accent)}
+.msg.assistant{align-self:flex-start;background:var(--bg)}.msg.error{align-self:flex-start;color:var(--bad);background:var(--bg)}
+.msg .meta{display:block;margin-top:4px;font-size:11px;color:var(--muted)}.msg.pending{color:var(--muted);font-style:italic}
+.chatbar{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}.chatbar textarea{flex:1 1 320px;resize:vertical}
+.chatbar select,.chatbar button{width:auto;flex:0 0 auto}
+.timeline div{font-family:ui-monospace,Consolas,monospace;font-size:12px;border-left:2px solid var(--line);padding-left:6px;margin:2px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1>HYDRA Studio</h1><small id="ver"></small>
+  <nav id="nav"></nav>
+  <input id="key" placeholder="API key (opcional)" style="max-width:220px;margin-left:auto" autocomplete="off">
+  <input id="admin" type="password" placeholder="Admin token (sesión)" title="HYDRA_ADMIN_TOKEN: solo para acciones de gobierno; se guarda únicamente en esta pestaña" style="max-width:180px" autocomplete="off">
+</header>
+<main>
+<section class="view" id="v-chat">
+  <div class="card">
+    <h3>Chat con HYDRA</h3>
+    <div id="chatlog" class="chatlog" aria-live="polite"></div>
+    <div class="chatbar">
+      <textarea id="cq" rows="2" placeholder="Escribe un mensaje… (Enter envía, Mayús+Enter salto de línea)"></textarea>
+      <input id="cimage" type="file" accept="image/png,image/jpeg,image/webp" title="Adjuntar imagen (máximo 8 MB)">
+      <select id="cmode" title="Modo de ejecución"><option value="balanced">hydra</option><option value="fast">hydra-fast</option><option value="deep">hydra-deep</option><option value="max">hydra-max</option><option value="private">hydra-private</option></select>
+      <button class="act" id="csend" onclick="chatSend()">Enviar</button>
+      <button class="act" style="background:var(--muted)" onclick="chatReset()">Nueva conversación</button>
+    </div>
+  </div>
+</section>
+<section class="view" id="v-web">
+  <div class="grid">
+    <div class="card"><h3>Buscar en la web</h3>
+      <input id="webq" placeholder="Qué quieres buscar">
+      <select id="webengine"><option value="brave">Brave</option><option value="google">Google</option><option value="bing">Bing</option><option value="duckduckgo">DuckDuckGo</option></select>
+      <button class="act" onclick="webSearch()">Buscar sin API de pago</button>
+      <div id="weburls"></div><pre id="webresults"></pre>
+    </div>
+    <div class="card"><h3>Leer una URL</h3>
+      <input id="weburl" type="url" placeholder="https://...">
+      <button class="act" onclick="webRead()">Leer página</button>
+      <pre id="webpage"></pre>
+    </div>
+  </div>
+</section>
+<section class="view" id="v-tasks">
+  <div class="grid">
+    <div class="card"><h3>Nueva tarea</h3>
+      <textarea id="q" rows="5" placeholder="Pregunta u objetivo…"></textarea>
+      <div class="row"><select id="mode"><option>balanced</option><option>fast</option><option>deep</option><option>max</option><option>private</option></select>
+      <select id="kind"><option value="task">Tarea (kernel)</option><option value="goal">Objetivo (planner)</option><option value="translate">Traducir → inglés</option></select></div>
+      <input id="ws" placeholder="Workspace: ruta relativa a HYDRA_REPOSITORIES_ROOT (solo objetivos)">
+      <button class="act" onclick="runTask()">Ejecutar</button>
+    </div>
+    <div class="card"><h3>Respuesta</h3><div id="meta" class="muted"></div><pre id="ans"></pre></div>
+    <div class="card"><h3>Eventos</h3><div id="tl" class="timeline"></div></div>
+    <div class="card"><h3>Aprendizaje (snapshot)</h3><pre id="learn"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-world">
+  <div class="grid">
+    <div class="card"><h3>World Model</h3><pre id="wstats"></pre>
+      <input id="wq" placeholder="Consulta (Graph RAG)…"><button class="act" onclick="worldQuery()">Consultar</button><pre id="wres"></pre></div>
+    <div class="card" style="grid-column:1/-1"><h3>Grafo</h3><canvas id="graph"></canvas></div>
+  </div>
+</section>
+<section class="view" id="v-models">
+  <div class="grid">
+    <div class="card" style="grid-column:1/-1"><h3>Registro</h3><div id="models"></div></div>
+    <div class="card"><h3>Resolver capacidad</h3><input id="cap" value="coding"><label><input type="checkbox" id="loc" style="width:auto"> solo local</label>
+      <button class="act" onclick="resolveCap()">Resolver</button><pre id="capres"></pre></div>
+    <div class="card"><h3>Model Factory</h3><pre id="factory"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-corpus">
+  <div class="grid">
+    <div class="card"><h3>Salud del corpus</h3><pre id="cstats"></pre></div>
+    <div class="card"><h3>Buscar</h3><input id="corpus-query" placeholder="texto"><button class="act" onclick="corpusSearch()">Buscar</button><pre id="cres"></pre></div>
+    <div class="card"><h3>Construir dataset</h3>
+      <div class="row"><input id="dsn" value="studio-sft"><select id="dsf"><option>sft</option><option>dpo</option><option>tool</option><option>process</option><option>planner</option><option>value</option><option>embedding</option></select></div>
+      <button class="act" onclick="buildDataset()">Construir</button><pre id="dsres"></pre></div>
+    <div class="card"><h3>Releases de datasets</h3><pre id="dsl"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-training">
+  <div class="card"><h3>Evaluación humana</h3><p>Revisa las respuestas de este candidato antes de promocionarlo. Las valoraciones se guardan para sus pesos concretos.</p><a href="/hydra/v1/evaluation/review">Abrir revisión de respuestas</a></div>
+  <div class="grid">
+    <div class="card"><h3>Meta-learning</h3><pre id="mld"></pre></div>
+    <div class="card"><h3>Especialistas propuestos (Cognitive JIT)</h3><pre id="spec"></pre></div>
+    <div class="card"><h3>Training runs</h3><pre id="runs"></pre></div>
+    <div class="card"><h3>Mejoras propuestas (lab)</h3><pre id="imp"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-infra">
+  <div class="grid">
+    <div class="card"><h3>Clúster</h3><pre id="nodes"></pre></div>
+    <div class="card"><h3>Execution fabric</h3><pre id="fabric"></pre></div>
+    <div class="card"><h3>Perfil de hardware local</h3><pre id="edge"></pre></div>
+    <div class="card"><h3>Observabilidad</h3><pre id="obs"></pre><a href="/metrics" target="_blank">/metrics (Prometheus)</a></div>
+    <div class="card"><h3>Estado del OS</h3><pre id="os"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-ip">
+  <div class="grid">
+    <div class="card"><h3>Ledger</h3><pre id="ledger"></pre></div>
+    <div class="card"><h3>Invenciones</h3><pre id="inv"></pre></div>
+    <div class="card"><h3>Release firmada</h3><input id="rel" value="hydra-studio-release"><button class="act" onclick="buildRelease()">Construir y verificar</button><pre id="relres"></pre></div>
+    <div class="card"><h3>BOM (CycloneDX)</h3><button class="act" onclick="bom()">Generar</button><pre id="bomres"></pre></div>
+  </div>
+</section>
+<section class="view" id="v-system">
+  <div class="grid">
+    <div class="card"><h3>System Contract (10 invariantes)</h3><div id="invar"></div></div>
+    <div class="card"><h3>Definition of Done</h3><div id="dod"></div></div>
+    <div class="card"><h3>Red Team</h3><button class="act" onclick="redteam()">Ejecutar ataques</button><div id="rt"></div></div>
+    <div class="card"><h3>Feature flags</h3><pre id="flags"></pre></div>
+  </div>
+</section>
+</main>
+<script>
+const views=[["chat","Chat"],["web","Web"],["tasks","Tareas"],["world","World Graph"],["models","Modelos"],["corpus","Corpus"],["training","Training"],["infra","Infraestructura"],["ip","IP y Licencias"],["system","Sistema"]];
+const $=id=>document.getElementById(id);
+const store={get(k){try{return localStorage.getItem(k)||""}catch(e){return ""}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const session={get(k){try{return sessionStorage.getItem(k)||""}catch(e){return ""}},set(k,v){try{sessionStorage.setItem(k,v)}catch(e){}}};
+$("key").value=store.get("hydra_key");$("key").onchange=e=>store.set("hydra_key",e.target.value);
+$("admin").value=session.get("hydra_admin");$("admin").onchange=e=>session.set("hydra_admin",e.target.value);
+function H(){const k=$("key").value,a=$("admin").value;return Object.assign({"Content-Type":"application/json"},k?{"X-API-Key":k}:{},a?{"X-Hydra-Admin-Token":a}:{})}
+async function api(path,opts={}){const r=await fetch(path,Object.assign({headers:H()},opts));const t=await r.text();let d;try{d=JSON.parse(t)}catch(e){d=t}if(!r.ok)throw new Error(r.status+" "+(typeof d==="string"?d:JSON.stringify(d)));return d}
+const show=(id,d)=>{$(id).textContent=typeof d==="string"?d:JSON.stringify(d,null,2)};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function nav(){$("nav").innerHTML=views.map(([k,l])=>`<button data-v="${k}">${l}</button>`).join("");
+ $("nav").onclick=e=>{const v=e.target.dataset.v;if(v)go(v)};go(store.get("hydra_view")||"chat")}
+function go(v){store.set("hydra_view",v);document.querySelectorAll(".view").forEach(x=>x.classList.toggle("on",x.id==="v-"+v));
+ document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));(loaders[v]||(()=>{}))()}
+const safe=f=>async()=>{try{await f()}catch(e){console.warn(e)}};
+const loaders={
+ world:safe(async()=>{show("wstats",await api("/hydra/v1/world"));drawGraph(await api("/hydra/v1/world/graph"))}),
+ models:safe(async()=>{const m=await api("/hydra/v1/models/catalog");$("models").innerHTML="<table><tr><th>id</th><th>proveedor</th><th>local</th><th>tier</th><th>activo</th><th>coding</th><th>reasoning</th><th>vision</th></tr>"+
+   m.map(x=>`<tr><td>${esc(x.id)}</td><td>${esc(x.provider)}</td><td>${esc(x.local)}</td><td>${esc(x.tier)}</td><td class="${x.enabled&&x.installed&&x.provider_healthy?"ok":"bad"}">${!x.enabled?"desactivado":!x.installed?"no instalado":!x.provider_healthy?"backend caído":"sí"}</td><td>${esc(x.capabilities.coding)}</td><td>${esc(x.capabilities.reasoning)}</td><td>${esc(x.capabilities.vision)}</td></tr>`).join("")+"</table>";
+   show("factory",await api("/v1/factory/status"))}),
+ corpus:safe(async()=>{show("cstats",await api("/hydra/v1/corpus/stats"));show("dsl",(await api("/hydra/v1/datasets")).map(r=>({id:r.id,examples:r.examples,splits:r.splits,synthetic:r.synthetic_fraction})))}),
+ training:safe(async()=>{show("mld",await api("/hydra/v1/training/dashboard"));show("spec",await api("/hydra/v1/training/specialists?window_days=1&min_volume_month=10"));
+   show("runs",(await api("/hydra/v1/training/runs")).map(r=>({id:r.id,status:r.status,backend:r.backend,metrics:r.metrics,error:r.error})));show("imp",await api("/hydra/v1/lab/improvements"))}),
+ infra:safe(async()=>{show("nodes",await api("/v1/cluster/nodes"));show("fabric",await api("/v1/fabric/stats"));show("edge",await api("/hydra/v1/edge/profile"));
+   show("obs",await api("/hydra/v1/observability"));show("os",await api("/v1/os/status"))}),
+ ip:safe(async()=>{show("ledger",await api("/hydra/v1/ledger/verify"));show("inv",(await api("/hydra/v1/ip/inventions")).portfolio)}),
+ system:safe(async()=>{const inv=await api("/hydra/v1/system/invariants");$("invar").innerHTML=table(inv);
+   const d=await api("/hydra/v1/system/dod");$("dod").innerHTML=`<p>${d.summary.PASS} PASS · ${d.summary.PARTIAL} PARTIAL · ${d.summary.FAIL} FAIL</p>`+table(d.rows);show("flags",await api("/hydra/v1/flags"))})
+};
+function table(rows){return "<table>"+rows.map(r=>`<tr><td class="${esc(r.status||(r.passed?"PASS":"FAIL"))}">${esc(r.status||(r.passed?"PASS":"FAIL"))}</td><td>${esc(r.title||r.id)}</td></tr>`).join("")+"</table>"}
+async function runTask(){const q=$("q").value.trim();if(!q)return;const kind=$("kind").value;$("ans").textContent="…";$("tl").innerHTML="";show("learn","");$("meta").textContent="";
+ try{if(kind==="goal"){const g=await api("/hydra/v1/goals",{method:"POST",body:JSON.stringify({goal:q,workspace:$("ws").value||null,mode:$("mode").value})});
+   $("meta").textContent=`estado ${g.status} · replans ${g.replans} · ${g.duration_ms} ms`;show("ans",(g.answer||"")+(g.patch?"\n\n"+g.patch:""));$("tl").innerHTML=g.steps.map(s=>`<div class="${s.success?"ok":"bad"}">${esc(s.action)} — ${esc(s.summary)}</div>`).join("");show("learn",g.metrics);return}
+  if(kind==="translate"){const t=await api("/v1/translate",{method:"POST",body:JSON.stringify({text:q,target_language:"en"})});show("ans",t.translation);$("meta").textContent=`${t.source_language}→${t.target_language} · ${t.model} · glosario ${t.glossary_compliance}`;return}
+  const d=await hydraStream([{role:"user",content:q}],$("mode").value,
+    ev=>$("tl").insertAdjacentHTML("beforeend",`<div>${esc(ev.type)} <span class="muted">${esc(ev.source)}</span></div>`));
+  show("ans",d.answer);$("meta").textContent=metaText(d.meta);show("learn",d.learning||{})
+ }catch(e){$("ans").textContent="Error: "+e.message}}
+const metaText=m=>`confianza ${m.confidence} · verificado ${m.verified} · modelos ${m.models_used.join(", ")} · ${m.latency_ms} ms`;
+// POST /v1/hydra/stream (SSE): onEvent gets each kernel event; resolves with the final result, throws on errors.
+async function hydraStream(messages,mode,onEvent){
+ const r=await fetch("/v1/hydra/stream",{method:"POST",headers:H(),body:JSON.stringify({messages,mode})});
+ if(!r.ok){const t=await r.text();throw new Error(r.status+" "+t)}
+ const rd=r.body.getReader();const dec=new TextDecoder();let buf="";
+ while(true){const {done,value}=await rd.read();if(done)break;buf+=dec.decode(value,{stream:true});let i;
+  while((i=buf.indexOf("\n\n"))>=0){const chunk=buf.slice(0,i);buf=buf.slice(i+2);const line=chunk.split("\n").find(l=>l.startsWith("data:"));if(!line)continue;
+   let d;try{d=JSON.parse(line.slice(5))}catch(e){continue}
+   if(d.error!==undefined)throw new Error(d.error);
+   if(d.answer!==undefined&&d.meta)return d;
+   if(d.type&&d.source&&onEvent)onEvent(d)}}
+ throw new Error("la conexión terminó sin respuesta")}
+// ---- chat: the whole conversation goes to the kernel on every turn (last CHAT_WINDOW messages)
+const CHAT_WINDOW=20;let chat=[];let chatBusy=false;
+try{chat=JSON.parse(store.get("hydra_chat")||"[]");if(!Array.isArray(chat))chat=[]}catch(e){chat=[]}
+function chatSave(){store.set("hydra_chat",JSON.stringify(chat.slice(-100)))}
+function chatRender(pending){const log=$("chatlog");
+ log.innerHTML=(chat.length||pending?"":`<div class="muted">Habla con HYDRA. La conversación se envía completa en cada turno, así que puedes hacer preguntas de seguimiento.</div>`)+
+  chat.map(m=>`<div class="msg ${m.role}">${esc(m.content)}${m.meta?`<span class="meta">${esc(m.meta)}</span>`:""}</div>`).join("")+
+  (pending?`<div class="msg assistant pending" id="cpend">${esc(pending)}</div>`:"");
+ log.scrollTop=log.scrollHeight}
+async function chatSend(){const image=$("cimage").files[0];const q=$("cq").value.trim()||(image?"Describe la imagen adjunta.":"");if(!q||chatBusy)return;
+ if(image&&(!["image/png","image/jpeg","image/webp"].includes(image.type)||image.size>8*1024*1024)){alert("Adjunta una imagen PNG, JPEG o WebP de hasta 8 MB.");return}
+ chatBusy=true;$("csend").disabled=true;$("cq").value="";
+ chat=chat.filter(m=>m.role!=="error");chat.push({role:"user",content:q});chatSave();chatRender("pensando…");
+ try{const history=chat.slice(-CHAT_WINDOW).map(m=>({role:m.role,content:m.content}));
+  if(image){const uri=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error("No se pudo leer la imagen"));reader.readAsDataURL(image)});history[history.length-1].images=[uri];$("cimage").value=""}
+  const d=await hydraStream(history,$("cmode").value,ev=>{const p=$("cpend");if(p)p.textContent=`${ev.type} · ${ev.source}…`});
+  chat.push({role:"assistant",content:d.answer,meta:metaText(d.meta)})}
+ catch(e){chat.push({role:"error",content:"Error: "+e.message})}
+ finally{chatBusy=false;$("csend").disabled=false;chatSave();chatRender();$("cq").focus()}}
+function chatReset(){if(chatBusy)return;chat=[];chatSave();chatRender()}
+$("cq").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();chatSend()}});
+$("cmode").value=store.get("hydra_chat_mode")||"balanced";$("cmode").onchange=e=>store.set("hydra_chat_mode",e.target.value);
+chatRender();
+async function worldQuery(){show("wres",await api("/hydra/v1/world/query",{method:"POST",body:JSON.stringify({query:$("wq").value})}))}
+async function webSearch(){show("webresults","Buscando…");$("weburls").replaceChildren();try{const r=await api("/hydra/v1/web/search",{method:"POST",body:JSON.stringify({query:$("webq").value,engine:$("webengine").value})});show("webresults",r);for(const [name,url] of Object.entries(r.search_urls||{})){const a=document.createElement("a");a.textContent="Abrir "+name+" ";a.href=url;a.target="_blank";a.rel="noopener noreferrer";$("weburls").append(a)}}catch(e){show("webresults",e.message)}}
+async function webRead(){show("webpage","Leyendo…");try{show("webpage",await api("/hydra/v1/web/read",{method:"POST",body:JSON.stringify({url:$("weburl").value})}))}catch(e){show("webpage",e.message)}}
+async function resolveCap(){show("capres",await api("/hydra/v1/models/resolve",{method:"POST",body:JSON.stringify({capability:$("cap").value,constraints:{local_only:$("loc").checked}})}))}
+async function corpusSearch(){show("cres",(await api("/hydra/v1/corpus/query",{method:"POST",body:JSON.stringify({text:$("corpus-query").value,limit:20})})).map(r=>({id:r.id,type:r.record_type,status:r.training_status,quality:r.quality,input:r.input})))}
+async function buildDataset(){try{show("dsres",await api("/hydra/v1/datasets/build",{method:"POST",body:JSON.stringify({name:$("dsn").value,format:$("dsf").value})}))}catch(e){show("dsres",e.message)}}
+async function buildRelease(){try{show("relres",await api("/hydra/v1/releases/build",{method:"POST",body:JSON.stringify({name:$("rel").value})}))}catch(e){show("relres",e.message)}}
+async function bom(){const b=await api("/hydra/v1/bom");show("bomres",{specVersion:b.specVersion,components:b.components.length,serial:b.serialNumber})}
+async function redteam(){$("rt").textContent="…";const r=await api("/hydra/v1/redteam/run",{method:"POST"});$("rt").innerHTML=table(r.map(x=>({passed:x.passed,title:x.id+" ("+x.category+")"})))}
+function drawGraph(g){const c=$("graph");const w=c.width=c.clientWidth*devicePixelRatio,h=c.height=c.clientHeight*devicePixelRatio;const x=c.getContext("2d");
+ const N=g.nodes.slice(0,250);const idx=Object.fromEntries(N.map((n,i)=>[n.id,i]));const E=g.edges.filter(e=>e.source in idx&&e.target in idx);
+ const P=N.map(()=>({x:Math.random()*w,y:Math.random()*h,vx:0,vy:0}));
+ for(let it=0;it<220;it++){for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const dx=P[i].x-P[j].x,dy=P[i].y-P[j].y,d2=dx*dx+dy*dy+.01,f=2400*devicePixelRatio/d2;P[i].vx+=dx*f;P[i].vy+=dy*f;P[j].vx-=dx*f;P[j].vy-=dy*f}
+  for(const e of E){const a=P[idx[e.source]],b=P[idx[e.target]],dx=b.x-a.x,dy=b.y-a.y;a.vx+=dx*.01;a.vy+=dy*.01;b.vx-=dx*.01;b.vy-=dy*.01}
+  for(const p of P){p.vx+=(w/2-p.x)*.002;p.vy+=(h/2-p.y)*.002;p.x=Math.max(10,Math.min(w-10,p.x+p.vx*.5));p.y=Math.max(10,Math.min(h-10,p.y+p.vy*.5));p.vx*=.6;p.vy*=.6}}
+ const css=getComputedStyle(document.documentElement);x.strokeStyle=css.getPropertyValue("--line");x.lineWidth=devicePixelRatio;
+ for(const e of E){const a=P[idx[e.source]],b=P[idx[e.target]];x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+ const col={task:"#0b6bcb",model:"#7c3aed",tool:"#15803d",value:"#b45309",entity:"#0891b2"};x.font=`${11*devicePixelRatio}px system-ui`;
+ N.forEach((n,i)=>{x.fillStyle=col[n.type]||"#667085";x.beginPath();x.arc(P[i].x,P[i].y,4*devicePixelRatio,0,7);x.fill();x.fillStyle=css.getPropertyValue("--ink");if(n.type!=="task")x.fillText(String(n.label).slice(0,28),P[i].x+6,P[i].y-4)})}
+api("/health").then(h=>{$("ver").textContent="v"+(h.version||"")}).catch(()=>{});nav();
+</script>
+</body>
+</html>

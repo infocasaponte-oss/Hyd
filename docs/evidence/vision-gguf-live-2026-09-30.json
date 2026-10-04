@@ -1,0 +1,49 @@
+{
+  "scope": "smoke tests only",
+  "runs": [
+    {
+      "model": "qwen3-vl:8b",
+      "output": "{",
+      "latency_ms": 81447.55010000154,
+      "output_tokens": 128,
+      "gpu_samples": [
+        {
+          "name": "qwen3-vl:8b",
+          "size": 5793780858,
+          "size_vram": 5793780858
+        },
+        {
+          "name": "qwen3-vl:8b",
+          "size": 5793780858,
+          "size_vram": 5793780858
+        },
+        {
+          "name": "qwen3-vl:8b",
+          "size": 5793780858,
+          "size_vram": 5793780858
+        }
+      ]
+    },
+    {
+      "model": "hydra-q5-v2",
+      "output": "HYDRA es un motor local fiable que opera en una variedad de condiciones ambientales, incluyendo temperaturas altas y bajas, humedad alta y baja, y presiones atmosf\u00e9ricas variadas. Es especialmente \u00fatil en situaciones donde la disponibilidad de energ\u00eda el\u00e9ctrica puede ser limitada o no disponible.",
+      "latency_ms": 9596.295299998019,
+      "output_tokens": 71,
+      "gpu_samples": [
+        {
+          "name": "hydra-q5-v2:latest",
+          "size": 1305235946,
+          "size_vram": 1305235946
+        }
+      ]
+    },
+    {
+      "model": "hydra-q5-v2",
+      "output": "323",
+      "latency_ms": 2985.974000002898,
+      "output_tokens": 4,
+      "gpu_samples": []
+    }
+  ],
+  "gguf_sha256": "634eb99a1bde8bde375206dabd0bfd45ce5be2106abe55a16dd8a49b97f8a650"
+}

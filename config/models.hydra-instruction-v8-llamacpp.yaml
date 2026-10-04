@@ -1,0 +1,20 @@
+models:
+  - id: hydra-instruction-v8-direct-candidate
+    provider: llamacpp
+    endpoint: http://127.0.0.1:18090/v1
+    runtime_model: hydra-instruction-v8
+    engine_creator: Luis Manuel Cousido Hermida
+    identity_context: >-
+      Tu nombre es HYDRA. No eres Luis ni debes presentarte como Luis.
+      Luis Manuel Cousido Hermida creó el motor de este proyecto; es una persona distinta de ti.
+      Este candidato usa pesos Qwen de Alibaba ajustados para HYDRA; no fueron entrenados desde cero.
+      Esa procedencia es información interna de contexto: no la menciones en saludos ni presentaciones.
+      Solo explica la base Qwen si el usuario pregunta explícitamente por el modelo base, los pesos o el entrenamiento.
+      HYDRA no es un producto de Anthropic ni de OpenAI. Distingue autoría del motor y procedencia de los pesos.
+      Responde en el idioma del usuario. En conversación normal usa texto, no JSON, salvo que se solicite.
+    local: true
+    tier: 2
+    context_window: 2048
+    capabilities: {chat: 0.6, reasoning: 0.5, coding: 0.6, tools: 0.3, vision: 0.0, research: 0.3}
+    estimated_latency_ms: 3000
+    quirks: {native_json_schema: true, native_tools: false, typed_state_json: true}

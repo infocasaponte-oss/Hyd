@@ -1,0 +1,14 @@
+{
+  "exact_overlap": [],
+  "lexical_flags": [],
+  "threshold": 0.6,
+  "source_hashes": {
+    "C:\\Users\\mejil\\Downloads\\files\\train.jsonl": "f8b54ddea63188ca21bb469b2cfbdaa4eb932ca9c96b53736eba661f98e9079f",
+    "C:\\Users\\mejil\\Downloads\\files\\val.jsonl": "67c40363f54406d0074caab037ae7e532969317cf7fbf9038cdeec86cff6933a",
+    "data\\hydra-instruction-v7\\test.jsonl": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3",
+    "data\\external-evaluation-v2\\cases.json": "8426e4d949f866f328233a66188ffe04ac9f5db61468d90f785f0e4b6f4bc0bd",
+    "docs\\evidence\\proposed-evaluation-2026-10-01\\cases.json": "0e12dce455097db07450753b355b348ee1b8291fc677a793e6b3eb1c18699cb1"
+  },
+  "source_rows_changed": false,
+  "limitation": "Lexical filter only; no guarantee against semantic contamination"
+}

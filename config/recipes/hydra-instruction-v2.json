@@ -1,0 +1,28 @@
+{
+  "base_model": "models/hydra-pilot/merged",
+  "base_repository": "local:HYDRA-pilot-merged",
+  "base_revision": "local-pinned-sha256",
+  "base_sha256": "f40c9ed093c27c44c84c568f59405b0bf98b8124d9e46295f29afe30c90fea14",
+  "base_size_bytes": 3087467144,
+  "corpus": "data/hydra-instruction-v2",
+  "output": "models/hydra-instruction-v2",
+  "llamacpp": "runtime/llama.cpp",
+  "llamacpp_revision": "b11146",
+  "quantizer": "runtime/llama-bin/llama-quantize.exe",
+  "method": "lora",
+  "epochs": 1,
+  "batch_size": 1,
+  "gradient_accumulation": 8,
+  "learning_rate": 5e-05,
+  "max_seq_length": 384,
+  "r": 8,
+  "alpha": 16,
+  "dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "v_proj"
+  ],
+  "seed": 42,
+  "require_gpu": true,
+  "quantization": "Q5_K_M"
+}

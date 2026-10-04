@@ -1,0 +1,749 @@
+{
+  "model": "hydra-instruction-v7:latest",
+  "dataset_sha256": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3",
+  "cases": [
+    {
+      "id": "test-literal-2000",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2000",
+      "latency_ms": 130.35
+    },
+    {
+      "id": "test-json-2000",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2000}",
+      "latency_ms": 234.78
+    },
+    {
+      "id": "test-literal-2001",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2001",
+      "latency_ms": 205.36
+    },
+    {
+      "id": "test-json-2001",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2001}",
+      "latency_ms": 171.99
+    },
+    {
+      "id": "test-literal-2002",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2002",
+      "latency_ms": 82.23
+    },
+    {
+      "id": "test-json-2002",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2002}",
+      "latency_ms": 166.01
+    },
+    {
+      "id": "test-literal-2003",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2003",
+      "latency_ms": 192.99
+    },
+    {
+      "id": "test-json-2003",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2003}",
+      "latency_ms": 164.2
+    },
+    {
+      "id": "test-literal-2004",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2004",
+      "latency_ms": 1947.97
+    },
+    {
+      "id": "test-json-2004",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2004}",
+      "latency_ms": 613.26
+    },
+    {
+      "id": "test-literal-2005",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2005",
+      "latency_ms": 291.14
+    },
+    {
+      "id": "test-json-2005",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2005}",
+      "latency_ms": 540.89
+    },
+    {
+      "id": "test-literal-2006",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2006",
+      "latency_ms": 78.8
+    },
+    {
+      "id": "test-json-2006",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2006}",
+      "latency_ms": 180.88
+    },
+    {
+      "id": "test-literal-2007",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2007",
+      "latency_ms": 84.7
+    },
+    {
+      "id": "test-json-2007",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2007}",
+      "latency_ms": 168.15
+    },
+    {
+      "id": "test-literal-2008",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2008",
+      "latency_ms": 78.29
+    },
+    {
+      "id": "test-json-2008",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2008}",
+      "latency_ms": 179.04
+    },
+    {
+      "id": "test-literal-2009",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2009",
+      "latency_ms": 199.8
+    },
+    {
+      "id": "test-json-2009",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2009}",
+      "latency_ms": 206.26
+    },
+    {
+      "id": "test-literal-2010",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2010",
+      "latency_ms": 80.44
+    },
+    {
+      "id": "test-json-2010",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2010}",
+      "latency_ms": 185.69
+    },
+    {
+      "id": "test-literal-2011",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2011",
+      "latency_ms": 158.27
+    },
+    {
+      "id": "test-json-2011",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2011}",
+      "latency_ms": 190.46
+    },
+    {
+      "id": "test-literal-2012",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2012",
+      "latency_ms": 176.22
+    },
+    {
+      "id": "test-json-2012",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2012}",
+      "latency_ms": 162.05
+    },
+    {
+      "id": "test-literal-2013",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2013",
+      "latency_ms": 82.83
+    },
+    {
+      "id": "test-json-2013",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2013}",
+      "latency_ms": 164.34
+    },
+    {
+      "id": "test-literal-2014",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2014",
+      "latency_ms": 79.74
+    },
+    {
+      "id": "test-json-2014",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2014}",
+      "latency_ms": 261.56
+    },
+    {
+      "id": "test-literal-2015",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2015",
+      "latency_ms": 89.06
+    },
+    {
+      "id": "test-json-2015",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2015}",
+      "latency_ms": 170.09
+    },
+    {
+      "id": "test-literal-2016",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2016",
+      "latency_ms": 77.61
+    },
+    {
+      "id": "test-json-2016",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2016}",
+      "latency_ms": 169.68
+    },
+    {
+      "id": "test-literal-2017",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2017",
+      "latency_ms": 99.0
+    },
+    {
+      "id": "test-json-2017",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2017}",
+      "latency_ms": 170.78
+    },
+    {
+      "id": "test-literal-2018",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2018",
+      "latency_ms": 83.37
+    },
+    {
+      "id": "test-json-2018",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2018}",
+      "latency_ms": 175.73
+    },
+    {
+      "id": "test-literal-2019",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2019",
+      "latency_ms": 175.97
+    },
+    {
+      "id": "test-json-2019",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2019}",
+      "latency_ms": 187.36
+    },
+    {
+      "id": "test-literal-2020",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2020",
+      "latency_ms": 97.82
+    },
+    {
+      "id": "test-json-2020",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2020}",
+      "latency_ms": 172.2
+    },
+    {
+      "id": "test-literal-2021",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2021",
+      "latency_ms": 161.04
+    },
+    {
+      "id": "test-json-2021",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2021}",
+      "latency_ms": 178.21
+    },
+    {
+      "id": "test-literal-2022",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2022",
+      "latency_ms": 88.35
+    },
+    {
+      "id": "test-json-2022",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":false,\"id\":2022}",
+      "latency_ms": 168.14
+    },
+    {
+      "id": "test-literal-2023",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2023",
+      "latency_ms": 121.06
+    },
+    {
+      "id": "test-json-2023",
+      "kind": "json",
+      "passed": true,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "activo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "activo"
+        ],
+        "additionalProperties": false
+      },
+      "output": "{\"activo\":true,\"id\":2023}",
+      "latency_ms": 183.19
+    }
+  ],
+  "approved": false,
+  "protocol": "typed-state-json",
+  "scope": "synthetic exact-output and JSON test; requires separate coding and human evaluation",
+  "identity": {
+    "name": "hydra-instruction-v7:latest",
+    "digest": "bb1711bc5fe8e085fe44d9649b78307e0c0fe8329c374869f9db2131c02282aa",
+    "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "correct": 48,
+  "total": 48,
+  "status": "EVALUATED",
+  "accuracy": 1.0,
+  "instruction_gate_passed": true
+}

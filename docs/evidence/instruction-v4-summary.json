@@ -1,0 +1,43 @@
+{
+  "v3_development": {
+    "accuracy": 0.65,
+    "correct": 65,
+    "total": 100,
+    "wilson95": [
+      0.5525444329688796,
+      0.7363575175690247
+    ],
+    "complete": true
+  },
+  "v4_development": {
+    "accuracy": 0.99,
+    "correct": 99,
+    "total": 100,
+    "wilson95": [
+      0.9455138038212946,
+      0.9982325679358593
+    ],
+    "complete": true
+  },
+  "v4_calibration": {
+    "accuracy": 0.98,
+    "correct": 98,
+    "total": 100,
+    "wilson95": [
+      0.929988209271456,
+      0.9944980324498376
+    ],
+    "complete": true
+  },
+  "v4_frozen_instruction": {
+    "accuracy": 0.5,
+    "correct": 24,
+    "total": 48
+  },
+  "v4_coding": {
+    "score": 1.0
+  },
+  "approved": false,
+  "independent_test": false,
+  "serving_model_changed": false
+}

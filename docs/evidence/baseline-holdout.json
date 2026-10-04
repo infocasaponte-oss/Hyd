@@ -1,0 +1,596 @@
+{
+  "model": "hydra-baseline",
+  "dataset_sha256": "399bb4879f17eb0afed5839df7dc0993fee9eae12017553e04424a734f7bec51",
+  "subset": false,
+  "approved": false,
+  "cases": [
+    {
+      "id": "count-0",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(2)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 1523.0
+    },
+    {
+      "id": "count-1",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(3)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 1021.2
+    },
+    {
+      "id": "count-2",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(4)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 1361.7
+    },
+    {
+      "id": "count-3",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(5)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 2037.3
+    },
+    {
+      "id": "count-4",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(6)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 917.5
+    },
+    {
+      "id": "count-5",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(7)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 923.1
+    },
+    {
+      "id": "count-6",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(8)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 1128.7
+    },
+    {
+      "id": "count-7",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(9)\n```",
+      "stderr": "",
+      "tokens": 16,
+      "latency_ms": 1022.2
+    },
+    {
+      "id": "count-8",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(10)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1042.3
+    },
+    {
+      "id": "count-9",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(11)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 967.4
+    },
+    {
+      "id": "count-10",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(12)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1037.0
+    },
+    {
+      "id": "count-11",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(13)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1058.0
+    },
+    {
+      "id": "count-12",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(14)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1028.0
+    },
+    {
+      "id": "count-13",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(15)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1042.4
+    },
+    {
+      "id": "count-14",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(16)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 974.5
+    },
+    {
+      "id": "count-15",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(17)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1055.8
+    },
+    {
+      "id": "count-16",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(18)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1014.5
+    },
+    {
+      "id": "count-17",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(19)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 984.6
+    },
+    {
+      "id": "count-18",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(20)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 984.5
+    },
+    {
+      "id": "count-19",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(21)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1060.6
+    },
+    {
+      "id": "count-20",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(22)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 980.4
+    },
+    {
+      "id": "count-21",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(23)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 978.5
+    },
+    {
+      "id": "count-22",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(24)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 971.8
+    },
+    {
+      "id": "count-23",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(25)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 966.8
+    },
+    {
+      "id": "count-24",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(26)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 976.8
+    },
+    {
+      "id": "count-25",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(27)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1079.1
+    },
+    {
+      "id": "count-26",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(28)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 982.5
+    },
+    {
+      "id": "count-27",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(29)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 925.8
+    },
+    {
+      "id": "count-28",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(30)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 963.9
+    },
+    {
+      "id": "count-29",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(31)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 982.3
+    },
+    {
+      "id": "count-30",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(32)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1161.4
+    },
+    {
+      "id": "count-31",
+      "family": "count",
+      "passed": true,
+      "output": "```python\ndef solve(xs):\n    return xs.count(33)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1029.4
+    },
+    {
+      "id": "distance-0",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 2)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1020.3
+    },
+    {
+      "id": "distance-1",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 3)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1029.6
+    },
+    {
+      "id": "distance-2",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 4)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1041.1
+    },
+    {
+      "id": "distance-3",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 5)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1293.7
+    },
+    {
+      "id": "distance-4",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 6)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1127.8
+    },
+    {
+      "id": "distance-5",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 7)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1017.5
+    },
+    {
+      "id": "distance-6",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 8)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1048.0
+    },
+    {
+      "id": "distance-7",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 9)\n```",
+      "stderr": "",
+      "tokens": 17,
+      "latency_ms": 1603.8
+    },
+    {
+      "id": "distance-8",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 10)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1055.2
+    },
+    {
+      "id": "distance-9",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 11)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1320.8
+    },
+    {
+      "id": "distance-10",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 12)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1123.8
+    },
+    {
+      "id": "distance-11",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 13)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1107.0
+    },
+    {
+      "id": "distance-12",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 14)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1184.9
+    },
+    {
+      "id": "distance-13",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 15)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1168.5
+    },
+    {
+      "id": "distance-14",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 16)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1059.2
+    },
+    {
+      "id": "distance-15",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 17)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 969.8
+    },
+    {
+      "id": "distance-16",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 18)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1136.3
+    },
+    {
+      "id": "distance-17",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 19)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1016.1
+    },
+    {
+      "id": "distance-18",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 20)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 958.0
+    },
+    {
+      "id": "distance-19",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 21)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 945.6
+    },
+    {
+      "id": "distance-20",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 22)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 970.3
+    },
+    {
+      "id": "distance-21",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 23)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1067.4
+    },
+    {
+      "id": "distance-22",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 24)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 991.7
+    },
+    {
+      "id": "distance-23",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 25)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 992.4
+    },
+    {
+      "id": "distance-24",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 26)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 957.2
+    },
+    {
+      "id": "distance-25",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 27)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 990.8
+    },
+    {
+      "id": "distance-26",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 28)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1046.5
+    },
+    {
+      "id": "distance-27",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 29)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1022.5
+    },
+    {
+      "id": "distance-28",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 30)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 984.1
+    },
+    {
+      "id": "distance-29",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 31)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 973.4
+    },
+    {
+      "id": "distance-30",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 32)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 976.3
+    },
+    {
+      "id": "distance-31",
+      "family": "distance",
+      "passed": true,
+      "output": "```python\ndef solve(x):\n    return abs(x - 33)\n```",
+      "stderr": "",
+      "tokens": 18,
+      "latency_ms": 1038.5
+    }
+  ],
+  "model_info": {
+    "parent_model": "HYDRA-baseline.gguf",
+    "format": "gguf",
+    "family": "qwen2",
+    "families": [
+      "qwen2"
+    ],
+    "parameter_size": "7.6B",
+    "quantization_level": "Q4_K_M"
+  },
+  "score": 1.0,
+  "status": "EVALUATED"
+}

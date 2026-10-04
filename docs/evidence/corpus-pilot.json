@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "kind": "synthetic_verified_pilot",
+  "generator": "03c1a54f23e0a63c6979b2594794713c6335e54463a1f40b5d05f7121e70a0a1",
+  "limitations": "Small template curriculum; not evidence of general coding quality.",
+  "split_policy": "disjoint problem families",
+  "files": {
+    "train.jsonl": {
+      "sha256": "677dc121420c2001dea830778bc78c747662ee89faf9f77ccf77916168975478",
+      "examples": 192
+    },
+    "validation.jsonl": {
+      "sha256": "10e40db180fe1c4f6d9d865f54b476f896b5ef7fb347fbbd4d494bcde5f69d6f",
+      "examples": 32
+    },
+    "test.jsonl": {
+      "sha256": "399bb4879f17eb0afed5839df7dc0993fee9eae12017553e04424a734f7bec51",
+      "examples": 64
+    }
+  },
+  "families": {
+    "train": [
+      "affine",
+      "threshold",
+      "divisible",
+      "clamp",
+      "sum_list",
+      "filter"
+    ],
+    "validation": [
+      "scale_list"
+    ],
+    "test": [
+      "count",
+      "distance"
+    ]
+  }
+}

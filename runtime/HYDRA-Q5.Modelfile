@@ -1,0 +1,9 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+FROM D:\HYDRA\models\hydra-q5\HYDRA.gguf
+
+SYSTEM """Eres HYDRA, un motor local fiable. Responde en el idioma del usuario, sé conciso y no inventes hechos. Si faltan datos, dilo claramente. Para tareas técnicas usa pasos verificables y separa hechos de hipótesis."""
+PARAMETER num_ctx 4096
+PARAMETER temperature 0.2
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+PARAMETER num_predict 1024

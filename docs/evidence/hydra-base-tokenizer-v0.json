@@ -1,0 +1,36 @@
+{
+  "kind": "sentencepiece-bpe",
+  "vocab_size": 32000,
+  "chat_tokens": [
+    "<|im_start|>",
+    "<|im_end|>",
+    "<|fim_prefix|>",
+    "<|fim_middle|>",
+    "<|fim_suffix|>"
+  ],
+  "special": {
+    "unk": 0,
+    "bos": 1,
+    "eos": 2,
+    "pad": 3
+  },
+  "byte_fallback": true,
+  "corpus_manifest_sha256": "5f284cff2d42316b70ce9467f2c6d6ee8a94f6af25010de60d6e6afe2aa53172",
+  "tokenizer_model_sha256": "06657d6aa9b9c3fb9f6cbc09769dd0b80801c2e9a464f83f21433e8fa3576f10",
+  "corpus_characters": 783083250,
+  "sample_characters": 203546699,
+  "sample_documents": 25246,
+  "keep": 0.25540068696399776,
+  "comparison": {
+    "legal_es": {
+      "documents": 400,
+      "hydra_tokens_per_word": 1.87,
+      "reference_tokens_per_word": 1.747
+    },
+    "code": {
+      "documents": 400,
+      "hydra_tokens_per_word": 2.651,
+      "reference_tokens_per_word": 2.135
+    }
+  }
+}

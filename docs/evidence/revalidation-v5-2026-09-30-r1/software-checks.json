@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "full_suite": {
+    "passed": 569,
+    "skipped": 5,
+    "duration_s": 406.97,
+    "log": "runtime/hydra-v5-revalidation-r1-tests.log"
+  },
+  "focused_after_changes": {
+    "passed": 39,
+    "duration_s": 1.28
+  },
+  "scope": "full suite followed by focused evaluation and promotion-gate checks"
+}

@@ -1,0 +1,710 @@
+{
+  "copyright": "Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.",
+  "baseline_commit": "3436e8acb5781804e38e6349d691b0af0a6aebd5",
+  "cases": [
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "22dbd69b34d8907a6993e576773d297937a49e81f1c5dd169fd6111bcda600df"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "ea48d21ddbbdd3dec6d54719e12fab14875af3a328ad95ae6ec972388269e9bc"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "a46519515d269b44ff0fcf6a08993ceecaa36d0b3e585855a8c7db8f5aea288d"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "6dfb596cdc46bde4498d53c31c72958cb5c1df51ebfc8e74085f1a514b004077"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "368b4fe2b250533088bd9cc6b8db92ace40b42b087bfee4b6778d7f0204dd447"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "2f9122a26134322b1f96950ad53cfcdde1e953f32f64b354555eaac915a51cad"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "7832be648e7bb07d5595ee4f3fbd6292d333014cf166fde20ff79019409e8721"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "92958b41e03052e64876ba05ee2bc93a381d89a3805b696117fd05340a01da9f"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "253a58cbc02efaa0a6e4e56a72923463ae090afe2323f8c77f6cc79fc97fdbc6"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "7e4fc0bed5eacfd75ad7cc2e4f3665b1aa24cce46606048bef35b43ce99fd68d"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "a6055a6f891bfffb88a160bbafe5693152080bdaa1900f125dbd34fd561fdac7"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "7b57e7f2b816fae1a764aef38f29e33e48e2ac43319e98e509aafe6ea6bc59b7"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "d55478e3506132a1c3062a5557af24bda116d0269d419d529349d10a2fb0c5ad"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "d3c7081cd935dde663342f738d218131ae113a26a32fde73911421e9eeb3c77f"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "21f71fdae87a90fb48b65261170e8b3b303814f8c8e7aacbcf285d3cda7eef3d"
+    },
+    {
+      "privacy_status": "not_scanned",
+      "flags": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "e001a65246cc6a4859e2fb3c29ab6b94a613e20a8edfdd1cabad35e7819d1756"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "4067476ab52c926bcad77652456524a6dd020b9bf32bdf86a5b553f4d724525c"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "9fea993b36e6a8243a93aac60709b02f9fcd5eaa8308969de57f22b015b67fdf"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "3d28c70b60dc805fe9e47dde3e080fcfb565ed2ef66b7db0362139aa526cc1eb"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "56e6de25a3074a7f864e09f4d159cdfe58b18d87d9f4100037b8ca24b6f3fa33"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "758ccfada84a132f7e7dc47d6efb809eb61777aafcc4e65fe80638726755b3cf"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "349330cfe46884ea84ad90ca92666513ba62ea1c0ca69250186cfefacc3d533b"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "1708ff81d11ccb0386a50f08ada89bcac6d2f9559873bccfef40ebf44b21a387"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "a6a0aa231a62e14f2c8745e5dd5a55be595c4b7c803867904d9f9fa852029b92"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "94c8bdcd133c6bb5d69114a2a3f32391cfad2658df33e0cf82015b20500c3492"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "32ac4c23dc0685efd299f48edd9a4cca24c23018a1f7c45074d0b51fe5eb26b0"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "8b6054c5121e7e8a41381f24a5700f0ac2b127ea1c068cd24283958def57769f"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "e3fa7afff429865e271c5db3bd9258ac1f4cffc825335dd9108f274520edf2f3"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "ffcc002479086855c3044d66209d8afae96c0fe1dbd336972edbd8f244041247"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "f7d8c6060aeef604e38ea9cba8b39f811cfa0fea0a2fd1be2c6ed7aacb368312"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "745d10eed9d34246bdbc59b7f129e64f9b74760571aedc52cf41a3cdbc9690ae"
+    },
+    {
+      "privacy_status": "clear",
+      "flags": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "status": "curated",
+      "content_hash": "c0478d0a540e3e0f94286bcffdf82493db154f82ee16673fed5d8df7928e8194"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "b644d6dea9ad57b9e97050939bfb4df0ac10a2399882805045eeec7807f1b4b5"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "cf72b3a11782fbc77d8229597f07c63d4cd8cc464d11cb499a27baed0f642647"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "931e0b204ea8f88a960f074095cc1bcf817e4ab5e7f66c151db50aeb99872532"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "21db08283ce976a33923a34a49d784f57b71feca45411709b30bdde1a0886491"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "253385b54ae60bba88678e950b7c2dccb186874faad1d549e427ded120e0af2b"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "d44486cb52608b62d073845a52106107845a89e8f33b614be3e2b0d72e7e9370"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "d09a76ab3f651ffed963c0df12a8867e79e0750ad0a8928c9336ad8f7ecdf64b"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "1e9968c8974b5e60fd2ac25300bf1e857f20ea7c0ab30333c48d7fc837eb099d"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "7b1a4fd45ae2501352ea4a62b006f8551454d66946626ceec89a43d8adec3e0b"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "ac269eabc38b587594d354dd29f3e82b60a5dbce02741fb646d890c13ecd9b64"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "97c6bdeccf2b03aa0631d110b1265b7c6b0809fe905d501e1e86a6e7db49ef5a"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "a98635e5a94f189874323fc488bc8bc84c491ec80ac6932db1350e65a84217e3"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "b00c43c261e4c2c070f4851f7c0c3e797690499c72f9aef43e12952eb3d40d56"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "60178220fd4fb713ef9cb6bfc02ce9139c6f5d473911af38784994e3e433a99b"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "status": "blocked",
+      "content_hash": "7e74bb6bc8da6030e0f65e20fb69486218f0c84fc075516efe3111c2733a557d"
+    },
+    {
+      "privacy_status": "flagged",
+      "flags": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "status": "blocked",
+      "content_hash": "273b3d0457d595d643a5f3b3784ab19b5a2804f3bf1e399efdb533e664458294"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "6bc35119e385c11302b827b1d5c58be72272de156f895bda18d3d38c5471f30d"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "2e716cfb9202fb6301bb4e69041725b42863541d7e15095eee1e376bb1864b27"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "c826a9964c6589c3c6446a1338f03318bd20f604b837d6b834b16e207383a3fb"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "1a034d95c4db1bcd3696043ac4d82130d7ddf5df3a15df081ac348969196537f"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "18cb578e2de365860639cae9b03e098457365476efae7bea1ca019443c41faae"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "3ea53719c8382ca2674c9f987ccdc338d28a2c7de5413e6fbc4525d7c22dc8ff"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "0bcde4878274ec37220e646da0b13eff8f46baff7817395bcac3c1af3841e35d"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "4cde0b4e8ed740ec5361e08da29a927f198a4eb7e29473d25f0745bd905026ad"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "db3975af69559584e665e938c6d987ad0664d9a4a39029db53017d1745647a23"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "8c1ea23983544dcb0505b5bd6489bc35af0666323c4079fce0f54aa9690cde8f"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "27875ded3489cf32b12d464b61fff2840c9744c5fc167310b6b53d3af5a579de"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "8dd681e7418ac008b1256e79f7786c4cbed024fa45abb8cbe4d732ac78e9b902"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "682dcb96491012bf59da7345b4827495cdb33dbcf5c615b3949efd64c82cc857"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "b6bf778baa6ed50156bcb9216e69b65a39a417342de169a3d249863d3ac7d074"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "status": "quarantined",
+      "content_hash": "e0c33fc3939872a8bdabbf64330b5143f84da0659ef308e90ec4cbafbf172071"
+    },
+    {
+      "privacy_status": "incomplete",
+      "flags": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "status": "quarantined",
+      "content_hash": "559c379db015ef4479298f03058cc24cdecb88bf892c2ce40e1fe35ba0e5698f"
+    }
+  ]
+}

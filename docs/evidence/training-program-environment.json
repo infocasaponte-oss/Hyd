@@ -1,0 +1,12 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.17.0",
+    "peft": "0.21.1",
+    "datasets": "5.0.1",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "scope": "Current pilot environment; differs from v8 recorded environment"
+}

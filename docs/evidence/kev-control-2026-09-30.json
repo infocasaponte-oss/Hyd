@@ -1,0 +1,786 @@
+{
+  "model": "kev-latest",
+  "model_revision": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+  "independent_test": false,
+  "complete": true,
+  "approved": false,
+  "rows": [
+    {
+      "id": "chat-0",
+      "split": "calibration",
+      "text": "Sal\u00fadame con una frase amable.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.8283,
+        "coding": 0.0177,
+        "reasoning": 0.041,
+        "research": 0.0373,
+        "vision": 0.0465,
+        "tool_use": 0.0293
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-1",
+      "split": "calibration",
+      "text": "Cu\u00e9ntame un chiste breve de gatos.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.6533,
+        "coding": 0.0348,
+        "reasoning": 0.0959,
+        "research": 0.1276,
+        "vision": 0.0478,
+        "tool_use": 0.0406
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-2",
+      "split": "calibration",
+      "text": "Escribe una felicitaci\u00f3n de cumplea\u00f1os para Ana.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.6098,
+        "coding": 0.0436,
+        "reasoning": 0.071,
+        "research": 0.1171,
+        "vision": 0.0662,
+        "tool_use": 0.0923
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-3",
+      "split": "calibration",
+      "text": "Dame un nombre para mi mascota.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.3889,
+        "coding": 0.0579,
+        "reasoning": 0.1409,
+        "research": 0.2071,
+        "vision": 0.0964,
+        "tool_use": 0.1087
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-4",
+      "split": "test",
+      "text": "Redacta una despedida cari\u00f1osa.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.3868,
+        "coding": 0.0998,
+        "reasoning": 0.1069,
+        "research": 0.1335,
+        "vision": 0.0951,
+        "tool_use": 0.178
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-5",
+      "split": "test",
+      "text": "Inventemos una historia sobre una nube.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.2604,
+        "coding": 0.0484,
+        "reasoning": 0.1157,
+        "research": 0.2146,
+        "vision": 0.2841,
+        "tool_use": 0.0768
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "chat-6",
+      "split": "test",
+      "text": "Dime un trabalenguas sencillo.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.4376,
+        "coding": 0.074,
+        "reasoning": 0.18,
+        "research": 0.1399,
+        "vision": 0.092,
+        "tool_use": 0.0765
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "chat-7",
+      "split": "test",
+      "text": "Escribe un poema corto sobre el oto\u00f1o.",
+      "expected": "chat",
+      "probabilities": {
+        "chat": 0.5323,
+        "coding": 0.0647,
+        "reasoning": 0.0647,
+        "research": 0.167,
+        "vision": 0.0747,
+        "tool_use": 0.0965
+      },
+      "selected": "chat"
+    },
+    {
+      "id": "coding-0",
+      "split": "calibration",
+      "text": "Escribe una funci\u00f3n Python que invierta una lista sin modificarla.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0198,
+        "coding": 0.9179,
+        "reasoning": 0.0232,
+        "research": 0.0125,
+        "vision": 0.0074,
+        "tool_use": 0.0191
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-1",
+      "split": "calibration",
+      "text": "Corrige este c\u00f3digo: def doble(x): return x +",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0713,
+        "coding": 0.6878,
+        "reasoning": 0.1056,
+        "research": 0.0439,
+        "vision": 0.0308,
+        "tool_use": 0.0606
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-2",
+      "split": "calibration",
+      "text": "Implementa una b\u00fasqueda binaria en JavaScript.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0134,
+        "coding": 0.9282,
+        "reasoning": 0.0236,
+        "research": 0.0131,
+        "vision": 0.0056,
+        "tool_use": 0.0162
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-3",
+      "split": "calibration",
+      "text": "Refactoriza una funci\u00f3n que repite el mismo bloque de c\u00f3digo.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0625,
+        "coding": 0.7763,
+        "reasoning": 0.0755,
+        "research": 0.0234,
+        "vision": 0.021,
+        "tool_use": 0.0413
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-4",
+      "split": "test",
+      "text": "Escribe pruebas unitarias para una funci\u00f3n de suma en Rust.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0578,
+        "coding": 0.8247,
+        "reasoning": 0.0338,
+        "research": 0.0226,
+        "vision": 0.0157,
+        "tool_use": 0.0453
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-5",
+      "split": "test",
+      "text": "Explica y corrige un TypeError al sumar texto y n\u00fameros en Python.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.1238,
+        "coding": 0.5583,
+        "reasoning": 0.1698,
+        "research": 0.0579,
+        "vision": 0.0252,
+        "tool_use": 0.0649
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-6",
+      "split": "test",
+      "text": "Implementa una cola FIFO en TypeScript.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.0163,
+        "coding": 0.9272,
+        "reasoning": 0.0177,
+        "research": 0.0138,
+        "vision": 0.0087,
+        "tool_use": 0.0163
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "coding-7",
+      "split": "test",
+      "text": "Prop\u00f3n c\u00f3digo SQL para agrupar ventas por mes; no lo ejecutes.",
+      "expected": "coding",
+      "probabilities": {
+        "chat": 0.1288,
+        "coding": 0.487,
+        "reasoning": 0.097,
+        "research": 0.0575,
+        "vision": 0.0341,
+        "tool_use": 0.1955
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "reasoning-0",
+      "split": "calibration",
+      "text": "Demuestra que la suma de dos n\u00fameros pares es par.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1251,
+        "coding": 0.0588,
+        "reasoning": 0.7005,
+        "research": 0.0484,
+        "vision": 0.0258,
+        "tool_use": 0.0413
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-1",
+      "split": "calibration",
+      "text": "Calcula la probabilidad de dos caras al lanzar dos monedas justas.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1576,
+        "coding": 0.0417,
+        "reasoning": 0.5917,
+        "research": 0.078,
+        "vision": 0.0438,
+        "tool_use": 0.0872
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-2",
+      "split": "calibration",
+      "text": "Resuelve la ecuaci\u00f3n 3x + 7 = 22 y explica los pasos.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1862,
+        "coding": 0.0445,
+        "reasoning": 0.6044,
+        "research": 0.0459,
+        "vision": 0.0382,
+        "tool_use": 0.0809
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-3",
+      "split": "calibration",
+      "text": "Si todos los A son B y ning\u00fan B es C, \u00bfpuede un A ser C?",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.0864,
+        "coding": 0.0109,
+        "reasoning": 0.7791,
+        "research": 0.0837,
+        "vision": 0.0199,
+        "tool_use": 0.02
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-4",
+      "split": "test",
+      "text": "Un tren recorre 120 km en 90 minutos. Calcula su velocidad media.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1547,
+        "coding": 0.0246,
+        "reasoning": 0.5937,
+        "research": 0.0654,
+        "vision": 0.0379,
+        "tool_use": 0.1237
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-5",
+      "split": "test",
+      "text": "Demuestra por inducci\u00f3n la f\u00f3rmula de la suma de los primeros n enteros.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1463,
+        "coding": 0.0846,
+        "reasoning": 0.5963,
+        "research": 0.073,
+        "vision": 0.0292,
+        "tool_use": 0.0708
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-6",
+      "split": "test",
+      "text": "Ordena tres cajas si A pesa m\u00e1s que B y C pesa menos que B.",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.1707,
+        "coding": 0.0244,
+        "reasoning": 0.6445,
+        "research": 0.049,
+        "vision": 0.0319,
+        "tool_use": 0.0795
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "reasoning-7",
+      "split": "test",
+      "text": "\u00bfCu\u00e1ntas formas hay de elegir dos objetos de un conjunto de cinco?",
+      "expected": "reasoning",
+      "probabilities": {
+        "chat": 0.2696,
+        "coding": 0.0412,
+        "reasoning": 0.4645,
+        "research": 0.0985,
+        "vision": 0.0486,
+        "tool_use": 0.0776
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "research-0",
+      "split": "calibration",
+      "text": "Busca fuentes actuales sobre bater\u00edas de sodio y cita los enlaces.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.018,
+        "coding": 0.0064,
+        "reasoning": 0.0202,
+        "research": 0.9108,
+        "vision": 0.0063,
+        "tool_use": 0.0383
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-1",
+      "split": "calibration",
+      "text": "Investiga publicaciones recientes sobre reciclaje de pl\u00e1stico.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.0477,
+        "coding": 0.0047,
+        "reasoning": 0.039,
+        "research": 0.8607,
+        "vision": 0.0108,
+        "tool_use": 0.037
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-2",
+      "split": "calibration",
+      "text": "Compara documentaci\u00f3n oficial de dos bases de datos usando fuentes.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.0888,
+        "coding": 0.0498,
+        "reasoning": 0.1369,
+        "research": 0.5322,
+        "vision": 0.0276,
+        "tool_use": 0.1647
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-3",
+      "split": "calibration",
+      "text": "Localiza art\u00edculos cient\u00edficos sobre sequ\u00edas en Espa\u00f1a.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.0515,
+        "coding": 0.0067,
+        "reasoning": 0.0455,
+        "research": 0.7591,
+        "vision": 0.0144,
+        "tool_use": 0.1229
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-4",
+      "split": "test",
+      "text": "Busca documentaci\u00f3n oficial actual sobre paneles solares.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.042,
+        "coding": 0.004,
+        "reasoning": 0.0205,
+        "research": 0.88,
+        "vision": 0.0076,
+        "tool_use": 0.0458
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-5",
+      "split": "test",
+      "text": "Investiga avances publicados este a\u00f1o en almacenamiento de energ\u00eda.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.0284,
+        "coding": 0.0048,
+        "reasoning": 0.0299,
+        "research": 0.9034,
+        "vision": 0.0096,
+        "tool_use": 0.0239
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-6",
+      "split": "test",
+      "text": "Encuentra fuentes primarias sobre la historia del ferrocarril.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.0253,
+        "coding": 0.0037,
+        "reasoning": 0.0183,
+        "research": 0.9067,
+        "vision": 0.0066,
+        "tool_use": 0.0394
+      },
+      "selected": "research"
+    },
+    {
+      "id": "research-7",
+      "split": "test",
+      "text": "Contrasta las \u00faltimas cifras p\u00fablicas de empleo con sus fuentes.",
+      "expected": "research",
+      "probabilities": {
+        "chat": 0.154,
+        "coding": 0.031,
+        "reasoning": 0.2468,
+        "research": 0.3953,
+        "vision": 0.0309,
+        "tool_use": 0.142
+      },
+      "selected": "research"
+    },
+    {
+      "id": "vision-0",
+      "split": "calibration",
+      "text": "Describe los objetos de la fotograf\u00eda adjunta.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.2444,
+        "coding": 0.0368,
+        "reasoning": 0.1435,
+        "research": 0.2567,
+        "vision": 0.2526,
+        "tool_use": 0.066
+      },
+      "selected": "research"
+    },
+    {
+      "id": "vision-1",
+      "split": "calibration",
+      "text": "Extrae el texto visible en esta captura de pantalla.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.1135,
+        "coding": 0.0673,
+        "reasoning": 0.112,
+        "research": 0.1815,
+        "vision": 0.4416,
+        "tool_use": 0.0842
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "vision-2",
+      "split": "calibration",
+      "text": "Identifica los colores de la imagen que adjunto.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.127,
+        "coding": 0.0121,
+        "reasoning": 0.1301,
+        "research": 0.0602,
+        "vision": 0.6423,
+        "tool_use": 0.0282
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "vision-3",
+      "split": "calibration",
+      "text": "Cuenta los coches que se ven en esta foto.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.1427,
+        "coding": 0.0212,
+        "reasoning": 0.2429,
+        "research": 0.0941,
+        "vision": 0.3072,
+        "tool_use": 0.1918
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "vision-4",
+      "split": "test",
+      "text": "Lee el n\u00famero de serie que aparece en la imagen adjunta.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.1583,
+        "coding": 0.0272,
+        "reasoning": 0.2363,
+        "research": 0.0776,
+        "vision": 0.1978,
+        "tool_use": 0.3027
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "vision-5",
+      "split": "test",
+      "text": "Describe las relaciones entre los bloques del diagrama adjunto.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.1789,
+        "coding": 0.0987,
+        "reasoning": 0.3713,
+        "research": 0.1633,
+        "vision": 0.1251,
+        "tool_use": 0.0627
+      },
+      "selected": "reasoning"
+    },
+    {
+      "id": "vision-6",
+      "split": "test",
+      "text": "Compara visualmente estas dos fotograf\u00edas.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.044,
+        "coding": 0.0072,
+        "reasoning": 0.1298,
+        "research": 0.0416,
+        "vision": 0.7619,
+        "tool_use": 0.0155
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "vision-7",
+      "split": "test",
+      "text": "Identifica las etiquetas visibles de este gr\u00e1fico en la captura.",
+      "expected": "vision",
+      "probabilities": {
+        "chat": 0.128,
+        "coding": 0.0416,
+        "reasoning": 0.1873,
+        "research": 0.1283,
+        "vision": 0.4358,
+        "tool_use": 0.0789
+      },
+      "selected": "vision"
+    },
+    {
+      "id": "tool_use-0",
+      "split": "calibration",
+      "text": "Lee el archivo README.md de mi carpeta local.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1511,
+        "coding": 0.0801,
+        "reasoning": 0.1909,
+        "research": 0.1733,
+        "vision": 0.0835,
+        "tool_use": 0.3211
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-1",
+      "split": "calibration",
+      "text": "Ejecuta git status y muestra el resultado.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.0947,
+        "coding": 0.2934,
+        "reasoning": 0.066,
+        "research": 0.0414,
+        "vision": 0.0288,
+        "tool_use": 0.4757
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-2",
+      "split": "calibration",
+      "text": "Crea una carpeta temporal llamada prueba dentro del workspace.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1816,
+        "coding": 0.2293,
+        "reasoning": 0.1292,
+        "research": 0.0995,
+        "vision": 0.0954,
+        "tool_use": 0.265
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-3",
+      "split": "calibration",
+      "text": "Aplica el parche que te adjunto al archivo local.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1141,
+        "coding": 0.1091,
+        "reasoning": 0.1005,
+        "research": 0.075,
+        "vision": 0.0447,
+        "tool_use": 0.5567
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-4",
+      "split": "test",
+      "text": "Ejecuta las pruebas del repositorio y recoge su salida.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1183,
+        "coding": 0.3268,
+        "reasoning": 0.1241,
+        "research": 0.0633,
+        "vision": 0.0449,
+        "tool_use": 0.3226
+      },
+      "selected": "coding"
+    },
+    {
+      "id": "tool_use-5",
+      "split": "test",
+      "text": "Consulta el contenido del archivo config.json en disco.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.0929,
+        "coding": 0.0785,
+        "reasoning": 0.1146,
+        "research": 0.1854,
+        "vision": 0.062,
+        "tool_use": 0.4666
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-6",
+      "split": "test",
+      "text": "Descarga el archivo de la URL indicada a la carpeta de trabajo.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1043,
+        "coding": 0.1222,
+        "reasoning": 0.1451,
+        "research": 0.1319,
+        "vision": 0.0714,
+        "tool_use": 0.425
+      },
+      "selected": "tool_use"
+    },
+    {
+      "id": "tool_use-7",
+      "split": "test",
+      "text": "Muestra el diff de los archivos modificados del repositorio.",
+      "expected": "tool_use",
+      "probabilities": {
+        "chat": 0.1311,
+        "coding": 0.1044,
+        "reasoning": 0.1331,
+        "research": 0.0821,
+        "vision": 0.0946,
+        "tool_use": 0.4547
+      },
+      "selected": "tool_use"
+    }
+  ],
+  "requested": 24,
+  "valid": 24,
+  "accepted": 24,
+  "coverage": 1.0,
+  "accuracy": 0.8333333333333334,
+  "accuracy_wilson_lower_95": 0.6414652961213058,
+  "ece_10_bins": 0.18222733858993675,
+  "brier_multiclass_sum": 0.18908666364427104,
+  "nll": 0.4238771769680573,
+  "bins": [
+    {
+      "bin": 3,
+      "n": 1,
+      "confidence": 0.37332229362785874,
+      "accuracy": 0.0
+    },
+    {
+      "bin": 4,
+      "n": 2,
+      "confidence": 0.4265756472481299,
+      "accuracy": 0.0
+    },
+    {
+      "bin": 5,
+      "n": 1,
+      "confidence": 0.5942244182127918,
+      "accuracy": 1.0
+    },
+    {
+      "bin": 6,
+      "n": 2,
+      "confidence": 0.6310817710037638,
+      "accuracy": 0.5
+    },
+    {
+      "bin": 7,
+      "n": 7,
+      "confidence": 0.7396620638432553,
+      "accuracy": 1.0
+    },
+    {
+      "bin": 8,
+      "n": 4,
+      "confidence": 0.8720621776699673,
+      "accuracy": 1.0
+    },
+    {
+      "bin": 9,
+      "n": 7,
+      "confidence": 0.9792962040253881,
+      "accuracy": 1.0
+    }
+  ],
+  "temperature": 0.5,
+  "calibration_model_bound": true,
+  "limitation": "Previously used authored regression panel, not independent production certification",
+  "control_enabled": false
+}

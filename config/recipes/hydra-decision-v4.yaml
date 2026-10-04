@@ -1,0 +1,34 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# HYDRA decision specialist training contract.
+# The frozen human paraphrase set is evaluation-only and must never be copied
+# into train or calibration files.
+name: hydra-decision-v4
+task: structured_decision_routing
+base_model: models/hydra-decision-v2/classifier.json
+backend: builtin_cpu_classifier
+dataset:
+  train:
+    - data/decision-corpus-v3/train.jsonl
+    - data/human-dev-v1.jsonl
+  calibration:
+    - data/decision-corpus-v3/calibration.jsonl
+  test:
+    - data/decision-corpus-v3/test.jsonl
+    - data/human-paraphrase-v1.jsonl
+labels:
+  - answer
+  - security
+  - privacy
+  - review
+  - abstain
+constraints:
+  no_test_contamination: true
+  calibrate_on_calibration_only: true
+  reject_unknown_labels: true
+  require_human_dev_provenance: true
+  minimum_selective_coverage: 0.80
+  maximum_test_ece: 0.12
+  maximum_test_brier: 0.16
+evaluation:
+  metrics: [accuracy, selective_coverage, selective_accuracy, ece, brier, confusion_matrix]
+  export: data/evaluations/hydra-decision-v4.json

@@ -1,0 +1,10 @@
+{
+  "duplicate_html_ids": {
+    "cq": 2
+  },
+  "unsafe_dataset_name_accepted": "../outside",
+  "resolved_release_path": "C:\\Users\\mejil\\AppData\\Local\\Temp\\outside-v1",
+  "escapes_release_root": true,
+  "zero_split_result": "ZeroDivisionError",
+  "no_files_written_outside_workspace": true
+}

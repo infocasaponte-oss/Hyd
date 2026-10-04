@@ -1,0 +1,1885 @@
+{
+  "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+  "dataset_sha256": "14691de5c1c6d6fbd6c57f6e7567bdcf34e044e31adcb137a21a63cf349f1429",
+  "schema_policy_sha256": "109b12144d6d9c43110d9b63a14dc7ed2fb76b332e2ea1d86e85b3b0f50afe14",
+  "cases": [
+    {
+      "id": "v4-json-3-0",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32300,\"activo\":false}",
+      "meta": {
+        "task_id": "f2f2bdbf-d1b9-4eb9-8200-76a8a017d968",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6223,
+        "latency_ms": 506.5,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-1",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32301,\"activo\":true}",
+      "meta": {
+        "task_id": "d6c71e6e-10fc-4447-bdc5-3c5e8d9f6ceb",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6239,
+        "latency_ms": 183.58,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-2",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32302,\"activo\":false}",
+      "meta": {
+        "task_id": "df52473f-d4ac-4e3d-ad8b-2d723485d13e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6255,
+        "latency_ms": 243.33,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-3",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32303,\"activo\":true}",
+      "meta": {
+        "task_id": "07e1bbd0-4bcf-4512-8d3f-5f51ae5a62a3",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6273,
+        "latency_ms": 192.23,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-4",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32304,\"activo\":false}",
+      "meta": {
+        "task_id": "c653dc08-b859-43f5-95db-1358dc92fdd0",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6292,
+        "latency_ms": 193.31,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-5",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32305,\"activo\":true}",
+      "meta": {
+        "task_id": "bbdbf70a-3472-4d52-8407-4c8e9bb1337b",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6311,
+        "latency_ms": 268.5,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32306,\"activo\":false}",
+      "meta": {
+        "task_id": "3db26bf0-091d-46ee-ac50-e992c58e01a9",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6331,
+        "latency_ms": 188.95,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32307,\"activo\":true}",
+      "meta": {
+        "task_id": "c44cb725-8303-403d-a5ce-93b95cd7b95b",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6352,
+        "latency_ms": 249.74,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32308,\"activo\":false}",
+      "meta": {
+        "task_id": "785d3bb8-3728-4576-a374-4da5b6a077a1",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6374,
+        "latency_ms": 224.19,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v4-json-3-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"id\":32309,\"activo\":true}",
+      "meta": {
+        "task_id": "34049c7e-743c-4be9-bce4-a86d2a08366f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6395,
+        "latency_ms": 183.77,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-0",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83300}",
+      "meta": {
+        "task_id": "3f43f3ec-b876-45df-921e-5d91fc87e04f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6418,
+        "latency_ms": 281.99,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-1",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83301}",
+      "meta": {
+        "task_id": "81a5d170-0191-4592-94a3-c201a700cfa5",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6441,
+        "latency_ms": 241.37,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-2",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83302}",
+      "meta": {
+        "task_id": "cf932760-cffe-40b6-99e2-f6c8ed52ad0a",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6464,
+        "latency_ms": 238.43,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-3",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83303}",
+      "meta": {
+        "task_id": "6e0296a3-88ed-4b39-b446-0cb6f4b9b97f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6488,
+        "latency_ms": 238.95,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-4",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83304}",
+      "meta": {
+        "task_id": "d58b805a-f399-4920-9990-de92520bf7c6",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6512,
+        "latency_ms": 318.36,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-5",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83305}",
+      "meta": {
+        "task_id": "f45dfeb3-ca5a-4024-8d81-0f5321eaef18",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6536,
+        "latency_ms": 279.84,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83306}",
+      "meta": {
+        "task_id": "1e76ed9f-0ee3-41f4-be5a-d0b626f99678",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6561,
+        "latency_ms": 239.61,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83307}",
+      "meta": {
+        "task_id": "60a0f807-7a14-4ce2-8941-ba7dd35c1e40",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6586,
+        "latency_ms": 311.82,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83308}",
+      "meta": {
+        "task_id": "aa5b4b75-543c-4117-b5c9-6c234752c4ae",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6611,
+        "latency_ms": 279.39,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83309}",
+      "meta": {
+        "task_id": "1de1b8e4-0228-4067-a49c-740663585f5f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6636,
+        "latency_ms": 263.51,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-10",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83310}",
+      "meta": {
+        "task_id": "8b98c9d3-a7a8-41d0-8d2e-98bb095f50ac",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6661,
+        "latency_ms": 310.22,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-11",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83311}",
+      "meta": {
+        "task_id": "29fdd63d-f8aa-4318-9ca4-b2110e177ec8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6687,
+        "latency_ms": 259.65,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-12",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83312}",
+      "meta": {
+        "task_id": "6f7a89aa-52d8-4c1a-9928-3ea770f80c7c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6713,
+        "latency_ms": 249.96,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-13",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83313}",
+      "meta": {
+        "task_id": "85513225-f819-4be9-bbd1-f7909ed7aa86",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6738,
+        "latency_ms": 248.11,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-14",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83314}",
+      "meta": {
+        "task_id": "dcbd453f-f02b-4efc-a55c-589b424bf5aa",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6764,
+        "latency_ms": 265.85,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-15",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83315}",
+      "meta": {
+        "task_id": "cd45543a-2bae-4d42-b74c-cd0680f894e8",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.679,
+        "latency_ms": 332.76,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-16",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83316}",
+      "meta": {
+        "task_id": "e1a6a29f-6349-4ad4-9bad-b1b5f9becc8e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6816,
+        "latency_ms": 358.24,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-17",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83317}",
+      "meta": {
+        "task_id": "b8e57866-4d27-4dcf-8e2d-91a4454ceaf3",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6842,
+        "latency_ms": 281.71,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-18",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":83318}",
+      "meta": {
+        "task_id": "9f045d44-22be-4297-aa46-41b71563c18e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6868,
+        "latency_ms": 247.73,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v5-json-3-19",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":83319}",
+      "meta": {
+        "task_id": "184bbaa7-1be1-4023-a652-b052bbccba84",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6894,
+        "latency_ms": 248.87,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-0",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961400}",
+      "meta": {
+        "task_id": "dc06a997-6e3b-4752-a78f-cb4b66fb6970",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.692,
+        "latency_ms": 242.09,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-1",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961401}",
+      "meta": {
+        "task_id": "44678ca3-77b0-4ac1-91ab-97b50e12727a",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6879,
+        "latency_ms": 237.07,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-2",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961402}",
+      "meta": {
+        "task_id": "d2fb4e3d-4cd1-4020-ba15-37d680381e24",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6928,
+        "latency_ms": 214.88,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-3",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961403}",
+      "meta": {
+        "task_id": "5904f45f-ffa8-466d-9ebd-436bcc48823f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.6969,
+        "latency_ms": 277.78,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-4",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961404}",
+      "meta": {
+        "task_id": "2a7f2b6a-439f-461e-a438-ae37f0e989cf",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7004,
+        "latency_ms": 250.99,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-5",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961405}",
+      "meta": {
+        "task_id": "86f5e873-8e7a-4ad8-a272-8bf875f51c4c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7034,
+        "latency_ms": 234.16,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961406}",
+      "meta": {
+        "task_id": "48271deb-d048-469b-ab98-5a466ce33853",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7061,
+        "latency_ms": 286.08,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961407}",
+      "meta": {
+        "task_id": "8f1dcc71-bdb7-4bbb-92d9-957136cb135e",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7085,
+        "latency_ms": 238.59,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961408}",
+      "meta": {
+        "task_id": "9edec1e3-a5d2-4001-8a44-fa94f58947ec",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7109,
+        "latency_ms": 276.2,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961409}",
+      "meta": {
+        "task_id": "e3155d38-8a38-4388-a58b-3b0afb9b508d",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7131,
+        "latency_ms": 242.8,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-10",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961410}",
+      "meta": {
+        "task_id": "7881880f-00e0-4e1e-9777-8c8c893a306b",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7153,
+        "latency_ms": 230.8,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-11",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961411}",
+      "meta": {
+        "task_id": "241dafb5-7bc1-4141-bf7a-d025527f1fb0",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7173,
+        "latency_ms": 214.12,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-12",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961412}",
+      "meta": {
+        "task_id": "2f742ecd-dbb5-4a7c-af6d-45355474de0f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7176,
+        "latency_ms": 262.29,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-13",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961413}",
+      "meta": {
+        "task_id": "812bd8ab-33c7-4bb6-91c4-2c3ecc270fc1",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.718,
+        "latency_ms": 252.11,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-14",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961414}",
+      "meta": {
+        "task_id": "ecd636bd-84f6-459c-81bf-e6c2034f4218",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7183,
+        "latency_ms": 226.78,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-14-15",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961415}",
+      "meta": {
+        "task_id": "2f1ee89f-1a89-40ff-93f3-0f785f9ce8d5",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7186,
+        "latency_ms": 212.51,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-0",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961500}",
+      "meta": {
+        "task_id": "cea87d7f-2bdd-450f-9606-30634294ed25",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7225,
+        "latency_ms": 276.34,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-1",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961501}",
+      "meta": {
+        "task_id": "dab65b98-6d9e-4ba5-ba82-c913e91d6845",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7191,
+        "latency_ms": 249.65,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-2",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961502}",
+      "meta": {
+        "task_id": "9f565d13-dfad-4b84-aa96-dc76ac40c7be",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7232,
+        "latency_ms": 237.38,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-3",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961503}",
+      "meta": {
+        "task_id": "9dd26215-303a-402b-bf0d-c34c3fce65cf",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7235,
+        "latency_ms": 215.14,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-4",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961504}",
+      "meta": {
+        "task_id": "25609b33-39da-4128-9656-6aafb1e1b938",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7238,
+        "latency_ms": 212.15,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-5",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961505}",
+      "meta": {
+        "task_id": "cdda217a-ac31-4099-bf5d-a9a7c7df1c2c",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7241,
+        "latency_ms": 269.81,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961506}",
+      "meta": {
+        "task_id": "d0e8e979-435a-4c64-b11f-9de5c0835bf9",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7243,
+        "latency_ms": 242.23,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961507}",
+      "meta": {
+        "task_id": "a51b09d3-01a2-4a92-aff6-8e0e1c79d844",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7246,
+        "latency_ms": 212.62,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961508}",
+      "meta": {
+        "task_id": "9915f6a2-d190-4215-973d-ed80dc0411d5",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7248,
+        "latency_ms": 210.34,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961509}",
+      "meta": {
+        "task_id": "349c9712-1e86-4b9c-a4b5-ec854e497b4f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7208,
+        "latency_ms": 302.63,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-10",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961510}",
+      "meta": {
+        "task_id": "785085cb-3998-4beb-aa81-d475fc607ed4",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7252,
+        "latency_ms": 277.25,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-11",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961511}",
+      "meta": {
+        "task_id": "23c2b296-446e-46b6-854b-a5538cc010b4",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7255,
+        "latency_ms": 238.74,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-12",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961512}",
+      "meta": {
+        "task_id": "3c5b7a5d-ad97-478f-a81b-8431d84edf1a",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7256,
+        "latency_ms": 252.83,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-13",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961513}",
+      "meta": {
+        "task_id": "1060bfa8-505c-4e4d-ab45-f88358dcc921",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7258,
+        "latency_ms": 208.67,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-14",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961514}",
+      "meta": {
+        "task_id": "0de65115-a5fc-4b1e-bbc6-d4d9c86b5111",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.726,
+        "latency_ms": 256.15,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-15-15",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961515}",
+      "meta": {
+        "task_id": "dbbf78a3-3362-4757-946c-79693f4880c0",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7262,
+        "latency_ms": 229.53,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-0",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961600}",
+      "meta": {
+        "task_id": "fb8e5619-54f5-47fe-a091-daf5493fded7",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7218,
+        "latency_ms": 241.18,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-1",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961601}",
+      "meta": {
+        "task_id": "cec96257-e704-497f-80de-a04855c91aab",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7219,
+        "latency_ms": 210.54,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-2",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961602}",
+      "meta": {
+        "task_id": "e30c4ecb-fbde-4bfc-bdc6-66e9991d27a7",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.722,
+        "latency_ms": 262.73,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-3",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961603}",
+      "meta": {
+        "task_id": "8344d00e-7cbe-4baf-b653-b1a0e974d2ef",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7221,
+        "latency_ms": 249.62,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-4",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961604}",
+      "meta": {
+        "task_id": "fd79d848-d668-4d0e-ac5e-b2725b8ea7da",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7222,
+        "latency_ms": 236.25,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-5",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961605}",
+      "meta": {
+        "task_id": "803fc37d-2ea4-4838-8862-042c171bb0d7",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7223,
+        "latency_ms": 222.01,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-6",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961606}",
+      "meta": {
+        "task_id": "531c0254-4ac8-42fd-8ab6-efe612e8effb",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7224,
+        "latency_ms": 210.72,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-7",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961607}",
+      "meta": {
+        "task_id": "930955a3-8072-4d59-9a96-50f1053176d1",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7225,
+        "latency_ms": 277.36,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-8",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961608}",
+      "meta": {
+        "task_id": "45434064-86bf-4e73-9083-a1c8be3125c4",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7225,
+        "latency_ms": 248.17,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-9",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961609}",
+      "meta": {
+        "task_id": "c90f63d0-945b-4086-85b4-80f7e18260f1",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7226,
+        "latency_ms": 217.22,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-10",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961610}",
+      "meta": {
+        "task_id": "5e1095e1-bf9a-4a3b-ac0d-db136277ceab",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7227,
+        "latency_ms": 262.31,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-11",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961611}",
+      "meta": {
+        "task_id": "fdf4499e-256e-49a0-a21a-24f834978a19",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7228,
+        "latency_ms": 231.22,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-12",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961612}",
+      "meta": {
+        "task_id": "4f909027-e0cd-424b-beab-37c152b86e5f",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7228,
+        "latency_ms": 223.4,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-13",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961613}",
+      "meta": {
+        "task_id": "58fc8a87-c04d-439e-b156-058f136eca18",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7229,
+        "latency_ms": 217.58,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-14",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":true,\"id\":961614}",
+      "meta": {
+        "task_id": "babd17c3-6b87-4a91-a7f9-f51793859978",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.7229,
+        "latency_ms": 258.53,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    },
+    {
+      "id": "v7-json-16-15",
+      "passed": true,
+      "http_status": 200,
+      "output": "{\"activo\":false,\"id\":961615}",
+      "meta": {
+        "task_id": "1726a9f3-f57d-47ec-b76b-997b8be26f18",
+        "status": "completed",
+        "task_type": "chat",
+        "mode": "balanced",
+        "models_used": [
+          "hydra-instruction-v7-candidate"
+        ],
+        "tools_used": [],
+        "verified": false,
+        "confidence": 0.723,
+        "latency_ms": 245.84,
+        "escalations": 0,
+        "steps": 1,
+        "cached": false,
+        "sensitivity": "public",
+        "decision": "answer"
+      }
+    }
+  ],
+  "complete": true,
+  "approved": false,
+  "scope": "real configured engine on known synthetic JSON development, not independent human test",
+  "total": 78,
+  "correct": 78,
+  "accuracy": 1.0
+}

@@ -1,0 +1,12 @@
+{
+  "corpus_manifest_sha256": "5f284cff2d42316b70ce9467f2c6d6ee8a94f6af25010de60d6e6afe2aa53172",
+  "tokenizer_sha256": "06657d6aa9b9c3fb9f6cbc09769dd0b80801c2e9a464f83f21433e8fa3576f10",
+  "train": {
+    "tokens": 203185864,
+    "sha256": "5fd7f85f09839f389bad89284749541fd6374ecf8c3cdc6bda01396264f3aebc"
+  },
+  "validation": {
+    "tokens": 2097392,
+    "sha256": "e559d7d9e7cbcb4b007a18c75603a2ef9fa261a90919674ee119253612063704"
+  }
+}

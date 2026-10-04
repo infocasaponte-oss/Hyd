@@ -1,0 +1,50 @@
+{
+  "format": "hyd-contextual-training/1",
+  "model_revision": "eb9a238c1493dada507f8cf462b2c49a4b54c40b3be1a0a2ac123c78ab4498a3",
+  "status": "REQUIRES_INDEPENDENT_EVALUATION",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.9076234338184198,
+      "runtime_s": 6.031996965408325
+    }
+  ],
+  "uncalibrated_diagnostics": {
+    "requested": 96,
+    "valid": 96,
+    "accepted": 96,
+    "coverage": 1.0,
+    "accuracy": 0.3854166666666667,
+    "accuracy_wilson_lower_95": 0.29425614956558316,
+    "ece_10_bins": 0.1688792559426913,
+    "brier_multiclass_sum": 0.5749999363261425,
+    "nll": 0.9022578161153966,
+    "bins": [
+      {
+        "bin": 2,
+        "n": 12,
+        "confidence": 0.2060406126730567,
+        "accuracy": 0.25
+      },
+      {
+        "bin": 3,
+        "n": 24,
+        "confidence": 0.35567430882753026,
+        "accuracy": 0.5833333333333334
+      },
+      {
+        "bin": 5,
+        "n": 60,
+        "confidence": 0.5036846555739295,
+        "accuracy": 0.3333333333333333
+      }
+    ]
+  },
+  "runtime_s": 16.800320863723755,
+  "parameters": 30209921,
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "device": "cuda"
+  },
+  "authority_enabled": false
+}

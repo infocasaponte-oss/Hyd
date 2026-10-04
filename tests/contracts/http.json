@@ -1,0 +1,11086 @@
+{
+ "operations": {
+  "GET /health": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/deployments": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/deployments/{variant_id}/evidence": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "variant_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/metrics": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/metrics/history": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 100,
+      "type": "integer"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/outbox/dead-letters": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/admin/replay/{task_id}/audit": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/bom": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "fmt",
+     "required": false,
+     "schema": {
+      "default": "cyclonedx",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/capture/outbox": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 100,
+      "type": "integer"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/config/{env}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "env",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/corpus/lineage/{node_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "node_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/corpus/records/{record_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "record_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/corpus/stats": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/datasets": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/edge/profile": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/edge/scout": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/evaluation/cases": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/evaluation/review": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "text/html": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/flags": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/goals/{goal_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "goal_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/ip/inventions": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/ip/inventions/{inv}/timeline": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "inv",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/jobs/{job_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "job_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/lab/improvements": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/ledger/events": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "event_type",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 200,
+      "type": "integer"
+     }
+    },
+    {
+     "in": "query",
+     "name": "object_id",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "object_type",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/ledger/verify": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/models/artifacts": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/models/catalog": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/models/graph": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/observability": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/policy/rules": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/releases/{name}/verify": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "name",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/secrets": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/system/dod": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "recovery",
+     "required": false,
+     "schema": {
+      "default": false,
+      "type": "boolean"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/system/invariants": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/tasks/{task_id}/flamegraph": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/tasks/{task_id}/flight": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/training/dashboard": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/training/runs": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/training/specialists": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "min_volume_month",
+     "required": false,
+     "schema": {
+      "default": 1000,
+      "type": "number"
+     }
+    },
+    {
+     "in": "query",
+     "name": "window_days",
+     "required": false,
+     "schema": {
+      "default": 30,
+      "type": "number"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/world": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/world/conflicts": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/world/entities/{entity_id}/neighbors": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "entity_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "depth",
+     "required": false,
+     "schema": {
+      "default": 1,
+      "type": "integer"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/world/graph": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 300,
+      "type": "integer"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /metrics": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "text/plain": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "GET /ready": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    }
+   }
+  },
+  "GET /studio": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "text/html": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "GET /v1/cluster/nodes": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/fabric/stats": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/fabric/work/{item_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "item_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/artifacts/{artifact_id}/lineage": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "artifact_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/hardware": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/jobs/{job_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "job_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/resolve/{logical}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "logical",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "local",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "boolean"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "max_memory_gb",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "quality",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "number"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/status": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/factory/variants": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "logical",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/glossaries/{name}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "name",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/hyd/status": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/lab/experiments": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/memory": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 100,
+      "type": "integer"
+     }
+    },
+    {
+     "in": "query",
+     "name": "type",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "$ref": "#/components/schemas/MemoryType"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/memory/graph": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "node",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "predicate",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/memory/search": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "default": 10,
+      "type": "integer"
+     }
+    },
+    {
+     "in": "query",
+     "name": "q",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/metrics/models": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/models": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/os/status": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/policy": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}/artifacts": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}/claims": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}/events": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}/provenance": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tasks/{task_id}/replay": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "GET /v1/tools": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/deployments/register": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/DeploymentRegisterRequest"
+    }
+   },
+   "body_required": true,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/deployments/rollback/{capability}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "capability",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/deployments/{variant_id}/activate": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "variant_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/deployments/{variant_id}/canary": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "variant_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/deployments/{variant_id}/shadow": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "variant_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/admin/outbox/dead-letters/{message_id}/retry": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "path",
+     "name": "message_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/coding/verify-fix": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/CodingRequest"
+    }
+   },
+   "body_required": true,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/config/{env}": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ConfigBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "env",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/corpus/ingest": {
+   "body": {
+    "application/json": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/corpus/query": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/CorpusQueryBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/corpus/records/{record_id}/review": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ReviewBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "record_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/corpus/records/{record_id}/tombstone": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ReasonBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "record_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/datasets/build": {
+   "body": {
+    "application/json": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/edge/autobuild": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/AutobuildBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "202": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/edge/residency/{model_id}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "model_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/edge/sync/export": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "corpus_offset",
+     "required": false,
+     "schema": {
+      "default": 0,
+      "type": "integer"
+     }
+    },
+    {
+     "in": "query",
+     "name": "origin",
+     "required": false,
+     "schema": {
+      "default": "",
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "world_version",
+     "required": false,
+     "schema": {
+      "default": 0,
+      "type": "integer"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/edge/sync/import": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/SyncImportBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/evals/e2e": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "limit",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "integer"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "202": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/evaluation/authorship": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/Authorship"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/evaluation/review": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/Review"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/federated/analytics": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/FederatedCountBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/flags/{name}": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/FlagBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "name",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/goals": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/GoalBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/ip/inventions": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/InventionBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/ip/inventions/{inv}/bundle": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "inv",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/ip/inventions/{inv}/effects": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/EffectBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "inv",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/ip/inventions/{inv}/status": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/StatusBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "inv",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/licenses/evaluate": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/LicenseEvalBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/models/resolve": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ResolveBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/models/{model_id}/discover": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "model_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "apply",
+     "required": false,
+     "schema": {
+      "default": false,
+      "type": "boolean"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/models/{model_id}/lifecycle": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/LifecycleBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "model_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/policy/evaluate": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/PolicyEvalBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/redteam/run": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/releases/build": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ReleaseBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/releases/gate": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/GateBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/tasks": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/hydra__core__task__HydraTask"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "$ref": "#/components/schemas/HydraResult"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/tasks/execute": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/hydra__runtime__contracts__HydraTask"
+    }
+   },
+   "body_required": true,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/tasks/route": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/hydra__runtime__contracts__HydraTask"
+    }
+   },
+   "body_required": true,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/tasks/{task_id}/replay": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ReplayBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/training/runs": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/TrainingBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "202": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/web/read": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ReadBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/web/search": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/SearchBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/world/beliefs/{belief_id}/confirm": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "belief_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "by",
+     "required": false,
+     "schema": {
+      "default": "human",
+      "type": "string"
+     }
+    },
+    {
+     "in": "query",
+     "name": "correct",
+     "required": false,
+     "schema": {
+      "default": true,
+      "type": "boolean"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/world/codegraph": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "name",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "query",
+     "name": "path",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/world/query": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/WorldQueryBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /mcp": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/chat": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ChatRequest"
+    }
+   },
+   "body_required": true,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "application/json": {
+      "additionalProperties": true,
+      "type": "object"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/chat/completions": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ChatBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/cluster/heartbeat": {
+   "body": {
+    "application/json": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/cluster/place": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/PlaceBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/embeddings": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/EmbeddingsBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/evals/run": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/EvalBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/fabric/work": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/WorkBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "202": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/factory/jobs": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/JobBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "202": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/glossaries/{name}": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/GlossaryBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "name",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/hydra": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/HydraRequest"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "$ref": "#/components/schemas/HydraResponse"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/hydra/stream": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/HydraRequest"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/lab/experiments": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ExperimentBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/lab/experiments/{exp_id}/{action}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "action",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    },
+    {
+     "in": "path",
+     "name": "exp_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/memory/{item_id}/canonical": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "item_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/memory/{item_id}/resolve": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "item_id",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/os/cache/invalidate": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/policy/classify": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ClassifyBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/responses": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/ResponsesBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/systemone": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/DecisionBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/systemone/permute": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/PermutationBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/systemone/separate": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/DecisionBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/tasks": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/hydra__core__task__HydraTask"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {
+      "$ref": "#/components/schemas/HydraResult"
+     }
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/tasks/{task_id}/feedback": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/Feedback"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "task_id",
+     "required": true,
+     "schema": {
+      "format": "uuid",
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /v1/translate": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/TranslateBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "PUT /v1/glossaries/{name}": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/GlossaryBody"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "name",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Authorship": {
+   "properties": {
+    "artifact_sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "type": "string"
+    },
+    "reviewer": {
+     "maxLength": 120,
+     "minLength": 1,
+     "type": "string"
+    },
+    "source": {
+     "enum": [
+      "human",
+      "mixed",
+      "ai",
+      "unknown"
+     ],
+     "type": "string"
+    }
+   },
+   "required": [
+    "source",
+    "reviewer",
+    "artifact_sha256"
+   ],
+   "type": "object"
+  },
+  "AutobuildBody": {
+   "properties": {
+    "apply": {
+     "default": false,
+     "type": "boolean"
+    },
+    "model": {
+     "type": "string"
+    },
+    "runtime": {
+     "default": "ollama",
+     "type": "string"
+    }
+   },
+   "required": [
+    "model"
+   ],
+   "type": "object"
+  },
+  "BuildState": {
+   "enum": [
+    "source",
+    "converted",
+    "quantized",
+    "benchmarked",
+    "promoted",
+    "rejected"
+   ],
+   "type": "string"
+  },
+  "ChatBody": {
+   "properties": {
+    "max_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "messages": {
+     "items": {
+      "$ref": "#/components/schemas/Message"
+     },
+     "type": "array"
+    },
+    "model": {
+     "default": "hydra",
+     "type": "string"
+    },
+    "temperature": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "messages"
+   ],
+   "type": "object"
+  },
+  "ChatRequest": {
+   "properties": {
+    "max_tokens": {
+     "default": 1024,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "message": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "message"
+   ],
+   "type": "object"
+  },
+  "Claim": {
+   "properties": {
+    "confidence": {
+     "type": "number"
+    },
+    "correction": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "id": {
+     "type": "string"
+    },
+    "status": {
+     "default": "supported",
+     "type": "string"
+    },
+    "text": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "id",
+    "text",
+    "confidence"
+   ],
+   "type": "object"
+  },
+  "ClassifyBody": {
+   "properties": {
+    "text": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "text"
+   ],
+   "type": "object"
+  },
+  "CodingRequest": {
+   "properties": {
+    "goal": {
+     "maxLength": 20000,
+     "minLength": 1,
+     "type": "string"
+    },
+    "max_tokens": {
+     "default": 2048,
+     "maximum": 8192.0,
+     "minimum": 128.0,
+     "type": "integer"
+    },
+    "repository": {
+     "maxLength": 500,
+     "minLength": 1,
+     "type": "string"
+    }
+   },
+   "required": [
+    "goal",
+    "repository"
+   ],
+   "type": "object"
+  },
+  "ConfigBody": {
+   "properties": {
+    "author": {
+     "default": "api",
+     "type": "string"
+    },
+    "message": {
+     "default": "",
+     "type": "string"
+    },
+    "values": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "values"
+   ],
+   "type": "object"
+  },
+  "ContextFragment": {
+   "properties": {
+    "classification": {
+     "default": "INTERNAL",
+     "type": "string"
+    },
+    "cloud_allowed": {
+     "default": true,
+     "type": "boolean"
+    },
+    "content": {
+     "type": "string"
+    },
+    "owner": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "retention_allowed": {
+     "default": true,
+     "type": "boolean"
+    },
+    "source": {
+     "default": "SOURCE_USER",
+     "type": "string"
+    },
+    "source_ref": {
+     "default": "",
+     "type": "string"
+    },
+    "training_allowed": {
+     "default": false,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "content"
+   ],
+   "type": "object"
+  },
+  "CorpusQueryBody": {
+   "properties": {
+    "capability": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "domain": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "language": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "limit": {
+     "default": 50,
+     "type": "integer"
+    },
+    "min_quality": {
+     "default": 0.0,
+     "type": "number"
+    },
+    "record_type": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "statuses": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "text": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object"
+  },
+  "DecisionBody": {
+   "additionalProperties": false,
+   "properties": {
+    "model": {
+     "default": "hyd-latest",
+     "type": "string"
+    },
+    "questions": {
+     "additionalProperties": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "maxProperties": 64,
+     "minProperties": 1,
+     "type": "object"
+    },
+    "state": {}
+   },
+   "required": [
+    "state",
+    "questions"
+   ],
+   "type": "object"
+  },
+  "DeploymentRegisterRequest": {
+   "properties": {
+    "capabilities": {
+     "items": {
+      "type": "string"
+     },
+     "minItems": 1,
+     "type": "array"
+    },
+    "generation": {
+     "default": 0,
+     "minimum": 0.0,
+     "type": "integer"
+    },
+    "variant": {
+     "$ref": "#/components/schemas/ModelVariant"
+    }
+   },
+   "required": [
+    "variant",
+    "capabilities"
+   ],
+   "type": "object"
+  },
+  "EffectBody": {
+   "properties": {
+    "baseline_value": {
+     "type": "number"
+    },
+    "experiment_id": {
+     "default": "",
+     "type": "string"
+    },
+    "experimental_value": {
+     "type": "number"
+    },
+    "lower_is_better": {
+     "default": true,
+     "type": "boolean"
+    },
+    "metric": {
+     "type": "string"
+    },
+    "unit": {
+     "default": "",
+     "type": "string"
+    }
+   },
+   "required": [
+    "metric",
+    "baseline_value",
+    "experimental_value"
+   ],
+   "type": "object"
+  },
+  "EmbeddingsBody": {
+   "properties": {
+    "input": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      }
+     ]
+    },
+    "model": {
+     "default": "hydra-embed",
+     "type": "string"
+    }
+   },
+   "required": [
+    "input"
+   ],
+   "type": "object"
+  },
+  "EvalBody": {
+   "properties": {
+    "apply": {
+     "default": false,
+     "type": "boolean"
+    },
+    "model_id": {
+     "type": "string"
+    },
+    "suites": {
+     "anyOf": [
+      {
+       "items": {
+        "type": "string"
+       },
+       "type": "array"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "model_id"
+   ],
+   "type": "object"
+  },
+  "ExecutionMode": {
+   "enum": [
+    "fast",
+    "balanced",
+    "deep",
+    "max",
+    "private"
+   ],
+   "type": "string"
+  },
+  "ExperimentBody": {
+   "properties": {
+    "gates": {
+     "anyOf": [
+      {
+       "$ref": "#/components/schemas/Gates"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "kind": {
+     "default": "config",
+     "type": "string"
+    },
+    "name": {
+     "type": "string"
+    },
+    "overrides": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "name",
+    "overrides"
+   ],
+   "type": "object"
+  },
+  "FederatedCountBody": {
+   "properties": {
+    "differential_privacy": {
+     "default": false,
+     "type": "boolean"
+    },
+    "local_counts": {
+     "additionalProperties": {
+      "type": "integer"
+     },
+     "type": "object"
+    },
+    "min_count": {
+     "default": 5,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "local_counts"
+   ],
+   "type": "object"
+  },
+  "Feedback": {
+   "properties": {
+    "score": {
+     "maximum": 1.0,
+     "minimum": 0.0,
+     "type": "number"
+    }
+   },
+   "required": [
+    "score"
+   ],
+   "type": "object"
+  },
+  "FlagBody": {
+   "properties": {
+    "value": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "value"
+   ],
+   "type": "object"
+  },
+  "GateBody": {
+   "properties": {
+    "artifact": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "target": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "artifact",
+    "target"
+   ],
+   "type": "object"
+  },
+  "Gates": {
+   "properties": {
+    "benchmark_tolerance": {
+     "default": 0.02,
+     "type": "number"
+    },
+    "canary_samples": {
+     "default": 30,
+     "type": "integer"
+    },
+    "confidence_tolerance": {
+     "default": 0.02,
+     "type": "number"
+    },
+    "failure_increase": {
+     "default": 0.02,
+     "type": "number"
+    },
+    "latency_increase": {
+     "default": 0.25,
+     "type": "number"
+    },
+    "shadow_samples": {
+     "default": 20,
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  },
+  "GlossaryBody": {
+   "properties": {
+    "terms": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "type": "object"
+    }
+   },
+   "required": [
+    "terms"
+   ],
+   "type": "object"
+  },
+  "GoalBody": {
+   "properties": {
+    "authorized": {
+     "items": {
+      "type": "string"
+     },
+     "maxItems": 64,
+     "type": "array"
+    },
+    "goal": {
+     "maxLength": 20000,
+     "minLength": 1,
+     "type": "string"
+    },
+    "max_seconds": {
+     "default": 600,
+     "exclusiveMinimum": 0.0,
+     "maximum": 3600.0,
+     "type": "number"
+    },
+    "mode": {
+     "default": "balanced",
+     "type": "string"
+    },
+    "workspace": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "goal"
+   ],
+   "type": "object"
+  },
+  "HTTPValidationError": {
+   "properties": {
+    "detail": {
+     "items": {
+      "$ref": "#/components/schemas/ValidationError"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  },
+  "HydraMeta": {
+   "properties": {
+    "cached": {
+     "default": false,
+     "type": "boolean"
+    },
+    "confidence": {
+     "type": "number"
+    },
+    "decision": {
+     "default": "answer",
+     "type": "string"
+    },
+    "escalations": {
+     "default": 0,
+     "type": "integer"
+    },
+    "latency_ms": {
+     "type": "number"
+    },
+    "mode": {
+     "$ref": "#/components/schemas/ExecutionMode"
+    },
+    "models_used": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "sensitivity": {
+     "default": "public",
+     "type": "string"
+    },
+    "status": {
+     "type": "string"
+    },
+    "steps": {
+     "default": 0,
+     "type": "integer"
+    },
+    "task_id": {
+     "type": "string"
+    },
+    "task_type": {
+     "$ref": "#/components/schemas/TaskType-Output"
+    },
+    "tools_used": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "verified": {
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "task_id",
+    "status",
+    "task_type",
+    "mode",
+    "models_used",
+    "tools_used",
+    "verified",
+    "confidence",
+    "latency_ms"
+   ],
+   "type": "object"
+  },
+  "HydraRequest": {
+   "properties": {
+    "allow_high_risk_tools": {
+     "default": false,
+     "type": "boolean"
+    },
+    "approved_actions": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "local_only": {
+     "default": false,
+     "type": "boolean"
+    },
+    "max_cost": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_latency_ms": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "messages": {
+     "items": {
+      "$ref": "#/components/schemas/Message"
+     },
+     "type": "array"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "mode": {
+     "$ref": "#/components/schemas/ExecutionMode",
+     "default": "balanced"
+    },
+    "use_cache": {
+     "default": true,
+     "type": "boolean"
+    }
+   },
+   "required": [
+    "messages"
+   ],
+   "type": "object"
+  },
+  "HydraResponse": {
+   "properties": {
+    "answer": {
+     "type": "string"
+    },
+    "artifacts": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "claims": {
+     "items": {
+      "$ref": "#/components/schemas/Claim"
+     },
+     "type": "array"
+    },
+    "learning": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "meta": {
+     "$ref": "#/components/schemas/HydraMeta"
+    },
+    "pending_confirmations": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "uncertainties": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    }
+   },
+   "required": [
+    "answer",
+    "meta"
+   ],
+   "type": "object"
+  },
+  "HydraResult": {
+   "properties": {
+    "answer": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "artifacts": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "claims": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "confidence": {
+     "default": 0.0,
+     "type": "number"
+    },
+    "cost": {
+     "default": 0.0,
+     "type": "number"
+    },
+    "decision": {
+     "default": "answer",
+     "type": "string"
+    },
+    "evidence": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "latency_ms": {
+     "default": 0.0,
+     "type": "number"
+    },
+    "learning": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "models_used": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "pending_confirmations": {
+     "items": {
+      "additionalProperties": true,
+      "type": "object"
+     },
+     "type": "array"
+    },
+    "schema_version": {
+     "default": "1.0",
+     "type": "string"
+    },
+    "status": {
+     "type": "string"
+    },
+    "task_id": {
+     "type": "string"
+    },
+    "tools_used": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "trace_id": {
+     "default": "",
+     "type": "string"
+    },
+    "verified": {
+     "default": false,
+     "type": "boolean"
+    },
+    "world_version": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "task_id",
+    "status"
+   ],
+   "type": "object"
+  },
+  "InventionBody": {
+   "properties": {
+    "contributors": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "family": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "features": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "mechanism": {
+     "default": "",
+     "type": "string"
+    },
+    "previous_approach": {
+     "default": "",
+     "type": "string"
+    },
+    "problem": {
+     "default": "",
+     "type": "string"
+    },
+    "solution": {
+     "default": "",
+     "type": "string"
+    }
+   },
+   "required": [
+    "title"
+   ],
+   "type": "object"
+  },
+  "JobBody": {
+   "properties": {
+    "kind": {
+     "type": "string"
+    },
+    "params": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "kind"
+   ],
+   "type": "object"
+  },
+  "LicenseEvalBody": {
+   "properties": {
+    "components": {
+     "items": {
+      "anyOf": [
+       {
+        "additionalProperties": true,
+        "type": "object"
+       },
+       {
+        "type": "string"
+       }
+      ]
+     },
+     "type": "array"
+    },
+    "target": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "target",
+    "components"
+   ],
+   "type": "object"
+  },
+  "LifecycleBody": {
+   "properties": {
+    "actor": {
+     "default": "api",
+     "type": "string"
+    },
+    "reason": {
+     "type": "string"
+    },
+    "to": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "to",
+    "reason"
+   ],
+   "type": "object"
+  },
+  "MemoryType": {
+   "enum": [
+    "episodic",
+    "semantic",
+    "procedural"
+   ],
+   "type": "string"
+  },
+  "Message": {
+   "properties": {
+    "content": {
+     "type": "string"
+    },
+    "images": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "role": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "role",
+    "content"
+   ],
+   "type": "object"
+  },
+  "ModelLineage": {
+   "properties": {
+    "base_model": {
+     "type": "string"
+    },
+    "base_model_sha256": {
+     "type": "string"
+    },
+    "dataset_id": {
+     "anyOf": [
+      {
+       "format": "uuid",
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "dataset_manifest_sha256": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "lineage_id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "training_run_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "base_model",
+    "base_model_sha256"
+   ],
+   "type": "object"
+  },
+  "ModelVariant": {
+   "properties": {
+    "artifact_path": {
+     "type": "string"
+    },
+    "artifact_sha256": {
+     "type": "string"
+    },
+    "format": {
+     "default": "gguf",
+     "type": "string"
+    },
+    "lineage": {
+     "$ref": "#/components/schemas/ModelLineage"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "quantization": {
+     "type": "string"
+    },
+    "state": {
+     "$ref": "#/components/schemas/BuildState"
+    },
+    "variant_id": {
+     "format": "uuid",
+     "type": "string"
+    }
+   },
+   "required": [
+    "lineage",
+    "quantization",
+    "artifact_path",
+    "artifact_sha256",
+    "state"
+   ],
+   "type": "object"
+  },
+  "PermutationBody": {
+   "additionalProperties": false,
+   "properties": {
+    "n_perm": {
+     "default": 6,
+     "maximum": 64.0,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "question": {
+     "type": "string"
+    },
+    "request": {
+     "$ref": "#/components/schemas/DecisionBody"
+    },
+    "seed": {
+     "default": 0,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "request",
+    "question"
+   ],
+   "type": "object"
+  },
+  "PlaceBody": {
+   "properties": {
+    "conversation_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "expected_output_tokens": {
+     "default": 300,
+     "type": "integer"
+    },
+    "mode": {
+     "default": "balanced",
+     "type": "string"
+    },
+    "private": {
+     "default": false,
+     "type": "boolean"
+    },
+    "prompt_chars": {
+     "default": 2000,
+     "type": "integer"
+    },
+    "sla": {
+     "default": "interactive",
+     "type": "string"
+    },
+    "task_type": {
+     "default": "chat",
+     "type": "string"
+    }
+   },
+   "type": "object"
+  },
+  "PolicyEvalBody": {
+   "properties": {
+    "facts": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "facts"
+   ],
+   "type": "object"
+  },
+  "ReadBody": {
+   "properties": {
+    "private": {
+     "default": false,
+     "type": "boolean"
+    },
+    "url": {
+     "maxLength": 4000,
+     "minLength": 1,
+     "type": "string"
+    }
+   },
+   "required": [
+    "url"
+   ],
+   "type": "object"
+  },
+  "ReasonBody": {
+   "properties": {
+    "reason": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "reason"
+   ],
+   "type": "object"
+  },
+  "ReleaseBody": {
+   "properties": {
+    "components": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "type": "object"
+    },
+    "eval_results": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "name": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "name"
+   ],
+   "type": "object"
+  },
+  "ReplayBody": {
+   "properties": {
+    "config": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "mode": {
+     "default": "audit",
+     "type": "string"
+    },
+    "replace_models": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "type": "object"
+    }
+   },
+   "type": "object"
+  },
+  "ResolveBody": {
+   "properties": {
+    "capability": {
+     "type": "string"
+    },
+    "constraints": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "capability"
+   ],
+   "type": "object"
+  },
+  "ResponsesBody": {
+   "properties": {
+    "input": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "items": {
+        "additionalProperties": true,
+        "type": "object"
+       },
+       "type": "array"
+      }
+     ]
+    },
+    "instructions": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "model": {
+     "default": "hydra",
+     "type": "string"
+    }
+   },
+   "required": [
+    "input"
+   ],
+   "type": "object"
+  },
+  "Review": {
+   "properties": {
+    "artifact_sha256": {
+     "pattern": "^[0-9a-f]{64}$",
+     "type": "string"
+    },
+    "case_id": {
+     "maximum": 1000000.0,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "decision": {
+     "enum": [
+      "correct",
+      "incorrect",
+      "ambiguous"
+     ],
+     "type": "string"
+    },
+    "note": {
+     "default": "",
+     "maxLength": 2000,
+     "type": "string"
+    },
+    "reviewer": {
+     "maxLength": 120,
+     "minLength": 1,
+     "type": "string"
+    }
+   },
+   "required": [
+    "case_id",
+    "decision",
+    "reviewer",
+    "artifact_sha256"
+   ],
+   "type": "object"
+  },
+  "ReviewBody": {
+   "properties": {
+    "approve": {
+     "type": "boolean"
+    },
+    "reviewer": {
+     "type": "string"
+    },
+    "training_allowed": {
+     "anyOf": [
+      {
+       "type": "boolean"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "approve",
+    "reviewer"
+   ],
+   "type": "object"
+  },
+  "SearchBody": {
+   "properties": {
+    "engine": {
+     "default": "brave",
+     "enum": [
+      "brave",
+      "google",
+      "bing",
+      "duckduckgo"
+     ],
+     "type": "string"
+    },
+    "limit": {
+     "default": 5,
+     "maximum": 10.0,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "private": {
+     "default": false,
+     "type": "boolean"
+    },
+    "query": {
+     "maxLength": 1000,
+     "minLength": 1,
+     "type": "string"
+    }
+   },
+   "required": [
+    "query"
+   ],
+   "type": "object"
+  },
+  "SecurityContext": {
+   "properties": {
+    "capabilities": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "uniqueItems": true
+    },
+    "classification": {
+     "default": "INTERNAL",
+     "type": "string"
+    },
+    "principal_id": {
+     "default": "anonymous",
+     "type": "string"
+    },
+    "roles": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array",
+     "uniqueItems": true
+    },
+    "tenant_id": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object"
+  },
+  "StatusBody": {
+   "properties": {
+    "actor": {
+     "type": "string"
+    },
+    "reason": {
+     "default": "",
+     "type": "string"
+    },
+    "status": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "status",
+    "actor"
+   ],
+   "type": "object"
+  },
+  "SyncImportBody": {
+   "additionalProperties": false,
+   "properties": {
+    "bundle": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "bundle"
+   ],
+   "type": "object"
+  },
+  "TaskConstraints": {
+   "properties": {
+    "allow_filesystem_write": {
+     "default": false,
+     "type": "boolean"
+    },
+    "allow_network": {
+     "default": false,
+     "type": "boolean"
+    },
+    "local_only": {
+     "default": false,
+     "type": "boolean"
+    },
+    "max_memory_gb": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "min_quality": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "required_capabilities": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    }
+   },
+   "type": "object"
+  },
+  "TaskStatus": {
+   "enum": [
+    "created",
+    "routing",
+    "planning",
+    "executing",
+    "verifying",
+    "synthesizing",
+    "capturing",
+    "completed",
+    "failed",
+    "cancelled"
+   ],
+   "type": "string"
+  },
+  "TaskType-Input": {
+   "enum": [
+    "chat",
+    "translation",
+    "coding",
+    "reasoning",
+    "research",
+    "tool_use"
+   ],
+   "type": "string"
+  },
+  "TaskType-Output": {
+   "enum": [
+    "chat",
+    "coding",
+    "reasoning",
+    "research",
+    "vision",
+    "tool_use"
+   ],
+   "type": "string"
+  },
+  "TrainingBody": {
+   "properties": {
+    "dataset": {
+     "anyOf": [
+      {
+       "additionalProperties": true,
+       "type": "object"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "recipe": {
+     "additionalProperties": true,
+     "type": "object"
+    }
+   },
+   "required": [
+    "recipe"
+   ],
+   "type": "object"
+  },
+  "TranslateBody": {
+   "properties": {
+    "domain": {
+     "default": "general",
+     "type": "string"
+    },
+    "glossary": {
+     "additionalProperties": {
+      "type": "string"
+     },
+     "type": "object"
+    },
+    "glossary_name": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "model": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "source_language": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "target_language": {
+     "type": "string"
+    },
+    "text": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "text",
+    "target_language"
+   ],
+   "type": "object"
+  },
+  "ValidationError": {
+   "properties": {
+    "ctx": {
+     "type": "object"
+    },
+    "input": {},
+    "loc": {
+     "items": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "integer"
+       }
+      ]
+     },
+     "type": "array"
+    },
+    "msg": {
+     "type": "string"
+    },
+    "type": {
+     "type": "string"
+    }
+   },
+   "required": [
+    "loc",
+    "msg",
+    "type"
+   ],
+   "type": "object"
+  },
+  "WorkBody": {
+   "properties": {
+    "capability": {
+     "type": "string"
+    },
+    "idempotency_key": {
+     "default": "",
+     "type": "string"
+    },
+    "payload": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "priority": {
+     "default": "normal",
+     "type": "string"
+    },
+    "timeout_ms": {
+     "default": 120000,
+     "type": "integer"
+    }
+   },
+   "required": [
+    "capability"
+   ],
+   "type": "object"
+  },
+  "WorldQueryBody": {
+   "properties": {
+    "at": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "depth": {
+     "default": 1,
+     "type": "integer"
+    },
+    "predicate": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "query": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "subject": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object"
+  },
+  "hydra__core__task__CognitiveBudget": {
+   "properties": {
+    "max_cost": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_model_calls": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_parallelism": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_seconds": {
+     "anyOf": [
+      {
+       "type": "number"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_tokens": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "max_tool_calls": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "type": "object"
+  },
+  "hydra__core__task__HydraTask": {
+   "properties": {
+    "approved_actions": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "budget": {
+     "$ref": "#/components/schemas/hydra__core__task__CognitiveBudget"
+    },
+    "constraints": {
+     "$ref": "#/components/schemas/TaskConstraints"
+    },
+    "context": {
+     "items": {
+      "$ref": "#/components/schemas/ContextFragment"
+     },
+     "type": "array"
+    },
+    "context_refs": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "goal": {
+     "type": "string"
+    },
+    "id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "images": {
+     "items": {
+      "type": "string"
+     },
+     "type": "array"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "mode": {
+     "$ref": "#/components/schemas/ExecutionMode",
+     "default": "balanced"
+    },
+    "priority": {
+     "default": "interactive",
+     "type": "string"
+    },
+    "schema_version": {
+     "default": "1.0",
+     "type": "string"
+    },
+    "security_context": {
+     "$ref": "#/components/schemas/SecurityContext"
+    },
+    "workspace": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    },
+    "world_version": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "goal"
+   ],
+   "type": "object"
+  },
+  "hydra__runtime__contracts__CognitiveBudget": {
+   "properties": {
+    "max_model_calls": {
+     "default": 4,
+     "maximum": 64.0,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "max_output_tokens": {
+     "default": 4096,
+     "maximum": 32768.0,
+     "minimum": 1.0,
+     "type": "integer"
+    },
+    "max_seconds": {
+     "default": 120.0,
+     "exclusiveMinimum": 0.0,
+     "maximum": 3600.0,
+     "type": "number"
+    },
+    "max_tool_calls": {
+     "default": 8,
+     "maximum": 128.0,
+     "minimum": 0.0,
+     "type": "integer"
+    }
+   },
+   "type": "object"
+  },
+  "hydra__runtime__contracts__HydraTask": {
+   "properties": {
+    "budget": {
+     "$ref": "#/components/schemas/hydra__runtime__contracts__CognitiveBudget"
+    },
+    "goal": {
+     "type": "string"
+    },
+    "id": {
+     "format": "uuid",
+     "type": "string"
+    },
+    "metadata": {
+     "additionalProperties": true,
+     "type": "object"
+    },
+    "status": {
+     "$ref": "#/components/schemas/TaskStatus",
+     "default": "created"
+    },
+    "task_type": {
+     "anyOf": [
+      {
+       "$ref": "#/components/schemas/TaskType-Input"
+      },
+      {
+       "type": "null"
+      }
+     ]
+    }
+   },
+   "required": [
+    "goal"
+   ],
+   "type": "object"
+  }
+ }
+}

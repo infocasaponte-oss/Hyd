@@ -1,0 +1,169 @@
+{
+  "changes": [
+    {
+      "id": "v7-json-15-0",
+      "old_prompt": "Conserva el número 961500 bajo id y normaliza el estado sí bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961500 bajo id y normaliza el estado sí bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-1",
+      "old_prompt": "Conserva el número 961501 bajo id y normaliza el estado no bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961501 bajo id y normaliza el estado no bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-2",
+      "old_prompt": "Conserva el número 961502 bajo id y normaliza el estado encendido bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961502 bajo id y normaliza el estado encendido bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-3",
+      "old_prompt": "Conserva el número 961503 bajo id y normaliza el estado apagado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961503 bajo id y normaliza el estado apagado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-4",
+      "old_prompt": "Conserva el número 961504 bajo id y normaliza el estado habilitado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961504 bajo id y normaliza el estado habilitado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-5",
+      "old_prompt": "Conserva el número 961505 bajo id y normaliza el estado deshabilitado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961505 bajo id y normaliza el estado deshabilitado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-6",
+      "old_prompt": "Conserva el número 961506 bajo id y normaliza el estado true bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961506 bajo id y normaliza el estado true bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-7",
+      "old_prompt": "Conserva el número 961507 bajo id y normaliza el estado false bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961507 bajo id y normaliza el estado false bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-8",
+      "old_prompt": "Conserva el número 961508 bajo id y normaliza el estado sí bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961508 bajo id y normaliza el estado sí bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-9",
+      "old_prompt": "Conserva el número 961509 bajo id y normaliza el estado no bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961509 bajo id y normaliza el estado no bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-10",
+      "old_prompt": "Conserva el número 961510 bajo id y normaliza el estado encendido bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961510 bajo id y normaliza el estado encendido bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-11",
+      "old_prompt": "Conserva el número 961511 bajo id y normaliza el estado apagado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961511 bajo id y normaliza el estado apagado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-12",
+      "old_prompt": "Conserva el número 961512 bajo id y normaliza el estado habilitado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961512 bajo id y normaliza el estado habilitado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-13",
+      "old_prompt": "Conserva el número 961513 bajo id y normaliza el estado deshabilitado bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961513 bajo id y normaliza el estado deshabilitado bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-14",
+      "old_prompt": "Conserva el número 961514 bajo id y normaliza el estado true bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961514 bajo id y normaliza el estado true bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-15-15",
+      "old_prompt": "Conserva el número 961515 bajo id y normaliza el estado false bajo activo. Produce un objeto con dos propiedades, sin explicación.",
+      "new_prompt": "Conserva el número 961515 bajo id y normaliza el estado false bajo activo booleano. Produce un objeto con dos propiedades, sin explicación."
+    },
+    {
+      "id": "v7-json-16-0",
+      "old_prompt": "Hay una entidad cuyo id es 961600 y cuya activación se describe como sí. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961600 y cuyo activo se describe como sí. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-1",
+      "old_prompt": "Hay una entidad cuyo id es 961601 y cuya activación se describe como no. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961601 y cuyo activo se describe como no. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-2",
+      "old_prompt": "Hay una entidad cuyo id es 961602 y cuya activación se describe como encendido. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961602 y cuyo activo se describe como encendido. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-3",
+      "old_prompt": "Hay una entidad cuyo id es 961603 y cuya activación se describe como apagado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961603 y cuyo activo se describe como apagado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-4",
+      "old_prompt": "Hay una entidad cuyo id es 961604 y cuya activación se describe como habilitado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961604 y cuyo activo se describe como habilitado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-5",
+      "old_prompt": "Hay una entidad cuyo id es 961605 y cuya activación se describe como deshabilitado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961605 y cuyo activo se describe como deshabilitado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-6",
+      "old_prompt": "Hay una entidad cuyo id es 961606 y cuya activación se describe como true. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961606 y cuyo activo se describe como true. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-7",
+      "old_prompt": "Hay una entidad cuyo id es 961607 y cuya activación se describe como false. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961607 y cuyo activo se describe como false. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-8",
+      "old_prompt": "Hay una entidad cuyo id es 961608 y cuya activación se describe como sí. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961608 y cuyo activo se describe como sí. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-9",
+      "old_prompt": "Hay una entidad cuyo id es 961609 y cuya activación se describe como no. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961609 y cuyo activo se describe como no. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-10",
+      "old_prompt": "Hay una entidad cuyo id es 961610 y cuya activación se describe como encendido. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961610 y cuyo activo se describe como encendido. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-11",
+      "old_prompt": "Hay una entidad cuyo id es 961611 y cuya activación se describe como apagado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961611 y cuyo activo se describe como apagado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-12",
+      "old_prompt": "Hay una entidad cuyo id es 961612 y cuya activación se describe como habilitado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961612 y cuyo activo se describe como habilitado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-13",
+      "old_prompt": "Hay una entidad cuyo id es 961613 y cuya activación se describe como deshabilitado. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961613 y cuyo activo se describe como deshabilitado. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-14",
+      "old_prompt": "Hay una entidad cuyo id es 961614 y cuya activación se describe como true. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961614 y cuyo activo se describe como true. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    },
+    {
+      "id": "v7-json-16-15",
+      "old_prompt": "Hay una entidad cuyo id es 961615 y cuya activación se describe como false. Serializa ambas propiedades; el estado debe ser un booleano JSON.",
+      "new_prompt": "Hay una entidad cuyo id es 961615 y cuyo activo se describe como false. Serializa ambas propiedades, id y activo; activo debe ser un booleano JSON."
+    }
+  ],
+  "training_changed": false,
+  "calibration_changed": false,
+  "frozen_test_changed": false,
+  "original_evidence_retained": true,
+  "scope": "synthetic development annotation repair, not new independent test"
+}

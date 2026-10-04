@@ -1,0 +1,326 @@
+{
+  "approved": false,
+  "scope": "Grounded test (document-disjoint, unseen wording) and parent regression set; not independent certification",
+  "protocol": {
+    "runtime": "llama-server b11146, CPU backend",
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": {
+      "grounded_test": 256,
+      "regression": 160
+    },
+    "artifact_hash_checked": true
+  },
+  "datasets": {
+    "grounded_test": {
+      "path": "data/hydra-grounded-v1/test.jsonl",
+      "sha256": "4fecd531114582971935a6a8a847949c21070b0342e767ed35b09d4b11689640",
+      "cases": 154
+    },
+    "regression": {
+      "path": "data/hydra-program-v1-clean-pilot/test.jsonl",
+      "sha256": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3",
+      "cases": 48
+    }
+  },
+  "scorer_sha256": "99551c740363bfe1192ee479701ecdc1ebc21f2ec60fc0b3099113987755ace5",
+  "evaluator_sha256": "7f96d349ca897ff48aa2f7baae51a0c77cfe5628d65bf761798fdef74c2a3f27",
+  "models": {
+    "hydra-instruction-v7": {
+      "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+      "grounded_test": {
+        "fact_match": 88,
+        "exact_match": 0,
+        "total": 154,
+        "boe_citation_rate": 0.0,
+        "families": {
+          "boe_absent": {
+            "fact": 0,
+            "exact": 0,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 5,
+            "exact": 0,
+            "total": 11
+          },
+          "boe_quote": {
+            "fact": 1,
+            "exact": 0,
+            "total": 15
+          },
+          "boe_rank_date": {
+            "fact": 9,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 18,
+            "exact": 0,
+            "total": 23
+          },
+          "code_absent": {
+            "fact": 7,
+            "exact": 0,
+            "total": 20
+          },
+          "code_functions": {
+            "fact": 18,
+            "exact": 0,
+            "total": 21
+          },
+          "code_imports": {
+            "fact": 3,
+            "exact": 0,
+            "total": 12
+          },
+          "code_methods": {
+            "fact": 5,
+            "exact": 0,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 13,
+            "exact": 0,
+            "total": 17
+          }
+        }
+      },
+      "regression": {
+        "exact_match": 24,
+        "total": 48,
+        "failed_ids": [
+          "test-json-2000",
+          "test-json-2001",
+          "test-json-2002",
+          "test-json-2003",
+          "test-json-2004",
+          "test-json-2005",
+          "test-json-2006",
+          "test-json-2007",
+          "test-json-2008",
+          "test-json-2009",
+          "test-json-2010",
+          "test-json-2011",
+          "test-json-2012",
+          "test-json-2013",
+          "test-json-2014",
+          "test-json-2015",
+          "test-json-2016",
+          "test-json-2017",
+          "test-json-2018",
+          "test-json-2019",
+          "test-json-2020",
+          "test-json-2021",
+          "test-json-2022",
+          "test-json-2023"
+        ]
+      }
+    },
+    "hydra-program-v1-clean-pilot": {
+      "artifact_sha256": "e823921ccbe70ba9b929ae461604e0810704eb45abc6e27a9c01947896708b22",
+      "grounded_test": {
+        "fact_match": 82,
+        "exact_match": 0,
+        "total": 154,
+        "boe_citation_rate": 0.1045,
+        "families": {
+          "boe_absent": {
+            "fact": 0,
+            "exact": 0,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 9,
+            "exact": 0,
+            "total": 11
+          },
+          "boe_quote": {
+            "fact": 1,
+            "exact": 0,
+            "total": 15
+          },
+          "boe_rank_date": {
+            "fact": 9,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 17,
+            "exact": 0,
+            "total": 23
+          },
+          "code_absent": {
+            "fact": 0,
+            "exact": 0,
+            "total": 20
+          },
+          "code_functions": {
+            "fact": 18,
+            "exact": 0,
+            "total": 21
+          },
+          "code_imports": {
+            "fact": 1,
+            "exact": 0,
+            "total": 12
+          },
+          "code_methods": {
+            "fact": 5,
+            "exact": 0,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 13,
+            "exact": 0,
+            "total": 17
+          }
+        }
+      },
+      "regression": {
+        "exact_match": 24,
+        "total": 48,
+        "failed_ids": [
+          "test-json-2000",
+          "test-json-2001",
+          "test-json-2002",
+          "test-json-2003",
+          "test-json-2004",
+          "test-json-2005",
+          "test-json-2006",
+          "test-json-2007",
+          "test-json-2008",
+          "test-json-2009",
+          "test-json-2010",
+          "test-json-2011",
+          "test-json-2012",
+          "test-json-2013",
+          "test-json-2014",
+          "test-json-2015",
+          "test-json-2016",
+          "test-json-2017",
+          "test-json-2018",
+          "test-json-2019",
+          "test-json-2020",
+          "test-json-2021",
+          "test-json-2022",
+          "test-json-2023"
+        ]
+      }
+    },
+    "hydra-program-v2-grounded": {
+      "artifact_sha256": "418d2fee78930ce9697396502abfd519334f62811764761367deb51d6f412e01",
+      "grounded_test": {
+        "fact_match": 141,
+        "exact_match": 99,
+        "total": 154,
+        "boe_citation_rate": 0.9701,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "exact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 11,
+            "exact": 10,
+            "total": 11
+          },
+          "boe_quote": {
+            "fact": 14,
+            "exact": 5,
+            "total": 15
+          },
+          "boe_rank_date": {
+            "fact": 9,
+            "exact": 9,
+            "total": 9
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "exact": 0,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 23,
+            "exact": 23,
+            "total": 23
+          },
+          "code_absent": {
+            "fact": 20,
+            "exact": 19,
+            "total": 20
+          },
+          "code_functions": {
+            "fact": 17,
+            "exact": 0,
+            "total": 21
+          },
+          "code_imports": {
+            "fact": 5,
+            "exact": 5,
+            "total": 12
+          },
+          "code_methods": {
+            "fact": 5,
+            "exact": 0,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 17,
+            "exact": 17,
+            "total": 17
+          }
+        }
+      },
+      "regression": {
+        "exact_match": 24,
+        "total": 48,
+        "failed_ids": [
+          "test-json-2000",
+          "test-json-2001",
+          "test-json-2002",
+          "test-json-2003",
+          "test-json-2004",
+          "test-json-2005",
+          "test-json-2006",
+          "test-json-2007",
+          "test-json-2008",
+          "test-json-2009",
+          "test-json-2010",
+          "test-json-2011",
+          "test-json-2012",
+          "test-json-2013",
+          "test-json-2014",
+          "test-json-2015",
+          "test-json-2016",
+          "test-json-2017",
+          "test-json-2018",
+          "test-json-2019",
+          "test-json-2020",
+          "test-json-2021",
+          "test-json-2022",
+          "test-json-2023"
+        ]
+      }
+    }
+  },
+  "findings": [
+    "Candidate hydra-program-v2-grounded: 141/154 fact-level (99 exact) vs base hydra-instruction-v7 88/154 (0 exact); BOE citation 97% vs 0%.",
+    "Abstention on content absent from the source: candidate 31/31 (BOE 11/11, code 20/20); base 7/31, inventing the absent article's content.",
+    "Regression: identical failure set across base and candidate (24/48 failing, no new failures).",
+    "Remaining candidate errors: code_imports 5/12 (misses or invents modules), code_functions 17/21 (e.g. counts `if __name__` block).",
+    "Generator typo 'funciónes' (plural) was learned by the candidate; fix in grounded_corpus_v2.",
+    "Fact-level scoring is deterministic and heuristic; exact match is reported alongside. Not human reviewed."
+  ]
+}

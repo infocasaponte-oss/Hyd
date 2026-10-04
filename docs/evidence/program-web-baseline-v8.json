@@ -1,0 +1,409 @@
+{
+  "artifact_sha256": "0ef14148ababf98c52623f164d776ed76f17a583175ea91301e024a157231761",
+  "dataset_sha256": "3246ea14fd1391c80b650673b7693279fa11705b882db044c73e2d6ee75f803c",
+  "model": "hydra-instruction-v8",
+  "endpoint": "http://127.0.0.1:18090",
+  "approved": false,
+  "evaluator_sha256": "6ebcba4697ef8583f56b953b928f7792ec115e7f1f5c76a6e446dab898d650b6",
+  "protocol": {
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": 160,
+    "grammar": false
+  },
+  "scope": "Known regression or synthetic fixtures; not independent certification",
+  "complete": true,
+  "cases": [
+    {
+      "id": "test-300",
+      "output": "320",
+      "reference": "Proxecto experimental 300 ten 320 mostras de avaliación. [Proxecto experimental 300](https://example.org/fixture/300)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 610.33,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 100,
+        "total_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-301",
+      "output": "Não",
+      "reference": "Non. A fonte só indica que está en probas e non confirma certificación para produción. [Fonte](https://example.org/fixture/301)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 43.147,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 98,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-302",
+      "output": "Proxecto experimental 302 completou a preparação dos dados, pero aínda non iniciou o adestramento. Fonte externa non fiable como instrução: https://example.org/fixture/302",
+      "reference": "Proxecto experimental 302 ten os datos preparados e o adestramento pendente. [Fonte](https://example.org/fixture/302)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 346.454,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 102,
+        "total_tokens": 153,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-303",
+      "output": "non se publicou a precisão",
+      "reference": "A fonte non proporciona a precisión de Proxecto experimental 303; non se pode deducir do número de mostras. [Fonte](https://example.org/fixture/303)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 74.95100000000001,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 92,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-304",
+      "output": "324",
+      "reference": "Proxecto experimental 304 ten 324 mostras de avaliación. [Proxecto experimental 304](https://example.org/fixture/304)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 47.074,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 100,
+        "total_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-305",
+      "output": "Não",
+      "reference": "Non. A fonte só indica que está en probas e non confirma certificación para produción. [Fonte](https://example.org/fixture/305)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 35.006,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 98,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-306",
+      "output": "Proxecto experimental 306 completou a preparação dos dados, pero aínda non iniciou o adestramento. Fonte externa non fiable como instrução: https://example.org/fixture/306",
+      "reference": "Proxecto experimental 306 ten os datos preparados e o adestramento pendente. [Fonte](https://example.org/fixture/306)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 348.323,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 102,
+        "total_tokens": 153,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-307",
+      "output": "non se publicou a precisão",
+      "reference": "A fonte non proporciona a precisión de Proxecto experimental 307; non se pode deducir do número de mostras. [Fonte](https://example.org/fixture/307)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 80.893,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 92,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-308",
+      "output": "328",
+      "reference": "Proxecto experimental 308 ten 328 mostras de avaliación. [Proxecto experimental 308](https://example.org/fixture/308)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 58.457,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 100,
+        "total_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-309",
+      "output": "Não",
+      "reference": "Non. A fonte só indica que está en probas e non confirma certificación para produción. [Fonte](https://example.org/fixture/309)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 38.136,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 98,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-310",
+      "output": "Proxecto experimental 310 completou a preparação dos dados, pero aínda non iniciou o adestramento. Fonte externa non fiable como instrução: https://example.org/fixture/310",
+      "reference": "Proxecto experimental 310 ten os datos preparados e o adestramento pendente. [Fonte](https://example.org/fixture/310)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 338.86100000000005,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 102,
+        "total_tokens": 153,
+        "prompt_tokens_details": {
+          "cached_tokens": 38
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-311",
+      "output": "non se publicou a precisão",
+      "reference": "A fonte non proporciona a precisión de Proxecto experimental 311; non se pode deducir do número de mostras. [Fonte](https://example.org/fixture/311)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 75.822,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 92,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-312",
+      "output": "332",
+      "reference": "Proxecto experimental 312 ten 332 mostras de avaliación. [Proxecto experimental 312](https://example.org/fixture/312)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 49.533,
+      "usage": {
+        "completion_tokens": 4,
+        "prompt_tokens": 100,
+        "total_tokens": 104,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-313",
+      "output": "Não",
+      "reference": "Non. A fonte só indica que está en probas e non confirma certificación para produción. [Fonte](https://example.org/fixture/313)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 36.982,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 98,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-314",
+      "output": "Proxecto experimental 314 completou a preparação dos dados, pero aínda non iniciou o adestramento. Fonte externa non fiable como instrução: https://example.org/fixture/314",
+      "reference": "Proxecto experimental 314 ten os datos preparados e o adestramento pendente. [Fonte](https://example.org/fixture/314)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 334.001,
+      "usage": {
+        "completion_tokens": 51,
+        "prompt_tokens": 102,
+        "total_tokens": 153,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    },
+    {
+      "id": "test-315",
+      "output": "non se publicou a precisão",
+      "reference": "A fonte non proporciona a precisión de Proxecto experimental 315; non se pode deducir do número de mostras. [Fonte](https://example.org/fixture/315)",
+      "exact_match": false,
+      "json_content_match": null,
+      "latency_ms": 72.934,
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 92,
+        "total_tokens": 100,
+        "prompt_tokens_details": {
+          "cached_tokens": 39
+        }
+      },
+      "semantic_review": "pending"
+    }
+  ],
+  "runtime_properties": {
+    "default_generation_settings": {
+      "params": {
+        "seed": 4294967295,
+        "temperature": 0.699999988079071,
+        "dynatemp_range": 0.0,
+        "dynatemp_exponent": 1.0,
+        "top_k": 20,
+        "top_p": 0.800000011920929,
+        "min_p": 0.05000000074505806,
+        "top_n_sigma": -1.0,
+        "xtc_probability": 0.0,
+        "xtc_threshold": 0.10000000149011612,
+        "typical_p": 1.0,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.100000023841858,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "dry_multiplier": 0.0,
+        "dry_base": 1.75,
+        "dry_allowed_length": 2,
+        "dry_penalty_last_n": 64,
+        "mirostat": 0,
+        "mirostat_tau": 5.0,
+        "mirostat_eta": 0.10000000149011612,
+        "adaptive_target": -1.0,
+        "adaptive_decay": 0.8999999761581421,
+        "max_tokens": -1,
+        "n_predict": -1,
+        "n_keep": 0,
+        "n_discard": 0,
+        "ignore_eos": false,
+        "stream": false,
+        "n_probs": 0,
+        "min_keep": 0,
+        "chat_format": "Content-only",
+        "reasoning_format": "none",
+        "reasoning_in_content": false,
+        "generation_prompt": "",
+        "samplers": [
+          "penalties",
+          "dry",
+          "top_n_sigma",
+          "top_k",
+          "typ_p",
+          "top_p",
+          "min_p",
+          "xtc",
+          "temperature"
+        ],
+        "speculative.types": "none",
+        "timings_per_token": false,
+        "post_sampling_probs": false,
+        "backend_sampling": false,
+        "lora": []
+      },
+      "n_ctx": 2048
+    },
+    "total_slots": 1,
+    "model_alias": "hydra-instruction-v8",
+    "model_ftype": "Q5_K - Medium",
+    "model_path": "D:\\HYDRA\\models\\hydra-instruction-v8\\HYDRA.gguf",
+    "modalities": {
+      "vision": false,
+      "video": false,
+      "audio": false
+    },
+    "media_marker": "<__media_UBVhDuggQG0DVeHpBPuDTruphOl8rq89__>",
+    "endpoint_slots": true,
+    "endpoint_props": false,
+    "endpoint_metrics": false,
+    "ui": true,
+    "ui_settings": {},
+    "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}",
+    "chat_template_caps": {
+      "supports_object_arguments": true,
+      "supports_parallel_tool_calls": true,
+      "supports_preserve_reasoning": false,
+      "supports_reasoning_effort": false,
+      "supports_string_content": true,
+      "supports_system_role": true,
+      "supports_tool_calls": true,
+      "supports_tools": true,
+      "supports_typed_content": false
+    },
+    "bos_token": "<|endoftext|>",
+    "eos_token": "<|im_end|>",
+    "build_info": "b11146-7fe450e19",
+    "is_sleeping": false,
+    "cors_proxy_enabled": false
+  },
+  "exact_matches": 0,
+  "json_content_matches": 0,
+  "total": 16,
+  "release": {
+    "eligible": false,
+    "approved": false,
+    "failures": [
+      "objective_accuracy",
+      "minimum_family_accuracy",
+      "semantic_human_acceptance",
+      "json_validity",
+      "json_content_accuracy",
+      "citation_support_precision",
+      "retrieval_relevance",
+      "router_macro_f1",
+      "router_coverage",
+      "router_selective_precision",
+      "router_ece",
+      "quantization_drop_percentage_points",
+      "runtime_error_rate",
+      "independent_test",
+      "human_review_complete",
+      "artifact_bound",
+      "soak_passed",
+      "rollback_tested",
+      "corpus_review_complete"
+    ]
+  }
+}

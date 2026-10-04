@@ -1,0 +1,10 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Requires hydra-engine[training] (torch, transformers, peft, trl) and a CUDA GPU, or mlx-lm on Apple Silicon.
+name: hydra-coder-lora-v1
+base_model: Qwen/Qwen2.5-Coder-1.5B-Instruct
+method: lora
+learning_rate: 0.0001
+epochs: 2
+lora: {rank: 32, alpha: 64}
+max_length: 2048
+dataset: {id: hydra-coder-sft}

@@ -1,0 +1,88 @@
+{
+  "version": "grounded-v2",
+  "kind": "source_grounded_verified",
+  "approved": false,
+  "human_reviewed": false,
+  "independent_test": false,
+  "generator_sha256": "56862fe7bb3a37a45dfc4eaddac16f4b411309b02480aa448dd2e4fcd80db646",
+  "helpers_sha256": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-grounded-v2-input.jsonl",
+      "sha256": "11b536bca62f9e9dca0984af342f1ec6a0a13deb8bdebf276c7c550599be2d21",
+      "records": 3081
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "permissive_records": 19620
+    }
+  },
+  "split_policy": "same document hash buckets as grounded-v1 (80/7/6/7) and disjoint wording families",
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "quotas": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "families": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "hard_negatives": {
+    "code_functions": 160,
+    "code_imports": 160
+  },
+  "rejections": {
+    "privacy_rejected": 112,
+    "verification_failed": 0,
+    "utf8_rejected": 0,
+    "too_long": 4
+  },
+  "files": {
+    "train.jsonl": {
+      "examples": 1850,
+      "sha256": "1c7bd6480715e9449c6e0c2ea6a2f460be3d3cc0c1072169a03f64eac5bdebb4"
+    },
+    "validation.jsonl": {
+      "examples": 169,
+      "sha256": "2fcf07847ca0343bd6c08673eee8975621568aa04643b76067337137bd3112ff"
+    },
+    "calibration.jsonl": {
+      "examples": 130,
+      "sha256": "3f8d0a3b26ca2f5f485773d91e889116007e1f9427ea670202a8f667c10e72b7"
+    },
+    "test.jsonl": {
+      "examples": 171,
+      "sha256": "bc8949e3c703bb0391fafc1ca71329d5923eb90946d188053392f9241297a195"
+    }
+  },
+  "changes_from_v1": [
+    "code_imports: explicit rule and reading order",
+    "code_functions: explicit rule and hard negatives (nested defs, methods, if __name__)",
+    "larger code_functions/code_imports quotas",
+    "plural typo 'funciónes' fixed"
+  ],
+  "limitations": "Extractive questions over a single excerpt; verifies faithfulness to the excerpt, not legal or programming advice. Code snippets keep repository, path and licence for attribution. Not human reviewed."
+}

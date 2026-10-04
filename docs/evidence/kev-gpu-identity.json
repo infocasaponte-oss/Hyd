@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-09-30T01:55:28.8894343+02:00",
+  "process_visible_in_nvidia_smi": true,
+  "base_file": "D:\\HYDRA\\runtime\\kev-cache\\hub\\models--Qwen--Qwen3.5-0.8B-Base\\snapshots\\dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68\\model.safetensors-00001-of-00001.safetensors",
+  "sha256": "c2b1e5a17d9c1e27685d92ed9b382911ebb99955ecd89052d1721241adfbab6c",
+  "note": "Windows WDDM reports per-process GPU memory as N/A.",
+  "bytes": 1746942600,
+  "gpu": "NVIDIA GeForce RTX 3060 Ti",
+  "server_pid": 56512
+}

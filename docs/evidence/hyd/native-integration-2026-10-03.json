@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-03",
+  "scope": "Native Hyd integration; legacy compatibility retained",
+  "full_suite": {"passed": 1053, "skipped": 87, "failed": 1, "failure": "Missing copyright header in scripts/audit_decision_source.py", "repair": "Header added; license-header test subsequently passed"},
+  "focused_suite": {"passed": 48},
+  "ruff": "passed",
+  "installed_wheel": {"verified": true, "outside_repository": true, "dependencies": "Existing environment libraries shared via PYTHONPATH", "assets_loaded": true, "authority_enabled": false},
+  "cpu_concurrency": {"capacity": 4, "bounded_admission_and_shutdown_tested": true},
+  "contextual_concurrency": {"capacity": 1},
+  "model_sha256": "0616432c984c4240e0459a3a4e063d268267a3bcf9a94061e22a458d376629ce",
+  "model_weights_changed": false,
+  "quality": "No evidence of superiority; independent evaluation required before authority",
+  "kev_artifacts_deleted": false,
+  "legacy_provider_removed": false
+}

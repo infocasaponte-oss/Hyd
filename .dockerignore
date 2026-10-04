@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Allow-list: only what the image needs reaches the Docker daemon. Never models/ (tens of GB),
+# data/ (keys, secrets, ledger), runtime/, workspaces, caches or local build output.
+*
+!pyproject.toml
+!README.md
+!LICENSE
+!NOTICE
+!hydra/
+!config/
+!sql/
+**/__pycache__
+**/*.py[cod]

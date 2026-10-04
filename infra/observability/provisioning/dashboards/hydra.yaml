@@ -1,0 +1,9 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+apiVersion: 1
+providers:
+  - name: hydra
+    folder: HYDRA
+    type: file
+    disableDeletion: true
+    options:
+      path: /var/lib/grafana/dashboards

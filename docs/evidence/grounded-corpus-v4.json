@@ -1,0 +1,93 @@
+{
+  "version": "grounded-v4",
+  "kind": "source_grounded_verified",
+  "approved": false,
+  "human_reviewed": false,
+  "independent_test": false,
+  "generator_sha256": "9614a79307243ce2524e685fbcd7cd8136c236c0fb44fe5145cfb46516c5cef5",
+  "helpers_sha256": {
+    "grounded_corpus_v1.py": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+    "grounded_corpus_v2.py": "56862fe7bb3a37a45dfc4eaddac16f4b411309b02480aa448dd2e4fcd80db646",
+    "grounded_corpus_v3.py": "b25478dcf86167ed46860ebf889df8a87752b568ece727293e411a99f495a3ce"
+  },
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-grounded-v2-input.jsonl",
+      "sha256": "11b536bca62f9e9dca0984af342f1ec6a0a13deb8bdebf276c7c550599be2d21",
+      "records": 3081
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9",
+      "permissive_records": 19620
+    }
+  },
+  "split_policy": "same document hash buckets as grounded-v1 (80/7/6/7); training uses wordings 0,1,5-10, validation 2, calibration 4, test 3",
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "quotas": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "families": {
+    "boe_heading": 200,
+    "boe_sections": 200,
+    "boe_quote": 200,
+    "boe_rank_date": 200,
+    "boe_repealed": 200,
+    "boe_absent": 200,
+    "code_functions": 320,
+    "code_imports": 320,
+    "code_params": 160,
+    "code_methods": 160,
+    "code_absent": 160
+  },
+  "hard_negatives": {
+    "code_functions": 160,
+    "code_imports": 160
+  },
+  "rejections": {
+    "privacy_rejected": 116,
+    "verification_failed": 0,
+    "utf8_rejected": 0,
+    "too_long": 4
+  },
+  "files": {
+    "train.jsonl": {
+      "examples": 1844,
+      "sha256": "875220c185b0035b890a1356a6463dfbda394e4ebcdde1d9603c60467595824b"
+    },
+    "validation.jsonl": {
+      "examples": 173,
+      "sha256": "4de197f61fe6643f42dde1b4bd324fe40ab77b5a889447b473c4fd0e9c3cd1f2"
+    },
+    "calibration.jsonl": {
+      "examples": 134,
+      "sha256": "2e80ab7f1d50ccb8838b257e9c4217018ce7353afae9b20ffc65cad93510c5a4"
+    },
+    "test.jsonl": {
+      "examples": 169,
+      "sha256": "71766f3087cf09ec758409560e382e39257155062df96376ab48b0d4b5465fb2"
+    }
+  },
+  "changes_from_v3": [
+    "boe_repealed balanced: at least 40% 'Sí' answers (v1-v3 had ~6 % in training and none or one in test)"
+  ],
+  "repeal_balance": {
+    "si": 80,
+    "no": 120
+  },
+  "limitations": "Extractive questions over a single excerpt; verifies faithfulness to the excerpt, not legal or programming advice. Code snippets keep repository, path and licence for attribution. Not human reviewed."
+}

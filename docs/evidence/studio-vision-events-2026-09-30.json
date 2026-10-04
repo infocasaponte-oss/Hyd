@@ -1,0 +1,367 @@
+[
+  {
+    "id": "13c08f12-febe-4c18-85ee-91aeb04453b4",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.created",
+    "source": "kernel",
+    "payload": {
+      "objective": "Lee el texto de la imagen y describe las dos figuras con sus colores. Responde en una frase.",
+      "mode": "fast",
+      "private": true,
+      "budget": {
+        "max_tokens": 8000,
+        "max_model_calls": 1,
+        "max_tool_calls": 2,
+        "max_seconds": 180.0,
+        "max_cost": 0.01,
+        "max_parallel_workers": 1,
+        "max_steps": 2,
+        "max_escalations": 0
+      },
+      "shadow": false
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.829125Z"
+  },
+  {
+    "id": "1cf789f9-fea4-4b05-9f2c-c95f24a97939",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "policy.evaluated",
+    "source": "policy_kernel",
+    "payload": {
+      "allowed": true,
+      "reason": "",
+      "sensitivity": "public",
+      "local_only": true,
+      "findings": []
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.829125Z"
+  },
+  {
+    "id": "98034717-2555-4281-970e-77e8c0a0d597",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.status",
+    "source": "kernel",
+    "payload": {
+      "status": "routing"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.829125Z"
+  },
+  {
+    "id": "4012061b-9d62-4100-8927-77a76b701d6d",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "route.selected",
+    "source": "router",
+    "payload": {
+      "task_type": "vision",
+      "complexity": 0.409,
+      "risk": 0.1,
+      "requires_tools": false,
+      "requires_vision": true,
+      "requires_reasoning": false,
+      "requires_verification": false,
+      "requires_memory": false,
+      "desired_parallelism": 1,
+      "signals": {
+        "kw.coding": 0.0,
+        "kw.reasoning": 0.0,
+        "kw.research": 0.0,
+        "kw.vision": 5.0,
+        "kw.tool_use": 0.0
+      },
+      "observation": {
+        "version": 1,
+        "status": "observed",
+        "model": "hydra-local-shadow:51782a3abeca",
+        "reason": "calibrated_shadow_only",
+        "elapsed_ms": 1.4420999978028703,
+        "selected": "vision",
+        "probabilities": {
+          "abstain": 4.326930482819703e-05,
+          "chat": 0.00011342248612561411,
+          "coding": 4.1906577918767815e-05,
+          "high_risk_review": 1.5698613996624764e-06,
+          "privacy": 1.5698613996624764e-06,
+          "reasoning": 6.80382291339828e-05,
+          "research": 6.279445598649906e-06,
+          "security": 4.807700536466334e-06,
+          "tool_use": 2.5117782394599632e-05,
+          "vision": 0.9996940187506643
+        },
+        "confidence": 0.9996940187506643
+      },
+      "arm": "heuristic"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "482f174b-e05a-402a-82e1-ed8afe4f120b",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "meta.decision",
+    "source": "meta",
+    "payload": {
+      "action": "proceed",
+      "reason": "enough information to start",
+      "question": null,
+      "signals": {}
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "7d1b8639-705a-45bc-bd29-a31a6866791f",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.status",
+    "source": "kernel",
+    "payload": {
+      "status": "retrieving"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "596fab85-b26a-4ee7-9337-521004c8476d",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.status",
+    "source": "kernel",
+    "payload": {
+      "status": "planning"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "0258c08e-5277-4e12-ab82-1fcee45ac27c",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "models.ranked",
+    "source": "registry",
+    "payload": {
+      "arm": "heuristic",
+      "ranked": [
+        {
+          "model": "hydra-vision",
+          "score": 0.2342
+        },
+        {
+          "model": "hydra-fast",
+          "score": -0.0718
+        },
+        {
+          "model": "hydra-coding",
+          "score": -0.0808
+        },
+        {
+          "model": "hydra-judge",
+          "score": -0.1168
+        },
+        {
+          "model": "hydra-deep",
+          "score": -0.1303
+        },
+        {
+          "model": "hydra-q5-candidate",
+          "score": -0.2428
+        }
+      ]
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "5a85b947-86ae-4603-966f-f5b6093cdfa6",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "model.started",
+    "source": "vision",
+    "payload": {
+      "model": "hydra-vision",
+      "role": "vision"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:37:27.831619Z"
+  },
+  {
+    "id": "81e085dd-06a9-4beb-a724-81d2f8eb6370",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "model.completed",
+    "source": "vision",
+    "payload": {
+      "model": "hydra-vision",
+      "role": "vision",
+      "latency_ms": 37134.49,
+      "input_tokens": 1190,
+      "output_tokens": 575,
+      "tool_calls": 0,
+      "ctx_bucket": 4000,
+      "structured": true,
+      "tools": false,
+      "images": true
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.966847Z"
+  },
+  {
+    "id": "cade2628-24b1-49e4-8d34-6553cbe31b42",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "world.updated",
+    "source": "world",
+    "payload": {
+      "world": {
+        "objects": {
+          "text": {
+            "id": "text",
+            "type": "visual_object",
+            "attributes": {
+              "content": "HYDRA 7421",
+              "position": "top center",
+              "state": "static",
+              "UI_role": "label"
+            },
+            "sources": [
+              "vision:hydra-vision"
+            ],
+            "confidence": 0.7,
+            "observed_at": "2026-09-30T12:38:04.967437+00:00"
+          },
+          "square": {
+            "id": "square",
+            "type": "visual_object",
+            "attributes": {
+              "color": "red",
+              "position": "left",
+              "state": "solid",
+              "UI_role": "shape"
+            },
+            "sources": [
+              "vision:hydra-vision"
+            ],
+            "confidence": 0.7,
+            "observed_at": "2026-09-30T12:38:04.967437+00:00"
+          },
+          "circle": {
+            "id": "circle",
+            "type": "visual_object",
+            "attributes": {
+              "color": "blue",
+              "position": "right",
+              "state": "solid",
+              "UI_role": "shape"
+            },
+            "sources": [
+              "vision:hydra-vision"
+            ],
+            "confidence": 0.7,
+            "observed_at": "2026-09-30T12:38:04.967437+00:00"
+          },
+          "square and circle": {
+            "id": "square and circle",
+            "type": "entity",
+            "attributes": {},
+            "sources": [
+              "vision:hydra-vision"
+            ],
+            "confidence": 0.6,
+            "observed_at": "2026-09-30T12:38:04.967437+00:00"
+          }
+        },
+        "relations": [
+          {
+            "subject": "text",
+            "predicate": "positioned above",
+            "object": "square and circle",
+            "source": "vision:hydra-vision",
+            "confidence": 0.7
+          },
+          {
+            "subject": "square",
+            "predicate": "located left of",
+            "object": "circle",
+            "source": "vision:hydra-vision",
+            "confidence": 0.7
+          }
+        ],
+        "events": [
+          {
+            "time": "2026-09-30T12:38:04.967437+00:00",
+            "description": "observed: La imagen muestra el texto 'HYDRA 7421' en la parte superior, junto a un cuadrado rojo a la izquierda y un c\u00edrculo azul a la derecha.",
+            "source": "vision:hydra-vision"
+          }
+        ],
+        "texts": [
+          "HYDRA 7421"
+        ],
+        "uncertainty": []
+      }
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.967437Z"
+  },
+  {
+    "id": "90602d2b-1659-42fd-9f8e-dcc15161dc32",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "plan.created",
+    "source": "planner",
+    "payload": {
+      "strategy": "single",
+      "steps": [
+        {
+          "worker": "reasoner",
+          "models": [
+            "hydra-vision"
+          ],
+          "parallel": false,
+          "speculative": false,
+          "use_tools": false
+        }
+      ],
+      "notes": []
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.967437Z"
+  },
+  {
+    "id": "6a98bebd-982f-4cf8-99a6-d0010489ff69",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.status",
+    "source": "kernel",
+    "payload": {
+      "status": "executing"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.967437Z"
+  },
+  {
+    "id": "64ac8666-bb9b-47c4-98e8-b77b548ad039",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.status",
+    "source": "kernel",
+    "payload": {
+      "status": "failed"
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.967437Z"
+  },
+  {
+    "id": "fea51144-9c23-401d-b8c4-bcc6393c0055",
+    "task_id": "da31757d-65b9-4784-a107-67a9c18f3a8c",
+    "type": "task.failed",
+    "source": "kernel",
+    "payload": {
+      "error": "model call budget exhausted",
+      "kind": "unknown",
+      "budget": {
+        "tokens": 1765,
+        "model_calls": 1,
+        "tool_calls": 0,
+        "cost": 0.0,
+        "steps": 1,
+        "escalations": 0,
+        "elapsed_s": 37.14
+      }
+    },
+    "trace_id": null,
+    "timestamp": "2026-09-30T12:38:04.967437Z"
+  }
+]

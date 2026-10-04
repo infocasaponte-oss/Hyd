@@ -1,0 +1,18 @@
+{
+  "train": {
+    "count": 969,
+    "max_tokens": 173
+  },
+  "validation": {
+    "count": 228,
+    "max_tokens": 170
+  },
+  "calibration": {
+    "count": 223,
+    "max_tokens": 170
+  },
+  "test": {
+    "count": 48,
+    "max_tokens": 82
+  }
+}

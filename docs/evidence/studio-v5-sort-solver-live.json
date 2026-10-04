@@ -1,0 +1,26 @@
+{
+  "answer": "[-54,3,29,29]",
+  "meta": {
+    "task_id": "56e64f00-0705-4f5b-9381-1135d0d33317",
+    "status": "completed",
+    "task_type": "reasoning",
+    "mode": "balanced",
+    "models_used": [],
+    "tools_used": [
+      "solver:numeric_sort"
+    ],
+    "verified": true,
+    "confidence": 1.0,
+    "latency_ms": 0.3,
+    "escalations": 0,
+    "steps": 0,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  },
+  "uncertainties": [],
+  "claims": [],
+  "artifacts": [],
+  "pending_confirmations": [],
+  "learning": {}
+}

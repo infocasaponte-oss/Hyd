@@ -1,0 +1,6 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# First HYDRA-native specialist: a CPU classifier trained on verified routing decisions.
+name: hydra-router-classifier-v1
+base_model: none
+method: classifier
+dataset: {id: hydra-router}

@@ -1,0 +1,170 @@
+[
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "left_only": 0,
+    "right_only": 455
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/dependabot/pip/protobuf-7.36.2",
+    "left_only": 0,
+    "right_only": 455
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/dependabot/pip/transformers-5.17.0",
+    "left_only": 0,
+    "right_only": 466
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/feat/hydra-vision-qwen3-vl",
+    "left_only": 0,
+    "right_only": 525
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/fix/ollama-primary-model-api",
+    "left_only": 0,
+    "right_only": 477
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 0,
+    "right_only": 521
+  },
+  {
+    "left": "origin/codex/finish-hydra-gguf",
+    "right": "origin/main",
+    "left_only": 0,
+    "right_only": 524
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/dependabot/pip/protobuf-7.36.2",
+    "left_only": 1,
+    "right_only": 1
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/dependabot/pip/transformers-5.17.0",
+    "left_only": 1,
+    "right_only": 12
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/feat/hydra-vision-qwen3-vl",
+    "left_only": 1,
+    "right_only": 71
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/fix/ollama-primary-model-api",
+    "left_only": 1,
+    "right_only": 23
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 1,
+    "right_only": 67
+  },
+  {
+    "left": "origin/dependabot/pip/huggingface-hub-0.36.2",
+    "right": "origin/main",
+    "left_only": 1,
+    "right_only": 70
+  },
+  {
+    "left": "origin/dependabot/pip/protobuf-7.36.2",
+    "right": "origin/dependabot/pip/transformers-5.17.0",
+    "left_only": 1,
+    "right_only": 12
+  },
+  {
+    "left": "origin/dependabot/pip/protobuf-7.36.2",
+    "right": "origin/feat/hydra-vision-qwen3-vl",
+    "left_only": 1,
+    "right_only": 71
+  },
+  {
+    "left": "origin/dependabot/pip/protobuf-7.36.2",
+    "right": "origin/fix/ollama-primary-model-api",
+    "left_only": 1,
+    "right_only": 23
+  },
+  {
+    "left": "origin/dependabot/pip/protobuf-7.36.2",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 1,
+    "right_only": 67
+  },
+  {
+    "left": "origin/dependabot/pip/protobuf-7.36.2",
+    "right": "origin/main",
+    "left_only": 1,
+    "right_only": 70
+  },
+  {
+    "left": "origin/dependabot/pip/transformers-5.17.0",
+    "right": "origin/feat/hydra-vision-qwen3-vl",
+    "left_only": 1,
+    "right_only": 60
+  },
+  {
+    "left": "origin/dependabot/pip/transformers-5.17.0",
+    "right": "origin/fix/ollama-primary-model-api",
+    "left_only": 1,
+    "right_only": 12
+  },
+  {
+    "left": "origin/dependabot/pip/transformers-5.17.0",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 1,
+    "right_only": 56
+  },
+  {
+    "left": "origin/dependabot/pip/transformers-5.17.0",
+    "right": "origin/main",
+    "left_only": 1,
+    "right_only": 59
+  },
+  {
+    "left": "origin/feat/hydra-vision-qwen3-vl",
+    "right": "origin/fix/ollama-primary-model-api",
+    "left_only": 48,
+    "right_only": 0
+  },
+  {
+    "left": "origin/feat/hydra-vision-qwen3-vl",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 4,
+    "right_only": 0
+  },
+  {
+    "left": "origin/feat/hydra-vision-qwen3-vl",
+    "right": "origin/main",
+    "left_only": 1,
+    "right_only": 0
+  },
+  {
+    "left": "origin/fix/ollama-primary-model-api",
+    "right": "origin/integration/hydra-1.0",
+    "left_only": 0,
+    "right_only": 44
+  },
+  {
+    "left": "origin/fix/ollama-primary-model-api",
+    "right": "origin/main",
+    "left_only": 0,
+    "right_only": 47
+  },
+  {
+    "left": "origin/integration/hydra-1.0",
+    "right": "origin/main",
+    "left_only": 0,
+    "right_only": 3
+  }
+]

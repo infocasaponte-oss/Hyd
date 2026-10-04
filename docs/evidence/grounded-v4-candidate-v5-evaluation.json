@@ -1,0 +1,357 @@
+{
+  "approved": false,
+  "scope": "grounded-v4 test (balanced repeal family) for base and candidates v3-v5; v5 also on grounded-v1/v2 tests and the regression set",
+  "protocol": {
+    "runtime": "llama-server b11146 CUDA",
+    "temperature": 0,
+    "seed": 42,
+    "max_tokens": {
+      "grounded": 256,
+      "regression": 160
+    }
+  },
+  "models": {
+    "hydra-instruction-v7": {
+      "artifact_sha256": "73418f3df9e93dee05362cd762efafb67a6c59306a533692508a2ec38c7a76b4",
+      "grounded_v4_test": {
+        "fact_match": 101,
+        "exact_match": 0,
+        "total": 169,
+        "boe_citation_rate": 0.0,
+        "families": {
+          "boe_absent": {
+            "fact": 0,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 0,
+            "total": 8
+          },
+          "boe_quote": {
+            "fact": 0,
+            "total": 16
+          },
+          "boe_rank_date": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 10,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 6,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 34,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 10,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 5,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 16,
+            "total": 20
+          }
+        }
+      }
+    },
+    "hydra-program-v3-grounded": {
+      "artifact_sha256": "2b73a2c6f115070b780a4466b438dbf8249f925b5d78c85424054107d533d087",
+      "grounded_v4_test": {
+        "fact_match": 158,
+        "exact_match": 144,
+        "total": 169,
+        "boe_citation_rate": 0.9831,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 8,
+            "total": 8
+          },
+          "boe_quote": {
+            "fact": 16,
+            "total": 16
+          },
+          "boe_rank_date": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_repealed": {
+            "fact": 7,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 38,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 13,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 6,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 19,
+            "total": 20
+          }
+        }
+      }
+    },
+    "hydra-program-v4-grounded": {
+      "artifact_sha256": "decb49812f2d02cf95d013c78f2a572c51a2c6581ffde0e65b71f1bd66f3a6a5",
+      "grounded_v4_test": {
+        "fact_match": 159,
+        "exact_match": 147,
+        "total": 169,
+        "boe_citation_rate": 1.0,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 8,
+            "total": 8
+          },
+          "boe_quote": {
+            "fact": 16,
+            "total": 16
+          },
+          "boe_rank_date": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_repealed": {
+            "fact": 8,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 39,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 14,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 4,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 19,
+            "total": 20
+          }
+        }
+      }
+    },
+    "hydra-program-v5-grounded": {
+      "artifact_sha256": "3442f057df020309dd80431c797fda7390135d14be575be5a328275077e6c987",
+      "grounded_v4_test": {
+        "fact_match": 162,
+        "exact_match": 160,
+        "total": 169,
+        "boe_citation_rate": 1.0,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 8,
+            "total": 8
+          },
+          "boe_quote": {
+            "fact": 16,
+            "total": 16
+          },
+          "boe_rank_date": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 39,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 14,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 5,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 20,
+            "total": 20
+          }
+        }
+      },
+      "grounded_v1_test": {
+        "fact_match": 149,
+        "exact_match": 124,
+        "total": 154,
+        "boe_citation_rate": 1.0,
+        "families": {
+          "boe_absent": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_heading": {
+            "fact": 11,
+            "total": 11
+          },
+          "boe_quote": {
+            "fact": 15,
+            "total": 15
+          },
+          "boe_rank_date": {
+            "fact": 9,
+            "total": 9
+          },
+          "boe_repealed": {
+            "fact": 9,
+            "total": 9
+          },
+          "boe_sections": {
+            "fact": 23,
+            "total": 23
+          },
+          "code_absent": {
+            "fact": 20,
+            "total": 20
+          },
+          "code_functions": {
+            "fact": 19,
+            "total": 21
+          },
+          "code_imports": {
+            "fact": 10,
+            "total": 12
+          },
+          "code_methods": {
+            "fact": 5,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 17,
+            "total": 17
+          }
+        }
+      },
+      "grounded_v2_test": {
+        "fact_match": 164,
+        "exact_match": 162,
+        "total": 171,
+        "boe_citation_rate": 1.0,
+        "families": {
+          "boe_absent": {
+            "fact": 10,
+            "total": 10
+          },
+          "boe_heading": {
+            "fact": 9,
+            "total": 9
+          },
+          "boe_quote": {
+            "fact": 14,
+            "total": 14
+          },
+          "boe_rank_date": {
+            "fact": 12,
+            "total": 12
+          },
+          "boe_repealed": {
+            "fact": 12,
+            "total": 12
+          },
+          "boe_sections": {
+            "fact": 15,
+            "total": 15
+          },
+          "code_absent": {
+            "fact": 14,
+            "total": 14
+          },
+          "code_functions": {
+            "fact": 39,
+            "total": 40
+          },
+          "code_imports": {
+            "fact": 14,
+            "total": 19
+          },
+          "code_methods": {
+            "fact": 5,
+            "total": 6
+          },
+          "code_params": {
+            "fact": 20,
+            "total": 20
+          }
+        }
+      },
+      "regression": {
+        "exact_match": 24,
+        "total": 48
+      }
+    }
+  },
+  "findings": [
+    "Candidate v5 (trained on grounded-v4) is the best on every grounded test: v1 149/154, v2 164/171, v4 162/169 (v4 candidate 159, v3 158, base 101).",
+    "Repeal family with 'Sí' cases in the test: v5 9/9; the regression set fails the same 24/48 cases as the base.",
+    "Remaining weak spot: code_imports 14/19 on the v4 test."
+  ],
+  "scorer_sha256": "d4b7be51927b319634bdeba495c899a758c80a0265137bb070c0519cbec6747b",
+  "evaluator_sha256": "7f96d349ca897ff48aa2f7baae51a0c77cfe5628d65bf761798fdef74c2a3f27",
+  "test_roles": {
+    "grounded_v1_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v2_test": "development/regression: inspected while diagnosing candidates; not an independent test",
+    "grounded_v4_test": "development/regression: its wording (index 3) was inspected before v4 was designed",
+    "regression": "frozen parent regression set"
+  },
+  "independent_test": false
+}

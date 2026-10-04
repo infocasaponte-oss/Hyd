@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-03",
+  "scope": "HYDRA engine reliability and verified error preparation; no GGUF generation",
+  "full_suite_before_api_contract_snapshot_fix": {
+    "passed": 1038,
+    "skipped": 83,
+    "failed": 1,
+    "failure": "Intentional Hyd API additions missing from tests/contracts/http.json"
+  },
+  "subsequent_targeted_verification": {
+    "passed": 72,
+    "failed": 0,
+    "coverage": "API contracts, Hyd, error replay, observer failure/cancellation, bootstrap, routing registry, kernel"
+  },
+  "ruff": "passed",
+  "engine_fix": "Unexpected advisory-observer exceptions preserve policy routing and cannot invoke authority; cancellation propagates",
+  "self_learning": "Prepared verified authored training errors with bounded replay; not trained, not promoted",
+  "pretraining_started": false,
+  "gguf_generated": false,
+  "moe": "Feasibility design only; no runtime architecture change"
+}

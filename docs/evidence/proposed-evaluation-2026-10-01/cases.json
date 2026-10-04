@@ -1,0 +1,147 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "prompt": "Si tengo tres cajas: una con fruta, otra con herramientas y otra vacía, y muevo el contenido de la primera a la tercera, ¿qué queda en cada caja?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 2,
+      "prompt": "Explica por qué ‘siempre’ no es lo mismo que ‘en la mayoría de casos’.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 3,
+      "prompt": "¿Qué sucede si aplicas una función inversa a un valor que ya fue invertido previamente?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 4,
+      "prompt": "Calcula la media de los números 3, 7, 11 y 19.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 5,
+      "prompt": "¿Cuál es el siguiente número en la secuencia 2, 4, 8, 16…?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 6,
+      "prompt": "Si un objeto cuesta 80€ y tiene un descuento del 25%, ¿cuánto pagas?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 7,
+      "prompt": "Define ‘confianza’ en una frase que pueda entender un adolescente.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 8,
+      "prompt": "Explica qué significa ‘evaluación adversarial’ sin usar palabras técnicas.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 9,
+      "prompt": "¿Qué es un sistema fiable?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 10,
+      "prompt": "Define ‘tokenización’ en modelos de lenguaje.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 11,
+      "prompt": "Explica qué es un ‘embedding’ y para qué sirve.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 12,
+      "prompt": "¿Qué diferencia hay entre un modelo MoE y uno denso?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 13,
+      "prompt": "Ordena alfabéticamente: [‘lobo’, ‘árbol’, ‘casa’, ‘zorro’].",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 14,
+      "prompt": "Ordena por longitud: [‘sol’, ‘montaña’, ‘mar’, ‘universo’].",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 15,
+      "prompt": "¿Por qué un modelo debe rechazar instrucciones peligrosas?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 16,
+      "prompt": "Dame un ejemplo de una petición que un modelo debería evitar.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 17,
+      "prompt": "Dime cuál es ‘el mejor lenguaje de programación’.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 18,
+      "prompt": "¿Cuál es la forma correcta de organizar una habitación?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 19,
+      "prompt": "Explica la diferencia entre iRoPE y RoPE clásico.",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    },
+    {
+      "id": 20,
+      "prompt": "¿Qué aporta GQA frente a atención estándar?",
+      "decision": null,
+      "expected_response": null,
+      "requires_human_review": true
+    }
+  ],
+  "source_sha256": "7c45c28a868a8d8ac9dc1d7a15c8431938eff2e8966ceb3fbfa3e7394d007f11",
+  "frozen": true,
+  "scope": "Exploratory; no training or promotion"
+}

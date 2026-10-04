@@ -1,0 +1,46 @@
+{
+  "decision": [
+    {
+      "version": 1,
+      "status": "observed",
+      "model": "kev-latest",
+      "reason": null,
+      "elapsed_ms": 345.37060000002384,
+      "selected": "chat",
+      "probabilities": {
+        "chat": 0.9910802775024778,
+        "coding": 0.0009910802775024781,
+        "reasoning": 0.0009910802775024781,
+        "research": 0.0009910802775024781,
+        "vision": 0.0009910802775024781,
+        "tool_use": 0.0009910802775024781,
+        "abstain": 0.0009910802775024781,
+        "security": 0.0009910802775024781,
+        "privacy": 0.0009910802775024781,
+        "high_risk_review": 0.0009910802775024781
+      },
+      "confidence": 0.9910802775024778
+    }
+  ],
+  "answer": "\"¡Bienvenido/a!\"",
+  "meta": {
+    "task_id": "08732643-d3bb-48ac-a608-c449fe7a9410",
+    "status": "completed",
+    "task_type": "chat",
+    "mode": "balanced",
+    "models_used": [
+      "hydra-instruction-v3-candidate"
+    ],
+    "tools_used": [],
+    "verified": false,
+    "confidence": 0.6147,
+    "latency_ms": 447.13,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  },
+  "control_enabled": false,
+  "note": "Kev classifies; HYDRA 1.5B generates the response"
+}

@@ -1,0 +1,8 @@
+{
+ "hydra/api/platform_routes.py": [
+  "hydra.runtime:api"
+ ],
+ "hydra/api/runtime_routes.py": [
+  "hydra.runtime:api"
+ ]
+}

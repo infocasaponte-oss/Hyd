@@ -1,0 +1,351 @@
+{
+  "format": "hyd-contextual-ranker/1",
+  "origin": "HYDRA Base",
+  "base_directory": "..\\hydra-base-v0-30m\\final",
+  "base_weights_sha256": "e64772e1beb6a1d5ffc8475d5f8fa09904f8d005ba0ff15034c62d820d6a934f",
+  "tokenizer_sha256": "06657d6aa9b9c3fb9f6cbc09769dd0b80801c2e9a464f83f21433e8fa3576f10",
+  "head_sha256": "fb3745af47686408c278d29be5f5f2cc7a23f0ac104c5558489eba24c2a07830",
+  "max_tokens": 512,
+  "temperature": 0.5,
+  "training": {
+    "question_domains": [
+      {
+        "type": "choice",
+        "criteria": {
+          "c_82c6": "violet",
+          "c_2ee0": "amber",
+          "c_bcb8": "green"
+        },
+        "instructions": "Usa só os feitos do estado. Devolve o valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_e8d9": "violet",
+          "c_f0ca": "amber",
+          "c_0e15": "green"
+        },
+        "instructions": "Usa solo los hechos del estado. Devuelve el valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_71aa": "violet",
+          "c_75d4": "amber",
+          "c_fe58": "green"
+        },
+        "instructions": "Use only the facts in the state. Return the value of colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_f3f3": "violet",
+          "c_4213": "amber",
+          "c_1915": "green"
+        },
+        "instructions": "Usa só os feitos do estado. Devolve o valor de city."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_49d0": "violet",
+          "c_24e2": "amber",
+          "c_ae3e": "green"
+        },
+        "instructions": "Usa solo los hechos del estado. Devuelve el valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_c3ea": "violet",
+          "c_3feb": "amber",
+          "c_3f30": "green"
+        },
+        "instructions": "Use only the facts in the state. Return the value of colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_c862": "violet",
+          "c_5d27": "amber",
+          "c_34bd": "green"
+        },
+        "instructions": "Usa só os feitos do estado. Devolve o valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_d327": "violet",
+          "c_9d95": "amber",
+          "c_2fc2": "green"
+        },
+        "instructions": "Usa solo los hechos del estado. Devuelve el valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_d3bb": "violet",
+          "c_40a9": "amber",
+          "c_1780": "green"
+        },
+        "instructions": "Use only the facts in the state. Return the value of city."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_0473": "violet",
+          "c_28bd": "amber",
+          "c_071c": "green"
+        },
+        "instructions": "Usa só os feitos do estado. Devolve o valor de owner."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_537e": "violet",
+          "c_e01e": "amber",
+          "c_1f88": "green"
+        },
+        "instructions": "Usa solo los hechos del estado. Devuelve el valor de colour."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "c_5d00": "violet",
+          "c_0978": "amber",
+          "c_6edf": "green"
+        },
+        "instructions": "Use only the facts in the state. Return the value of owner."
+      },
+      {
+        "type": "noul",
+        "criteria": {
+          "false": "The condition is false.",
+          "true": "The condition is true."
+        },
+        "instructions": "Usa só os feitos do estado. Avalía: value < limit"
+      },
+      {
+        "type": "noul",
+        "criteria": {
+          "false": "The condition is false.",
+          "true": "The condition is true."
+        },
+        "instructions": "Usa solo los hechos del estado. Evalúa: value < limit"
+      },
+      {
+        "type": "noul",
+        "criteria": {
+          "false": "The condition is false.",
+          "true": "The condition is true."
+        },
+        "instructions": "Use only the facts in the state. Evaluate: value < limit"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. É (end - start) en días de calendario <= days?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. ¿Es (end - start) en días de calendario <= days?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Is (end - start) in calendar days <= days?"
+      },
+      {
+        "type": "score",
+        "criteria": [
+          "Cero entradas",
+          "Unha entrada",
+          "Dúas entradas",
+          "Tres entradas",
+          "Catro entradas"
+        ],
+        "instructions": "Usa só os feitos do estado. Conta entries; escolle o nivel correspondente."
+      },
+      {
+        "type": "score",
+        "criteria": [
+          "Cero entradas",
+          "Una entrada",
+          "Dos entradas",
+          "Tres entradas",
+          "Cuatro entradas"
+        ],
+        "instructions": "Usa solo los hechos del estado. Cuenta entries; elige el nivel correspondiente."
+      },
+      {
+        "type": "score",
+        "criteria": [
+          "Zero entries",
+          "One entry",
+          "Two entries",
+          "Three entries",
+          "Four entries"
+        ],
+        "instructions": "Use only the facts in the state. Count entries; select the matching level."
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. Avalía a expresión booleana: x and y"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. Evalúa la expresión booleana: x and y"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Evaluate boolean expression: x and y"
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "known_yes": "approved is explicitly true",
+          "known_no": "approved is explicitly false",
+          "unknown": "approved is absent; evidence is insufficient"
+        },
+        "instructions": "Usa só os feitos do estado. Coñécese approved? Non infiras un valor ausente."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "known_yes": "approved is explicitly true",
+          "known_no": "approved is explicitly false",
+          "unknown": "approved is absent; evidence is insufficient"
+        },
+        "instructions": "Usa solo los hechos del estado. ¿Se conoce approved? No infieras un valor ausente."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "known_yes": "approved is explicitly true",
+          "known_no": "approved is explicitly false",
+          "unknown": "approved is absent; evidence is insufficient"
+        },
+        "instructions": "Use only the facts in the state. Is approved known? Do not infer a missing value."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Usa só os feitos do estado. Escolle só o valor de second."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Usa solo los hechos del estado. Elige solo el valor de first."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Use only the facts in the state. Choose only the value of first."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Usa só os feitos do estado. Escolle só o valor de first."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Use only the facts in the state. Choose only the value of second."
+      },
+      {
+        "type": "choice",
+        "criteria": {
+          "a": "copper",
+          "b": "silver"
+        },
+        "instructions": "Usa solo los hechos del estado. Elige solo el valor de second."
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. Contén o documento explicitamente project-c9cdb2f0148a?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. ¿Contiene el documento explícitamente project-62a34f6d16da?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Does the document explicitly contain project-a33e71089102?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. Contén o documento explicitamente project-cdaf6a9ad13c?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. ¿Contiene el documento explícitamente project-37f0d0c554bd?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Does the document explicitly contain project-604bd0c627be?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. Contén o documento explicitamente project-aa1ea296c127?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. ¿Contiene el documento explícitamente project-d49bcdcb148f?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Does the document explicitly contain project-120c8429d1cb?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa só os feitos do estado. Contén o documento explicitamente project-22545bec7938?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Usa solo los hechos del estado. ¿Contiene el documento explícitamente project-4a66263b0039?"
+      },
+      {
+        "type": "noul",
+        "criteria": null,
+        "instructions": "Use only the facts in the state. Does the document explicitly contain project-d9ee268af37a?"
+      }
+    ],
+    "domain": "typed_registered_questions",
+    "examples": 96,
+    "epochs": 1,
+    "frozen_encoder": true,
+    "general_decision_quality": "unvalidated",
+    "source_manifest_sha256": "2d8cdca8f6a4851c61341d4b2ce24c6a765fef463f8e9f24ddb32ae7667e4f8c",
+    "base_manifest_sha256": "77c2647673821c72c70ef71f31aa98d02313fa0bdabc71f68e98bd3227448f6b"
+  }
+}

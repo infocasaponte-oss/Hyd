@@ -1,0 +1,30 @@
+{
+  "base_model": "models/base",
+  "base_repository": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "base_revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+  "base_sha256": "c1b9b30e907950516ba3c646bdf570d8084c25a6410a0cdca80cf04b11bc13a8",
+  "base_size_bytes": 3087467144,
+  "corpus": "data/hydra-instruction-v4",
+  "output": "models/hydra-instruction-v4",
+  "llamacpp": "runtime/llama.cpp",
+  "llamacpp_revision": "b11146",
+  "quantizer": "runtime/llama-bin/llama-quantize.exe",
+  "method": "lora",
+  "epochs": 3,
+  "batch_size": 1,
+  "gradient_accumulation": 8,
+  "learning_rate": 5E-05,
+  "max_seq_length": 512,
+  "r": 16,
+  "alpha": 32,
+  "dropout": 0.05,
+  "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj"
+  ],
+  "seed": 42,
+  "require_gpu": true,
+  "quantization": "Q5_K_M"
+}

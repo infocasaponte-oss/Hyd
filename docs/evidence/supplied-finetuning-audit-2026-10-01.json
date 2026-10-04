@@ -1,0 +1,103 @@
+{
+  "source_files": {
+    "comprobar_contaminacion.py": "80849b8b46ba56f6dac72f5d26cace4b6951c6cc76bcb9300129abc781ebdf48",
+    "conceptos_tecnicos.py": "c61d4a65d7f42bc21cef8f1a488d9d192f4279351ddcb469dc15cd54af827e70",
+    "entrenar_lora.py": "47eb82b29fa6c62d82e191f2284d73ff63e4fad6fda82e0833afd643b951f906",
+    "evaluar_comparar.py": "639c8b3be3706cd74ace09a687c4b231c0610c58bec85bd4211ce67c0aa020ab",
+    "exportar_gguf.sh": "cd5e95b778ea9dd89eeae5cd3378a7583c9793b0e18d3e0812c73ba03b2da97b",
+    "fusionar_adaptador.py": "29888838a8c7a4297592b944779e525ed013dc65e99fa46d44b486a666a56ec8",
+    "generar_dataset.py": "eb343bb1224f95110483fc6578b65bb1a4389d46823ddcb6229049a516ca7581",
+    "README.md": "f05ddbf0b1c4f5687cdf99dd5cca6d428e25294592b3b6369f40cbc2f4d1281d",
+    "todo.jsonl": "ebd7d95faed56082c5ff58372bc3ee65c7644aeeea2f4cfb89fcd6f2d934ed53",
+    "train.jsonl": "f8b54ddea63188ca21bb469b2cfbdaa4eb932ca9c96b53736eba661f98e9079f",
+    "val.jsonl": "67c40363f54406d0074caab037ae7e532969317cf7fbf9038cdeec86cff6933a"
+  },
+  "counts": {
+    "train": {
+      "total": 168,
+      "categories": {
+        "tecnico": 42,
+        "instrucciones": 42,
+        "razonamiento": 42,
+        "ordenacion": 42
+      },
+      "duplicate_questions": 0
+    },
+    "val": {
+      "total": 32,
+      "categories": {
+        "ordenacion": 8,
+        "razonamiento": 8,
+        "instrucciones": 8,
+        "tecnico": 8
+      },
+      "duplicate_questions": 0
+    },
+    "todo": {
+      "total": 200,
+      "categories": {
+        "tecnico": 50,
+        "instrucciones": 50,
+        "razonamiento": 50,
+        "ordenacion": 50
+      },
+      "duplicate_questions": 0
+    }
+  },
+  "issues": [],
+  "train_val_exact_overlap": [],
+  "todo_equals_train_plus_val": true,
+  "lexical_overlap_flags": [],
+  "validation_subtypes": {
+    "enteros_asc": 2,
+    "precio_unitario": 1,
+    "mayusculas": 1,
+    "contar_letra": 2,
+    "concepto": 8,
+    "porcentajes": 2,
+    "cajas": 1,
+    "decimales_asc": 2,
+    "reloj": 2,
+    "fechas": 1,
+    "lista_n": 1,
+    "contar_palabras": 2,
+    "edades": 1,
+    "trabajo": 1,
+    "snake_case": 1,
+    "longitud": 1,
+    "invertir_palabras": 1,
+    "alfabetico": 2
+  },
+  "train_subtypes": {
+    "concepto": 42,
+    "json": 6,
+    "reloj": 3,
+    "decimales_asc": 4,
+    "distancia": 5,
+    "longitud": 5,
+    "mayusculas": 4,
+    "fechas": 6,
+    "primo": 5,
+    "enteros_desc": 7,
+    "porcentajes": 3,
+    "personas_edad": 8,
+    "extraer_numeros": 5,
+    "solo_resultado": 5,
+    "invertir_palabras": 4,
+    "dia_semana": 5,
+    "contar_palabras": 3,
+    "edades": 4,
+    "trabajo": 4,
+    "enteros_asc": 6,
+    "cajas": 4,
+    "contar_letra": 3,
+    "orden_logico": 5,
+    "alfabetico": 6,
+    "snake_case": 4,
+    "combinatoria": 5,
+    "precio_unitario": 4,
+    "lista_n": 3
+  },
+  "validation_only_subtypes": [],
+  "authorship": "Synthetic generation indicated by supplied generator; manual review claim not independently established"
+}

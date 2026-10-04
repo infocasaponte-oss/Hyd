@@ -1,0 +1,7 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+name: rtx5090
+cpu_arch: x86_64
+system_ram_gb: 128
+gpu_type: NVIDIA GeForce RTX 5090
+gpu_vram_gb: 32
+gpu_count: 1

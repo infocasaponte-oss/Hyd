@@ -1,0 +1,30 @@
+{
+  "baseline": "hydra-instruction-v7:latest",
+  "candidate": "hydra-instruction-v8:latest",
+  "baseline_passes": 16,
+  "candidate_passes": 17,
+  "automatically_scored": 31,
+  "wins": 2,
+  "losses": 1,
+  "mcnemar_exact_p": 1.0,
+  "changes": [
+    {
+      "id": "v8-supplied-va-000",
+      "baseline": true,
+      "candidate": false
+    },
+    {
+      "id": "v8-supplied-va-015",
+      "baseline": false,
+      "candidate": true
+    },
+    {
+      "id": "v8-supplied-va-029",
+      "baseline": false,
+      "candidate": true
+    }
+  ],
+  "approved": false,
+  "human_review_required": 9,
+  "scope": "Automatic subset only; semantic questions excluded from automatic scoring"
+}

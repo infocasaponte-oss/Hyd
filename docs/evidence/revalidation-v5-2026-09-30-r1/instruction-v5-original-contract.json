@@ -1,0 +1,365 @@
+{
+  "model": "hydra-instruction-v5:latest",
+  "dataset_sha256": "dbc89e4c5faf9cdef4b4ac0abcb328dad411cb16169a0d0ff647fc2ab7e763a3",
+  "cases": [
+    {
+      "id": "test-literal-2000",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2000",
+      "latency_ms": 95.28
+    },
+    {
+      "id": "test-json-2000",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2000,\"activo\":\"no\"}",
+      "latency_ms": 118.04
+    },
+    {
+      "id": "test-literal-2001",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2001",
+      "latency_ms": 90.21
+    },
+    {
+      "id": "test-json-2001",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2001,\"activo\":\"sí\"}",
+      "latency_ms": 138.73
+    },
+    {
+      "id": "test-literal-2002",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2002",
+      "latency_ms": 115.48
+    },
+    {
+      "id": "test-json-2002",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2002,\"activo\":\"no\"}",
+      "latency_ms": 129.15
+    },
+    {
+      "id": "test-literal-2003",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2003",
+      "latency_ms": 124.33
+    },
+    {
+      "id": "test-json-2003",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2003,\"activo\":\"sí\"}",
+      "latency_ms": 132.86
+    },
+    {
+      "id": "test-literal-2004",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2004",
+      "latency_ms": 93.27
+    },
+    {
+      "id": "test-json-2004",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2004,\"activo\":\"no\"}",
+      "latency_ms": 202.2
+    },
+    {
+      "id": "test-literal-2005",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2005",
+      "latency_ms": 84.45
+    },
+    {
+      "id": "test-json-2005",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2005,\"activo\":\"sí\"}",
+      "latency_ms": 145.71
+    },
+    {
+      "id": "test-literal-2006",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2006",
+      "latency_ms": 94.86
+    },
+    {
+      "id": "test-json-2006",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2006,\"activo\":\"no\"}",
+      "latency_ms": 119.73
+    },
+    {
+      "id": "test-literal-2007",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2007",
+      "latency_ms": 176.11
+    },
+    {
+      "id": "test-json-2007",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2007,\"activo\":\"sí\"}",
+      "latency_ms": 125.45
+    },
+    {
+      "id": "test-literal-2008",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2008",
+      "latency_ms": 93.85
+    },
+    {
+      "id": "test-json-2008",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2008,\"activo\":\"no\"}",
+      "latency_ms": 138.41
+    },
+    {
+      "id": "test-literal-2009",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2009",
+      "latency_ms": 92.99
+    },
+    {
+      "id": "test-json-2009",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2009,\"activo\":\"sí\"}",
+      "latency_ms": 159.64
+    },
+    {
+      "id": "test-literal-2010",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2010",
+      "latency_ms": 82.5
+    },
+    {
+      "id": "test-json-2010",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2010,\"activo\":\"no\"}",
+      "latency_ms": 120.07
+    },
+    {
+      "id": "test-literal-2011",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2011",
+      "latency_ms": 91.75
+    },
+    {
+      "id": "test-json-2011",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2011,\"activo\":\"sí\"}",
+      "latency_ms": 127.69
+    },
+    {
+      "id": "test-literal-2012",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2012",
+      "latency_ms": 159.4
+    },
+    {
+      "id": "test-json-2012",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2012,\"activo\":\"no\"}",
+      "latency_ms": 129.94
+    },
+    {
+      "id": "test-literal-2013",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2013",
+      "latency_ms": 92.63
+    },
+    {
+      "id": "test-json-2013",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2013,\"activo\":\"sí\"}",
+      "latency_ms": 137.33
+    },
+    {
+      "id": "test-literal-2014",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2014",
+      "latency_ms": 98.3
+    },
+    {
+      "id": "test-json-2014",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2014,\"activo\":\"no\"}",
+      "latency_ms": 225.47
+    },
+    {
+      "id": "test-literal-2015",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2015",
+      "latency_ms": 84.96
+    },
+    {
+      "id": "test-json-2015",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2015,\"activo\":\"sí\"}",
+      "latency_ms": 136.18
+    },
+    {
+      "id": "test-literal-2016",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2016",
+      "latency_ms": 106.1
+    },
+    {
+      "id": "test-json-2016",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2016,\"activo\":\"no\"}",
+      "latency_ms": 125.1
+    },
+    {
+      "id": "test-literal-2017",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2017",
+      "latency_ms": 108.22
+    },
+    {
+      "id": "test-json-2017",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2017,\"activo\":\"sí\"}",
+      "latency_ms": 133.91
+    },
+    {
+      "id": "test-literal-2018",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2018",
+      "latency_ms": 82.63
+    },
+    {
+      "id": "test-json-2018",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2018,\"activo\":\"no\"}",
+      "latency_ms": 138.72
+    },
+    {
+      "id": "test-literal-2019",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2019",
+      "latency_ms": 124.84
+    },
+    {
+      "id": "test-json-2019",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2019,\"activo\":\"sí\"}",
+      "latency_ms": 232.66
+    },
+    {
+      "id": "test-literal-2020",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2020",
+      "latency_ms": 98.62
+    },
+    {
+      "id": "test-json-2020",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2020,\"activo\":\"no\"}",
+      "latency_ms": 146.77
+    },
+    {
+      "id": "test-literal-2021",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2021",
+      "latency_ms": 175.39
+    },
+    {
+      "id": "test-json-2021",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2021,\"activo\":\"sí\"}",
+      "latency_ms": 262.21
+    },
+    {
+      "id": "test-literal-2022",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2022",
+      "latency_ms": 85.24
+    },
+    {
+      "id": "test-json-2022",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2022,\"activo\":\"no\"}",
+      "latency_ms": 131.75
+    },
+    {
+      "id": "test-literal-2023",
+      "kind": "literal",
+      "passed": true,
+      "output": "clave_2023",
+      "latency_ms": 88.17
+    },
+    {
+      "id": "test-json-2023",
+      "kind": "json",
+      "passed": false,
+      "output": "{\"id\":2023,\"activo\":\"sí\"}",
+      "latency_ms": 136.52
+    }
+  ],
+  "approved": false,
+  "protocol": "raw-generation",
+  "scope": "synthetic exact-output and JSON test; requires separate coding and human evaluation",
+  "identity": {
+    "name": "hydra-instruction-v5:latest",
+    "digest": "c6b7a825404c815fef2bb9965457f9ccad5164366faf1e5bc04dec78027a3f34",
+    "artifact_sha256": "d767e0a1c75cbff78a6b95058f9440217ed24d294f57dd8e0eb1a3970d846e23",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q5_K_M"
+    }
+  },
+  "correct": 24,
+  "total": 48,
+  "status": "EVALUATED",
+  "accuracy": 0.5,
+  "instruction_gate_passed": false
+}

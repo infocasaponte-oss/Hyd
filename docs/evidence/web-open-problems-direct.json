@@ -1,0 +1,42 @@
+{
+  "id": "chatcmpl-364dde52-43d3-429b-b9c0-28205825fa4f",
+  "object": "chat.completion",
+  "created": 1790816344,
+  "model": "hydra",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "https://www.google.com/search?q=teoremas+sen+resolver\n\nFuentes consultadas: [Fuente 1](<https://es.scribd.com/document/559601696/Anexo-Problemas-No-Resueltos-de-La-Matematica>)"
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "total_tokens": 0
+  },
+  "hydra": {
+    "task_id": "364dde52-43d3-429b-b9c0-28205825fa4f",
+    "status": "completed",
+    "task_type": "reasoning",
+    "mode": "balanced",
+    "models_used": [
+      "hydra-instruction-v8-direct-candidate"
+    ],
+    "tools_used": [
+      "web.search",
+      "web.read"
+    ],
+    "verified": false,
+    "confidence": 0.8,
+    "latency_ms": 5787.56,
+    "escalations": 0,
+    "steps": 1,
+    "cached": false,
+    "sensitivity": "public",
+    "decision": "answer"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "version": "grounded-holdout-v2",
+  "sealed": true,
+  "independent_test": true,
+  "approved": false,
+  "generator_sha256": "d250aa5ed8c8df843d3e8c7e1973242820c2cbb8dc28b25b775d69bbb39f8c27",
+  "helpers_sha256": {
+    "training/grounded_corpus_v1.py": "14759a64899c91e00821bb5682316ccb9f7d3b8ce58a15de4dd0aaa6f09f314c",
+    "training/grounded_corpus_v2.py": "56862fe7bb3a37a45dfc4eaddac16f4b411309b02480aa448dd2e4fcd80db646",
+    "training/grounded_holdout_v1.py": "7e80026e132c97f2e04050e3e964523d3020609ff40c2159e899871b53223da7",
+    "training/instruction_corpus_v4.py": "fc30496db236a4610f6a66cd8ccb19819c876645a4c8d5f5c62827f8dac1b3d1",
+    "training/verified_corpus.py": "35158c6df05bfe165797ccd0fdd5e9e843026cecb6d391e829607bb9eaf2c9f4",
+    "corpus/gates.py": "f316f0a7ed5a7831bae1f139353588183ca949953515e1698ce70eeb13673862"
+  },
+  "wordings_sha256": "d32f4eccd686c59dc06b042863a0debdf34ff2f8616d98cf1280054a2fe2056e",
+  "wordings": "private, kept outside git",
+  "families": {
+    "boe_heading": 20,
+    "boe_sections": 20,
+    "boe_quote": 20,
+    "boe_rank_date": 20,
+    "boe_repealed": 20,
+    "boe_absent": 20,
+    "code_functions": 15,
+    "code_imports": 15,
+    "code_params": 15,
+    "code_methods": 15,
+    "code_absent": 15
+  },
+  "repeal_balance": {
+    "si": 8,
+    "no": 12
+  },
+  "inputs": {
+    "boe": {
+      "path": "data\\sources\\snapshots\\boe-holdout-v2-input.jsonl",
+      "sha256": "b4fa7c11fe700efa8d924cac7c53cb6ef416c03b6f0da71f441cb0481c13a5c5"
+    },
+    "code": {
+      "path": "data\\sources\\code\\stackv2_edu_python_sample.jsonl",
+      "sha256": "44d37aa87bfc4411c608bc58f3cbfaa52bc37687dc3cea43f0566badd8b627a9"
+    }
+  },
+  "excluded_corpora": [
+    "data\\hydra-grounded-v1",
+    "data\\hydra-grounded-v2",
+    "data\\hydra-grounded-v3",
+    "data\\hydra-grounded-v4",
+    "data\\hydra-grounded-v5"
+  ],
+  "excluded_boe_snapshots": [
+    "data\\sources\\snapshots\\boe-base-v0-input.jsonl"
+  ],
+  "excluded_holdouts": [
+    "data\\hydra-grounded-holdout-v1\\holdout.jsonl"
+  ],
+  "length_policy": {
+    "kind": "tokens",
+    "max": 768,
+    "tokenizer_sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa"
+  },
+  "rejections": {
+    "excluded_used": 6204,
+    "privacy_rejected": 2,
+    "verification_failed": 0,
+    "too_long": 0
+  },
+  "files": {
+    "holdout.jsonl": {
+      "examples": 195,
+      "sha256": "1eda505121ce54c606d5c9b3fd6c867f0e4c1294cb90a681c12a459d0f8f3793"
+    }
+  },
+  "policy": "report aggregate and per-family scores only; never train or tune on these cases",
+  "limitations": "code files may appear in HYDRA Base v0 pretraining data; BOE norms do not"
+}

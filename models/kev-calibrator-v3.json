@@ -1,0 +1,6 @@
+{
+  "format": "hydra-decision-calibrator/1",
+  "version": 1,
+  "temperature": 0.5,
+  "calibration_dataset_sha256": "169e28e88596d484b53e1321eda48fea98907990c46c95154e0a4f330c5a14d7"
+}

@@ -1,0 +1,14 @@
+{
+  "sha256": "cb1513de67c03164e661b178f9688bdc29367fcfa4949887efb74eeb319004a6",
+  "step": 1,
+  "identity": {
+    "base_sha256": "e64772e1beb6a1d5ffc8475d5f8fa09904f8d005ba0ff15034c62d820d6a934f",
+    "corpus_sha256": "2d8cdca8f6a4851c61341d4b2ce24c6a765fef463f8e9f24ddb32ae7667e4f8c",
+    "epochs": 1,
+    "max_tokens": 512,
+    "freeze_encoder": true,
+    "torch": "2.5.1+cu121",
+    "device": "cuda",
+    "trainer_sha256": "c2ec0a614aa3ae6dda380727404f6700fe65dadcd280a18e3b95522d7a5335cb"
+  }
+}

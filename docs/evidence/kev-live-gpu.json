@@ -1,0 +1,115 @@
+{
+  "status": "INFERENCE_COMPLETED",
+  "approved": false,
+  "cases": [
+    {
+      "expected": "refund",
+      "answer": {
+        "model": "kev-latest",
+        "answers": {
+          "topic": {
+            "type": "choice",
+            "choice": "refund",
+            "confidence": 0.9808,
+            "probabilities": {
+              "refund": 0.9872,
+              "technical": 0.0075,
+              "pricing": 0.0053
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 40,
+          "output_tokens": 63
+        },
+        "latency_ms": 1335.7
+      },
+      "latency_ms": 1580.7807000019238,
+      "passed": true
+    },
+    {
+      "expected": "technical",
+      "answer": {
+        "model": "kev-latest",
+        "answers": {
+          "topic": {
+            "type": "choice",
+            "choice": "technical",
+            "confidence": 0.9814,
+            "probabilities": {
+              "refund": 0.0083,
+              "technical": 0.9876,
+              "pricing": 0.0041
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 40,
+          "output_tokens": 63
+        },
+        "latency_ms": 261.9
+      },
+      "latency_ms": 304.2520000017248,
+      "passed": true
+    },
+    {
+      "expected": "pricing",
+      "answer": {
+        "model": "kev-latest",
+        "answers": {
+          "topic": {
+            "type": "choice",
+            "choice": "pricing",
+            "confidence": 0.9595,
+            "probabilities": {
+              "refund": 0.0123,
+              "technical": 0.0147,
+              "pricing": 0.973
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 38,
+          "output_tokens": 62
+        },
+        "latency_ms": 259.6
+      },
+      "latency_ms": 320.02920000377344,
+      "passed": true
+    }
+  ],
+  "limitations": "Three classification smoke cases, not calibration or tool-routing validation.",
+  "server": {
+    "name": "kev-latest",
+    "description": "Kev pointer head on Qwen/Qwen3.5-0.8B-Base, serving jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e at temperature 2.35",
+    "release_date": "2026-09-24",
+    "run": "jaredpalmer/kev-0.8b@9a45d25eb2ab761841196625383fa1dff0e56c1e",
+    "base": "Qwen/Qwen3.5-0.8B-Base",
+    "lora": 16,
+    "device": "cuda",
+    "backend": "torch",
+    "dtype": "bfloat16",
+    "temperature": 2.3510958125672174,
+    "cuda_graphs": {
+      "captured": 0,
+      "kept": 0,
+      "pending": 0,
+      "failed": 0
+    },
+    "prefix_cache": {
+      "size": 4,
+      "min_state_tokens": 0,
+      "max_tokens": 65536,
+      "hits": 0,
+      "misses": 0,
+      "cached_states": 0,
+      "oom_retries": 0
+    },
+    "batches": {
+      "count": 0,
+      "requests": 0,
+      "queued": 0
+    }
+  },
+  "correct": 3
+}

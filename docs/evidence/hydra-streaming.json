@@ -1,0 +1,65 @@
+{
+  "status": "MEASURED_DIAGNOSTIC",
+  "approved": false,
+  "samples": [
+    {
+      "index": 0,
+      "ttft_ms": 10510.604000000058,
+      "elapsed_ms": 10929.40069999986,
+      "generated_tokens": 62,
+      "tokens_per_second": 147.6352171904542,
+      "load_ms": 10325.858
+    },
+    {
+      "index": 1,
+      "ttft_ms": 24.461199999677774,
+      "elapsed_ms": 433.22119999993447,
+      "generated_tokens": 62,
+      "tokens_per_second": 151.68863705313018,
+      "load_ms": 3.6538
+    },
+    {
+      "index": 2,
+      "ttft_ms": 19.08689999982016,
+      "elapsed_ms": 408.61750000021857,
+      "generated_tokens": 62,
+      "tokens_per_second": 159.10490659002258,
+      "load_ms": 3.6769
+    },
+    {
+      "index": 3,
+      "ttft_ms": 18.33470000019588,
+      "elapsed_ms": 421.6918000001897,
+      "generated_tokens": 62,
+      "tokens_per_second": 153.6985574646679,
+      "load_ms": 3.9145
+    },
+    {
+      "index": 4,
+      "ttft_ms": 17.896899999868765,
+      "elapsed_ms": 402.6155000001381,
+      "generated_tokens": 62,
+      "tokens_per_second": 161.12475473953663,
+      "load_ms": 3.6293
+    }
+  ],
+  "scope": "Ollama streaming, fixed prompt, first run separate from subsequent runs; not HYDRA gateway",
+  "peak_vram_mb": null,
+  "model_identity": {
+    "name": "hydra-local:latest",
+    "digest": "6e20d35c1cfe93b2ae3035f13275dbd41f2dd2c98694c030c3d2d8d8c40403bf",
+    "artifact_sha256": "32fac5fc07053408990439db76fae172c0384019773041f1ce4e1194c084dc92",
+    "details": {
+      "parent_model": "HYDRA.gguf",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "1.5B",
+      "quantization_level": "Q4_K_M"
+    }
+  },
+  "repeated_median_ttft_ms": 18.71080000000802,
+  "repeated_median_tokens_per_second": 156.40173202734525
+}

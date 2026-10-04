@@ -1,0 +1,244 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
+# Third-party images are pinned by digest (resolved 2026-09-29) for reproducible, tamper-evident
+# deployments; the tag is kept for readability. Dependabot (docker ecosystem) proposes updates.
+#
+# HYDRA OS stack.
+#   docker compose up -d                   -> gateway + model factory worker + postgres + redis + ollama + sandbox
+#   docker compose --profile gpu up -d     -> + vLLM reasoner / coder / vision (NVIDIA GPUs)
+#   docker compose --profile nats up -d    -> + NATS JetStream (set HYDRA_NATS_URL=nats://nats:4222)
+#
+# hydra-api publishes 8080. The observability profile publishes Prometheus/Grafana on 127.0.0.1 only.
+# Runtimes (vLLM, Ollama) are reachable only on the internal network: never expose them to the Internet.
+# (They also join "public" for outbound access: model downloads.)
+
+x-hydra-env: &hydra-env
+  HYDRA_POSTGRES_URL: postgresql://hydra:${POSTGRES_PASSWORD:-hydra}@postgres:5432/hydra
+  HYDRA_REDIS_URL: redis://redis:6379/0
+  HYDRA_OLLAMA_BASE_URL: http://ollama:11434
+  HYDRA_VLLM_BASE_URL: http://vllm-reasoner:8000/v1
+  HYDRA_VLLM_REASONER_URL: http://vllm-reasoner:8000/v1
+  HYDRA_VLLM_CODER_URL: http://vllm-coder:8000/v1
+  HYDRA_VLLM_VISION_URL: http://vllm-vision:8000/v1
+  HYDRA_SANDBOX_BACKEND: docker
+  HYDRA_WORKSPACE_DIR: /workspace
+  HYDRA_SANDBOX_WORKSPACE_SOURCE: hydra_workspace
+  HYDRA_DATA_DIR: /data
+  # Private keys live in their own volume, never inside /data (and never in data backups).
+  HYDRA_KEYS_DIR: /keys
+  DOCKER_HOST: tcp://sandbox-controller:2375
+
+services:
+
+  hydra-api:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+      - path: .env
+        required: false
+    environment: *hydra-env
+    volumes:
+      - workspace:/workspace
+      - hydra_data:/data
+      - hydra_keys:/keys
+      - hydra_runtime:/app/runtime
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      sandbox-controller:
+        condition: service_started
+    networks: [internal, public]
+    restart: unless-stopped
+
+  # Execution fabric worker: consumes structured WorkItems (leases, retries, idempotency).
+  hydra-worker:
+    build: .
+    command: ["hydra", "worker", "--capability", "inference"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      <<: *hydra-env
+      HYDRA_RUNTIME_MONITOR: "false"
+    volumes:
+      - workspace:/workspace
+      - hydra_data:/data
+      - hydra_keys:/keys
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [internal, public]
+    restart: unless-stopped
+
+  # Model Factory: separate worker. Inference never builds models; the API only enqueues jobs.
+  hydra-factory:
+    build: .
+    command: ["hydra", "factory", "worker"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      <<: *hydra-env
+      HYDRA_RUNTIME_MONITOR: "false"
+    volumes:
+      - workspace:/workspace
+      - hydra_data:/data
+      - hydra_keys:/keys
+      - models:/models
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [internal, public]
+    restart: unless-stopped
+
+  nats:
+    profiles: [nats]
+    image: nats:latest@sha256:cd3fcd4ecdda44e3a66728a5334af0a959bc3979b32810e033d1c547241cd0f4
+    command: ["-js", "-sd", "/data"]
+    volumes:
+      - nats_data:/data
+    networks: [internal]
+    restart: unless-stopped
+
+  # Restricted Docker API: HYDRA may only create/run/remove sandbox containers.
+  sandbox-controller:
+    image: tecnativa/docker-socket-proxy:latest@sha256:1f5038b54f06c3e18422902cf00ba21803d1c97805aae032e5e6673d532d3459
+    environment:
+      CONTAINERS: 1
+      POST: 1
+      IMAGES: 1
+      INFO: 1
+      VOLUMES: 0
+      NETWORKS: 0
+      EXEC: 0
+      SWARM: 0
+      SERVICES: 0
+      SECRETS: 0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks: [internal]
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17@sha256:d74eeac9a635390a49bc21bd49fccd973de707e2a53a76ac49b552b8712ec46f
+    environment:
+      POSTGRES_USER: hydra
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hydra}
+      POSTGRES_DB: hydra
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hydra"]
+      interval: 5s
+      retries: 20
+    networks: [internal]
+    restart: unless-stopped
+
+  redis:
+    image: redis:8@sha256:6f81e8915c60b065a524e6967e0ad1c639ba6efa84d669f823683ea04d9150ee
+    networks: [internal]
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest@sha256:8262851b2846b87c649eddf3e76beb270c52f4d1bc94559f47efde16b0841551
+    volumes:
+      - ollama_data:/root/.ollama
+    networks: [internal, public]
+    restart: unless-stopped
+
+  vllm-reasoner:
+    profiles: [gpu]
+    image: vllm/vllm-openai:latest@sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90
+    ipc: host
+    command: ["--model", "Qwen/Qwen3-32B", "--host", "0.0.0.0", "--port", "8000",
+              "--enable-prefix-caching", "--enable-auto-tool-choice", "--tool-call-parser", "hermes"]
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HF_TOKEN:-}
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
+    networks: [internal, public]
+
+  vllm-coder:
+    profiles: [gpu]
+    image: vllm/vllm-openai:latest@sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90
+    ipc: host
+    command: ["--model", "Qwen/Qwen2.5-Coder-32B-Instruct", "--host", "0.0.0.0", "--port", "8000",
+              "--enable-prefix-caching", "--enable-auto-tool-choice", "--tool-call-parser", "hermes"]
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HF_TOKEN:-}
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["1"]
+              capabilities: [gpu]
+    networks: [internal, public]
+
+  vllm-vision:
+    profiles: [gpu]
+    image: vllm/vllm-openai:latest@sha256:8a69ffad015f138d7170c4ddc429e230a3bc1c1719f67e14324749df200a4b90
+    ipc: host
+    command: ["--model", "Qwen/Qwen2.5-VL-7B-Instruct", "--host", "0.0.0.0", "--port", "8000",
+              "--enable-prefix-caching"]
+    environment:
+      HUGGING_FACE_HUB_TOKEN: ${HF_TOKEN:-}
+    volumes:
+      - huggingface_cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["2"]
+              capabilities: [gpu]
+    networks: [internal, public]
+
+  # ---- observability profile: docker compose --profile observability up -d
+  prometheus:
+    profiles: [observability]
+    image: prom/prometheus:latest@sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e
+    volumes:
+      - ./infra/observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports: ["127.0.0.1:9090:9090"]
+    networks: [internal, public]
+
+  grafana:
+    profiles: [observability]
+    image: grafana/grafana:latest@sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-}  # empty -> Grafana forces a change on first login
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+    volumes:
+      - ./infra/observability/grafana:/var/lib/grafana/dashboards:ro
+      - ./infra/observability/provisioning:/etc/grafana/provisioning:ro
+    networks: [internal, public]
+
+networks:
+  internal:
+    internal: true
+  public: {}
+
+volumes:
+  postgres_data:
+  ollama_data:
+  huggingface_cache:
+  workspace:
+    name: hydra_workspace
+  hydra_data:
+  hydra_keys:
+  hydra_runtime:
+  models:
+  nats_data:
