@@ -1,0 +1,15 @@
+{
+  "format": "hyd-book-upload-delivery/1",
+  "base_app_revision": "2ef9b281815c65649bb260929e5601296f525e3c",
+  "app_revision": "68da07657381d32b3d27e8fed9ad2b85049256b4",
+  "patch_reverse_check": true,
+  "native_tests_passed": 31,
+  "app_tests_passed": 8,
+  "typescript_passed": true,
+  "production_build_passed": true,
+  "native_ruff_passed": true,
+  "changed_app_eslint_passed": true,
+  "live_authenticated_upload_verified": false,
+  "lovable_deployed": false,
+  "training_allowed": false
+}

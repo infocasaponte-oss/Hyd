@@ -19,3 +19,5 @@ data/
 .DS_Store
 /repositories/
 node_modules/
+
+experiments/candidate-1024*/model.json

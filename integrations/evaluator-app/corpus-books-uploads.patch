@@ -1,0 +1,668 @@
+diff --git a/src/lib/corpus-book-sources.json b/src/lib/corpus-book-sources.json
+new file mode 100644
+index 0000000..474dffa
+--- /dev/null
++++ b/src/lib/corpus-book-sources.json
+@@ -0,0 +1,79 @@
++{
++  "format": "hyd-book-source-catalog/1",
++  "reviewed_at": "2026-10-05",
++  "training_allowed": false,
++  "sources": [
++    {
++      "id": "elejandria",
++      "name": "Elejandría",
++      "home": "https://www.elejandria.com",
++      "discovery": "manual-work-review",
++      "state": "require_permission_review",
++      "terms": "https://www.elejandria.com/aviso-legal",
++      "findings": [
++        "Site declares Spanish public domain or open licenses; not a work-by-work legal verification.",
++        "Section 13 restricts commercial reuse of own resources and provides an authorization route for noncommercial/educational uses."
++      ],
++      "bulk_download_enabled": false
++    },
++    {
++      "id": "textos-info",
++      "name": "Textos.info",
++      "home": "https://www.textos.info",
++      "discovery": "bounded-opds-metadata",
++      "state": "require_work_review",
++      "terms": "https://www.textos.info/preguntas-frecuentes",
++      "metadata_url": "https://www.textos.info/novedades.atom",
++      "findings": [
++        "Mixed public domain, Creative Commons/GPL/copyleft and specific publication permissions.",
++        "Free reading/downloading is not a blanket license for model training.",
++        "Conditions-of-use link points to an under-construction page at review time."
++      ],
++      "bulk_download_enabled": false
++    },
++    {
++      "id": "openlibrary",
++      "name": "Open Library",
++      "home": "https://openlibrary.org",
++      "discovery": "bounded-search-metadata",
++      "state": "metadata_only",
++      "terms": "https://openlibrary.org/developers/licensing",
++      "metadata_url": "https://openlibrary.org/search.json?language=spa&q=subject%3Ascience&limit=20&fields=key,title,author_name,first_publish_year,edition_key,ia,ebook_access",
++      "findings": [
++        "Database rights statement does not clear rights in book content or all territories.",
++        "Borrowed/restricted books are excluded from content acquisition.",
++        "Use APIs for limited lookups and dumps for bulk metadata; no HTML harvesting."
++      ],
++      "bulk_download_enabled": false
++    },
++    {
++      "id": "cervantes",
++      "name": "Biblioteca Virtual Miguel de Cervantes",
++      "home": "https://www.cervantesvirtual.com",
++      "discovery": "manual-work-review",
++      "state": "require_permission_review",
++      "terms": "https://www.cervantesvirtual.com/marco-legal/",
++      "findings": [
++        "Portal includes copyrighted works made accessible by permission.",
++        "Legal notice claims rights in digital editions and database, including editions of public-domain works.",
++        "Personal/private access does not provide a blanket training or bulk reuse authorization."
++      ],
++      "bulk_download_enabled": false
++    }
++  ],
++  "required_work_checks": [
++    "original_work",
++    "author_and_term_in_territory",
++    "translation",
++    "edition_and_added_material",
++    "lawful_access_and_site_terms",
++    "attribution",
++    "tdm_reservations",
++    "privacy",
++    "evaluation_decontamination"
++  ],
++  "limitations": [
++    "Source incorporation does not admit any book for training.",
++    "Literature can diversify genres without providing contemporary conversational or scientific coverage."
++  ]
++}
+diff --git a/src/lib/corpus-queue.server.ts b/src/lib/corpus-queue.server.ts
+index aac9a04..c09d83b 100644
+--- a/src/lib/corpus-queue.server.ts
++++ b/src/lib/corpus-queue.server.ts
+@@ -1,7 +1,7 @@
+ import { createHash, randomUUID } from "node:crypto";
+ import { mkdir, readFile, readdir, writeFile, access, rename } from "node:fs/promises";
+ import { isAbsolute, join } from "node:path";
+-import { downloadPlanSchema } from "./corpus-workspace";
++import { downloadPlanSchema, bookSourceIds } from "./corpus-workspace";
+ 
+ export function actorKey(actor: string) {
+   return createHash("sha256")
+@@ -23,6 +23,10 @@ const hosts: Record<string, string[]> = {
+ };
+ export function reviewedPlan(input: unknown) {
+   const plan = downloadPlanSchema.parse(input);
++  if (bookSourceIds.includes(plan.source_id))
++    throw new Error(
++      "Os libros requiren revisión por obra e edición co plan nativo /2 e os ficheiros de evidencia. Unha caixa de confirmación non basta.",
++    );
+   const url = new URL(plan.asset_url);
+   if (
+     !hosts[plan.source_id]?.includes(url.hostname) ||
+diff --git a/src/lib/corpus-queue.test.ts b/src/lib/corpus-queue.test.ts
+index ef8d12f..87696a8 100644
+--- a/src/lib/corpus-queue.test.ts
++++ b/src/lib/corpus-queue.test.ts
+@@ -40,4 +40,8 @@ describe("persistent account queue", () => {
+       reviewedPlan({ ...plan, asset_url: "https://www.boe.es.evil.example/file" }),
+     ).toThrow();
+   });
++  it("does not turn a generic reviewed checkbox into permission for books", () => {
++    for (const source of ["gutenberg", "cervantes", "elejandria", "textos-info", "openlibrary"])
++      expect(() => reviewedPlan({ ...plan, source_id: source })).toThrow("revisión por obra");
++  });
+ });
+diff --git a/src/lib/corpus-upload.functions.ts b/src/lib/corpus-upload.functions.ts
+new file mode 100644
+index 0000000..6750544
+--- /dev/null
++++ b/src/lib/corpus-upload.functions.ts
+@@ -0,0 +1,25 @@
++import { createServerFn } from "@tanstack/react-start";
++import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
++
++export const listCorpusUploads = createServerFn({ method: "GET" })
++  .middleware([requireSupabaseAuth])
++  .handler(async ({ context }) => {
++    const uploads = await import("./corpus-upload.server");
++    const root = uploads.uploadRoot();
++    return {
++      enabled: Boolean(root),
++      files: root ? await uploads.listUploads(root, context.userId) : [],
++    };
++  });
++export const uploadCorpusFile = createServerFn({ method: "POST" })
++  .middleware([requireSupabaseAuth])
++  .validator((input: FormData) => {
++    if (!(input instanceof FormData)) throw new Error("Carga multipart requirida.");
++    return input;
++  })
++  .handler(async ({ data, context }) => {
++    const uploads = await import("./corpus-upload.server");
++    const root = uploads.uploadRoot();
++    if (!root) throw new Error("Directorio de importación aínda non configurado.");
++    return uploads.storeUpload(root, context.userId, data);
++  });
+diff --git a/src/lib/corpus-upload.server.ts b/src/lib/corpus-upload.server.ts
+new file mode 100644
+index 0000000..1ab0995
+--- /dev/null
++++ b/src/lib/corpus-upload.server.ts
+@@ -0,0 +1,101 @@
++import { createHash, randomUUID } from "node:crypto";
++import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
++import { isAbsolute, join, extname } from "node:path";
++import { actorKey, queueRoot } from "./corpus-queue.server";
++
++export const uploadLimit = 20 * 1024 * 1024;
++const extensions = new Set([".pdf", ".epub", ".txt", ".html", ".htm", ".md", ".mobi"]);
++export function uploadRoot() {
++  const configured = process.env["HYD_CORPUS_IMPORT_DIR"];
++  if (configured && !isAbsolute(configured))
++    throw new Error("O directorio de importación debe ser absoluto.");
++  const queue = queueRoot();
++  return configured || (queue ? join(queue, "_imports") : null);
++}
++
++export async function storeUpload(root: string, actor: string, data: FormData) {
++  const file = data.get("file");
++  if (
++    !(file instanceof File) ||
++    !file.name ||
++    file.name.length > 240 ||
++    /[\\/]/.test(file.name) ||
++    [...file.name].some((character) => character.charCodeAt(0) < 32)
++  )
++    throw new Error("Nome de ficheiro inválido.");
++  if (!extensions.has(extname(file.name).toLowerCase())) throw new Error("Formato non admitido.");
++  if (file.size < 1 || file.size > uploadLimit)
++    throw new Error("Cada ficheiro debe ocupar entre 1 byte e 20 MiB.");
++  const source = data.get("source_id") || "unknown";
++  if (
++    typeof source !== "string" ||
++    !["unknown", "elejandria", "textos-info", "openlibrary", "cervantes", "gutenberg"].includes(
++      source,
++    )
++  )
++    throw new Error("Fonte inválida.");
++  const contextUrl = data.get("source_context_url") || "";
++  if (typeof contextUrl !== "string" || contextUrl.length > 2000)
++    throw new Error("URL de procedencia inválida.");
++  if (contextUrl) {
++    const parsed = new URL(contextUrl);
++    if (parsed.protocol !== "https:" || parsed.username || parsed.password)
++      throw new Error("A procedencia require HTTPS sen credenciais.");
++  }
++  const body = Buffer.from(await file.arrayBuffer());
++  if (body.byteLength !== file.size) throw new Error("Tamaño inconsistente.");
++  const id = randomUUID();
++  const folder = join(root, actorKey(actor), id);
++  await mkdir(folder, { recursive: true });
++  await writeFile(join(folder, "asset.raw"), body, { flag: "wx" });
++  const manifest = {
++    format: "hyd-manual-asset/1",
++    id,
++    state: "raw-pending-review",
++    complete: true,
++    original_filename: file.name,
++    extension: extname(file.name).toLowerCase(),
++    bytes: body.byteLength,
++    sha256: createHash("sha256").update(body).digest("hex"),
++    created_at: new Date().toISOString(),
++    source_id: source,
++    source_context_url_declared: contextUrl || null,
++    rights_review: "pending",
++    privacy_review: "pending",
++    decontamination: "pending",
++    training_allowed: false,
++    extraction_performed: false,
++  };
++  await writeFile(join(folder, "manifest.json"), JSON.stringify(manifest, null, 2), { flag: "wx" });
++  return manifest;
++}
++
++export async function listUploads(root: string, actor: string) {
++  const folder = join(root, actorKey(actor));
++  let entries;
++  try {
++    entries = await readdir(folder, { withFileTypes: true });
++  } catch (error) {
++    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
++    throw error;
++  }
++  const results: Awaited<ReturnType<typeof storeUpload>>[] = [];
++  for (const entry of entries) {
++    if (!entry.isDirectory() || !/^[0-9a-f-]{36}$/.test(entry.name)) continue;
++    try {
++      const manifest = JSON.parse(
++        await readFile(join(folder, entry.name, "manifest.json"), "utf8"),
++      );
++      if (
++        manifest.format !== "hyd-manual-asset/1" ||
++        manifest.complete !== true ||
++        manifest.training_allowed !== false
++      )
++        throw new Error("Manifest de importación inválido.");
++      results.push(manifest);
++    } catch (error) {
++      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
++    }
++  }
++  return results.sort((a, b) => b.created_at.localeCompare(a.created_at));
++}
+diff --git a/src/lib/corpus-upload.test.ts b/src/lib/corpus-upload.test.ts
+new file mode 100644
+index 0000000..6178b96
+--- /dev/null
++++ b/src/lib/corpus-upload.test.ts
+@@ -0,0 +1,44 @@
++// @vitest-environment node
++import { afterEach, describe, expect, it } from "vitest";
++import { mkdtemp, readFile, rm } from "node:fs/promises";
++import { tmpdir } from "node:os";
++import { join } from "node:path";
++import { actorKey } from "./corpus-queue.server";
++import { listUploads, storeUpload } from "./corpus-upload.server";
++const roots: string[] = [];
++afterEach(async () => {
++  for (const root of roots.splice(0)) await rm(root, { recursive: true, force: true });
++});
++function input(name = "obra.txt", bytes = "Fixture real upload") {
++  const data = new FormData();
++  data.set("file", new File([bytes], name));
++  data.set("source_id", "textos-info");
++  return data;
++}
++describe("manual corpus assets", () => {
++  it("preserves bytes, retains multiple files and isolates evaluator accounts", async () => {
++    const root = await mkdtemp(join(tmpdir(), "hyd-assets-"));
++    roots.push(root);
++    const first = await storeUpload(root, "person-a", input());
++    const second = await storeUpload(root, "person-a", input("outra.pdf", "Fixture second"));
++    expect(first.id).not.toBe(second.id);
++    expect(first.sha256).toMatch(/^[a-f0-9]{64}$/);
++    expect(first.training_allowed).toBe(false);
++    expect(first.extraction_performed).toBe(false);
++    expect(await readFile(join(root, actorKey("person-a"), first.id, "asset.raw"), "utf8")).toBe(
++      "Fixture real upload",
++    );
++    expect(await listUploads(root, "person-b")).toEqual([]);
++    expect(await listUploads(root, "person-a")).toHaveLength(2);
++  });
++  it("rejects traversal, executable, empty and oversized uploads", async () => {
++    const root = await mkdtemp(join(tmpdir(), "hyd-assets-"));
++    roots.push(root);
++    for (const bad of [input("..\\escape.txt"), input("run.exe"), input("empty.txt", "")])
++      await expect(storeUpload(root, "a", bad)).rejects.toThrow();
++    const large = new FormData();
++    large.set("file", new File([new Uint8Array(20 * 1024 * 1024 + 1)], "huge.pdf"));
++    await expect(storeUpload(root, "a", large)).rejects.toThrow("20 MiB");
++    expect(await listUploads(root, "a")).toEqual([]);
++  });
++});
+diff --git a/src/lib/corpus-workspace.ts b/src/lib/corpus-workspace.ts
+index 0e0873d..b7b3ad4 100644
+--- a/src/lib/corpus-workspace.ts
++++ b/src/lib/corpus-workspace.ts
+@@ -1,4 +1,11 @@
+ import { z } from "zod";
++import bookCatalog from "./corpus-book-sources.json";
++
++export const bookSourceIds: readonly string[] = [
++  "gutenberg",
++  ...bookCatalog.sources.map((source) => source.id),
++];
++export const corpusBookCatalog = bookCatalog;
+ 
+ export const corpusSources = [
+   {
+@@ -69,9 +76,33 @@ export const corpusSources = [
+     id: "cervantes",
+     name: "Biblioteca Cervantes",
+     domain: "Libros",
+-    url: "https://www.cervantesvirtual.com/",
++    url: "https://www.cervantesvirtual.com/marco-legal/",
++    state: "require_review",
++    note: "O portal inclúe obras protexidas e reclama dereitos das edicións dixitais e da base de datos. Require revisión por obra e permiso de reutilización cando corresponda.",
++  },
++  {
++    id: "elejandria",
++    name: "Elejandría",
++    domain: "Libros",
++    url: "https://www.elejandria.com/aviso-legal",
++    state: "require_permission",
++    note: "Declara dominio público, pero limita reutilizar recursos propios. Revisar permiso do portal, autor, tradución, edición e territorio.",
++  },
++  {
++    id: "textos-info",
++    name: "Textos.info",
++    domain: "Libros e textos",
++    url: "https://www.textos.info/preguntas-frecuentes",
+     state: "require_review",
+-    note: "Revisar por obra e edición; acceso libre non implica licenza de adestramento.",
++    note: "Mestura dominio público, licenzas e autorizacións específicas. O feed OPDS non acredita a licenza de cada texto.",
++  },
++  {
++    id: "openlibrary",
++    name: "Open Library",
++    domain: "Metadatos de libros",
++    url: "https://openlibrary.org/developers/licensing",
++    state: "require_review",
++    note: "Os préstamos quedan excluídos. Dereitos dos metadatos non son os do libro; respectar robots e usar dumps para acceso masivo.",
+   },
+ ] as const;
+ 
+@@ -88,6 +119,9 @@ export const downloadPlanSchema = z
+       "rtve",
+       "gutenberg",
+       "cervantes",
++      "elejandria",
++      "textos-info",
++      "openlibrary",
+     ]),
+     asset_url: z
+       .string()
+@@ -165,11 +199,39 @@ export const downloadResultSchema = z
+     sha256: z.string().regex(/^[0-9a-f]{64}$/),
+     plan_sha256: z.string().regex(/^[0-9a-f]{64}$/),
+     training_allowed: z.literal(false),
+-    rights_basis: z.literal("user-reviewed-declaration"),
++    rights_basis: z.enum([
++      "user-reviewed-declaration",
++      "human-per-work-declaration-with-verified-evidence-files",
++    ]),
++    work_review: z
++      .object({
++        format: z.literal("hyd-book-work-review/1"),
++        review_status: z.literal("reviewed"),
++        source_id: z.string().min(1),
++        work_id: z.string().min(1),
++        edition_id: z.string().min(1),
++        asset_url: z.string().url(),
++        license: z.string().min(1),
++        reviewer: z.object({ kind: z.literal("human"), id: z.string().min(1) }),
++        training_allowed: z.literal(false),
++      })
++      .passthrough()
++      .optional(),
+     rights: z.object({
+       verified: z.literal(true),
+       license: z.string().min(1),
+       evidence_url: z.string().url(),
+     }),
+   })
+-  .strict();
++  .strict()
++  .superRefine((result, context) => {
++    if (
++      result.rights_basis === "human-per-work-declaration-with-verified-evidence-files" &&
++      !result.work_review
++    )
++      context.addIssue({
++        code: "custom",
++        message: "Falta a revisión por obra do resultado.",
++        path: ["work_review"],
++      });
++  });
+diff --git a/src/routes/_authenticated/corpus.tsx b/src/routes/_authenticated/corpus.tsx
+index 0f1879e..31f969b 100644
+--- a/src/routes/_authenticated/corpus.tsx
++++ b/src/routes/_authenticated/corpus.tsx
+@@ -3,9 +3,12 @@ import { useState } from "react";
+ import { useServerFn } from "@tanstack/react-start";
+ import { useQuery } from "@tanstack/react-query";
+ import { listCorpusJobs, createCorpusJob, cancelCorpusJob } from "@/lib/corpus-queue.functions";
++import { listCorpusUploads, uploadCorpusFile } from "@/lib/corpus-upload.functions";
+ import {
+   acquisitionImportSchema,
+   corpusSources,
++  bookSourceIds,
++  corpusBookCatalog,
+   corpusTotals,
+   downloadPlanSchema,
+   downloadResultSchema,
+@@ -33,6 +36,14 @@ function Corpus() {
+   const list = useServerFn(listCorpusJobs);
+   const enqueue = useServerFn(createCorpusJob);
+   const cancel = useServerFn(cancelCorpusJob);
++  const uploadFile = useServerFn(uploadCorpusFile);
++  const listFiles = useServerFn(listCorpusUploads);
++  const uploads = useQuery({ queryKey: ["corpus-uploads", user.id], queryFn: () => listFiles() });
++  const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
++  const [uploadSource, setUploadSource] = useState("unknown");
++  const [uploadContext, setUploadContext] = useState("");
++  const [uploadBusy, setUploadBusy] = useState(false);
++  const [uploadProgress, setUploadProgress] = useState("");
+   const jobs = useQuery({
+     queryKey: ["corpus-jobs", user.id],
+     queryFn: () => list(),
+@@ -63,6 +74,112 @@ function Corpus() {
+       </nav>
+       <h1 className="text-3xl font-bold">Corpus</h1>
+       <p>Fontes, descargas e preparación de datos de HYDRA e Hyd.</p>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Adxuntar obras descargadas</h2>
++        <p>
++          Escolle varios PDF, EPUB, TXT, HTML, MD ou MOBI: ata 20 MiB por ficheiro e 100 ficheiros
++          por lote, máximo 500 MiB. Gárdanse en bruto, coa procedencia que declares e o seu hash.
++          Dereitos, privacidade e descontaminación quedan pendentes.
++        </p>
++        <label className="block">
++          Fonte declarada{" "}
++          <select
++            value={uploadSource}
++            onChange={(event) => setUploadSource(event.target.value)}
++            disabled={uploadBusy}
++          >
++            <option value="unknown">Sen identificar</option>
++            {corpusSources
++              .filter((entry) => bookSourceIds.includes(entry.id))
++              .map((entry) => (
++                <option key={entry.id} value={entry.id}>
++                  {entry.name}
++                </option>
++              ))}
++          </select>
++        </label>
++        <label className="block">
++          URL de contexto da descarga (opcional; non acredita cada edición)
++          <input
++            className="border p-2 w-full"
++            value={uploadContext}
++            onChange={(event) => setUploadContext(event.target.value)}
++            disabled={uploadBusy}
++          />
++        </label>
++        <input
++          type="file"
++          multiple
++          accept=".pdf,.epub,.txt,.html,.htm,.md,.mobi"
++          aria-label="Adxuntar múltiples obras"
++          disabled={uploadBusy}
++          onChange={(event) => setSelectedFiles(Array.from(event.target.files || []))}
++        />
++        <p>{selectedFiles.length} ficheiros seleccionados.</p>
++        <button
++          disabled={uploadBusy || !selectedFiles.length || !uploads.data?.enabled}
++          onClick={async () => {
++            setError("");
++            setUploadBusy(true);
++            try {
++              if (
++                selectedFiles.length > 100 ||
++                selectedFiles.reduce((sum, file) => sum + file.size, 0) > 500 * 1024 * 1024
++              )
++                throw new Error("Lote maior de 100 ficheiros ou 500 MiB.");
++              if (selectedFiles.some((file) => !file.size || file.size > 20 * 1024 * 1024))
++                throw new Error("Cada ficheiro debe ocupar entre 1 byte e 20 MiB.");
++              for (const [index, file] of selectedFiles.entries()) {
++                setUploadProgress(`Gardando ${index + 1}/${selectedFiles.length}: ${file.name}`);
++                const data = new FormData();
++                data.set("file", file);
++                data.set("source_id", uploadSource);
++                data.set("source_context_url", uploadContext);
++                await uploadFile({ data });
++                setSelectedFiles(selectedFiles.slice(index + 1));
++              }
++              setSelectedFiles([]);
++              setUploadProgress("Lote gardado; revisión pendente.");
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Erro ao cargar o lote.");
++            } finally {
++              setUploadBusy(false);
++              await uploads.refetch();
++            }
++          }}
++        >
++          {uploadBusy ? "Gardando…" : "Gardar ficheiros en bruto"}
++        </button>
++        <p role="status">{uploadProgress}</p>
++        {uploads.error ? (
++          <p role="alert">{uploads.error.message}</p>
++        ) : !uploads.data?.enabled ? (
++          <p>
++            O servidor require un directorio de importación local configurado para gardar ficheiros.
++          </p>
++        ) : (
++          <>
++            <button
++              onClick={() =>
++                download("corpus-manual-assets.json", {
++                  format: "hyd-manual-asset-inventory/1",
++                  training_allowed: false,
++                  files: uploads.data.files,
++                })
++              }
++            >
++              Exportar inventario das cargas
++            </button>
++            <ul>
++              {uploads.data.files.map((file) => (
++                <li key={file.id}>
++                  {file.original_filename} · {file.bytes.toLocaleString()} bytes · revisión pendente
++                </li>
++              ))}
++            </ul>
++          </>
++        )}
++      </section>
+       <section className="rounded border p-4 space-y-3">
+         <h2 className="font-bold">Inventario real</h2>
+         <p>
+@@ -159,6 +276,9 @@ function Corpus() {
+       </section>
+       <section className="rounded border p-4 space-y-3">
+         <h2 className="font-bold">Preparar unha descarga</h2>
++        <button onClick={() => download("corpus-book-sources.json", corpusBookCatalog)}>
++          Exportar catálogo e revisión das fontes de libros
++        </button>
+         <p>
+           Exporta un plan ou envía unha solicitude á cola configurada. O axente local debe estar en
+           execución para descargala.
+@@ -179,6 +299,45 @@ function Corpus() {
+             ))}
+           </select>
+         </label>
++        {bookSourceIds.includes(source) && (
++          <div className="rounded border p-3 space-y-2">
++            <p>
++              Esta fonte require revisión por obra, tradución, edición e territorio. A descarga de
++              libros usa o plan nativo /2 con evidencia gardada; Open Library queda só para
++              metadatos e exclúe préstamos.
++            </p>
++            <button
++              onClick={() =>
++                download("book-work-review.json", {
++                  format: "hyd-book-work-review/1",
++                  source_id: source,
++                  work_id: null,
++                  title_declared: null,
++                  authors_declared: [],
++                  declarations: {},
++                  asset_url: asset || null,
++                  edition_id: null,
++                  license: null,
++                  review_status: "pending",
++                  reviewer: null,
++                  territories: ["ES"],
++                  work_rights: "pending",
++                  translation_rights: "pending",
++                  edition_rights: "pending",
++                  source_access: "pending",
++                  tdm_reservations: "pending",
++                  attribution: "pending",
++                  privacy: "pending",
++                  decontamination: "pending",
++                  evidence: [],
++                  training_allowed: false,
++                })
++              }
++            >
++              Exportar ficha de revisión por obra
++            </button>
++          </div>
++        )}
+         <label className="block">
+           URL HTTPS do ficheiro{" "}
+           <input
+@@ -256,7 +415,7 @@ function Corpus() {
+           Declaro que revisei os dereitos de descarga deste ficheiro coa evidencia indicada.
+         </label>
+         <button
+-          disabled={busy || !reviewed || !jobs.data?.enabled}
++          disabled={busy || !reviewed || !jobs.data?.enabled || bookSourceIds.includes(source)}
+           onClick={async () => {
+             setError("");
+             setBusy(true);
+diff --git a/src/test/setup.ts b/src/test/setup.ts
+index e61962d..970bac8 100644
+--- a/src/test/setup.ts
++++ b/src/test/setup.ts
+@@ -1,20 +1,22 @@
+ import "@testing-library/jest-dom/vitest";
+ 
+-Object.defineProperty(window, "scrollTo", {
+-  writable: true,
+-  value: () => {},
+-});
++if (typeof window !== "undefined") {
++  Object.defineProperty(window, "scrollTo", {
++    writable: true,
++    value: () => {},
++  });
+ 
+-Object.defineProperty(window, "matchMedia", {
+-  writable: true,
+-  value: (query: string) => ({
+-    matches: false,
+-    media: query,
+-    onchange: null,
+-    addListener: () => {},
+-    removeListener: () => {},
+-    addEventListener: () => {},
+-    removeEventListener: () => {},
+-    dispatchEvent: () => {},
+-  }),
+-});
++  Object.defineProperty(window, "matchMedia", {
++    writable: true,
++    value: (query: string) => ({
++      matches: false,
++      media: query,
++      onchange: null,
++      addListener: () => {},
++      removeListener: () => {},
++      addEventListener: () => {},
++      removeEventListener: () => {},
++      dispatchEvent: () => {},
++    }),
++  });
++}

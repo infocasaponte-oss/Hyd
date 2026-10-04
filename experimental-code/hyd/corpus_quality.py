@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Streaming, non-destructive audit of a sealed corpus; no source text in reports."""
 from __future__ import annotations
 

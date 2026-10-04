@@ -1,0 +1,803 @@
+diff --git a/src/lib/corpus-workspace.test.ts b/src/lib/corpus-workspace.test.ts
+new file mode 100644
+index 0000000..b9ac51c
+--- /dev/null
++++ b/src/lib/corpus-workspace.test.ts
+@@ -0,0 +1,76 @@
++import { describe, expect, it } from "vitest";
++import {
++  acquisitionImportSchema,
++  corpusTotals,
++  downloadPlanSchema,
++  downloadResultSchema,
++} from "./corpus-workspace";
++
++describe("corpus workspace", () => {
++  it("accepts bounded worker results while rejecting fabricated training approval", () => {
++    const result = {
++      format: "hyd-corpus-download-result/1",
++      state: "downloaded",
++      source_id: "boe",
++      asset_url: "https://www.boe.es/fixture.xml",
++      bytes: 10,
++      sha256: "a".repeat(64),
++      plan_sha256: "b".repeat(64),
++      training_allowed: false,
++      rights_basis: "user-reviewed-declaration",
++      rights: {
++        verified: true,
++        license: "public-domain",
++        evidence_url: "https://www.boe.es/review",
++      },
++    };
++    expect(downloadResultSchema.safeParse(result).success).toBe(true);
++    expect(downloadResultSchema.safeParse({ ...result, training_allowed: true }).success).toBe(
++      false,
++    );
++  });
++  it("imports actual report format and counts without inventing tokens", () => {
++    const report = acquisitionImportSchema.parse({
++      format: "acquisition-source-review/1",
++      snapshot_transactional: false,
++      training_admission: false,
++      tokens_measured: false,
++      download_bytes_measured: false,
++      files: [],
++      groups: [
++        {
++          category: "fixture",
++          source: "fixture",
++          license: "unknown",
++          language: "es",
++          rows: 10,
++          characters: 100,
++          normalized_duplicates: 2,
++        },
++      ],
++    });
++    expect(corpusTotals(report)).toEqual({ rows: 10, characters: 100, duplicates: 2 });
++    expect(acquisitionImportSchema.safeParse({ ...report, training_admission: true }).success).toBe(
++      false,
++    );
++  });
++  it("plans remain prepared and cannot claim training permission or exceed budget", () => {
++    const plan = {
++      format: "hyd-corpus-download-plan/1",
++      source_id: "boe",
++      asset_url: "https://www.boe.es/fixture.xml",
++      max_bytes: 1024,
++      rights: { verified: false, license: "", evidence_url: "" },
++      training_allowed: false,
++      state: "prepared",
++    };
++    expect(downloadPlanSchema.safeParse(plan).success).toBe(true);
++    for (const changes of [
++      { training_allowed: true },
++      { state: "downloaded" },
++      { max_bytes: 2 ** 40 },
++      { asset_url: "http://www.boe.es/file" },
++    ])
++      expect(downloadPlanSchema.safeParse({ ...plan, ...changes }).success).toBe(false);
++  });
++});
+diff --git a/src/lib/corpus-workspace.ts b/src/lib/corpus-workspace.ts
+new file mode 100644
+index 0000000..0e0873d
+--- /dev/null
++++ b/src/lib/corpus-workspace.ts
+@@ -0,0 +1,175 @@
++import { z } from "zod";
++
++export const corpusSources = [
++  {
++    id: "wikipedia-es",
++    name: "Wikipedia ES",
++    domain: "Enciclopedia",
++    url: "https://dumps.wikimedia.org/eswiki/",
++    state: "require_review",
++    note: "CC BY-SA: revisar compatibilidade coa política actual antes de descargar.",
++  },
++  {
++    id: "opensubtitles-es",
++    name: "OpenSubtitles ES",
++    domain: "Diálogo",
++    url: "https://opus.nlpl.eu/",
++    state: "require_review",
++    note: "Disponibilidade en OPUS non acredita dereitos sobre cada subtítulo.",
++  },
++  {
++    id: "boe",
++    name: "BOE",
++    domain: "Lexislación",
++    url: "https://www.boe.es/",
++    state: "require_review",
++    note: "Revisar reutilización e conservar a orixe do documento; evitar encher lingua xeral con textos legais.",
++  },
++  {
++    id: "congreso",
++    name: "Congreso",
++    domain: "Debate parlamentario",
++    url: "https://www.congreso.es/",
++    state: "require_review",
++    note: "Revisar condicións e tipo de documento antes de preparar un lote.",
++  },
++  {
++    id: "elpais",
++    name: "El País",
++    domain: "Noticias",
++    url: "https://elpais.com/info/aviso-legal/",
++    state: "require_permission",
++    note: "RSS non concede permiso de adestramento; autorización pendente.",
++  },
++  {
++    id: "elmundo",
++    name: "El Mundo",
++    domain: "Noticias",
++    url: "https://www.elmundo.es/",
++    state: "require_permission",
++    note: "RSS non concede permiso de adestramento; autorización pendente.",
++  },
++  {
++    id: "rtve",
++    name: "RTVE",
++    domain: "Noticias",
++    url: "https://www.rtve.es/",
++    state: "require_review",
++    note: "Revisar condicións. Un endpoint JSON non é un feed RSS.",
++  },
++  {
++    id: "gutenberg",
++    name: "Gutenberg ES",
++    domain: "Libros",
++    url: "https://www.gutenberg.org/policy/license.html",
++    state: "require_review",
++    note: "Comprobar obra, edición, tradución e territorio; dominio público nos EUA non acredita o de España.",
++  },
++  {
++    id: "cervantes",
++    name: "Biblioteca Cervantes",
++    domain: "Libros",
++    url: "https://www.cervantesvirtual.com/",
++    state: "require_review",
++    note: "Revisar por obra e edición; acceso libre non implica licenza de adestramento.",
++  },
++] as const;
++
++export const downloadPlanSchema = z
++  .object({
++    format: z.literal("hyd-corpus-download-plan/1"),
++    source_id: z.enum([
++      "wikipedia-es",
++      "opensubtitles-es",
++      "boe",
++      "congreso",
++      "elpais",
++      "elmundo",
++      "rtve",
++      "gutenberg",
++      "cervantes",
++    ]),
++    asset_url: z
++      .string()
++      .url()
++      .refine((url) => new URL(url).protocol === "https:", "Require HTTPS"),
++    max_bytes: z
++      .number()
++      .int()
++      .min(1024)
++      .max(1024 * 1024 * 1024),
++    rights: z
++      .object({
++        verified: z.boolean(),
++        license: z.string().max(200),
++        evidence_url: z.string().max(2000),
++      })
++      .strict(),
++    training_allowed: z.literal(false),
++    state: z.literal("prepared"),
++  })
++  .strict();
++
++const groupSchema = z
++  .object({
++    category: z.string(),
++    source: z.string(),
++    license: z.string(),
++    language: z.string(),
++    rows: z.number().int().nonnegative(),
++    characters: z.number().int().nonnegative(),
++    normalized_duplicates: z.number().int().nonnegative().default(0),
++    empty: z.number().int().nonnegative().default(0),
++  })
++  .passthrough();
++export const acquisitionImportSchema = z
++  .object({
++    format: z.literal("acquisition-source-review/1"),
++    snapshot_transactional: z.literal(false),
++    training_admission: z.literal(false),
++    tokens_measured: z.literal(false),
++    download_bytes_measured: z.literal(false),
++    groups: z.array(groupSchema).max(2000),
++    files: z
++      .array(
++        z
++          .object({
++            path: z.string(),
++            bytes: z.number().nonnegative(),
++            sha256: z.string().regex(/^[0-9a-f]{64}$/),
++          })
++          .passthrough(),
++      )
++      .max(20000),
++  })
++  .passthrough();
++
++export function corpusTotals(report: z.infer<typeof acquisitionImportSchema>) {
++  return report.groups.reduce(
++    (total, row) => ({
++      rows: total.rows + row.rows,
++      characters: total.characters + row.characters,
++      duplicates: total.duplicates + row.normalized_duplicates,
++    }),
++    { rows: 0, characters: 0, duplicates: 0 },
++  );
++}
++
++export const downloadResultSchema = z
++  .object({
++    format: z.literal("hyd-corpus-download-result/1"),
++    state: z.literal("downloaded"),
++    source_id: z.string().min(1),
++    asset_url: z.string().url(),
++    bytes: z.number().int().positive(),
++    sha256: z.string().regex(/^[0-9a-f]{64}$/),
++    plan_sha256: z.string().regex(/^[0-9a-f]{64}$/),
++    training_allowed: z.literal(false),
++    rights_basis: z.literal("user-reviewed-declaration"),
++    rights: z.object({
++      verified: z.literal(true),
++      license: z.string().min(1),
++      evidence_url: z.string().url(),
++    }),
++  })
++  .strict();
+diff --git a/src/routeTree.gen.ts b/src/routeTree.gen.ts
+index 5fd03a4..83435fa 100644
+--- a/src/routeTree.gen.ts
++++ b/src/routeTree.gen.ts
+@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
+ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+ import { Route as AuthRouteImport } from './routes/auth'
+ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
++import { Route as AuthenticatedCorpusRouteImport } from './routes/_authenticated/corpus'
+ import { Route as AuthenticatedEvaluarRouteImport } from './routes/_authenticated/evaluar'
+ 
+ const IndexRoute = IndexRouteImport.update({
+@@ -34,6 +35,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+   path: '/sitemap.xml',
+   getParentRoute: () => rootRouteImport,
+ } as any)
++const AuthenticatedCorpusRoute = AuthenticatedCorpusRouteImport.update({
++  id: '/corpus',
++  path: '/corpus',
++  getParentRoute: () => AuthenticatedRouteRoute,
++} as any)
+ const AuthenticatedEvaluarRoute = AuthenticatedEvaluarRouteImport.update({
+   id: '/evaluar',
+   path: '/evaluar',
+@@ -44,12 +50,14 @@ export interface FileRoutesByFullPath {
+   '/': typeof IndexRoute
+   '/auth': typeof AuthRoute
+   '/sitemap.xml': typeof SitemapDotxmlRoute
++  '/corpus': typeof AuthenticatedCorpusRoute
+   '/evaluar': typeof AuthenticatedEvaluarRoute
+ }
+ export interface FileRoutesByTo {
+   '/': typeof IndexRoute
+   '/auth': typeof AuthRoute
+   '/sitemap.xml': typeof SitemapDotxmlRoute
++  '/corpus': typeof AuthenticatedCorpusRoute
+   '/evaluar': typeof AuthenticatedEvaluarRoute
+ }
+ export interface FileRoutesById {
+@@ -58,19 +66,21 @@ export interface FileRoutesById {
+   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+   '/auth': typeof AuthRoute
+   '/sitemap.xml': typeof SitemapDotxmlRoute
++  '/_authenticated/corpus': typeof AuthenticatedCorpusRoute
+   '/_authenticated/evaluar': typeof AuthenticatedEvaluarRoute
+ }
+ export interface FileRouteTypes {
+   fileRoutesByFullPath: FileRoutesByFullPath
+-  fullPaths: '/' | '/auth' | '/sitemap.xml' | '/evaluar'
++  fullPaths: '/' | '/auth' | '/sitemap.xml' | '/corpus' | '/evaluar'
+   fileRoutesByTo: FileRoutesByTo
+-  to: '/' | '/auth' | '/sitemap.xml' | '/evaluar'
++  to: '/' | '/auth' | '/sitemap.xml' | '/corpus' | '/evaluar'
+   id:
+     | '__root__'
+     | '/'
+     | '/_authenticated'
+     | '/auth'
+     | '/sitemap.xml'
++    | '/_authenticated/corpus'
+     | '/_authenticated/evaluar'
+   fileRoutesById: FileRoutesById
+ }
+@@ -111,6 +121,13 @@ declare module '@tanstack/react-router' {
+       preLoaderRoute: typeof SitemapDotxmlRouteImport
+       parentRoute: typeof rootRouteImport
+     }
++    '/_authenticated/corpus': {
++      id: '/_authenticated/corpus'
++      path: '/corpus'
++      fullPath: '/corpus'
++      preLoaderRoute: typeof AuthenticatedCorpusRouteImport
++      parentRoute: typeof AuthenticatedRouteRoute
++    }
+     '/_authenticated/evaluar': {
+       id: '/_authenticated/evaluar'
+       path: '/evaluar'
+@@ -122,10 +139,12 @@ declare module '@tanstack/react-router' {
+ }
+ 
+ interface AuthenticatedRouteRouteChildren {
++  AuthenticatedCorpusRoute: typeof AuthenticatedCorpusRoute
+   AuthenticatedEvaluarRoute: typeof AuthenticatedEvaluarRoute
+ }
+ 
+ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
++  AuthenticatedCorpusRoute: AuthenticatedCorpusRoute,
+   AuthenticatedEvaluarRoute: AuthenticatedEvaluarRoute,
+ }
+ 
+diff --git a/src/routes/_authenticated/corpus.tsx b/src/routes/_authenticated/corpus.tsx
+new file mode 100644
+index 0000000..fb85fef
+--- /dev/null
++++ b/src/routes/_authenticated/corpus.tsx
+@@ -0,0 +1,258 @@
++import { createFileRoute, Link } from "@tanstack/react-router";
++import { useState } from "react";
++import {
++  acquisitionImportSchema,
++  corpusSources,
++  corpusTotals,
++  downloadPlanSchema,
++  downloadResultSchema,
++} from "@/lib/corpus-workspace";
++import type { z } from "zod";
++
++export const Route = createFileRoute("/_authenticated/corpus")({
++  staticData: { sitemap: false },
++  component: Corpus,
++});
++
++function download(name: string, value: unknown) {
++  const url = URL.createObjectURL(
++    new Blob([JSON.stringify(value, null, 2)], { type: "application/json" }),
++  );
++  const anchor = document.createElement("a");
++  anchor.href = url;
++  anchor.download = name;
++  anchor.click();
++  URL.revokeObjectURL(url);
++}
++
++function Corpus() {
++  const [report, setReport] = useState<z.infer<typeof acquisitionImportSchema> | null>(null);
++  const [error, setError] = useState("");
++  const [downloads, setDownloads] = useState<z.infer<typeof downloadResultSchema>[]>([]);
++  const [source, setSource] = useState<(typeof corpusSources)[number]["id"]>("boe");
++  const [asset, setAsset] = useState("");
++  const [budget, setBudget] = useState(100);
++  const totals = report ? corpusTotals(report) : null;
++  return (
++    <main className="mx-auto max-w-5xl px-6 py-10 font-mono space-y-6">
++      <nav className="flex gap-4">
++        <Link to="/">Panel</Link>
++        <Link to="/evaluar">Avaliación</Link>
++        <Link to="/corpus">Corpus</Link>
++      </nav>
++      <h1 className="text-3xl font-bold">Corpus</h1>
++      <p>Fontes, descargas e preparación de datos de HYDRA e Hyd.</p>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Inventario real</h2>
++        <p>
++          Importa o informe JSON do descargador local. Os datos desta vista non se gardan no
++          servidor; exporta o informe para conservalos.
++        </p>
++        <input
++          type="file"
++          accept=".json,application/json"
++          aria-label="Importar inventario"
++          onChange={async (event) => {
++            setError("");
++            const file = event.target.files?.[0];
++            if (!file) return;
++            try {
++              if (file.size > 10 * 1024 * 1024) throw new Error("Informe maior de 10 MB.");
++              const parsed = acquisitionImportSchema.parse(JSON.parse(await file.text()));
++              setReport(parsed);
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Informe inválido.");
++            }
++          }}
++        />
++        {totals ? (
++          <>
++            <p>
++              {totals.rows.toLocaleString()} rexistros · {totals.duplicates.toLocaleString()}{" "}
++              duplicados · {totals.characters.toLocaleString()} caracteres
++            </p>
++            <p>
++              Tokens e tráfico de descarga sen medir. Corpus pendente de admisión; inventario non
++              transaccional.
++            </p>
++            <div className="overflow-auto">
++              <table className="w-full text-xs">
++                <thead>
++                  <tr>
++                    {[
++                      "Categoría",
++                      "Fonte",
++                      "Licenza declarada",
++                      "Idioma",
++                      "Rexistros",
++                      "Duplicados",
++                    ].map((name) => (
++                      <th className="p-2 text-left" key={name}>
++                        {name}
++                      </th>
++                    ))}
++                  </tr>
++                </thead>
++                <tbody>
++                  {report?.groups.map((row, index) => (
++                    <tr key={index}>
++                      {[
++                        row.category,
++                        row.source,
++                        row.license,
++                        row.language,
++                        row.rows,
++                        row.normalized_duplicates,
++                      ].map((value, cell) => (
++                        <td className="border-t p-2" key={cell}>
++                          {value}
++                        </td>
++                      ))}
++                    </tr>
++                  ))}
++                </tbody>
++              </table>
++            </div>
++            <button onClick={() => download("corpus-inventory.json", report)}>
++              Exportar inventario completo
++            </button>
++          </>
++        ) : (
++          <p>Aínda non hai inventario importado. Non se mostran cantidades estimadas.</p>
++        )}
++      </section>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Fontes propostas</h2>
++        {corpusSources.map((entry) => (
++          <article key={entry.id} className="border-t pt-3">
++            <a href={entry.url} target="_blank" rel="noreferrer" className="font-bold underline">
++              {entry.name}
++            </a>{" "}
++            · {entry.domain}
++            <p>{entry.note}</p>
++            <p>
++              Estado: pendente de {entry.state === "require_permission" ? "permiso" : "revisión"}.
++            </p>
++          </article>
++        ))}
++      </section>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Preparar unha descarga</h2>
++        <p>
++          Prepara un plan exportable para o descargador local. Gardar o plan non inicia unha
++          descarga. A conexión cun axente de descargas segue pendente.
++        </p>
++        <label className="block">
++          Fonte{" "}
++          <select
++            value={source}
++            onChange={(event) => setSource(event.target.value as typeof source)}
++          >
++            {corpusSources.map((entry) => (
++              <option key={entry.id} value={entry.id}>
++                {entry.name}
++              </option>
++            ))}
++          </select>
++        </label>
++        <label className="block">
++          URL HTTPS do ficheiro{" "}
++          <input
++            className="border p-2 w-full"
++            value={asset}
++            onChange={(event) => setAsset(event.target.value)}
++          />
++        </label>
++        <label className="block">
++          Límite da descarga (MiB){" "}
++          <input
++            type="number"
++            min={1}
++            max={1024}
++            value={budget}
++            onChange={(event) => setBudget(Number(event.target.value))}
++          />
++        </label>
++        <button
++          onClick={() => {
++            setError("");
++            try {
++              const plan = downloadPlanSchema.parse({
++                format: "hyd-corpus-download-plan/1",
++                source_id: source,
++                asset_url: asset,
++                max_bytes: budget * 1024 * 1024,
++                rights: { verified: false, license: "", evidence_url: "" },
++                training_allowed: false,
++                state: "prepared",
++              });
++              download("corpus-download-plan.json", plan);
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Plan inválido.");
++            }
++          }}
++        >
++          Exportar plan pendente de revisión
++        </button>
++      </section>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Descargas realizadas</h2>
++        <p>
++          Importa o manifest.json emitido polo descargador. Mostra o resultado gardado, sen simular
++          un seguimento en directo.
++        </p>
++        <input
++          type="file"
++          accept=".json,application/json"
++          aria-label="Importar resultado de descarga"
++          onChange={async (event) => {
++            const file = event.target.files?.[0];
++            if (!file) return;
++            setError("");
++            try {
++              if (file.size > 1024 * 1024) throw new Error("Manifest maior de 1 MB.");
++              const result = downloadResultSchema.parse(JSON.parse(await file.text()));
++              setDownloads((current) => [
++                ...current.filter((item) => item.plan_sha256 !== result.plan_sha256),
++                result,
++              ]);
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Resultado inválido.");
++            }
++          }}
++        />
++        {downloads.length === 0 ? (
++          <p>Sen resultados importados.</p>
++        ) : (
++          <>
++            {downloads.map((item) => (
++              <article key={item.plan_sha256} className="border-t pt-2 break-all">
++                <p>
++                  {item.source_id} · {item.bytes.toLocaleString()} bytes · descargado
++                </p>
++                <p>{item.asset_url}</p>
++                <p>SHA-256: {item.sha256}</p>
++                <p>Pendente de admisión para adestrar.</p>
++              </article>
++            ))}
++            <button
++              onClick={() =>
++                download("corpus-download-results.json", {
++                  format: "hyd-corpus-download-results/1",
++                  downloads,
++                })
++              }
++            >
++              Exportar resultados importados
++            </button>
++          </>
++        )}
++      </section>
++      {error && (
++        <p role="alert" className="border p-3">
++          {error}
++        </p>
++      )}
++    </main>
++  );
++}
+diff --git a/src/routes/_authenticated/evaluar.tsx b/src/routes/_authenticated/evaluar.tsx
+index 06c1898..46a8548 100644
+--- a/src/routes/_authenticated/evaluar.tsx
++++ b/src/routes/_authenticated/evaluar.tsx
+@@ -208,6 +208,9 @@ function Evaluar() {
+         <Link to="/" className="text-xs uppercase tracking-widest text-muted-foreground">
+           ← Panel
+         </Link>
++        <Link to="/corpus" className="text-xs underline">
++          Corpus
++        </Link>
+         <button
+           onClick={signOut}
+           className="rounded-md border border-border px-3 py-1.5 text-sm hover:bg-accent"
+diff --git a/src/routes/index.tsx b/src/routes/index.tsx
+index c616559..71a7e38 100644
+--- a/src/routes/index.tsx
++++ b/src/routes/index.tsx
+@@ -10,7 +10,10 @@ function SessionLink() {
+     return () => data.subscription.unsubscribe();
+   }, []);
+   return (
+-    <Link to={email ? "/evaluar" : "/auth"} className="rounded-md border border-border px-3 py-1.5 text-xs hover:bg-accent">
++    <Link
++      to={email ? "/evaluar" : "/auth"}
++      className="rounded-md border border-border px-3 py-1.5 text-xs hover:bg-accent"
++    >
+       {email ? `Área de evaluadores · ${email}` : "Entrar como evaluador"}
+     </Link>
+   );
+@@ -21,9 +24,15 @@ export const Route = createFileRoute("/")({
+   head: () => ({
+     meta: [
+       { title: "Hyd · Panel de calibración" },
+-      { name: "description", content: "Resultados de calibración e adestramento do enrutador Hyd de HYDRA." },
++      {
++        name: "description",
++        content: "Resultados de calibración e adestramento do enrutador Hyd de HYDRA.",
++      },
+       { property: "og:title", content: "Hyd · Panel de calibración" },
+-      { property: "og:description", content: "Cobertura, acerto e historial de cambios dos candidatos de Hyd." },
++      {
++        property: "og:description",
++        content: "Cobertura, acerto e historial de cambios dos candidatos de Hyd.",
++      },
+       { property: "og:type", content: "website" },
+       { name: "twitter:card", content: "summary" },
+     ],
+@@ -31,12 +40,36 @@ export const Route = createFileRoute("/")({
+   component: Index,
+ });
+ 
+-type Row = { set: string; n: number; old: [number, number, number]; neu: [number, number, number]; note?: string };
++type Row = {
++  set: string;
++  n: number;
++  old: [number, number, number];
++  neu: [number, number, number];
++  note?: string;
++};
+ // [acerto total, cobertura ("decide en"), acerto nas aceptadas]
+ const rows: Row[] = [
+-  { set: "human-paraphrase-v1", n: 100, old: [0.64, 0.12, 1.0], neu: [0.65, 0.27, 1.0], note: "diagnóstico, nunca adestrado" },
+-  { set: "human-style-v1 · test", n: 30, old: [0.33, 0.17, 1.0], neu: [0.37, 0.2, 1.0], note: "as túas frases, parte apartada" },
+-  { set: "human-dev-v1", n: 100, old: [0.54, 0.11, 0.91], neu: [0.53, 0.19, 0.895], note: "usado na calibración (sesgado)" },
++  {
++    set: "human-paraphrase-v1",
++    n: 100,
++    old: [0.64, 0.12, 1.0],
++    neu: [0.65, 0.27, 1.0],
++    note: "diagnóstico, nunca adestrado",
++  },
++  {
++    set: "human-style-v1 · test",
++    n: 30,
++    old: [0.33, 0.17, 1.0],
++    neu: [0.37, 0.2, 1.0],
++    note: "as túas frases, parte apartada",
++  },
++  {
++    set: "human-dev-v1",
++    n: 100,
++    old: [0.54, 0.11, 0.91],
++    neu: [0.53, 0.19, 0.895],
++    note: "usado na calibración (sesgado)",
++  },
+ ];
+ 
+ const pct = (v: number) => `${Math.round(v * 100)} %`;
+@@ -44,8 +77,12 @@ const pct = (v: number) => `${Math.round(v * 100)} %`;
+ function Bar({ a, b }: { a: number; b: number }) {
+   return (
+     <div className="space-y-1">
+-      <div className="h-2 rounded bg-muted"><div className="h-2 rounded bg-muted-foreground/50" style={{ width: pct(a) }} /></div>
+-      <div className="h-2 rounded bg-muted"><div className="h-2 rounded bg-primary" style={{ width: pct(b) }} /></div>
++      <div className="h-2 rounded bg-muted">
++        <div className="h-2 rounded bg-muted-foreground/50" style={{ width: pct(a) }} />
++      </div>
++      <div className="h-2 rounded bg-muted">
++        <div className="h-2 rounded bg-primary" style={{ width: pct(b) }} />
++      </div>
+     </div>
+   );
+ }
+@@ -54,12 +91,20 @@ function Index() {
+   return (
+     <main className="mx-auto max-w-5xl px-6 py-12 font-mono text-foreground">
+       <div className="flex items-center justify-between">
+-        <p className="text-xs uppercase tracking-widest text-muted-foreground">HYDRA · Hyd · SHADOW_ONLY</p>
+-        <SessionLink />
++        <p className="text-xs uppercase tracking-widest text-muted-foreground">
++          HYDRA · Hyd · SHADOW_ONLY
++        </p>
++        <div className="flex gap-3">
++          <Link to="/corpus" className="rounded border px-3 py-1.5 text-xs">
++            Corpus
++          </Link>
++          <SessionLink />
++        </div>
+       </div>
+       <h1 className="mt-2 text-3xl font-bold">Panel de calibración</h1>
+       <p className="mt-2 text-sm text-muted-foreground">
+-        Comparativa entre <b>hyd-v5-mix-caldev1</b> (gris) e o novo <b>hyd-v6-hs</b> (escuro), adestrado coas túas 150 frases.
++        Comparativa entre <b>hyd-v5-mix-caldev1</b> (gris) e o novo <b>hyd-v6-hs</b> (escuro),
++        adestrado coas túas 150 frases.
+       </p>
+ 
+       <section className="mt-10 grid gap-4">
+@@ -67,18 +112,26 @@ function Index() {
+           <div key={r.set} className="rounded-lg border border-border bg-card p-5">
+             <div className="flex flex-wrap items-baseline justify-between gap-2">
+               <h2 className="font-semibold">{r.set}</h2>
+-              <span className="text-xs text-muted-foreground">{r.n} filas · {r.note}</span>
++              <span className="text-xs text-muted-foreground">
++                {r.n} filas · {r.note}
++              </span>
+             </div>
+             <div className="mt-4 grid gap-6 sm:grid-cols-3">
+-              {(["Acerto total", "Decide en (cobertura)", "Acerto cando decide"] as const).map((label, i) => (
+-                <div key={label}>
+-                  <div className="flex justify-between text-xs">
+-                    <span>{label}</span>
+-                    <span>{pct((r.old[i] ?? 0))} → <b>{pct((r.neu[i] ?? 0))}</b></span>
++              {(["Acerto total", "Decide en (cobertura)", "Acerto cando decide"] as const).map(
++                (label, i) => (
++                  <div key={label}>
++                    <div className="flex justify-between text-xs">
++                      <span>{label}</span>
++                      <span>
++                        {pct(r.old[i] ?? 0)} → <b>{pct(r.neu[i] ?? 0)}</b>
++                      </span>
++                    </div>
++                    <div className="mt-2">
++                      <Bar a={r.old[i] ?? 0} b={r.neu[i] ?? 0} />
++                    </div>
+                   </div>
+-                  <div className="mt-2"><Bar a={(r.old[i] ?? 0)} b={(r.neu[i] ?? 0)} /></div>
+-                </div>
+-              ))}
++                ),
++              )}
+             </div>
+           </div>
+         ))}
+@@ -87,9 +140,18 @@ function Index() {
+       <section className="mt-10 rounded-lg border border-border p-5 text-sm leading-relaxed">
+         <h2 className="font-semibold">Lectura honesta</h2>
+         <ul className="mt-2 list-disc space-y-1 pl-5 text-muted-foreground">
+-          <li>"Decide en" sube de 12 % a 27 % en paraphrase sen perder precisión (100 % nas aceptadas).</li>
+-          <li>O acerto total case non se move: o modelo lineal actual está no seu teito. Subilo require o experto semántico (E2) do plan MoE.</li>
+-          <li>As 150 frases foron escritas por un asistente de IA, non por usuarios reais. Útiles, pero non son proba de calidade.</li>
++          <li>
++            "Decide en" sube de 12 % a 27 % en paraphrase sen perder precisión (100 % nas
++            aceptadas).
++          </li>
++          <li>
++            O acerto total case non se move: o modelo lineal actual está no seu teito. Subilo
++            require o experto semántico (E2) do plan MoE.
++          </li>
++          <li>
++            As 150 frases foron escritas por un asistente de IA, non por usuarios reais. Útiles,
++            pero non son proba de calidade.
++          </li>
+           <li>Con 30–100 filas, diferenzas de menos de ±10 puntos non son concluíntes.</li>
+         </ul>
+       </section>

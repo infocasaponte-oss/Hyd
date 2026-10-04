@@ -1,0 +1,88 @@
+{
+  "format": "evaluation-dedup-review/1",
+  "evaluation_kind": "general-response",
+  "source_sha256": "8426e4d949f866f328233a66188ffe04ac9f5db61468d90f785f0e4b6f4bc0bd",
+  "rows": 300,
+  "unique": 287,
+  "duplicate_groups": [
+    [
+      71,
+      196
+    ],
+    [
+      76,
+      176,
+      276
+    ],
+    [
+      80,
+      280
+    ],
+    [
+      86,
+      256
+    ],
+    [
+      99,
+      269
+    ],
+    [
+      120,
+      220
+    ],
+    [
+      131,
+      231
+    ],
+    [
+      141,
+      271
+    ],
+    [
+      146,
+      246
+    ],
+    [
+      151,
+      281
+    ],
+    [
+      189,
+      289
+    ],
+    [
+      191,
+      291
+    ]
+  ],
+  "conflicting_reference_groups": [
+    [
+      76,
+      176,
+      276
+    ],
+    [
+      120,
+      220
+    ],
+    [
+      146,
+      246
+    ],
+    [
+      71,
+      196
+    ],
+    [
+      131,
+      231
+    ]
+  ],
+  "replacement_character_rows": [],
+  "deduplicated_ready": false,
+  "index_basis": "zero-based source row position",
+  "review_status": "pending",
+  "independence_verified": false,
+  "accuracy_measured": false,
+  "training_allowed": false
+}

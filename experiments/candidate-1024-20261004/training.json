@@ -1,0 +1,31 @@
+{
+  "format": "hyd-training-run/1",
+  "model_sha256": "0a61818729f20a6bc6cf874bf5fb6ff1ce916cfea4695b2e8d8407790a2f1e02",
+  "training": {
+    "criteria": {
+      "chat": "Write a conversational or creative response; no code or external search needed.",
+      "coding": "Write, debug or explain software code; do not execute an environment action.",
+      "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+      "research": "Find or compare external evidence and cite sources.",
+      "vision": "Interpret an attached image, screenshot or photographed document.",
+      "tool_use": "Perform an actual operation using environment tools.",
+      "abstain": "Required question, input or context is missing; ask for clarification.",
+      "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+      "privacy": "Assess or handle personal information and sharing restrictions.",
+      "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+    },
+    "source_sha256": "fb3f0b51ee5976e713a16e49ae2c5c5c497da3ebb286e78f039fc2a0d0c70473",
+    "examples": 1449,
+    "epochs": 80,
+    "seed": 42,
+    "rights_licenses": [
+      "proprietary-hydra-authored"
+    ],
+    "rights_basis": "source-declared"
+  },
+  "state_dims": 1024,
+  "option_dims": 256,
+  "status": "UNCALIBRATED",
+  "authority": false,
+  "independent_test": false
+}

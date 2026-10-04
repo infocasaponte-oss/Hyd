@@ -45,9 +45,10 @@ dev = ["pytest>=9.0.3,<10", "pytest-asyncio>=1.4,<2", "ruff>=0.6", "psutil>=5.9"
 
 [project.scripts]
 hydra = "hydra.cli:main"
+hyd-calibrator = "hyd_calibrator.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["hydra*"]
+include = ["hydra*", "hyd_calibrator*"]
 
 [tool.setuptools.package-data]
 hydra = ["py.typed", "api/studio.html", "api/evaluation_review.html"]

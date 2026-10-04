@@ -1,0 +1,551 @@
+diff --git a/src/components/hyd-annotation-form.tsx b/src/components/hyd-annotation-form.tsx
+new file mode 100644
+index 0000000..ed9dcde
+--- /dev/null
++++ b/src/components/hyd-annotation-form.tsx
+@@ -0,0 +1,127 @@
++import { useState } from "react";
++import { useServerFn } from "@tanstack/react-start";
++import { useQuery } from "@tanstack/react-query";
++import { createHydAnnotation, listHydAnnotations } from "@/lib/hyd-annotations.functions";
++import { annotationSelection } from "@/lib/hyd-annotations";
++import type { z } from "zod";
++
++export function HydAnnotationForm({ recordId }: { recordId: string }) {
++  const [open, setOpen] = useState(false);
++  const [selection, setSelection] = useState<z.infer<typeof annotationSelection>>({
++    riskKind: "unknown",
++    contextStatus: "unknown",
++    abstainReason: "unknown",
++  });
++  const [confirmed, setConfirmed] = useState(false);
++  const [busy, setBusy] = useState(false);
++  const [error, setError] = useState("");
++  const save = useServerFn(createHydAnnotation);
++  const list = useServerFn(listHydAnnotations);
++  const history = useQuery({
++    queryKey: ["hyd-annotations", recordId],
++    queryFn: () => list({ data: { recordId } }),
++    enabled: open,
++  });
++  return (
++    <section className="mt-3 border-t pt-3 text-xs">
++      <button type="button" onClick={() => setOpen(!open)}>
++        Revisión humana e historial
++      </button>
++      {open && (
++        <form
++          className="space-y-2 mt-2"
++          onSubmit={async (event) => {
++            event.preventDefault();
++            setError("");
++            setBusy(true);
++            try {
++              const data = annotationSelection.parse(selection);
++              if (!confirmed) throw new Error("Confirma que esta é a túa revisión humana.");
++              await save({ data: { ...data, recordId, humanConfirmed: true } });
++              setConfirmed(false);
++              await history.refetch();
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Non se puido gardar.");
++            } finally {
++              setBusy(false);
++            }
++          }}
++        >
++          <p>
++            Cada envío engade unha revisión. Non cambia a pregunta nin a clase. Descoñecido non
++            significa ausencia de risco.
++          </p>
++          {(
++            [
++              [
++                "riskKind",
++                "Risco",
++                [
++                  ["unknown", "Pendente"],
++                  ["benign", "Benigna"],
++                  ["dangerous", "Perigosa"],
++                  ["security", "Seguridade"],
++                  ["privacy", "Privacidade"],
++                  ["high_risk", "Alto risco"],
++                ],
++              ],
++              [
++                "contextStatus",
++                "Contexto",
++                [
++                  ["unknown", "Pendente"],
++                  ["sufficient", "Suficiente"],
++                  ["missing", "Falta contexto"],
++                ],
++              ],
++              [
++                "abstainReason",
++                "Motivo de abstención",
++                [
++                  ["unknown", "Pendente"],
++                  ["none", "Non require abstención"],
++                  ["dangerous", "Perigosa"],
++                  ["missing_context", "Falta contexto"],
++                ],
++              ],
++            ] as const
++          ).map(([key, label, options]) => (
++            <label key={key} className="block">
++              {label}
++              <select
++                className="ml-2 border rounded p-1"
++                value={selection[key]}
++                onChange={(event) => setSelection({ ...selection, [key]: event.target.value })}
++              >
++                {options.map(([value, name]) => (
++                  <option key={value} value={value}>
++                    {name}
++                  </option>
++                ))}
++              </select>
++            </label>
++          ))}
++          <label className="block">
++            <input
++              type="checkbox"
++              checked={confirmed}
++              onChange={(event) => setConfirmed(event.target.checked)}
++            />{" "}
++            Confirmo que revisei eu esta pregunta.
++          </label>
++          <button type="submit" disabled={busy || !confirmed}>
++            {busy ? "Gardando…" : "Engadir revisión"}
++          </button>
++          {error && <p role="alert">{error}</p>}
++          {history.error && <p role="alert">{history.error.message}</p>}
++          <p>Últimas 20 revisións desta conta:</p>
++          {history.data?.map((item) => (
++            <p key={item.id}>
++              {item.created_at}: {item.risk_kind} / {item.context_status} / {item.abstain_reason}
++            </p>
++          ))}
++        </form>
++      )}
++    </section>
++  );
++}
+diff --git a/src/integrations/supabase/types.ts b/src/integrations/supabase/types.ts
+index a6b5a74..59eed66 100644
+--- a/src/integrations/supabase/types.ts
++++ b/src/integrations/supabase/types.ts
+@@ -8,6 +8,37 @@ export type Database = {
+   };
+   public: {
+     Tables: {
++      hyd_annotation_events: {
++        Row: {
++          id: string;
++          record_id: string;
++          user_id: string;
++          format: string;
++          reviewer_kind: string;
++          record_sha256: string;
++          status: string;
++          risk_kind: string;
++          context_status: string;
++          abstain_reason: string;
++          created_at: string;
++        };
++        Insert: {
++          id?: string;
++          record_id: string;
++          user_id: string;
++          format?: string;
++          reviewer_kind: string;
++          record_sha256: string;
++          status: string;
++          risk_kind: string;
++          context_status: string;
++          abstain_reason: string;
++          created_at?: string;
++        };
++        Update: never;
++        Relationships: [];
++      };
++
+       hyd_question_corrections: {
+         Row: {
+           id: string;
+diff --git a/src/lib/hyd-annotations.functions.ts b/src/lib/hyd-annotations.functions.ts
+new file mode 100644
+index 0000000..15026be
+--- /dev/null
++++ b/src/lib/hyd-annotations.functions.ts
+@@ -0,0 +1,47 @@
++import { createServerFn } from "@tanstack/react-start";
++import { z } from "zod";
++import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
++import { annotationRequest } from "./hyd-annotations";
++
++export const createHydAnnotation = createServerFn({ method: "POST" })
++  .middleware([requireSupabaseAuth])
++  .validator((input) => annotationRequest.parse(input))
++  .handler(async ({ data, context }) => {
++    const { data: record, error } = await context.supabase
++      .from("hyd_records")
++      .select("id,question,user_id")
++      .eq("id", data.recordId)
++      .eq("user_id", context.userId)
++      .single();
++    if (error || !record) throw new Error("Rexistro propio non dispoñible.");
++    const { createHash } = await import("node:crypto");
++    const { error: insertError } = await context.supabase.from("hyd_annotation_events").insert({
++      record_id: record.id,
++      user_id: context.userId,
++      record_sha256: createHash("sha256").update(record.question, "utf8").digest("hex"),
++      risk_kind: data.riskKind,
++      context_status: data.contextStatus,
++      abstain_reason: data.abstainReason,
++      status: "reviewed",
++      reviewer_kind: "human",
++    });
++    if (insertError)
++      throw new Error("Non se puido gardar a revisión; comproba migración e permisos.");
++    return { ok: true as const };
++  });
++
++export const listHydAnnotations = createServerFn({ method: "GET" })
++  .middleware([requireSupabaseAuth])
++  .validator((input) => z.object({ recordId: z.string().uuid() }).strict().parse(input))
++  .handler(async ({ data, context }) => {
++    const { data: events, error } = await context.supabase
++      .from("hyd_annotation_events")
++      .select("id,created_at,risk_kind,context_status,abstain_reason,status")
++      .eq("record_id", data.recordId)
++      .eq("user_id", context.userId)
++      .order("created_at", { ascending: false })
++      .order("id", { ascending: false })
++      .limit(20);
++    if (error) throw new Error("Historial non dispoñible; anotacións aínda non conectadas á base.");
++    return events ?? [];
++  });
+diff --git a/src/lib/hyd-annotations.test.ts b/src/lib/hyd-annotations.test.ts
+new file mode 100644
+index 0000000..c36c734
+--- /dev/null
++++ b/src/lib/hyd-annotations.test.ts
+@@ -0,0 +1,55 @@
++import { describe, it, expect } from "vitest";
++import { annotationRequest, portableAnnotation } from "./hyd-annotations";
++import { archivePayload } from "./hyd-archive";
++
++const base = {
++  recordId: "00000000-0000-4000-8000-000000000001",
++  humanConfirmed: true,
++  riskKind: "dangerous",
++  contextStatus: "unknown",
++  abstainReason: "dangerous",
++};
++describe("human annotation admission", () => {
++  it("requires confirmation and consistent explicit review", () => {
++    expect(annotationRequest.safeParse(base).success).toBe(true);
++    for (const change of [
++      { humanConfirmed: false },
++      { riskKind: "benign" },
++      { riskKind: "unknown", abstainReason: "unknown" },
++      { abstainReason: "missing_context" },
++      { reviewer_kind: "ai" },
++    ]) {
++      expect(annotationRequest.safeParse({ ...base, ...change }).success).toBe(false);
++    }
++    expect(
++      annotationRequest.safeParse({
++        ...base,
++        riskKind: "benign",
++        abstainReason: "none",
++        contextStatus: "sufficient",
++      }).success,
++    ).toBe(true);
++  });
++  it("exports every stored revision without private account identifiers in portable events", () => {
++    const row = {
++      id: "event-1",
++      record_id: "record-1",
++      user_id: "private-account",
++      record_sha256: "a".repeat(64),
++      format: "hyd-human-annotation/1",
++      reviewer_kind: "human",
++      status: "reviewed",
++      created_at: "2026-10-04T00:00:00Z",
++      risk_kind: "dangerous",
++      context_status: "unknown",
++      abstain_reason: "dangerous",
++    };
++    const event = portableAnnotation(row, "account-pseudonym");
++    expect(event).not.toHaveProperty("user_id");
++    expect(event.reviewer_id).toBe("account-pseudonym");
++    const history = [row, { ...row, id: "event-2", risk_kind: "benign", abstain_reason: "none" }];
++    const archive = archivePayload([], [], "mine", row.created_at, history);
++    expect(archive.annotations).toEqual(history);
++    expect(archive.counts.annotations).toBe(2);
++  });
++});
+diff --git a/src/lib/hyd-annotations.ts b/src/lib/hyd-annotations.ts
+new file mode 100644
+index 0000000..5ceb15d
+--- /dev/null
++++ b/src/lib/hyd-annotations.ts
+@@ -0,0 +1,57 @@
++import { z } from "zod";
++
++export const annotationSelection = z
++  .object({
++    riskKind: z.enum(["unknown", "benign", "dangerous", "security", "privacy", "high_risk"]),
++    contextStatus: z.enum(["unknown", "sufficient", "missing"]),
++    abstainReason: z.enum(["unknown", "none", "dangerous", "missing_context"]),
++  })
++  .strict();
++
++export const annotationRequest = annotationSelection
++  .extend({
++    recordId: z.string().uuid(),
++    humanConfirmed: z.literal(true),
++  })
++  .strict()
++  .superRefine((value, context) => {
++    if (
++      value.riskKind === "unknown" &&
++      value.contextStatus === "unknown" &&
++      value.abstainReason === "unknown"
++    )
++      context.addIssue({ code: "custom", message: "Escolle unha marca explícita." });
++    if (value.abstainReason === "dangerous" && value.riskKind !== "dangerous")
++      context.addIssue({ code: "custom", message: "Perigosa require risco perigoso." });
++    if (value.abstainReason === "missing_context" && value.contextStatus !== "missing")
++      context.addIssue({ code: "custom", message: "Falta contexto require contexto ausente." });
++  });
++
++export type AnnotationDbRow = {
++  id: string;
++  record_id: string;
++  user_id: string;
++  record_sha256: string;
++  format: string;
++  reviewer_kind: string;
++  status: string;
++  created_at: string;
++  risk_kind: string;
++  context_status: string;
++  abstain_reason: string;
++};
++
++export function portableAnnotation(row: AnnotationDbRow, reviewerId: string) {
++  return {
++    format: row.format,
++    event_id: row.id,
++    record_sha256: row.record_sha256,
++    reviewer_id: reviewerId,
++    reviewer_kind: row.reviewer_kind,
++    created_at: row.created_at,
++    status: row.status,
++    risk_kind: row.risk_kind,
++    context_status: row.context_status,
++    abstain_reason: row.abstain_reason,
++  };
++}
+diff --git a/src/lib/hyd-archive.test.ts b/src/lib/hyd-archive.test.ts
+index 74440e5..9fddf97 100644
+--- a/src/lib/hyd-archive.test.ts
++++ b/src/lib/hyd-archive.test.ts
+@@ -18,7 +18,7 @@ describe("portable owner archive", () => {
+     const restored = JSON.parse(JSON.stringify(payload));
+     expect(restored.records).toEqual(records);
+     expect(restored.corrections).toEqual(corrections);
+-    expect(restored.counts).toEqual({ records: 1, corrections: 1 });
++    expect(restored.counts).toEqual({ records: 1, corrections: 1, annotations: 0 });
+     expect(restored.snapshot_consistent).toBe(false);
+     expect(restored.contains_private_account_data).toBe(true);
+   });
+diff --git a/src/lib/hyd-archive.ts b/src/lib/hyd-archive.ts
+index f5626d1..fd654e1 100644
+--- a/src/lib/hyd-archive.ts
++++ b/src/lib/hyd-archive.ts
+@@ -5,14 +5,19 @@ export function archivePayload(
+   corrections: unknown[],
+   scope: string,
+   cutoff: string,
++  annotations: unknown[] = [],
+ ) {
+   return {
+-    format: "hyd-portable-archive/1",
++    format: "hyd-portable-archive/2",
+     scope,
+     cutoff,
+     snapshot_consistent: false,
+     contains_private_account_data: true,
+-    counts: { records: records.length, corrections: corrections.length },
++    counts: {
++      records: records.length,
++      corrections: corrections.length,
++      annotations: annotations.length,
++    },
+     contract: {
+       criteria: HYD_CRITERIA,
+       consent_text: CONSENT_TEXT,
+@@ -20,6 +25,7 @@ export function archivePayload(
+     },
+     records,
+     corrections,
++    annotations,
+     limitations: [
+       "Only currently stored records and opinions; missing or deleted history is not reconstructed.",
+       "Paginated reads are not a transactional snapshot.",
+diff --git a/src/lib/hyd-export.ts b/src/lib/hyd-export.ts
+index 35cf9bf..c82f871 100644
+--- a/src/lib/hyd-export.ts
++++ b/src/lib/hyd-export.ts
+@@ -34,7 +34,7 @@ export function templateSuspects(rows: ExportRow[]) {
+   return suspects;
+ }
+ 
+-export function prepareExport(rows: ExportRow[]) {
++export function prepareExport(rows: ExportRow[], annotations: Map<string, unknown[]> = new Map()) {
+   const seen = new Set<string>();
+   const labels = new Map<string, Set<string>>();
+   const normalized = (text: string) => text.toLowerCase().trim().replace(/\s+/g, " ");
+@@ -69,6 +69,7 @@ export function prepareExport(rows: ExportRow[]) {
+     // No account id, email, private notes or AI opinions in training exports.
+     const line = JSON.stringify({
+       text: row.question,
++      annotations: annotations.get(row.id) ?? [],
+       expected: row.expected_label,
+       rights: { license: row.rights_license ?? "unknown", verified },
+       meta: {
+diff --git a/src/lib/hyd-records.functions.ts b/src/lib/hyd-records.functions.ts
+index b6553fc..4824ac8 100644
+--- a/src/lib/hyd-records.functions.ts
++++ b/src/lib/hyd-records.functions.ts
+@@ -11,6 +11,7 @@ import {
+   correctionSchema,
+ } from "./hyd-contract";
+ import { prepareExport } from "./hyd-export";
++import { portableAnnotation } from "./hyd-annotations";
+ import { archivePayload } from "./hyd-archive";
+ export { HYD_LABELS, CONSENT_TEXT, CONSENT_VERSION } from "./hyd-contract";
+ export type { HydLabel } from "./hyd-contract";
+@@ -220,8 +221,33 @@ export const exportHydRecords = createServerFn({ method: "GET" })
+       if (!page || page.length < 1000) break;
+       after = page[page.length - 1]!.id;
+     }
+-    const result = prepareExport(rows);
+     const { createHash } = await import("node:crypto");
++    const annotations = new Map<string, ReturnType<typeof portableAnnotation>[]>();
++    let eventAfter: string | null = null;
++    for (;;) {
++      let query = client
++        .from("hyd_annotation_events")
++        .select("*")
++        .lte("created_at", cutoff)
++        .order("id", { ascending: true })
++        .limit(1000);
++      if (data.scope === "mine") query = query.eq("user_id", context.userId);
++      if (data.scope === "owner_group") query = query.in("user_id", owners);
++      if (eventAfter) query = query.gt("id", eventAfter);
++      const { data: page, error } = await query;
++      if (error) throw new Error("Anotacions non exportables: comproba migracion e permisos.");
++      for (const event of page ?? []) {
++        const reviewer = createHash("sha256")
++          .update("hyd-reviewer/1:" + event.user_id)
++          .digest("hex");
++        const history = annotations.get(event.record_id) ?? [];
++        history.push(portableAnnotation(event, reviewer));
++        annotations.set(event.record_id, history);
++      }
++      if (!page || page.length < 1000) break;
++      eventAfter = page[page.length - 1]!.id;
++    }
++    const result = prepareExport(rows, annotations);
+     return {
+       ...result,
+       scope: data.scope,
+@@ -253,7 +279,9 @@ export const exportHydArchive = createServerFn({ method: "GET" })
+         ? context.supabase
+         : (await import("@/integrations/supabase/client.server")).supabaseAdmin;
+     const cutoff = new Date().toISOString();
+-    async function collect(table: "hyd_records" | "hyd_question_corrections") {
++    async function collect(
++      table: "hyd_records" | "hyd_question_corrections" | "hyd_annotation_events",
++    ) {
+       const rows = [];
+       let after: string | null = null;
+       for (;;) {
+@@ -279,7 +307,8 @@ export const exportHydArchive = createServerFn({ method: "GET" })
+     }
+     const records = await collect("hyd_records");
+     const corrections = await collect("hyd_question_corrections");
+-    const payload = archivePayload(records, corrections, data.scope, cutoff);
++    const annotations = await collect("hyd_annotation_events");
++    const payload = archivePayload(records, corrections, data.scope, cutoff, annotations);
+     const payloadText = JSON.stringify(payload);
+     const { createHash } = await import("node:crypto");
+     return {
+diff --git a/src/routes/_authenticated/evaluar.tsx b/src/routes/_authenticated/evaluar.tsx
+index 642a7f4..06c1898 100644
+--- a/src/routes/_authenticated/evaluar.tsx
++++ b/src/routes/_authenticated/evaluar.tsx
+@@ -1,3 +1,4 @@
++import { HydAnnotationForm } from "@/components/hyd-annotation-form";
+ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+ import { useQuery, useQueryClient } from "@tanstack/react-query";
+ import { useServerFn } from "@tanstack/react-start";
+@@ -423,6 +424,7 @@ function Evaluar() {
+               <p className="mt-2 text-xs">Sen permiso de envío externo neste rexistro.</p>
+             )}
+             <CorrectionForm recordId={r.id} original={r.question} />
++            <HydAnnotationForm recordId={r.id} />
+           </article>
+         ))}
+         {records.data && records.data.records.length === 0 && (
+diff --git a/supabase/migrations/20261004_hyd_annotation_events.sql b/supabase/migrations/20261004_hyd_annotation_events.sql
+new file mode 100644
+index 0000000..17c34b9
+--- /dev/null
++++ b/supabase/migrations/20261004_hyd_annotation_events.sql
+@@ -0,0 +1,40 @@
++-- Additive: never rewrites legacy abstain marks, AI suggestions or questions.
++begin;
++create table public.hyd_annotation_events (
++  id uuid primary key default gen_random_uuid(),
++  record_id uuid not null references public.hyd_records(id) on delete cascade,
++  user_id uuid not null references auth.users(id),
++  format text not null default 'hyd-human-annotation/1' check (format = 'hyd-human-annotation/1'),
++  reviewer_kind text not null check (reviewer_kind = 'human'),
++  record_sha256 text not null check (record_sha256 ~ '^[0-9a-f]{64}$'),
++  status text not null check (status in ('pending','reviewed')),
++  risk_kind text not null check (risk_kind in ('unknown','benign','dangerous','security','privacy','high_risk')),
++  context_status text not null check (context_status in ('unknown','sufficient','missing')),
++  abstain_reason text not null check (abstain_reason in ('unknown','none','dangerous','missing_context')),
++  created_at timestamptz not null default now(),
++  check (status <> 'pending' or (risk_kind = 'unknown' and context_status = 'unknown' and abstain_reason = 'unknown')),
++  check (status <> 'reviewed' or (risk_kind <> 'unknown' or context_status <> 'unknown' or abstain_reason <> 'unknown')),
++  check (abstain_reason <> 'dangerous' or risk_kind = 'dangerous'),
++  check (abstain_reason <> 'missing_context' or context_status = 'missing')
++);
++create index hyd_annotation_record_owner on public.hyd_annotation_events(user_id, record_id, created_at);
++alter table public.hyd_annotation_events enable row level security;
++revoke all on public.hyd_annotation_events from anon;
++revoke update, delete on public.hyd_annotation_events from authenticated;
++grant select, insert on public.hyd_annotation_events to authenticated;
++create policy hyd_annotation_owner_select on public.hyd_annotation_events for select to authenticated
++  using (user_id = auth.uid() and exists (
++    select 1 from public.hyd_records r where r.id = record_id and r.user_id = auth.uid()));
++create policy hyd_annotation_owner_insert on public.hyd_annotation_events for insert to authenticated
++  with check (user_id = auth.uid() and exists (
++    select 1 from public.hyd_records r where r.id = record_id and r.user_id = auth.uid()
++      and r.consent = true and encode(sha256(convert_to(r.question,'UTF8')),'hex') = record_sha256));
++-- UPDATE/DELETE are not granted: changing a mark adds another event.
++-- Server-assigned timestamps prevent backdating an event through the API.
++create function public.hyd_annotation_timestamp() returns trigger
++language plpgsql set search_path = public as $$
++begin new.created_at := now(); return new; end;
++$$;
++create trigger hyd_annotation_timestamp before insert on public.hyd_annotation_events
++for each row execute function public.hyd_annotation_timestamp();
++commit;

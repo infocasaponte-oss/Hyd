@@ -1,0 +1,13 @@
+{
+  "format": "corpus-queue-bridge-test/1",
+  "uses_http_fixture": true,
+  "real_external_download": false,
+  "initial_state": "queued",
+  "jobs": [
+    {
+      "id": "186429ea-789e-4d69-bbec-fb51e7ec8e13",
+      "state": "downloaded"
+    }
+  ],
+  "repeat_claims": []
+}

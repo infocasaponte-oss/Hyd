@@ -8,3 +8,5 @@
 *.png binary
 *.jpg binary
 *.patch -text
+
+integrations/evaluator-app/*.patch -text whitespace=-blank-at-eol

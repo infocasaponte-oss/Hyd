@@ -1,0 +1,12 @@
+{
+  "format": "hyd-book-discovery/1",
+  "state": "blocked-by-robots",
+  "source_id": "openlibrary",
+  "metadata_url": "https://openlibrary.org/search.json?language=spa&q=subject%3Ascience&limit=20&fields=key,title,author_name,first_publish_year,edition_key,ia,ebook_access",
+  "checked_at": "2026-10-04T22:43:24.758928+00:00",
+  "rows": 0,
+  "catalog_sha256": "6d44e0895b22584fd38cbbd73c6abb8d4499df533fbb55f5ce3b800d57837591",
+  "robots_sha256": "754a184c81223be4ae26a0f36e84c865e5e42971e884f921f887ecff1da5411e",
+  "book_content_downloaded": false,
+  "training_allowed": false
+}

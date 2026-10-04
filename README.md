@@ -166,3 +166,7 @@ set HYDRA_IT_NATS=nats://localhost:4222
 
 Documentación: [docs/architecture.md](docs/architecture.md), [docs/adr/](docs/adr/),
 [docs/security.md](docs/security.md), [docs/ip-process.md](docs/ip-process.md), [docs/runtime/](docs/runtime/).
+
+## Calibrador independiente de Hyd
+
+El módulo `hyd_calibrator` funciona con Python 3.12 y NumPy sin arrancar HYDRA. [Preparación, entrenamiento y calibración](docs/CALIBRATOR.md). La instalación del repositorio también incluye el comando `hyd-calibrator`; no activa modelos automáticamente.

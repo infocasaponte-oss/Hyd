@@ -1,0 +1,55 @@
+{
+  "format": "hyd-calibration/1",
+  "model_sha256": "dfc323be64aa6aeae6bd7a47f23139b8651cfcbd19c34b7687051b0ccd3edc9d",
+  "implementation_sha256": "628439272647074fa3a56a38894fef658577682c4ad5d44b7d35069b050d8202",
+  "temperature": 0.5182148368839724,
+  "dataset_sha256": "04325f5fe50c87781fbdb7dacacc4debd48cb1569bae133ad6cbfb7c9ff1bac3",
+  "criteria": {
+    "chat": "Write a conversational or creative response; no code or external search needed.",
+    "coding": "Write, debug or explain software code; do not execute an environment action.",
+    "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+    "research": "Find or compare external evidence and cite sources.",
+    "vision": "Interpret an attached image, screenshot or photographed document.",
+    "tool_use": "Perform an actual operation using environment tools.",
+    "abstain": "Required question, input or context is missing; ask for clarification.",
+    "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+    "privacy": "Assess or handle personal information and sharing restrictions.",
+    "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+  },
+  "min_confidence": 0.9,
+  "min_margin": 0.0,
+  "status": "SHADOW_ONLY",
+  "independent_test": false,
+  "source_calibration_sha256": "06952c8d679724ef37910592dc42a4fddc537f6c543e0fe89477e19b04b5ef32",
+  "contract": {
+    "format": "hyd-routing/1",
+    "criteria": {
+      "chat": "Write a conversational or creative response; no code or external search needed.",
+      "coding": "Write, debug or explain software code; do not execute an environment action.",
+      "reasoning": "Solve a logical or mathematical problem from the supplied facts.",
+      "research": "Find or compare external evidence and cite sources.",
+      "vision": "Interpret an attached image, screenshot or photographed document.",
+      "tool_use": "Perform an actual operation using environment tools.",
+      "abstain": "Required question, input or context is missing; ask for clarification.",
+      "security": "Assess malicious commands, threats, exploits or exposed credentials.",
+      "privacy": "Assess or handle personal information and sharing restrictions.",
+      "high_risk_review": "Review authorization for a consequential or irreversible action; do not execute it."
+    },
+    "criteria_sha256": "e432801e4e843b1f53f049d2d32e4070d5a98817b9aa0cc97a588f6534e6da9d",
+    "supported_model": "hyd-candidate-ranker/1",
+    "supported_features": "hyd-hash-words-characters/1",
+    "technical_abstention_distinct_from_label": true,
+    "authority_enabled": false
+  },
+  "metrics": {
+    "min_confidence": 0.9,
+    "min_margin": 0.0,
+    "n": 315,
+    "accepted": 110,
+    "correct": 109,
+    "coverage": 0.3492063492063492,
+    "accuracy": 0.990909090909091,
+    "accuracy_wilson_lower_95": 0.9502931300620923
+  },
+  "limitation": "Qualified on calibration only. External evaluation and release review required."
+}
