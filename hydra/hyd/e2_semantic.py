@@ -1,7 +1,8 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E2 · Semantic specialist (SHADOW_ONLY, never decides).
 
 Frozen multilingual sentence encoder (~118M params, runs on CPU or a
-3060 Ti in fp16) + logistic head. C and temperature are chosen ONLY on
+3060 Ti in fp16) + logistic head. C is chosen on development; temperature and thresholds use separate groups in
 the calibration split; the test split is touched once for the report.
 Same frozen splits and same metrics as hydra.hyd.app_corpus.report.
 """
@@ -53,37 +54,73 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dataset", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--encoder-revision", required=True)
+    ap.add_argument("--target", type=float, default=0.95)
+    ap.add_argument("--min-coverage", type=float, default=0.1)
     a = ap.parse_args()
+    if not 0 < a.target < 1 or not 0 < a.min_coverage <= 1:
+        raise ValueError("invalid target or coverage")
+    if a.out.exists():
+        raise ValueError("output directory already exists; choose a new run")
+    from hyd_calibrator.e2_admission import admit_dataset
+    admitted, partition_hashes = admit_dataset(a.dataset, a.encoder_revision, require_development=True)
     from sentence_transformers import SentenceTransformer
     from sklearn.linear_model import LogisticRegression
-    enc = SentenceTransformer(ENCODER, device="cpu")
-    Xtr, ytr = load(a.dataset / "train.jsonl"); Xca, yca = load(a.dataset / "calibration.jsonl"); Xte, yte = load(a.dataset / "test.jsonl")
+    enc = SentenceTransformer(ENCODER, revision=a.encoder_revision, device="cpu")
+    def partition(split):
+        rows = admitted[split]
+        return [r["input"]["query"] for r in rows], [r["output"]["task_type"] for r in rows]
+    Xtr, ytr = partition("train"); Xca, yca = partition("calibration"); Xte, yte = partition("test")
     E = lambda X: enc.encode(X, batch_size=64, normalize_embeddings=True, show_progress_bar=False)
-    etr, eca, ete = E(Xtr), E(Xca), E(Xte)
+    Xdev, ydev = partition("development")
+    etr, edev, eca = E(Xtr), E(Xdev), E(Xca)
     labels = sorted(set(ytr))
     best = None
     for C in (0.5, 1, 2, 4, 8, 16, 32):
         clf = LogisticRegression(C=C, max_iter=3000).fit(etr, ytr)
-        acc = (clf.predict(eca) == np.array(yca)).mean()
+        acc = (clf.predict(edev) == np.array(ydev)).mean()
         if best is None or acc > best[0]: best = (acc, C, clf)
     _, C, clf = best
     assert list(clf.classes_) == labels
     yi = np.array([labels.index(t) for t in yca]); lca = clf.decision_function(eca)
-    T = min(np.arange(0.3, 3.01, 0.05), key=lambda t: -np.log(softmax(lca / t)[np.arange(len(yi)), yi] + 1e-12).mean())
-    pca = softmax(lca / T); conf = pca.max(1); hit = pca.argmax(1) == yi
-    # smallest threshold with >=95 % accuracy on calibration
-    mc = next((float(t) for t in np.arange(0.4, 0.99, 0.01) if (conf >= t).any() and hit[conf >= t].mean() >= 0.95), 0.95)
+    from hyd_calibrator.e2_calibration import calibrate_logits
+    from hyd_calibrator.evaluation import selective
+    calibration = calibrate_logits(lca, yi, admitted["calibration"], a.target, a.min_coverage)
+    T = calibration["temperature"]
+    mc = calibration["min_confidence"]
+    # Test embeddings and predictions are produced after all selections are fixed.
+    ete = E(Xte)
     pte = softmax(clf.decision_function(ete) / T)
-    rep = {"format": "hyd-e2-report/1", "model": "e2-semantic-v1", "encoder": ENCODER,
+    ordered = np.sort(pte, axis=1)
+    test_hits = [labels[index] == truth for index, truth in zip(pte.argmax(1), yte)]
+    test_selective = selective(ordered[:, -1].tolist(), (ordered[:, -1] - ordered[:, -2]).tolist(),
+                              test_hits, mc, calibration["min_margin"], calibration["abstain_all"])
+    rep = {"format": "hyd-e2-report/2", "encoder_revision": a.encoder_revision,
+           "partition_sha256": partition_hashes, "independence_verified": False, "model": "e2-semantic-v1", "encoder": ENCODER,
            "trained_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-           "head": {"type": "logistic", "C": C}, "temperature": round(float(T), 3), "min_confidence_cal": round(mc, 3),
+           "head": {"type": "logistic", "C": C}, "n_development": len(ydev),
+           "calibration": calibration, "selective": test_selective, "temperature": round(float(T), 3), "min_confidence_cal": round(mc, 3),
            "dataset_sha256": hashlib.sha256((a.dataset / "test.jsonl").read_bytes()).hexdigest(),
            "n_train": len(ytr), "n_calibration": len(yca), **metrics(yte, pte, labels, mc),
            "status": "SHADOW_ONLY", "authority": False,
-           "note": "Real corpus only; frozen hash splits; observes, never decides."}
-    a.out.mkdir(parents=True, exist_ok=True)
+           "note": "Source declarations validated; grouped partitions; identity not independently verified; observes, never decides."}
+    a.out.mkdir(parents=True, exist_ok=False)
     (a.out / "report.json").write_text(json.dumps(rep, ensure_ascii=False, indent=2))
-    np.savez(a.out / "head.npz", coef=clf.coef_, intercept=clf.intercept_, labels=np.array(labels), T=T)
+    np.savez(a.out / "head.npz", coef=clf.coef_, intercept=clf.intercept_, labels=np.array(labels), T=T, min_confidence=mc,
+             min_margin=calibration["min_margin"], abstain_all=calibration["abstain_all"])
+    from hyd_calibrator.e2_runtime import write_manifest, E2Runtime
+    write_manifest(a.out, ENCODER, a.encoder_revision, partition_hashes)
+    runtime = E2Runtime(a.out)
+    reloaded = runtime.predict_embeddings(ete)
+    observed = np.array([[row["probabilities"][label] for label in labels] for row in reloaded])
+    if not np.allclose(observed, pte, atol=1e-10, rtol=1e-8):
+        raise ValueError("reloaded E2 head does not match evaluation")
+    if sum(row["accepted"] for row in reloaded) != test_selective["accepted"]:
+        raise ValueError("reloaded E2 abstention differs from evaluation")
+    (a.out / "runtime-parity.json").write_text(json.dumps({
+        "head_probability_parity": True, "acceptance_parity": True,
+        "n": len(reloaded), "encoder_reload_verified": False,
+        "note": "Uses existing test embeddings; full encoder reload remains pending."}, indent=2), encoding="utf-8")
     print(json.dumps({k: rep[k] for k in ("accuracy", "macro_f1", "ece", "temperature", "min_confidence_cal")}))
 
 

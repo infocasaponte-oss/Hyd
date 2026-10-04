@@ -1,0 +1,424 @@
+diff --git a/.env.example b/.env.example
+index c1c0c98..ee70aec 100644
+--- a/.env.example
++++ b/.env.example
+@@ -12,3 +12,7 @@ HYD_SECOND_OPINION_API_KEY=
+ # Comma-separated account UUIDs. These are server configuration, never browser input.
+ HYD_OWNER_USER_IDS=
+ HYD_CORPUS_ADMIN_USER_IDS=
++
++# Local Node server only: persistent shared directory for the Corpus worker.
++# Leave empty in serverless deployments; a remote queue adapter is required there.
++HYD_CORPUS_QUEUE_DIR=
+diff --git a/src/lib/corpus-queue.functions.ts b/src/lib/corpus-queue.functions.ts
+new file mode 100644
+index 0000000..4e16537
+--- /dev/null
++++ b/src/lib/corpus-queue.functions.ts
+@@ -0,0 +1,30 @@
++import { createServerFn } from "@tanstack/react-start";
++import { z } from "zod";
++import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
++import { downloadPlanSchema } from "./corpus-workspace";
++
++export const listCorpusJobs = createServerFn({ method: "GET" })
++  .middleware([requireSupabaseAuth])
++  .handler(async ({ context }) => {
++    const queue = await import("./corpus-queue.server");
++    const root = queue.queueRoot();
++    return { enabled: Boolean(root), jobs: root ? await queue.listJobs(root, context.userId) : [] };
++  });
++export const createCorpusJob = createServerFn({ method: "POST" })
++  .middleware([requireSupabaseAuth])
++  .validator((input) => downloadPlanSchema.parse(input))
++  .handler(async ({ data, context }) => {
++    const queue = await import("./corpus-queue.server");
++    const root = queue.queueRoot();
++    if (!root) throw new Error("Axente local aínda non conectado.");
++    return queue.enqueueJob(root, context.userId, data);
++  });
++export const cancelCorpusJob = createServerFn({ method: "POST" })
++  .middleware([requireSupabaseAuth])
++  .validator((input) => z.object({ id: z.string().uuid() }).strict().parse(input))
++  .handler(async ({ data, context }) => {
++    const queue = await import("./corpus-queue.server");
++    const root = queue.queueRoot();
++    if (!root) throw new Error("Axente local aínda non conectado.");
++    return queue.cancelJob(root, context.userId, data.id);
++  });
+diff --git a/src/lib/corpus-queue.server.ts b/src/lib/corpus-queue.server.ts
+new file mode 100644
+index 0000000..aac9a04
+--- /dev/null
++++ b/src/lib/corpus-queue.server.ts
+@@ -0,0 +1,124 @@
++import { createHash, randomUUID } from "node:crypto";
++import { mkdir, readFile, readdir, writeFile, access, rename } from "node:fs/promises";
++import { isAbsolute, join } from "node:path";
++import { downloadPlanSchema } from "./corpus-workspace";
++
++export function actorKey(actor: string) {
++  return createHash("sha256")
++    .update("hyd-corpus-actor/1:" + actor)
++    .digest("hex");
++}
++export function queueRoot() {
++  const root = process.env["HYD_CORPUS_QUEUE_DIR"];
++  if (!root) return null;
++  if (!isAbsolute(root)) throw new Error("A cola require un directorio absoluto configurado.");
++  return root;
++}
++const hosts: Record<string, string[]> = {
++  boe: ["www.boe.es", "boe.es"],
++  congreso: ["www.congreso.es", "congreso.es"],
++  rtve: ["www.rtve.es", "rtve.es"],
++  gutenberg: ["www.gutenberg.org", "gutenberg.org"],
++  cervantes: ["www.cervantesvirtual.com", "cervantesvirtual.com"],
++};
++export function reviewedPlan(input: unknown) {
++  const plan = downloadPlanSchema.parse(input);
++  const url = new URL(plan.asset_url);
++  if (
++    !hosts[plan.source_id]?.includes(url.hostname) ||
++    url.username ||
++    url.password ||
++    url.hash ||
++    (url.port && url.port !== "443")
++  )
++    throw new Error("Fonte ou URL non habilitada para a descarga local.");
++  if (
++    plan.rights.verified !== true ||
++    !["CC0-1.0", "CC-BY-4.0", "public-domain", "eu-reuse-2011-833"].includes(plan.rights.license)
++  )
++    throw new Error("Require declaración revisada de dereitos e licenza admitida.");
++  const evidence = new URL(plan.rights.evidence_url);
++  if (evidence.protocol !== "https:")
++    throw new Error("Require ligazón HTTPS á evidencia de dereitos.");
++  return plan;
++}
++async function exists(path: string) {
++  try {
++    await access(path);
++    return true;
++  } catch (error) {
++    if ((error as NodeJS.ErrnoException).code === "ENOENT") return false;
++    throw error;
++  }
++}
++export async function listJobs(root: string, actor: string) {
++  const directory = join(root, actorKey(actor));
++  if (!(await exists(directory))) return [];
++  const entries = await readdir(directory, { withFileTypes: true });
++  const jobs = [];
++  for (const entry of entries) {
++    if (!entry.isDirectory() || !/^[0-9a-f-]{36}$/.test(entry.name)) continue;
++    const folder = join(directory, entry.name);
++    const request = JSON.parse(await readFile(join(folder, "request.json"), "utf8"));
++    let state = "initializing";
++    let result = null;
++    if (await exists(join(folder, "result.json"))) {
++      result = JSON.parse(await readFile(join(folder, "result.json"), "utf8"));
++      state = result.state;
++    } else if (await exists(join(folder, "cancel")))
++      state = (await exists(join(folder, "running"))) ? "cancel_requested" : "cancelled";
++    else if (await exists(join(folder, "running"))) state = "running";
++    else if (await exists(join(folder, "queued"))) state = "queued";
++    jobs.push({
++      id: entry.name,
++      source_id: request.source_id as string,
++      created_at: request.created_at as string,
++      max_bytes: request.max_bytes as number,
++      state: state as string,
++      result_json: result ? JSON.stringify(result) : null,
++    });
++  }
++  return jobs.sort((a, b) => b.created_at.localeCompare(a.created_at));
++}
++export async function enqueueJob(root: string, actor: string, input: unknown) {
++  const plan = reviewedPlan(input);
++  const jobs = await listJobs(root, actor);
++  if (
++    jobs.length >= 500 ||
++    jobs.filter((job) =>
++      ["queued", "running", "initializing", "cancel_requested"].includes(job.state),
++    ).length >= 20
++  )
++    throw new Error("Límite de traballos alcanzado; revisa a cola.");
++  const id = randomUUID();
++  const folder = join(root, actorKey(actor), id);
++  const pending = folder + ".pending";
++  const raw = JSON.stringify(plan);
++  await mkdir(pending, { recursive: true, mode: 0o700 });
++  await writeFile(join(pending, "plan.json"), raw, { flag: "wx" });
++  await writeFile(
++    join(pending, "request.json"),
++    JSON.stringify({
++      id,
++      actor_key: actorKey(actor),
++      source_id: plan.source_id,
++      plan_sha256: createHash("sha256").update(raw).digest("hex"),
++      max_bytes: plan.max_bytes,
++      created_at: new Date().toISOString(),
++      training_allowed: false,
++    }),
++    { flag: "wx" },
++  );
++  await writeFile(join(pending, "queued"), "", { flag: "wx" });
++  await rename(pending, folder);
++  return { id };
++}
++export async function cancelJob(root: string, actor: string, id: string) {
++  if (!/^[0-9a-f-]{36}$/.test(id)) throw new Error("ID de traballo inválido.");
++  const folder = join(root, actorKey(actor), id);
++  if (!(await exists(join(folder, "request.json"))))
++    throw new Error("Traballo non atopado nesta conta.");
++  if (await exists(join(folder, "result.json"))) return { requested: false };
++  await writeFile(join(folder, "cancel"), "cancel requested");
++  return { requested: true };
++}
+diff --git a/src/lib/corpus-queue.test.ts b/src/lib/corpus-queue.test.ts
+new file mode 100644
+index 0000000..ef8d12f
+--- /dev/null
++++ b/src/lib/corpus-queue.test.ts
+@@ -0,0 +1,43 @@
++import { afterEach, describe, expect, it } from "vitest";
++import { mkdtemp, rm, readFile } from "node:fs/promises";
++import { tmpdir } from "node:os";
++import { join } from "node:path";
++import { actorKey, cancelJob, enqueueJob, listJobs, reviewedPlan } from "./corpus-queue.server";
++
++const roots: string[] = [];
++afterEach(async () => {
++  for (const root of roots.splice(0)) await rm(root, { recursive: true, force: true });
++});
++const plan = {
++  format: "hyd-corpus-download-plan/1",
++  source_id: "boe",
++  asset_url: "https://www.boe.es/fixture.xml",
++  max_bytes: 1024,
++  rights: { verified: true, license: "public-domain", evidence_url: "https://www.boe.es/review" },
++  training_allowed: false,
++  state: "prepared",
++};
++describe("persistent account queue", () => {
++  it("persists jobs, isolates accounts and restricts cancellation", async () => {
++    const root = await mkdtemp(join(tmpdir(), "hyd-corpus-queue-"));
++    roots.push(root);
++    const job = await enqueueJob(root, "account-a", plan);
++    expect((await listJobs(root, "account-a"))[0]?.state).toBe("queued");
++    expect(await listJobs(root, "account-b")).toEqual([]);
++    await expect(cancelJob(root, "account-b", job.id)).rejects.toThrow("non atopado");
++    await cancelJob(root, "account-a", job.id);
++    expect((await listJobs(root, "account-a"))[0]?.state).toBe("cancelled");
++    const request = JSON.parse(
++      await readFile(join(root, actorKey("account-a"), job.id, "request.json"), "utf8"),
++    );
++    expect(request.plan_sha256).toMatch(/^[0-9a-f]{64}$/);
++    expect(request).not.toHaveProperty("user_id");
++  });
++  it("cannot enqueue unreviewed rights or unsupported sources", () => {
++    expect(() => reviewedPlan({ ...plan, rights: { ...plan.rights, verified: false } })).toThrow();
++    expect(() => reviewedPlan({ ...plan, source_id: "elpais" })).toThrow();
++    expect(() =>
++      reviewedPlan({ ...plan, asset_url: "https://www.boe.es.evil.example/file" }),
++    ).toThrow();
++  });
++});
+diff --git a/src/routes/_authenticated/corpus.tsx b/src/routes/_authenticated/corpus.tsx
+index fb85fef..0f1879e 100644
+--- a/src/routes/_authenticated/corpus.tsx
++++ b/src/routes/_authenticated/corpus.tsx
+@@ -1,5 +1,8 @@
+ import { createFileRoute, Link } from "@tanstack/react-router";
+ import { useState } from "react";
++import { useServerFn } from "@tanstack/react-start";
++import { useQuery } from "@tanstack/react-query";
++import { listCorpusJobs, createCorpusJob, cancelCorpusJob } from "@/lib/corpus-queue.functions";
+ import {
+   acquisitionImportSchema,
+   corpusSources,
+@@ -26,12 +29,30 @@ function download(name: string, value: unknown) {
+ }
+ 
+ function Corpus() {
++  const { user } = Route.useRouteContext();
++  const list = useServerFn(listCorpusJobs);
++  const enqueue = useServerFn(createCorpusJob);
++  const cancel = useServerFn(cancelCorpusJob);
++  const jobs = useQuery({
++    queryKey: ["corpus-jobs", user.id],
++    queryFn: () => list(),
++    refetchInterval: (query) =>
++      query.state.data?.jobs.some((job) =>
++        ["queued", "running", "cancel_requested"].includes(job.state),
++      )
++        ? 10000
++        : false,
++  });
+   const [report, setReport] = useState<z.infer<typeof acquisitionImportSchema> | null>(null);
+   const [error, setError] = useState("");
+   const [downloads, setDownloads] = useState<z.infer<typeof downloadResultSchema>[]>([]);
+   const [source, setSource] = useState<(typeof corpusSources)[number]["id"]>("boe");
+   const [asset, setAsset] = useState("");
+   const [budget, setBudget] = useState(100);
++  const [reviewed, setReviewed] = useState(false);
++  const [license, setLicense] = useState("CC-BY-4.0");
++  const [evidence, setEvidence] = useState("");
++  const [busy, setBusy] = useState(false);
+   const totals = report ? corpusTotals(report) : null;
+   return (
+     <main className="mx-auto max-w-5xl px-6 py-10 font-mono space-y-6">
+@@ -139,14 +160,17 @@ function Corpus() {
+       <section className="rounded border p-4 space-y-3">
+         <h2 className="font-bold">Preparar unha descarga</h2>
+         <p>
+-          Prepara un plan exportable para o descargador local. Gardar o plan non inicia unha
+-          descarga. A conexión cun axente de descargas segue pendente.
++          Exporta un plan ou envía unha solicitude á cola configurada. O axente local debe estar en
++          execución para descargala.
+         </p>
+         <label className="block">
+           Fonte{" "}
+           <select
+             value={source}
+-            onChange={(event) => setSource(event.target.value as typeof source)}
++            onChange={(event) => {
++              setSource(event.target.value as typeof source);
++              setReviewed(false);
++            }}
+           >
+             {corpusSources.map((entry) => (
+               <option key={entry.id} value={entry.id}>
+@@ -160,7 +184,10 @@ function Corpus() {
+           <input
+             className="border p-2 w-full"
+             value={asset}
+-            onChange={(event) => setAsset(event.target.value)}
++            onChange={(event) => {
++              setAsset(event.target.value);
++              setReviewed(false);
++            }}
+           />
+         </label>
+         <label className="block">
+@@ -194,6 +221,119 @@ function Corpus() {
+         >
+           Exportar plan pendente de revisión
+         </button>
++        <label className="block">
++          Licenza revisada{" "}
++          <select
++            value={license}
++            onChange={(event) => {
++              setLicense(event.target.value);
++              setReviewed(false);
++            }}
++          >
++            {["CC-BY-4.0", "CC0-1.0", "public-domain", "eu-reuse-2011-833"].map((value) => (
++              <option key={value}>{value}</option>
++            ))}
++          </select>
++        </label>
++        <label className="block">
++          Evidencia dos dereitos deste ficheiro{" "}
++          <input
++            className="border p-2 w-full"
++            value={evidence}
++            onChange={(event) => {
++              setEvidence(event.target.value);
++              setReviewed(false);
++            }}
++            placeholder="https://…"
++          />
++        </label>
++        <label className="block">
++          <input
++            type="checkbox"
++            checked={reviewed}
++            onChange={(event) => setReviewed(event.target.checked)}
++          />{" "}
++          Declaro que revisei os dereitos de descarga deste ficheiro coa evidencia indicada.
++        </label>
++        <button
++          disabled={busy || !reviewed || !jobs.data?.enabled}
++          onClick={async () => {
++            setError("");
++            setBusy(true);
++            try {
++              const plan = downloadPlanSchema.parse({
++                format: "hyd-corpus-download-plan/1",
++                source_id: source,
++                asset_url: asset,
++                max_bytes: budget * 1024 * 1024,
++                rights: { verified: reviewed, license, evidence_url: evidence },
++                training_allowed: false,
++                state: "prepared",
++              });
++              await enqueue({ data: plan });
++              setReviewed(false);
++              await jobs.refetch();
++            } catch (failure) {
++              setError(failure instanceof Error ? failure.message : "Non se puido solicitar.");
++            } finally {
++              setBusy(false);
++            }
++          }}
++        >
++          {busy ? "Gardando…" : "Solicitar descarga"}
++        </button>
++      </section>
++      <section className="rounded border p-4 space-y-3">
++        <h2 className="font-bold">Cola desta conta</h2>
++        {jobs.isPending ? (
++          <p>Cargando estado…</p>
++        ) : jobs.error ? (
++          <p role="alert">{jobs.error.message}</p>
++        ) : !jobs.data?.enabled ? (
++          <p>Cola local aínda non configurada. Podes seguir exportando plans.</p>
++        ) : (
++          <>
++            <p>
++              Solicitudes gardadas no servidor local; a descarga require o axente. Un estado «en
++              execución» non demostra que un axente interrompido siga activo.
++            </p>
++            <button onClick={() => jobs.refetch()}>Actualizar estado</button>
++            {jobs.data.jobs.length === 0 && <p>Aínda non hai solicitudes nesta conta.</p>}
++            {jobs.data.jobs.map((job) => (
++              <article key={job.id} className="border-t pt-2">
++                <p>
++                  {job.source_id} · {job.state} · {job.created_at}
++                </p>
++                {job.result_json && (
++                  <button
++                    onClick={() =>
++                      download(`corpus-job-${job.id}.json`, JSON.parse(job.result_json!))
++                    }
++                  >
++                    Exportar resultado
++                  </button>
++                )}
++                {["queued", "running"].includes(job.state) && (
++                  <button
++                    onClick={async () => {
++                      setError("");
++                      try {
++                        await cancel({ data: { id: job.id } });
++                        await jobs.refetch();
++                      } catch (failure) {
++                        setError(
++                          failure instanceof Error ? failure.message : "Non se puido cancelar.",
++                        );
++                      }
++                    }}
++                  >
++                    Solicitar cancelación
++                  </button>
++                )}
++              </article>
++            ))}
++          </>
++        )}
+       </section>
+       <section className="rounded border p-4 space-y-3">
+         <h2 className="font-bold">Descargas realizadas</h2>

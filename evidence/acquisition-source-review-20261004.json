@@ -1,0 +1,626 @@
+{
+  "format": "acquisition-source-review/1",
+  "snapshot_transactional": false,
+  "training_admission": false,
+  "tokens_measured": false,
+  "download_bytes_measured": false,
+  "files": [
+    {
+      "path": "ciencia\\common_corpus_mixed\\part-common_corpus_1_subset_100_1.parquet.jsonl.gz",
+      "bytes": 18059860,
+      "sha256": "e6712874b6fdd9fa4547d511835cbecbab02e315f918a35139d8f11de22ffeb9"
+    },
+    {
+      "path": "ciencia\\common_corpus_mixed\\part-common_corpus_1_subset_18_7.parquet.jsonl.gz",
+      "bytes": 16095119,
+      "sha256": "4574f60dcc11a7f470a367aa5ab0dd96396d0abbd475a321eabaaf45a2542a9b"
+    },
+    {
+      "path": "lexislacion\\common_corpus_mixed\\part-common_corpus_1_subset_100_1.parquet.jsonl.gz",
+      "bytes": 4577815,
+      "sha256": "9b33b6ab6ecb70dde141a74e9d71221e7ca94f815d5bcb9e25764ff2028f8954"
+    },
+    {
+      "path": "lexislacion\\common_corpus_mixed\\part-common_corpus_1_subset_18_7.parquet.jsonl.gz",
+      "bytes": 4379244,
+      "sha256": "1662e7dbe31e75f4327857ea2130605e683b25d24fab701bb8f8a7dd993fc5d4"
+    },
+    {
+      "path": "lexislacion\\eurlex_es\\part-data_es_caselaw.jsonl.gz",
+      "bytes": 120632727,
+      "sha256": "0b3c1390d0cfc93920b101976b4472f35ba14a6f29184f8ca405aea5ae183ecd"
+    },
+    {
+      "path": "lexislacion\\eurlex_es\\part-data_es_decision.jsonl.gz",
+      "bytes": 68012123,
+      "sha256": "5f8173749e18e4594573d66c338a5f4b6d33c1b31b58a372edb50f67a5dcb01f"
+    },
+    {
+      "path": "lexislacion\\eurlex_es\\part-data_es_directive.jsonl.gz",
+      "bytes": 35697306,
+      "sha256": "20a789aa8e6092739f863be4a618548b468f143b09f7a1dcab941ff03ab73230"
+    },
+    {
+      "path": "lexislacion\\eurlex_es\\part-data_es_recommendation.jsonl.gz",
+      "bytes": 15641819,
+      "sha256": "d7b6ccdd9eb3ee55405b712c32effd04c9268379e8d0427179b4bf7f4affd188"
+    },
+    {
+      "path": "lexislacion\\eurlex_es\\part-data_es_regulation.jsonl.gz",
+      "bytes": 34631525,
+      "sha256": "bcba12a0f069d6f82cf162e8262481790b7bed4b4b8ed53f94e06063ed3a9304"
+    },
+    {
+      "path": "lingua_moderna\\bsc_legal_paragraphs_es\\part-legal_ca-es_dataset_clean.tsv.jsonl.gz",
+      "bytes": 1604870,
+      "sha256": "e5e0fffd56ce3c85704cffd960d72bebaf48f8b183b7c0cf5a086367d28e8241"
+    },
+    {
+      "path": "lingua_moderna\\common_corpus_mixed\\part-common_corpus_1_subset_100_1.parquet.jsonl.gz",
+      "bytes": 2128862,
+      "sha256": "9386cbf8b7bb9de514f2005cb04eb343d5e0a6ea1a97007c4beddc2c0af1f794"
+    },
+    {
+      "path": "lingua_moderna\\common_corpus_mixed\\part-common_corpus_1_subset_18_7.parquet.jsonl.gz",
+      "bytes": 2447682,
+      "sha256": "480787a44dc30cc00f9864e3ef6d23870af07855230a00bf88193183d565c4ec"
+    },
+    {
+      "path": "lingua_moderna\\dgt_es\\part-es-ga_train-00000-of-00001.parquet.jsonl.gz",
+      "bytes": 6958157,
+      "sha256": "cbea48390f0dadb0a795789bf64299aad3e7b6640096d464f7b7abf296dd5ebc"
+    },
+    {
+      "path": "lingua_moderna\\eurlex_es\\part-data_es_intagr.jsonl.gz",
+      "bytes": 65111172,
+      "sha256": "fe56b8c760e619cbd38fc32fc1ebf9c90426d3f5769ccee247f04860a27313c3"
+    },
+    {
+      "path": "lingua_moderna\\eurlex_es\\part-data_es_proposal.jsonl.gz",
+      "bytes": 234965819,
+      "sha256": "4b0b32dcf5d47a6578e9d83193af9b715f9bf7452007492fb6ac404c00df35c0"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_0.parquet.jsonl.gz",
+      "bytes": 814776,
+      "sha256": "09861e1ab56d37f1b35747ec25d321b58551f86478d2af6daa06d8601010ee00"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_1.parquet.jsonl.gz",
+      "bytes": 875535,
+      "sha256": "972b09aac49bdb809acc0b84517643d7760b37979c38b1c6261f585f4b90aaea"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_10.parquet.jsonl.gz",
+      "bytes": 743271,
+      "sha256": "dc350a62bf3f24984b561d3d3c30824a9f985bf19c14a701c3582011363d2eb5"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_100.parquet.jsonl.gz",
+      "bytes": 734967,
+      "sha256": "fea4adf0d53090d8b0b89d6f71ce5e3110fe6c0325fa7782922cc1c7673c7004"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_101.parquet.jsonl.gz",
+      "bytes": 769523,
+      "sha256": "dc2dce9473101c50ee8cd18d3be4524ce49e79cdb08329965df1529b02553735"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_102.parquet.jsonl.gz",
+      "bytes": 754668,
+      "sha256": "3ad1e30fcc48fcc4e94e578977b96a9032f5630887d57578d42943958c3a0784"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_103.parquet.jsonl.gz",
+      "bytes": 795467,
+      "sha256": "d673ad461f589b71e748e5c8c66e3e6d6a8eb44ca435f1f61498c818e4017d47"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_104.parquet.jsonl.gz",
+      "bytes": 854026,
+      "sha256": "277f5ee18b834b0590c4d165241fccd3c17816ffa964a309904d3637c56315b9"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_105.parquet.jsonl.gz",
+      "bytes": 731513,
+      "sha256": "686dd8a3aba2d7a286032d7d12499aa3eeb8ae0f93980e1028fc93bdbbc57178"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_106.parquet.jsonl.gz",
+      "bytes": 1015790,
+      "sha256": "e5c21ba29436ca96da298facf5b5847ddba551fbc615fcf932a0954de9ecf94b"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_107.parquet.jsonl.gz",
+      "bytes": 898903,
+      "sha256": "99b46a9030034a46809c10e7ea9ca0ee286d91eb1148839cc5e68bd96fc99904"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_108.parquet.jsonl.gz",
+      "bytes": 624508,
+      "sha256": "1c8878bf906b18e64481fb8b7bf1082cad17f4ef701520c359b90ce86d0d9567"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_109.parquet.jsonl.gz",
+      "bytes": 844190,
+      "sha256": "cf4ed2855b07b33e26077f1849b32d85cbd8cdef4638fbf178bbb53be0d9e0e7"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_11.parquet.jsonl.gz",
+      "bytes": 837440,
+      "sha256": "2bda3894d909d7acfa0c6f3bdc5073b5fd8807098d5940aa9f29592efb0f9a14"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_110.parquet.jsonl.gz",
+      "bytes": 680091,
+      "sha256": "39a4a95275b2627985294f134c592edf64e9485c8a3d46ec59cd64a7c886ed4d"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_111.parquet.jsonl.gz",
+      "bytes": 679076,
+      "sha256": "6cec7bcabcf51e1e5f20283ed31971c3e48870be74ae9cc7a494e8e17bf2e366"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_112.parquet.jsonl.gz",
+      "bytes": 817845,
+      "sha256": "3ded68969de5aa7412bfd93e5b9ced528a4057b3b24ee561faefe2fe0a308117"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_113.parquet.jsonl.gz",
+      "bytes": 607128,
+      "sha256": "fd1ebdf4d90b03aca9b9d59b35d864ef495e46466c6079434ab2ff0f97cfae59"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_114.parquet.jsonl.gz",
+      "bytes": 695632,
+      "sha256": "bc9912c493cc8b72550a3cf67e4fea3275e770f489a6841ccbf221fca5afd4bf"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_115.parquet.jsonl.gz",
+      "bytes": 659511,
+      "sha256": "11816d555701c344eada8cb95d96ce50cae0795cca08a5ae22e2283c2f2029c0"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_116.parquet.jsonl.gz",
+      "bytes": 809736,
+      "sha256": "0805dd203af2960f6ec504de97dfde069717afc6a3666edbee2ef76832554818"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_117.parquet.jsonl.gz",
+      "bytes": 862951,
+      "sha256": "d6435da874a1d5dba172b2e9c18284474be39c34d4418003238c86614737fdff"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_118.parquet.jsonl.gz",
+      "bytes": 769006,
+      "sha256": "f84d847480cc6534ff36b5ee74c1d687b4d408583e3f123954e9f74037508079"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_119.parquet.jsonl.gz",
+      "bytes": 705275,
+      "sha256": "63b9735a726fef924531e5db6343c589f0b5425e13d03f97476f267520d1eb2e"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_12.parquet.jsonl.gz",
+      "bytes": 881103,
+      "sha256": "577494001a7e2c2224bb3fd115db478f66057557b27b949a99d54f656098ca2c"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_120.parquet.jsonl.gz",
+      "bytes": 831870,
+      "sha256": "68ab7f7de2e30847dc23920a547fd6801f4d98afeb78f35cb56f92e19ebae2cf"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_121.parquet.jsonl.gz",
+      "bytes": 765195,
+      "sha256": "c6df38cfd9c4edc6fcff65acc7b50adc3f9d56400fe12ef8367ac3909adbcfa4"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_122.parquet.jsonl.gz",
+      "bytes": 811749,
+      "sha256": "36a999324f74d5b3bf3289b733c7c4dd57cba1fe2f525964ac30d6dafeac98f3"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_123.parquet.jsonl.gz",
+      "bytes": 1012566,
+      "sha256": "37273e89cca70e91a3978936cf0bf86e59aa207bfe6b49f2e30a55799eb2b3a6"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_124.parquet.jsonl.gz",
+      "bytes": 688209,
+      "sha256": "028badc66b709223591e586959f0ae2e38df6e614e3f6f87712077bc5b7e594b"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_125.parquet.jsonl.gz",
+      "bytes": 732642,
+      "sha256": "fe43f0d1e14e6d1878e0e46b06627d0063f84a5f41e0a9b62f322514f3d55410"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_126.parquet.jsonl.gz",
+      "bytes": 956718,
+      "sha256": "fb01298443f9791552f99da93be4abee16ba8ea446e61995fe54b95bd4f53b68"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_127.parquet.jsonl.gz",
+      "bytes": 891658,
+      "sha256": "4e88ef86ea4253d59a35eae2c1661a074d89c3bde2fcd47670e59ee2b1d300d0"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_128.parquet.jsonl.gz",
+      "bytes": 563214,
+      "sha256": "a632b5438564fb2ac25e0ba44b9ed95ccdf731265de085ea09c933dd21a80d25"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_129.parquet.jsonl.gz",
+      "bytes": 836391,
+      "sha256": "719109b17e65133417532869a983e18556b12062e4eb51987203af9b1db3ec79"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_13.parquet.jsonl.gz",
+      "bytes": 819621,
+      "sha256": "60f620ec715fd42d0abe5f20d4924137e7d5cf6a8c4a40f2cd1010fa4a3687a7"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_130.parquet.jsonl.gz",
+      "bytes": 952909,
+      "sha256": "f780115e09aff4258e59382b429e6b5589c370c3283d030e0553356db8885c40"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_131.parquet.jsonl.gz",
+      "bytes": 903683,
+      "sha256": "8820cfa3e39ee1313ec3d503ad177e57dec74475d2b46df1c3b419e84445c7fe"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_132.parquet.jsonl.gz",
+      "bytes": 649912,
+      "sha256": "c72e68904051806e9d7ce326d0b268d1db6a5fbef58c9915f0ef4b7b4dcb3872"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_133.parquet.jsonl.gz",
+      "bytes": 760916,
+      "sha256": "eed6f0b8652cefa1e37b2ab25e9ef46e78a9c330b368c939d6989836f63697b2"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_134.parquet.jsonl.gz",
+      "bytes": 730316,
+      "sha256": "05807ecc8f0ca40348c6143dde186233d931b77a7f0ae4170969b35159758bd8"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_135.parquet.jsonl.gz",
+      "bytes": 761479,
+      "sha256": "d7ddfcd4ec9e28413d6b44250d5e95d27bbb58a4c3b63a2d8bfac35efc14bceb"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_136.parquet.jsonl.gz",
+      "bytes": 723634,
+      "sha256": "9eb4e86efb674b01388e3e39f721c55f0b127adedc49f6a56b59f608f8fda19e"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_137.parquet.jsonl.gz",
+      "bytes": 782569,
+      "sha256": "8970432a6b8dc2c81c5c43e5a04b657633cb8523e95391ab9361c5d42098a784"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_138.parquet.jsonl.gz",
+      "bytes": 753644,
+      "sha256": "76509df6e6994e4e59160957f85ab9e6ccf4c853444b9ef92b79821856f1a485"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_139.parquet.jsonl.gz",
+      "bytes": 749844,
+      "sha256": "27c5037152014a98c4c444a4b4a060b18ad0562dc60e2a3408f0fb09ca511794"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_14.parquet.jsonl.gz",
+      "bytes": 664231,
+      "sha256": "ec41043ff79292190a83e1c555e2dbd6d9830fbcc70fe94e7ff2cb63dfdb12c8"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_140.parquet.jsonl.gz",
+      "bytes": 770016,
+      "sha256": "ace0e6600013690136db5cf2f147c4580bf4ce4a33aff5d64f9776b3fb98039b"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_141.parquet.jsonl.gz",
+      "bytes": 939947,
+      "sha256": "f32b507b985feb9ed97856a6b7668617ad9e27666af76a6f4cd08261c4957562"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_142.parquet.jsonl.gz",
+      "bytes": 803706,
+      "sha256": "8ea4d6ae7c93f6a3ec364d9aca5dd5947b1b6215f1a0c08fe7b45349a552783c"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_143.parquet.jsonl.gz",
+      "bytes": 936073,
+      "sha256": "af7b8a186d5819ab5a3b66b998276d3666607a2ccf4358683b9fb319f050a33c"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_144.parquet.jsonl.gz",
+      "bytes": 754850,
+      "sha256": "ef966bb8117d0854b2fa903b28e56bfc4ff7ab41484d6a40f3478cc24a254ddf"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_145.parquet.jsonl.gz",
+      "bytes": 806391,
+      "sha256": "f312793c88ffe930e32578c7bbf7cf1ad776b52435cb89543eb2d36549f97e1e"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_146.parquet.jsonl.gz",
+      "bytes": 789530,
+      "sha256": "4703ad22d68f7da16002a474e13c0c0b9e860d50f7f536deefdda7e7250de05f"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_147.parquet.jsonl.gz",
+      "bytes": 832022,
+      "sha256": "1c5c2ff06a9fb2840cf71f9dfbec49cdf9bcb6e188388418bfded1d07ed866f0"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_148.parquet.jsonl.gz",
+      "bytes": 829060,
+      "sha256": "6c0ab71b80866935e575ec280949d70378c410789d7cb9fe4c0b2b62a070dd63"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_149.parquet.jsonl.gz",
+      "bytes": 778451,
+      "sha256": "dee57db318c14e17f94ce29372ab5718f4aec4ba6046ea8937733ffc6e3f5925"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_15.parquet.jsonl.gz",
+      "bytes": 796786,
+      "sha256": "fe45ae282be7b2ccaaf2c772f2133c2435d1d4afff5fd4947e029d489f03c5dd"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_150.parquet.jsonl.gz",
+      "bytes": 780915,
+      "sha256": "18e451a9d2b34d68b065d436254fc2e92eab54f16b10ca96914618c1723c1e95"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_151.parquet.jsonl.gz",
+      "bytes": 943167,
+      "sha256": "0a11c6acd55a4367542d3aadac991c5cbc145c99bc5a472a7775712621b2923f"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_152.parquet.jsonl.gz",
+      "bytes": 934993,
+      "sha256": "c1453946da7abc844a8570afe464d2436baa85b2b35718ba0e0929d0ddd23e4d"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_153.parquet.jsonl.gz",
+      "bytes": 861181,
+      "sha256": "b8edb30a57dd7f624caeb79f216bc5976ac04d7aafd4dea007bb1c2023d27428"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_154.parquet.jsonl.gz",
+      "bytes": 727794,
+      "sha256": "793baef5caaec82a6dd7951e9bd8811156e61ecc9a750e4f69882d584595a90d"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_155.parquet.jsonl.gz",
+      "bytes": 729834,
+      "sha256": "c5346f2ed872038154b89e02f058343bb5f8ef15dfd48ebc888915d912ce6213"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_156.parquet.jsonl.gz",
+      "bytes": 754202,
+      "sha256": "2e356d841ce7396dc0a4082919d9723cd54e15d445b7b3eedf5c26e5adf4505d"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_157.parquet.jsonl.gz",
+      "bytes": 720638,
+      "sha256": "a2bbb6fff4d0206bc399f47f54ef189383aeea41598183cd938243b9b3c158ba"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_158.parquet.jsonl.gz",
+      "bytes": 691188,
+      "sha256": "90bac5f32e2c83a5bd4febd8ad0548a0cb04dcec3323bff4153217a145c3d3c3"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_159.parquet.jsonl.gz",
+      "bytes": 775690,
+      "sha256": "e0cc0ce5d34509702ee0ca6249c70e77856cd9de4e07a5841410c2539e1b4b2b"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_16.parquet.jsonl.gz",
+      "bytes": 704990,
+      "sha256": "d35bc9d53d6f60d65b2d6355ae56bb6ccbebb39f6ae1fbb38bca51f04bd06652"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_160.parquet.jsonl.gz",
+      "bytes": 812143,
+      "sha256": "7ad2ba00e2e9a84b2608f7451da88bc1ae1db4ef076fa6688ec7939dee668c82"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_161.parquet.jsonl.gz",
+      "bytes": 678825,
+      "sha256": "d5e47aaabe6b3e399b85f857f39fe277d20b6557bcacd00f27a4313286947437"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_162.parquet.jsonl.gz",
+      "bytes": 731056,
+      "sha256": "a5a384d1d87486ffcf87b30a57cf7c9868bd6c5ee7566e3fb24a904a891ecf93"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_163.parquet.jsonl.gz",
+      "bytes": 755159,
+      "sha256": "6a39c90fde83d5faec902ae54e0ecc44d094b4d82d3b4a9a7bafe9c288104b23"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_164.parquet.jsonl.gz",
+      "bytes": 665215,
+      "sha256": "beca18e30fb6f0b93d5a6999bad20754e3ef40364733b4f93a4a0245ebc5775f"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_165.parquet.jsonl.gz",
+      "bytes": 829070,
+      "sha256": "fd89eea5ea52db47f9c5b80d56ecaa82f5537e91988a85ea0e7ebaab3ac910a7"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_166.parquet.jsonl.gz",
+      "bytes": 742490,
+      "sha256": "62bd7f8482a13cb1cba593f8ee3f9844c0f183d7f5401bd3e8867d4f68714acc"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_167.parquet.jsonl.gz",
+      "bytes": 624261,
+      "sha256": "e65b0cc2206c43a0b1cccb657718fc966ee24e1b1c68230606f66a506f97d7b8"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_168.parquet.jsonl.gz",
+      "bytes": 812746,
+      "sha256": "f6926b072eb1195f300f88c80d646b1ceaee53c05d55b250672610bb55d37c50"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_169.parquet.jsonl.gz",
+      "bytes": 877894,
+      "sha256": "e759b1030fa56401ed68cc43561d5090732b9e9bdee62d50d2b13cc35c1d7a73"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_17.parquet.jsonl.gz",
+      "bytes": 788181,
+      "sha256": "ba0ea2ca2fb543e91dfa077db4a403df8668f28498e49dafbe0add4fd610da1e"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_170.parquet.jsonl.gz",
+      "bytes": 687594,
+      "sha256": "d16cac4fb720ae956166a4fbdcb29a8863433ac51fadba9dfdec076440599a3f"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_171.parquet.jsonl.gz",
+      "bytes": 656617,
+      "sha256": "9e264ac62992e72e5dade47e02e2cbe1e5dc24c8fcb3bc637aec1666a7dff498"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_172.parquet.jsonl.gz",
+      "bytes": 747654,
+      "sha256": "ead867e43aeca7f7eb634799491702ffbcf493d5c829b4436841c05904bde805"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_173.parquet.jsonl.gz",
+      "bytes": 702263,
+      "sha256": "c8070809f2fe47a3a46d85ad4580953fc5a431a0b8965e6513fcd99613193735"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_174.parquet.jsonl.gz",
+      "bytes": 860575,
+      "sha256": "b0a5fba2019c21fe67636c1c28f4f8339b5eb8ad76316df459be02ef47e8f92b"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_175.parquet.jsonl.gz",
+      "bytes": 685898,
+      "sha256": "52b0c3afff0e8779144ba2249073e74e7ec676e8f4e5f8a9f4e889d19e31c054"
+    },
+    {
+      "path": "lingua_moderna\\youtube_commons_es\\part-cctube_176.parquet.jsonl.gz",
+      "bytes": 694507,
+      "sha256": "684e4e054cef7fa2d94e3e425741a159419111b7ce4adaff8e7ca62e87e3c497"
+    }
+  ],
+  "groups": [
+    {
+      "category": "ciencia",
+      "source": "PleIAs/common_corpus",
+      "license": "CC-BY",
+      "language": "English",
+      "rows": 1743,
+      "characters": 109838837,
+      "empty": 0,
+      "normalized_duplicates": 0
+    },
+    {
+      "category": "ciencia",
+      "source": "PleIAs/common_corpus",
+      "license": "public-domain",
+      "language": "English",
+      "rows": 62,
+      "characters": 2761031,
+      "empty": 0,
+      "normalized_duplicates": 0
+    },
+    {
+      "category": "lexislacion",
+      "source": "PleIAs/common_corpus",
+      "license": "public-domain",
+      "language": "English",
+      "rows": 3229,
+      "characters": 26784005,
+      "empty": 0,
+      "normalized_duplicates": 71
+    },
+    {
+      "category": "lexislacion",
+      "source": "joelniklaus/eurlex_resources",
+      "license": "eu-reuse-2011-833",
+      "language": "es",
+      "rows": 92285,
+      "characters": 1764173759,
+      "empty": 0,
+      "normalized_duplicates": 3193
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus",
+      "license": "CC-BY-4.0",
+      "language": "es",
+      "rows": 13008,
+      "characters": 5346942,
+      "empty": 0,
+      "normalized_duplicates": 787
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "PleIAs/common_corpus",
+      "license": "CC0-1.0",
+      "language": "Spanish",
+      "rows": 461,
+      "characters": 148613,
+      "empty": 0,
+      "normalized_duplicates": 5
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "PleIAs/common_corpus",
+      "license": "public-domain",
+      "language": "English",
+      "rows": 611,
+      "characters": 15237588,
+      "empty": 0,
+      "normalized_duplicates": 7
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "Helsinki-NLP/opus_dgt",
+      "license": "eu-reuse-2011-833",
+      "language": "es",
+      "rows": 5957,
+      "characters": 29431510,
+      "empty": 0,
+      "normalized_duplicates": 0
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "joelniklaus/eurlex_resources",
+      "license": "eu-reuse-2011-833",
+      "language": "es",
+      "rows": 27761,
+      "characters": 1663921120,
+      "empty": 0,
+      "normalized_duplicates": 880
+    },
+    {
+      "category": "lingua_moderna",
+      "source": "PleIAs/YouTube-Commons",
+      "license": "CC-BY-3.0",
+      "language": "es",
+      "rows": 26083,
+      "characters": 192810497,
+      "empty": 0,
+      "normalized_duplicates": 1020
+    }
+  ],
+  "limitations": [
+    "Duplicate count is diagnostic and depends on sorted file order.",
+    "Source labels are declarations, not verification of licence, language or domain.",
+    "No tokens, quality scores or transfer costs are inferred from characters."
+  ]
+}

@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Melloras preparadas para desenvolvemento
 
 Código local baseado no ZIP achegado; non despregado en Lovable nin aplicado sobre Supabase. Non precisa créditos de IA para compilar nin pasar as probas.

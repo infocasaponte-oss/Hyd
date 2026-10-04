@@ -1,0 +1,14 @@
+{
+  "format": "hyd-origin-overlay-manifest/1",
+  "complete": true,
+  "rows": 26083,
+  "training_allowed": false,
+  "snapshot_manifest_sha256": "d1fc49157a4d092b06e0e0f12d6f3877ec7ab270ebc3075c7444cbac3067ce35",
+  "input_sha256": "bbf8b3784a39eaf65646b258e9c8fa98e45584a89c75c9c8fa8762c5580c5125",
+  "output_sha256": "547517c8187204c6ce5b6cd7266bf38a1586f9a449baff5ee92e92eef0352808",
+  "limitations": [
+    "Only explicit preserved video_link fields are recovered.",
+    "No URLs, authorship, consent, license versions or rights decisions are invented.",
+    "Overlay requires review; original bucket assignment and text are unchanged."
+  ]
+}

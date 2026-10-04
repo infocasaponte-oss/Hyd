@@ -1,0 +1,94 @@
+{
+  "format": "hyd-rights-evidence-capture/1",
+  "entries": [
+    {
+      "file": "eu-template-en.pdf",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118480",
+      "checked_at": "2026-10-04T21:32:53.813445+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "bytes": 321595,
+      "sha256": "be6cdf10131c3fd9eb9265e592b23609fd7df2d2c9692517017f739188d408be",
+      "final_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118480"
+    },
+    {
+      "file": "eu-template-es.pdf",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/126319",
+      "checked_at": "2026-10-04T21:32:56.988146+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "bytes": 201120,
+      "sha256": "21a85ef0a0428526edb454300b68fac0e4d5028af903d65cd26ff2c4226883d7",
+      "final_url": "https://ec.europa.eu/newsroom/dae/redirection/document/126319"
+    },
+    {
+      "file": "eu-template.docx",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118578",
+      "checked_at": "2026-10-04T21:33:00.335446+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "bytes": 70622,
+      "sha256": "ec803008a5263a485146b24497a3445e2ea32f8b73f818e67652ad70de40f09b",
+      "final_url": "https://ec.europa.eu/newsroom/dae/redirection/document/118578"
+    },
+    {
+      "file": "eurlex_es-README.md",
+      "url": "https://huggingface.co/datasets/joelniklaus/eurlex_resources/raw/4d7946ef7f0c5ff5e261e384db8015dfe8e417cb/README.md",
+      "checked_at": "2026-10-04T21:32:17.988803+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "final_url": "https://huggingface.co/datasets/joelniklaus/eurlex_resources/raw/4d7946ef7f0c5ff5e261e384db8015dfe8e417cb/README.md",
+      "bytes": 21998,
+      "sha256": "e5135adcd7f39b310ab25b5aed4fb907cd0476b7ca83e68bee3f1aa89992aee6"
+    },
+    {
+      "file": "youtube_commons_es-README.md",
+      "url": "https://huggingface.co/datasets/PleIAs/YouTube-Commons/raw/9addbabbfcd7409acbcd11a3b59ec2aef6da7eb0/README.md",
+      "checked_at": "2026-10-04T21:32:19.019070+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "final_url": "https://huggingface.co/datasets/PleIAs/YouTube-Commons/raw/9addbabbfcd7409acbcd11a3b59ec2aef6da7eb0/README.md",
+      "bytes": 4220,
+      "sha256": "6a4357b1c1cc38d27b56e379d0b88dd09234cba9a3318cc5f1a013f8768c70c6"
+    },
+    {
+      "file": "common_corpus_mixed-README.md",
+      "url": "https://huggingface.co/datasets/PleIAs/common_corpus/raw/307910e4c5d040d6f318e6edf2a2b97849155771/README.md",
+      "checked_at": "2026-10-04T21:32:19.742642+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "final_url": "https://huggingface.co/datasets/PleIAs/common_corpus/raw/307910e4c5d040d6f318e6edf2a2b97849155771/README.md",
+      "bytes": 11176,
+      "sha256": "4ed3a9d4b42d05bcaf8430ddd09a6dbfc0d31f0937fbb6c67e2ee492373d820c"
+    },
+    {
+      "file": "bsc_legal_paragraphs_es-README.md",
+      "url": "https://huggingface.co/datasets/BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus/raw/8919971a3444608534abbca410fdf02e932a7272/README.md",
+      "checked_at": "2026-10-04T21:32:20.252222+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "final_url": "https://huggingface.co/datasets/BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus/raw/8919971a3444608534abbca410fdf02e932a7272/README.md",
+      "bytes": 7421,
+      "sha256": "1b6b8cf15103b87d969165de956e71396e7944df209833d86f6f6367a1e352be"
+    },
+    {
+      "file": "dgt_es-README.md",
+      "url": "https://huggingface.co/datasets/Helsinki-NLP/opus_dgt/raw/e58229797611a11e767827a1b5abe80372a63503/README.md",
+      "checked_at": "2026-10-04T21:32:21.702599+00:00",
+      "status": "captured",
+      "training_allowed": false,
+      "final_url": "https://huggingface.co/datasets/Helsinki-NLP/opus_dgt/raw/e58229797611a11e767827a1b5abe80372a63503/README.md",
+      "bytes": 11349,
+      "sha256": "696b5d310606113fb8ca19c24d46a947dce120edc9a921a275b398a88c708b08"
+    },
+    {
+      "file": "copyright-code.pdf",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118115",
+      "status": "captured",
+      "sha256": "cdb3c117e8e51282ab61fad8af9d5cd1acaf1773a5eadce178c3d10498ca864a",
+      "bytes": 446847,
+      "training_allowed": false
+    }
+  ],
+  "rights_approved": false
+}

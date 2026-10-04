@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Fit temperature and thresholds on calibration only; never edit source weights."""
 
 import hashlib

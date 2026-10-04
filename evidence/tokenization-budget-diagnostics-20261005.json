@@ -1,0 +1,21 @@
+{
+  "format": "hyd-tokenization-budget-diagnostics/1",
+  "complete": true,
+  "training_allowed": false,
+  "tokenizer_sha256": "edd79f7825e7574771c7d15e71cfa0178794ee67462d398d7cbd4b133c91d8f9",
+  "snapshot_manifest_sha256": "d1fc49157a4d092b06e0e0f12d6f3877ec7ab270ebc3075c7444cbac3067ce35",
+  "records": [
+    {
+      "bucket": "candidates",
+      "source": "joelniklaus/eurlex_resources",
+      "verbatim_text_sha256": "9e20bfb50451c93f3bbc3e0ed8ab826a03faad8f18a686b5a30b9b143adbb85e",
+      "characters": 246824,
+      "reason": "normalized word/whitespace span exceeds safe tokenization budget",
+      "training_allowed": false
+    }
+  ],
+  "limitations": [
+    "No token counts or text content are emitted.",
+    "Records remain preserved; filter or revise preprocessing and recount before training."
+  ]
+}

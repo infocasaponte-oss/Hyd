@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Hyd: paquete para probas locais
 
 Inclúe o código versionado completo de HYDRA necesario para executar Hyd, configuración, pesos CPU en config/hyd/model.json, calibración, probas e documentación. Non inclúe .env, claves nin corpus xeral en construción. O código conserva compatibilidade histórica; non se inclúen pesos de Kev.

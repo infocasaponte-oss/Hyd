@@ -1,0 +1,154 @@
+{
+  "format": "hyd-source-rights-review/1",
+  "snapshot_manifest_sha256": "d1fc49157a4d092b06e0e0f12d6f3877ec7ab270ebc3075c7444cbac3067ce35",
+  "training_allowed": false,
+  "sources": [
+    {
+      "source": "joelniklaus/eurlex_resources",
+      "revision": "4d7946ef7f0c5ff5e261e384db8015dfe8e417cb",
+      "license_declaration": "eu-reuse-2011-833",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "eurlex_es-README.md",
+          "sha256": "e5135adcd7f39b310ab25b5aed4fb907cd0476b7ca83e68bee3f1aa89992aee6",
+          "url": "https://huggingface.co/datasets/joelniklaus/eurlex_resources/raw/4d7946ef7f0c5ff5e261e384db8015dfe8e417cb/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "PleIAs/common_corpus",
+      "revision": "307910e4c5d040d6f318e6edf2a2b97849155771",
+      "license_declaration": "CC-BY",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "common_corpus_mixed-README.md",
+          "sha256": "4ed3a9d4b42d05bcaf8430ddd09a6dbfc0d31f0937fbb6c67e2ee492373d820c",
+          "url": "https://huggingface.co/datasets/PleIAs/common_corpus/raw/307910e4c5d040d6f318e6edf2a2b97849155771/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "PleIAs/common_corpus",
+      "revision": "307910e4c5d040d6f318e6edf2a2b97849155771",
+      "license_declaration": "public-domain",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "common_corpus_mixed-README.md",
+          "sha256": "4ed3a9d4b42d05bcaf8430ddd09a6dbfc0d31f0937fbb6c67e2ee492373d820c",
+          "url": "https://huggingface.co/datasets/PleIAs/common_corpus/raw/307910e4c5d040d6f318e6edf2a2b97849155771/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus",
+      "revision": "8919971a3444608534abbca410fdf02e932a7272",
+      "license_declaration": "CC-BY-4.0",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "bsc_legal_paragraphs_es-README.md",
+          "sha256": "1b6b8cf15103b87d969165de956e71396e7944df209833d86f6f6367a1e352be",
+          "url": "https://huggingface.co/datasets/BSC-LT/Legal_Catalan_Spanish_Parallel_Corpus/raw/8919971a3444608534abbca410fdf02e932a7272/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "PleIAs/common_corpus",
+      "revision": "307910e4c5d040d6f318e6edf2a2b97849155771",
+      "license_declaration": "CC0-1.0",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "common_corpus_mixed-README.md",
+          "sha256": "4ed3a9d4b42d05bcaf8430ddd09a6dbfc0d31f0937fbb6c67e2ee492373d820c",
+          "url": "https://huggingface.co/datasets/PleIAs/common_corpus/raw/307910e4c5d040d6f318e6edf2a2b97849155771/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "Helsinki-NLP/opus_dgt",
+      "revision": "e58229797611a11e767827a1b5abe80372a63503",
+      "license_declaration": "eu-reuse-2011-833",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "dgt_es-README.md",
+          "sha256": "696b5d310606113fb8ca19c24d46a947dce120edc9a921a275b398a88c708b08",
+          "url": "https://huggingface.co/datasets/Helsinki-NLP/opus_dgt/raw/e58229797611a11e767827a1b5abe80372a63503/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    },
+    {
+      "source": "PleIAs/YouTube-Commons",
+      "revision": "9addbabbfcd7409acbcd11a3b59ec2aef6da7eb0",
+      "license_declaration": "CC-BY-3.0",
+      "review_status": "pending",
+      "lawful_access": "unknown",
+      "rights_basis": "unknown",
+      "attribution_complete": "unknown",
+      "tdm_reservations": "unknown",
+      "personal_data_review": "pending",
+      "evidence": [
+        {
+          "path": "youtube_commons_es-README.md",
+          "sha256": "6a4357b1c1cc38d27b56e379d0b88dd09234cba9a3318cc5f1a013f8768c70c6",
+          "url": "https://huggingface.co/datasets/PleIAs/YouTube-Commons/raw/9addbabbfcd7409acbcd11a3b59ec2aef6da7eb0/README.md"
+        }
+      ],
+      "training_allowed": false,
+      "evidence_scope": "Distributor card at pinned revision; not original-work rights clearance."
+    }
+  ],
+  "dataset_review": {
+    "review_status": "pending",
+    "diversity_reviewed": false,
+    "language_verified": false,
+    "benchmark_decontamination_verified": false,
+    "evidence": []
+  }
+}

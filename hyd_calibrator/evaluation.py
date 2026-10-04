@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Validated input and diagnostics shared by calibration and reporting."""
 
 import hashlib

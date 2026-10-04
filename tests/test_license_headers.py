@@ -8,7 +8,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 OWNER = "Luis Manuel Cousido Hermida"
-BINARY_OR_COMMENTLESS = {".json", ".jsonl", ".patch", ".lock", ".png", ".jpg", ".jpeg", ".gif", ".ico", ".gguf", ".safetensors", ".pyc"}
+BINARY_OR_COMMENTLESS = {".json", ".jsonl", ".patch", ".lock", ".png", ".jpg", ".jpeg", ".gif", ".ico", ".gguf", ".safetensors", ".pyc", ".npz", ".pt", ".model"}
 
 
 def _tracked() -> list[Path]:
