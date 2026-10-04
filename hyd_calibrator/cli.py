@@ -30,6 +30,13 @@ def main():
     acquisition = commands.add_parser("acquisition-report")
     acquisition.add_argument("--root", required=True, type=Path)
     acquisition.add_argument("--out", required=True, type=Path)
+    prepare = commands.add_parser("prepare-acquisition")
+    prepare.add_argument("--root", required=True, type=Path)
+    prepare.add_argument("--inventory", required=True, type=Path)
+    prepare.add_argument("--out", required=True, type=Path)
+    download = commands.add_parser("download-asset")
+    download.add_argument("--plan", required=True, type=Path)
+    download.add_argument("--out", required=True, type=Path)
     r = commands.add_parser("report")
     r.add_argument("--dataset", required=True, type=Path)
     r.add_argument("--model-dir", required=True, type=Path)
@@ -56,6 +63,12 @@ def main():
             result = deduplicate_evaluation(args.source, args.out, text_field=args.text_field,
                                            reference_field=args.reference_field, evaluation_kind=args.evaluation_kind,
                                            review_only=args.review_only)
+        elif args.command == "download-asset":
+            from .downloader import download_asset
+            result = download_asset(args.plan, args.out)
+        elif args.command == "prepare-acquisition":
+            from .acquisition_snapshot import prepare_acquisition
+            result = prepare_acquisition(args.root, args.inventory, args.out)
         elif args.command == "acquisition-report":
             from .data_review import acquisition_report
             result = acquisition_report(args.root, args.out)
