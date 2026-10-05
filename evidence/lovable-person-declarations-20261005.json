@@ -1,0 +1,21 @@
+{
+  "format": "hyd-person-declaration/1",
+  "date": "2026-10-05",
+  "source": "direct user declaration in Codex",
+  "accounts_to_declared_person": {
+    "acct-owner-A": "declared-owner",
+    "acct-owner-B": "declared-owner",
+    "acct-juan": "declared-external-A",
+    "acct-new-belen-unconfirmed": "declared-external-B"
+  },
+  "record_counts_by_declared_person": {
+    "declared-owner": 2936,
+    "declared-external-A": 1000,
+    "declared-external-B": 2300
+  },
+  "independent_identity_verified": false,
+  "family_metadata_complete": false,
+  "four_person_disjoint_partitions_possible": false,
+  "training_approved": false,
+  "note": "Three declared people cannot populate four nonempty person-disjoint partitions. Do not invent authors or families."
+}
