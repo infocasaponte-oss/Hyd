@@ -22,8 +22,11 @@ decisión. **Exportar revisións JSONL** descarga el historial portable, con tex
 hash, revisor, etiqueta y fecha. Conserva datos privados: no subirlo al repositorio.
 
 El corpus original, los tests y los candidatos permanecen intactos. Este servidor
-no aplica correcciones al corpus ni inicia entrenamiento. La próxima versión del
-corpus necesita adjudicación humana de esas revisiones y conservación del historial.
+no aplica correcciones al corpus ni inicia entrenamiento. Tras confirmar las
+revisiones, `python -m hydra.training.decision_review_import --corpus ORIGINAL
+--events EXPORTADO --out NUEVO_DIRECTORIO` crea una versión distinta con historial.
+El resultado del primer ciclo consta en
+[RETEST_REVISION_HUMANA_2026-10-05.md](RETEST_REVISION_HUMANA_2026-10-05.md).
 
 Verificado con fixture sintética: guardado, rechazo de POST sin token y de host
 externo, nota obligatoria en ambiguos, historial exportado, original intacto y
