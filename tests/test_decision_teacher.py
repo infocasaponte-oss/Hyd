@@ -7,7 +7,7 @@ import pytest
 
 from hydra.router.decision_contract import CRITERIA
 from hydra.training.decision_active_learning import read_rows
-from hydra.training.decision_teacher import experimental_snapshot, review
+from hydra.training.decision_teacher import experimental_snapshot, export_ai_revision, review
 from hydra.training.decision_balanced_examples import generate
 
 
@@ -163,3 +163,34 @@ def test_synthetic_only_experiment_preserves_every_existing_fit_label(snapshot, 
     assert meta['proposals_sha256'] is None and meta['fit_label_changes'] == 0
     for split in ('dev', 'cal_prob', 'cal_policy', 'test'):
         assert Path(paths[split]).read_bytes() == Path(original[split]).read_bytes()
+
+
+def test_ai_revision_preserves_authorship_and_does_not_claim_human_labels(tmp_path):
+    from hydra.training.decision_candidates import file_sha
+    source = teacher_corpus(tmp_path)
+    rows = read_rows(source)
+    rows[0].update({'expected': 'chat', 'author_group': 'person-fixture',
+                    'label_review': {'human_label': 'chat', 'reviewer': 'Synthetic reviewer'}})
+    source.write_text(json.dumps(rows[0]) + '\n', encoding='utf-8')
+    before = source.read_bytes()
+    teacher = tmp_path / 'teacher'
+    teacher.mkdir()
+    proposals = teacher / 'proposals.jsonl'
+    proposals.write_text(json.dumps({'id': rows[0]['id'], 'text_sha256': rows[0]['text_sha256'],
+                                     'proposed_label': 'privacy', 'human_confirmed': False,
+                                     'label_source': 'local_ai_proposal'}) + '\n', encoding='utf-8')
+    progress = {'complete': True, 'binding': {'corpus_sha256': file_sha(source)},
+                'proposals_sha256': file_sha(proposals)}
+    (teacher / 'progress.json').write_text(json.dumps(progress), encoding='utf-8')
+    out = tmp_path / 'revision'
+    manifest = export_ai_revision(source, teacher, out)
+    revised = read_rows(out / 'corpus_ai_revised.jsonl')[0]
+    assert revised['text'] == rows[0]['text'] and revised['author_group'] == 'person-fixture'
+    assert revised['expected'] == 'privacy' and revised['original_expected'] == 'chat'
+    assert revised['original_label_review'] == rows[0]['label_review'] and 'label_review' not in revised
+    assert not revised['human_confirmed'] and not revised['expected_human_confirmed']
+    assert not revised['training_allowed'] and not manifest['evaluation_reference']
+    assert source.read_bytes() == before and manifest['changed_labels'] == 1
+    proposals.write_text('{}\n')
+    with pytest.raises(ValueError, match='source-bound'):
+        export_ai_revision(source, teacher, tmp_path / 'tampered')

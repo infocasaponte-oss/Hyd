@@ -21,11 +21,14 @@ Referencia actual: 5.844 preguntas reais, tres autores e 629 etiquetas confirmad
 |---|---:|
 | Hyd equilibrado, sen novos sintéticos | 56,38 % |
 | Hyd equilibrado + 240 sintéticos, sen cambiar etiquetas reais | 56,91 % |
+| Propostas individuais v8 + sintéticos (rexeitado) | 49,85 % |
 | Kev, mesmos casos e pesos verificados | 48,37 % |
 
 O incremento de 0,53 puntos non demostra que se alcance o 90 %. As tres recargas do ensaio con sintéticos pasan; ningún candidato pasa a política de fiabilidade. Mantéñense en observación.
 
-A primeira pasada da IA con índices numéricos deu clasificacións claramente erradas e os candidatos empeoraron: 41,24 % sen sintéticos e 42,85 % con eles. Consérvase como ensaio fallido e non se adopta. A segunda revisión, individual e con nomes de clase, queda pendente de finalizar e medir; non se lle atribúe unha nota anticipada.
+A primeira pasada da IA con índices numéricos deu clasificacións claramente erradas e os candidatos empeoraron: 41,24 % sen sintéticos e 42,85 % con eles. A revisión individual con v8 completou as 5.844 preguntas, pero só deu 47,93 % sen sintéticos e 49,85 % con eles. Discrepou en 472 das 629 revisións humanas. Ambos ensaios quedan rexeitados; gardar unha proposta non a converte nunha boa corrección.
+
+A revisión posterior usa Qwen3 de 8B, con criterios máis explícitos. Hai unha exportación versionada `corpus_ai_revised.jsonl`: conserva texto, autoría e etiqueta anterior, move as revisións humanas orixinais ao historial e identifica o novo obxectivo como IA non confirmada. Este ficheiro non substitúe o corpus humano nin se usa como referencia de exactitude humana.
 
 ## Ferramentas reproducibles
 
@@ -47,3 +50,5 @@ python -m hydra.training.decision_teacher --corpus CORPUS_REVISADO.jsonl --out R
 5. Integrar no motor só despois da validación humana final, con versión anterior recuperable. O calibrador, os exemplos e a procedencia son exportables sen depender de Lovable.
 
 Probas locais actuais: 36 comprobacións das propostas, particións, revisión humana, comparación, aprendizaxe continua, interface e avisos de autoría. Ruff pasa nos ficheiros novos.
+
+A proba real do motor e os axentes, a preparación do encoder e a corrección da independencia dos votos constan en [HYDRA_HYD_REAL_2026-10-05.md](HYDRA_HYD_REAL_2026-10-05.md).
