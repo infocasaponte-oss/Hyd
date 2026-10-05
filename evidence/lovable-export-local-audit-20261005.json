@@ -1,0 +1,48 @@
+{
+  "structural_errors": {},
+  "structurally_valid": true,
+  "counts": {
+    "records": 6236,
+    "annotations": 750,
+    "queue": 86,
+    "by_class": {
+      "chat": 359,
+      "research": 481,
+      "reasoning": 456,
+      "coding": 410,
+      "abstain": 1009,
+      "privacy": 411,
+      "security": 404,
+      "vision": 940,
+      "tool_use": 967,
+      "high_risk_review": 799
+    },
+    "queue_status": {
+      "pending": 82,
+      "reviewed": 4
+    },
+    "consent_true": 6236,
+    "rights_verified": 0,
+    "provenance_declared": 0,
+    "independent_person_verified": 0,
+    "selected_annotations": 0,
+    "pending_annotations": 750,
+    "filtered_training_flag": 2077
+  },
+  "training_approved": false,
+  "human_reference_approved": false,
+  "notes": [
+    "Consent does not establish provenance or rights.",
+    "Queue reviewed status is exported evidence, not independent proof of human identity.",
+    "Reconfirmations remain separate from annotation selection; no targets are inferred."
+  ],
+  "integrity": {
+    "format": "hyd-export-integrity/1",
+    "archive_sha256": "76f845a373e0ab9e4055791ca5649c621795e94b24b0d83227c45a1c34705c95",
+    "archive_hash_bound": true,
+    "verified_files": 135,
+    "integrity_verified": true,
+    "training_approved": false,
+    "human_annotations_confirmed": false
+  }
+}
