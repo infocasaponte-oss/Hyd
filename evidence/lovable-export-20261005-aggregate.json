@@ -1,0 +1,56 @@
+{
+ "generated_at": "2026-10-05T00:08:50Z",
+ "mode": "SHADOW_ONLY, sen migracións nin adestramento nin relabelado",
+ "counts": {
+  "hyd_records": 6236,
+  "hyd_abstain_annotations": 750,
+  "by_class": {
+   "chat": 359,
+   "research": 481,
+   "reasoning": 456,
+   "coding": 410,
+   "abstain": 1009,
+   "privacy": 411,
+   "security": 404,
+   "vision": 940,
+   "tool_use": 967,
+   "high_risk_review": 799
+  },
+  "by_account_pseudonym": {
+   "acct-owner-A": 1524,
+   "acct-owner-B": 1412,
+   "acct-juan": 1000,
+   "acct-new-belen-unconfirmed": 2300
+  },
+  "by_role": {
+   "historical_training_owner": 2936,
+   "external_evaluation": 3300
+  },
+  "excluded_any": 1893,
+  "flags": {
+   "list_prefix_kept_verbatim": 3814
+  },
+  "exclusion_reasons": {
+   "suspect_template": 1501,
+   "exact_duplicate_of": 392
+  },
+  "included_filtered_training": 2077,
+  "annotations_by_account_kind_modified": {
+   "acct-new-belen-unconfirmed|dangerous|modified=False": 261,
+   "acct-new-belen-unconfirmed|dangerous|modified=True": 19,
+   "acct-new-belen-unconfirmed|missing_context|modified=False": 307,
+   "acct-new-belen-unconfirmed|missing_context|modified=True": 63,
+   "acct-juan|dangerous|modified=False": 96,
+   "acct-juan|dangerous|modified=True": 4
+  }
+ },
+ "accounts_note": "Pseudónimos = contas, non persoas verificadas. acct-owner-A/B son a mesma persoa.",
+ "not_available": [
+  "Predicións por rexistro de Hyd/E1/E2/E3: non se gardaron por rexistro; E1 non existe; E2/E3 requiren torch/sentence-transformers non dispoñibles aquí e os seus pesos non estaban na copia de traballo",
+  "Pesos E2/E3 (cabezas loxísticas) e calibracións: só os results.json do repo (experiments/e2-independent-v1, e3-risk-v1, e3-annotated-v1) commit efcf15c",
+  "Revisión exacta do encoder: só o nome sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2; commit hash HF non rexistrado",
+  "Valor humano orixinal das 86 marcas modificadas (táboa sen historial)",
+  "Splits train/calibration/test por fila: en data/hyd-app-corpus-v1 do repo (asignación por SHA-256 do texto normalizado)",
+  "Correos: excluídos deliberadamente"
+ ]
+}

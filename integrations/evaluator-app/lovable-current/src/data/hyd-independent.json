@@ -1,0 +1,26 @@
+{
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "measured": true,
+  "measured_at": "2026-10-04T16:58:00Z",
+  "models": { "e2": "e2-semantic-v1 (MiniLM externo preadestrado + cabeza)", "hyd": "hyd-app-v2" },
+  "counts": { "rows": 3300, "copies": 54, "in_training": 0, "mould_excluded": 980, "evaluated": 2266 },
+  "rows": [
+    { "who": "Juan", "n": 1000, "abstain_n": 100, "mould": 0,
+      "e2": { "acc": 0.699, "f1": 0.703, "abs_p": 0.569, "abs_r": 0.37, "abs_f1": 0.448 },
+      "hyd": { "acc": 0.436, "f1": 0.422, "abs_p": 0.273, "abs_r": 0.18, "abs_f1": 0.217 } },
+    { "who": "Conta nova", "n": 1266, "abstain_n": 139, "mould": 980,
+      "e2": { "acc": 0.533, "f1": 0.483, "abs_p": 0.538, "abs_r": 0.561, "abs_f1": 0.549 },
+      "hyd": { "acc": 0.308, "f1": 0.275, "abs_p": 0.178, "abs_r": 0.187, "abs_f1": 0.182 } },
+    { "who": "Total", "n": 2266, "abstain_n": 239, "mould": 980,
+      "e2": { "acc": 0.606, "f1": 0.619, "abs_p": 0.548, "abs_r": 0.481, "abs_f1": 0.512 },
+      "hyd": { "acc": 0.365, "f1": 0.359, "abs_p": 0.208, "abs_r": 0.184, "abs_f1": 0.195 } }
+  ],
+  "limitations": [
+    "Só 2 persoas; as de Juan levan todas «•» e parecen xeradas por IA.",
+    "Juan entende abstain como peticións perigosas; a conta nova mestura perigosas e falta de contexto.",
+    "A conta nova non ten preguntas chat e ten moitas máis de vision/tool_use: o seu macro-F1 non é comparable co de Juan.",
+    "392 preguntas levan un número diante (lista pegada); avalíanse tal cal, sen tocar o texto.",
+    "Resultado diagnóstico: E2 e Hyd seguen só observando, sen decidir."
+  ]
+}

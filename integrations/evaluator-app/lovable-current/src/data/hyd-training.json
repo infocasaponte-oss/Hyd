@@ -1,0 +1,57 @@
+{
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "test_n": 313,
+  "n_train": 1449,
+  "n_calibration": 315,
+  "test_sha256": "ded9ac97219b7b30d50de2b2fbb3b19cacb4a25a7ec261f9abf305abe4717e4c",
+  "corpus": "2.077 preguntas que pasan o filtro técnico, procedencia pendente de declarar (export 2026-10-04)",
+  "current": {
+    "name": "hyd-app-v2",
+    "desc": "Hyd actual · lineal hash 512×128",
+    "trained_at": "2026-10-04T14:43:41Z",
+    "accuracy": 0.716,
+    "macro_f1": 0.695,
+    "ece": 0.087,
+    "at085": {
+      "coverage": 0.479,
+      "accuracy": 0.913
+    },
+    "per_class": {
+      "chat": 0.679,
+      "coding": 0.742,
+      "reasoning": 0.788,
+      "research": 0.712,
+      "vision": 0.901,
+      "tool_use": 0.533,
+      "abstain": 0.536,
+      "security": 0.754,
+      "privacy": 0.727,
+      "high_risk_review": 0.578
+    }
+  },
+  "e2": {
+    "name": "e2-semantic-v1",
+    "desc": "E2 · codificador externo preadestrado (paraphrase-multilingual-MiniLM-L12-v2, conxelado) + cabeza loxística adestrada aquí",
+    "trained_at": "2026-10-04T14:37:17Z",
+    "accuracy": 0.853,
+    "macro_f1": 0.847,
+    "ece": 0.03,
+    "at085": {
+      "coverage": 0.617,
+      "accuracy": 0.948
+    },
+    "per_class": {
+      "abstain": 0.643,
+      "chat": 0.792,
+      "coding": 0.897,
+      "high_risk_review": 0.864,
+      "privacy": 0.781,
+      "reasoning": 1.0,
+      "research": 0.833,
+      "security": 0.872,
+      "tool_use": 0.857,
+      "vision": 0.929
+    }
+  }
+}

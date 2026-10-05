@@ -1,0 +1,94 @@
+                                                           Table "public.hyd_records"
+       Column       |           Type           | Collation | Nullable |      Default      | Storage  | Compression | Stats target | Description 
+--------------------+--------------------------+-----------+----------+-------------------+----------+-------------+--------------+-------------
+ id                 | uuid                     |           | not null | gen_random_uuid() | plain    |             |              | 
+ user_id            | uuid                     |           | not null |                   | plain    |             |              | 
+ question           | text                     |           | not null |                   | extended |             |              | 
+ expected_label     | text                     |           | not null |                   | extended |             |              | 
+ hyd_prediction     | text                     |           |          |                   | extended |             |              | 
+ prediction_correct | boolean                  |           |          |                   | plain    |             |              | 
+ ai_label           | text                     |           |          |                   | extended |             |              | 
+ ai_intent          | text                     |           |          |                   | extended |             |              | 
+ ai_confidence      | numeric                  |           |          |                   | main     |             |              | 
+ ai_model           | text                     |           |          |                   | extended |             |              | 
+ consent            | boolean                  |           | not null | false             | plain    |             |              | 
+ consent_text       | text                     |           | not null |                   | extended |             |              | 
+ notes              | text                     |           |          |                   | extended |             |              | 
+ created_at         | timestamp with time zone |           | not null | now()             | plain    |             |              | 
+Indexes:
+    "hyd_records_pkey" PRIMARY KEY, btree (id)
+Check constraints:
+    "consent_given" CHECK (consent = true)
+    "valid_label" CHECK (expected_label = ANY (ARRAY['high_risk_review'::text, 'reasoning'::text, 'coding'::text, 'abstain'::text, 'privacy'::text, 'security'::text, 'vision'::text, 'research'::text, 'chat'::text, 'tool_use'::text]))
+Foreign-key constraints:
+    "hyd_records_user_id_fkey" FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+Referenced by:
+    TABLE "hyd_abstain_annotations" CONSTRAINT "hyd_abstain_annotations_record_id_fkey" FOREIGN KEY (record_id) REFERENCES hyd_records(id) ON DELETE CASCADE
+Policies:
+    POLICY "Evaluators can delete own records" FOR DELETE
+      TO authenticated
+      USING ((auth.uid() = user_id))
+    POLICY "Evaluators can insert own records" FOR INSERT
+      TO authenticated
+      WITH CHECK (((auth.uid() = user_id) AND (consent = true)))
+    POLICY "Evaluators can update own records" FOR UPDATE
+      TO authenticated
+      USING ((auth.uid() = user_id))
+      WITH CHECK ((auth.uid() = user_id))
+    POLICY "Evaluators can view own records" FOR SELECT
+      TO authenticated
+      USING ((auth.uid() = user_id))
+Access method: heap
+
+                                                 Table "public.hyd_abstain_annotations"
+   Column   |           Type           | Collation | Nullable |      Default      | Storage  | Compression | Stats target | Description 
+------------+--------------------------+-----------+----------+-------------------+----------+-------------+--------------+-------------
+ id         | uuid                     |           | not null | gen_random_uuid() | plain    |             |              | 
+ record_id  | uuid                     |           | not null |                   | plain    |             |              | 
+ user_id    | uuid                     |           | not null |                   | plain    |             |              | 
+ kind       | text                     |           | not null |                   | extended |             |              | 
+ created_at | timestamp with time zone |           | not null | now()             | plain    |             |              | 
+ updated_at | timestamp with time zone |           | not null | now()             | plain    |             |              | 
+Indexes:
+    "hyd_abstain_annotations_pkey" PRIMARY KEY, btree (id)
+    "hyd_abstain_annotations_record_id_key" UNIQUE CONSTRAINT, btree (record_id)
+Check constraints:
+    "hyd_abstain_annotations_kind_check" CHECK (kind = ANY (ARRAY['dangerous'::text, 'missing_context'::text]))
+Foreign-key constraints:
+    "hyd_abstain_annotations_record_id_fkey" FOREIGN KEY (record_id) REFERENCES hyd_records(id) ON DELETE CASCADE
+Policies:
+    POLICY "Own annotations delete" FOR DELETE
+      TO authenticated
+      USING ((auth.uid() = user_id))
+    POLICY "Own annotations insert" FOR INSERT
+      TO authenticated
+      WITH CHECK (((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM hyd_records r
+  WHERE ((r.id = hyd_abstain_annotations.record_id) AND (r.user_id = auth.uid()) AND (r.expected_label = 'abstain'::text))))))
+    POLICY "Own annotations select" FOR SELECT
+      TO authenticated
+      USING ((auth.uid() = user_id))
+    POLICY "Own annotations update" FOR UPDATE
+      TO authenticated
+      USING ((auth.uid() = user_id))
+      WITH CHECK ((auth.uid() = user_id))
+Access method: heap
+
+hyd_records|Evaluators can view own records|SELECT|{authenticated}|(auth.uid() = user_id)|
+hyd_records|Evaluators can insert own records|INSERT|{authenticated}||((auth.uid() = user_id) AND (consent = true))
+hyd_records|Evaluators can update own records|UPDATE|{authenticated}|(auth.uid() = user_id)|(auth.uid() = user_id)
+hyd_records|Evaluators can delete own records|DELETE|{authenticated}|(auth.uid() = user_id)|
+hyd_abstain_annotations|Own annotations select|SELECT|{authenticated}|(auth.uid() = user_id)|
+hyd_abstain_annotations|Own annotations insert|INSERT|{authenticated}||((auth.uid() = user_id) AND (EXISTS ( SELECT 1
+   FROM hyd_records r
+  WHERE ((r.id = hyd_abstain_annotations.record_id) AND (r.user_id = auth.uid()) AND (r.expected_label = 'abstain'::text)))))
+hyd_abstain_annotations|Own annotations update|UPDATE|{authenticated}|(auth.uid() = user_id)|(auth.uid() = user_id)
+hyd_abstain_annotations|Own annotations delete|DELETE|{authenticated}|(auth.uid() = user_id)|
+consent_given|CHECK ((consent = true))
+valid_label|CHECK ((expected_label = ANY (ARRAY['high_risk_review'::text, 'reasoning'::text, 'coding'::text, 'abstain'::text, 'privacy'::text, 'security'::text, 'vision'::text, 'research'::text, 'chat'::text, 'tool_use'::text])))
+hyd_records_pkey|PRIMARY KEY (id)
+hyd_records_user_id_fkey|FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE
+hyd_abstain_annotations_kind_check|CHECK ((kind = ANY (ARRAY['dangerous'::text, 'missing_context'::text])))
+hyd_abstain_annotations_pkey|PRIMARY KEY (id)
+hyd_abstain_annotations_record_id_key|UNIQUE (record_id)
+hyd_abstain_annotations_record_id_fkey|FOREIGN KEY (record_id) REFERENCES hyd_records(id) ON DELETE CASCADE

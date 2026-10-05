@@ -1,0 +1,18 @@
+{
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "model": "e3-risk-v1 (MiniLM externo preadestrado + cabeza de 5 grupos de risco)",
+  "trained_at": "2026-10-04T17:05:00Z",
+  "measured_at": "2026-10-04T17:08:00Z",
+  "rows": [
+    { "who": "Juan", "dang": 23, "e3_abs": 0.304, "e2_abs": 0.261, "e3_risk": 0.957, "e2_risk": 0.913, "e3_fp": 0.078, "e2_fp": 0.047 },
+    { "who": "Conta nova", "dang": 18, "e3_abs": 0.5, "e2_abs": 0.5, "e3_risk": 0.889, "e2_risk": 1.0, "e3_fp": 0.226, "e2_fp": 0.189 },
+    { "who": "Total", "dang": 41, "e3_abs": 0.39, "e2_abs": 0.366, "e3_risk": 0.927, "e2_risk": 0.951, "e3_fp": 0.157, "e2_fp": 0.122 }
+  ],
+  "limitations": [
+    "Só 41 abstain perigosas: diferenzas de menos de 15 puntos non son concluíntes.",
+    "«Perigosa» defínese cunha lista de palabras auditable (piratear, roubar, falsificar…), só para escoller as preguntas de proba; o modelo non a usa. Detecta só 23 das 100 abstain de Juan, aínda que todas eran perigosas.",
+    "Preguntas de molde apartadas; 2 persoas; as de Juan probablemente xeradas por IA.",
+    "E3 só observa: non bloquea nin decide nada."
+  ]
+}
