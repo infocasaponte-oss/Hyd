@@ -372,6 +372,14 @@ async def build_runtime(settings: Settings | None = None, **overrides: Any) -> H
         from hydra.hyd.continual_controller import controller_class
         observer = controller_class(settings.hyd_model_path)(settings.hyd_model_path, settings.hyd_calibration_path,
                                  settings.hyd_authority_evidence_path)
+        ranker = getattr(getattr(observer, 'engine', None), 'ranker', None)
+        if not settings.offline and getattr(ranker, 'spec', {}).get('kind') in ('minilm', 'minilm-finetuned'):
+            try:
+                await asyncio.to_thread(ranker.vectors, ['Synthetic encoder readiness probe'])
+                observer.encoder_ready = True
+            except Exception as exc:
+                observer.encoder_ready = False
+                log.warning('Hyd encoder startup readiness failed: %s', type(exc).__name__)
     elif settings.decision_local_model_path:
         if not settings.decision_local_calibration_path:
             raise ValueError("local decision observer requires model-bound calibration")
