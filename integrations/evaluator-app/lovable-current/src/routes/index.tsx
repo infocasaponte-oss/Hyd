@@ -234,7 +234,7 @@ function Index() {
           Medido {fmt(RA.measured_at)} · {RA.annotations} marcas · Estado: <b>{RA.status}</b> — só observa.
         </p>
         {annRows.length === 0 ? (
-          <p className="mt-3 text-xs text-muted-foreground">Sen medir: aínda non hai marcas de persoas externas.</p>
+          <p className="mt-3 text-xs text-muted-foreground">{(RA as { blocked_reason?: string }).blocked_reason ?? "Sen medir: aínda non hai marcas de persoas externas."}</p>
         ) : (
           <div className="mt-3 overflow-x-auto">
             <table className="w-full text-xs">

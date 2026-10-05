@@ -49,6 +49,56 @@ export type Database = {
           },
         ]
       }
+      hyd_abstain_reconfirm_queue: {
+        Row: {
+          ai_kind: string
+          annotation_id: string
+          confirmed_at: string | null
+          confirmed_by: string | null
+          confirmed_kind: string | null
+          created_at: string
+          id: string
+          owner_id: string
+          reason: string
+          record_id: string
+          status: string
+        }
+        Insert: {
+          ai_kind: string
+          annotation_id: string
+          confirmed_at?: string | null
+          confirmed_by?: string | null
+          confirmed_kind?: string | null
+          created_at?: string
+          id?: string
+          owner_id: string
+          reason?: string
+          record_id: string
+          status?: string
+        }
+        Update: {
+          ai_kind?: string
+          annotation_id?: string
+          confirmed_at?: string | null
+          confirmed_by?: string | null
+          confirmed_kind?: string | null
+          created_at?: string
+          id?: string
+          owner_id?: string
+          reason?: string
+          record_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "hyd_abstain_reconfirm_queue_record_id_fkey"
+            columns: ["record_id"]
+            isOneToOne: false
+            referencedRelation: "hyd_records"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       hyd_records: {
         Row: {
           ai_confidence: number | null

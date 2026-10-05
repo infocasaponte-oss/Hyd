@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { AbstainAnnotator } from "@/components/AbstainAnnotator";
+import { ReconfirmQueue } from "@/components/ReconfirmQueue";
 import {
   HYD_LABELS,
   CONSENT_TEXT,
@@ -295,6 +296,7 @@ function Evaluar() {
       </form>
       )}
 
+      <ReconfirmQueue />
       <AbstainAnnotator />
       {/* ---- Lista de rexistros ---- */}
       <div className="mt-10 space-y-3 rounded-lg border border-border bg-card p-4">
