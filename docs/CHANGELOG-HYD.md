@@ -1,3 +1,5 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
+
 # Changelog de Hyd
 
 Formato: data UTC · HYD-XXX · que · por que · evidencia. Estado: SHADOW_ONLY, autoridade desactivada.

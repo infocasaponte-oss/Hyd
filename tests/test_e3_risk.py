@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """Tests for the E3 risk specialist (HYD-021). Pure functions only —
 no encoder, no network, deterministic. Run: python3 -m pytest tests/test_e3_risk.py
 or python3 tests/test_e3_risk.py
