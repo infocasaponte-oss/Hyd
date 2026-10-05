@@ -1,0 +1,10 @@
+{
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "measured_at": "2026-10-05T00:20:00Z",
+  "annotations": 750,
+  "ai_modified": 86,
+  "min_n": 10,
+  "blocked_reason": "Sen medir: hai 750 marcas (86 cambiadas pola IA, sen confirmación humana), pero os pesos de E2/E3 non se gardaron e repetilos sería un novo adestramento.",
+  "rows": []
+}
