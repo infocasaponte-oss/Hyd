@@ -30,6 +30,8 @@ class Settings(BaseSettings):
 
     # Infrastructure. Empty value -> in-memory implementation.
     postgres_url: str = ""
+    memory_backend: str = Field(default="auto", pattern=r"^(auto|sqlite|memory|postgres)$")
+    memory_namespace: str = Field(default="default", min_length=1)
     redis_url: str = ""
 
     # Runtimes

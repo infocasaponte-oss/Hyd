@@ -6,8 +6,9 @@ from __future__ import annotations
 from datetime import UTC, datetime
 
 from hydra.memory.embeddings import Embedder
+from hydra.memory.embeddings import cosine
 from hydra.memory.graph import MemoryGraph
-from hydra.memory.models import STATUS_WEIGHT, MemoryItem, MemoryType
+from hydra.memory.models import STATUS_WEIGHT, MemoryItem, MemoryType, MemoryStatus
 from hydra.memory.store import MemoryStore
 
 
@@ -18,19 +19,24 @@ class MemoryRetriever:
         self.min_score = min_score
 
     async def vector_search(self, query_emb: list[float], k: int = 12) -> list[tuple[MemoryItem, float]]:
-        return await self.store.search(query_emb, {MemoryType.SEMANTIC, MemoryType.EPISODIC}, k)
+        return await self.eligible_search(query_emb, {MemoryType.SEMANTIC, MemoryType.EPISODIC}, k)
+
+    async def eligible_search(self, embedding, types, k):
+        pool = [m for m in await self.store.all() if m.memory_type in types and self.eligible(m)]
+        return sorted(((m, cosine(embedding, m.embedding or [])) for m in pool),
+                      key=lambda pair: pair[1], reverse=True)[:k]
 
     async def episode_search(self, query_emb: list[float], task_type: str, k: int = 5) -> list[tuple[MemoryItem, float]]:
-        hits = await self.store.search(query_emb, {MemoryType.EPISODIC}, k * 3)
+        hits = await self.eligible_search(query_emb, {MemoryType.EPISODIC}, k * 3)
         same = [(m, s + 0.1) for m, s in hits if m.content.get("task_type") == task_type]
         return (same or hits)[:k]
 
     async def procedure_search(self, query_emb: list[float], task_type: str, k: int = 3) -> list[tuple[MemoryItem, float]]:
-        hits = await self.store.search(query_emb, {MemoryType.PROCEDURAL}, 20)
+        hits = await self.eligible_search(query_emb, {MemoryType.PROCEDURAL}, 20)
         return [(m, s + 0.15) for m, s in hits if m.content.get("task_type") == task_type][:k]
 
     async def graph_search(self, query: str) -> list[tuple[MemoryItem, float]]:
-        semantic = await self.store.all(MemoryType.SEMANTIC)
+        semantic = [m for m in await self.store.all(MemoryType.SEMANTIC) if self.eligible(m)]
         graph = MemoryGraph.build(semantic)
         by_text = {m.text.lower(): m for m in semantic}
         found: list[tuple[MemoryItem, float]] = []
@@ -39,6 +45,12 @@ class MemoryRetriever:
                 if item := by_text.get(f"{s} {p} {o}".lower()):
                     found.append((item, 0.6))
         return found
+
+    @staticmethod
+    def eligible(item):
+        return (item.status not in (MemoryStatus.UNVERIFIED, MemoryStatus.CONFLICT)
+                and not item.content.get("revoked")
+                and item.content.get("split") not in ("test", "reserved_test", "dev", "cal_prob", "cal_policy"))
 
     @staticmethod
     def merge(*groups: list[tuple[MemoryItem, float]]) -> list[tuple[MemoryItem, float]]:
@@ -67,7 +79,8 @@ class MemoryRetriever:
         episodes = await self.episode_search(emb, task_type)
         procedures = await self.procedure_search(emb, task_type)
         graph = await self.graph_search(query)
-        merged = [(i, s) for i, s in self.merge(semantic, episodes, procedures, graph) if s >= self.min_score]
+        merged = [(i, s) for i, s in self.merge(semantic, episodes, procedures, graph)
+                  if s >= self.min_score and self.eligible(i)]
         ranked = self.rerank(merged)[:k]
         await self.store.touch([i.id for i, _ in ranked])
         return ranked

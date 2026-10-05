@@ -34,6 +34,7 @@ redis = ["redis>=5.0"]
 postgres = ["asyncpg>=0.29", "psycopg[binary]>=3.2"]
 nats = ["nats-py>=2.7"]
 factory = ["huggingface_hub>=0.24"]
+decision-learning = ["sentence-transformers>=5,<7", "torch>=2.3", "scikit-learn>=1.5"]
 training = ["torch>=2.3", "transformers>=5.0", "peft>=0.12", "datasets>=2.20", "trl>=0.12", "safetensors>=0.4", "sentencepiece>=0.2,<0.3", "protobuf>=4", "psutil>=5.9", "xxhash>=3.4"]
 mlx = ["mlx-lm>=0.20"]
 parquet = ["pyarrow>=16"]
@@ -51,7 +52,7 @@ hyd-calibrator = "hyd_calibrator.cli:main"
 include = ["hydra*", "hyd_calibrator*"]
 
 [tool.setuptools.package-data]
-hydra = ["py.typed", "api/studio.html", "api/evaluation_review.html"]
+hydra = ["py.typed", "api/studio.html", "api/evaluation_review.html", "api/learning_review.html"]
 
 [tool.setuptools.data-files]
 "share/hydra/config" = ["config/models.yaml", "config/models.ollama.yaml", "config/models.hydra.yaml", "config/models.hydra-local.yaml", "config/models.hydra-q5.yaml", "config/policy.yaml", "config/policy_rules.yaml", "config/licenses.yaml"]
