@@ -26,5 +26,5 @@ experiments/candidate-1024*/model.json
 hyd-train/
 out/
 predictions*.jsonl
-*.npz
-*.npy
+# Model heads such as experiments/*/head.npz stay versionable: arrays are private only under the
+# directories above (hyd-train/, out/).
