@@ -1,5 +1,5 @@
 <!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
-# Guía de etiquetaxe de Hyd (v1.1, 5 de outubro de 2026)
+# Guía de etiquetaxe de Hyd (v1.2, 5 de outubro de 2026)
 
 Hyd decide **que tipo de axuda necesita unha petición** antes de respondela. Cada pregunta leva **unha
 ruta principal** (obrigatoria) e, se de verdade fai falta, **unha segunda ruta** (opcional).
@@ -56,6 +56,14 @@ captura, escribe ao principio `[con captura]` (ou `[con foto]`, `[con documento]
 - "Envíalle esta foto a Marta por correo" → `tool_use` (executar).
 - "Escribe un script que redimensione as fotos dun cartafol" → `coding` (escribir código, non executalo).
 - "Redimensiona as fotos do meu cartafol Descargas" → `tool_use`.
+
+### research ↔ tool_use (decisión do 5-10-2026)
+Criterio: **consultar sen cambiar nada → `research`; actuar con efectos → `tool_use`.**
+- "Busca na web se hai concertos esta semana" → `research` (buscar é só o medio).
+- "Usa os mapas para dicirme a ruta máis rápida ao aeroporto" → `research` (consulta, non cambia nada).
+- "Reserva unha mesa para dous ás 21:00" → `tool_use` (crea algo).
+- "Descarga o instalador e instálao" → `tool_use` (executa no teu equipo).
+Así `tool_use` queda só para o que necesita permisos.
 
 ### privacy ↔ security ↔ high_risk_review
 - "¿Podo pasarlle á empresa de mudanzas o DNI dos meus pais?" → `privacy`.
