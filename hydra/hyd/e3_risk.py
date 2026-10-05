@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E3 · Risk specialist (HYD-021, SHADOW_ONLY, never decides).
 
 Same frozen multilingual encoder as E2 (paraphrase-multilingual-MiniLM-

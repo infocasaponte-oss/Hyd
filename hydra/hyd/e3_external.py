@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E3 · External evaluation on dangerous abstains (HYD-021, SHADOW_ONLY).
 
 Compares E3 (5-group risk head) and E2 (10-class head) on real abstain

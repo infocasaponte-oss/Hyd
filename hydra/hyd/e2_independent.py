@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E2 · External independent evaluation (HYD-020, SHADOW_ONLY).
 
 Measures E2 (e2-semantic-v1) and the current Hyd model on questions from

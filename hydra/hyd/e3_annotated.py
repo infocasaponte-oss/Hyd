@@ -1,3 +1,4 @@
+# Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved.
 """E3 · Evaluation by abstain kind from human annotations (HYD-022).
 
 Uses ONLY the «perigosa» / «falta de contexto» marks that each external
