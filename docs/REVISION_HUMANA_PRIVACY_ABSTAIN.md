@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
 # Corrección humana desde el navegador
 
 La herramienta local abre el paquete privado generado por `decision_label_audit`.

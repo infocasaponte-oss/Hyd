@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
 # Resultado tras las correcciones humanas
 
 5 de octubre de 2026. Se importaron **629 revisiones confirmadas**: 387 cambios

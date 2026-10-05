@@ -1,3 +1,4 @@
+<!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
 # Hyd frente a Kev: comparación real y siguiente ronda
 
 5 de octubre de 2026. Hyd equilibrado alcanza **58,25 %** de acierto agregado,
