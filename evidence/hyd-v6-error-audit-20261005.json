@@ -1,0 +1,552 @@
+{
+  "corpus_sha256": "c52e4a5f3fdbef5ea1be74acc6a4087f468dc6fa298ef4c9fc4d9afdfd96908a",
+  "n": 5844,
+  "status": "DEVELOPMENT_AUDIT",
+  "authority": false,
+  "thresholds_are_diagnostic_not_selected": true,
+  "models": {
+    "hash": {
+      "correct": 2098,
+      "accuracy": 0.3590006844626968,
+      "macro_f1": 0.3594638017429392,
+      "ece_10_bins": 0.2295229942432664,
+      "nll": 2.2534912913624408,
+      "per_class": {
+        "abstain": {
+          "support": 934,
+          "precision": 0.31841652323580033,
+          "recall": 0.3961456102783726,
+          "f1": 0.35305343511450377
+        },
+        "chat": {
+          "support": 344,
+          "precision": 0.17475728155339806,
+          "recall": 0.1569767441860465,
+          "f1": 0.1653905053598775
+        },
+        "coding": {
+          "support": 363,
+          "precision": 0.5176470588235295,
+          "recall": 0.48484848484848486,
+          "f1": 0.5007112375533429
+        },
+        "high_risk_review": {
+          "support": 740,
+          "precision": 0.2669521770164168,
+          "recall": 0.5054054054054054,
+          "f1": 0.3493694535263895
+        },
+        "privacy": {
+          "support": 382,
+          "precision": 0.37894736842105264,
+          "recall": 0.28272251308900526,
+          "f1": 0.32383808095952027
+        },
+        "reasoning": {
+          "support": 438,
+          "precision": 0.6007905138339921,
+          "recall": 0.3470319634703196,
+          "f1": 0.43994211287988416
+        },
+        "research": {
+          "support": 438,
+          "precision": 0.45232273838630804,
+          "recall": 0.4223744292237443,
+          "f1": 0.43683589138134593
+        },
+        "security": {
+          "support": 385,
+          "precision": 0.38223938223938225,
+          "recall": 0.2571428571428571,
+          "f1": 0.3074534161490683
+        },
+        "tool_use": {
+          "support": 909,
+          "precision": 0.3517406962785114,
+          "recall": 0.32233223322332233,
+          "f1": 0.33639494833524686
+        },
+        "vision": {
+          "support": 911,
+          "precision": 0.4839797639123103,
+          "recall": 0.3150384193194292,
+          "f1": 0.3816489361702128
+        }
+      },
+      "selective": [
+        {
+          "threshold": 0.5,
+          "accepted": 3519,
+          "correct": 1469,
+          "errors": 2050,
+          "coverage": 0.6021560574948666,
+          "accuracy": 0.41744813867576014
+        },
+        {
+          "threshold": 0.7,
+          "accepted": 1807,
+          "correct": 898,
+          "errors": 909,
+          "coverage": 0.3092060232717317,
+          "accuracy": 0.496956281128943
+        },
+        {
+          "threshold": 0.8,
+          "accepted": 1164,
+          "correct": 615,
+          "errors": 549,
+          "coverage": 0.19917864476386038,
+          "accuracy": 0.5283505154639175
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 604,
+          "correct": 352,
+          "errors": 252,
+          "coverage": 0.10335386721423682,
+          "accuracy": 0.5827814569536424
+        },
+        {
+          "threshold": 0.95,
+          "accepted": 300,
+          "correct": 186,
+          "errors": 114,
+          "coverage": 0.0513347022587269,
+          "accuracy": 0.62
+        },
+        {
+          "threshold": 0.99,
+          "accepted": 89,
+          "correct": 57,
+          "errors": 32,
+          "coverage": 0.015229295003422313,
+          "accuracy": 0.6404494382022472
+        }
+      ],
+      "top_confusions": [
+        {
+          "expected": "vision",
+          "predicted": "tool_use",
+          "n": 166
+        },
+        {
+          "expected": "vision",
+          "predicted": "high_risk_review",
+          "n": 160
+        },
+        {
+          "expected": "abstain",
+          "predicted": "high_risk_review",
+          "n": 157
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "abstain",
+          "n": 150
+        },
+        {
+          "expected": "abstain",
+          "predicted": "chat",
+          "n": 131
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "high_risk_review",
+          "n": 128
+        },
+        {
+          "expected": "security",
+          "predicted": "high_risk_review",
+          "n": 123
+        },
+        {
+          "expected": "chat",
+          "predicted": "high_risk_review",
+          "n": 115
+        },
+        {
+          "expected": "vision",
+          "predicted": "abstain",
+          "n": 114
+        },
+        {
+          "expected": "abstain",
+          "predicted": "tool_use",
+          "n": 110
+        },
+        {
+          "expected": "high_risk_review",
+          "predicted": "abstain",
+          "n": 108
+        },
+        {
+          "expected": "reasoning",
+          "predicted": "high_risk_review",
+          "n": 104
+        }
+      ]
+    },
+    "semantic": {
+      "correct": 3352,
+      "accuracy": 0.5735797399041752,
+      "macro_f1": 0.5865254352460011,
+      "ece_10_bins": 0.1919728061088669,
+      "nll": 1.582536376460434,
+      "per_class": {
+        "abstain": {
+          "support": 934,
+          "precision": 0.5947712418300654,
+          "recall": 0.5845824411134903,
+          "f1": 0.58963282937365
+        },
+        "chat": {
+          "support": 344,
+          "precision": 0.6185567010309279,
+          "recall": 0.5232558139534884,
+          "f1": 0.5669291338582678
+        },
+        "coding": {
+          "support": 363,
+          "precision": 0.6090909090909091,
+          "recall": 0.7382920110192838,
+          "f1": 0.6674968866749689
+        },
+        "high_risk_review": {
+          "support": 740,
+          "precision": 0.585394581861013,
+          "recall": 0.6716216216216216,
+          "f1": 0.6255506607929516
+        },
+        "privacy": {
+          "support": 382,
+          "precision": 0.5170454545454546,
+          "recall": 0.47643979057591623,
+          "f1": 0.4959128065395096
+        },
+        "reasoning": {
+          "support": 438,
+          "precision": 0.9057071960297767,
+          "recall": 0.8333333333333334,
+          "f1": 0.8680142687277053
+        },
+        "research": {
+          "support": 438,
+          "precision": 0.6212871287128713,
+          "recall": 0.5730593607305936,
+          "f1": 0.5961995249406177
+        },
+        "security": {
+          "support": 385,
+          "precision": 0.48578811369509045,
+          "recall": 0.4883116883116883,
+          "f1": 0.4870466321243523
+        },
+        "tool_use": {
+          "support": 909,
+          "precision": 0.41945945945945945,
+          "recall": 0.42684268426842686,
+          "f1": 0.4231188658669574
+        },
+        "vision": {
+          "support": 911,
+          "precision": 0.5565714285714286,
+          "recall": 0.5345773874862788,
+          "f1": 0.5453527435610303
+        }
+      },
+      "selective": [
+        {
+          "threshold": 0.5,
+          "accepted": 5056,
+          "correct": 3108,
+          "errors": 1948,
+          "coverage": 0.865160848733744,
+          "accuracy": 0.6147151898734177
+        },
+        {
+          "threshold": 0.7,
+          "accepted": 3752,
+          "correct": 2582,
+          "errors": 1170,
+          "coverage": 0.6420260095824778,
+          "accuracy": 0.6881663113006397
+        },
+        {
+          "threshold": 0.8,
+          "accepted": 3015,
+          "correct": 2193,
+          "errors": 822,
+          "coverage": 0.5159137577002053,
+          "accuracy": 0.727363184079602
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 2114,
+          "correct": 1634,
+          "errors": 480,
+          "coverage": 0.3617385352498289,
+          "accuracy": 0.7729422894985809
+        },
+        {
+          "threshold": 0.95,
+          "accepted": 1471,
+          "correct": 1181,
+          "errors": 290,
+          "coverage": 0.25171115674195754,
+          "accuracy": 0.8028552005438477
+        },
+        {
+          "threshold": 0.99,
+          "accepted": 598,
+          "correct": 512,
+          "errors": 86,
+          "coverage": 0.10232717316906229,
+          "accuracy": 0.8561872909698997
+        }
+      ],
+      "top_confusions": [
+        {
+          "expected": "vision",
+          "predicted": "tool_use",
+          "n": 214
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "vision",
+          "n": 203
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "coding",
+          "n": 118
+        },
+        {
+          "expected": "abstain",
+          "predicted": "high_risk_review",
+          "n": 95
+        },
+        {
+          "expected": "abstain",
+          "predicted": "tool_use",
+          "n": 84
+        },
+        {
+          "expected": "research",
+          "predicted": "tool_use",
+          "n": 78
+        },
+        {
+          "expected": "security",
+          "predicted": "high_risk_review",
+          "n": 74
+        },
+        {
+          "expected": "privacy",
+          "predicted": "high_risk_review",
+          "n": 67
+        },
+        {
+          "expected": "abstain",
+          "predicted": "chat",
+          "n": 65
+        },
+        {
+          "expected": "chat",
+          "predicted": "abstain",
+          "n": 64
+        },
+        {
+          "expected": "high_risk_review",
+          "predicted": "abstain",
+          "n": 62
+        },
+        {
+          "expected": "privacy",
+          "predicted": "abstain",
+          "n": 57
+        }
+      ]
+    },
+    "hybrid": {
+      "correct": 3429,
+      "accuracy": 0.5867556468172485,
+      "macro_f1": 0.6010523742060234,
+      "ece_10_bins": 0.18835215689200074,
+      "nll": 1.5489214488255332,
+      "per_class": {
+        "abstain": {
+          "support": 934,
+          "precision": 0.5727748691099477,
+          "recall": 0.5856531049250535,
+          "f1": 0.5791424033880359
+        },
+        "chat": {
+          "support": 344,
+          "precision": 0.5748502994011976,
+          "recall": 0.5581395348837209,
+          "f1": 0.5663716814159292
+        },
+        "coding": {
+          "support": 363,
+          "precision": 0.6621923937360179,
+          "recall": 0.8154269972451791,
+          "f1": 0.7308641975308643
+        },
+        "high_risk_review": {
+          "support": 740,
+          "precision": 0.5614406779661016,
+          "recall": 0.7162162162162162,
+          "f1": 0.6294536817102137
+        },
+        "privacy": {
+          "support": 382,
+          "precision": 0.5185185185185185,
+          "recall": 0.47643979057591623,
+          "f1": 0.4965893587994543
+        },
+        "reasoning": {
+          "support": 438,
+          "precision": 0.916256157635468,
+          "recall": 0.8493150684931506,
+          "f1": 0.8815165876777251
+        },
+        "research": {
+          "support": 438,
+          "precision": 0.6857142857142857,
+          "recall": 0.547945205479452,
+          "f1": 0.6091370558375634
+        },
+        "security": {
+          "support": 385,
+          "precision": 0.5313351498637602,
+          "recall": 0.5064935064935064,
+          "f1": 0.5186170212765958
+        },
+        "tool_use": {
+          "support": 909,
+          "precision": 0.4766050054406964,
+          "recall": 0.48184818481848185,
+          "f1": 0.4792122538293217
+        },
+        "vision": {
+          "support": 911,
+          "precision": 0.5667963683527886,
+          "recall": 0.4796926454445664,
+          "f1": 0.5196195005945303
+        }
+      },
+      "selective": [
+        {
+          "threshold": 0.5,
+          "accepted": 5111,
+          "correct": 3211,
+          "errors": 1900,
+          "coverage": 0.8745722108145106,
+          "accuracy": 0.6282527881040892
+        },
+        {
+          "threshold": 0.7,
+          "accepted": 3816,
+          "correct": 2669,
+          "errors": 1147,
+          "coverage": 0.6529774127310062,
+          "accuracy": 0.6994234800838575
+        },
+        {
+          "threshold": 0.8,
+          "accepted": 3128,
+          "correct": 2300,
+          "errors": 828,
+          "coverage": 0.5352498288843258,
+          "accuracy": 0.7352941176470589
+        },
+        {
+          "threshold": 0.9,
+          "accepted": 2287,
+          "correct": 1815,
+          "errors": 472,
+          "coverage": 0.3913415468856947,
+          "accuracy": 0.7936160909488412
+        },
+        {
+          "threshold": 0.95,
+          "accepted": 1675,
+          "correct": 1386,
+          "errors": 289,
+          "coverage": 0.28661875427789185,
+          "accuracy": 0.8274626865671642
+        },
+        {
+          "threshold": 0.99,
+          "accepted": 702,
+          "correct": 619,
+          "errors": 83,
+          "coverage": 0.12012320328542095,
+          "accuracy": 0.8817663817663818
+        }
+      ],
+      "top_confusions": [
+        {
+          "expected": "vision",
+          "predicted": "tool_use",
+          "n": 245
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "vision",
+          "n": 146
+        },
+        {
+          "expected": "tool_use",
+          "predicted": "coding",
+          "n": 115
+        },
+        {
+          "expected": "abstain",
+          "predicted": "chat",
+          "n": 99
+        },
+        {
+          "expected": "abstain",
+          "predicted": "high_risk_review",
+          "n": 90
+        },
+        {
+          "expected": "privacy",
+          "predicted": "high_risk_review",
+          "n": 89
+        },
+        {
+          "expected": "security",
+          "predicted": "high_risk_review",
+          "n": 89
+        },
+        {
+          "expected": "research",
+          "predicted": "tool_use",
+          "n": 73
+        },
+        {
+          "expected": "vision",
+          "predicted": "abstain",
+          "n": 72
+        },
+        {
+          "expected": "high_risk_review",
+          "predicted": "abstain",
+          "n": 71
+        },
+        {
+          "expected": "chat",
+          "predicted": "abstain",
+          "n": 71
+        },
+        {
+          "expected": "abstain",
+          "predicted": "privacy",
+          "n": 64
+        }
+      ]
+    }
+  }
+}
