@@ -225,12 +225,13 @@ def main():
     parser.add_argument('--corpus', type=Path, required=True)
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--model', default='qwen3:8b')
-    parser.add_argument('--audited', action='store_true')
-    parser.add_argument('--single', action='store_true')
+    protocol = parser.add_mutually_exclusive_group()
+    protocol.add_argument('--audited', action='store_true', help='experimental indexed batches with reasons')
+    protocol.add_argument('--single', action='store_true', help='one question per call (default)')
     parser.add_argument('--batch', type=int, default=24)
     args = parser.parse_args()
     print(json.dumps(review(args.corpus, args.out, model=args.model, audited=args.audited,
-                           batch=args.batch, single=args.single), ensure_ascii=False, indent=2))
+                           batch=args.batch, single=args.single or not args.audited), ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
