@@ -1,5 +1,5 @@
 <!-- Copyright (c) 2026 Luis Manuel Cousido Hermida. All rights reserved. -->
-# Guía de etiquetaxe de Hyd (v1, 5 de outubro de 2026)
+# Guía de etiquetaxe de Hyd (v1.1, 5 de outubro de 2026)
 
 Hyd decide **que tipo de axuda necesita unha petición** antes de respondela. Cada pregunta leva **unha
 ruta principal** (obrigatoria) e, se de verdade fai falta, **unha segunda ruta** (opcional).
@@ -42,9 +42,12 @@ Preguntas do tipo "¿que botón pulso?", "¿onde fago clic?" ou "¿que pon na es
 4. **Se é unha dúbida xeral que se responde sen ver nada → a ruta normal.**
    - "¿Como se fai unha captura de pantalla en Windows 11?" → `chat`.
 
-Na app non se poden adxuntar imaxes, así que **se a pregunta conta con que hai unha imaxe ou captura,
-escribe ao principio `[con captura]`** (ou `[con foto]`, `[con documento]`). Sen esa marca entendemos
-que non hai nada adxunto.
+**Ao etiquetar preguntas xa escritas:**
+- **Se a pregunta di que achega unha imaxe** ("esta foto", "te adjunto la captura", "mira esta imagen"), considera que está adxunta → `vision`.
+- **Se pregunta pola pantalla sen dicir que achega captura** ("¿qué botón pulso?", "¿dónde hago clic?") → regra anterior, `abstain`.
+
+**Ao escribir preguntas novas:** na app non se poden adxuntar imaxes. Se a pregunta conta cunha imaxe ou
+captura, escribe ao principio `[con captura]` (ou `[con foto]`, `[con documento]`).
 
 ## Parellas que máis se confunden
 
@@ -72,7 +75,8 @@ que non hai nada adxunto.
 
 ## Segunda ruta (opcional)
 
-Só cando a petición necesita de verdade dúas cousas. Exemplo: "[con captura] Pulsa o botón azul desta
+Só cando a petición necesita de verdade dúas cousas. **Non é un "por se acaso"** nin unha segunda opción
+por se a primeira está mal. Exemplo: "[con captura] Pulsa o botón azul desta
 pantalla" → principal `tool_use`, segunda `vision`. Se dubidas, non poñas segunda ruta.
 
 ## Como escribir as preguntas (persoas que achegan preguntas)
