@@ -48,7 +48,21 @@ def paired_summary(hyd, kev, seed=42):
         "critical_recall_nonregression": nonregression}
 
 
-async def compare(candidate, test, checkpoint, calibration, out, endpoint="http://127.0.0.1:8009"):
+def cached_baseline(path, weights, calibration_sha, test_sha, rows):
+    cached = json.loads(path.read_text(encoding="utf-8"))
+    if (cached.get("format") != "hyd-kev-paired/1" or cached.get("complete") is not True
+            or cached.get("kev_checkpoint_files") != weights
+            or cached.get("kev_calibration_sha256") != calibration_sha
+            or cached.get("test_sha256") != test_sha):
+        raise ValueError("baseline cache is incomplete or belongs to another experiment")
+    reference = [{"id": r["id"], "text_sha256": r["text_sha256"], "expected": text_label(r)[1],
+                  "group_id": group(r), "selected": text_label(r)[1],
+                  "probabilities": {k: float(k == text_label(r)[1]) for k in CRITERIA}} for r in rows]
+    paired_summary(reference, cached["kev_rows"])
+    return {r["id"]: r for r in cached["kev_rows"]}
+
+
+async def compare(candidate, test, checkpoint, calibration, out, endpoint="http://127.0.0.1:8009", kev_cache=None):
     if out.exists():
         raise FileExistsError("new comparison output required")
     report = json.loads((candidate / "report.json").read_text())
@@ -64,11 +78,16 @@ async def compare(candidate, test, checkpoint, calibration, out, endpoint="http:
     calibrator = TemperatureCalibrator.load(calibration)
     if calibrator.model_run != expected_run:
         raise ValueError("Kev calibrator bound to another checkpoint")
-    provider = LocalSystemOneProvider(endpoint=endpoint, timeout=30)
     result = {"format": "hyd-kev-paired/1", "complete": False, "authority": False, "independent_test": False,
         "candidate_revision": report["model_revision"], "test_sha256": file_sha(test),
         "kev_checkpoint_files": weights, "kev_calibration_sha256": file_sha(calibration),
         "domain": "routing_only", "hyd_rows": [], "kev_rows": []}
+    rows = read_rows(test)
+    cached = cached_baseline(kev_cache, weights, file_sha(calibration), file_sha(test), rows) if kev_cache else None
+    if kev_cache:
+        result["baseline_cache_sha256"] = file_sha(kev_cache)
+        result["baseline_source"] = "recorded_development_comparison"
+    provider = LocalSystemOneProvider(endpoint=endpoint, timeout=30)
     async def check_run():
         response = await provider.client.get("/v1/models")
         response.raise_for_status()
@@ -78,20 +97,27 @@ async def compare(candidate, test, checkpoint, calibration, out, endpoint="http:
     try:
         await check_run()
         model = ContinualRanker.load(candidate / "model.json")
-        for row in read_rows(test):
+        for index, row in enumerate(rows, 1):
             text, expected = text_label(row)
             start = time.perf_counter()
             probabilities = model.predict_proba(text)
             base = {"id": row["id"], "text_sha256": row["text_sha256"], "group_id": group(row), "expected": expected}
             result["hyd_rows"].append({**base, "probabilities": probabilities,
                 "selected": max(probabilities, key=probabilities.get), "elapsed_ms": (time.perf_counter() - start) * 1000})
-            await check_run()
-            start = time.perf_counter()
-            answer = await provider.decide(text, {"task": {"type": "choice", "criteria": CRITERIA}})
-            probabilities = calibrator.probabilities(answer["answers"]["task"]["probabilities"])
-            await check_run()
-            result["kev_rows"].append({**base, "probabilities": probabilities,
-                "selected": max(probabilities, key=probabilities.get), "elapsed_ms": (time.perf_counter() - start) * 1000})
+            if cached is not None:
+                result["kev_rows"].append(cached[row["id"]])
+            else:
+                await check_run()
+                start = time.perf_counter()
+                answer = await provider.decide(text, {"task": {"type": "choice", "criteria": CRITERIA}})
+                probabilities = calibrator.probabilities(answer["answers"]["task"]["probabilities"])
+                await check_run()
+                result["kev_rows"].append({**base, "probabilities": probabilities,
+                    "selected": max(probabilities, key=probabilities.get), "elapsed_ms": (time.perf_counter() - start) * 1000})
+            if index % 100 == 0:
+                write_json(out, result)
+                print(f"paired progress: {index}/{len(rows)}", flush=True)
+        await check_run()
         if any(file_sha(checkpoint / name) != expected for name, expected in weights.items()):
             raise ValueError("Kev checkpoint files changed during comparison")
         result["summary"] = paired_summary(result["hyd_rows"], result["kev_rows"])
@@ -112,8 +138,9 @@ def main():
     for name in ("candidate", "test", "checkpoint", "calibration", "out"):
         p.add_argument("--" + name, type=Path, required=True)
     p.add_argument("--endpoint", default="http://127.0.0.1:8009")
+    p.add_argument("--kev-cache", type=Path, help="reuse a completed, identically bound baseline without repeating its inference")
     args = p.parse_args()
-    result = asyncio.run(compare(args.candidate, args.test, args.checkpoint, args.calibration, args.out, args.endpoint))
+    result = asyncio.run(compare(args.candidate, args.test, args.checkpoint, args.calibration, args.out, args.endpoint, args.kev_cache))
     print(json.dumps(result["summary"], indent=2))
 
 

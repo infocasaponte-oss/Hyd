@@ -44,6 +44,8 @@ localmente y su revisión exacta. No se descarga otro modelo de forma implícita
    requieren revisión del responsable y no certifican anonimización.
 3. Crear un JSON de configuración con `paths` (las cinco rutas), `pool`, `batch`,
    `min_admitted`, `epochs`, `encoder`, `seed` y `max_candidates_per_day`.
+   `class_balance: true` activa pesos iguales por clase, conservando todas las filas
+   y la ponderación por familia dentro de cada clase. Por defecto es false.
    Ejemplo de encoder léxico: `{"kind":"hash","dims":512}`.
    Para MiniLM: kind=minilm, model=identificador local/cache, revision=SHA de 40
    caracteres, dims=384, device=cpu o cuda, memory=true o false.
@@ -157,9 +159,12 @@ y calibraciones antiguas conservan su implementación. El contrato portable solo
 admite observación sin autoridad y código compartido idéntico. No se ha reemplazado
 Kev ni se ha cambiado la configuración activa.
 
-Para decidir sustitución faltan un test humano nuevo reservado, comparación con
-Kev y su checkpoint realmente servido, latencias, precisión/cobertura de abstención,
-recall de clases críticas y aprobación humana. La comparación de desarrollo no
+La comparación posterior con el checkpoint Kev realmente servido, tres personas,
+latencias y variantes equilibradas consta en
+[COMPARACION_HYD_KEV_2026-10-05.md](COMPARACION_HYD_KEV_2026-10-05.md).
+Para decidir sustitución faltan un test humano nuevo reservado, superar la política
+de precisión/cobertura de abstención, evitar regresiones críticas y aprobación humana.
+La comparación de desarrollo no
 autoriza promoción. Los casos multimodales y E3 por subtipo necesitan anotaciones
 humanas completas, incluidos negativos; un conjunto solo de positivos no permite
 medir falsas alarmas. Alcanzar el 90 % sigue siendo un objetivo, no un resultado.
