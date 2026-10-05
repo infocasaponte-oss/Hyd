@@ -23,6 +23,8 @@ async def test_probe_is_readonly_and_closes(monkeypatch):
             return 1
         async def fetch(self, sql):
             calls.append(sql)
+            if 'information_schema.tables' in sql:
+                return [{'table_schema': 'public', 'table_name': 'memories'}]
             return [{"schema_name": "public"}]
         async def close(self):
             calls.append("closed")
@@ -33,6 +35,8 @@ async def test_probe_is_readonly_and_closes(monkeypatch):
     monkeypatch.setenv("HYDRA_POSTGRES_URL", "postgresql://example:private@localhost/db")
     result = await probe()
     assert result["connected"] and not result["migrations_applied"]
+    assert not result['write_readiness_verified']
+    assert result['missing_core_public_tables'] == ['events', 'inference_runs', 'model_metrics', 'tasks']
     assert calls[-1] == "closed" and all(c.startswith("SELECT") for c in calls[:-1])
 
 

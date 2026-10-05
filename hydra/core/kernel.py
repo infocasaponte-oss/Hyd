@@ -778,8 +778,17 @@ class HydraKernel:
                 await self.reasoner.add_evidence(ctx, claim, "model", other.get("model", "?"),
                                                  a if a >= 0.5 else 1 - a, a >= 0.5)
 
+        def same_weight_family(left, right):
+            a, b = self.registry.models.get(left), self.registry.models.get(right)
+            if a is None or b is None:
+                return left == right
+            return (a.physical_name.removesuffix(':latest') == b.physical_name.removesuffix(':latest')
+                    or bool(a.logical_model and a.logical_model == b.logical_model))
+
+        dependent_models = {name for name in self.registry.models if same_weight_family(name, chosen.get('model', ''))}
         verification = self.verifier.verify(ctx.request, ctx.route, ctx.state, chosen["answer"],
-                                            claim_id=claim, model_id=None if research else chosen.get("model"))
+                                            claim_id=claim, model_id=None if research else chosen.get("model"),
+                                            dependent_models=dependent_models)
         model = self.registry.models.get(chosen.get("model", ""))
         if research:
             agree = ResearchWorker.consistency([c for c in ctx.state.candidates if c.get("claim_id") != claim])
@@ -787,7 +796,11 @@ class HydraKernel:
                                                 for n in ctx.state.research_graph.get("nodes", [])):
                 agree = min(agree or 0.5, 0.4)
         else:
-            agree = judged.agreement if judged else agreement([c["answer"] for c in ctx.state.candidates])
+            independent_answers = []
+            for candidate in ctx.state.candidates:
+                if not any(same_weight_family(candidate.get('model', ''), other.get('model', '')) for other in independent_answers):
+                    independent_answers.append(candidate)
+            agree = agreement([c['answer'] for c in independent_answers]) if len(independent_answers) > 1 else None
         confidence = confidence_score(ConfidenceInputs(
             agreement=agree,
             verification=verification.confidence_signal,

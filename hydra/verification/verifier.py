@@ -30,6 +30,7 @@ class Check(BaseModel):
     passed: bool
     score: float
     detail: str = ""
+    independent: bool | None = None
 
 
 class VerificationResult(BaseModel):
@@ -141,18 +142,24 @@ class Verifier:
                      detail=f"{ok}/{total} tool calls succeeded")
 
     @staticmethod
-    def evidence(state: BlackboardState, claim_id: str | None = None) -> Check | None:
+    def evidence(state: BlackboardState, claim_id: str | None = None,
+                 dependent_models: set[str] | None = None) -> Check | None:
         evs = [e for e in state.evidence.values() if claim_id is None or e.claim_id == claim_id]
+        def dependent(e):
+            return e.source_type in ('model', 'critic') and e.source_ref in (dependent_models or set())
+        # Correlated positive votes cannot verify an answer. Negative findings remain useful.
+        evs = [e for e in evs if not (dependent(e) and e.supports)]
         if not evs:
             return None
         sup = sum(e.strength for e in evs if e.supports)
         con = sum(e.strength for e in evs if not e.supports)
         score = sup / (sup + con) if (sup + con) else 0.5
         return Check(layer="evidence", name="evidence_balance", passed=score >= 0.5, score=score,
-                     detail=f"support={sup:.2f} against={con:.2f}")
+                     detail=f"support={sup:.2f} against={con:.2f}", independent=any(not dependent(e) for e in evs))
 
     @staticmethod
-    def critic(state: BlackboardState, claim_id: str | None = None) -> tuple[Check | None, list[str]]:
+    def critic(state: BlackboardState, claim_id: str | None = None,
+               dependent_models: set[str] | None = None) -> tuple[Check | None, list[str]]:
         critiques = [c for c in state.critiques if claim_id is None or c.get("target") == claim_id]
         if not critiques:
             return None, []
@@ -161,14 +168,16 @@ class Verifier:
         verdict = latest.get("verdict", "pass")
         issues = [str(i) for i in latest.get("issues", [])]
         return Check(layer="critic", name="model_critic", passed=verdict != "fail" and score >= 0.5,
-                     score=score, detail="; ".join(issues)[:500]), issues
+                     score=score, detail="; ".join(issues)[:500],
+                     independent=latest.get('model') not in (dependent_models or set())), issues
 
     def verify(self, request: HydraRequest, route: RoutingDecision, state: BlackboardState,
-               answer: str, claim_id: str | None = None, model_id: str | None = None) -> VerificationResult:
+               answer: str, claim_id: str | None = None, model_id: str | None = None,
+               dependent_models: set[str] | None = None) -> VerificationResult:
         checks = self.deterministic(answer, request, route)
         tool = self.tool_validation(state, model_id)
-        ev = self.evidence(state, claim_id)
-        crit, issues = self.critic(state, claim_id)
+        ev = self.evidence(state, claim_id, dependent_models)
+        crit, issues = self.critic(state, claim_id, dependent_models)
         math = self.numeric(answer, request)
         source = self.source_coverage(answer, request)
         if source is not None and source.passed:
@@ -192,7 +201,8 @@ class Verifier:
         passed = not hard_fail and score >= self.pass_threshold
         # "verified" means an independent layer beyond format checks confirmed it.
         # Tool execution proves retrieval/execution succeeded, not that the answer is correct.
-        independent = [c for c in checks if c.layer in ("math", "grounding", "evidence", "critic")]
+        independent = [c for c in checks if c.layer in ("math", "grounding", "evidence", "critic")
+                       and c.independent is not False]
         verified = passed and bool(independent) and all(c.passed for c in independent)
         return VerificationResult(
             passed=passed, score=score, verified=verified, checks=checks, uncertainties=uncertainties,

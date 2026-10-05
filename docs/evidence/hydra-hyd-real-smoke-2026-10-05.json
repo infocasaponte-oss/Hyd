@@ -1,0 +1,125 @@
+{
+  "format": "hydra-hyd-real-smoke-public/1",
+  "complete": true,
+  "authority": false,
+  "promotion_ready": false,
+  "model": "qwen3:8b",
+  "model_digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+  "mock_provider_used": false,
+  "independent_model_votes": false,
+  "cases_are_synthetic": true,
+  "corpus_accuracy_benchmark": false,
+  "hyd_encoder_ready_at_startup": true,
+  "same_model_digest_after": true,
+  "cases": [
+    {
+      "name": "chat",
+      "completed_without_exception": true,
+      "actual_worker_roles": [
+        "judge",
+        "reasoner"
+      ],
+      "contains_known_answer": null,
+      "fixture_content_reported": null,
+      "tools_used": [],
+      "actual_hyd_observations": [
+        {
+          "version": 1,
+          "status": "observed",
+          "model": "hyd-latest",
+          "reason": "hyd.unsupported_domain",
+          "elapsed_ms": 29.30729999934556,
+          "selected": "abstain",
+          "probabilities": {
+            "abstain": 0.0015773805692619615,
+            "chat": 0.9960091728542045,
+            "coding": 2.895468349213699e-06,
+            "high_risk_review": 3.54517508113607e-05,
+            "privacy": 0.00021980405669354253,
+            "reasoning": 5.687009508384617e-05,
+            "research": 1.6018576955083106e-05,
+            "security": 3.1024040350837004e-05,
+            "tool_use": 5.9554109435326726e-05,
+            "vision": 0.001991828478854389
+          },
+          "confidence": 0.9960091728542045
+        }
+      ],
+      "verified": false
+    },
+    {
+      "name": "reasoning-and-critic",
+      "completed_without_exception": true,
+      "actual_worker_roles": [
+        "claim_verifier",
+        "critic",
+        "judge",
+        "reasoner",
+        "synthesizer"
+      ],
+      "contains_known_answer": true,
+      "fixture_content_reported": null,
+      "tools_used": [],
+      "actual_hyd_observations": [
+        {
+          "version": 1,
+          "status": "observed",
+          "model": "hyd-latest",
+          "reason": "hyd.unsupported_domain",
+          "elapsed_ms": 19.21540000330424,
+          "selected": "abstain",
+          "probabilities": {
+            "abstain": 3.07548810545051e-05,
+            "chat": 9.034512046128608e-05,
+            "coding": 0.0009250085679869207,
+            "high_risk_review": 5.490639849376932e-05,
+            "privacy": 1.4157455962713336e-05,
+            "reasoning": 0.9960019240673813,
+            "research": 2.9851473857014167e-05,
+            "security": 8.266876533292604e-05,
+            "tool_use": 0.0012615189602517732,
+            "vision": 0.0015088643092178637
+          },
+          "confidence": 0.9960019240673813
+        }
+      ],
+      "verified": false
+    },
+    {
+      "name": "tools-and-coder",
+      "completed_without_exception": true,
+      "actual_worker_roles": [
+        "coder"
+      ],
+      "contains_known_answer": null,
+      "fixture_content_reported": true,
+      "tools_used": [
+        "filesystem.read"
+      ],
+      "actual_hyd_observations": [
+        {
+          "version": 1,
+          "status": "observed",
+          "model": "hyd-latest",
+          "reason": "hyd.unsupported_domain",
+          "elapsed_ms": 19.298999999591615,
+          "selected": "abstain",
+          "probabilities": {
+            "abstain": 4.379809311433705e-05,
+            "chat": 3.9268287955158305e-05,
+            "coding": 0.5665601362909114,
+            "high_risk_review": 9.29721339420574e-05,
+            "privacy": 0.00023723080184961427,
+            "reasoning": 3.2327346768629474e-05,
+            "research": 0.001814135941135295,
+            "security": 0.0012153343672437532,
+            "tool_use": 0.3960966398664443,
+            "vision": 0.03386815687063545
+          },
+          "confidence": 0.5665601362909114
+        }
+      ],
+      "verified": true
+    }
+  ]
+}

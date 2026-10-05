@@ -1,0 +1,276 @@
+{
+  "format": "hyd-balanced-finetuned-experiment/1",
+  "complete": true,
+  "authority": false,
+  "independent_test": false,
+  "promotion_ready": false,
+  "human_reference_corpus_sha256": "f59853ebff2b1344e7adbfbc68196809a9af03eb18513e2ad27c9d21e90a6619",
+  "synthetic_sha256": "014886ae929773a9e5381aef7318f011a3c2fbb6de5f33f30fa2e8715f10c40c",
+  "real_labels_changed": false,
+  "aggregate": {
+    "hyd": {
+      "requested": 5844,
+      "valid": 5844,
+      "accepted": 5844,
+      "coverage": 1.0,
+      "accuracy": 0.5446611909650924,
+      "accuracy_wilson_lower_95": 0.5318677586284835,
+      "ece_10_bins": 0.17311128609990636,
+      "brier_multiclass_sum": 0.6354891501932027,
+      "nll": 1.563734439660304,
+      "bins": [
+        {
+          "bin": 2,
+          "n": 50,
+          "confidence": 0.26954027527344926,
+          "accuracy": 0.24
+        },
+        {
+          "bin": 3,
+          "n": 355,
+          "confidence": 0.36279055870947147,
+          "accuracy": 0.27323943661971833
+        },
+        {
+          "bin": 4,
+          "n": 671,
+          "confidence": 0.4536587159293827,
+          "accuracy": 0.31594634873323396
+        },
+        {
+          "bin": 5,
+          "n": 792,
+          "confidence": 0.5509235058175308,
+          "accuracy": 0.369949494949495
+        },
+        {
+          "bin": 6,
+          "n": 795,
+          "confidence": 0.6491508101085796,
+          "accuracy": 0.4427672955974843
+        },
+        {
+          "bin": 7,
+          "n": 797,
+          "confidence": 0.7504160557101844,
+          "accuracy": 0.4918444165621079
+        },
+        {
+          "bin": 8,
+          "n": 843,
+          "confidence": 0.852105584319593,
+          "accuracy": 0.6132858837485172
+        },
+        {
+          "bin": 9,
+          "n": 1541,
+          "confidence": 0.959881103729697,
+          "accuracy": 0.8487994808565866
+        }
+      ],
+      "per_class": {
+        "chat": {
+          "support": 392,
+          "recall": 0.5969387755102041,
+          "f1": 0.5665859564164649
+        },
+        "coding": {
+          "support": 368,
+          "recall": 0.7880434782608695,
+          "f1": 0.606694560669456
+        },
+        "reasoning": {
+          "support": 443,
+          "recall": 0.8826185101580135,
+          "f1": 0.8417653390742734
+        },
+        "research": {
+          "support": 480,
+          "recall": 0.6208333333333333,
+          "f1": 0.6360725720384205
+        },
+        "vision": {
+          "support": 911,
+          "recall": 0.5170142700329309,
+          "f1": 0.5747406955460647
+        },
+        "tool_use": {
+          "support": 943,
+          "recall": 0.3372216330858961,
+          "f1": 0.3947858472998138
+        },
+        "abstain": {
+          "support": 640,
+          "recall": 0.3203125,
+          "f1": 0.37683823529411764
+        },
+        "security": {
+          "support": 554,
+          "recall": 0.5126353790613718,
+          "f1": 0.45258964143426295
+        },
+        "privacy": {
+          "support": 369,
+          "recall": 0.6368563685636857,
+          "f1": 0.5164835164835165
+        },
+        "high_risk_review": {
+          "support": 744,
+          "recall": 0.614247311827957,
+          "f1": 0.5946649316851008
+        }
+      },
+      "macro_f1_ten_routes": 0.5561221295941492
+    },
+    "kev": {
+      "requested": 5844,
+      "valid": 5844,
+      "accepted": 5844,
+      "coverage": 1.0,
+      "accuracy": 0.4837440109514031,
+      "accuracy_wilson_lower_95": 0.4709461751433647,
+      "ece_10_bins": 0.07897167458106244,
+      "brier_multiclass_sum": 0.6624165712592686,
+      "nll": 1.6101563823041372,
+      "bins": [
+        {
+          "bin": 1,
+          "n": 11,
+          "confidence": 0.1876873031603625,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 2,
+          "n": 572,
+          "confidence": 0.2648292206677906,
+          "accuracy": 0.2062937062937063
+        },
+        {
+          "bin": 3,
+          "n": 1150,
+          "confidence": 0.35123501994285783,
+          "accuracy": 0.2669565217391304
+        },
+        {
+          "bin": 4,
+          "n": 1133,
+          "confidence": 0.4494524944729474,
+          "accuracy": 0.3115622241835834
+        },
+        {
+          "bin": 5,
+          "n": 747,
+          "confidence": 0.5453696896986314,
+          "accuracy": 0.4390896921017403
+        },
+        {
+          "bin": 6,
+          "n": 541,
+          "confidence": 0.649294199018523,
+          "accuracy": 0.5988909426987061
+        },
+        {
+          "bin": 7,
+          "n": 504,
+          "confidence": 0.7528601283300789,
+          "accuracy": 0.7261904761904762
+        },
+        {
+          "bin": 8,
+          "n": 595,
+          "confidence": 0.8531925680690902,
+          "accuracy": 0.7798319327731092
+        },
+        {
+          "bin": 9,
+          "n": 591,
+          "confidence": 0.9440554315237126,
+          "accuracy": 0.9593908629441624
+        }
+      ],
+      "per_class": {
+        "chat": {
+          "support": 392,
+          "recall": 0.625,
+          "f1": 0.6371911573472041
+        },
+        "coding": {
+          "support": 368,
+          "recall": 0.9103260869565217,
+          "f1": 0.6523855890944499
+        },
+        "reasoning": {
+          "support": 443,
+          "recall": 0.927765237020316,
+          "f1": 0.8328267477203647
+        },
+        "research": {
+          "support": 480,
+          "recall": 0.6770833333333334,
+          "f1": 0.668724279835391
+        },
+        "vision": {
+          "support": 911,
+          "recall": 0.45334796926454446,
+          "f1": 0.5916905444126075
+        },
+        "tool_use": {
+          "support": 943,
+          "recall": 0.21208907741251326,
+          "f1": 0.2915451895043732
+        },
+        "abstain": {
+          "support": 640,
+          "recall": 0.5046875,
+          "f1": 0.2569610182975338
+        },
+        "security": {
+          "support": 554,
+          "recall": 0.4602888086642599,
+          "f1": 0.5039525691699605
+        },
+        "privacy": {
+          "support": 369,
+          "recall": 0.6829268292682927,
+          "f1": 0.63
+        },
+        "high_risk_review": {
+          "support": 744,
+          "recall": 0.0913978494623656,
+          "f1": 0.16209773539928488
+        }
+      },
+      "macro_f1_ten_routes": 0.522737483078117
+    },
+    "paired_n": 5844,
+    "groups": 5568,
+    "family_mean_delta": 0.06959410919540229,
+    "family_bootstrap_delta_95": [
+      0.05455953663793104,
+      0.08443381824712644
+    ],
+    "population_generalization_certified": false,
+    "hyd_superiority_observed": false,
+    "critical_recall_nonregression": false
+  },
+  "limitation": "Previously inspected human reference, partially reviewed. Synthetic fit tasks are not human evidence. No promotion.",
+  "fold_checks": {
+    "A": {
+      "reload_parity": true,
+      "policy_passed": false
+    },
+    "B": {
+      "reload_parity": true,
+      "policy_passed": false
+    },
+    "C": {
+      "reload_parity": true,
+      "policy_passed": false
+    }
+  },
+  "source_provenance": {
+    "source_lf_sha256": "004c39bb9f14cdad72232c9d7b00ee5eb926e516a60a38e75c4af10ae1db4e14",
+    "source_crlf_sha256": "0893383e2f6814b1e0962dcfe850cd7602dc2e8b770256f05157035ea162087c",
+    "difference": "Line endings only. A/B recorded LF; C recorded CRLF. Training implementation identical after newline normalization."
+  }
+}
