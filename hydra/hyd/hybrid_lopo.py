@@ -10,12 +10,58 @@ Non cambia o Hyd que serve nin ten autoridade. Entrada: corpus_v2.jsonl (text, e
 Uso: python -m hydra.hyd.hybrid_lopo --corpus D:\\Hyd-train\\data\\corpus_v2.jsonl --out experiments\\hyd-hybrid-v1
 """
 from __future__ import annotations
-import argparse, hashlib, json, platform
+import argparse, hashlib, json, platform, re
 from pathlib import Path
 import numpy as np
 from hydra.hyd.model import features
 
 ENCODER = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+LABELS = {"chat", "research", "reasoning", "coding", "abstain", "privacy",
+          "security", "vision", "tool_use", "high_risk_review"}
+
+
+def validate_folds(rows):
+    """Check all partitions before loading the encoder; never bypass leaks."""
+    if not rows or any(not isinstance(r, dict) for r in rows):
+        raise ValueError("nonempty corpus of records required")
+    ids, texts, family_people = set(), set(), {}
+    for row in rows:
+        if (not isinstance(row.get("id"), str) or not row["id"] or row["id"] in ids
+                or not isinstance(row.get("text"), str) or not row["text"].strip()
+                or row.get("expected") not in LABELS):
+            raise ValueError("invalid or duplicate corpus record")
+        ids.add(row["id"])
+        if hashlib.sha256(row["text"].encode()).hexdigest() != row.get("text_sha256"):
+            raise ValueError("verbatim text SHA-256 mismatch")
+        for key in ("person", "family"):
+            if not isinstance(row.get(key), str) or not row[key].strip():
+                raise ValueError("declared person and family required; no hash fallback")
+        normalized = " ".join(row["text"].casefold().split())
+        if normalized in texts:
+            raise ValueError("duplicate normalized text; review groups before splitting")
+        texts.add(normalized)
+        previous = family_people.setdefault(row["family"], row["person"])
+        if previous != row["person"]:
+            raise ValueError("family leak across held-out people; review grouping")
+    persons = np.array([r["person"] for r in rows])
+    families = np.array([r["family"] for r in rows])
+    labels = np.array([r["expected"] for r in rows])
+    if len(set(persons)) < 3:
+        raise ValueError("at least three declared people required for this LOPO protocol")
+    calibration = np.array([int(hashlib.sha256(f.encode()).hexdigest()[:8], 16) % 5 == 0 for f in families])
+    folds = {}
+    for held in sorted(set(persons)):
+        training = persons != held
+        fit, cal, test = training & ~calibration, training & calibration, ~training
+        if not fit.any() or not cal.any() or not test.any():
+            raise ValueError("empty LOPO fit, calibration or test partition")
+        for left, right in ((fit, cal), (fit, test), (cal, test)):
+            if set(families[left]) & set(families[right]):
+                raise ValueError("family overlap between partitions")
+        if set(labels[fit]) != LABELS or set(labels[cal]) != LABELS:
+            raise ValueError("fit and calibration must cover all ten classes")
+        folds[str(held)] = (fit, cal, test)
+    return folds
 
 
 def softmax_t(z, t):
@@ -50,31 +96,32 @@ def evaluate(y, p, classes):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(); ap.add_argument("--corpus", type=Path, required=True); ap.add_argument("--out", type=Path, required=True)
-    ap.add_argument("--encoder-revision", default=None); ap.add_argument("--seed", type=int, default=42)
+    ap.add_argument("--encoder-revision", required=True); ap.add_argument("--seed", type=int, default=42)
     a = ap.parse_args(argv)
     if a.out.exists(): raise SystemExit("output directory already exists; choose a new run")
+    if not re.fullmatch(r"[0-9a-f]{40}", a.encoder_revision):
+        raise ValueError("encoder revision must be an exact 40-character commit SHA")
+    rows = [json.loads(l) for l in a.corpus.read_text(encoding="utf-8").splitlines() if l.strip()]
+    folds = validate_folds(rows)
     from sklearn.linear_model import LogisticRegression
     from sentence_transformers import SentenceTransformer
     import torch
-    rows = [json.loads(l) for l in a.corpus.read_text(encoding="utf-8").splitlines() if l.strip()]
     texts = [r["text"] for r in rows]
     y = np.array([r["expected"] for r in rows]); persons = np.array([r["person"] for r in rows])
-    fam = np.array([r.get("family") or r["text_sha256"] for r in rows])
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     enc = SentenceTransformer(ENCODER, device=dev, revision=a.encoder_revision)
     if dev == "cuda": enc.half()
     xs = np.asarray(enc.encode(texts, batch_size=128, normalize_embeddings=True, convert_to_numpy=True), dtype=np.float32)
     xh = np.stack([features(t + "\nInstructions: null", 512) for t in texts]).astype(np.float32)
     views = {"hash": xh, "semantic": xs, "hybrid": np.hstack([xh, xs])}
-    cal_mask = np.array([int(f[:8], 16) % 5 == 0 for f in fam])
     report = {"experiment": "HYD-025 hybrid_lopo", "status": "SHADOW_ONLY", "authority": False, "encoder": ENCODER,
               "encoder_revision": a.encoder_revision, "device": dev, "python": platform.python_version(),
-              "corpus_sha256": hashlib.sha256(a.corpus.read_bytes()).hexdigest(), "split": "persoa fóra + familia 80/20",
+              "corpus_sha256": hashlib.sha256(a.corpus.read_bytes()).hexdigest(),
+              "split": "LOPO; calibration = SHA256(declared family) mod 5 == 0",
+              "protocol": "hyd-hybrid-lopo/2", "group_metadata_independently_verified": False,
               "folds": {}}
     for held in sorted(set(persons)):
-        tr = persons != held; fit = tr & ~cal_mask; cal = tr & cal_mask; te = ~tr
-        assert not (set(fam[te]) & set(fam[fit])) or True  # familias non cruzan persoas no corpus v2
-        assert not (set(fam[cal]) & set(fam[fit])), "family leak train/calibration"
+        fit, cal, te = folds[str(held)]
         fold = {"n_train": int(fit.sum()), "n_cal": int(cal.sum()), "n_test": int(te.sum())}
         for name, x in views.items():
             clf = LogisticRegression(C=4.0, max_iter=3000, random_state=a.seed).fit(x[fit], y[fit])
