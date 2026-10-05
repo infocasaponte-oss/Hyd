@@ -106,6 +106,7 @@ def main(argv=None):
     from sklearn.linear_model import LogisticRegression
     from sentence_transformers import SentenceTransformer
     import torch
+    torch.set_num_threads(4)
     texts = [r["text"] for r in rows]
     y = np.array([r["expected"] for r in rows]); persons = np.array([r["person"] for r in rows])
     dev = "cuda" if torch.cuda.is_available() else "cpu"
@@ -120,16 +121,30 @@ def main(argv=None):
               "split": "LOPO; calibration = SHA256(declared family) mod 5 == 0",
               "protocol": "hyd-hybrid-lopo/2", "group_metadata_independently_verified": False,
               "folds": {}}
+    a.out.mkdir(parents=True)
     for held in sorted(set(persons)):
         fit, cal, te = folds[str(held)]
         fold = {"n_train": int(fit.sum()), "n_cal": int(cal.sum()), "n_test": int(te.sum())}
         for name, x in views.items():
             clf = LogisticRegression(C=4.0, max_iter=3000, random_state=a.seed).fit(x[fit], y[fit])
             t = fit_t(clf, x[cal], y[cal])
-            fold[name] = evaluate(y[te], softmax_t(clf.decision_function(x[te]), t), clf.classes_) | {"temperature": t}
+            probabilities = softmax_t(clf.decision_function(x[te]), t)
+            fold[name] = evaluate(y[te], probabilities, clf.classes_) | {"temperature": t}
+            prefix = str(held) + "-" + name
+            head_path = a.out / (prefix + ".npz")
+            np.savez(head_path, coef=clf.coef_, intercept=clf.intercept_, classes=clf.classes_, temperature=t)
+            with np.load(head_path, allow_pickle=False) as head:
+                reload_p = softmax_t(x[te] @ head["coef"].T + head["intercept"], float(head["temperature"]))
+                if not np.array_equal(head["classes"], clf.classes_) or not np.allclose(probabilities, reload_p, atol=1e-6, rtol=1e-6):
+                    raise ValueError("saved hybrid head parity failed")
+            fold[name]["head_reload_parity_verified"] = True
+            pred_path = a.out / (prefix + ".predictions.jsonl")
+            pred_path.write_text("".join(json.dumps({"id": rows[j]["id"], "text_sha256": rows[j]["text_sha256"],
+                "probabilities": dict(zip(clf.classes_.tolist(), probabilities[i].tolist()))}) + "\n"
+                for i, j in enumerate(np.flatnonzero(te))), encoding="utf-8")
+            fold[name]["artifact_sha256"] = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (head_path, pred_path)}
         report["folds"][held] = fold
         print(held, {k: round(fold[k]["accuracy"], 3) for k in views})
-    a.out.mkdir(parents=True)
     (a.out / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     return report
 

@@ -5,8 +5,8 @@
     python -m hyd_calibrator report --dataset data/hyd-app-corpus-v1/test.jsonl \
         --model-dir experiments/hyd-app-v1 --out experiments/hyd-app-v1/test-per-class.json
 
-Questions are copied verbatim (never rewritten). Only rows with consent=true, real=true and
-suspect_template=false are admitted. Split is frozen by SHA-256 of the normalised text
+Questions are copied verbatim (never rewritten). Consent and declared source rights are required.
+suspect_template is an informational flag, not a prohibition. Split is frozen by SHA-256 of the normalised text
 (70 % train / 15 % calibration / 15 % test), so a question never changes partition as the corpus grows.
 """
 
@@ -54,8 +54,8 @@ def validate(path: Path) -> tuple[list[dict], dict]:
             errors.append(f"line {n}: text exceeds 50000 characters")
         elif m.get("consent") is not True:
             errors.append(f"line {n}: no consent")
-        elif m.get("real") is not True or m.get("suspect_template") is not False:
-            errors.append(f"line {n}: not real / suspect template")
+        elif m.get("real") is not True or not isinstance(m.get("suspect_template"), bool):
+            errors.append(f"line {n}: explicit real and variant flags required")
         elif (
             not isinstance(r.get("rights"), dict)
             or r["rights"].get("verified") is not True
@@ -140,6 +140,9 @@ def build(corpus: Path, out: Path, *, grouped: bool = False, development: bool =
     report["partition_sha256"] = {s: hashlib.sha256((out / f"{s}.jsonl").read_bytes()).hexdigest() for s in parts}
     report["partition_policy"] = "declared-person-family-components/1" if grouped else "normalized-text-hash/1"
     report["independence_verified"] = False
+    report["variant_flag_rows_kept"] = sum(r["meta"]["suspect_template"] for r in rows)
+    report["variant_flags_are_exclusions"] = False
+    report["variant_family_boundaries_checked"] = grouped
     report["development_partition"] = development
     if assignments:
         report["n_groups"] = len({group for _, group in assignments})

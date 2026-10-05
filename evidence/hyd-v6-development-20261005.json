@@ -1,0 +1,204 @@
+{
+  "format": "hyd-v6-development-evidence/1",
+  "package_sha256": "203bdd3530e4a141005cd5623eff9b281f5d7c9d62841b796b9c14010ff10e02",
+  "corpus_sha256": "c52e4a5f3fdbef5ea1be74acc6a4087f468dc6fa298ef4c9fc4d9afdfd96908a",
+  "rows": 5844,
+  "by_person": {
+    "person-owner": 2598,
+    "person-juan": 1000,
+    "person-belen": 2246
+  },
+  "previous_template_flags_kept": 1501,
+  "exact_duplicate_records_preserved_in_archive": 392,
+  "encoder_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "status": "SHADOW_ONLY",
+  "authority": false,
+  "folds": {
+    "person-belen": {
+      "n_test": 2246,
+      "hash": {
+        "accuracy": 0.37622439893143367,
+        "macro_f1": 0.3980762114049053,
+        "ece": 0.16895728271026644,
+        "at_0.95": {
+          "coverage": 0.03428317008014248,
+          "accuracy": 0.8961038961038961
+        },
+        "head_reload_parity_verified": true
+      },
+      "semantic": {
+        "accuracy": 0.5543187889581478,
+        "macro_f1": 0.5816900252955655,
+        "ece": 0.21163958204928401,
+        "at_0.95": {
+          "coverage": 0.26669634906500445,
+          "accuracy": 0.7679465776293823
+        },
+        "head_reload_parity_verified": true
+      },
+      "hybrid": {
+        "accuracy": 0.5636687444345503,
+        "macro_f1": 0.608556954243802,
+        "ece": 0.2098617847089988,
+        "at_0.95": {
+          "coverage": 0.27916295636687444,
+          "accuracy": 0.8309409888357256
+        },
+        "head_reload_parity_verified": true
+      },
+      "E2_accuracy": 0.5503116651825467,
+      "E3_risk_route_accuracy": 0.7435440783615316
+    },
+    "person-juan": {
+      "n_test": 1000,
+      "hash": {
+        "accuracy": 0.532,
+        "macro_f1": 0.5317610982915074,
+        "ece": 0.05650787381827832,
+        "at_0.95": {
+          "coverage": 0.036,
+          "accuracy": 0.9166666666666666
+        },
+        "head_reload_parity_verified": true
+      },
+      "semantic": {
+        "accuracy": 0.733,
+        "macro_f1": 0.73761553288325,
+        "ece": 0.07744163960218428,
+        "at_0.95": {
+          "coverage": 0.326,
+          "accuracy": 0.9233128834355828
+        },
+        "head_reload_parity_verified": true
+      },
+      "hybrid": {
+        "accuracy": 0.788,
+        "macro_f1": 0.7867026519728165,
+        "ece": 0.05890928256511686,
+        "at_0.95": {
+          "coverage": 0.411,
+          "accuracy": 0.9343065693430657
+        },
+        "head_reload_parity_verified": true
+      },
+      "E2_accuracy": 0.734,
+      "E3_risk_route_accuracy": 0.829
+    },
+    "person-owner": {
+      "n_test": 2598,
+      "hash": {
+        "accuracy": 0.2775211701308699,
+        "macro_f1": 0.27227505977877614,
+        "ece": 0.3496889261854346,
+        "at_0.95": {
+          "coverage": 0.07197844495765973,
+          "accuracy": 0.44919786096256686
+        },
+        "head_reload_parity_verified": true
+      },
+      "semantic": {
+        "accuracy": 0.5288683602771362,
+        "macro_f1": 0.5262487069442384,
+        "ece": 0.21925974682581437,
+        "at_0.95": {
+          "coverage": 0.21016166281755197,
+          "accuracy": 0.7692307692307693
+        },
+        "head_reload_parity_verified": true
+      },
+      "hybrid": {
+        "accuracy": 0.529253271747498,
+        "macro_f1": 0.5238235411182116,
+        "ece": 0.22488882319802406,
+        "at_0.95": {
+          "coverage": 0.24518860662047728,
+          "accuracy": 0.7551020408163265
+        },
+        "head_reload_parity_verified": true
+      },
+      "E2_accuracy": 0.529253271747498,
+      "E3_risk_route_accuracy": 0.7197844495765974
+    }
+  },
+  "pooled": {
+    "hash": {
+      "correct": 2098,
+      "n": 5844,
+      "accuracy": 0.3590006844626968,
+      "family_mean_accuracy": 0.36813936781609197,
+      "families": 5568,
+      "by_flag": {
+        "without_previous_template_flag": {
+          "correct": 1721,
+          "n": 4343,
+          "accuracy": 0.39626985954409394
+        },
+        "previous_template_flag": {
+          "correct": 377,
+          "n": 1501,
+          "accuracy": 0.25116588940706197
+        }
+      }
+    },
+    "semantic": {
+      "correct": 3352,
+      "n": 5844,
+      "accuracy": 0.5735797399041752,
+      "family_mean_accuracy": 0.569616558908046,
+      "families": 5568,
+      "by_flag": {
+        "without_previous_template_flag": {
+          "correct": 2654,
+          "n": 4343,
+          "accuracy": 0.611098319134239
+        },
+        "previous_template_flag": {
+          "correct": 698,
+          "n": 1501,
+          "accuracy": 0.46502331778814127
+        }
+      }
+    },
+    "hybrid": {
+      "correct": 3429,
+      "n": 5844,
+      "accuracy": 0.5867556468172485,
+      "family_mean_accuracy": 0.5855558548850575,
+      "families": 5568,
+      "by_flag": {
+        "without_previous_template_flag": {
+          "correct": 2744,
+          "n": 4343,
+          "accuracy": 0.6318213216670504
+        },
+        "previous_template_flag": {
+          "correct": 685,
+          "n": 1501,
+          "accuracy": 0.4563624250499667
+        }
+      }
+    }
+  },
+  "runtime_reload": {
+    "format": "hyd-v6-runtime-reload/1",
+    "corpus_sha256": "c52e4a5f3fdbef5ea1be74acc6a4087f468dc6fa298ef4c9fc4d9afdfd96908a",
+    "encoder_revision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "n_questions": 5844,
+    "verified_heads": 6,
+    "embedding_max_absolute_error": 0.0,
+    "probability_max_absolute_error": 0.0,
+    "full_encoder_head_reload_verified": true,
+    "status": "SHADOW_ONLY",
+    "authority": false
+  },
+  "marks": {
+    "exported": 750,
+    "evaluated_in_matching_corpus": 696,
+    "outside_deduplicated_corpus": 54,
+    "source_counts_in_evaluation": {
+      "human_original": 614,
+      "human_reconfirmed": 82
+    },
+    "independently_verified_human_identity": false
+  }
+}
