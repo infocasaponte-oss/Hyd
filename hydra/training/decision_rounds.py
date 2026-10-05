@@ -54,6 +54,8 @@ class RoundController:
             if type(value) is not int or not lower <= value <= upper:
                 raise ValueError("invalid bounded configuration: " + key)
         config = dict(config)
+        if type(config.get("class_balance", False)) is not bool:
+            raise ValueError("class_balance must be boolean")
         config["paths"] = {k: str(Path(v).resolve()) for k, v in config["paths"].items()}
         config["pool"] = str(Path(config["pool"]).resolve())
         validate({k: read_rows(Path(v)) for k, v in config["paths"].items()})
@@ -191,7 +193,8 @@ class RoundController:
                     candidate = folder / ("candidate-" + uuid4().hex)
                     report = train_candidate(snapshot["paths"], candidate, cfg.get("encoder", {"kind": "hash", "dims": 512}),
                                              epochs=cfg.get("epochs", 100), seed=cfg.get("seed", 42),
-                                             fine_tune_epochs=cfg.get("fine_tune_epochs", 0))
+                                             fine_tune_epochs=cfg.get("fine_tune_epochs", 0),
+                                             class_balance=cfg.get("class_balance", False))
                 self.transition(identity, "WAITING_APPROVAL", {"candidate": str(candidate.resolve()),
                     "model_revision": report["model_revision"], "independent_test": False, "authority": False})
             if self.status(identity)["state"] == "WAITING_APPROVAL":

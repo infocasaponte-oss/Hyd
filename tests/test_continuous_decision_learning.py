@@ -178,3 +178,26 @@ def test_review_api_requires_admin_and_resumes(partitions, tmp_path):
             "label": "coding", "reviewer": "human"}).status_code == 200
         assert identity in client.get(path, headers=headers).json()["reviews"]
         assert client.get("/hydra/v1/learning/review").headers["x-content-type-options"] == "nosniff"
+
+
+def test_class_balancing_changes_fit_but_never_uses_test_labels(partitions, tmp_path):
+    fit = al.read_rows(partitions['fit'])
+    for index in range(15):
+        text = f'Fixture sintética coding ampliada {index}'
+        fit.append({'id': f'extra-{index}', 'text': text, 'expected': 'coding',
+                    'group_id': f'extra-family-{index}', 'training_allowed': True,
+                    'text_sha256': hashlib.sha256(text.encode()).hexdigest()})
+    write(partitions['fit'], fit)
+    spec = {'kind': 'hash', 'dims': 64}
+    train_candidate(partitions, tmp_path / 'a', spec, epochs=5, class_balance=True)
+    train_candidate(partitions, tmp_path / 'unbalanced', spec, epochs=5)
+    test = al.read_rows(partitions['test'])
+    labels = list(CRITERIA)
+    for row in test:
+        row['expected'] = labels[(labels.index(row['expected']) + 1) % len(labels)]
+    write(partitions['test'], test)
+    train_candidate(partitions, tmp_path / 'b', spec, epochs=5, class_balance=True)
+    a, b = ContinualRanker.load(tmp_path / 'a/model.json'), ContinualRanker.load(tmp_path / 'b/model.json')
+    assert a.training['weighting'] == 'equal_class_then_scenario'
+    assert np.array_equal(a.weights, b.weights) and np.array_equal(a.bias, b.bias)
+    assert not np.allclose(a.weights, ContinualRanker.load(tmp_path / 'unbalanced/model.json').weights)

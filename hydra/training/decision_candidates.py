@@ -78,9 +78,9 @@ def report_metrics(rows):
     return score
 
 
-def train_candidate(paths, out, spec, *, epochs=100, seed=42, fine_tune_epochs=0):
+def train_candidate(paths, out, spec, *, epochs=100, seed=42, fine_tune_epochs=0, class_balance=False):
     out = Path(out)
-    if out.exists() or not 1 <= epochs <= 2000:
+    if out.exists() or not 1 <= epochs <= 2000 or type(class_balance) is not bool:
         raise ValueError("new candidate output and epochs 1..2000 required")
     parts = {k: read_rows(Path(v)) for k, v in paths.items()}
     validate(parts)
@@ -93,6 +93,11 @@ def train_candidate(paths, out, spec, *, epochs=100, seed=42, fine_tune_epochs=0
     vectors = {name: model.vectors([text_label(r)[0] for r in rows]) for name, rows in parts.items()}
     frequencies = Counter(group(r) for r in parts["fit"])
     weights = [1 / frequencies[group(r)] for r in parts["fit"]]
+    if class_balance:
+        mass = Counter()
+        for row, weight in zip(parts["fit"], weights):
+            mass[text_label(row)[1]] += weight
+        weights = [w / mass[text_label(r)[1]] for r, w in zip(parts["fit"], weights)]
     candidates = []
     for l2 in (.0001, .01, .1):
         w, b = fit_linear(vectors["fit"], [text_label(r)[1] for r in parts["fit"]], labels,
@@ -131,7 +136,8 @@ def train_candidate(paths, out, spec, *, epochs=100, seed=42, fine_tune_epochs=0
     model.training = {"source_sha256": {k: file_sha(v) for k, v in paths.items()}, "seed": seed,
                       "epochs": epochs, "l2": best[2], "selection": "dev_only",
                       "post_temperature": temperature, "memory_mix": model.memory_mix,
-                      "weighting": "equal_scenario", "policy_passed": bool(thresholds), "status": "SHADOW_ONLY"}
+                      "weighting": "equal_class_then_scenario" if class_balance else "equal_scenario",
+                      "policy_passed": bool(thresholds), "status": "SHADOW_ONLY"}
     out.mkdir(parents=True)
     model.save(out / "model.json")
     reloaded = ContinualRanker.load(out / "model.json")
@@ -205,12 +211,14 @@ def main():
     t.add_argument("--epochs", type=int, default=100)
     t.add_argument("--seed", type=int, default=42)
     t.add_argument("--fine-tune-epochs", type=int, default=0)
+    t.add_argument("--class-balance", action="store_true", help="equal total gradient weight per class; retains every fit row")
     args = parser.parse_args()
     if args.command == "prepare":
         result = prepare(args.corpus, args.out, args.held_person)
     else:
         result = train_candidate(json.loads((args.snapshot / "manifest.json").read_text())["paths"], args.out,
-            json.loads(args.encoder_spec.read_text()), epochs=args.epochs, seed=args.seed, fine_tune_epochs=args.fine_tune_epochs)
+            json.loads(args.encoder_spec.read_text()), epochs=args.epochs, seed=args.seed,
+            fine_tune_epochs=args.fine_tune_epochs, class_balance=args.class_balance)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
