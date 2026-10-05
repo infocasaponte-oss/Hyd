@@ -8,10 +8,14 @@ non se modificaron preguntas/etiquetas e non se cambiou a visibilidade do repo.
 
 ## 1. Actions e publicación
 
-O usuario comunicou que o repo xa está público. Na comprobación posterior con
-`gh repo view`, a API seguía devolvendo `PRIVATE` tanto para Hyd como para
-HYDRA-SO: queda por confirmar o cambio efectivo ou o repo exacto. Non se cambiou
-a visibilidade desde esta tarefa. No run `37287884016`, os dous jobs remataron como failure
+Confirmado con `gh repo view`: **Hyd é PUBLIC e HYDRA-SO segue PRIVATE**.
+As consultas anteriores aínda devolvían PRIVATE; o cambio xa aparece na API.
+Non se cambiou a visibilidade desde esta tarefa. Repetíronse as Actions en main
+mediante workflow_dispatch despois de confirmar o repo público: o run
+[`37291313679`](https://github.com/infocasaponte-oss/Hyd/actions/runs/37291313679)
+rematou **SUCCESS en Ubuntu e Windows**, incluídas as probas e a CLI.
+Este resultado substitúe o bloqueo como estado actual das comprobacións.
+No run `37287884016`, os dous jobs remataron como failure
 con **cero pasos executados**. A anotación do check `111691036721` di que o job
 non empezou por pagamentos fallidos ou límite de gasto. É un bloqueo de
 infraestrutura/facturación; non demostra un fallo das probas.
@@ -245,6 +249,6 @@ Validación anterior do código: 1.222 probas pasadas, 87 omitidas; recarga real
 MiniLM e seis cabezas E2/E3 con diferenza máxima 0,0. As novas métricas describen
 os mesmos experimentos, non unha repetición independente.
 
-Pendente: revisión exhaustiva de segredos e dereitos para publicación, copia
-pública e CI real, protocolo interno dev/cal/limiares, comparacións P1, afinamento
+Pendente: revisión exhaustiva de segredos e dereitos do material publicado,
+protocolo interno dev/cal/limiares, comparacións P1, afinamento
 P2, novas anotacións negativas E3 e test final novo. Non se presentan como feitos.
