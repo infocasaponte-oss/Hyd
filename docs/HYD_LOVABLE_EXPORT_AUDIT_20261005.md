@@ -72,6 +72,15 @@ semántica histórica no repo; non acredita a reprodución dos experimentos perd
 
 Fase 2: completar declaracións de orixe, dereitos, persoas/familias e revisións
 reais. As reconfirmacións aínda non están seleccionadas como referencia E3.
+O usuario confirmou nesta sesión que Juan e a conta nova pertencen a outras
+persoas. Rexístranse tres persoas declaradas: propietario (2.936 preguntas),
+externa A (1.000) e externa B (2.300), mantendo as dúas contas do propietario
+xuntas. Isto non modifica o export orixinal nin acredita identidade independente.
+Hai unha plantilla privada ligada aos IDs/hashes para completar familias e orixe.
+Con tres persoas non se poden poboar catro particións non baleiras separadas por
+persoa. Recoller máis autores ou fixar outro protocolo explícito; non crear persoas
+ficticias nin chamar independente a unha división aleatoria das mesmas persoas.
+Declaración agregada: `evidence/lovable-person-declarations-20261005.json`.
 Fase 3: particións por grupos e test novo reservado, sen reutilizar resultados
 históricos como test cego. Despois reproducir E2 con revisión fixada e artefactos
 persistentes. Non se executou un novo adestramento nin se promoveu ningún modelo.
