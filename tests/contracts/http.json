@@ -1190,6 +1190,102 @@
     }
    }
   },
+  "GET /hydra/v1/learning/review": {
+   "body": {},
+   "body_required": false,
+   "parameters": [],
+   "responses": {
+    "200": {
+     "text/html": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "GET /hydra/v1/learning/rounds/{identity}": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "identity",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
   "GET /hydra/v1/ledger/events": {
    "body": {},
    "body_required": false,
@@ -6091,6 +6187,178 @@
     }
    }
   },
+  "POST /hydra/v1/learning/rounds/{identity}/review": {
+   "body": {
+    "application/json": {
+     "$ref": "#/components/schemas/LearningReview"
+    }
+   },
+   "body_required": true,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "identity",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
+  "POST /hydra/v1/learning/rounds/{identity}/tick": {
+   "body": {},
+   "body_required": false,
+   "parameters": [
+    {
+     "in": "header",
+     "name": "authorization",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-api-key",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-admin-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "header",
+     "name": "x-hydra-token",
+     "required": false,
+     "schema": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    {
+     "in": "path",
+     "name": "identity",
+     "required": true,
+     "schema": {
+      "type": "string"
+     }
+    }
+   ],
+   "responses": {
+    "200": {
+     "application/json": {}
+    },
+    "422": {
+     "application/json": {
+      "$ref": "#/components/schemas/HTTPValidationError"
+     }
+    }
+   }
+  },
   "POST /hydra/v1/licenses/evaluate": {
    "body": {
     "application/json": {
@@ -10074,6 +10342,36 @@
    },
    "required": [
     "kind"
+   ],
+   "type": "object"
+  },
+  "LearningReview": {
+   "properties": {
+    "case_id": {
+     "maxLength": 100,
+     "minLength": 1,
+     "type": "string"
+    },
+    "label": {
+     "maxLength": 50,
+     "minLength": 1,
+     "type": "string"
+    },
+    "notes": {
+     "default": "",
+     "maxLength": 2000,
+     "type": "string"
+    },
+    "reviewer": {
+     "maxLength": 120,
+     "minLength": 1,
+     "type": "string"
+    }
+   },
+   "required": [
+    "case_id",
+    "label",
+    "reviewer"
    ],
    "type": "object"
   },

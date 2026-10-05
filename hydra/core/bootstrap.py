@@ -189,7 +189,9 @@ async def build_runtime(settings: Settings | None = None, **overrides: Any) -> H
     pool = event_sink = None
     memory: MemoryStore
     telemetry: TelemetryStore
-    if settings.postgres_url and "memory" not in overrides:
+    if settings.memory_backend == "postgres" and not settings.postgres_url:
+        raise ValueError("postgres memory requires HYDRA_POSTGRES_URL")
+    if settings.postgres_url and settings.memory_backend in ("auto", "postgres") and "memory" not in overrides:
         from hydra.memory.store import PostgresMemoryStore
         from hydra.persistence.postgres import PostgresEventSink, PostgresTelemetry, create_pool
 
@@ -199,7 +201,13 @@ async def build_runtime(settings: Settings | None = None, **overrides: Any) -> H
         event_sink = PostgresEventSink(pool)
         await bus.subscribe(None, event_sink)
     else:
-        memory = overrides.get("memory") or InMemoryMemoryStore()
+        if "memory" in overrides:
+            memory = overrides["memory"]
+        elif settings.memory_backend == "memory":
+            memory = InMemoryMemoryStore()
+        else:
+            from hydra.memory.sqlite_store import SQLiteMemoryStore
+            memory = SQLiteMemoryStore(settings.data_dir / "knowledge-memory.sqlite3", settings.memory_namespace)
         telemetry = overrides.get("telemetry") or InMemoryTelemetry()
 
     # ---- models ---------------------------------------------------------------------
@@ -361,8 +369,8 @@ async def build_runtime(settings: Settings | None = None, **overrides: Any) -> H
         log.debug("no telemetry to fit the learned router yet")
     observer = None
     if settings.hyd_enabled:
-        from hydra.hyd.controller import HydController
-        observer = HydController(settings.hyd_model_path, settings.hyd_calibration_path,
+        from hydra.hyd.continual_controller import controller_class
+        observer = controller_class(settings.hyd_model_path)(settings.hyd_model_path, settings.hyd_calibration_path,
                                  settings.hyd_authority_evidence_path)
     elif settings.decision_local_model_path:
         if not settings.decision_local_calibration_path:
