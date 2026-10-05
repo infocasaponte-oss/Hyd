@@ -21,3 +21,10 @@ data/
 node_modules/
 
 experiments/candidate-1024*/model.json
+
+# Hyd privado
+hyd-train/
+out/
+predictions*.jsonl
+*.npz
+*.npy
