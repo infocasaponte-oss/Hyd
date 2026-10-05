@@ -52,3 +52,13 @@ Formato: data UTC · HYD-XXX · que · por que · evidencia. Estado: SHADOW_ONLY
 - Por que: as marcas iniciais fixéronse antes de coñecer a guía; deixalas ensinaría ao modelo unha fronteira equivocada entre abstain e high_risk_review.
 - Evidencia: marcas finais — Juan 100 perigosas; Belén 280 perigosas e 370 falta de contexto. Ningunha pregunta nin etiqueta de hyd_records modificada nin borrada. Correccións aplicadas vía SQL sobre hyd_abstain_annotations. Pendente: medir E3 por tipo con estas marcas.
 - Nota: a copia de traballo local de Hyd perdeuse nesta data; os guións de medición de HYD-020–022 foron reconstruídos a partir das notas de deseño. Os resultados medidos (experiments/*/results.json) son os orixinais desas execucións.
+
+## 2026-10-05 UTC · HYD-024 · Porta de admisión: preguntas contribuídas con consentimento
+- Que: `hyd_calibrator.admission.require_contributed_consent` e `python -m hydra.hyd.train --allow-contributed`. Admite `rights.license=contributed-with-consent` só con `consent: true` literal, `rights.declared_by` e `meta.person`; rexeita calquera fila contribuída que diga ser HYDRA-authored. Sen a opción, o comportamento é idéntico a Hyd v1. O informe conta filas por licenza (`rights_by_license`).
+- Por que: as preguntas de Juan e Belén teñen consentimento na app pero non son HYDRA-authored; antes só se podían usar saltando a porta. Agora entran sen falsear a orixe. As do propietario levan `proprietary-hydra-authored` por declaración súa (2026-10-05).
+- Evidencia: tests/test_hyd_admission.py + tests/test_hyd_contributed.py, 19 pasan. Adestramento de proba (3 épocas, CPU) co corpus v2 convertido: 1.827 propietario + 2.314 contribuídas admitidas; sen a opción, rexeitadas. Os 3 fallos + 1 erro de tests/test_hyd.py xa existían antes do cambio (comprobado co código orixinal).
+
+## 2026-10-05 UTC · HYD-025 · Experimento hash + significado (SHADOW_ONLY)
+- Que: `hydra/hyd/hybrid_lopo.py` compara, por persoa deixada fóra e coas familias de variantes no mesmo lado, tres vistas con cabeza loxística: características hash de Hyd, MiniLM conxelado e as dúas concatenadas.
+- Por que: na avaliación por persoa o ranker hash quedou 13–27 puntos por debaixo de MiniLM; o paso seguinte é medir se engadir significado a Hyd pecha esa distancia.
+- Evidencia: só a vista hash medida aquí (CPU, sen MiniLM): acerto Belén 0,379, Juan 0,514, Owner 0,269. Semántica e híbrida pendentes de executar na RTX 3060 Ti. Non cambia o Hyd que serve; sen autoridade.
