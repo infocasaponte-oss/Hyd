@@ -22,13 +22,15 @@ Referencia actual: 5.844 preguntas reais, tres autores e 629 etiquetas confirmad
 | Hyd equilibrado, sen novos sintéticos | 56,38 % |
 | Hyd equilibrado + 240 sintéticos, sen cambiar etiquetas reais | 56,91 % |
 | Propostas individuais v8 + sintéticos (rexeitado) | 49,85 % |
+| Propostas individuais Qwen3 + sintéticos (rexeitado) | 51,39 % |
+| Encoder afinado: 3 épocas, equilibrio de clases e familias (rexeitado) | 54.47 % |
 | Kev, mesmos casos e pesos verificados | 48,37 % |
 
 O incremento de 0,53 puntos non demostra que se alcance o 90 %. As tres recargas do ensaio con sintéticos pasan; ningún candidato pasa a política de fiabilidade. Mantéñense en observación.
 
 A primeira pasada da IA con índices numéricos deu clasificacións claramente erradas e os candidatos empeoraron: 41,24 % sen sintéticos e 42,85 % con eles. A revisión individual con v8 completou as 5.844 preguntas, pero só deu 47,93 % sen sintéticos e 49,85 % con eles. Discrepou en 472 das 629 revisións humanas. Ambos ensaios quedan rexeitados; gardar unha proposta non a converte nunha boa corrección.
 
-A revisión posterior usa Qwen3 de 8B, con criterios máis explícitos. Hai unha exportación versionada `corpus_ai_revised.jsonl`: conserva texto, autoría e etiqueta anterior, move as revisións humanas orixinais ao historial e identifica o novo obxectivo como IA non confirmada. Este ficheiro non substitúe o corpus humano nin se usa como referencia de exactitude humana.
+A revisión posterior con Qwen3 de 8B completou as 5.844 preguntas e propuxo 2.424 cambios, incluíndo 312 discrepancias coas 629 confirmacións humanas. Os candidatos deron 51,25 % sen sintéticos e 51,39 % con eles; tamén quedan rexeitados fronte ao 56,91 %. A concordancia do segundo coa IA foi 56,57 %, unha medida diferente do acerto humano. Hai unha exportación versionada `corpus_ai_revised.jsonl`: conserva texto, autoría e etiqueta anterior, move as revisións humanas orixinais ao historial e identifica o novo obxectivo como IA non confirmada. Este ficheiro non substitúe o corpus humano nin se usa como referencia de exactitude humana.
 
 ## Ferramentas reproducibles
 
@@ -43,12 +45,18 @@ python -m hydra.training.decision_teacher --corpus CORPUS_REVISADO.jsonl --out R
 
 ## Continuación e condición de promoción
 
-1. Completar as propostas para todas as preguntas; rexistrar discrepancias e distribución por clase sen substituír confirmacións humanas.
+1. Revisión completa e versión exportable preparadas; conservar as discrepancias para a posterior validación humana.
 2. Medir os candidatos coa mesma referencia e publicar por separado exactitude humana e concordancia coa IA. Un 90 % de concordancia coa IA non é un 90 % de acerto humano.
 3. Axustar só coas particións de desenvolvemento e calibración, priorizando familias diversas de `tool_use`, `abstain`, `privacy` e `security`. Máis repeticións de frases non substitúen diversidade.
 4. Cando exista un candidato prometedor, validar cun lote humano novo reservado antes do axuste: exactitude, macro-F1 das dez clases, recall crítico, cobertura e calibración. Se non alcanza o obxectivo humano do 90 %, continúa en observación.
 5. Integrar no motor só despois da validación humana final, con versión anterior recuperable. O calibrador, os exemplos e a procedencia son exportables sen depender de Lovable.
 
-Probas locais actuais: 36 comprobacións das propostas, particións, revisión humana, comparación, aprendizaxe continua, interface e avisos de autoría. Ruff pasa nos ficheiros novos.
+Probas locais actuais: 55 comprobacións das propostas, particións, revisión humana, comparación, aprendizaxe continua, interface e avisos de autoría. Ruff pasa nos ficheiros novos.
 
 A proba real do motor e os axentes, a preparación do encoder e a corrección da independencia dos votos constan en [HYDRA_HYD_REAL_2026-10-05.md](HYDRA_HYD_REAL_2026-10-05.md).
+
+## Afinamento real do encoder
+
+Adestráronse as dúas últimas capas de MiniLM durante tres épocas por partición, con pesos equilibrados por clase e familia, usando só `fit` para os gradientes e só `dev` para escoller a época. O test e ambas calibracións permaneceron intactos. As tres recargas completas pasan, pero ningunha política de fiabilidade pasa. O resultado global empeora fronte ao 56,91 %; os pesos quedan como experimento descartado e non se promoven.
+
+`scripts/train_balanced_finetuned.py` reproduce o ensaio; `docs/evidence/hyd-balanced-finetuned-2026-10-05.json` publica as métricas agregadas sen preguntas privadas. Para a seguinte rolda, priorizaranse tarefas realmente distintas nas clases débiles e as discrepancias con etiqueta ambigua, conservando a validación humana final e un lote novo reservado.

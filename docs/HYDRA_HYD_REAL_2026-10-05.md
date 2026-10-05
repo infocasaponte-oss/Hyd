@@ -29,6 +29,6 @@ python -m scripts.probe_hydra_hyd --candidate RUTA_CANDIDATO --out RUTA_NOVA --m
 
 Require o encoder real dispoñible no entorno e o modelo local instalado. O informe privado garda respostas, eventos, roles, observación de Hyd, identidade do modelo e comprobación do ficheiro de proba. A política de promoción segue sen superar o criterio; o obxectivo do 90 % humano permanece pendente.
 
-Verificación: a suite completa de HYDRA pasou 1.175 probas antes das últimas comprobacións adicionais; 55 probas afectadas pasaron coa exportación IA, o illamento dos votos e a preparación do encoder. Tras adaptar o arranque propio do calibrador, a súa suite completa pasou 1.274 probas e omitiu 87 por dependencias ou condicións non dispoñibles. Ruff pasa nos ficheiros modificados.
+Verificación final: a suite completa de HYDRA pasou **1.178 probas / 83 omitidas** e a de Hyd pasou **1.274 / 87 omitidas**. As omisións corresponden a dependencias ou condicións non dispoñibles. Outras 55 comprobacións afectadas tamén pasaron. Ruff pasa nos ficheiros modificados. A evidencia pública da última proba real está en `docs/evidence/hydra-hyd-real-smoke-2026-10-05.json`.
 
 GitHub executou parte das comprobacións, pero cancelou outros jobs coa anotación «The job was not acquired by Runner of type hosted even after multiple attempts». Eses jobs non executados non contan como probas superadas.
